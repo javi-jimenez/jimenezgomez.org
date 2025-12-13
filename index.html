@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Francisco Javier Jiménez Gómez | Proyectos Open Source</title>
+    <meta name="description" content="Portafolio de contribuciones a proyectos de software libre, código abierto y comunidad. Documentación de proyectos como gcodis, ddnsc y más.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --dark: #0d1117;
+            --primary: #58a6ff;
+            --secondary: #238636;
+            --gray-600: #8b949e;
+            --gray-300: #c9d1d9;
+            --light: #f0f6fc;
+            --border: #30363d;
+            --radius: 6px;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            background-color: var(--dark);
+            color: var(--gray-300);
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        header { border-bottom: 1px solid var(--border); padding: 2rem 0; background-color: rgba(13, 17, 23, 0.9); position: sticky; top: 0; z-index: 1000; }
+        nav .container { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'JetBrains Mono', monospace; font-size: 1.8rem; font-weight: 700; color: var(--light); text-decoration: none; }
+        .logo span { color: var(--primary); }
+        .nav-links { display: flex; list-style: none; gap: 2.5rem; }
+        .nav-links a { color: var(--gray-300); text-decoration: none; font-weight: 500; transition: color 0.3s; }
+        .nav-links a:hover { color: var(--primary); }
+        .hero { text-align: center; padding: 6rem 0; border-bottom: 1px solid var(--border); }
+        h1 { font-size: 3.5rem; color: var(--light); margin-bottom: 1rem; }
+        .lead { font-size: 1.3rem; color: var(--gray-600); max-width: 700px; margin: 0 auto 2.5rem; }
+        section { padding: 5rem 0; }
+        h2 { font-size: 2.5rem; color: var(--light); margin-bottom: 2.5rem; text-align: center; }
+        .project-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 2.5rem; }
+        .project-card {
+            background: #161b22;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 2.5rem;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+        .project-card:hover { transform: translateY(-5px); border-color: var(--primary); }
+        .project-icon { font-size: 2.8rem; margin-bottom: 1.5rem; display: block; }
+        .project-card h3 { color: var(--primary); margin-bottom: 1rem; font-size: 1.5rem; }
+        .tech-stack { margin: 1.5rem 0; }
+        .badge {
+            display: inline-block;
+            background: rgba(88, 166, 255, 0.15);
+            color: var(--primary);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-family: 'JetBrains Mono', monospace;
+            margin: 0.25rem 0.5rem 0.25rem 0;
+            border: 1px solid rgba(88, 166, 255, 0.3);
+        }
+        .project-links { margin-top: 1.5rem; }
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            margin-right: 1.5rem;
+        }
+        .project-link:hover { text-decoration: underline; }
+        footer { text-align: center; padding: 3rem 0; border-top: 1px solid var(--border); color: var(--gray-600); font-size: 0.9rem; }
+        @media (max-width: 768px) {
+            .nav-links { flex-direction: column; display: none; position: absolute; top: 100%; left: 0; width: 100%; background: var(--dark); padding: 1.5rem; }
+            .nav-links.active { display: flex; }
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <a href="#" class="logo">jimenez<span>gomez</span>.org</a>
+                <ul class="nav-links">
+                    <li><a href="#proyectos">Proyectos</a></li>
+                    <li><a href="#comunidad">Comunidad</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <section class="hero">
+        <div class="container">
+            <h1>Software Libre & Comunidad</h1>
+            <p class="lead">Este sitio documenta mis contribuciones a proyectos de código abierto, redes comunitarias y el ecosistema de software libre. Un archivo de código, documentación y colaboración.</p>
+        </div>
+    </section>
+    <section id="proyectos">
+        <div class="container">
+            <h2>Proyectos Destacados</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <span class="project-icon">🐧</span>
+                    <h3>gcodis</h3>
+                    <p>Distribución Linux basada en Debian, optimizada para entornos cloud con LXC y Docker. Un proyecto para simplificar despliegues y aprendizaje.</p>
+                    <div class="tech-stack">
+                        <span class="badge">Linux</span>
+                        <span class="badge">Debian</span>
+                        <span class="badge">LXC</span>
+                        <span class="badge">Docker</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="http://www.github.com/javi-jimenez/gcodis.git" target="_blank" class="project-link">📂 Repositorio</a>
+                        <a href="#" class="project-link">📖 Documentación</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <span class="project-icon">🌐</span>
+                    <h3>ddnsc (DNS Caché Distribuido)</h3>
+                    <p>Sistema ligero de caché DNS distribuido para publicación de servicios en redes comunitarias, implementado en shell script.</p>
+                    <div class="tech-stack">
+                        <span class="badge">Bash</span>
+                        <span class="badge">DNS</span>
+                        <span class="badge">Shell Script</span>
+                        <span class="badge">Redes</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="http://www.github.com/javi-jimenez/ddnsc.git" target="_blank" class="project-link">📂 Repositorio</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <span class="project-icon">🤝</span>
+                    <h3>Clommunity & CONFINE</h3>
+                    <p>Contribuciones a proyectos marco de la Unión Europea para el desarrollo de redes comunitarias abiertas y sostenibles.</p>
+                    <div class="tech-stack">
+                        <span class="badge">EU Projects</span>
+                        <span class="badge">Community Networks</span>
+                        <span class="badge">Open Source</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="http://www.clommunity-project.eu/" target="_blank" class="project-link">🌐 Clommunity</a>
+                        <a href="https://confine-project.eu/" target="_blank" class="project-link">🌐 CONFINE</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="comunidad" style="background: #161b22;">
+        <div class="container">
+            <h2>Iniciativas Comunitarias</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3>PoLinux (2000 - )</h3>
+                    <p>Co-fundador y Presidente de la Asociación de Usuarios Linux de la Universidad Politécnica de Valencia. Organización de eventos, instalaciones y promoción del software libre.</p>
+                    <a href="http://www.polinux.upv.es/" target="_blank" class="project-link">🔗 Visitar Web</a>
+                </div>
+                <div class="project-card">
+                    <h3>LinuCHIx, México (2006-2007)</h3>
+                    <p>Fundador y presidente de la Asociación de Usuarios de Software Libre de la Universidad Politécnica de Chiapas. Impartición de cursos y gestión del Centro Linux-IBM.</p>
+                </div>
+                <div class="project-card">
+                    <h3>ARJBackup (1997)</h3>
+                    <p>Uno de mis primeros programas públicos, publicado en la revista PCActual, sección "Torre de Babel". Programa de copias de seguridad escrito en C++.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer id="contacto">
+        <div class="container">
+            <p>Este espacio está dedicado a compartir conocimiento y herramientas bajo filosofías de código abierto.</p>
+            <p>Puedes encontrar más proyectos activos en <a href="https://github.com/javi-jimenez" style="color: var(--primary);">mi GitHub</a>.</p>
+            <p style="margin-top: 2rem;">© <span id="currentYear"></span> Francisco Javier Jiménez Gómez. Contenido bajo licencias open source.</p>
+        </div>
+    </footer>
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
+
