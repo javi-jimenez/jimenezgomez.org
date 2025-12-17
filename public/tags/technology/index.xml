@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Technology on Francisco Javier Jiménez Gómez</title>
+        <link>http://localhost:1313/tags/technology/</link>
+        <description>Recent content in Technology on Francisco Javier Jiménez Gómez</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>es</language>
+        <copyright>Francisco Javier Jiménez Gómez</copyright>
+        <lastBuildDate>Thu, 19 Oct 2023 20:38:00 +0200</lastBuildDate><atom:link href="http://localhost:1313/tags/technology/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Computer Science base technologies, part II</title>
+        <link>http://localhost:1313/posts/2023-10-19-computer-science-base-technologies-2/</link>
+        <pubDate>Thu, 19 Oct 2023 20:38:00 +0200</pubDate>
+        
+        <guid>http://localhost:1313/posts/2023-10-19-computer-science-base-technologies-2/</guid>
+        <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/posts/2023-10-19-computer-science-base-technologies-2/low-code-example-app-for-reading-dht22-data-from-api.png&#34;
+	width=&#34;1270&#34;
+	height=&#34;863&#34;
+	srcset=&#34;http://localhost:1313/posts/2023-10-19-computer-science-base-technologies-2/low-code-example-app-for-reading-dht22-data-from-api_hu_4f6bc6134d5154bf.png 480w, http://localhost:1313/posts/2023-10-19-computer-science-base-technologies-2/low-code-example-app-for-reading-dht22-data-from-api_hu_73d5028b4da26dd7.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Low code platform example for reading DHT22 data using an API&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;147&#34;
+		data-flex-basis=&#34;353px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;At the time of writing a program, you can think about many ideas for that, much of them can be very popular, but the least thing that you want, is to fight against code or deployments if you only want to build an app with a graphical interface for managing your data.&lt;/p&gt;
+&lt;p&gt;To align with that idea, you can use a tool for writing or wiring diagrams and convert them into executable code, understandable by a machine.&lt;/p&gt;
+&lt;p&gt;For that task, there is a growing innitiative right now, that can accomplish it with enough efficiency and speed.&lt;/p&gt;
+&lt;p&gt;If we recap, the basis of &amp;ldquo;programming&amp;rdquo; were to think and draw diagram flows, and following the algorithm logic, we have the &amp;ldquo;program&amp;rdquo;. Well, nowadays that can be done using low-code or no-code tools.&lt;/p&gt;
+&lt;p&gt;I know that many readers were thinking that the next thing I was going to talk about, after algorithms, was low-code/no-code, and they were right, here we are.&lt;/p&gt;
+&lt;p&gt;The basic idea for no-code is that you have not to write code, but there is the low-code, where you can or have to write a bit of code only, as oppositte to writing the full program as usually is done when programming. And the main point of this kind of tools is that you draw the application interface using a graphical view, and with this, you add functionality.&lt;/p&gt;
+&lt;p&gt;For simplification, I will write only no-code most of the time.&lt;/p&gt;
+&lt;p&gt;The key for understanding how it works, is that you can program using interfaces, using APIs.&lt;/p&gt;
+&lt;p&gt;For creating this kind of applications, first you usually add REST API queries for adding, deleting or some related operations, the APIs must exist, but this systems allow you to work with more kinds of data sources. Then you store the queries with a name and go to the next step, the design of the screens.&lt;/p&gt;
+&lt;p&gt;When creating the application, you can draw, for example, pannels, buttons, lists, or tables for your application. In most of the cases, the real underlying thing, that is generated with this kind of applications, is a web application.&lt;/p&gt;
+&lt;p&gt;For the screens, if you, for example, want to manage a list of items, you can draw a container for the list of items, then add an edit and delete button for each item and one unique button for adding items. Later you can draw another screen for the add/edit, including the related item fields being edited or added.&lt;/p&gt;
+&lt;p&gt;And the final step, for adding the desired behaviour, is to link the queries you created to actions in the designed application. For example, when you click on the delete button of a selected item, the action that you want to be performed is to delete the selected item, that is done by mean of creating a link between the item delete button and the generic query that you stored for deleting an item.&lt;/p&gt;
+&lt;p&gt;It is that simple.&lt;/p&gt;
+&lt;p&gt;You have built an application interface for managing your data.&lt;/p&gt;
+&lt;p&gt;With this kind of tools, you can build apps that use your preferred REST APIs, or other kinds or data sources, as we said.&lt;/p&gt;
+&lt;p&gt;And the last step is to publish your application.&lt;/p&gt;
+&lt;p&gt;With no-code applications, you can do that in an easy way, you have a button that says &amp;ldquo;Publish&amp;rdquo;, you click that button and your application gets published. It can be locally in a development URL, created by the same no-code application, or to remote hosts, depending on the chosen tool, and if your application deploys to develop or to production, you can choose which kind of deployment to do.&lt;/p&gt;
+&lt;p&gt;Today we finished explaining the concept of building graphical interfaces, for managing existing data, in an easy way. At the end, most of the time in computer programming, the tasks we do are related to processing data.&lt;/p&gt;
+&lt;p&gt;With this post, the fundamentals for allowing someone to write applications is complete.&lt;/p&gt;
+&lt;p&gt;I have to say that this kind of low-code or no-code applications have much more and complete features, this post is made for getting one of the basic ideas.&lt;/p&gt;
+&lt;p&gt;We will continue with interesting posts in a near future, now we have to take a rest and prepare all for finishing properly the year, and prepare the next one.&lt;/p&gt;
+&lt;p&gt;I am sure it will be plenty of good and interesting projects. The AI is right now in the next door.&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Computer Science base technologies, part I</title>
+        <link>http://localhost:1313/posts/2023-10-18-computer-science-base-technologies/</link>
+        <pubDate>Wed, 18 Oct 2023 20:49:00 +0200</pubDate>
+        
+        <guid>http://localhost:1313/posts/2023-10-18-computer-science-base-technologies/</guid>
+        <description>&lt;style&gt;
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+&lt;/style&gt;
+&lt;img src=&#34;flowchart-concept.webp&#34; alt=&#34;Flowchart concept&#34;&gt;
+&lt;p&gt;There is some knowledge, that you already have, for being a good computer science engineer.&lt;/p&gt;
+&lt;p&gt;That knowledge come from time ago, when the name of &lt;a class=&#34;link&#34; href=&#34;https://en.wikipedia.org/wiki/Al-Khwarizmi&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;em&gt;Al-Khwarizmi&lt;/em&gt;&lt;/a&gt; made possible the term &lt;em&gt;algorithm&lt;/em&gt;.&lt;/p&gt;
+&lt;img src=&#34;Al_Khorezmy.jpg&#34; alt=&#34;Wikipedia: Al Khwarizmi&#34; width=&#34;50%&#34;&gt;
+&lt;p&gt;All people is able to think about algorithms, we do it constantly, when we plan for a sequence of steps and take into account some possible conditions and routes that the facts could drive us to.&lt;/p&gt;
+&lt;p&gt;That would be the very first step in &amp;lsquo;programming&amp;rsquo; computers, thinking about algorithms.&lt;/p&gt;
+&lt;p&gt;To the end, the purpose of programming is to tell to the computer, what we want that it do for us.&lt;/p&gt;
+&lt;p&gt;If you think in algorithms and you plan to tell it to a computer, for it do it for you, you are programming.&lt;/p&gt;
+&lt;p&gt;An important step is how to tell to the machine that it has to do what you planned in your algorithm, perhaps, drawed in a paper.&lt;/p&gt;
+&lt;p&gt;You can write down on paper a list of steps or you can make a drawing with that list of steps.&lt;/p&gt;
+&lt;p&gt;If you drawed it on paper, perhaps you have something similar to a &lt;a class=&#34;link&#34; href=&#34;https://en.wikipedia.org/wiki/Flowchart&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;flowchart&lt;/a&gt;.&lt;/p&gt;
+&lt;img src=&#34;LampFlowchart.svg.png&#34; alt=&#34;Wikipedia: Flowchart&#34; width=&#34;50%&#34;&gt;
+&lt;p&gt;That is the first step in the programming computer path.&lt;/p&gt;
+&lt;p&gt;All people is able to do it, and could be doing it right now.&lt;/p&gt;
+&lt;p&gt;But, as fire usages inventions, things could improve and become really complex.&lt;/p&gt;
+&lt;p&gt;Perhaps this night, James Wright could be relaxed, thinking about his ideas, when he takes a rest and sits around a bonfire waiting for enjoying his cooked food.&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Why to improve? part 3. Base materials for Computer Engineers</title>
+        <link>http://localhost:1313/posts/2023-10-14-why-to-improve-3-base-materials-for-computer-engineers/</link>
+        <pubDate>Sat, 14 Oct 2023 12:18:00 +0200</pubDate>
+        
+        <guid>http://localhost:1313/posts/2023-10-14-why-to-improve-3-base-materials-for-computer-engineers/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Why to improve? part 2. Technologies and the look for the base knowledge</title>
+        <link>http://localhost:1313/posts/2023-10-13-why-to-improve-2-look-for-base-technologies/</link>
+        <pubDate>Fri, 13 Oct 2023 23:18:00 +0200</pubDate>
+        
+        <guid>http://localhost:1313/posts/2023-10-13-why-to-improve-2-look-for-base-technologies/</guid>
+        <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/posts/2023-10-13-why-to-improve-2-look-for-base-technologies/light-bulb-book.webp&#34;
+	width=&#34;1024&#34;
+	height=&#34;682&#34;
+	srcset=&#34;http://localhost:1313/posts/2023-10-13-why-to-improve-2-look-for-base-technologies/light-bulb-book_hu_dcc25ae0ce4e573b.webp 480w, http://localhost:1313/posts/2023-10-13-why-to-improve-2-look-for-base-technologies/light-bulb-book_hu_b0375d28bec578f6.webp 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Light Bulb Book&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;150&#34;
+		data-flex-basis=&#34;360px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;Today James Wright gets to the rest time of the day, tired but happy. He knows that he did it well, the better he could do it.&lt;/p&gt;
+&lt;p&gt;Before going to sleep, he begins to think about questions related to the fact that technologies are getting more and more advanced, to the point, that some knowledge is getting obsolete before it could reach to some audiences.&lt;/p&gt;
+&lt;p&gt;He thinks that the point now is to know beforehand, which are the trends right now, or better, what should you have to know to be on the rise. The better response that he can think about, is the one that all we know: &amp;ldquo;prepare yourself the better you can&amp;rdquo;. And the next question is: &amp;ldquo;What would you have to study or read to be prepared for the next years?&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;There is a response, that he thinks, that can be of help here, that is, to acquire all the &lt;em&gt;base&lt;/em&gt; knowledge that you can. You must look for the base books and techniques. Perhaps, he thinks, we are lost in the bunch of stuff that plagues the media, sometimes, we found repeated the same concept, in different forms, in different formats. The problem now is: &amp;ldquo;How to know which materials are the base or fundamentals of each subject?&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;Perhaps an example can be of help. When you are studying the C language, you can get one or more related books or materials, they can be the most accessible ones, the most &lt;em&gt;convenient&lt;/em&gt;, but you may be hesitant to treat them as original sources. We probably have not a clear way to know that fact in the beginnings, due to the amount of related information.&lt;/p&gt;
+&lt;p&gt;You can read that related information and, perhaps, you could think that it does not solve the problem in the proper way, that is what happens to James from time to time, it is really overwhelming, and the materials could lack some important points and concepts.&lt;/p&gt;
+&lt;p&gt;Later, after looking for the main source, you could find a book, which you can consider as a base:&lt;/p&gt;
+&lt;p&gt;“The C Programming Language.” Accessed October 13, 2023. &lt;a class=&#34;link&#34; href=&#34;https://www.goodreads.com/book/show/515601&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www.goodreads.com/book/show/515601&lt;/a&gt;.The_C_Programming_Language.&lt;/p&gt;
+&lt;p&gt;You get it and go to read it.&lt;/p&gt;
+&lt;p&gt;You can be interested in reading, for example, a key chapter as the 5th: &amp;ldquo;Pointers and Arrays&amp;rdquo;, page 93, and you find that in the first section it is talking about &amp;ldquo;Pointers and Addresses&amp;rdquo;, just the complicated and relevant topic we were waiting for.&lt;/p&gt;
+&lt;p&gt;After the first read, you can see the difference, as it is between night and day, icy and warm, or sour and sweet, compared to other books or contents.&lt;/p&gt;
+&lt;p&gt;You realize that in the first read.&lt;/p&gt;
+&lt;p&gt;You can finally really understand what the pointers are, which is the underlying concept, its core meaning and the wide sense of the term and implications. Furthermore, you can be really happy by understanding it, and perhaps you can get a good taste and, remember forever, the clear explanation, and some pictures accompanying the explanation, which could help in clarifying the concept.&lt;/p&gt;
+&lt;p&gt;By that reason, James thinks, that it is necessary to look at the original sources in your researches.&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

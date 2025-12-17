@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Web on Francisco Javier Jiménez Gómez</title>
+        <link>http://localhost:1313/tags/web/</link>
+        <description>Recent content in Web on Francisco Javier Jiménez Gómez</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>es</language>
+        <copyright>Francisco Javier Jiménez Gómez</copyright>
+        <lastBuildDate>Fri, 10 May 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/web/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Optimización Web: buenas prácticas</title>
+        <link>http://localhost:1313/posts/2024-05-10-second/</link>
+        <pubDate>Fri, 10 May 2024 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/posts/2024-05-10-second/</guid>
+        <description>&lt;p&gt;Este post trata sobre buenas prácticas para optimizar sitios web: carga diferida, compresión, uso responsable de fuentes y más.&lt;/p&gt;
+&lt;h3 id=&#34;puntos-clave&#34;&gt;Puntos clave
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;Reducir payloads.&lt;/li&gt;
+&lt;li&gt;Priorizar contenido visible.&lt;/li&gt;
+&lt;li&gt;Medir con herramientas reales.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+        </item>
+        
+    </channel>
+</rss>

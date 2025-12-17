@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="\nAt the time of writing a program, you can think about many ideas for that, much of them can be very popular, but the least thing that you want, is to fight against code or deployments if you only want to build an app with a graphical interface for managing your data.\nTo align with that idea, you can use a tool for writing or wiring diagrams and convert them into executable code, understandable by a machine.\n">
+<title>Computer Science base technologies, part II</title>
+
+<link rel='canonical' href='http://localhost:1313/posts/2023-10-19-computer-science-base-technologies-2/'>
+
+<link rel="stylesheet" href="/scss/style.min.b0e76e98cdd4f7082d1fc36f7af7e0843a81201db2197c03ca426751dc923735.css"><meta property='og:title' content="Computer Science base technologies, part II">
+<meta property='og:description' content="\nAt the time of writing a program, you can think about many ideas for that, much of them can be very popular, but the least thing that you want, is to fight against code or deployments if you only want to build an app with a graphical interface for managing your data.\nTo align with that idea, you can use a tool for writing or wiring diagrams and convert them into executable code, understandable by a machine.\n">
+<meta property='og:url' content='http://localhost:1313/posts/2023-10-19-computer-science-base-technologies-2/'>
+<meta property='og:site_name' content='Francisco Javier Jiménez Gómez'>
+<meta property='og:type' content='article'><meta property='article:section' content='Posts' /><meta property='article:tag' content='technology' /><meta property='article:tag' content='knowledge' /><meta property='article:tag' content='base' /><meta property='article:tag' content='core' /><meta property='article:tag' content='uml' /><meta property='article:tag' content='flowchart' /><meta property='article:published_time' content='2023-10-19T20:38:00&#43;02:00'/><meta property='article:modified_time' content='2023-10-19T20:38:00&#43;02:00'/>
+<meta name="twitter:title" content="Computer Science base technologies, part II">
+<meta name="twitter:description" content="\nAt the time of writing a program, you can think about many ideas for that, much of them can be very popular, but the least thing that you want, is to fight against code or deployments if you only want to build an app with a graphical interface for managing your data.\nTo align with that idea, you can use a tool for writing or wiring diagrams and convert them into executable code, understandable by a machine.\n">
+    <link rel="shortcut icon" href="/img/favicon.ico" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu_abe15a945d43f659.png" width="300"
+                            height="286" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">💻</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">Francisco Javier Jiménez Gómez</a></h1>
+            <h2 class="site-description">Software Architecture &amp; Open Source</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/javi-jimenez'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://linkedin.com/in/ximenezfrancisco'
+                        target="_blank"
+                        title="LinkedIn"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-linkedin" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <rect x="4" y="4" width="16" height="16" rx="2" />
+  <line x1="8" y1="11" x2="8" y2="16" />
+  <line x1="8" y1="8" x2="8" y2="8.01" />
+  <line x1="12" y1="16" x2="12" y2="11" />
+  <path d="M16 16v-3a2 2 0 0 0 -4 0" />
+</svg>
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com/Lubok9'
+                        target="_blank"
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/about/' >
+                
+                
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>Dark Mode</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/writing/" >
+                Writing
+            </a>
+        
+            <a href="/categories/book/" >
+                Book
+            </a>
+        
+            <a href="/categories/technology/" >
+                Technology
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/posts/2023-10-19-computer-science-base-technologies-2/">Computer Science base technologies, part II</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published" datetime='2023-10-19T20:38:00&#43;02:00'>Oct 19, 2023</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    4 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p><img src="/posts/2023-10-19-computer-science-base-technologies-2/low-code-example-app-for-reading-dht22-data-from-api.png"
+	width="1270"
+	height="863"
+	srcset="/posts/2023-10-19-computer-science-base-technologies-2/low-code-example-app-for-reading-dht22-data-from-api_hu_4f6bc6134d5154bf.png 480w, /posts/2023-10-19-computer-science-base-technologies-2/low-code-example-app-for-reading-dht22-data-from-api_hu_73d5028b4da26dd7.png 1024w"
+	loading="lazy"
+	
+		alt="Low code platform example for reading DHT22 data using an API"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="147"
+		data-flex-basis="353px"
+	
+></p>
+<p>At the time of writing a program, you can think about many ideas for that, much of them can be very popular, but the least thing that you want, is to fight against code or deployments if you only want to build an app with a graphical interface for managing your data.</p>
+<p>To align with that idea, you can use a tool for writing or wiring diagrams and convert them into executable code, understandable by a machine.</p>
+<p>For that task, there is a growing innitiative right now, that can accomplish it with enough efficiency and speed.</p>
+<p>If we recap, the basis of &ldquo;programming&rdquo; were to think and draw diagram flows, and following the algorithm logic, we have the &ldquo;program&rdquo;. Well, nowadays that can be done using low-code or no-code tools.</p>
+<p>I know that many readers were thinking that the next thing I was going to talk about, after algorithms, was low-code/no-code, and they were right, here we are.</p>
+<p>The basic idea for no-code is that you have not to write code, but there is the low-code, where you can or have to write a bit of code only, as oppositte to writing the full program as usually is done when programming. And the main point of this kind of tools is that you draw the application interface using a graphical view, and with this, you add functionality.</p>
+<p>For simplification, I will write only no-code most of the time.</p>
+<p>The key for understanding how it works, is that you can program using interfaces, using APIs.</p>
+<p>For creating this kind of applications, first you usually add REST API queries for adding, deleting or some related operations, the APIs must exist, but this systems allow you to work with more kinds of data sources. Then you store the queries with a name and go to the next step, the design of the screens.</p>
+<p>When creating the application, you can draw, for example, pannels, buttons, lists, or tables for your application. In most of the cases, the real underlying thing, that is generated with this kind of applications, is a web application.</p>
+<p>For the screens, if you, for example, want to manage a list of items, you can draw a container for the list of items, then add an edit and delete button for each item and one unique button for adding items. Later you can draw another screen for the add/edit, including the related item fields being edited or added.</p>
+<p>And the final step, for adding the desired behaviour, is to link the queries you created to actions in the designed application. For example, when you click on the delete button of a selected item, the action that you want to be performed is to delete the selected item, that is done by mean of creating a link between the item delete button and the generic query that you stored for deleting an item.</p>
+<p>It is that simple.</p>
+<p>You have built an application interface for managing your data.</p>
+<p>With this kind of tools, you can build apps that use your preferred REST APIs, or other kinds or data sources, as we said.</p>
+<p>And the last step is to publish your application.</p>
+<p>With no-code applications, you can do that in an easy way, you have a button that says &ldquo;Publish&rdquo;, you click that button and your application gets published. It can be locally in a development URL, created by the same no-code application, or to remote hosts, depending on the chosen tool, and if your application deploys to develop or to production, you can choose which kind of deployment to do.</p>
+<p>Today we finished explaining the concept of building graphical interfaces, for managing existing data, in an easy way. At the end, most of the time in computer programming, the tasks we do are related to processing data.</p>
+<p>With this post, the fundamentals for allowing someone to write applications is complete.</p>
+<p>I have to say that this kind of low-code or no-code applications have much more and complete features, this post is made for getting one of the basic ideas.</p>
+<p>We will continue with interesting posts in a near future, now we have to take a rest and prepare all for finishing properly the year, and prepare the next one.</p>
+<p>I am sure it will be plenty of good and interesting projects. The AI is right now in the next door.</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/technology/">Technology</a>
+        
+            <a href="/tags/knowledge/">Knowledge</a>
+        
+            <a href="/tags/base/">Base</a>
+        
+            <a href="/tags/core/">Core</a>
+        
+            <a href="/tags/uml/">Uml</a>
+        
+            <a href="/tags/flowchart/">Flowchart</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">Related content</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/posts/2023-10-18-computer-science-base-technologies/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Computer Science base technologies, part I</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/posts/2023-10-14-why-to-improve-3-base-materials-for-computer-engineers/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Why to improve? part 3. Base materials for Computer Engineers</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/posts/2023-10-13-why-to-improve-2-look-for-base-technologies/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Why to improve? part 2. Technologies and the look for the base knowledge</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2025 Francisco Javier Jiménez Gómez
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.32.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.628c773f6dcceb7d79571d48660443df72f948b603d1647a8e1a71099fe0ec1b.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
