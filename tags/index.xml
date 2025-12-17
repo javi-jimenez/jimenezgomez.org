@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Tags on Francisco Javier Jiménez Gómez</title>
+        <link>http://localhost:1313/tags/</link>
+        <description>Recent content in Tags on Francisco Javier Jiménez Gómez</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>es</language>
+        <copyright>Francisco Javier Jiménez Gómez</copyright>
+        <lastBuildDate>Tue, 14 May 2024 00:00:00 +0200</lastBuildDate><atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Howto</title>
+        <link>http://localhost:1313/tags/howto/</link>
+        <pubDate>Tue, 14 May 2024 00:00:00 +0200</pubDate>
+        
+        <guid>http://localhost:1313/tags/howto/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Improve</title>
+        <link>http://localhost:1313/tags/improve/</link>
+        <pubDate>Tue, 14 May 2024 00:00:00 +0200</pubDate>
+        
+        <guid>http://localhost:1313/tags/improve/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Knowledge</title>
+        <link>http://localhost:1313/tags/knowledge/</link>
+        <pubDate>Tue, 14 May 2024 00:00:00 +0200</pubDate>
+        
+        <guid>http://localhost:1313/tags/knowledge/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Performance</title>
+        <link>http://localhost:1313/tags/performance/</link>
+        <pubDate>Fri, 10 May 2024 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/tags/performance/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Web</title>
+        <link>http://localhost:1313/tags/web/</link>
+        <pubDate>Fri, 10 May 2024 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/tags/web/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Fractal</title>
+        <link>http://localhost:1313/tags/fractal/</link>
+        <pubDate>Sun, 31 Mar 2024 20:52:00 +0200</pubDate>
+        
+        <guid>http://localhost:1313/tags/fractal/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Layer</title>
+        <link>http://localhost:1313/tags/layer/</link>
+        <pubDate>Sun, 31 Mar 2024 20:52:00 +0200</pubDate>
+        
+        <guid>http://localhost:1313/tags/layer/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Microservice</title>
+        <link>http://localhost:1313/tags/microservice/</link>
+        <pubDate>Sun, 24 Dec 2023 00:00:00 +0200</pubDate>
+        
+        <guid>http://localhost:1313/tags/microservice/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Monolith</title>
+        <link>http://localhost:1313/tags/monolith/</link>
+        <pubDate>Sun, 24 Dec 2023 00:00:00 +0200</pubDate>
+        
+        <guid>http://localhost:1313/tags/monolith/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Base</title>
+        <link>http://localhost:1313/tags/base/</link>
+        <pubDate>Thu, 19 Oct 2023 20:38:00 +0200</pubDate>
+        
+        <guid>http://localhost:1313/tags/base/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Core</title>
+        <link>http://localhost:1313/tags/core/</link>
+        <pubDate>Thu, 19 Oct 2023 20:38:00 +0200</pubDate>
+        
+        <guid>http://localhost:1313/tags/core/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Flowchart</title>
+        <link>http://localhost:1313/tags/flowchart/</link>
+        <pubDate>Thu, 19 Oct 2023 20:38:00 +0200</pubDate>
+        
+        <guid>http://localhost:1313/tags/flowchart/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Technology</title>
+        <link>http://localhost:1313/tags/technology/</link>
+        <pubDate>Thu, 19 Oct 2023 20:38:00 +0200</pubDate>
+        
+        <guid>http://localhost:1313/tags/technology/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Uml</title>
+        <link>http://localhost:1313/tags/uml/</link>
+        <pubDate>Thu, 19 Oct 2023 20:38:00 +0200</pubDate>
+        
+        <guid>http://localhost:1313/tags/uml/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Materials</title>
+        <link>http://localhost:1313/tags/materials/</link>
+        <pubDate>Sat, 14 Oct 2023 12:18:00 +0200</pubDate>
+        
+        <guid>http://localhost:1313/tags/materials/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Quote</title>
+        <link>http://localhost:1313/tags/quote/</link>
+        <pubDate>Sat, 01 Jul 2023 05:33:00 +0200</pubDate>
+        
+        <guid>http://localhost:1313/tags/quote/</guid>
+        <description></description>
+        </item>
+        
+    </channel>
+</rss>

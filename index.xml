@@ -1,0 +1,673 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Francisco Javier Jiménez Gómez</title>
+        <link>http://localhost:1313/</link>
+        <description>Recent content on Francisco Javier Jiménez Gómez</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>es</language>
+        <copyright>Francisco Javier Jiménez Gómez</copyright>
+        <lastBuildDate>Wed, 17 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>About</title>
+        <link>http://localhost:1313/about/</link>
+        <pubDate>Wed, 17 Dec 2025 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/about/</guid>
+        <description>&lt;h1 id=&#34;francisco-javier-jiménez-gómez&#34;&gt;Francisco Javier Jiménez Gómez
+&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;Arquitecto de Seguridad &amp;amp; Desarrollador Senior&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Especialista en Análisis Estático de Código (SAST), Auditorías de Seguridad, Ciclo de Vida de Desarrollo Seguro (S-SDLC) e Inteligencia Artificial Ética. Más de 15 años de experiencia liderando proyectos tecnológicos complejos.&lt;/p&gt;
+&lt;p&gt;📍 España&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;certificaciones&#34;&gt;Certificaciones
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;CISM Certified&lt;/strong&gt; - Certified Information Security Manager&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;AWS Solutions Architect&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Scrum Manager&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;OWASP Top 10 Trainer&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;experiencia-profesional&#34;&gt;Experiencia Profesional
+&lt;/h2&gt;&lt;h3 id=&#34;arquitecto-de-seguridad-y-desarrollador&#34;&gt;Arquitecto de Seguridad y Desarrollador
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Consultor Independiente / Brisecom&lt;/strong&gt; · 2020 - Presente&lt;/p&gt;
+&lt;p&gt;Liderazgo en auditorías de seguridad del código fuente (SAST) utilizando herramientas automatizadas y scripts personalizados. Diseño de arquitecturas seguras a partir del análisis de código y realización de análisis de amenazas (Threat Analysis).&lt;/p&gt;
+&lt;p&gt;Impartición del curso &amp;ldquo;OWASP Top 10&amp;rdquo; y asesoría en la implementación de Ciclos de Vida de Desarrollo Seguro de Software (S-SDLC) para equipos DevOps y desarrolladores.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Tecnologías:&lt;/strong&gt; SAST, Threat Modeling, DevSecOps, OWASP, S-SDLC&lt;/p&gt;
+&lt;h3 id=&#34;programador-senior-java&#34;&gt;Programador Senior Java
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Clever Global (antes iSOCO)&lt;/strong&gt; · 2015 - 2019&lt;/p&gt;
+&lt;p&gt;Desarrollo principal en el equipo de vista con JSF para la plataforma SerCAE ONE de Endesa. Implementación de microservicios con Docker, gestión de calidad con SonarQube y uso de metodologías Ágiles.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Tecnologías:&lt;/strong&gt; Java, JSF, Spring, Docker, Microservicios, SonarQube&lt;/p&gt;
+&lt;h3 id=&#34;programador-open-source&#34;&gt;Programador Open Source
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Fundació guifi.net &amp;amp; UPC&lt;/strong&gt; · 2013 - 2014&lt;/p&gt;
+&lt;p&gt;Desarrollador principal en proyectos europeos Clommunity y CONFINE sobre redes comunitarias. Contribuciones significativas al ecosistema de software libre y telecomunicaciones comunitarias.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Tecnologías:&lt;/strong&gt; Linux, Open Source, Redes Comunitarias, LXC&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;habilidades-técnicas&#34;&gt;Habilidades Técnicas
+&lt;/h2&gt;&lt;h3 id=&#34;-seguridad--devsecops&#34;&gt;🛡️ Seguridad &amp;amp; DevSecOps
+&lt;/h3&gt;&lt;p&gt;SAST/DAST · Auditoría de Código · Threat Analysis · S-SDLC · OWASP Top 10 · CISM · AWS Security&lt;/p&gt;
+&lt;h3 id=&#34;-programación--frameworks&#34;&gt;💻 Programación &amp;amp; Frameworks
+&lt;/h3&gt;&lt;p&gt;Java · Spring/Spring Boot · JavaScript · Python · JSF · Hibernate · C/C++&lt;/p&gt;
+&lt;h3 id=&#34;-cloud--infraestructura&#34;&gt;☁️ Cloud &amp;amp; Infraestructura
+&lt;/h3&gt;&lt;p&gt;AWS Solutions Architect · Docker · Linux Admin · Git · CI/CD (Jenkins) · MySQL/PostgreSQL&lt;/p&gt;
+&lt;h3 id=&#34;-idiomas&#34;&gt;🗣️ Idiomas
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Español&lt;/strong&gt; - Nativo (C2)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Inglés&lt;/strong&gt; - Avanzado (C1)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Valenciano&lt;/strong&gt; - Avanzado (C1)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;proyectos-destacados&#34;&gt;Proyectos Destacados
+&lt;/h2&gt;&lt;h3 id=&#34;distribución-linux-cloud-gcodis&#34;&gt;Distribución Linux Cloud &amp;ldquo;gcodis&amp;rdquo;
+&lt;/h3&gt;&lt;p&gt;Distribución basada en Debian GNU/Linux optimizada para entornos cloud, utilizando LXC y Docker. Proyecto open source enfocado en la eficiencia de recursos y despliegue rápido.&lt;/p&gt;
+&lt;p&gt;🔗 &lt;a class=&#34;link&#34; href=&#34;http://www.github.com/javi-jimenez/gcodis.git&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Código en GitHub&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;caché-dns-distribuido-ddnsc&#34;&gt;Caché DNS Distribuido &amp;ldquo;ddnsc&amp;rdquo;
+&lt;/h3&gt;&lt;p&gt;Sistema de caché DNS distribuido para publicación de servicios, implementado completamente en shell script. Solución ligera para redes descentralizadas.&lt;/p&gt;
+&lt;p&gt;🔗 &lt;a class=&#34;link&#34; href=&#34;http://www.github.com/javi-jimenez/ddnsc.git&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Código en GitHub&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;portal-demo-tienda-online-store&#34;&gt;Portal Demo Tienda Online &amp;ldquo;store&amp;rdquo;
+&lt;/h3&gt;&lt;p&gt;Aplicación demo completa de tienda online desarrollada en Java con JSF e Hibernate. Ejemplo de arquitectura empresarial para formación y demostración.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;contacto&#34;&gt;Contacto
+&lt;/h2&gt;&lt;p&gt;¿Interesado en colaborar en proyectos de seguridad, desarrollo seguro o ética en IA? No dudes en contactarme.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;💼 LinkedIn: &lt;a class=&#34;link&#34; href=&#34;https://www.linkedin.com/in/ximenezfrancisco/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;ximenezfrancisco&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;🐙 GitHub: &lt;a class=&#34;link&#34; href=&#34;https://github.com/javi-jimenez&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;javi-jimenez&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;🐦 Twitter: &lt;a class=&#34;link&#34; href=&#34;https://twitter.com/Lubok9&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;@Lubok9&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>Archives</title>
+        <link>http://localhost:1313/archives/</link>
+        <pubDate>Wed, 17 Dec 2025 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/archives/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>SPA blog in one file</title>
+        <link>http://localhost:1313/posts/2025-12-02-08-54-spa-blog-in-one-file/</link>
+        <pubDate>Tue, 02 Dec 2025 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/posts/2025-12-02-08-54-spa-blog-in-one-file/</guid>
+        <description>&lt;style&gt;
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+&lt;/style&gt;
+&lt;p&gt;Recently I tried to generate a unique web page for showing my blog posts, without SSG (Static Site Generators).&lt;/p&gt;
+&lt;img src=&#34;./2025-12-02_08-55-blog-in-a-file.png&#34; alt=&#34;SPA - Blog viewed with one only page&#34;&gt;
+&lt;p&gt;The result, after many iterations, is an unique file &lt;code&gt;index.html&lt;/code&gt; that reads posts from one directory, convert it to HTML and use the images in that directory with relative links.&lt;/p&gt;
+&lt;p&gt;I can change the style telling it to the AI. You can do some new versions depending on the next holidays, for summer, beach, Christmas and all that.&lt;/p&gt;
+&lt;p&gt;It is a first approach for what can be done, without having to fight with compiling and libraries.&lt;/p&gt;
+&lt;p&gt;It is really easy and AI is improving a lot from second to second, it is amazing and an inmense advantage for whatever human field.&lt;/p&gt;
+&lt;p&gt;I will continue researching about practical applications of the AI.&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Apps</title>
+        <link>http://localhost:1313/posts/2025-05-16-apps/</link>
+        <pubDate>Fri, 16 May 2025 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/posts/2025-05-16-apps/</guid>
+        <description>&lt;style&gt;
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+&lt;/style&gt;
+&lt;h2 id=&#34;apps&#34;&gt;Apps
+&lt;/h2&gt;&lt;p&gt;Some apps I like:&lt;/p&gt;
+&lt;h3 id=&#34;visual-studio-code&#34;&gt;Visual Studio Code
+&lt;/h3&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://code.visualstudio.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://code.visualstudio.com/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;A good choice for generating code, using git and editing markdown files.&lt;/p&gt;
+&lt;p&gt;It is good too for managing and generating code in Python, Java, Go, JavaScript, HTML and other web languages.&lt;/p&gt;
+&lt;p&gt;It has many integrations and allows working remotely using &amp;ldquo;Remotes&amp;rdquo;, including working inside containers as pre-built development environments.&lt;/p&gt;
+&lt;h3 id=&#34;floccus&#34;&gt;Floccus
+&lt;/h3&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://floccus.org/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://floccus.org/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;It is a browser bookmark manager.&lt;/p&gt;
+&lt;p&gt;The resulting bookmarks can be copied to other locations, and use that technique for syncronizing between browsers from different organizations.&lt;/p&gt;
+&lt;img src=&#34;floccus-bookmark-manager-with-backup-and-sync-using-files-syncronization-options-after-installing-2025-05-16_12-53.png&#34; alt=&#34;Floccus - Syncronization options after installing browser plugin&#34;&gt;
+&lt;p&gt;Easy and trivial for installing and using it.&lt;/p&gt;
+&lt;p&gt;It has the lower possible dependencies. For storing bookmarks locally, you only have to install it, and that is it, but if you install and do not use more than that, you are not getting the full power.&lt;/p&gt;
+&lt;p&gt;After storing the bookmarks using floccus, you have the chance, using app menus, of storing those bookmarks in many places, for bakcup or syncronization purposes.&lt;/p&gt;
+&lt;p&gt;It is installable in browsers as (202505161246):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Firefox&lt;/li&gt;
+&lt;li&gt;Edge&lt;/li&gt;
+&lt;li&gt;Chrome&lt;/li&gt;
+&lt;li&gt;Android&lt;/li&gt;
+&lt;li&gt;iOS&lt;/li&gt;
+&lt;li&gt;Sources (you cant get them for customization)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;It supports syncronization (20250517) with:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Nextcloud Bookmarks&lt;/li&gt;
+&lt;li&gt;LinkWarden&lt;/li&gt;
+&lt;li&gt;WebDAV share&lt;/li&gt;
+&lt;li&gt;Git over HTTPS (for any git repository as local git, GitHub, Gitea, GitLab, and others)&lt;/li&gt;
+&lt;li&gt;Google Drive&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>Vera Architecture</title>
+        <link>http://localhost:1313/posts/2025-04-04-vero-architecture/</link>
+        <pubDate>Fri, 04 Apr 2025 11:09:00 +0200</pubDate>
+        
+        <guid>http://localhost:1313/posts/2025-04-04-vero-architecture/</guid>
+        <description>&lt;meta property=&#34;og:image&#34; content=&#34;vera-arch-202504041121.drawio.png&#34; alt=&#34;Vera Architecture&#34; /&gt;
+&lt;meta name=&#34;twitter:image&#34; content=&#34;vera-arch-202504041121.drawio.png&#34; alt=&#34;Vera Architecture&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/posts/2025-04-04-vero-architecture/vera-arch-202504041121.drawio.png&#34;
+	width=&#34;625&#34;
+	height=&#34;385&#34;
+	srcset=&#34;http://localhost:1313/posts/2025-04-04-vero-architecture/vera-arch-202504041121.drawio_hu_696cb654530ddb2a.png 480w, http://localhost:1313/posts/2025-04-04-vero-architecture/vera-arch-202504041121.drawio_hu_49db9c91c029c8de.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Vera Architecture&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;162&#34;
+		data-flex-basis=&#34;389px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;Vera Architecture or Vero Architecture, how it was called initially by me in around year 2000, is a software architecture based on interfaces and abstract data types (ADT).&lt;/p&gt;
+&lt;p&gt;It isolates the business logic from any kind of external data.&lt;/p&gt;
+&lt;p&gt;The core of the architecture is the business logic.&lt;/p&gt;
+&lt;p&gt;Internally the business logic defines and uses internal Abstract Data Types, which are data structures.&lt;/p&gt;
+&lt;p&gt;Externally there exists the data in some formats.&lt;/p&gt;
+&lt;p&gt;For communication between spaces, it uses SWIVELS, which are the core of the movable parts: business and data.&lt;/p&gt;
+&lt;p&gt;Nowadays, there is something similar called Hexagonal Architecture.&lt;/p&gt;
+&lt;p&gt;You can exchange in real-time the data parts, that allows, for example, to store data in a file, and later, switch to database without noticing it in the business.&lt;/p&gt;
+&lt;p&gt;Each node can be developed independently from one to another, you only take into account the interfaces, which are the same between all data nodes for a SWIVEL.&lt;/p&gt;
+&lt;p&gt;The uniformity in the data formats come from projects as schema.org, which tries to define which fields are common in objects as person, cinema or city, for example.&lt;/p&gt;
+&lt;p&gt;If you define the same object person in different applications, you can give uniformity to that using standarization formats as the provided by schema.org or similar projects, but you have to choose one of them, to avoid fragmentation.&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Minimal blog</title>
+        <link>http://localhost:1313/posts/2025-03-17-minimal-blog/</link>
+        <pubDate>Mon, 17 Mar 2025 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/posts/2025-03-17-minimal-blog/</guid>
+        <description>&lt;h2 id=&#34;minimal-blog&#34;&gt;Minimal blog
+&lt;/h2&gt;&lt;p&gt;We use Jekyll and GitHub for building a minimal blog.&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Desarrollo con LaIA</title>
+        <link>http://localhost:1313/posts/2025-02-25-ia-development-based/</link>
+        <pubDate>Tue, 25 Feb 2025 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/posts/2025-02-25-ia-development-based/</guid>
+        <description>&lt;p&gt;Recientemente recibí una propuesta para dedicar mi tiempo a un trabajo.&lt;/p&gt;
+&lt;p&gt;En la propuesta, al poco de comenzar las conversaciones, se incluyó un reto, crear un código con microservicios, usando arquitectura hexagonal, según comentaban.&lt;/p&gt;
+&lt;p&gt;Se me ocurrió, que dado que llevo muchísimas ofertas de trabajo revisadas y no he visto tal reto en alguna de ellas, hacer la tarea de la manera tan inusual en la que se propuso el inesperado reto, usando código generado por la inteligencia artificial, sería mi reto y pondría a prueba la efectividad de la misma.&lt;/p&gt;
+&lt;p&gt;Lo que hice fue copiar la descripción del problema que planteaban, que está en un repositorio de Github y dárselo a la Inteligencia Artificial, para que lo resolvierra, por que se trata de eso, que trabaje para nosotros, no nosotros para ella.&lt;/p&gt;
+&lt;p&gt;El código fue generado, revisado, para que al menos compilara y enviado a los responsables del reto. El resultado no les agradó, por que decían que querían ver cómo pensaba yo, para reproducirlo o comprenderlo, supongo. Me dijeron que lo revisase y hiciese algo de código a mano.&lt;/p&gt;
+&lt;p&gt;Realmente se comprende, que al estar acostumbrado a escribir código a mano, no se acepte por definición un código que no está escrito a mano, pero que resuelve el problema. Supongo que se quería poner a prueba lo que se indica en mi currículum y que se generar código, supongo, como hace la IA.&lt;/p&gt;
+&lt;p&gt;Lo que se me ocurrió, fue agregar funcionalidad, escribir un microservicio que no habían pedido, pero al ser una demo y un experimento personal que estaba haciendo yo, tampoco importaba mucho, por lo que se lo envié.&lt;/p&gt;
+&lt;p&gt;La respuesta la dieron con una IA, no respondí.&lt;/p&gt;
+&lt;p&gt;Y este es el resultado del experimento que hice, para tan inusual reto propuesto por los responsables.&lt;/p&gt;
+&lt;p&gt;La inteligencia artificial, es capaz de generar código para problemas que se le planteen, genera código funcional y completo, que se ajusta a la definición del problema.&lt;/p&gt;
+&lt;p&gt;El resultado se puede ampliar o modificar con consultas posteriores y genera nuevo código funcional, incorporando la modificación que le indiquemos.&lt;/p&gt;
+&lt;p&gt;Se debe especificar muy bien el problema, para que el ressultado sea ajustado a lo que se quiere.&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>How to improve</title>
+        <link>http://localhost:1313/posts/2024-05-14-how-to-improve/</link>
+        <pubDate>Tue, 14 May 2024 00:00:00 +0200</pubDate>
+        
+        <guid>http://localhost:1313/posts/2024-05-14-how-to-improve/</guid>
+        <description>&lt;!-- preview image on social media --&gt;
+&lt;meta property=&#34;og:image&#34; content=&#34;/assets/img/a.jpg&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/a.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;How to improve&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;Acquire knowledge
+Practice
+Questions
+Time resources
+Certification as objective
+Practice after certification&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Optimización Web: buenas prácticas</title>
+        <link>http://localhost:1313/posts/2024-05-10-second/</link>
+        <pubDate>Fri, 10 May 2024 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/posts/2024-05-10-second/</guid>
+        <description>&lt;p&gt;Este post trata sobre buenas prácticas para optimizar sitios web: carga diferida, compresión, uso responsable de fuentes y más.&lt;/p&gt;
+&lt;h3 id=&#34;puntos-clave&#34;&gt;Puntos clave
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;Reducir payloads.&lt;/li&gt;
+&lt;li&gt;Priorizar contenido visible.&lt;/li&gt;
+&lt;li&gt;Medir con herramientas reales.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+        </item>
+        <item>
+        <title>Three layers abstraction</title>
+        <link>http://localhost:1313/posts/2024-03-31-three-layers-abstraction/</link>
+        <pubDate>Sun, 31 Mar 2024 20:52:00 +0200</pubDate>
+        
+        <guid>http://localhost:1313/posts/2024-03-31-three-layers-abstraction/</guid>
+        <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/posts/2024-03-31-three-layers-abstraction/three-layers-as-leafs-gettyimages-1000px-157287379-2048x2048.jpg&#34;
+	width=&#34;1000&#34;
+	height=&#34;667&#34;
+	srcset=&#34;http://localhost:1313/posts/2024-03-31-three-layers-abstraction/three-layers-as-leafs-gettyimages-1000px-157287379-2048x2048_hu_e10b507ce78069a5.jpg 480w, http://localhost:1313/posts/2024-03-31-three-layers-abstraction/three-layers-as-leafs-gettyimages-1000px-157287379-2048x2048_hu_9afc46b1fd8fc6be.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Three Layers as Leafs&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;149&#34;
+		data-flex-basis=&#34;359px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;The software design can be simplified in three layers:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;View&lt;/li&gt;
+&lt;li&gt;Business&lt;/li&gt;
+&lt;li&gt;Data&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;For example, in a web application, you have:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;View, usually in JavaScript, HTML and CSS&lt;/li&gt;
+&lt;li&gt;Business, usually JavaScript or a backend API&lt;/li&gt;
+&lt;li&gt;Data, the pure data, that can be structured data as a database or a dictionary, for example&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If we want to stablish a relation between layers and Fractal Architecture, we can view the previous Business layer as composed of three layers:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;View, the backend API&lt;/li&gt;
+&lt;li&gt;Business, the Domain&lt;/li&gt;
+&lt;li&gt;Data, the objects that represent the underlying data&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In the initial decomposition, the Data layer can be seen again as a three layer design:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;View, the accepted commands and the REPL or API&lt;/li&gt;
+&lt;li&gt;Business, the internal logic or the database application&lt;/li&gt;
+&lt;li&gt;Data, the internal structures used by the application to effectively store the data&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;As you see, you can extend the concept to other domains.&lt;/p&gt;
+&lt;p&gt;This brief idea can be of help when we design or think about architecture.&lt;/p&gt;
+&lt;p&gt;Finally, to fit this idea into the Fractal Architecture, all three (or any you have) layers, must be considered as an atomic autonomous block with an input and an output, as a black box pattern.&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>VBD</title>
+        <link>http://localhost:1313/posts/2024-03-31-vbd/</link>
+        <pubDate>Sun, 31 Mar 2024 20:52:00 +0200</pubDate>
+        
+        <guid>http://localhost:1313/posts/2024-03-31-vbd/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Layers</title>
+        <link>http://localhost:1313/posts/2024-03-31-layers/</link>
+        <pubDate>Sun, 31 Mar 2024 20:44:00 +0200</pubDate>
+        
+        <guid>http://localhost:1313/posts/2024-03-31-layers/</guid>
+        <description>&lt;p xmlns:cc=&#34;http://creativecommons.org/ns#&#34; xmlns:dct=&#34;http://purl.org/dc/terms/&#34;&gt;&lt;a property=&#34;dct:title&#34; rel=&#34;cc:attributionURL&#34; href=&#34;https://github.com/javi-jimenez/posts/&#34;&gt;Posts&lt;/a&gt; by &lt;a rel=&#34;cc:attributionURL dct:creator&#34; property=&#34;cc:attributionName&#34; href=&#34;https://github.com/javi-jimenez&#34;&gt;Francisco Javier Jiménez Gómez&lt;/a&gt; is licensed under &lt;a href=&#34;https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1&#34; target=&#34;_blank&#34; rel=&#34;license noopener noreferrer&#34; style=&#34;display:inline-block;&#34;&gt;CC BY-NC-SA 4.0&lt;img style=&#34;height:22px!important;margin-left:3px;vertical-align:text-bottom;&#34; src=&#34;https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1&#34;&gt;&lt;img style=&#34;height:22px!important;margin-left:3px;vertical-align:text-bottom;&#34; src=&#34;https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1&#34;&gt;&lt;img style=&#34;height:22px!important;margin-left:3px;vertical-align:text-bottom;&#34; src=&#34;https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1&#34;&gt;&lt;img style=&#34;height:22px!important;margin-left:3px;vertical-align:text-bottom;&#34; src=&#34;https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>VBD, Fractal Architecture: View, Business and Data. Input and Output.</title>
+        <link>http://localhost:1313/posts/2024-03-31-vbd-fractal-architecture-view-business-and-data-input-and-output/</link>
+        <pubDate>Sun, 31 Mar 2024 20:44:00 +0200</pubDate>
+        
+        <guid>http://localhost:1313/posts/2024-03-31-vbd-fractal-architecture-view-business-and-data-input-and-output/</guid>
+        <description>&lt;meta property=&#34;og:image&#34; content=&#34;2024-03-31-vbd-fractal-architecture-view-business-and-data-input-and-output/fractal-maldelbrot-illustration-1000px-gettyimages-488635425-2048x2048.jpg&#34; /&gt;
+&lt;meta name=&#34;twitter:image&#34; content=&#34;2024-03-31-vbd-fractal-architecture-view-business-and-data-input-and-output/fractal-maldelbrot-illustration-1000px-gettyimages-488635425-2048x2048.jpg&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/posts/2024-03-31-vbd-fractal-architecture-view-business-and-data-input-and-output/fractal-maldelbrot-illustration-1000px-gettyimages-488635425-2048x2048.jpg&#34;
+	width=&#34;1000&#34;
+	height=&#34;750&#34;
+	srcset=&#34;http://localhost:1313/posts/2024-03-31-vbd-fractal-architecture-view-business-and-data-input-and-output/fractal-maldelbrot-illustration-1000px-gettyimages-488635425-2048x2048_hu_71538f2550c6dc83.jpg 480w, http://localhost:1313/posts/2024-03-31-vbd-fractal-architecture-view-business-and-data-input-and-output/fractal-maldelbrot-illustration-1000px-gettyimages-488635425-2048x2048_hu_50dd66516025c0b2.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Maldelbrot set&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;133&#34;
+		data-flex-basis=&#34;320px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;One of the main purpose of a computer system is to process data.&lt;/p&gt;
+&lt;p&gt;And the principle: data travels between services.&lt;/p&gt;
+&lt;p&gt;Applications have an input and an output:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Input, the application receives data&lt;/li&gt;
+&lt;li&gt;Internally the application process data&lt;/li&gt;
+&lt;li&gt;Output, after processing the data, the application produces an output.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;With this pattern, applications can be reduced to software that does input and produces output.&lt;/p&gt;
+&lt;p&gt;You are doing Fractal Architecture when you link the services, then you have a bigger system, sure, thats reasoning is trivial, but with this, your new system can be seen as an autonomous system. And that new system can be used in another bigger systems.&lt;/p&gt;
+&lt;p&gt;That can be replicated as in fractals, if you zoom, you see the same pattern over and over again.&lt;/p&gt;
+&lt;p&gt;If you try to extract that pattern from designs, you will find that it is usually repeated. This is related to Fractal Architecture.&lt;/p&gt;
+&lt;p&gt;If you see this from an holistic point of view, and you put the best effort in your application, with one specific and well designed functionallity, this lead us to a basic design principle: do one thing and do it well, as in the unix-like world.&lt;/p&gt;
+&lt;p&gt;This has deep implications in microservices, in the case where you design an autonomous service, for a single task and you put a lot of effort in doing that task really well.&lt;/p&gt;
+&lt;p&gt;You can then link microservices between them, using an orchestrator or not, the key point is to have services that do one task and do it well.&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Monoliths and microservices</title>
+        <link>http://localhost:1313/posts/2023-12-24-monoliths-and-microservices/</link>
+        <pubDate>Sun, 24 Dec 2023 00:00:00 +0200</pubDate>
+        
+        <guid>http://localhost:1313/posts/2023-12-24-monoliths-and-microservices/</guid>
+        <description>&lt;!-- preview image on social media --&gt;
+&lt;meta property=&#34;og:image&#34; content=&#34;2023-12-24-monoliths-and-microservices/inca-bricks-1000px.jpg&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/posts/2023-12-24-monoliths-and-microservices/inca-bricks-1000px.jpg&#34;
+	width=&#34;1000&#34;
+	height=&#34;1005&#34;
+	srcset=&#34;http://localhost:1313/posts/2023-12-24-monoliths-and-microservices/inca-bricks-1000px_hu_4ba43dc18399bd24.jpg 480w, http://localhost:1313/posts/2023-12-24-monoliths-and-microservices/inca-bricks-1000px_hu_cc9f36dc5358d227.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Monoliths and MicroServices&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;99&#34;
+		data-flex-basis=&#34;238px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;Monoliths are the first approach to an application build.&lt;/p&gt;
+&lt;p&gt;Microservices are the refinement and the evolution of monoliths.&lt;/p&gt;
+&lt;p&gt;If the system is designed carefuly from the begining, a system composed of microservices can be built. But the base is always a monolith, not as complex as some final products that must be converted to microservices.&lt;/p&gt;
+&lt;p&gt;Commonly, a monolith is a big microservice, that is, a complex system that must be divided or splitted into parts to manage it properly.&lt;/p&gt;
+&lt;p&gt;It happens the same as with files that compose an application, which have a lot of methods or are very complex, the recommendation is to reduce the size and complexity of the file. By that reason, big files and big applications, share the same principle (problem), complexity.&lt;/p&gt;
+&lt;p&gt;Microservices allow to reduce complexity, between other things.&lt;/p&gt;
+&lt;p&gt;A system composed with microservices and a monolith are, almost the same. The monolith calls to other funcionalities are made using libraries, the calls in a system composed by microservices are made using message queues, but in essence, it is the same.&lt;/p&gt;
+&lt;p&gt;The only difference is the way to call methods, or better said, to call funcionality.&lt;/p&gt;
+&lt;p&gt;Abstracting the concept, we can write an application that call to methods, but internally it is calling to other remote services, that has been doing from time ago.&lt;/p&gt;
+&lt;p&gt;If you want to center your efforts in architecture, you can design services that can be used to compose multiple big systems. That will allow you to think in sharing functionality. You must center your efforts in functionality, and you must design and build the minimal autonomous system. That minimal autonomous system must be perfected and reused. Microservices, with remote calls, ease this, in relation to distributing systems, but the diagram must be the same as with monoliths.&lt;/p&gt;
+&lt;p&gt;The base for reusing funcionality, modules, services or whatever is to build the minimal functionality in one module, an autonomous system.&lt;/p&gt;
+&lt;p&gt;The diagram in a monolith or a microservice must be the same, the only change is the way calls are made. You must abstract it the most you can to get that.&lt;/p&gt;
+&lt;p&gt;A requirement for making autonomous systems is to develop based on the use of interfaces. Today we know API, which is the same idea. A public face to the world.&lt;/p&gt;
+&lt;p&gt;As a final note I must to say that you must to specify the ADT or Abstract Data Type or your internal data structures, the allowed input and the allowed or expected output.&lt;/p&gt;
+&lt;p&gt;And as another useful tip: An interesting standarization of Abstract Data Types is the project schema.org, which contains vocabularies for including and standarize those data types. For example, you know what to expect when working with a postal address, it has a postal code, it is a street or other type of place, and similar things. With that, when you receive an Address compliant with schema.org, you know what the names of the fields are and which is the meaning of each field.&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Computer Science base technologies, part II</title>
+        <link>http://localhost:1313/posts/2023-10-19-computer-science-base-technologies-2/</link>
+        <pubDate>Thu, 19 Oct 2023 20:38:00 +0200</pubDate>
+        
+        <guid>http://localhost:1313/posts/2023-10-19-computer-science-base-technologies-2/</guid>
+        <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/posts/2023-10-19-computer-science-base-technologies-2/low-code-example-app-for-reading-dht22-data-from-api.png&#34;
+	width=&#34;1270&#34;
+	height=&#34;863&#34;
+	srcset=&#34;http://localhost:1313/posts/2023-10-19-computer-science-base-technologies-2/low-code-example-app-for-reading-dht22-data-from-api_hu_4f6bc6134d5154bf.png 480w, http://localhost:1313/posts/2023-10-19-computer-science-base-technologies-2/low-code-example-app-for-reading-dht22-data-from-api_hu_73d5028b4da26dd7.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Low code platform example for reading DHT22 data using an API&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;147&#34;
+		data-flex-basis=&#34;353px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;At the time of writing a program, you can think about many ideas for that, much of them can be very popular, but the least thing that you want, is to fight against code or deployments if you only want to build an app with a graphical interface for managing your data.&lt;/p&gt;
+&lt;p&gt;To align with that idea, you can use a tool for writing or wiring diagrams and convert them into executable code, understandable by a machine.&lt;/p&gt;
+&lt;p&gt;For that task, there is a growing innitiative right now, that can accomplish it with enough efficiency and speed.&lt;/p&gt;
+&lt;p&gt;If we recap, the basis of &amp;ldquo;programming&amp;rdquo; were to think and draw diagram flows, and following the algorithm logic, we have the &amp;ldquo;program&amp;rdquo;. Well, nowadays that can be done using low-code or no-code tools.&lt;/p&gt;
+&lt;p&gt;I know that many readers were thinking that the next thing I was going to talk about, after algorithms, was low-code/no-code, and they were right, here we are.&lt;/p&gt;
+&lt;p&gt;The basic idea for no-code is that you have not to write code, but there is the low-code, where you can or have to write a bit of code only, as oppositte to writing the full program as usually is done when programming. And the main point of this kind of tools is that you draw the application interface using a graphical view, and with this, you add functionality.&lt;/p&gt;
+&lt;p&gt;For simplification, I will write only no-code most of the time.&lt;/p&gt;
+&lt;p&gt;The key for understanding how it works, is that you can program using interfaces, using APIs.&lt;/p&gt;
+&lt;p&gt;For creating this kind of applications, first you usually add REST API queries for adding, deleting or some related operations, the APIs must exist, but this systems allow you to work with more kinds of data sources. Then you store the queries with a name and go to the next step, the design of the screens.&lt;/p&gt;
+&lt;p&gt;When creating the application, you can draw, for example, pannels, buttons, lists, or tables for your application. In most of the cases, the real underlying thing, that is generated with this kind of applications, is a web application.&lt;/p&gt;
+&lt;p&gt;For the screens, if you, for example, want to manage a list of items, you can draw a container for the list of items, then add an edit and delete button for each item and one unique button for adding items. Later you can draw another screen for the add/edit, including the related item fields being edited or added.&lt;/p&gt;
+&lt;p&gt;And the final step, for adding the desired behaviour, is to link the queries you created to actions in the designed application. For example, when you click on the delete button of a selected item, the action that you want to be performed is to delete the selected item, that is done by mean of creating a link between the item delete button and the generic query that you stored for deleting an item.&lt;/p&gt;
+&lt;p&gt;It is that simple.&lt;/p&gt;
+&lt;p&gt;You have built an application interface for managing your data.&lt;/p&gt;
+&lt;p&gt;With this kind of tools, you can build apps that use your preferred REST APIs, or other kinds or data sources, as we said.&lt;/p&gt;
+&lt;p&gt;And the last step is to publish your application.&lt;/p&gt;
+&lt;p&gt;With no-code applications, you can do that in an easy way, you have a button that says &amp;ldquo;Publish&amp;rdquo;, you click that button and your application gets published. It can be locally in a development URL, created by the same no-code application, or to remote hosts, depending on the chosen tool, and if your application deploys to develop or to production, you can choose which kind of deployment to do.&lt;/p&gt;
+&lt;p&gt;Today we finished explaining the concept of building graphical interfaces, for managing existing data, in an easy way. At the end, most of the time in computer programming, the tasks we do are related to processing data.&lt;/p&gt;
+&lt;p&gt;With this post, the fundamentals for allowing someone to write applications is complete.&lt;/p&gt;
+&lt;p&gt;I have to say that this kind of low-code or no-code applications have much more and complete features, this post is made for getting one of the basic ideas.&lt;/p&gt;
+&lt;p&gt;We will continue with interesting posts in a near future, now we have to take a rest and prepare all for finishing properly the year, and prepare the next one.&lt;/p&gt;
+&lt;p&gt;I am sure it will be plenty of good and interesting projects. The AI is right now in the next door.&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Computer Science base technologies, part I</title>
+        <link>http://localhost:1313/posts/2023-10-18-computer-science-base-technologies/</link>
+        <pubDate>Wed, 18 Oct 2023 20:49:00 +0200</pubDate>
+        
+        <guid>http://localhost:1313/posts/2023-10-18-computer-science-base-technologies/</guid>
+        <description>&lt;style&gt;
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+&lt;/style&gt;
+&lt;img src=&#34;flowchart-concept.webp&#34; alt=&#34;Flowchart concept&#34;&gt;
+&lt;p&gt;There is some knowledge, that you already have, for being a good computer science engineer.&lt;/p&gt;
+&lt;p&gt;That knowledge come from time ago, when the name of &lt;a class=&#34;link&#34; href=&#34;https://en.wikipedia.org/wiki/Al-Khwarizmi&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;em&gt;Al-Khwarizmi&lt;/em&gt;&lt;/a&gt; made possible the term &lt;em&gt;algorithm&lt;/em&gt;.&lt;/p&gt;
+&lt;img src=&#34;Al_Khorezmy.jpg&#34; alt=&#34;Wikipedia: Al Khwarizmi&#34; width=&#34;50%&#34;&gt;
+&lt;p&gt;All people is able to think about algorithms, we do it constantly, when we plan for a sequence of steps and take into account some possible conditions and routes that the facts could drive us to.&lt;/p&gt;
+&lt;p&gt;That would be the very first step in &amp;lsquo;programming&amp;rsquo; computers, thinking about algorithms.&lt;/p&gt;
+&lt;p&gt;To the end, the purpose of programming is to tell to the computer, what we want that it do for us.&lt;/p&gt;
+&lt;p&gt;If you think in algorithms and you plan to tell it to a computer, for it do it for you, you are programming.&lt;/p&gt;
+&lt;p&gt;An important step is how to tell to the machine that it has to do what you planned in your algorithm, perhaps, drawed in a paper.&lt;/p&gt;
+&lt;p&gt;You can write down on paper a list of steps or you can make a drawing with that list of steps.&lt;/p&gt;
+&lt;p&gt;If you drawed it on paper, perhaps you have something similar to a &lt;a class=&#34;link&#34; href=&#34;https://en.wikipedia.org/wiki/Flowchart&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;flowchart&lt;/a&gt;.&lt;/p&gt;
+&lt;img src=&#34;LampFlowchart.svg.png&#34; alt=&#34;Wikipedia: Flowchart&#34; width=&#34;50%&#34;&gt;
+&lt;p&gt;That is the first step in the programming computer path.&lt;/p&gt;
+&lt;p&gt;All people is able to do it, and could be doing it right now.&lt;/p&gt;
+&lt;p&gt;But, as fire usages inventions, things could improve and become really complex.&lt;/p&gt;
+&lt;p&gt;Perhaps this night, James Wright could be relaxed, thinking about his ideas, when he takes a rest and sits around a bonfire waiting for enjoying his cooked food.&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Why to improve? part 3. Base materials for Computer Engineers</title>
+        <link>http://localhost:1313/posts/2023-10-14-why-to-improve-3-base-materials-for-computer-engineers/</link>
+        <pubDate>Sat, 14 Oct 2023 12:18:00 +0200</pubDate>
+        
+        <guid>http://localhost:1313/posts/2023-10-14-why-to-improve-3-base-materials-for-computer-engineers/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Why to improve? part 2. Technologies and the look for the base knowledge</title>
+        <link>http://localhost:1313/posts/2023-10-13-why-to-improve-2-look-for-base-technologies/</link>
+        <pubDate>Fri, 13 Oct 2023 23:18:00 +0200</pubDate>
+        
+        <guid>http://localhost:1313/posts/2023-10-13-why-to-improve-2-look-for-base-technologies/</guid>
+        <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/posts/2023-10-13-why-to-improve-2-look-for-base-technologies/light-bulb-book.webp&#34;
+	width=&#34;1024&#34;
+	height=&#34;682&#34;
+	srcset=&#34;http://localhost:1313/posts/2023-10-13-why-to-improve-2-look-for-base-technologies/light-bulb-book_hu_dcc25ae0ce4e573b.webp 480w, http://localhost:1313/posts/2023-10-13-why-to-improve-2-look-for-base-technologies/light-bulb-book_hu_b0375d28bec578f6.webp 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Light Bulb Book&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;150&#34;
+		data-flex-basis=&#34;360px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;Today James Wright gets to the rest time of the day, tired but happy. He knows that he did it well, the better he could do it.&lt;/p&gt;
+&lt;p&gt;Before going to sleep, he begins to think about questions related to the fact that technologies are getting more and more advanced, to the point, that some knowledge is getting obsolete before it could reach to some audiences.&lt;/p&gt;
+&lt;p&gt;He thinks that the point now is to know beforehand, which are the trends right now, or better, what should you have to know to be on the rise. The better response that he can think about, is the one that all we know: &amp;ldquo;prepare yourself the better you can&amp;rdquo;. And the next question is: &amp;ldquo;What would you have to study or read to be prepared for the next years?&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;There is a response, that he thinks, that can be of help here, that is, to acquire all the &lt;em&gt;base&lt;/em&gt; knowledge that you can. You must look for the base books and techniques. Perhaps, he thinks, we are lost in the bunch of stuff that plagues the media, sometimes, we found repeated the same concept, in different forms, in different formats. The problem now is: &amp;ldquo;How to know which materials are the base or fundamentals of each subject?&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;Perhaps an example can be of help. When you are studying the C language, you can get one or more related books or materials, they can be the most accessible ones, the most &lt;em&gt;convenient&lt;/em&gt;, but you may be hesitant to treat them as original sources. We probably have not a clear way to know that fact in the beginnings, due to the amount of related information.&lt;/p&gt;
+&lt;p&gt;You can read that related information and, perhaps, you could think that it does not solve the problem in the proper way, that is what happens to James from time to time, it is really overwhelming, and the materials could lack some important points and concepts.&lt;/p&gt;
+&lt;p&gt;Later, after looking for the main source, you could find a book, which you can consider as a base:&lt;/p&gt;
+&lt;p&gt;“The C Programming Language.” Accessed October 13, 2023. &lt;a class=&#34;link&#34; href=&#34;https://www.goodreads.com/book/show/515601&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www.goodreads.com/book/show/515601&lt;/a&gt;.The_C_Programming_Language.&lt;/p&gt;
+&lt;p&gt;You get it and go to read it.&lt;/p&gt;
+&lt;p&gt;You can be interested in reading, for example, a key chapter as the 5th: &amp;ldquo;Pointers and Arrays&amp;rdquo;, page 93, and you find that in the first section it is talking about &amp;ldquo;Pointers and Addresses&amp;rdquo;, just the complicated and relevant topic we were waiting for.&lt;/p&gt;
+&lt;p&gt;After the first read, you can see the difference, as it is between night and day, icy and warm, or sour and sweet, compared to other books or contents.&lt;/p&gt;
+&lt;p&gt;You realize that in the first read.&lt;/p&gt;
+&lt;p&gt;You can finally really understand what the pointers are, which is the underlying concept, its core meaning and the wide sense of the term and implications. Furthermore, you can be really happy by understanding it, and perhaps you can get a good taste and, remember forever, the clear explanation, and some pictures accompanying the explanation, which could help in clarifying the concept.&lt;/p&gt;
+&lt;p&gt;By that reason, James thinks, that it is necessary to look at the original sources in your researches.&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Quotes</title>
+        <link>http://localhost:1313/posts/2023-07-01-quotes/</link>
+        <pubDate>Sat, 01 Jul 2023 05:33:00 +0200</pubDate>
+        
+        <guid>http://localhost:1313/posts/2023-07-01-quotes/</guid>
+        <description>&lt;blockquote&gt;
+&lt;p&gt;History is written,
+in blank pages.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Read books that create moments of inspiration, not the opposite.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Everybody wants to be somebody.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;There are several realities: The group reality is a reality. That of the world is another reality. Your own is another reality.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Expand your sight, go outside, across the door, to the reality of life.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;First make it work, then make it right, then make it fast. — @KentBeck&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        </item>
+        <item>
+        <title>Network Operative System</title>
+        <link>http://localhost:1313/posts/2023-05-17-network-operative-system/</link>
+        <pubDate>Wed, 17 May 2023 23:10:00 +0200</pubDate>
+        
+        <guid>http://localhost:1313/posts/2023-05-17-network-operative-system/</guid>
+        <description>&lt;p&gt;Document about the idea of the need of a Network Operative System, the idea was spreaded around 2013.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/posts/2023-05-17-network-operative-system/network-operative-system-header-1000x563.png&#34;
+	width=&#34;1000&#34;
+	height=&#34;563&#34;
+	srcset=&#34;http://localhost:1313/posts/2023-05-17-network-operative-system/network-operative-system-header-1000x563_hu_59afdd0aa8b7966e.png 480w, http://localhost:1313/posts/2023-05-17-network-operative-system/network-operative-system-header-1000x563_hu_f758871a262f9f10.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Internet in binary code&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;177&#34;
+		data-flex-basis=&#34;426px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;We need a Network Operative System for managing Internet Network and Applications.&lt;/p&gt;
+&lt;p&gt;Nowadays, we have an operative system for managing Internet apps.&lt;/p&gt;
+&lt;p&gt;It is Kubernetes, the state of art of Applications Operative System (AOS).&lt;/p&gt;
+&lt;p&gt;As we know it now, the underlying concept is that applications need to be deployed in any system, at any place, anytime.&lt;/p&gt;
+&lt;p&gt;It is used today as a bottom layer for application deployments, but it is too complex for simple deployments, we need only a simple binary which can accomplish the task.&lt;/p&gt;
+&lt;p&gt;A solution is the &lt;a class=&#34;link&#34; href=&#34;https://k3s.io/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;k3s project&lt;/a&gt;, a minimal Kubernetes Certified distribution.&lt;/p&gt;
+&lt;p&gt;The following work, about the concept and use of Applications Operative System, AOS, will be based on that concept.&lt;/p&gt;
+&lt;p&gt;TBA&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Why to improve?</title>
+        <link>http://localhost:1313/posts/2023-05-17-why-to-improve/</link>
+        <pubDate>Wed, 17 May 2023 23:10:00 +0200</pubDate>
+        
+        <guid>http://localhost:1313/posts/2023-05-17-why-to-improve/</guid>
+        <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/posts/2023-05-17-why-to-improve/equations.png&#34;
+	width=&#34;719&#34;
+	height=&#34;405&#34;
+	srcset=&#34;http://localhost:1313/posts/2023-05-17-why-to-improve/equations_hu_b44d7884f427a9f6.png 480w, http://localhost:1313/posts/2023-05-17-why-to-improve/equations_hu_a9ebae73522564ad.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Equations&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;177&#34;
+		data-flex-basis=&#34;426px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;Today James Wright gets to the rest time of the day tired, but happy, he knows that he did it well, the better he could do it.&lt;/p&gt;
+&lt;p&gt;That happiness carries his mind to a stage of peace and creativity, tonight I will rest well, he thinks, but now I am going to give some of my knowledge and ideas to some special people.&lt;/p&gt;
+&lt;p&gt;When he is thinking that, he is thinking in the kind of person that is not as lucky as he, the person that wants to have spare time to share it with other, by nothing more than knowing that his ideas and thoughts will arrive to other minds and, he thinks, they will enjoy them as much as he is enjoying when he is inmerse in that world of creating &amp;rsquo;thinks&#39;.&lt;/p&gt;
+&lt;p&gt;Another kind of thoughts, not merely from his mind, but from his heart, is saying he a similar thing, to share the ideas and knowledge, but in this sense, the main argument is that there is people that, despite not having the same ideas and lines of thought, is wanting to receive those ideas about old, current and future things, perhaps imagining, but with the best intention.&lt;/p&gt;
+&lt;p&gt;The intention of his heart comes after knowing or thinking about an idea that appears in his life, and later the heart whispers to his mind that it could be of help for someone in some place or perhaps in some time if the idea could pass the test of time.&lt;/p&gt;
+&lt;p&gt;Wright, does that, he thinks about that idea with his mind, and returns to the people the results of his thoughts in an envelope made with the whisper of his heart.&lt;/p&gt;
+&lt;p&gt;This night James Wright can go to sleep in peace.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Note: Imagine: To form a mental picture or image of the ideas, in this case.&lt;/em&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Internet of Services</title>
+        <link>http://localhost:1313/posts/2023-05-17-internet-of-services/</link>
+        <pubDate>Wed, 17 May 2023 21:56:26 +0200</pubDate>
+        
+        <guid>http://localhost:1313/posts/2023-05-17-internet-of-services/</guid>
+        <description>&lt;p&gt;Document about an idea from around 2013 of Internet being a group of services, as alternative for seeing them as a group of things.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/posts/2023-05-17-internet-of-services/cloud-services-boxes-1000x538.jpg&#34;
+	width=&#34;1000&#34;
+	height=&#34;538&#34;
+	srcset=&#34;http://localhost:1313/posts/2023-05-17-internet-of-services/cloud-services-boxes-1000x538_hu_6577d0a2c0cdb3c7.jpg 480w, http://localhost:1313/posts/2023-05-17-internet-of-services/cloud-services-boxes-1000x538_hu_d89c1c62710739d.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Services connected&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;185&#34;
+		data-flex-basis=&#34;446px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;idea&#34;&gt;Idea
+&lt;/h3&gt;&lt;p&gt;The idea about an Internet of Services is the opposite to the Internet of Things.&lt;/p&gt;
+&lt;p&gt;We are going to talk about the terms: Service and Thing to try to communicate the idea of the nearest concept to the area of interest of the Computer Science, where it is seen as a software application that gives a service, and differentiate it from the common and abstract term of &lt;code&gt;thing&lt;/code&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;definitions&#34;&gt;Definitions
+&lt;/h3&gt;&lt;p&gt;First, we are going to give some definitions.&lt;/p&gt;
+&lt;dl&gt;
+&lt;dt&gt;Service&lt;/dt&gt;
+&lt;dd&gt;In the contexts of software architecture, service-orientation and service-oriented architecture, the term service refers to a software functionality, or a set of software functionalities (such as the retrieval of specified information or the execution of a set of operations) with a purpose that different clients can reuse for different purposes, together with the policies that should control its usage (based on the identity of the client requesting the service, for example). &lt;a class=&#34;link&#34; href=&#34;https://en.wikipedia.org/wiki/Systems_architecture&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;ServiceSystemsArchitecture2022&lt;/a&gt;&lt;/dd&gt;
+&lt;dt&gt;Thing (Object in philosophy)&lt;/dt&gt;
+&lt;dd&gt;An object is a philosophical term often used in contrast to the term subject. A subject is an observer and an object is a thing observed. For modern philosophers like Descartes, consciousness is a state of cognition that includes the subject—which can never be doubted as only it can be the one who doubts—and some object(s) that may be considered as not having real or full existence or value independent of the subject who observes it. Metaphysical frameworks also differ in whether they consider objects existing independently of their properties and, if so, in what way. &lt;a class=&#34;link&#34; href=&#34;https://en.wikipedia.org/wiki/Object_%28philosophy%29&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;ObjectPhilosophy2023&lt;/a&gt;&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;h3 id=&#34;how-does-fit-all-together&#34;&gt;How does fit all together?
+&lt;/h3&gt;&lt;p&gt;We can begin with the concept of &lt;em&gt;thing&lt;/em&gt;, that is defined in philosophy as something observed by an observer. And the term &lt;em&gt;service&lt;/em&gt; is defined as a &lt;em&gt;software functionality&lt;/em&gt;. With that, we can approach the definitions to our field of knowledge, the Computer Science.&lt;/p&gt;
+&lt;p&gt;The interesting thing is that we use, and think, in something as near to a software service as we can. Usually we do that in natural speaking, and we, for sure, refer to something related to functionality, not to something that can be observed.&lt;/p&gt;
+&lt;p&gt;I mean with that reflection that if we think in something that is usable or &amp;lsquo;serviceable&amp;rsquo;, we have the key to understand what we mean with Internet of Services, and we could use that term, or at least, think in that term, when we want to refer to the functional Internet.&lt;/p&gt;
+&lt;h3 id=&#34;related-standards-and-projects&#34;&gt;Related standards and projects
+&lt;/h3&gt;&lt;p&gt;There is a &lt;a class=&#34;link&#34; href=&#34;https://www.w3.org/standards/webofservices/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Web of Services standard&lt;/a&gt; in the W3C page.&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

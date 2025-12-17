@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Layer on Francisco Javier Jiménez Gómez</title>
+        <link>http://localhost:1313/tags/layer/</link>
+        <description>Recent content in Layer on Francisco Javier Jiménez Gómez</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>es</language>
+        <copyright>Francisco Javier Jiménez Gómez</copyright>
+        <lastBuildDate>Sun, 31 Mar 2024 20:52:00 +0200</lastBuildDate><atom:link href="http://localhost:1313/tags/layer/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Three layers abstraction</title>
+        <link>http://localhost:1313/posts/2024-03-31-three-layers-abstraction/</link>
+        <pubDate>Sun, 31 Mar 2024 20:52:00 +0200</pubDate>
+        
+        <guid>http://localhost:1313/posts/2024-03-31-three-layers-abstraction/</guid>
+        <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/posts/2024-03-31-three-layers-abstraction/three-layers-as-leafs-gettyimages-1000px-157287379-2048x2048.jpg&#34;
+	width=&#34;1000&#34;
+	height=&#34;667&#34;
+	srcset=&#34;http://localhost:1313/posts/2024-03-31-three-layers-abstraction/three-layers-as-leafs-gettyimages-1000px-157287379-2048x2048_hu_e10b507ce78069a5.jpg 480w, http://localhost:1313/posts/2024-03-31-three-layers-abstraction/three-layers-as-leafs-gettyimages-1000px-157287379-2048x2048_hu_9afc46b1fd8fc6be.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Three Layers as Leafs&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;149&#34;
+		data-flex-basis=&#34;359px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;The software design can be simplified in three layers:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;View&lt;/li&gt;
+&lt;li&gt;Business&lt;/li&gt;
+&lt;li&gt;Data&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;For example, in a web application, you have:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;View, usually in JavaScript, HTML and CSS&lt;/li&gt;
+&lt;li&gt;Business, usually JavaScript or a backend API&lt;/li&gt;
+&lt;li&gt;Data, the pure data, that can be structured data as a database or a dictionary, for example&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If we want to stablish a relation between layers and Fractal Architecture, we can view the previous Business layer as composed of three layers:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;View, the backend API&lt;/li&gt;
+&lt;li&gt;Business, the Domain&lt;/li&gt;
+&lt;li&gt;Data, the objects that represent the underlying data&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In the initial decomposition, the Data layer can be seen again as a three layer design:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;View, the accepted commands and the REPL or API&lt;/li&gt;
+&lt;li&gt;Business, the internal logic or the database application&lt;/li&gt;
+&lt;li&gt;Data, the internal structures used by the application to effectively store the data&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;As you see, you can extend the concept to other domains.&lt;/p&gt;
+&lt;p&gt;This brief idea can be of help when we design or think about architecture.&lt;/p&gt;
+&lt;p&gt;Finally, to fit this idea into the Fractal Architecture, all three (or any you have) layers, must be considered as an atomic autonomous block with an input and an output, as a black box pattern.&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>VBD</title>
+        <link>http://localhost:1313/posts/2024-03-31-vbd/</link>
+        <pubDate>Sun, 31 Mar 2024 20:52:00 +0200</pubDate>
+        
+        <guid>http://localhost:1313/posts/2024-03-31-vbd/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Layers</title>
+        <link>http://localhost:1313/posts/2024-03-31-layers/</link>
+        <pubDate>Sun, 31 Mar 2024 20:44:00 +0200</pubDate>
+        
+        <guid>http://localhost:1313/posts/2024-03-31-layers/</guid>
+        <description>&lt;p xmlns:cc=&#34;http://creativecommons.org/ns#&#34; xmlns:dct=&#34;http://purl.org/dc/terms/&#34;&gt;&lt;a property=&#34;dct:title&#34; rel=&#34;cc:attributionURL&#34; href=&#34;https://github.com/javi-jimenez/posts/&#34;&gt;Posts&lt;/a&gt; by &lt;a rel=&#34;cc:attributionURL dct:creator&#34; property=&#34;cc:attributionName&#34; href=&#34;https://github.com/javi-jimenez&#34;&gt;Francisco Javier Jiménez Gómez&lt;/a&gt; is licensed under &lt;a href=&#34;https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1&#34; target=&#34;_blank&#34; rel=&#34;license noopener noreferrer&#34; style=&#34;display:inline-block;&#34;&gt;CC BY-NC-SA 4.0&lt;img style=&#34;height:22px!important;margin-left:3px;vertical-align:text-bottom;&#34; src=&#34;https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1&#34;&gt;&lt;img style=&#34;height:22px!important;margin-left:3px;vertical-align:text-bottom;&#34; src=&#34;https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1&#34;&gt;&lt;img style=&#34;height:22px!important;margin-left:3px;vertical-align:text-bottom;&#34; src=&#34;https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1&#34;&gt;&lt;img style=&#34;height:22px!important;margin-left:3px;vertical-align:text-bottom;&#34; src=&#34;https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>VBD, Fractal Architecture: View, Business and Data. Input and Output.</title>
+        <link>http://localhost:1313/posts/2024-03-31-vbd-fractal-architecture-view-business-and-data-input-and-output/</link>
+        <pubDate>Sun, 31 Mar 2024 20:44:00 +0200</pubDate>
+        
+        <guid>http://localhost:1313/posts/2024-03-31-vbd-fractal-architecture-view-business-and-data-input-and-output/</guid>
+        <description>&lt;meta property=&#34;og:image&#34; content=&#34;2024-03-31-vbd-fractal-architecture-view-business-and-data-input-and-output/fractal-maldelbrot-illustration-1000px-gettyimages-488635425-2048x2048.jpg&#34; /&gt;
+&lt;meta name=&#34;twitter:image&#34; content=&#34;2024-03-31-vbd-fractal-architecture-view-business-and-data-input-and-output/fractal-maldelbrot-illustration-1000px-gettyimages-488635425-2048x2048.jpg&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/posts/2024-03-31-vbd-fractal-architecture-view-business-and-data-input-and-output/fractal-maldelbrot-illustration-1000px-gettyimages-488635425-2048x2048.jpg&#34;
+	width=&#34;1000&#34;
+	height=&#34;750&#34;
+	srcset=&#34;http://localhost:1313/posts/2024-03-31-vbd-fractal-architecture-view-business-and-data-input-and-output/fractal-maldelbrot-illustration-1000px-gettyimages-488635425-2048x2048_hu_71538f2550c6dc83.jpg 480w, http://localhost:1313/posts/2024-03-31-vbd-fractal-architecture-view-business-and-data-input-and-output/fractal-maldelbrot-illustration-1000px-gettyimages-488635425-2048x2048_hu_50dd66516025c0b2.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Maldelbrot set&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;133&#34;
+		data-flex-basis=&#34;320px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;One of the main purpose of a computer system is to process data.&lt;/p&gt;
+&lt;p&gt;And the principle: data travels between services.&lt;/p&gt;
+&lt;p&gt;Applications have an input and an output:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Input, the application receives data&lt;/li&gt;
+&lt;li&gt;Internally the application process data&lt;/li&gt;
+&lt;li&gt;Output, after processing the data, the application produces an output.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;With this pattern, applications can be reduced to software that does input and produces output.&lt;/p&gt;
+&lt;p&gt;You are doing Fractal Architecture when you link the services, then you have a bigger system, sure, thats reasoning is trivial, but with this, your new system can be seen as an autonomous system. And that new system can be used in another bigger systems.&lt;/p&gt;
+&lt;p&gt;That can be replicated as in fractals, if you zoom, you see the same pattern over and over again.&lt;/p&gt;
+&lt;p&gt;If you try to extract that pattern from designs, you will find that it is usually repeated. This is related to Fractal Architecture.&lt;/p&gt;
+&lt;p&gt;If you see this from an holistic point of view, and you put the best effort in your application, with one specific and well designed functionallity, this lead us to a basic design principle: do one thing and do it well, as in the unix-like world.&lt;/p&gt;
+&lt;p&gt;This has deep implications in microservices, in the case where you design an autonomous service, for a single task and you put a lot of effort in doing that task really well.&lt;/p&gt;
+&lt;p&gt;You can then link microservices between them, using an orchestrator or not, the key point is to have services that do one task and do it well.&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
