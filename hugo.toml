@@ -8,6 +8,8 @@ copyright = 'Francisco Javier Jiménez Gómez'
   mainSections = ['posts']
   rssFullContent = true
   favicon = '/img/favicon.ico'
+  # Homepage layout
+  homepageLayout = 'portfolio'
 
   # Sidebar configuration
   [params.sidebar]

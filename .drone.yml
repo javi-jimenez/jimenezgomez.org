@@ -1,0 +1,48 @@
+kind: pipeline
+type: docker
+name: Deploy Hugo Blog
+
+trigger:
+  branch:
+    - main
+  event:
+    - push
+
+steps:
+  - name: Build Docker Image
+    image: docker:latest
+    volumes:
+      - name: docker
+        path: /var/run/docker.sock
+    commands:
+      - docker build -t jimenezgomez-blog:${DRONE_COMMIT_SHA:0:8} .
+      - docker tag jimenezgomez-blog:${DRONE_COMMIT_SHA:0:8} jimenezgomez-blog:latest
+
+  - name: Deploy to OVH via FTP
+    image: alpine:latest
+    environment:
+      FTP_SERVER:
+        from_secret: ftp_server
+      FTP_USERNAME:
+        from_secret: ftp_username
+      FTP_PASSWORD:
+        from_secret: ftp_password
+    commands:
+      - apk add --no-cache lftp
+      - |
+        lftp -e "
+        set ftp:ssl-allow false
+        open -u $${FTP_USERNAME},$${FTP_PASSWORD} $${FTP_SERVER}
+        mirror -R --delete public/ /jimenezgomez.org/
+        quit
+        " 2>&1 || true
+
+  - name: Notify Deployment
+    image: alpine:latest
+    commands:
+      - echo "✅ Deployment completed for commit ${DRONE_COMMIT_SHA:0:8}"
+
+volumes:
+  - name: docker
+    host:
+      path: /var/run/docker.sock
