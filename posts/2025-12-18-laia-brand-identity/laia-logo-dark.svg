@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 200">
+  <defs>
+    <filter id="darkGlow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <rect width="600" height="200" fill="#0f172a" rx="10"/>
+  
+  <!-- Main star with network -->
+  <g transform="translate(120, 100)">
+    <path d="M 0,-40 L 11,-11 L 40,0 L 11,11 L 0,40 L -11,11 L -40,0 L -11,-11 Z" 
+          fill="#60a5fa" filter="url(#darkGlow)" opacity="0.95"/>
+    
+    <circle cx="0" cy="0" r="50" fill="none" stroke="#3b82f6" stroke-width="1.5" opacity="0.3" stroke-dasharray="4,4"/>
+    <circle cx="0" cy="0" r="25" fill="none" stroke="#60a5fa" stroke-width="1" opacity="0.4"/>
+    
+    <!-- Neural nodes -->
+    <circle cx="0" cy="-50" r="4" fill="#bfdbfe" opacity="0.9"/>
+    <circle cx="43" cy="-21" r="3.5" fill="#bfdbfe" opacity="0.9"/>
+    <circle cx="43" cy="21" r="3.5" fill="#bfdbfe" opacity="0.9"/>
+    <circle cx="0" cy="50" r="4" fill="#bfdbfe" opacity="0.9"/>
+    <circle cx="-43" cy="21" r="3.5" fill="#bfdbfe" opacity="0.9"/>
+    <circle cx="-43" cy="-21" r="3.5" fill="#bfdbfe" opacity="0.9"/>
+    
+    <!-- Connection lines -->
+    <g stroke="#60a5fa" stroke-width="1" opacity="0.3">
+      <line x1="0" y1="-40" x2="0" y2="-50"/>
+      <line x1="28" y1="-28" x2="43" y2="-21"/>
+      <line x1="28" y1="28" x2="43" y2="21"/>
+      <line x1="0" y1="40" x2="0" y2="50"/>
+      <line x1="-28" y1="28" x2="-43" y2="21"/>
+      <line x1="-28" y1="-28" x2="-43" y2="-21"/>
+    </g>
+    
+    <circle cx="0" cy="0" r="15" fill="#0369a1" opacity="0.8"/>
+    <circle cx="0" cy="0" r="8" fill="#3b82f6"/>
+  </g>
+  
+  <!-- LAIA text -->
+  <text x="240" y="115" font-family="'Segoe UI', Arial" font-size="56" font-weight="300" 
+        fill="#f0f9ff" letter-spacing="12">LAIA</text>
+  
+  <!-- Tagline -->
+  <text x="240" y="140" font-family="'Segoe UI', Arial" font-size="14" font-weight="300"
+        fill="#94a3b8" letter-spacing="2">ETHICAL AI RESEARCH</text>
+</svg>
