@@ -1,0 +1,388 @@
+# Laia Brand Guidelines
+## Guía de Identidad Visual
+
+**Proyecto:** Laia - Ethical Artificial Intelligence  
+**Versión:** 1.0  
+**Fecha:** Diciembre 2025  
+**Autor:** Francisco Javier Jiménez Gómez
+
+---
+
+## 1. Introducción
+
+### 1.1 Sobre el Proyecto
+
+Laia es una iniciativa de investigación de código abierto dedicada a avanzar en las consideraciones éticas de la inteligencia artificial (IA). El nombre "Laia" proviene del catalán y significa "la que habla dulce o se expresa con claridad", simbolizando la misión del proyecto: crear inteligencia artificial ética, transparente y comprensible.
+
+### 1.2 Propósito de Esta Guía
+
+Este documento establece las normas para el uso correcto de la identidad visual de Laia, asegurando consistencia y profesionalismo en todas las aplicaciones de la marca.
+
+---
+
+## 2. Filosofía del Diseño
+
+### 2.1 Concepto: Inteligencia de las Estrellas
+
+El diseño de Laia se inspira en tres conceptos fundamentales:
+
+**Las Estrellas como Metáfora**
+- Guía y orientación (como las estrellas han guiado a la humanidad)
+- Luz en la oscuridad (iluminar el camino de la IA ética)
+- Aspiración (alcanzar las estrellas en innovación responsable)
+- Conexión (las constelaciones conectan puntos, como redes neuronales)
+
+**La Paleta Azul**
+- Confianza y profesionalidad
+- Tecnología e innovación
+- Serenidad y estabilidad
+- El cosmos infinito de posibilidades
+
+**La Red Neuronal**
+- Inteligencia artificial y aprendizaje
+- Transparencia en los procesos
+- Interconexión de ideas
+- Colaboración abierta
+
+### 2.2 Principios de Diseño
+
+1. **Minimalismo Significativo**: Cada elemento tiene un propósito
+2. **Escalabilidad**: Funciona desde 16px hasta tamaños grandes
+3. **Versatilidad**: Compatible con temas dark/light
+4. **Accesibilidad**: Contraste WCAG AAA, legible para daltónicos
+
+---
+
+## 3. Paleta de Colores
+
+### 3.1 Colores Primarios
+
+```
+Azul Profundo    #0c4a6e    RGB(12, 74, 110)     Pantone 3025 C
+Azul Principal   #0369a1    RGB(3, 105, 161)     Pantone 7691 C
+Azul Claro       #60a5fa    RGB(96, 165, 250)    Pantone 2925 C
+Azul Pálido      #bfdbfe    RGB(191, 219, 254)   Pantone 2905 C
+```
+
+### 3.2 Colores Neutros
+
+```
+Fondo Oscuro     #0f172a    RGB(15, 23, 42)
+Gris Pizarra     #1e293b    RGB(30, 41, 59)
+Gris Medio       #94a3b8    RGB(148, 163, 184)
+Casi Blanco      #f0f9ff    RGB(240, 249, 255)
+```
+
+### 3.3 Colores de Acento (Uso Opcional)
+
+```
+Cyan             #06b6d4    RGB(6, 182, 212)
+Cielo            #38bdf8    RGB(56, 189, 248)
+```
+
+---
+
+## 4. Logotipo
+
+### 4.1 Versión Principal
+
+**Archivo:** `laia-logo-main.svg`
+
+Composición:
+- Estrella central de 8 puntas
+- Anillo orbital con nodos de red neuronal
+- Tipografía: Segoe UI / Arial, weight 300
+- Letter-spacing: 12px
+
+**Usos:**
+- Documentación oficial
+- Presentaciones
+- Sitio web principal
+- Comunicaciones corporativas
+
+### 4.2 Versiones Alternativas
+
+**Logo Light** (`laia-logo-light.svg`)
+- Para fondos claros (#ffffff, #f8fafc)
+- Colores oscuros (#0369a1, #0c4a6e)
+
+**Logo Dark** (`laia-logo-dark.svg`)
+- Para fondos oscuros (#0f172a, #1e293b)
+- Colores claros (#60a5fa, #bfdbfe)
+
+**Logo Mono** (`laia-logo-mono.svg`)
+- Versión monocromática (blanco y negro)
+- Para impresión, bordados, serigrafía
+
+### 4.3 Icono Compacto
+
+**Archivo:** `laia-icon-compact.svg`
+
+Versión simplificada para:
+- Favicon (16x16, 32x32, 64x64px)
+- Aplicaciones móviles
+- Iconos de sistema
+- Espacios reducidos (mínimo 32px)
+
+---
+
+## 5. Espaciado y Área de Seguridad
+
+### 5.1 Área de Protección
+
+El logo debe mantener un espacio libre equivalente a **la altura de la letra "A"** en LAIA alrededor de todos sus lados.
+
+```
+┌─────────────────────────────────┐
+│          ÁREA LIBRE             │
+│    ┌─────────────────┐          │
+│    │   LOGO LAIA     │          │
+│    └─────────────────┘          │
+│          ÁREA LIBRE             │
+└─────────────────────────────────┘
+```
+
+### 5.2 Tamaños Mínimos
+
+- **Logo completo**: No menor a 120px de ancho
+- **Icono solo**: No menor a 32px
+- **Favicon**: 16x16px, 32x32px, 64x64px (usar icono compacto)
+
+---
+
+## 6. Tipografía
+
+### 6.1 Familia Tipográfica Principal
+
+**Segoe UI** (Windows, web)
+- Light (300) para títulos grandes
+- Regular (400) para texto general
+- Semibold (600) para énfasis
+
+**Alternativas:**
+- Inter (proyectos web/apps)
+- Arial (fallback universal)
+- Open Sans (documentos)
+
+### 6.2 Espaciado de Letras
+
+- **Logotipo**: letter-spacing 12-20px
+- **Títulos**: letter-spacing 3-8px
+- **Subtítulos**: letter-spacing 2-3px
+- **Texto normal**: letter-spacing normal
+
+---
+
+## 7. Usos Permitidos
+
+### 7.1 Fondos Recomendados
+
+✅ **Permitidos:**
+- Azul marino oscuro (#0f172a - #1e293b)
+- Blanco puro (#ffffff)
+- Gris muy claro (#f8fafc)
+- Degradados azules sutiles
+
+❌ **Evitar:**
+- Fondos con patrones complejos
+- Colores que compitan con el azul del logo
+- Imágenes de fondo sin overlay oscuro
+- Fondos de colores saturados (rojo, verde, amarillo)
+
+### 7.2 Aplicaciones
+
+**Digital:**
+- Sitios web y aplicaciones
+- Presentaciones
+- Documentos PDF
+- Redes sociales
+
+**Impresión:**
+- Papelería corporativa
+- Posters y banners
+- Merchandising (camisetas, tazas)
+- Material educativo
+
+**Eventos:**
+- Roll-ups y stands
+- Credenciales
+- Proyecciones
+- Señalética
+
+---
+
+## 8. Usos Prohibidos
+
+❌ **NO:**
+- Cambiar los colores del logo
+- Distorsionar o estirar el logo
+- Rotar el logo (excepto 90°, 180°, 270°)
+- Añadir sombras, efectos 3D o filtros
+- Colocar el logo sobre fondos complejos
+- Usar tipografías diferentes para el texto "LAIA"
+- Cambiar la proporción entre estrella y texto
+- Combinar elementos de diferentes versiones
+
+---
+
+## 9. Avatares para Redes Sociales
+
+### 9.1 GitHub
+**Archivo:** `laia-avatar-github.svg`
+- Optimizado para tema dark
+- Alto contraste
+- Formato circular recomendado
+
+### 9.2 Twitter/X
+**Archivo:** `laia-avatar-twitter.svg`
+- Colores más saturados
+- Diseño vibrante
+- Fondo degradado
+
+### 9.3 LinkedIn
+**Archivo:** `laia-avatar-linkedin.svg`
+- Versión profesional
+- Paleta corporativa conservadora
+- Énfasis en seriedad
+
+---
+
+## 10. Banners y Headers
+
+### 10.1 Banner GitHub
+**Archivo:** `laia-banner-github.svg`
+**Dimensiones:** 1200x400px
+
+**Uso:**
+- README.md del repositorio
+- Página principal del proyecto
+- Documentación GitHub Pages
+
+### 10.2 Social Media
+
+**Instagram Post** (`laia-social-instagram.svg`)
+- Formato: 1080x1080px (cuadrado)
+- Para posts de Instagram, LinkedIn, Facebook
+
+**Twitter Card** (`laia-social-twitter-card.svg`)
+- Formato: 1200x600px (2:1)
+- Para Twitter cards, Open Graph images
+- Previews en enlaces compartidos
+
+---
+
+## 11. Accesibilidad
+
+### 11.1 Contraste
+
+Todos los elementos cumplen con **WCAG AAA**:
+- Texto grande (18pt+): Ratio mínimo 3:1
+- Texto normal: Ratio mínimo 4.5:1
+- Elementos gráficos: Ratio mínimo 3:1
+
+### 11.2 Daltonismo
+
+El diseño es distinguible para personas con:
+- Protanopia (ceguera al rojo)
+- Deuteranopia (ceguera al verde)
+- Tritanopia (ceguera al azul)
+
+**Verificación:** El logo funciona sin color (solo formas)
+
+### 11.3 Texto Alternativo
+
+Siempre incluir:
+```html
+<img src="laia-logo.svg" alt="Laia - Ethical Artificial Intelligence">
+```
+
+---
+
+## 12. Archivos de Recursos
+
+### 12.1 Ubicación
+
+Todos los archivos están disponibles en:
+
+```
+brand/
+├── logo/
+│   ├── laia-logo-main.svg
+│   ├── laia-logo-light.svg
+│   ├── laia-logo-dark.svg
+│   └── laia-logo-mono.svg
+├── icons/
+│   └── laia-icon-compact.svg
+├── avatars/
+│   ├── laia-avatar-github.svg
+│   ├── laia-avatar-twitter.svg
+│   └── laia-avatar-linkedin.svg
+├── banners/
+│   └── laia-banner-github.svg
+├── social/
+│   ├── laia-social-instagram.svg
+│   └── laia-social-twitter-card.svg
+└── brand-guidelines.pdf (este documento)
+```
+
+### 12.2 Formatos
+
+- **SVG**: Vectorial, escalable, preferido para web
+- **PNG**: Raster, para apps que no soportan SVG
+- **PDF**: Para impresión profesional
+
+---
+
+## 13. Licencia
+
+### 13.1 Creative Commons Attribution 4.0 (CC BY 4.0)
+
+**Uso libre para:**
+- Promoción del proyecto Laia
+- Contenido educativo
+- Material de conferencias y presentaciones
+- Artículos y publicaciones
+
+**Requisitos:**
+- Atribución: Mencionar "Proyecto Laia" o "Laia by Brisecom"
+- No alteraciones significativas sin aprobación
+
+**Uso comercial:** Requiere aprobación previa del equipo Laia.
+
+### 13.2 Contacto para Permisos
+
+- **GitHub:** [github.com/javi-jimenez/laia](https://github.com/javi-jimenez/laia)
+- **LinkedIn:** [Francisco Javier Jiménez Gómez](https://www.linkedin.com/in/ximenezfrancisco/)
+- **Email:** A través del formulario de contacto en GitHub
+
+---
+
+## 14. Control de Versiones
+
+| Versión | Fecha | Cambios |
+|---------|-------|---------|
+| 1.0 | Diciembre 2025 | Versión inicial de la guía de marca |
+
+---
+
+## 15. Créditos
+
+**Diseño de Identidad Visual:**  
+Francisco Javier Jiménez Gómez para el Proyecto Laia
+
+**Concepto:**  
+Inteligencia de las Estrellas - IA Ética, Transparente y Sostenible
+
+**Más información:**  
+- Web del proyecto: [laia.brisecom.org](https://laia.brisecom.org/)
+- Blog técnico: [jimenezgomez.org](https://jimenezgomez.org/)
+- Repositorio: [github.com/javi-jimenez/laia](https://github.com/javi-jimenez/laia)
+
+---
+
+**© 2025 Proyecto Laia - Tecnologías Éticas LAIA, SLU**  
+**Licensed under CC BY 4.0**
+
+---
+
+*"La verdadera medida de la inteligencia artificial no está en lo que puede hacer, sino en cómo mejora la vida de las personas mientras respeta sus derechos y dignidad."*

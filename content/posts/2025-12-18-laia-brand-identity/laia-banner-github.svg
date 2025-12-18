@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400">
+  <defs>
+    <linearGradient id="bannerBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0c4a6e;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#075985;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0369a1;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="bannerGlow" cx="25%" cy="50%">
+      <stop offset="0%" style="stop-color:#60a5fa;stop-opacity:0.4" />
+      <stop offset="100%" style="stop-color:#0c4a6e;stop-opacity:0" />
+    </radialGradient>
+    <filter id="bannerSoftGlow">
+      <feGaussianBlur stdDeviation="5" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <rect width="1200" height="400" fill="url(#bannerBg)"/>
+  <circle cx="300" cy="200" r="250" fill="url(#bannerGlow)"/>
+  
+  <!-- Starfield -->
+  <circle cx="120" cy="70" r="2.5" fill="#dbeafe" opacity="0.7"/>
+  <circle cx="950" cy="100" r="2" fill="#dbeafe" opacity="0.6"/>
+  <circle cx="220" cy="330" r="2.2" fill="#dbeafe" opacity="0.75"/>
+  <circle cx="880" cy="310" r="1.8" fill="#dbeafe" opacity="0.65"/>
+  <circle cx="450" cy="50" r="2" fill="#dbeafe" opacity="0.6"/>
+  <circle cx="1080" cy="350" r="1.9" fill="#dbeafe" opacity="0.7"/>
+  <circle cx="780" cy="80" r="1.7" fill="#dbeafe" opacity="0.55"/>
+  <circle cx="1120" cy="180" r="2.1" fill="#dbeafe" opacity="0.65"/>
+  
+  <!-- Constellation lines -->
+  <polyline points="120,70 220,330 450,50" fill="none" stroke="#60a5fa" stroke-width="0.5" opacity="0.15"/>
+  <polyline points="950,100 880,310 780,80" fill="none" stroke="#60a5fa" stroke-width="0.5" opacity="0.15"/>
+  
+  <!-- Main star logo -->
+  <g transform="translate(280, 200)">
+    <path d="M 0,-70 L 19,-19 L 70,0 L 19,19 L 0,70 L -19,19 L -70,0 L -19,-19 Z" 
+          fill="#bfdbfe" filter="url(#bannerSoftGlow)" opacity="0.95"/>
+    
+    <circle cx="0" cy="0" r="90" fill="none" stroke="#93c5fd" stroke-width="2" opacity="0.25" stroke-dasharray="6,6"/>
+    <circle cx="0" cy="0" r="50" fill="none" stroke="#bfdbfe" stroke-width="1.5" opacity="0.35"/>
+    
+    <!-- Neural nodes -->
+    <circle cx="0" cy="-90" r="6" fill="#f0f9ff"/>
+    <circle cx="78" cy="-45" r="5.5" fill="#f0f9ff"/>
+    <circle cx="78" cy="45" r="5.5" fill="#f0f9ff"/>
+    <circle cx="0" cy="90" r="6" fill="#f0f9ff"/>
+    <circle cx="-78" cy="45" r="5.5" fill="#f0f9ff"/>
+    <circle cx="-78" cy="-45" r="5.5" fill="#f0f9ff"/>
+    
+    <!-- Connection lines -->
+    <g stroke="#bfdbfe" stroke-width="2" opacity="0.3">
+      <line x1="0" y1="-70" x2="0" y2="-90"/>
+      <line x1="49" y1="-49" x2="78" y2="-45"/>
+      <line x1="49" y1="49" x2="78" y2="45"/>
+      <line x1="0" y1="70" x2="0" y2="90"/>
+      <line x1="-49" y1="49" x2="-78" y2="45"/>
+      <line x1="-49" y1="-49" x2="-78" y2="-45"/>
+    </g>
+    
+    <!-- Center core -->
+    <circle cx="0" cy="0" r="35" fill="#0369a1" opacity="0.8"/>
+    <circle cx="0" cy="0" r="22" fill="#3b82f6" opacity="0.9"/>
+    <circle cx="0" cy="0" r="12" fill="#60a5fa"/>
+  </g>
+  
+  <!-- LAIA text -->
+  <text x="480" y="220" font-family="'Segoe UI', Arial, sans-serif" font-size="96" font-weight="200" 
+        fill="#f0f9ff" letter-spacing="20">LAIA</text>
+  
+  <!-- Subtitle -->
+  <text x="890" y="170" font-family="'Segoe UI', Arial, sans-serif" font-size="26" font-weight="300"
+        fill="#bfdbfe" letter-spacing="6">ETHICAL</text>
+  <text x="890" y="210" font-family="'Segoe UI', Arial, sans-serif" font-size="26" font-weight="300"
+        fill="#bfdbfe" letter-spacing="6">ARTIFICIAL</text>
+  <text x="890" y="250" font-family="'Segoe UI', Arial, sans-serif" font-size="26" font-weight="300"
+        fill="#bfdbfe" letter-spacing="6">INTELLIGENCE</text>
+  
+  <!-- Tagline -->
+  <text x="50" y="375" font-family="'Segoe UI', Arial, sans-serif" font-size="14" font-weight="300"
+        fill="#93c5fd" letter-spacing="2" opacity="0.8">Research · Transparency · Sustainability · Open Source</text>
+  
+  <!-- Bottom accent line -->
+  <line x1="50" y1="385" x2="1150" y2="385" stroke="#60a5fa" stroke-width="1.5" opacity="0.4"/>
+</svg>

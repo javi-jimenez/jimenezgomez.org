@@ -10,7 +10,7 @@
 <meta property='og:description' content="Software Architecture & Open Source">
 <meta property='og:url' content='http://localhost:1313/categories/'>
 <meta property='og:site_name' content='Francisco Javier Jiménez Gómez'>
-<meta property='og:type' content='website'><meta property='og:updated_time' content=' 2025-12-17T00:00:00&#43;00:00 '/>
+<meta property='og:type' content='website'><meta property='og:updated_time' content=' 2025-12-18T09:30:00&#43;02:00 '/>
 <meta name="twitter:title" content="Categories">
 <meta name="twitter:description" content="Software Architecture & Open Source"><link rel="alternate" type="application/rss&#43;xml" href="http://localhost:1313/categories/index.xml">
     <link rel="shortcut icon" href="/img/favicon.ico" />
@@ -39,6 +39,100 @@
         }
     })();
 </script>
+<header class="site-header portfolio-header">
+    <nav class="portfolio-nav">
+        <div class="portfolio-container">
+            <a href="/" class="portfolio-logo">jimenez<span>gomez</span>.org</a>
+            <ul class="portfolio-nav-links">
+                <li><a href="/#proyectos">Proyectos</a></li>
+                <li><a href="/#comunidad">Comunidad</a></li>
+                <li><a href="/#contacto">Contacto</a></li>
+                <li><a href="/posts" class="portfolio-blog-link">📝 Blog</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<style>
+    .portfolio-header {
+        border-bottom: 1px solid var(--border, #30363d);
+        padding: 2rem 0;
+        background-color: rgba(13, 17, 23, 0.9);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+    .portfolio-nav .portfolio-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 24px;
+    }
+
+    .portfolio-logo {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: #f0f6fc;
+        text-decoration: none;
+    }
+
+    .portfolio-logo span {
+        color: #58a6ff;
+    }
+
+    .portfolio-nav-links {
+        display: flex;
+        list-style: none;
+        gap: 2.5rem;
+    }
+
+    .portfolio-nav-links a {
+        color: #c9d1d9;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s;
+    }
+
+    .portfolio-nav-links a:hover {
+        color: #58a6ff;
+    }
+
+    .portfolio-blog-link {
+        background: rgba(88, 166, 255, 0.1);
+        border: 1px solid #58a6ff;
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        color: #58a6ff;
+        font-weight: 600;
+        transition: all 0.3s;
+    }
+
+    .portfolio-blog-link:hover {
+        background: rgba(88, 166, 255, 0.2);
+    }
+
+    @media (max-width: 768px) {
+        .portfolio-nav-links {
+            flex-direction: column;
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: #0d1117;
+            padding: 1.5rem;
+            gap: 1rem;
+        }
+
+        .portfolio-nav-links.active {
+            display: flex;
+        }
+    }
+</style>
 <div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
     <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
         <span class="hamburger-box">
@@ -145,6 +239,26 @@
                 
                 
                 
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
                 <span>Home</span>
             </a>
         </li>
@@ -154,6 +268,15 @@
             <a href='/about/' >
                 
                 
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
                 
                 <span>About</span>
             </a>
@@ -165,7 +288,37 @@
                 
                 
                 
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
                 <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/blog/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-rss" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="5" cy="19" r="1" />
+  <path d="M4 4a16 16 0 0 1 16 16" />
+  <path d="M4 11a9 9 0 0 1 9 9" />
+</svg>
+
+
+
+                
+                <span>Blog</span>
             </a>
         </li>
         
@@ -227,7 +380,7 @@
                     <a href="/archives/#2025">
                         
                             <span class="year">2025</span>
-                            <span class="count">5</span>
+                            <span class="count">7</span>
                         
                     </a> 
                 </div>
@@ -294,12 +447,20 @@
                 Technology
             </a>
         
+            <a href="/categories/ai/" class="font_size_2">
+                AI
+            </a>
+        
             <a href="/categories/base/" class="font_size_1">
                 Base
             </a>
         
-            <a href="/categories/meta/" class="font_size_1">
-                Meta
+            <a href="/categories/branding/" class="font_size_1">
+                Branding
+            </a>
+        
+            <a href="/categories/design/" class="font_size_1">
+                Design
             </a>
         
     </div>
@@ -343,24 +504,24 @@
                 Technology
             </a>
         
+            <a href="/tags/ai-ethics/">
+                AI Ethics
+            </a>
+        
+            <a href="/tags/brand-identity/">
+                Brand Identity
+            </a>
+        
+            <a href="/tags/corporate-identity/">
+                Corporate Identity
+            </a>
+        
             <a href="/tags/flowchart/">
                 Flowchart
             </a>
         
             <a href="/tags/fractal/">
                 Fractal
-            </a>
-        
-            <a href="/tags/howto/">
-                Howto
-            </a>
-        
-            <a href="/tags/improve/">
-                Improve
-            </a>
-        
-            <a href="/tags/materials/">
-                Materials
             </a>
         
     </div>
@@ -381,7 +542,7 @@
 
         <div class="section-card">
             <div class="section-details">
-                <h3 class="section-count">8 pages</h3>
+                <h3 class="section-count">13 pages</h3>
                 <h1 class="section-term">Categories</h1>
                 
             </div>
@@ -389,6 +550,61 @@
     </header>
     
     <section class="article-list--compact">
+        
+            <article>
+    <a href="/categories/ai/">
+        <div class="article-details">
+            <h2 class="article-title">AI</h2>
+            <footer class="article-time">
+                <time datetime='2025-12-18T09:30:00&#43;02:00'>Dec 18, 2025</time>
+            </footer>
+        </div>
+    </a>
+</article>
+        
+            <article>
+    <a href="/categories/branding/">
+        <div class="article-details">
+            <h2 class="article-title">Branding</h2>
+            <footer class="article-time">
+                <time datetime='2025-12-18T09:30:00&#43;02:00'>Dec 18, 2025</time>
+            </footer>
+        </div>
+    </a>
+</article>
+        
+            <article>
+    <a href="/categories/design/">
+        <div class="article-details">
+            <h2 class="article-title">Design</h2>
+            <footer class="article-time">
+                <time datetime='2025-12-18T09:30:00&#43;02:00'>Dec 18, 2025</time>
+            </footer>
+        </div>
+    </a>
+</article>
+        
+            <article>
+    <a href="/categories/ethics/">
+        <div class="article-details">
+            <h2 class="article-title">Ethics</h2>
+            <footer class="article-time">
+                <time datetime='2025-12-18T08:00:00&#43;02:00'>Dec 18, 2025</time>
+            </footer>
+        </div>
+    </a>
+</article>
+        
+            <article>
+    <a href="/categories/research/">
+        <div class="article-details">
+            <h2 class="article-title">Research</h2>
+            <footer class="article-time">
+                <time datetime='2025-12-18T08:00:00&#43;02:00'>Dec 18, 2025</time>
+            </footer>
+        </div>
+    </a>
+</article>
         
             <article>
     <a href="/categories/architecture/">
@@ -445,40 +661,22 @@
     </a>
 </article>
         
-            <article>
-    <a href="/categories/technology/">
-        <div class="article-details">
-            <h2 class="article-title">Technology</h2>
-            <footer class="article-time">
-                <time datetime='2023-10-19T20:38:00&#43;02:00'>Oct 19, 2023</time>
-            </footer>
-        </div>
-    </a>
-</article>
-        
-            <article>
-    <a href="/categories/base/">
-        <div class="article-details">
-            <h2 class="article-title">Base</h2>
-            <footer class="article-time">
-                <time datetime='2023-10-14T12:18:00&#43;02:00'>Oct 14, 2023</time>
-            </footer>
-        </div>
-    </a>
-</article>
-        
-            <article>
-    <a href="/categories/meta/">
-        <div class="article-details">
-            <h2 class="article-title">Meta</h2>
-            <footer class="article-time">
-                <time datetime='2023-07-01T05:33:00&#43;02:00'>Jul 01, 2023</time>
-            </footer>
-        </div>
-    </a>
-</article>
-        
     </section>
+    <nav class='pagination'>
+        
+        
+
+        
+            
+                <span class='page-link current'>1</span>
+                
+            
+            
+                    <a class='page-link' href='/categories/page/2/'>2</a>
+                
+            
+    </nav>
+
 <footer class="site-footer">
     <section class="copyright">
         &copy; 
@@ -497,7 +695,66 @@
 
             </main>
         </div>
-        <script 
+        
+        <footer class="portfolio-footer">
+    <div class="portfolio-container">
+        <p>Este espacio está dedicado a compartir conocimiento y herramientas bajo filosofías de código abierto.</p>
+        <p>
+             <a href="https://www.linkedin.com/in/ximenezfrancisco/">LinkedIn</a> |
+            🐙 <a href="https://github.com/javi-jimenez">GitHub</a> |
+            🐦 <a href="https://twitter.com/Lubok9">Twitter</a>
+        </p>
+        <p style="margin-top: 2rem;">
+            © <span id="portfolioYear"></span> Francisco Javier Jiménez Gómez. Contenido bajo licencias open source.
+        </p>
+    </div>
+</footer>
+
+<style>
+    .portfolio-footer {
+        text-align: center;
+        padding: 3rem 0;
+        border-top: 1px solid var(--border, #30363d);
+        color: #8b949e;
+        font-size: 0.9rem;
+        background-color: rgba(13, 17, 23, 0.95);
+        margin-top: 5rem;
+    }
+
+    .portfolio-footer .portfolio-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 24px;
+    }
+
+    .portfolio-footer a {
+        color: #58a6ff;
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+
+    .portfolio-footer a:hover {
+        color: #79c0ff;
+        text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+        .portfolio-footer {
+            padding: 2rem 0;
+        }
+
+        .portfolio-footer p {
+            font-size: 0.85rem;
+        }
+    }
+</style>
+
+<script>
+    if (document.getElementById('portfolioYear')) {
+        document.getElementById('portfolioYear').textContent = new Date().getFullYear();
+    }
+</script>
+<script 
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >

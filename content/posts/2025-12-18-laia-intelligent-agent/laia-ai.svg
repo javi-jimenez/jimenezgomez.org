@@ -1,0 +1,46 @@
+<svg width="800" height="400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#58a6ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#238636;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Fondo -->
+  <rect width="800" height="400" fill="#0d1117"/>
+  
+  <!-- Gradiente diagonal -->
+  <rect width="800" height="400" fill="url(#grad1)" opacity="0.1"/>
+  
+  <!-- Círculos decorativos -->
+  <circle cx="700" cy="100" r="120" fill="#58a6ff" opacity="0.1"/>
+  <circle cx="100" cy="300" r="150" fill="#238636" opacity="0.1"/>
+  
+  <!-- Icono central - Robot/IA -->
+  <g transform="translate(400, 200)">
+    <!-- Cabeza -->
+    <rect x="-60" y="-80" width="120" height="100" rx="10" fill="none" stroke="#58a6ff" stroke-width="3"/>
+    
+    <!-- Ojos -->
+    <circle cx="-30" cy="-40" r="8" fill="#58a6ff"/>
+    <circle cx="30" cy="-40" r="8" fill="#58a6ff"/>
+    
+    <!-- Boca -->
+    <line x1="-30" y1="-10" x2="30" y2="-10" stroke="#58a6ff" stroke-width="2"/>
+    
+    <!-- Cuerpo -->
+    <rect x="-50" y="30" width="100" height="80" rx="5" fill="none" stroke="#238636" stroke-width="3"/>
+    
+    <!-- Brazos -->
+    <line x1="-50" y1="50" x2="-100" y2="40" stroke="#238636" stroke-width="3"/>
+    <line x1="50" y1="50" x2="100" y2="40" stroke="#238636" stroke-width="3"/>
+    
+    <!-- Manos -->
+    <circle cx="-100" cy="40" r="6" fill="#238636"/>
+    <circle cx="100" cy="40" r="6" fill="#238636"/>
+  </g>
+  
+  <!-- Texto -->
+  <text x="400" y="340" font-size="32" font-weight="bold" fill="#c9d1d9" text-anchor="middle" font-family="JetBrains Mono">LAIA</text>
+  <text x="400" y="370" font-size="16" fill="#8b949e" text-anchor="middle" font-family="Inter">Intelligent Agent for Automation</text>
+</svg>

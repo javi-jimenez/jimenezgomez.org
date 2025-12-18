@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="\nLaia: La que habla dulce o se expresa con claridad Laia es un nombre de mujer en catalán que significa &ldquo;la que habla dulce o la que se expresa con claridad&rdquo;. Alguien que es sabio se suele expresar con buenas palabras y con claridad. Este nombre simboliza perfectamente la misión del proyecto: crear inteligencia artificial ética, transparente y comprensible.\nPresentando el Proyecto Laia Laia es una iniciativa de investigación de código abierto fundada por Francisco Javier Jiménez Gómez de Brisecom, dedicada a avanzar en las consideraciones éticas de la inteligencia artificial (IA). El proyecto representa la intersección entre la innovación tecnológica, la ética aplicada y el compromiso con el bien común.\n">
+<title>Laia: Inteligencia Artificial Ética - Un Proyecto de Investigación</title>
+
+<link rel='canonical' href='http://localhost:1313/posts/2025-12-18-laia-intelligent-agent/'>
+
+<link rel="stylesheet" href="/scss/style.min.b0e76e98cdd4f7082d1fc36f7af7e0843a81201db2197c03ca426751dc923735.css"><meta property='og:title' content="Laia: Inteligencia Artificial Ética - Un Proyecto de Investigación">
+<meta property='og:description' content="\nLaia: La que habla dulce o se expresa con claridad Laia es un nombre de mujer en catalán que significa &ldquo;la que habla dulce o la que se expresa con claridad&rdquo;. Alguien que es sabio se suele expresar con buenas palabras y con claridad. Este nombre simboliza perfectamente la misión del proyecto: crear inteligencia artificial ética, transparente y comprensible.\nPresentando el Proyecto Laia Laia es una iniciativa de investigación de código abierto fundada por Francisco Javier Jiménez Gómez de Brisecom, dedicada a avanzar en las consideraciones éticas de la inteligencia artificial (IA). El proyecto representa la intersección entre la innovación tecnológica, la ética aplicada y el compromiso con el bien común.\n">
+<meta property='og:url' content='http://localhost:1313/posts/2025-12-18-laia-intelligent-agent/'>
+<meta property='og:site_name' content='Francisco Javier Jiménez Gómez'>
+<meta property='og:type' content='article'><meta property='article:section' content='Posts' /><meta property='article:tag' content='AI Ethics' /><meta property='article:tag' content='Machine Learning' /><meta property='article:tag' content='Python' /><meta property='article:tag' content='Open Source' /><meta property='article:tag' content='Research' /><meta property='article:tag' content='Transparency' /><meta property='article:published_time' content='2025-12-18T08:00:00&#43;02:00'/><meta property='article:modified_time' content='2025-12-18T08:00:00&#43;02:00'/><meta property='og:image' content='http://localhost:1313/posts/2025-12-18-laia-intelligent-agent/laia-thumbnail.svg' />
+<meta name="twitter:title" content="Laia: Inteligencia Artificial Ética - Un Proyecto de Investigación">
+<meta name="twitter:description" content="\nLaia: La que habla dulce o se expresa con claridad Laia es un nombre de mujer en catalán que significa &ldquo;la que habla dulce o la que se expresa con claridad&rdquo;. Alguien que es sabio se suele expresar con buenas palabras y con claridad. Este nombre simboliza perfectamente la misión del proyecto: crear inteligencia artificial ética, transparente y comprensible.\nPresentando el Proyecto Laia Laia es una iniciativa de investigación de código abierto fundada por Francisco Javier Jiménez Gómez de Brisecom, dedicada a avanzar en las consideraciones éticas de la inteligencia artificial (IA). El proyecto representa la intersección entre la innovación tecnológica, la ética aplicada y el compromiso con el bien común.\n"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='http://localhost:1313/posts/2025-12-18-laia-intelligent-agent/laia-thumbnail.svg' />
+    <link rel="shortcut icon" href="/img/favicon.ico" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<header class="site-header portfolio-header">
+    <nav class="portfolio-nav">
+        <div class="portfolio-container">
+            <a href="/" class="portfolio-logo">jimenez<span>gomez</span>.org</a>
+            <ul class="portfolio-nav-links">
+                <li><a href="/#proyectos">Proyectos</a></li>
+                <li><a href="/#comunidad">Comunidad</a></li>
+                <li><a href="/#contacto">Contacto</a></li>
+                <li><a href="/posts" class="portfolio-blog-link">📝 Blog</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<style>
+    .portfolio-header {
+        border-bottom: 1px solid var(--border, #30363d);
+        padding: 2rem 0;
+        background-color: rgba(13, 17, 23, 0.9);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+    .portfolio-nav .portfolio-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 24px;
+    }
+
+    .portfolio-logo {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: #f0f6fc;
+        text-decoration: none;
+    }
+
+    .portfolio-logo span {
+        color: #58a6ff;
+    }
+
+    .portfolio-nav-links {
+        display: flex;
+        list-style: none;
+        gap: 2.5rem;
+    }
+
+    .portfolio-nav-links a {
+        color: #c9d1d9;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s;
+    }
+
+    .portfolio-nav-links a:hover {
+        color: #58a6ff;
+    }
+
+    .portfolio-blog-link {
+        background: rgba(88, 166, 255, 0.1);
+        border: 1px solid #58a6ff;
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        color: #58a6ff;
+        font-weight: 600;
+        transition: all 0.3s;
+    }
+
+    .portfolio-blog-link:hover {
+        background: rgba(88, 166, 255, 0.2);
+    }
+
+    @media (max-width: 768px) {
+        .portfolio-nav-links {
+            flex-direction: column;
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: #0d1117;
+            padding: 1.5rem;
+            gap: 1rem;
+        }
+
+        .portfolio-nav-links.active {
+            display: flex;
+        }
+    }
+</style>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu_abe15a945d43f659.png" width="300"
+                            height="286" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">💻</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">Francisco Javier Jiménez Gómez</a></h1>
+            <h2 class="site-description">Software Architecture &amp; Open Source</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/javi-jimenez'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://linkedin.com/in/ximenezfrancisco'
+                        target="_blank"
+                        title="LinkedIn"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-linkedin" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <rect x="4" y="4" width="16" height="16" rx="2" />
+  <line x1="8" y1="11" x2="8" y2="16" />
+  <line x1="8" y1="8" x2="8" y2="8.01" />
+  <line x1="12" y1="16" x2="12" y2="11" />
+  <path d="M16 16v-3a2 2 0 0 0 -4 0" />
+</svg>
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com/Lubok9'
+                        target="_blank"
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/blog/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-rss" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="5" cy="19" r="1" />
+  <path d="M4 4a16 16 0 0 1 16 16" />
+  <path d="M4 11a9 9 0 0 1 9 9" />
+</svg>
+
+
+
+                
+                <span>Blog</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>Dark Mode</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#laia-la-que-habla-dulce-o-se-expresa-con-claridad">Laia: La que habla dulce o se expresa con claridad</a></li>
+    <li><a href="#presentando-el-proyecto-laia">Presentando el Proyecto Laia</a>
+      <ol>
+        <li><a href="#visión-y-misión-del-proyecto">Visión y Misión del Proyecto</a></li>
+      </ol>
+    </li>
+    <li><a href="#enfoque-actual">Enfoque Actual</a>
+      <ol>
+        <li><a href="#1-investigación-fundamental">1. <strong>Investigación Fundamental</strong></a></li>
+        <li><a href="#2-aplicaciones-prioritarias">2. <strong>Aplicaciones Prioritarias</strong></a>
+          <ol>
+            <li><a href="#salud">Salud</a></li>
+            <li><a href="#educación">Educación</a></li>
+            <li><a href="#cambio-climático">Cambio Climático</a></li>
+          </ol>
+        </li>
+        <li><a href="#3-stack-tecnológico-planificado">3. <strong>Stack Tecnológico Planificado</strong></a></li>
+      </ol>
+    </li>
+    <li><a href="#arquitectura-del-proyecto">Arquitectura del Proyecto</a>
+      <ol>
+        <li><a href="#componentes-principales">Componentes Principales</a></li>
+        <li><a href="#principios-de-diseño">Principios de Diseño</a></li>
+      </ol>
+    </li>
+    <li><a href="#roadmap-del-proyecto">Roadmap del Proyecto</a>
+      <ol>
+        <li><a href="#fase-1-preparación-q4-2023">Fase 1: Preparación (Q4 2023)</a></li>
+        <li><a href="#fase-2-desarrollo-inicial-2024-2025">Fase 2: Desarrollo Inicial (2024-2025)</a></li>
+        <li><a href="#fase-3-expansión-y-validación-2025-2027">Fase 3: Expansión y Validación (2025-2027)</a></li>
+        <li><a href="#fase-4-consolidación-2027-2030">Fase 4: Consolidación (2027-2030)</a></li>
+        <li><a href="#fase-5-liderazgo-global-2030-2035">Fase 5: Liderazgo Global (2030-2035)</a></li>
+      </ol>
+    </li>
+    <li><a href="#sectores-de-aplicación">Sectores de Aplicación</a>
+      <ol>
+        <li><a href="#-sector-sanitario">🏥 <strong>Sector Sanitario</strong></a></li>
+        <li><a href="#-educación">🎓 <strong>Educación</strong></a></li>
+        <li><a href="#-medio-ambiente">🌍 <strong>Medio Ambiente</strong></a></li>
+        <li><a href="#-smart-cities">🏙️ <strong>Smart Cities</strong></a></li>
+        <li><a href="#-empresas-y-pymes">💼 <strong>Empresas y PYMEs</strong></a></li>
+        <li><a href="#-sector-público">🏛️ <strong>Sector Público</strong></a></li>
+      </ol>
+    </li>
+    <li><a href="#llamado-a-la-colaboración">Llamado a la Colaboración</a>
+      <ol>
+        <li><a href="#inversores-ángel-y-subvenciones">Inversores Ángel y Subvenciones</a></li>
+        <li><a href="#colaboradores">Colaboradores</a></li>
+        <li><a href="#mentores">Mentores</a></li>
+        <li><a href="#difusión">Difusión</a></li>
+      </ol>
+    </li>
+    <li><a href="#cómo-involucrarse">Cómo Involucrarse</a>
+      <ol>
+        <li><a href="#explorar-el-proyecto">Explorar el Proyecto</a></li>
+        <li><a href="#apoyar-financieramente">Apoyar Financieramente</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ol>
+    </li>
+    <li><a href="#reflexión-final-ia-al-servicio-del-bien-común">Reflexión Final: IA al Servicio del Bien Común</a>
+      <ol>
+        <li><a href="#principios-fundamentales">Principios Fundamentales</a></li>
+        <li><a href="#el-futuro-que-queremos-construir">El Futuro que Queremos Construir</a></li>
+        <li><a href="#un-llamado-a-la-acción">Un Llamado a la Acción</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/posts/2025-12-18-laia-intelligent-agent/">
+                
+                    <img src="/posts/2025-12-18-laia-intelligent-agent/laia-thumbnail.svg" loading="lazy" alt="Featured image of post Laia: Inteligencia Artificial Ética - Un Proyecto de Investigación" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/ai/" >
+                AI
+            </a>
+        
+            <a href="/categories/ethics/" >
+                Ethics
+            </a>
+        
+            <a href="/categories/research/" >
+                Research
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/posts/2025-12-18-laia-intelligent-agent/">Laia: Inteligencia Artificial Ética - Un Proyecto de Investigación</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published" datetime='2025-12-18T08:00:00&#43;02:00'>Dec 18, 2025</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    6 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p><img src="/posts/2025-12-18-laia-intelligent-agent/laia-header.svg"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Laia - Ethical AI Research"
+	
+	
+></p>
+<h2 id="laia-la-que-habla-dulce-o-se-expresa-con-claridad">Laia: La que habla dulce o se expresa con claridad
+</h2><p><strong>Laia</strong> es un nombre de mujer en catalán que significa &ldquo;la que habla dulce o la que se expresa con claridad&rdquo;. Alguien que es sabio se suele expresar con buenas palabras y con claridad. Este nombre simboliza perfectamente la misión del proyecto: crear inteligencia artificial ética, transparente y comprensible.</p>
+<h2 id="presentando-el-proyecto-laia">Presentando el Proyecto Laia
+</h2><p><strong>Laia</strong> es una iniciativa de investigación de código abierto fundada por Francisco Javier Jiménez Gómez de Brisecom, dedicada a avanzar en las consideraciones éticas de la inteligencia artificial (IA). El proyecto representa la intersección entre la innovación tecnológica, la ética aplicada y el compromiso con el bien común.</p>
+<h3 id="visión-y-misión-del-proyecto">Visión y Misión del Proyecto
+</h3><p>El proyecto Laia se centra en desarrollar sistemas de inteligencia artificial que prioricen:</p>
+<ul>
+<li><strong>Ética por diseño</strong>: Incorporar principios éticos desde las primeras fases del desarrollo</li>
+<li><strong>Transparencia algorítmica</strong>: Decisiones de IA comprensibles y auditables</li>
+<li><strong>Impacto social positivo</strong>: Tecnología al servicio del bienestar humano</li>
+<li><strong>Sostenibilidad digital</strong>: IA responsable con el medio ambiente</li>
+<li><strong>Democratización del conocimiento</strong>: Acceso abierto a investigación y herramientas</li>
+</ul>
+<h2 id="enfoque-actual">Enfoque Actual
+</h2><p>El proyecto se encuentra actualmente en su fase de preparación e investigación inicial, con foco en:</p>
+<h3 id="1-investigación-fundamental">1. <strong>Investigación Fundamental</strong>
+</h3><ul>
+<li>Desarrollo de frameworks éticos para IA</li>
+<li>Análisis de sesgos algorítmicos</li>
+<li>Estudio de impactos sociales de la automatización</li>
+<li>Metodologías de transparencia en machine learning</li>
+</ul>
+<h3 id="2-aplicaciones-prioritarias">2. <strong>Aplicaciones Prioritarias</strong>
+</h3><h4 id="salud">Salud
+</h4><ul>
+<li>Sistemas de diagnóstico asistido transparentes</li>
+<li>Análisis predictivo ético en medicina personalizada</li>
+<li>Herramientas de apoyo para profesionales sanitarios</li>
+</ul>
+<h4 id="educación">Educación
+</h4><ul>
+<li>Plataformas de aprendizaje adaptativo justas</li>
+<li>Sistemas de tutoría inteligente accesibles</li>
+<li>Democratización del acceso a educación de calidad</li>
+</ul>
+<h4 id="cambio-climático">Cambio Climático
+</h4><ul>
+<li>Modelos predictivos para gestión ambiental</li>
+<li>Optimización de recursos energéticos</li>
+<li>Sistemas de monitoreo de sostenibilidad</li>
+</ul>
+<h3 id="3-stack-tecnológico-planificado">3. <strong>Stack Tecnológico Planificado</strong>
+</h3><p>El proyecto está diseñado para utilizar herramientas probadas en proyectos grandes de código abierto:</p>
+<p><strong>Desarrollo de Modelos:</strong></p>
+<ul>
+<li>PyTorch / TensorFlow</li>
+<li>Hugging Face Transformers</li>
+<li>Scikit-learn</li>
+</ul>
+<p><strong>Procesamiento de Datos:</strong></p>
+<ul>
+<li>Apache Spark</li>
+<li>Pandas / NumPy</li>
+<li>Apache Airflow (automatización)</li>
+</ul>
+<p><strong>Infraestructura:</strong></p>
+<ul>
+<li>Kubernetes (orquestación)</li>
+<li>Docker (contenedores)</li>
+<li>PostgreSQL (base de datos)</li>
+<li>Prometheus &amp; Grafana (monitoreo)</li>
+</ul>
+<p><strong>Colaboración:</strong></p>
+<ul>
+<li>Mattermost (comunicación)</li>
+<li>Nextcloud (colaboración)</li>
+<li>Wiki.js (documentación)</li>
+<li>Taiga (gestión ágil)</li>
+</ul>
+<h2 id="arquitectura-del-proyecto">Arquitectura del Proyecto
+</h2><p>El proyecto contempla una arquitectura escalable y modular basada en principios de cloud computing:</p>
+<h3 id="componentes-principales">Componentes Principales
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">┌─────────────────────────────────────────┐
+</span></span><span class="line"><span class="cl">│     API Gateway &amp; Autenticación         │
+</span></span><span class="line"><span class="cl">├─────────────────────────────────────────┤
+</span></span><span class="line"><span class="cl">│  Servicios Core                         │
+</span></span><span class="line"><span class="cl">│  - Autenticación OAuth2/JWT             │
+</span></span><span class="line"><span class="cl">│  - Procesamiento de IA                  │
+</span></span><span class="line"><span class="cl">│  - Almacenamiento Distribuido           │
+</span></span><span class="line"><span class="cl">│  - Colaboración en Tiempo Real          │
+</span></span><span class="line"><span class="cl">├─────────────────────────────────────────┤
+</span></span><span class="line"><span class="cl">│  Capa de Datos                          │
+</span></span><span class="line"><span class="cl">│  - SQL (PostgreSQL)                     │
+</span></span><span class="line"><span class="cl">│  - NoSQL (almacenamiento distribuido)   │
+</span></span><span class="line"><span class="cl">├─────────────────────────────────────────┤
+</span></span><span class="line"><span class="cl">│  Seguridad &amp; Monitoreo                  │
+</span></span><span class="line"><span class="cl">│  - Cifrado TLS/SSL, AES-256             │
+</span></span><span class="line"><span class="cl">│  - Auditoría (ELK Stack)                │
+</span></span><span class="line"><span class="cl">│  - Monitoreo (Prometheus/Grafana)       │
+</span></span><span class="line"><span class="cl">└─────────────────────────────────────────┘
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="principios-de-diseño">Principios de Diseño
+</h3><ol>
+<li><strong>Escalabilidad Horizontal</strong>: Balanceadores de carga y auto-scaling</li>
+<li><strong>Alta Disponibilidad</strong>: Replicación multi-región</li>
+<li><strong>Recuperación ante Desastres</strong>: Backups automatizados y plan de recuperación</li>
+<li><strong>Seguridad por Capas</strong>: Múltiples niveles de protección</li>
+<li><strong>Interoperabilidad</strong>: APIs REST estándar y formatos abiertos</li>
+</ol>
+<h2 id="roadmap-del-proyecto">Roadmap del Proyecto
+</h2><p>El proyecto contempla un desarrollo en fases de largo plazo (2023-2035):</p>
+<h3 id="fase-1-preparación-q4-2023">Fase 1: Preparación (Q4 2023)
+</h3><ul>
+<li>Constitución del equipo inicial</li>
+<li>Diseño de infraestructura</li>
+<li>Documentación fundamental</li>
+<li>Búsqueda de financiación</li>
+</ul>
+<h3 id="fase-2-desarrollo-inicial-2024-2025">Fase 2: Desarrollo Inicial (2024-2025)
+</h3><ul>
+<li>Prototipo funcional</li>
+<li>Primeros modelos éticos de IA</li>
+<li>Colaboraciones estratégicas</li>
+<li>Validación técnica y ética</li>
+</ul>
+<h3 id="fase-3-expansión-y-validación-2025-2027">Fase 3: Expansión y Validación (2025-2027)
+</h3><ul>
+<li>Implementación en proyectos piloto</li>
+<li>Escalabilidad del sistema</li>
+<li>Evaluación de impacto social</li>
+<li>Expansión de casos de uso</li>
+</ul>
+<h3 id="fase-4-consolidación-2027-2030">Fase 4: Consolidación (2027-2030)
+</h3><ul>
+<li>Expansión global</li>
+<li>Nuevas funcionalidades</li>
+<li>Educación masiva</li>
+<li>Estándares de industria</li>
+</ul>
+<h3 id="fase-5-liderazgo-global-2030-2035">Fase 5: Liderazgo Global (2030-2035)
+</h3><ul>
+<li>Referencia internacional en IA ética</li>
+<li>Influencia en políticas públicas</li>
+<li>Ecosistema de innovación sostenible</li>
+</ul>
+<h2 id="sectores-de-aplicación">Sectores de Aplicación
+</h2><p>Laia tiene potencial de impacto en múltiples sectores:</p>
+<h3 id="-sector-sanitario">🏥 <strong>Sector Sanitario</strong>
+</h3><ul>
+<li>Diagnóstico asistido por IA transparente</li>
+<li>Medicina personalizada ética</li>
+<li>Gestión hospitalaria optimizada</li>
+<li>Telemedicina accesible</li>
+</ul>
+<h3 id="-educación">🎓 <strong>Educación</strong>
+</h3><ul>
+<li>Plataformas de e-learning adaptativas</li>
+<li>Sistemas de tutoría personalizada</li>
+<li>Análisis de rendimiento académico justo</li>
+<li>Democratización del conocimiento</li>
+</ul>
+<h3 id="-medio-ambiente">🌍 <strong>Medio Ambiente</strong>
+</h3><ul>
+<li>Predicción climática precisa</li>
+<li>Optimización energética</li>
+<li>Gestión de recursos hídricos</li>
+<li>Monitoreo de biodiversidad</li>
+</ul>
+<h3 id="-smart-cities">🏙️ <strong>Smart Cities</strong>
+</h3><ul>
+<li>Gestión de tráfico inteligente</li>
+<li>Servicios públicos optimizados</li>
+<li>Planificación urbana sostenible</li>
+<li>Seguridad ciudadana ética</li>
+</ul>
+<h3 id="-empresas-y-pymes">💼 <strong>Empresas y PYMEs</strong>
+</h3><ul>
+<li>Automatización de procesos administrativos</li>
+<li>Análisis de datos empresariales</li>
+<li>Sistemas de recomendación éticos</li>
+<li>Optimización de recursos</li>
+</ul>
+<h3 id="-sector-público">🏛️ <strong>Sector Público</strong>
+</h3><ul>
+<li>Servicios ciudadanos digitales</li>
+<li>Análisis de políticas públicas</li>
+<li>Detección de fraude transparente</li>
+<li>Planificación presupuestaria</li>
+</ul>
+<h2 id="llamado-a-la-colaboración">Llamado a la Colaboración
+</h2><p>Laia es un proyecto que requiere apoyo y colaboración para hacerse realidad. Se busca:</p>
+<h3 id="inversores-ángel-y-subvenciones">Inversores Ángel y Subvenciones
+</h3><ul>
+<li>Inversores interesados en ética en IA</li>
+<li>Instituciones con financiación flexible</li>
+<li>Programas de grants para investigación</li>
+</ul>
+<h3 id="colaboradores">Colaboradores
+</h3><ul>
+<li>Investigadores en IA y ética</li>
+<li>Desarrolladores de software open source</li>
+<li>Expertos en dominios específicos (salud, educación, etc.)</li>
+<li>Especialistas en políticas públicas</li>
+</ul>
+<h3 id="mentores">Mentores
+</h3><ul>
+<li>Profesionales experimentados en IA</li>
+<li>Líderes de proyectos de código abierto</li>
+<li>Expertos en sostenibilidad de proyectos</li>
+</ul>
+<h3 id="difusión">Difusión
+</h3><ul>
+<li>Compartir el proyecto en redes</li>
+<li>Conectar con instituciones relevantes</li>
+<li>Participar en debates sobre IA ética</li>
+</ul>
+<h2 id="cómo-involucrarse">Cómo Involucrarse
+</h2><h3 id="explorar-el-proyecto">Explorar el Proyecto
+</h3><p>🔗 <strong>Repositorio GitHub:</strong> <a class="link" href="https://github.com/javi-jimenez/laia"  target="_blank" rel="noopener"
+    >github.com/javi-jimenez/laia</a></p>
+<h3 id="apoyar-financieramente">Apoyar Financieramente
+</h3><ul>
+<li><a class="link" href="https://github.com/sponsors/javi-jimenez"  target="_blank" rel="noopener"
+    >GitHub Sponsors</a></li>
+<li><a class="link" href="https://www.paypal.me/brisecom"  target="_blank" rel="noopener"
+    >PayPal</a></li>
+<li><a class="link" href="https://laia.brisecom.org/"  target="_blank" rel="noopener"
+    >Web del Proyecto</a></li>
+</ul>
+<h3 id="contacto">Contacto
+</h3><ul>
+<li>LinkedIn: <a class="link" href="https://www.linkedin.com/in/ximenezfrancisco/"  target="_blank" rel="noopener"
+    >Francisco Javier Jiménez Gómez</a></li>
+<li>Red Brisecom</li>
+<li>Issues en GitHub</li>
+</ul>
+<h2 id="reflexión-final-ia-al-servicio-del-bien-común">Reflexión Final: IA al Servicio del Bien Común
+</h2><p>Laia representa más que un proyecto tecnológico. Es una declaración de principios sobre cómo debe desarrollarse la inteligencia artificial en el siglo XXI:</p>
+<h3 id="principios-fundamentales">Principios Fundamentales
+</h3><p><strong>Democratización:</strong> La IA no debe ser privilegio de grandes corporaciones. Debe ser accesible para organizaciones de todos los tamaños y países de todos los niveles de desarrollo.</p>
+<p><strong>Transparencia:</strong> Los algoritmos que toman decisiones que afectan a las personas deben ser comprensibles y auditables. Las &ldquo;cajas negras&rdquo; son incompatibles con una sociedad democrática.</p>
+<p><strong>Ética por Diseño:</strong> Los principios éticos no pueden ser un añadido posterior. Deben estar integrados desde las primeras líneas de código.</p>
+<p><strong>Sostenibilidad:</strong> La IA debe contribuir a resolver los desafíos globales (cambio climático, desigualdad, salud) en lugar de agravarlos.</p>
+<p><strong>Código Abierto:</strong> El conocimiento debe compartirse. Solo así se puede garantizar la revisión por pares, la mejora continua y el beneficio colectivo.</p>
+<h3 id="el-futuro-que-queremos-construir">El Futuro que Queremos Construir
+</h3><p>En un mundo donde la IA está transformando cada aspecto de nuestras vidas, proyectos como Laia son esenciales. No basta con desarrollar tecnología potente; debemos desarrollar tecnología <strong>buena</strong> - en el sentido ético y moral.</p>
+<p>Laia busca ser un faro que ilumine el camino hacia una IA:</p>
+<ul>
+<li>Que respete la dignidad humana</li>
+<li>Que reduzca desigualdades en lugar de ampliarlas</li>
+<li>Que sea transparente y rendición de cuentas</li>
+<li>Que contribuya al bien común</li>
+<li>Que sea sostenible para nuestro planeta</li>
+</ul>
+<h3 id="un-llamado-a-la-acción">Un Llamado a la Acción
+</h3><p>Este proyecto necesita de una comunidad comprometida. Si crees en una IA ética, transparente y al servicio de la humanidad, tu participación es valiosa:</p>
+<ul>
+<li><strong>Comparte</strong> el proyecto con tu red</li>
+<li><strong>Contribuye</strong> con código, documentación o ideas</li>
+<li><strong>Apoya</strong> financieramente si puedes</li>
+<li><strong>Debate</strong> sobre los desafíos éticos de la IA</li>
+<li><strong>Conecta</strong> el proyecto con instituciones relevantes</li>
+</ul>
+<p>Juntos podemos construir tecnologías de IA esenciales para un futuro digital sostenible.</p>
+<hr>
+<p><strong>Website:</strong> <a class="link" href="https://laia.brisecom.org/"  target="_blank" rel="noopener"
+    >laia.brisecom.org</a><br>
+<strong>GitHub:</strong> <a class="link" href="https://github.com/javi-jimenez/laia"  target="_blank" rel="noopener"
+    >github.com/javi-jimenez/laia</a><br>
+<strong>LinkedIn:</strong> <a class="link" href="https://www.linkedin.com/in/ximenezfrancisco/"  target="_blank" rel="noopener"
+    >Francisco Javier Jiménez Gómez</a></p>
+<p><strong>Etiquetas:</strong> #AIÉtica #InteligenciaArtificial #OpenSource #Investigación #Transparencia #BienComún #Sostenibilidad</p>
+<hr>
+<p><em>&ldquo;La verdadera medida de la inteligencia artificial no está en lo que puede hacer, sino en cómo mejora la vida de las personas mientras respeta sus derechos y dignidad.&rdquo;</em></p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/ai-ethics/">AI Ethics</a>
+        
+            <a href="/tags/machine-learning/">Machine Learning</a>
+        
+            <a href="/tags/python/">Python</a>
+        
+            <a href="/tags/open-source/">Open Source</a>
+        
+            <a href="/tags/research/">Research</a>
+        
+            <a href="/tags/transparency/">Transparency</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2025 Francisco Javier Jiménez Gómez
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.32.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        
+        <footer class="portfolio-footer">
+    <div class="portfolio-container">
+        <p>Este espacio está dedicado a compartir conocimiento y herramientas bajo filosofías de código abierto.</p>
+        <p>
+             <a href="https://www.linkedin.com/in/ximenezfrancisco/">LinkedIn</a> |
+            🐙 <a href="https://github.com/javi-jimenez">GitHub</a> |
+            🐦 <a href="https://twitter.com/Lubok9">Twitter</a>
+        </p>
+        <p style="margin-top: 2rem;">
+            © <span id="portfolioYear"></span> Francisco Javier Jiménez Gómez. Contenido bajo licencias open source.
+        </p>
+    </div>
+</footer>
+
+<style>
+    .portfolio-footer {
+        text-align: center;
+        padding: 3rem 0;
+        border-top: 1px solid var(--border, #30363d);
+        color: #8b949e;
+        font-size: 0.9rem;
+        background-color: rgba(13, 17, 23, 0.95);
+        margin-top: 5rem;
+    }
+
+    .portfolio-footer .portfolio-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 24px;
+    }
+
+    .portfolio-footer a {
+        color: #58a6ff;
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+
+    .portfolio-footer a:hover {
+        color: #79c0ff;
+        text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+        .portfolio-footer {
+            padding: 2rem 0;
+        }
+
+        .portfolio-footer p {
+            font-size: 0.85rem;
+        }
+    }
+</style>
+
+<script>
+    if (document.getElementById('portfolioYear')) {
+        document.getElementById('portfolioYear').textContent = new Date().getFullYear();
+    }
+</script>
+<script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.628c773f6dcceb7d79571d48660443df72f948b603d1647a8e1a71099fe0ec1b.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
