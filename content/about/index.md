@@ -5,6 +5,8 @@ layout: page
 menu:
     main:
         weight: 2
+        params:
+            icon: "user"
 ---
 
 # Francisco Javier Jiménez Gómez

@@ -1,0 +1,94 @@
+<header class="site-header portfolio-header">
+    <nav class="portfolio-nav">
+        <div class="portfolio-container">
+            <a href="/" class="portfolio-logo">jimenez<span>gomez</span>.org</a>
+            <ul class="portfolio-nav-links">
+                <li><a href="/#proyectos">Proyectos</a></li>
+                <li><a href="/#comunidad">Comunidad</a></li>
+                <li><a href="/#contacto">Contacto</a></li>
+                <li><a href="/posts" class="portfolio-blog-link">📝 Blog</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<style>
+    .portfolio-header {
+        border-bottom: 1px solid var(--border, #30363d);
+        padding: 2rem 0;
+        background-color: rgba(13, 17, 23, 0.9);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+    .portfolio-nav .portfolio-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 24px;
+    }
+
+    .portfolio-logo {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: #f0f6fc;
+        text-decoration: none;
+    }
+
+    .portfolio-logo span {
+        color: #58a6ff;
+    }
+
+    .portfolio-nav-links {
+        display: flex;
+        list-style: none;
+        gap: 2.5rem;
+    }
+
+    .portfolio-nav-links a {
+        color: #c9d1d9;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s;
+    }
+
+    .portfolio-nav-links a:hover {
+        color: #58a6ff;
+    }
+
+    .portfolio-blog-link {
+        background: rgba(88, 166, 255, 0.1);
+        border: 1px solid #58a6ff;
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        color: #58a6ff;
+        font-weight: 600;
+        transition: all 0.3s;
+    }
+
+    .portfolio-blog-link:hover {
+        background: rgba(88, 166, 255, 0.2);
+    }
+
+    @media (max-width: 768px) {
+        .portfolio-nav-links {
+            flex-direction: column;
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: #0d1117;
+            padding: 1.5rem;
+            gap: 1rem;
+        }
+
+        .portfolio-nav-links.active {
+            display: flex;
+        }
+    }
+</style>

@@ -1,0 +1,58 @@
+<footer class="portfolio-footer">
+    <div class="portfolio-container">
+        <p>Este espacio está dedicado a compartir conocimiento y herramientas bajo filosofías de código abierto.</p>
+        <p>
+             <a href="https://www.linkedin.com/in/ximenezfrancisco/">LinkedIn</a> |
+            🐙 <a href="https://github.com/javi-jimenez">GitHub</a> |
+            🐦 <a href="https://twitter.com/Lubok9">Twitter</a>
+        </p>
+        <p style="margin-top: 2rem;">
+            © <span id="portfolioYear"></span> Francisco Javier Jiménez Gómez. Contenido bajo licencias open source.
+        </p>
+    </div>
+</footer>
+
+<style>
+    .portfolio-footer {
+        text-align: center;
+        padding: 3rem 0;
+        border-top: 1px solid var(--border, #30363d);
+        color: #8b949e;
+        font-size: 0.9rem;
+        background-color: rgba(13, 17, 23, 0.95);
+        margin-top: 5rem;
+    }
+
+    .portfolio-footer .portfolio-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 24px;
+    }
+
+    .portfolio-footer a {
+        color: #58a6ff;
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+
+    .portfolio-footer a:hover {
+        color: #79c0ff;
+        text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+        .portfolio-footer {
+            padding: 2rem 0;
+        }
+
+        .portfolio-footer p {
+            font-size: 0.85rem;
+        }
+    }
+</style>
+
+<script>
+    if (document.getElementById('portfolioYear')) {
+        document.getElementById('portfolioYear').textContent = new Date().getFullYear();
+    }
+</script>

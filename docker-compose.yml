@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  blog:
+    build: .
+    container_name: jimenezgomez-blog
+    ports:
+      - "80:80"
+    environment:
+      - TZ=Europe/Madrid
+    volumes:
+      # Para desarrollo: auto-recarga con cambios
+      - ./content:/app/content
+      - ./assets:/app/assets
+      - ./static:/app/static
+    restart: unless-stopped
