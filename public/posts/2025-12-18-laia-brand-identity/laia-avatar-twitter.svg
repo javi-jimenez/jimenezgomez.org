@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <defs>
+    <radialGradient id="twitterBg" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#0369a1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0c4a6e;stop-opacity:1" />
+    </radialGradient>
+    <filter id="twitterGlow">
+      <feGaussianBlur stdDeviation="5" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <circle cx="200" cy="200" r="200" fill="url(#twitterBg)"/>
+  
+  <!-- Radial glow layers -->
+  <circle cx="200" cy="200" r="140" fill="#60a5fa" opacity="0.1"/>
+  <circle cx="200" cy="200" r="100" fill="#bfdbfe" opacity="0.1"/>
+  
+  <g transform="translate(200, 200)">
+    <!-- Main star -->
+    <path d="M 0,-65 L 18,-18 L 65,0 L 18,18 L 0,65 L -18,18 L -65,0 L -18,-18 Z" 
+          fill="#bfdbfe" filter="url(#twitterGlow)"/>
+    
+    <!-- Animated orbital rings -->
+    <circle cx="0" cy="0" r="85" fill="none" stroke="#93c5fd" stroke-width="2.5" opacity="0.4" stroke-dasharray="8,8"/>
+    <circle cx="0" cy="0" r="45" fill="none" stroke="#bfdbfe" stroke-width="2" opacity="0.5"/>
+    
+    <!-- Neural nodes (larger for visibility) -->
+    <circle cx="0" cy="-85" r="7" fill="#f0f9ff" opacity="0.95"/>
+    <circle cx="74" cy="-42" r="6" fill="#f0f9ff" opacity="0.95"/>
+    <circle cx="74" cy="42" r="6" fill="#f0f9ff" opacity="0.95"/>
+    <circle cx="0" cy="85" r="7" fill="#f0f9ff" opacity="0.95"/>
+    <circle cx="-74" cy="42" r="6" fill="#f0f9ff" opacity="0.95"/>
+    <circle cx="-74" cy="-42" r="6" fill="#f0f9ff" opacity="0.95"/>
+    
+    <!-- Connection lines -->
+    <g stroke="#bfdbfe" stroke-width="2" opacity="0.4">
+      <line x1="0" y1="-65" x2="0" y2="-85"/>
+      <line x1="46" y1="-46" x2="74" y2="-42"/>
+      <line x1="46" y1="46" x2="74" y2="42"/>
+      <line x1="0" y1="65" x2="0" y2="85"/>
+      <line x1="-46" y1="46" x2="-74" y2="42"/>
+      <line x1="-46" y1="-46" x2="-74" y2="-42"/>
+    </g>
+    
+    <!-- Center core -->
+    <circle cx="0" cy="0" r="30" fill="#075985" opacity="0.9"/>
+    <circle cx="0" cy="0" r="18" fill="#0369a1"/>
+    <circle cx="0" cy="0" r="10" fill="#60a5fa"/>
+  </g>
+  
+  <!-- Decorative stars -->
+  <circle cx="90" cy="90" r="3.5" fill="#bfdbfe" opacity="0.6"/>
+  <circle cx="310" cy="120" r="3" fill="#bfdbfe" opacity="0.5"/>
+  <circle cx="110" cy="310" r="2.5" fill="#bfdbfe" opacity="0.55"/>
+  <circle cx="320" cy="290" r="3.2" fill="#bfdbfe" opacity="0.6"/>
+</svg>

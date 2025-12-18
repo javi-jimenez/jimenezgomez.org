@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="compactBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e293b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0f172a;stop-opacity:1" />
+    </linearGradient>
+    <filter id="compactGlow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <rect width="200" height="200" fill="url(#compactBg)" rx="20"/>
+  
+  <g transform="translate(100, 100)">
+    <!-- Main star -->
+    <path d="M 0,-45 L 12,-12 L 45,0 L 12,12 L 0,45 L -12,12 L -45,0 L -12,-12 Z" 
+          fill="#60a5fa" filter="url(#compactGlow)"/>
+    
+    <!-- Orbital ring -->
+    <circle cx="0" cy="0" r="30" fill="none" stroke="#3b82f6" stroke-width="2" opacity="0.4"/>
+    
+    <!-- Neural nodes -->
+    <circle cx="0" cy="-30" r="4" fill="#bfdbfe"/>
+    <circle cx="26" cy="-15" r="3" fill="#bfdbfe"/>
+    <circle cx="26" cy="15" r="3" fill="#bfdbfe"/>
+    <circle cx="0" cy="30" r="4" fill="#bfdbfe"/>
+    <circle cx="-26" cy="15" r="3" fill="#bfdbfe"/>
+    <circle cx="-26" cy="-15" r="3" fill="#bfdbfe"/>
+    
+    <!-- Center -->
+    <circle cx="0" cy="0" r="15" fill="#0369a1"/>
+    <circle cx="0" cy="0" r="8" fill="#3b82f6"/>
+  </g>
+  
+  <!-- Subtle stars -->
+  <circle cx="30" cy="30" r="1.5" fill="#60a5fa" opacity="0.4"/>
+  <circle cx="170" cy="40" r="1.2" fill="#60a5fa" opacity="0.3"/>
+  <circle cx="160" cy="170" r="1.4" fill="#60a5fa" opacity="0.4"/>
+</svg>
