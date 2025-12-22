@@ -1,0 +1,243 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1300 850">
+  <defs>
+    <linearGradient id="darkBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e293b;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-opacity="0.3"/>
+    </filter>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#06b6d4" />
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1300" height="850" fill="url(#darkBg)"/>
+  
+  <!-- Grid pattern -->
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#334155" stroke-width="0.5" opacity="0.3"/>
+    </pattern>
+  </defs>
+  <rect width="1300" height="850" fill="url(#grid)"/>
+  
+  <!-- Title -->
+  <text x="650" y="50" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#ffffff" text-anchor="middle">
+    Organización Descentralizada Web 3.0
+  </text>
+  <text x="650" y="80" font-family="Arial, sans-serif" font-size="14" fill="#94a3b8" text-anchor="middle">
+    Modelo de gobernanza para brisecom.org DNS Universal
+  </text>
+  
+  <!-- Top Layer: Community & Users -->
+  <rect x="100" y="120" width="1100" height="100" rx="10" fill="#1e3a8a" stroke="#3b82f6" stroke-width="3" filter="url(#shadow)"/>
+  <text x="650" y="155" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#60a5fa" text-anchor="middle">
+    👥 COMUNIDAD Y USUARIOS
+  </text>
+  <text x="200" y="185" font-family="Arial, sans-serif" font-size="13" fill="#bfdbfe">
+    • Operadores de nodos (1 nodo = 1 voto)
+  </text>
+  <text x="650" y="185" font-family="Arial, sans-serif" font-size="13" fill="#bfdbfe">
+    • Desarrolladores de implementaciones
+  </text>
+  <text x="200" y="205" font-family="Arial, sans-serif" font-size="13" fill="#bfdbfe">
+    • Investigadores y académicos
+  </text>
+  <text x="650" y="205" font-family="Arial, sans-serif" font-size="13" fill="#bfdbfe">
+    • Redes comunitarias (guifi.net, etc)
+  </text>
+  
+  <!-- Arrows down -->
+  <line x1="300" y1="220" x2="300" y2="280" stroke="#06b6d4" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="650" y1="220" x2="650" y2="280" stroke="#06b6d4" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="1000" y1="220" x2="1000" y2="280" stroke="#06b6d4" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Middle Layer: DAO Governance -->
+  <rect x="100" y="290" width="1100" height="120" rx="10" fill="#065f46" stroke="#10b981" stroke-width="3" filter="url(#shadow)"/>
+  <text x="650" y="325" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#34d399" text-anchor="middle">
+    🏛️ DAO: GOBERNANZA DESCENTRALIZADA
+  </text>
+  
+  <!-- DAO components -->
+  <rect x="130" y="345" width="220" height="50" rx="5" fill="#064e3b" stroke="#10b981" stroke-width="1.5"/>
+  <text x="240" y="367" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#6ee7b7" text-anchor="middle">
+    Smart Contracts
+  </text>
+  <text x="240" y="385" font-family="Arial, sans-serif" font-size="10" fill="#a7f3d0" text-anchor="middle">
+    Ethereum/Polygon
+  </text>
+  
+  <rect x="380" y="345" width="220" height="50" rx="5" fill="#064e3b" stroke="#10b981" stroke-width="1.5"/>
+  <text x="490" y="367" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#6ee7b7" text-anchor="middle">
+    Votación On-Chain
+  </text>
+  <text x="490" y="385" font-family="Arial, sans-serif" font-size="10" fill="#a7f3d0" text-anchor="middle">
+    Snapshot + Aragon
+  </text>
+  
+  <rect x="630" y="345" width="220" height="50" rx="5" fill="#064e3b" stroke="#10b981" stroke-width="1.5"/>
+  <text x="740" y="367" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#6ee7b7" text-anchor="middle">
+    Treasury
+  </text>
+  <text x="740" y="385" font-family="Arial, sans-serif" font-size="10" fill="#a7f3d0" text-anchor="middle">
+    Multi-sig wallet
+  </text>
+  
+  <rect x="880" y="345" width="220" height="50" rx="5" fill="#064e3b" stroke="#10b981" stroke-width="1.5"/>
+  <text x="990" y="367" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#6ee7b7" text-anchor="middle">
+    Propuestas
+  </text>
+  <text x="990" y="385" font-family="Arial, sans-serif" font-size="10" fill="#a7f3d0" text-anchor="middle">
+    Transparencia total
+  </text>
+  
+  <!-- Arrows down -->
+  <line x1="240" y1="410" x2="240" y2="460" stroke="#06b6d4" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="490" y1="410" x2="490" y2="460" stroke="#06b6d4" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="740" y1="410" x2="740" y2="460" stroke="#06b6d4" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="990" y1="410" x2="990" y2="460" stroke="#06b6d4" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Bottom Layer: Operational Structure -->
+  <rect x="100" y="470" width="1100" height="200" rx="10" fill="#7c2d12" stroke="#ea580c" stroke-width="3" filter="url(#shadow)"/>
+  <text x="650" y="505" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#fb923c" text-anchor="middle">
+    ⚙️ ESTRUCTURA OPERATIVA
+  </text>
+  
+  <!-- Three operational pillars -->
+  <rect x="140" y="525" width="300" height="125" rx="8" fill="#431407" stroke="#fb923c" stroke-width="2"/>
+  <text x="290" y="555" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#fdba74" text-anchor="middle">
+    📡 Comité Técnico
+  </text>
+  <text x="160" y="580" font-family="Arial, sans-serif" font-size="11" fill="#fed7aa">
+    • Especificaciones protocolos
+  </text>
+  <text x="160" y="600" font-family="Arial, sans-serif" font-size="11" fill="#fed7aa">
+    • Auditoría código
+  </text>
+  <text x="160" y="620" font-family="Arial, sans-serif" font-size="11" fill="#fed7aa">
+    • RFCs y estándares
+  </text>
+  <text x="160" y="640" font-family="Arial, sans-serif" font-size="10" fill="#9a3412">
+    Miembros: 5-7 rotativo
+  </text>
+  
+  <rect x="490" y="525" width="300" height="125" rx="8" fill="#431407" stroke="#fb923c" stroke-width="2"/>
+  <text x="640" y="555" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#fdba74" text-anchor="middle">
+    🔬 Equipo Investigación
+  </text>
+  <text x="510" y="580" font-family="Arial, sans-serif" font-size="11" fill="#fed7aa">
+    • Papers y publicaciones
+  </text>
+  <text x="510" y="600" font-family="Arial, sans-serif" font-size="11" fill="#fed7aa">
+    • Simulaciones y pruebas
+  </text>
+  <text x="510" y="620" font-family="Arial, sans-serif" font-size="11" fill="#fed7aa">
+    • Colaboración universidades
+  </text>
+  <text x="510" y="640" font-family="Arial, sans-serif" font-size="10" fill="#9a3412">
+    Salarios: 60% del presupuesto
+  </text>
+  
+  <rect x="840" y="525" width="300" height="125" rx="8" fill="#431407" stroke="#fb923c" stroke-width="2"/>
+  <text x="990" y="555" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#fdba74" text-anchor="middle">
+    💰 Gestión Grants
+  </text>
+  <text x="860" y="580" font-family="Arial, sans-serif" font-size="11" fill="#fed7aa">
+    • Solicitud financiación
+  </text>
+  <text x="860" y="600" font-family="Arial, sans-serif" font-size="11" fill="#fed7aa">
+    • Distribución fondos
+  </text>
+  <text x="860" y="620" font-family="Arial, sans-serif" font-size="11" fill="#fed7aa">
+    • Revisión peer-to-peer
+  </text>
+  <text x="860" y="640" font-family="Arial, sans-serif" font-size="10" fill="#9a3412">
+    Grants externos: 15% budget
+  </text>
+  
+  <!-- Bottom: Funding Sources -->
+  <rect x="100" y="710" width="1100" height="100" rx="10" fill="#1e1b4b" stroke="#6366f1" stroke-width="3" filter="url(#shadow)"/>
+  <text x="650" y="745" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#a5b4fc" text-anchor="middle">
+    💵 FUENTES DE FINANCIACIÓN
+  </text>
+  
+  <text x="140" y="775" font-family="Arial, sans-serif" font-size="12" fill="#c7d2fe">
+    💎 Donaciones crypto (ETH/BTC/DAI)
+  </text>
+  <text x="140" y="795" font-family="Arial, sans-serif" font-size="12" fill="#c7d2fe">
+    🚀 Grants espaciales (NASA/ESA)
+  </text>
+  
+  <text x="480" y="775" font-family="Arial, sans-serif" font-size="12" fill="#c7d2fe">
+    🏷️ Subastas nombres premium
+  </text>
+  <text x="480" y="795" font-family="Arial, sans-serif" font-size="12" fill="#c7d2fe">
+    🎓 Grants investigación (ERC)
+  </text>
+  
+  <text x="820" y="775" font-family="Arial, sans-serif" font-size="12" fill="#c7d2fe">
+    📚 Publicaciones académicas
+  </text>
+  <text x="820" y="795" font-family="Arial, sans-serif" font-size="12" fill="#c7d2fe">
+    🤝 Consultoría y servicios
+  </text>
+  
+  <!-- Side info: Key principles -->
+  <rect x="1180" y="120" width="100" height="550" rx="8" fill="#0f172a" stroke="#475569" stroke-width="2"/>
+  <text x="1230" y="155" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#e2e8f0" text-anchor="middle" transform="rotate(-90 1230 155)">
+    PRINCIPIOS CLAVE
+  </text>
+  
+  <g transform="translate(1190, 300)">
+    <circle cx="40" cy="0" r="8" fill="#10b981"/>
+    <text x="20" y="30" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">
+      Sin
+    </text>
+    <text x="20" y="42" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">
+      ánimo
+    </text>
+    <text x="20" y="54" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">
+      lucro
+    </text>
+  </g>
+  
+  <g transform="translate(1190, 400)">
+    <circle cx="40" cy="0" r="8" fill="#06b6d4"/>
+    <text x="20" y="30" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">
+      Open
+    </text>
+    <text x="20" y="42" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">
+      Source
+    </text>
+  </g>
+  
+  <g transform="translate(1190, 480)">
+    <circle cx="40" cy="0" r="8" fill="#a855f7"/>
+    <text x="20" y="30" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">
+      Trans-
+    </text>
+    <text x="20" y="42" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">
+      parente
+    </text>
+  </g>
+  
+  <g transform="translate(1190, 560)">
+    <circle cx="40" cy="0" r="8" fill="#f59e0b"/>
+    <text x="20" y="30" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">
+      Descen-
+    </text>
+    <text x="20" y="42" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">
+      trali-
+    </text>
+    <text x="20" y="54" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">
+      zado
+    </text>
+  </g>
+  
+  <!-- Footer -->
+  <text x="650" y="835" font-family="Arial, sans-serif" font-size="11" fill="#64748b" text-anchor="middle">
+    Modelo inspirado en IETF, ICANN, Ethereum Foundation | brisecom.org 2025
+  </text>
+</svg>

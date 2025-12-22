@@ -1,0 +1,182 @@
+/* Share widget styles */
+.widget--share {
+    margin-top: 1rem;
+}
+
+.share-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.share-button {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    border-radius: var(--card-border-radius);
+    border: 1px solid var(--card-border-color);
+    background-color: var(--card-background);
+    color: var(--card-text-color-main);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.share-button:hover {
+    transform: translateX(5px);
+    border-color: var(--accent-color);
+    background-color: var(--accent-color-darker);
+}
+
+.share-button svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+/* Specific colors for each social network */
+.share-twitter:hover {
+    border-color: #1DA1F2;
+    background-color: rgba(29, 161, 242, 0.1);
+}
+
+.share-linkedin:hover {
+    border-color: #0A66C2;
+    background-color: rgba(10, 102, 194, 0.1);
+}
+
+.share-facebook:hover {
+    border-color: #1877F2;
+    background-color: rgba(24, 119, 242, 0.1);
+}
+
+.share-email:hover {
+    border-color: #EA4335;
+    background-color: rgba(234, 67, 53, 0.1);
+}
+
+.share-copy:hover {
+    border-color: #10b981;
+    background-color: rgba(16, 185, 129, 0.1);
+}
+
+.share-print:hover {
+    border-color: #8b5cf6;
+    background-color: rgba(139, 92, 246, 0.1);
+}
+
+/* Print styles - Standard CSS print media query */
+@media print {
+    /* Hide navigation, sidebar, comments, and share buttons when printing */
+    .left-sidebar,
+    .right-sidebar,
+    .widget--share,
+    .article-comments,
+    .site-footer,
+    .pswp,
+    nav,
+    aside {
+        display: none !important;
+    }
+    
+    /* Make content full width */
+    .main-container {
+        max-width: 100% !important;
+        padding: 0 !important;
+    }
+    
+    .article-page {
+        max-width: 100% !important;
+    }
+    
+    /* Optimize typography for print */
+    body {
+        background: white !important;
+        color: black !important;
+        font-size: 12pt;
+        line-height: 1.6;
+    }
+    
+    /* Expand all details/summary elements */
+    details {
+        display: block !important;
+    }
+    
+    details summary {
+        display: none;
+    }
+    
+    /* Show link URLs after links */
+    a[href]:after {
+        content: " (" attr(href) ")";
+        font-size: 0.9em;
+        color: #666;
+    }
+    
+    /* Don't show URLs for internal links */
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+    
+    /* Prevent page breaks inside important elements */
+    pre,
+    blockquote,
+    table,
+    figure {
+        page-break-inside: avoid;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+        page-break-after: avoid;
+        page-break-inside: avoid;
+    }
+    
+    /* Ensure images fit on page */
+    img {
+        max-width: 100% !important;
+        page-break-inside: avoid;
+    }
+    
+    /* Style code blocks for print */
+    pre, code {
+        border: 1px solid #ddd;
+        page-break-inside: avoid;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+    }
+    
+    /* Add page header with article title */
+    @page {
+        margin: 2cm;
+        
+        @top-center {
+            content: element(heading);
+        }
+    }
+    
+    /* Table styles for print */
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+    
+    table, th, td {
+        border: 1px solid #ddd;
+    }
+    
+    th, td {
+        padding: 8px;
+        text-align: left;
+    }
+}
+
+/* Responsive design for share buttons on mobile */
+@media (max-width: 768px) {
+    .share-button span {
+        font-size: 0.9rem;
+    }
+}

@@ -1,0 +1,1703 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=37511&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Introducción: El Problema del Direccionamiento Universal El Domain Name System (DNS) actual funciona bajo supuestos terrestres: latencias medidas en milisegundos, infraestructura física concentrada, y una autoridad central (ICANN). Pero ¿qué ocurre cuando necesitamos direccionar servicios en una colonia marciana, en estaciones orbitales, o incluso entre sistemas estelares?\nEl proyecto DDNSC (Distributed DNS Cache) proporciona los cimientos técnicos para resolver este problema mediante publicación descentralizada de servicios usando protocolos estándar (RFC 2136, Avahi/Zeroconf). Este artículo propone una extensión conceptual hacia escalas planetarias, galácticas y universales, integrando tecnologías Web 3.0 y protocolos emergentes.\n">
+<title>DNS Universal: De lo Planetario a lo Galáctico</title>
+
+<link rel='canonical' href='http://localhost:37511/posts/2025-12-22-dns-universal-ddnsc/'>
+
+<link rel="stylesheet" href="/scss/style.min.59b58f238e9d9f5a2316c8c571baf8fd0a88712acfb1cebdb6cef18e9f18a4e4.css"><meta property='og:title' content="DNS Universal: De lo Planetario a lo Galáctico">
+<meta property='og:description' content="Introducción: El Problema del Direccionamiento Universal El Domain Name System (DNS) actual funciona bajo supuestos terrestres: latencias medidas en milisegundos, infraestructura física concentrada, y una autoridad central (ICANN). Pero ¿qué ocurre cuando necesitamos direccionar servicios en una colonia marciana, en estaciones orbitales, o incluso entre sistemas estelares?\nEl proyecto DDNSC (Distributed DNS Cache) proporciona los cimientos técnicos para resolver este problema mediante publicación descentralizada de servicios usando protocolos estándar (RFC 2136, Avahi/Zeroconf). Este artículo propone una extensión conceptual hacia escalas planetarias, galácticas y universales, integrando tecnologías Web 3.0 y protocolos emergentes.\n">
+<meta property='og:url' content='http://localhost:37511/posts/2025-12-22-dns-universal-ddnsc/'>
+<meta property='og:site_name' content='Francisco Javier Jiménez Gómez'>
+<meta property='og:type' content='article'><meta property='article:section' content='Posts' /><meta property='article:tag' content='DNS' /><meta property='article:tag' content='distributed systems' /><meta property='article:tag' content='web3' /><meta property='article:tag' content='space' /><meta property='article:tag' content='research' /><meta property='article:published_time' content='2025-12-22T14:30:00&#43;02:00'/><meta property='article:modified_time' content='2025-12-22T14:30:00&#43;02:00'/><meta property='og:image' content='http://localhost:37511/posts/2025-12-22-dns-universal-ddnsc/dns-universe-architecture.svg' />
+<meta name="twitter:title" content="DNS Universal: De lo Planetario a lo Galáctico">
+<meta name="twitter:description" content="Introducción: El Problema del Direccionamiento Universal El Domain Name System (DNS) actual funciona bajo supuestos terrestres: latencias medidas en milisegundos, infraestructura física concentrada, y una autoridad central (ICANN). Pero ¿qué ocurre cuando necesitamos direccionar servicios en una colonia marciana, en estaciones orbitales, o incluso entre sistemas estelares?\nEl proyecto DDNSC (Distributed DNS Cache) proporciona los cimientos técnicos para resolver este problema mediante publicación descentralizada de servicios usando protocolos estándar (RFC 2136, Avahi/Zeroconf). Este artículo propone una extensión conceptual hacia escalas planetarias, galácticas y universales, integrando tecnologías Web 3.0 y protocolos emergentes.\n"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='http://localhost:37511/posts/2025-12-22-dns-universal-ddnsc/dns-universe-architecture.svg' />
+    <link rel="shortcut icon" href="/img/favicon.ico" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<header class="site-header portfolio-header">
+    <nav class="portfolio-nav">
+        <div class="portfolio-container">
+            <a href="/" class="portfolio-logo">jimenez<span>gomez</span>.org</a>
+            <ul class="portfolio-nav-links">
+                <li><a href="/#proyectos">Proyectos</a></li>
+                <li><a href="/#comunidad">Comunidad</a></li>
+                <li><a href="/#contacto">Contacto</a></li>
+                <li><a href="/posts" class="portfolio-blog-link">📝 Blog</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<style>
+    .portfolio-header {
+        border-bottom: 1px solid var(--border, #30363d);
+        padding: 2rem 0;
+        background-color: rgba(13, 17, 23, 0.9);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+    .portfolio-nav .portfolio-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 24px;
+    }
+
+    .portfolio-logo {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: #f0f6fc;
+        text-decoration: none;
+    }
+
+    .portfolio-logo span {
+        color: #58a6ff;
+    }
+
+    .portfolio-nav-links {
+        display: flex;
+        list-style: none;
+        gap: 2.5rem;
+    }
+
+    .portfolio-nav-links a {
+        color: #c9d1d9;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s;
+    }
+
+    .portfolio-nav-links a:hover {
+        color: #58a6ff;
+    }
+
+    .portfolio-blog-link {
+        background: rgba(88, 166, 255, 0.1);
+        border: 1px solid #58a6ff;
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        color: #58a6ff;
+        font-weight: 600;
+        transition: all 0.3s;
+    }
+
+    .portfolio-blog-link:hover {
+        background: rgba(88, 166, 255, 0.2);
+    }
+
+    @media (max-width: 768px) {
+        .portfolio-nav-links {
+            flex-direction: column;
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: #0d1117;
+            padding: 1.5rem;
+            gap: 1rem;
+        }
+
+        .portfolio-nav-links.active {
+            display: flex;
+        }
+    }
+</style>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu_abe15a945d43f659.png" width="300"
+                            height="286" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">💻</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">Francisco Javier Jiménez Gómez</a></h1>
+            <h2 class="site-description">Software Architecture &amp; Open Source</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/javi-jimenez'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://linkedin.com/in/ximenezfrancisco'
+                        target="_blank"
+                        title="LinkedIn"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-linkedin" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <rect x="4" y="4" width="16" height="16" rx="2" />
+  <line x1="8" y1="11" x2="8" y2="16" />
+  <line x1="8" y1="8" x2="8" y2="8.01" />
+  <line x1="12" y1="16" x2="12" y2="11" />
+  <path d="M16 16v-3a2 2 0 0 0 -4 0" />
+</svg>
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com/Lubok9'
+                        target="_blank"
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+        <li  class='current' >
+            <a href='/posts/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <polyline points="21 8 21 21 3 21 3 8"></polyline>
+  <rect x="1" y="3" width="22" height="5"></rect>
+  <line x1="10" y1="12" x2="14" y2="12"></line>
+</svg>
+
+                
+                <span>Artículos</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/blog/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-rss" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="5" cy="19" r="1" />
+  <path d="M4 4a16 16 0 0 1 16 16" />
+  <path d="M4 11a9 9 0 0 1 9 9" />
+</svg>
+
+
+
+                
+                <span>Blog</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Buscar</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>Dark Mode</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#introducción-el-problema-del-direccionamiento-universal">Introducción: El Problema del Direccionamiento Universal</a></li>
+    <li><a href="#el-proyecto-ddnsc-base-tecnológica">El Proyecto DDNSC: Base Tecnológica</a>
+      <ol>
+        <li><a href="#arquitectura-actual">Arquitectura Actual</a></li>
+        <li><a href="#limitación-actual-escala-1000-nodos">Limitación Actual: Escala ~1000 Nodos</a></li>
+      </ol>
+    </li>
+    <li><a href="#escalabilidad-de-planetario-a-universal">Escalabilidad: De Planetario a Universal</a>
+      <ol>
+        <li><a href="#nivel-1-escala-planetaria-10---10-nodos">Nivel 1: Escala Planetaria (10⁴ - 10⁸ nodos)</a></li>
+        <li><a href="#nivel-2-escala-galáctica-10---10-nodos">Nivel 2: Escala Galáctica (10⁹ - 10¹² nodos)</a></li>
+        <li><a href="#nivel-3-escala-universal-10-nodos">Nivel 3: Escala Universal (10¹³+ nodos)</a></li>
+      </ol>
+    </li>
+    <li><a href="#organización-gobernanza-descentralizada">Organización: Gobernanza Descentralizada</a>
+      <ol>
+        <li><a href="#modelo-para-brisecomorg">Modelo para brisecom.org</a>
+          <ol>
+            <li><a href="#estructura-de-la-fundación">Estructura de la Fundación</a></li>
+            <li><a href="#modelo-de-financiación">Modelo de Financiación</a></li>
+          </ol>
+        </li>
+        <li><a href="#gobernanza-web-30">Gobernanza Web 3.0</a></li>
+      </ol>
+    </li>
+    <li><a href="#protocolos-y-proyectos-relacionados">Protocolos y Proyectos Relacionados</a>
+      <ol>
+        <li><a href="#ecosistema-web-30">Ecosistema Web 3.0</a></li>
+        <li><a href="#protocolos-de-comunicación-espacial">Protocolos de Comunicación Espacial</a></li>
+        <li><a href="#arquitectura-de-integración">Arquitectura de Integración</a></li>
+      </ol>
+    </li>
+    <li><a href="#áreas-de-investigación-abiertas">Áreas de Investigación Abiertas</a>
+      <ol>
+        <li><a href="#1-resolución-con-latencia-extrema">1. Resolución con Latencia Extrema</a></li>
+        <li><a href="#2-crdt-para-registros-dns">2. CRDT para Registros DNS</a></li>
+        <li><a href="#3-economía-de-nombres-espaciales">3. Economía de Nombres Espaciales</a></li>
+        <li><a href="#4-seguridad-sin-pki-centralizada">4. Seguridad sin PKI Centralizada</a></li>
+        <li><a href="#5-simulación-de-red-galáctica">5. Simulación de Red Galáctica</a></li>
+      </ol>
+    </li>
+    <li><a href="#cálculos-y-estimaciones">Cálculos y Estimaciones</a>
+      <ol>
+        <li><a href="#ancho-de-banda-requerido">Ancho de Banda Requerido</a></li>
+        <li><a href="#coste-energético-de-consenso-blockchain">Coste Energético de Consenso Blockchain</a></li>
+        <li><a href="#escalabilidad-de-dht">Escalabilidad de DHT</a></li>
+      </ol>
+    </li>
+    <li><a href="#conclusión-factibilidad-y-próximos-pasos">Conclusión: Factibilidad y Próximos Pasos</a>
+      <ol>
+        <li><a href="#es-factible">¿Es Factible?</a></li>
+        <li><a href="#roadmap-para-brisecomorg">Roadmap para brisecom.org</a></li>
+        <li><a href="#financiación-sugerida">Financiación Sugerida</a></li>
+      </ol>
+    </li>
+    <li><a href="#referencias-y-enlaces">Referencias y Enlaces</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+            
+                
+<section class="widget archives">
+    <div class="widget-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+    </div>
+    <h2 class="widget-title section-title">Compartir</h2>
+    
+    <div class="widget--share">
+        <div class="share-buttons"><a href="https://twitter.com/intent/tweet?url=http%3a%2f%2flocalhost%3a37511%2fposts%2f2025-12-22-dns-universal-ddnsc%2f&text=DNS%20Universal%3a%20De%20lo%20Planetario%20a%20lo%20Gal%c3%a1ctico" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               class="share-button share-twitter"
+               title="Compartir en Twitter">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                <span>Twitter</span>
+            </a><a href="https://www.linkedin.com/sharing/share-offsite/?url=http%3a%2f%2flocalhost%3a37511%2fposts%2f2025-12-22-dns-universal-ddnsc%2f" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               class="share-button share-linkedin"
+               title="Compartir en LinkedIn">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-linkedin" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <rect x="4" y="4" width="16" height="16" rx="2" />
+  <line x1="8" y1="11" x2="8" y2="16" />
+  <line x1="8" y1="8" x2="8" y2="8.01" />
+  <line x1="12" y1="16" x2="12" y2="11" />
+  <path d="M16 16v-3a2 2 0 0 0 -4 0" />
+</svg>
+
+                <span>LinkedIn</span>
+            </a><a href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2flocalhost%3a37511%2fposts%2f2025-12-22-dns-universal-ddnsc%2f" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               class="share-button share-facebook"
+               title="Compartir en Facebook">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-facebook" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3"></path>
+</svg>
+
+                <span>Facebook</span>
+            </a><a href="mailto:?subject=DNS%20Universal%3a%20De%20lo%20Planetario%20a%20lo%20Gal%c3%a1ctico&body=%3ch2%20id%3d%22introducci%c3%b3n-el-problema-del-direccionamiento-universal%22%3eIntroducci%c3%b3n%3a%20El%20Problema%20del%20Direccionamiento%20Universal%0a%3c%2fh2%3e%3cp%3eEl%20%3cstrong%3eDomain%20Name%20System%20%28DNS%29%3c%2fstrong%3e%20actual%20funciona%20bajo%20supuestos%20terrestres%3a%20latencias%20medidas%20en%20milisegundos%2c%20infraestructura%20f%c3%adsica%20concentrada%2c%20y%20una%20autoridad%20central%20%28ICANN%29.%20Pero%20%c2%bfqu%c3%a9%20ocurre%20cuando%20necesitamos%20direccionar%20servicios%20en%20una%20colonia%20marciana%2c%20en%20estaciones%20orbitales%2c%20o%20incluso%20entre%20sistemas%20estelares%3f%3c%2fp%3e%0a%3cp%3eEl%20proyecto%20%3ca%20class%3d%22link%22%20href%3d%22https%3a%2f%2fgithub.com%2fjavi-jimenez%2fddnsc%22%20%20target%3d%22_blank%22%20rel%3d%22noopener%22%0a%20%20%20%20%3eDDNSC%20%28Distributed%20DNS%20Cache%29%3c%2fa%3e%20proporciona%20los%20cimientos%20t%c3%a9cnicos%20para%20resolver%20este%20problema%20mediante%20%3cstrong%3epublicaci%c3%b3n%20descentralizada%20de%20servicios%3c%2fstrong%3e%20usando%20protocolos%20est%c3%a1ndar%20%28RFC%202136%2c%20Avahi%2fZeroconf%29.%20Este%20art%c3%adculo%20propone%20una%20extensi%c3%b3n%20conceptual%20hacia%20escalas%20planetarias%2c%20gal%c3%a1cticas%20y%20universales%2c%20integrando%20tecnolog%c3%adas%20Web%203.0%20y%20protocolos%20emergentes.%3c%2fp%3e%0A%0Ahttp%3a%2f%2flocalhost%3a37511%2fposts%2f2025-12-22-dns-universal-ddnsc%2f" 
+               class="share-button share-email"
+               title="Compartir por email">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-mail" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z"></path>
+   <path d="M3 7l9 6l9 -6"></path>
+</svg>
+
+                <span>Email</span>
+            </a><button class="share-button share-copy" 
+                    data-url="http://localhost:37511/posts/2025-12-22-dns-universal-ddnsc/"
+                    title="Copiar enlace">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                <span>Copiar</span>
+            </button><button class="share-button share-print" 
+                    onclick="window.print()"
+                    title="Imprimir artículo">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-printer" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M17 17h2a2 2 0 0 0 2 -2v-4a2 2 0 0 0 -2 -2h-14a2 2 0 0 0 -2 2v4a2 2 0 0 0 2 2h2"></path>
+   <path d="M17 9v-4a2 2 0 0 0 -2 -2h-6a2 2 0 0 0 -2 2v4"></path>
+   <path d="M7 13m0 2a2 2 0 0 1 2 -2h6a2 2 0 0 1 2 2v4a2 2 0 0 1 -2 2h-6a2 2 0 0 1 -2 -2z"></path>
+</svg>
+
+                <span>Imprimir</span>
+            </button>
+        </div>
+    </div>
+</section>
+
+<script>
+
+document.addEventListener('DOMContentLoaded', function() {
+    const copyBtn = document.querySelector('.share-copy');
+    if (copyBtn) {
+        copyBtn.addEventListener('click', function() {
+            const url = this.getAttribute('data-url');
+            
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(url).then(function() {
+                    const originalText = copyBtn.querySelector('span').textContent;
+                    copyBtn.querySelector('span').textContent = '¡Copiado!';
+                    setTimeout(function() {
+                        copyBtn.querySelector('span').textContent = originalText;
+                    }, 2000);
+                }).catch(function(err) {
+                    console.error('Error al copiar: ', err);
+                });
+            } else {
+                
+                const textArea = document.createElement('textarea');
+                textArea.value = url;
+                document.body.appendChild(textArea);
+                textArea.select();
+                try {
+                    document.execCommand('copy');
+                    const originalText = copyBtn.querySelector('span').textContent;
+                    copyBtn.querySelector('span').textContent = '¡Copiado!';
+                    setTimeout(function() {
+                        copyBtn.querySelector('span').textContent = originalText;
+                    }, 2000);
+                } catch (err) {
+                    console.error('Error al copiar: ', err);
+                }
+                document.body.removeChild(textArea);
+            }
+        });
+    }
+});
+</script>
+
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/posts/2025-12-22-dns-universal-ddnsc/">
+                
+                    <img src="/posts/2025-12-22-dns-universal-ddnsc/dns-universe-architecture.svg" loading="lazy" alt="Featured image of post DNS Universal: De lo Planetario a lo Galáctico" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/architecture/" >
+                Architecture
+            </a>
+        
+            <a href="/categories/technology/" >
+                Technology
+            </a>
+        
+            <a href="/categories/research/" >
+                Research
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/posts/2025-12-22-dns-universal-ddnsc/">DNS Universal: De lo Planetario a lo Galáctico</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published" datetime='2025-12-22T14:30:00&#43;02:00'>Dec 22, 2025</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    10 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h2 id="introducción-el-problema-del-direccionamiento-universal">Introducción: El Problema del Direccionamiento Universal
+</h2><p>El <strong>Domain Name System (DNS)</strong> actual funciona bajo supuestos terrestres: latencias medidas en milisegundos, infraestructura física concentrada, y una autoridad central (ICANN). Pero ¿qué ocurre cuando necesitamos direccionar servicios en una colonia marciana, en estaciones orbitales, o incluso entre sistemas estelares?</p>
+<p>El proyecto <a class="link" href="https://github.com/javi-jimenez/ddnsc"  target="_blank" rel="noopener"
+    >DDNSC (Distributed DNS Cache)</a> proporciona los cimientos técnicos para resolver este problema mediante <strong>publicación descentralizada de servicios</strong> usando protocolos estándar (RFC 2136, Avahi/Zeroconf). Este artículo propone una extensión conceptual hacia escalas planetarias, galácticas y universales, integrando tecnologías Web 3.0 y protocolos emergentes.</p>
+<h2 id="el-proyecto-ddnsc-base-tecnológica">El Proyecto DDNSC: Base Tecnológica
+</h2><h3 id="arquitectura-actual">Arquitectura Actual
+</h3><p>DDNSC permite que cualquier nodo publique sus propios servicios en servidores DNS remotos sin autorización centralizada:</p>
+<ul>
+<li><strong>Cliente</strong>: Script <code>avahi-publish-remote.sh</code> que usa <code>nsupdate</code> (RFC 2136)</li>
+<li><strong>Servidor</strong>: Bind con zonas dinámicamente actualizables</li>
+<li><strong>Descubrimiento</strong>: Avahi para búsqueda de servicios (similar a mDNS/Bonjour)</li>
+<li><strong>Distribución</strong>: Anycast para replicar servidores DNS por zonas</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Publicar un servicio SSH en dominio ddns</span>
+</span></span><span class="line"><span class="cl">./avahi_publish_remote_service myssh _ssh._tcp <span class="m">22</span> ddns
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Publicar automáticamente todas las IPs del host</span>
+</span></span><span class="line"><span class="cl">avahi_publish_remote_myips ddns
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="limitación-actual-escala-1000-nodos">Limitación Actual: Escala ~1000 Nodos
+</h3><p>El propio proyecto reconoce que la escalabilidad se limita a ~1000 nodos en su forma actual. Necesitamos arquitectura distribuida verdadera para escalas mayores.</p>
+<p><img src="/posts/2025-12-22-dns-universal-ddnsc/dns-universe-architecture.svg"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Arquitectura DNS Universal"
+	
+	
+></p>
+<h2 id="escalabilidad-de-planetario-a-universal">Escalabilidad: De Planetario a Universal
+</h2><h3 id="nivel-1-escala-planetaria-10---10-nodos">Nivel 1: Escala Planetaria (10⁴ - 10⁸ nodos)
+</h3><p><strong>Contexto</strong>: Redes comunitarias terrestres, IoT masivo, ciudades inteligentes.</p>
+<p><strong>Desafíos técnicos</strong>:</p>
+<ul>
+<li>Latencia máxima: 100-500 ms (round-trip terrestre)</li>
+<li>Sincronización entre zonas horarias</li>
+<li>Resiliencia ante particiones de red regionales</li>
+</ul>
+<p><strong>Soluciones propuestas</strong>:</p>
+<ol>
+<li>
+<p><strong>Jerarquía geográfica multi-capa</strong>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">.earth → .continent → .country → .region → .local
+</span></span><span class="line"><span class="cl">ejemplo: server.barcelona.catalunya.europe.earth
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p><strong>DHT (Distributed Hash Table) para resolución</strong>:</p>
+<ul>
+<li>Protocolo Kademlia (usado en BitTorrent, IPFS)</li>
+<li>Cada nodo mantiene tabla de ~log(N) vecinos</li>
+<li>Resolución en O(log N) saltos</li>
+</ul>
+</li>
+<li>
+<p><strong>Blockchain ligera para autoridad</strong>:</p>
+<ul>
+<li>Namecoin o Ethereum Name Service (ENS) para registro de dominios</li>
+<li>Proof-of-Authority en lugar de PoW para eficiencia</li>
+</ul>
+</li>
+</ol>
+<p><strong>Cálculo de capacidad</strong>:</p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>Parámetro</th>
+          <th>Valor</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Nodos totales</td>
+          <td>10⁸ (100 millones)</td>
+      </tr>
+      <tr>
+          <td>Tamaño de tabla DHT por nodo</td>
+          <td>log₂(10⁸) ≈ 27 entradas</td>
+      </tr>
+      <tr>
+          <td>Memoria por entrada</td>
+          <td>100 bytes (ID + IP + metadata)</td>
+      </tr>
+      <tr>
+          <td><strong>Memoria total por nodo</strong></td>
+          <td><strong>2.7 KB</strong></td>
+      </tr>
+      <tr>
+          <td>Saltos de resolución promedio</td>
+          <td>log₂(10⁸)/2 ≈ 14 saltos</td>
+      </tr>
+      <tr>
+          <td>Latencia por salto</td>
+          <td>20 ms (promedio terrestre)</td>
+      </tr>
+      <tr>
+          <td><strong>Tiempo de resolución total</strong></td>
+          <td><strong>~280 ms</strong></td>
+      </tr>
+  </tbody>
+</table></div>
+<h3 id="nivel-2-escala-galáctica-10---10-nodos">Nivel 2: Escala Galáctica (10⁹ - 10¹² nodos)
+</h3><p><strong>Contexto</strong>: Sistema solar colonizado (Luna, Marte, cinturón de asteroides, lunas de Júpiter/Saturno).</p>
+<p><strong>Desafíos técnicos</strong>:</p>
+<ul>
+<li>Latencia variable: 3 min (Tierra-Marte en oposición cercana) a 22 min (oposición lejana)</li>
+<li>Particiones de red inevitables durante conjunciones solares</li>
+<li>Movimiento orbital constante de los nodos</li>
+</ul>
+<p><strong>Soluciones propuestas</strong>:</p>
+<ol>
+<li>
+<p><strong>Modelo de consistencia eventual</strong>:</p>
+<ul>
+<li>CRDT (Conflict-free Replicated Data Types) para registros DNS</li>
+<li>Inspirado en CassandraDB y Amazon Dynamo</li>
+<li>Cada planeta mantiene caché completa con timestamps</li>
+</ul>
+</li>
+<li>
+<p><strong>Protocolo Delay-Tolerant Networking (DTN)</strong>:</p>
+<ul>
+<li>RFC 4838 - Bundle Protocol</li>
+<li>Usado por NASA en comunicaciones espaciales profundas</li>
+<li>Store-and-forward con reconocimientos programados</li>
+</ul>
+</li>
+<li>
+<p><strong>Resolución predictiva</strong>:</p>
+<ul>
+<li>Precalcular órbitas y ventanas de comunicación</li>
+<li>Caché proactiva basada en efemérides</li>
+<li>Algoritmo: &ldquo;Resolver antes de que se solicite&rdquo;</li>
+</ul>
+</li>
+</ol>
+<p><strong>Jerarquía propuesta</strong>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">.sol → .planet → .settlement → .district → .host
+</span></span><span class="line"><span class="cl">ejemplos:
+</span></span><span class="line"><span class="cl">- gateway.olympuscity.mars.sol
+</span></span><span class="line"><span class="cl">- research.europamission.jupiter.sol
+</span></span><span class="line"><span class="cl">- mining.ceres.asteroid.sol
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/posts/2025-12-22-dns-universal-ddnsc/dns-scales.svg"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Escalas de distribución DNS"
+	
+	
+></p>
+<p><strong>Cálculo de latencia interplanetaria</strong>:</p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>Ruta</th>
+          <th>Distancia min (UA)</th>
+          <th>Latencia luz (min)</th>
+          <th>Ventana de comunicación</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Tierra-Luna</td>
+          <td>0.0026</td>
+          <td>1.3 segundos</td>
+          <td>Continua</td>
+      </tr>
+      <tr>
+          <td>Tierra-Marte</td>
+          <td>0.38</td>
+          <td>3.2</td>
+          <td>80% del año (evitando conjunciones)</td>
+      </tr>
+      <tr>
+          <td>Tierra-Júpiter</td>
+          <td>4.2</td>
+          <td>35</td>
+          <td>70% del año</td>
+      </tr>
+      <tr>
+          <td>Tierra-Saturno</td>
+          <td>8.0</td>
+          <td>67</td>
+          <td>65% del año</td>
+      </tr>
+      <tr>
+          <td>Tierra-Nube de Oort</td>
+          <td>50,000</td>
+          <td>0.8 años</td>
+          <td>Requerido relay</td>
+      </tr>
+  </tbody>
+</table></div>
+<h3 id="nivel-3-escala-universal-10-nodos">Nivel 3: Escala Universal (10¹³+ nodos)
+</h3><p><strong>Contexto</strong>: Civilización multi-estelar (ciencia ficción dura, proyecto de investigación teórica).</p>
+<p><strong>Desafíos técnicos</strong>:</p>
+<ul>
+<li>Latencias de años-luz (4.2 años a Alpha Centauri)</li>
+<li>Imposibilidad física de consenso global</li>
+<li>Equivalencia conceptual con universos desconectados</li>
+</ul>
+<p><strong>Modelo propuesto: &ldquo;Federación de Universos DNS&rdquo;</strong>:</p>
+<p>Cada sistema estelar opera como <strong>universo DNS independiente</strong> con federación opcional:</p>
+<ol>
+<li>
+<p><strong>Autoridad local absoluta</strong>:</p>
+<ul>
+<li>Cada estrella es TLD: <code>.alphacen</code>, <code>.sirius</code>, <code>.kepler442</code></li>
+<li>No requiere consenso con otros sistemas</li>
+<li>Propiedad comunal del sistema estelar</li>
+</ul>
+</li>
+<li>
+<p><strong>Relay interestelar</strong>:</p>
+<ul>
+<li>Naves que viajan entre sistemas llevan &ldquo;paquetes de actualización&rdquo;</li>
+<li>Similar a Sneakernet pero a escala interestelar</li>
+<li>Protocolo: &ldquo;eventual consistency with years of delay&rdquo;</li>
+</ul>
+</li>
+<li>
+<p><strong>Nombres federados opcionales</strong>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">.galaxy.milkyway → .arm → .sector → .system → .planet
+</span></span><span class="line"><span class="cl">ejemplo: station.newearth.alphacen.orion.milkyway.galaxy
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+<p><strong>Cálculo de capacidad teórica</strong>:</p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>Escala</th>
+          <th>Nodos estimados</th>
+          <th>Tiempo de sincronización completa</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Sistema solar</td>
+          <td>10⁹</td>
+          <td>Horas (DTN)</td>
+      </tr>
+      <tr>
+          <td>100 años-luz (esfera local)</td>
+          <td>10¹²</td>
+          <td>Siglos (imposible sincronización real-time)</td>
+      </tr>
+      <tr>
+          <td>Galaxia Vía Láctea</td>
+          <td>10¹⁵</td>
+          <td>100,000 años (solo federación histórica)</td>
+      </tr>
+      <tr>
+          <td>Universo observable</td>
+          <td>10²⁴+</td>
+          <td>Imposible (causalidad física)</td>
+      </tr>
+  </tbody>
+</table></div>
+<h2 id="organización-gobernanza-descentralizada">Organización: Gobernanza Descentralizada
+</h2><h3 id="modelo-para-brisecomorg">Modelo para brisecom.org
+</h3><p><strong>Propuesta organizativa</strong> inspirada en Internet Engineering Task Force (IETF) y ICANN, pero descentralizada:</p>
+<h4 id="estructura-de-la-fundación">Estructura de la Fundación
+</h4><ol>
+<li>
+<p><strong>Comité Técnico</strong> (5-7 miembros)</p>
+<ul>
+<li>Especificaciones de protocolos</li>
+<li>Auditoría de implementaciones</li>
+<li>Revisión de RFCs</li>
+</ul>
+</li>
+<li>
+<p><strong>Consejo de Gobernanza</strong> (rotativo, basado en contribuciones)</p>
+<ul>
+<li>Asignación de TLDs planetarios/galácticos</li>
+<li>Resolución de conflictos de nombres</li>
+<li>Votación: 1 nodo activo = 1 voto</li>
+</ul>
+</li>
+<li>
+<p><strong>Grants de Investigación</strong></p>
+<ul>
+<li>Financiación mediante criptomonedas (DAO)</li>
+<li>Revisión peer-to-peer de propuestas</li>
+<li>Transparencia total en blockchain</li>
+</ul>
+</li>
+</ol>
+<h4 id="modelo-de-financiación">Modelo de Financiación
+</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Fuentes de ingresos:
+</span></span><span class="line"><span class="cl">├── Donaciones criptográficas (ETH, BTC)
+</span></span><span class="line"><span class="cl">├── Grants de investigación espacial (NASA, ESA, SpaceX)
+</span></span><span class="line"><span class="cl">├── Venta de nombres premium en subastas (.mars, .io de Júpiter)
+</span></span><span class="line"><span class="cl">├── Servicios de consultoría para redes comunitarias
+</span></span><span class="line"><span class="cl">└── Publicaciones académicas y patentes abiertas
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Distribución:
+</span></span><span class="line"><span class="cl">├── 60% Salarios equipo investigación (incluyendo tu rol)
+</span></span><span class="line"><span class="cl">├── 20% Infraestructura servidores y experimentos
+</span></span><span class="line"><span class="cl">├── 15% Grants a proyectos externos
+</span></span><span class="line"><span class="cl">└── 5% Reserva operativa
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="gobernanza-web-30">Gobernanza Web 3.0
+</h3><p><strong>DAO (Decentralized Autonomous Organization)</strong> para decisiones críticas:</p>
+<ul>
+<li>
+<p><strong>Contrato inteligente en Ethereum</strong>:</p>
+<ul>
+<li>Cada implementación del protocolo = 1 token de voto</li>
+<li>Propuestas on-chain con período de votación</li>
+<li>Ejecución automática de decisiones aprobadas</li>
+</ul>
+</li>
+<li>
+<p><strong>IPFS para almacenamiento</strong>:</p>
+<ul>
+<li>Registros DNS históricos en IPFS</li>
+<li>Content addressing: <code>/ipns/ddnsc.brisecom.org</code></li>
+<li>Inmutabilidad y censorship-resistant</li>
+</ul>
+</li>
+</ul>
+<h2 id="protocolos-y-proyectos-relacionados">Protocolos y Proyectos Relacionados
+</h2><h3 id="ecosistema-web-30">Ecosistema Web 3.0
+</h3><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>Proyecto</th>
+          <th>Relevancia</th>
+          <th>Integración propuesta</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>ENS (Ethereum Name Service)</strong></td>
+          <td>Nombres descentralizados en blockchain</td>
+          <td>Backend de autoridad para TLDs premium</td>
+      </tr>
+      <tr>
+          <td><strong>IPFS/IPNS</strong></td>
+          <td>Almacenamiento distribuido content-addressed</td>
+          <td>Replicación de zonas DNS, caché distribuida</td>
+      </tr>
+      <tr>
+          <td><strong>libp2p</strong></td>
+          <td>Stack de networking peer-to-peer</td>
+          <td>Capa de transporte para nodos DDNSC</td>
+      </tr>
+      <tr>
+          <td><strong>Handshake (HNS)</strong></td>
+          <td>Blockchain DNS alternativo descentralizado</td>
+          <td>Competidor/complemento para registro raíz</td>
+      </tr>
+      <tr>
+          <td><strong>OrbitDB</strong></td>
+          <td>Base de datos distribuida sobre IPFS</td>
+          <td>Almacenamiento de registros DNS dinámicos</td>
+      </tr>
+      <tr>
+          <td><strong>GNUnet Name System (GNS)</strong></td>
+          <td>Sistema de nombres seguro y descentralizado</td>
+          <td>Inspiración para resolución con privacidad</td>
+      </tr>
+  </tbody>
+</table></div>
+<h3 id="protocolos-de-comunicación-espacial">Protocolos de Comunicación Espacial
+</h3><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>Protocolo</th>
+          <th>Estándar</th>
+          <th>Aplicación en DNS Universal</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>DTN Bundle Protocol</strong></td>
+          <td>RFC 4838, RFC 5050</td>
+          <td>Transporte de actualizaciones DNS con alta latencia</td>
+      </tr>
+      <tr>
+          <td><strong>CCSDS File Delivery Protocol</strong></td>
+          <td>CCSDS 727.0-B-5</td>
+          <td>Sincronización de zonas completas</td>
+      </tr>
+      <tr>
+          <td><strong>Licklider Transmission Protocol</strong></td>
+          <td>RFC 5326</td>
+          <td>Sesiones confiables en enlaces intermitentes</td>
+      </tr>
+      <tr>
+          <td><strong>Proximity-1 Space Link Protocol</strong></td>
+          <td>CCSDS 211.0-B-5</td>
+          <td>Capa física para comunicaciones interplanetarias</td>
+      </tr>
+  </tbody>
+</table></div>
+<h3 id="arquitectura-de-integración">Arquitectura de Integración
+</h3><p><img src="/posts/2025-12-22-dns-universal-ddnsc/dns-web3-org.svg"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Organización descentralizada"
+	
+	
+></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Capa de Aplicación: DNS Queries (UDP/TCP puerto 53, DoH, DoT)
+</span></span><span class="line"><span class="cl">         ↓
+</span></span><span class="line"><span class="cl">Capa de Resolución: DDNSC + DHT (Kademlia)
+</span></span><span class="line"><span class="cl">         ↓
+</span></span><span class="line"><span class="cl">Capa de Autoridad: ENS/Handshake Blockchain + OrbitDB
+</span></span><span class="line"><span class="cl">         ↓
+</span></span><span class="line"><span class="cl">Capa de Transporte: libp2p (terrestre) / DTN Bundle (espacial)
+</span></span><span class="line"><span class="cl">         ↓
+</span></span><span class="line"><span class="cl">Capa de Almacenamiento: IPFS (caché) + Bind (servidor local)
+</span></span><span class="line"><span class="cl">         ↓
+</span></span><span class="line"><span class="cl">Capa de Red: Internet (IP) / Delay-Tolerant Networks
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="áreas-de-investigación-abiertas">Áreas de Investigación Abiertas
+</h2><h3 id="1-resolución-con-latencia-extrema">1. Resolución con Latencia Extrema
+</h3><p><strong>Problema</strong>: Resolver <code>colony.mars.sol</code> desde Tierra cuando Marte está detrás del Sol.</p>
+<p><strong>Hipótesis</strong>:</p>
+<ul>
+<li>Sistema de &ldquo;proxy predictions&rdquo; basado en ML</li>
+<li>Caché inteligente que aprende patrones de consultas</li>
+<li>Modelo: &ldquo;Si no puedo preguntar, predigo la respuesta probable&rdquo;</li>
+</ul>
+<p><strong>Experimento propuesto</strong>:
+Simular red de nodos con latencias programadas (3-22 minutos aleatorios) y medir tasas de acierto de caché predictiva vs. caché tradicional LRU.</p>
+<p><strong>Financiación estimada</strong>: €50,000 (1 año, 1 investigador postdoc + infraestructura)</p>
+<h3 id="2-crdt-para-registros-dns">2. CRDT para Registros DNS
+</h3><p><strong>Problema</strong>: Dos nodos actualizan el mismo nombre simultáneamente en planetas diferentes.</p>
+<p><strong>Propuesta</strong>: Implementar CRDT (LWW-Element-Set) para registros A/AAAA/SRV.</p>
+<p><strong>Desafío técnico</strong>:</p>
+<ul>
+<li>Timestamps requieren sincronización de relojes</li>
+<li>En espacio: GPS no funciona, necesitamos pulsar timing</li>
+<li>Alternativa: Vector clocks con contador lógico</li>
+</ul>
+<p><strong>Código prototipo</strong>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">DNSRecord_CRDT</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">lamport_clock</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">value</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">clock</span> <span class="o">=</span> <span class="n">lamport_clock</span>  <span class="c1"># Contador lógico</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">node_id</span> <span class="o">=</span> <span class="n">uuid</span><span class="o">.</span><span class="n">uuid4</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">merge</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># Last-Write-Wins con desempate por node_id</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">other</span><span class="o">.</span><span class="n">clock</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">clock</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="n">other</span>
+</span></span><span class="line"><span class="cl">        <span class="k">elif</span> <span class="n">other</span><span class="o">.</span><span class="n">clock</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">clock</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="n">other</span> <span class="k">if</span> <span class="n">other</span><span class="o">.</span><span class="n">node_id</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">node_id</span> <span class="k">else</span> <span class="bp">self</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="bp">self</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>Financiación estimada</strong>: €80,000 (18 meses, implementación + paper)</p>
+<h3 id="3-economía-de-nombres-espaciales">3. Economía de Nombres Espaciales
+</h3><p><strong>Pregunta</strong>: ¿Cuánto vale <code>olympus.mars</code>? ¿Quién lo controla?</p>
+<p><strong>Modelo propuesto</strong>:</p>
+<ul>
+<li>Subastas al estilo ENS con smart contracts</li>
+<li>Ingresos financian infraestructura de relay</li>
+<li>&ldquo;Homesteading&rdquo;: primero en colonizar = primero en registrar</li>
+</ul>
+<p><strong>Investigación socioeconómica</strong>:</p>
+<ul>
+<li>Estudios de aceptación con comunidades espaciales</li>
+<li>Simulación de mercados secundarios</li>
+<li>Análisis de propiedad intelectual interplanetaria</li>
+</ul>
+<p><strong>Financiación estimada</strong>: €120,000 (2 años, equipo interdisciplinar: derecho espacial + economía + ingeniería)</p>
+<h3 id="4-seguridad-sin-pki-centralizada">4. Seguridad sin PKI Centralizada
+</h3><p><strong>Problema</strong>: DNSSEC depende de claves raíz controladas por ICANN. Imposible en federación interestelar.</p>
+<p><strong>Alternativas</strong>:</p>
+<ul>
+<li><strong>Web of Trust</strong> (PGP-style) entre sistemas estelares</li>
+<li><strong>Blockchain como raíz de confianza</strong> (cada sistema publica su clave pública)</li>
+<li><strong>Quantum-resistant signatures</strong> para registros que durarán siglos</li>
+</ul>
+<p><strong>Experimento</strong>:
+Implementar DNSSEC con Ed25519 (post-quantum) sobre blockchain Ethereum como raíz de confianza alternativa.</p>
+<p><strong>Financiación estimada</strong>: €100,000 (2 años, experto en criptografía + desarrollador blockchain)</p>
+<h3 id="5-simulación-de-red-galáctica">5. Simulación de Red Galáctica
+</h3><p><strong>Objetivo</strong>: Software que simule red de 10¹² nodos con latencias realistas orbitales.</p>
+<p><strong>Componentes</strong>:</p>
+<ul>
+<li>Motor de física orbital (efemérides precisas)</li>
+<li>Simulador de protocolos de red (ns-3 extendido)</li>
+<li>Visualizador 3D de topología dinámica</li>
+<li>Benchmark de algoritmos de resolución</li>
+</ul>
+<p><strong>Entregables</strong>:</p>
+<ul>
+<li>Framework open-source</li>
+<li>Dataset de trazas sintéticas</li>
+<li>Papers en conferencias de networking (SIGCOMM, NSDI)</li>
+</ul>
+<p><strong>Financiación estimada</strong>: €200,000 (3 años, 2 ingenieros software + HPC cluster)</p>
+<h2 id="cálculos-y-estimaciones">Cálculos y Estimaciones
+</h2><h3 id="ancho-de-banda-requerido">Ancho de Banda Requerido
+</h3><p>Para actualización completa de zona DNS planetaria:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Nodos por planeta: 10⁹
+</span></span><span class="line"><span class="cl">Registros por nodo: 5 (A, AAAA, 3× SRV)
+</span></span><span class="line"><span class="cl">Tamaño por registro: 100 bytes
+</span></span><span class="line"><span class="cl">Tamaño total zona: 10⁹ × 5 × 100 = 500 GB
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Ventana de sincronización Tierra-Marte: 20 minutos = 1200 segundos
+</span></span><span class="line"><span class="cl">Ancho de banda necesario: 500 GB / 1200 s = 417 MB/s = 3.3 Gbps
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Comparación: Deep Space Network de NASA alcanza 250 Mbps actualmente
+</span></span><span class="line"><span class="cl">→ Necesitamos 13× mejora en tecnología de comunicación espacial
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="coste-energético-de-consenso-blockchain">Coste Energético de Consenso Blockchain
+</h3><p>Blockchain ligera (Proof-of-Authority con 100 validadores):</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Consumo por validador: 100W (Raspberry Pi 4)
+</span></span><span class="line"><span class="cl">Validadores totales: 100
+</span></span><span class="line"><span class="cl">Consumo total: 10 kW
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Coste anual (electricidad a €0.20/kWh):
+</span></span><span class="line"><span class="cl">10 kW × 24 h × 365 días × €0.20 = €17,520
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">En Marte (energía solar + baterías):
+</span></span><span class="line"><span class="cl">Panel solar: 5 kW pico, €10,000 instalación + transporte
+</span></span><span class="line"><span class="cl">Baterías: €15,000
+</span></span><span class="line"><span class="cl">→ Payback period: 1.4 años en Tierra, amortizado en 5 años en Marte
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="escalabilidad-de-dht">Escalabilidad de DHT
+</h3><p>Para N nodos, cada uno mantiene k vecinos (típicamente k = 20):</p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>N (nodos)</th>
+          <th>log₂(N)</th>
+          <th>Memoria/nodo</th>
+          <th>Saltos promedio</th>
+          <th>Latencia resolución (50ms/salto)</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>10³</td>
+          <td>10</td>
+          <td>2 KB</td>
+          <td>5</td>
+          <td>250 ms</td>
+      </tr>
+      <tr>
+          <td>10⁶</td>
+          <td>20</td>
+          <td>4 KB</td>
+          <td>10</td>
+          <td>500 ms</td>
+      </tr>
+      <tr>
+          <td>10⁹</td>
+          <td>30</td>
+          <td>6 KB</td>
+          <td>15</td>
+          <td>750 ms</td>
+      </tr>
+      <tr>
+          <td>10¹²</td>
+          <td>40</td>
+          <td>8 KB</td>
+          <td>20</td>
+          <td>1000 ms</td>
+      </tr>
+  </tbody>
+</table></div>
+<p><strong>Conclusión</strong>: DHT escala logarítmicamente, viable hasta escala planetaria completa.</p>
+<h2 id="conclusión-factibilidad-y-próximos-pasos">Conclusión: Factibilidad y Próximos Pasos
+</h2><h3 id="es-factible">¿Es Factible?
+</h3><p><strong>Escala planetaria (10⁸ nodos)</strong>: <strong>SÍ, factible ahora</strong></p>
+<ul>
+<li>Tecnología existe (DHT, blockchain, DDNSC)</li>
+<li>Proyecto piloto: Red comunitaria guifi.net (~38,000 nodos actualmente)</li>
+<li>Coste estimado: €500K para MVP en 3 años</li>
+</ul>
+<p><strong>Escala galáctica (sistema solar)</strong>: <strong>Factible en 20-30 años</strong></p>
+<ul>
+<li>Depende de colonización espacial (NASA Artemis, SpaceX Starship)</li>
+<li>DTN ya probado por NASA</li>
+<li>Coste estimado: €10M para prototipo funcional</li>
+</ul>
+<p><strong>Escala universal</strong>: <strong>Teóricamente interesante, físicamente imposible</strong></p>
+<ul>
+<li>Violaría causalidad relativista</li>
+<li>Válido como ejercicio de diseño de sistemas extremos</li>
+<li>Aplicaciones terrestres: simulación de redes ultra-distribuidas</li>
+</ul>
+<h3 id="roadmap-para-brisecomorg">Roadmap para brisecom.org
+</h3><p><strong>Fase 1 (Años 1-2): Fundamentos</strong></p>
+<ul>
+<li>Implementar DDNSC con DHT (Kademlia)</li>
+<li>PoC con 1000 nodos simulados</li>
+<li>Paper en conferencia (NSDI/SIGCOMM)</li>
+<li><strong>Coste</strong>: €150K (2 ingenieros fullstack)</li>
+</ul>
+<p><strong>Fase 2 (Años 2-4): Integración Web 3.0</strong></p>
+<ul>
+<li>Backend con ENS + IPFS</li>
+<li>DAO para gobernanza</li>
+<li>Red piloto con 10K nodos reales</li>
+<li><strong>Coste</strong>: €300K (experto blockchain + 2 devs)</li>
+</ul>
+<p><strong>Fase 3 (Años 4-6): Simulación Espacial</strong></p>
+<ul>
+<li>Framework de simulación orbital</li>
+<li>Colaboración con ESA/NASA</li>
+<li>Grants de investigación espacial</li>
+<li><strong>Coste</strong>: €500K (cluster HPC + equipo de 4)</li>
+</ul>
+<p><strong>Fase 4 (Años 6-10): Despliegue Real</strong></p>
+<ul>
+<li>Experimento en ISS o misión lunar</li>
+<li>Licencias y patentes</li>
+<li>Spin-off comercial</li>
+<li><strong>Coste</strong>: €2M (depende de partners espaciales)</li>
+</ul>
+<h3 id="financiación-sugerida">Financiación Sugerida
+</h3><p><strong>Fuentes inmediatas</strong>:</p>
+<ol>
+<li>European Research Council (ERC Starting Grant): €1.5M</li>
+<li>Horizon Europe (Cluster 4 - Digital &amp; Space): €2M</li>
+<li>ESA Open Space Innovation Platform: €500K</li>
+<li>Ethereum Foundation Grants: €200K</li>
+<li>Crowdfunding crypto (DAI/ETH): €100K</li>
+</ol>
+<p><strong>Total disponible potencial</strong>: €4.3M para 5 años</p>
+<p><strong>Tu salario</strong>: €60K-80K/año (competitivo para investigador senior en España), sostenible con €300K anuales de presupuesto.</p>
+<h2 id="referencias-y-enlaces">Referencias y Enlaces
+</h2><ul>
+<li><strong>DDNSC GitHub</strong>: <a class="link" href="https://github.com/javi-jimenez/ddnsc"  target="_blank" rel="noopener"
+    >https://github.com/javi-jimenez/ddnsc</a></li>
+<li><strong>RFC 2136</strong> - Dynamic Updates in DNS: <a class="link" href="https://tools.ietf.org/html/rfc2136"  target="_blank" rel="noopener"
+    >https://tools.ietf.org/html/rfc2136</a></li>
+<li><strong>RFC 4838</strong> - Delay-Tolerant Networking: <a class="link" href="https://tools.ietf.org/html/rfc4838"  target="_blank" rel="noopener"
+    >https://tools.ietf.org/html/rfc4838</a></li>
+<li><strong>ENS Documentation</strong>: <a class="link" href="https://docs.ens.domains/"  target="_blank" rel="noopener"
+    >https://docs.ens.domains/</a></li>
+<li><strong>IPFS Specifications</strong>: <a class="link" href="https://specs.ipfs.tech/"  target="_blank" rel="noopener"
+    >https://specs.ipfs.tech/</a></li>
+<li><strong>Handshake Whitepaper</strong>: <a class="link" href="https://handshake.org/files/handshake.txt"  target="_blank" rel="noopener"
+    >https://handshake.org/files/handshake.txt</a></li>
+<li><strong>NASA Deep Space Network</strong>: <a class="link" href="https://www.nasa.gov/directorates/heo/scan/services/networks/dsn"  target="_blank" rel="noopener"
+    >https://www.nasa.gov/directorates/heo/scan/services/networks/dsn</a></li>
+<li><strong>Kademlia DHT</strong>: Maymounkov &amp; Mazières (2002) - Peer-to-peer information system</li>
+<li><strong>CRDTs</strong>: Shapiro et al. (2011) - Conflict-free Replicated Data Types</li>
+</ul>
+<hr>
+<blockquote>
+<p><strong>Nota del autor</strong>: Este artículo parte de investigación y análisis del proyecto DDNSC de código abierto. El texto ha sido generado con ayuda de inteligencia artificial basándose en conceptos técnicos reales de sistemas distribuidos, protocolos de networking espacial, y arquitecturas Web 3.0. Los cálculos son aproximaciones teóricas para propósitos de investigación.</p>
+</blockquote>
+<p><strong>Para brisecom.org</strong>: Este trabajo representa una propuesta inicial de línea de investigación. Se solicita revisión peer-to-peer y feedback de la comunidad científica y espacial antes de proceder con solicitudes de financiación.</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/dns/">DNS</a>
+        
+            <a href="/tags/distributed-systems/">Distributed Systems</a>
+        
+            <a href="/tags/web3/">Web3</a>
+        
+            <a href="/tags/space/">Space</a>
+        
+            <a href="/tags/research/">Research</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2025 Francisco Javier Jiménez Gómez
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.32.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        
+        <footer class="portfolio-footer">
+    <div class="portfolio-container">
+        <p>Este espacio está dedicado a compartir conocimiento y herramientas bajo filosofías de código abierto.</p>
+        <p>
+             <a href="https://www.linkedin.com/in/ximenezfrancisco/">LinkedIn</a> |
+            🐙 <a href="https://github.com/javi-jimenez">GitHub</a> |
+            🐦 <a href="https://twitter.com/Lubok9">Twitter</a>
+        </p>
+        <p style="margin-top: 2rem;">
+            © <span id="portfolioYear"></span> Francisco Javier Jiménez Gómez. Contenido bajo licencias open source.
+        </p>
+    </div>
+</footer>
+
+<style>
+    .portfolio-footer {
+        text-align: center;
+        padding: 3rem 0;
+        border-top: 1px solid var(--border, #30363d);
+        color: #8b949e;
+        font-size: 0.9rem;
+        background-color: rgba(13, 17, 23, 0.95);
+        margin-top: 5rem;
+    }
+
+    .portfolio-footer .portfolio-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 24px;
+    }
+
+    .portfolio-footer a {
+        color: #58a6ff;
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+
+    .portfolio-footer a:hover {
+        color: #79c0ff;
+        text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+        .portfolio-footer {
+            padding: 2rem 0;
+        }
+
+        .portfolio-footer p {
+            font-size: 0.85rem;
+        }
+    }
+</style>
+
+<script>
+    if (document.getElementById('portfolioYear')) {
+        document.getElementById('portfolioYear').textContent = new Date().getFullYear();
+    }
+</script>
+<script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.628c773f6dcceb7d79571d48660443df72f948b603d1647a8e1a71099fe0ec1b.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
