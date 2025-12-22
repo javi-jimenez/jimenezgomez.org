@@ -2,20 +2,807 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Architecture on Francisco Javier Jiménez Gómez</title>
-        <link>http://localhost:33939/categories/architecture/</link>
+        <link>http://localhost:37511/categories/architecture/</link>
         <description>Recent content in Architecture on Francisco Javier Jiménez Gómez</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>es</language>
         <copyright>Francisco Javier Jiménez Gómez</copyright>
-        <lastBuildDate>Tue, 14 May 2024 00:00:00 +0200</lastBuildDate><atom:link href="http://localhost:33939/categories/architecture/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 22 Dec 2025 14:30:00 +0200</lastBuildDate><atom:link href="http://localhost:37511/categories/architecture/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>DNS Universal: De lo Planetario a lo Galáctico</title>
+        <link>http://localhost:37511/posts/2025-12-22-dns-universal-ddnsc/</link>
+        <pubDate>Mon, 22 Dec 2025 14:30:00 +0200</pubDate>
+        
+        <guid>http://localhost:37511/posts/2025-12-22-dns-universal-ddnsc/</guid>
+        <description>&lt;img src="http://localhost:37511/posts/2025-12-22-dns-universal-ddnsc/dns-universe-architecture.svg" alt="Featured image of post DNS Universal: De lo Planetario a lo Galáctico" /&gt;&lt;h2 id=&#34;introducción-el-problema-del-direccionamiento-universal&#34;&gt;Introducción: El Problema del Direccionamiento Universal
+&lt;/h2&gt;&lt;p&gt;El &lt;strong&gt;Domain Name System (DNS)&lt;/strong&gt; actual funciona bajo supuestos terrestres: latencias medidas en milisegundos, infraestructura física concentrada, y una autoridad central (ICANN). Pero ¿qué ocurre cuando necesitamos direccionar servicios en una colonia marciana, en estaciones orbitales, o incluso entre sistemas estelares?&lt;/p&gt;
+&lt;p&gt;El proyecto &lt;a class=&#34;link&#34; href=&#34;https://github.com/javi-jimenez/ddnsc&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;DDNSC (Distributed DNS Cache)&lt;/a&gt; proporciona los cimientos técnicos para resolver este problema mediante &lt;strong&gt;publicación descentralizada de servicios&lt;/strong&gt; usando protocolos estándar (RFC 2136, Avahi/Zeroconf). Este artículo propone una extensión conceptual hacia escalas planetarias, galácticas y universales, integrando tecnologías Web 3.0 y protocolos emergentes.&lt;/p&gt;
+&lt;h2 id=&#34;el-proyecto-ddnsc-base-tecnológica&#34;&gt;El Proyecto DDNSC: Base Tecnológica
+&lt;/h2&gt;&lt;h3 id=&#34;arquitectura-actual&#34;&gt;Arquitectura Actual
+&lt;/h3&gt;&lt;p&gt;DDNSC permite que cualquier nodo publique sus propios servicios en servidores DNS remotos sin autorización centralizada:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Cliente&lt;/strong&gt;: Script &lt;code&gt;avahi-publish-remote.sh&lt;/code&gt; que usa &lt;code&gt;nsupdate&lt;/code&gt; (RFC 2136)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Servidor&lt;/strong&gt;: Bind con zonas dinámicamente actualizables&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Descubrimiento&lt;/strong&gt;: Avahi para búsqueda de servicios (similar a mDNS/Bonjour)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Distribución&lt;/strong&gt;: Anycast para replicar servidores DNS por zonas&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# Publicar un servicio SSH en dominio ddns&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;./avahi_publish_remote_service myssh _ssh._tcp &lt;span class=&#34;m&#34;&gt;22&lt;/span&gt; ddns
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# Publicar automáticamente todas las IPs del host&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;avahi_publish_remote_myips ddns
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;limitación-actual-escala-1000-nodos&#34;&gt;Limitación Actual: Escala ~1000 Nodos
+&lt;/h3&gt;&lt;p&gt;El propio proyecto reconoce que la escalabilidad se limita a ~1000 nodos en su forma actual. Necesitamos arquitectura distribuida verdadera para escalas mayores.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:37511/posts/2025-12-22-dns-universal-ddnsc/dns-universe-architecture.svg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Arquitectura DNS Universal&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h2 id=&#34;escalabilidad-de-planetario-a-universal&#34;&gt;Escalabilidad: De Planetario a Universal
+&lt;/h2&gt;&lt;h3 id=&#34;nivel-1-escala-planetaria-10---10-nodos&#34;&gt;Nivel 1: Escala Planetaria (10⁴ - 10⁸ nodos)
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Contexto&lt;/strong&gt;: Redes comunitarias terrestres, IoT masivo, ciudades inteligentes.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Desafíos técnicos&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Latencia máxima: 100-500 ms (round-trip terrestre)&lt;/li&gt;
+&lt;li&gt;Sincronización entre zonas horarias&lt;/li&gt;
+&lt;li&gt;Resiliencia ante particiones de red regionales&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Soluciones propuestas&lt;/strong&gt;:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Jerarquía geográfica multi-capa&lt;/strong&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;.earth → .continent → .country → .region → .local
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ejemplo: server.barcelona.catalunya.europe.earth
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;DHT (Distributed Hash Table) para resolución&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Protocolo Kademlia (usado en BitTorrent, IPFS)&lt;/li&gt;
+&lt;li&gt;Cada nodo mantiene tabla de ~log(N) vecinos&lt;/li&gt;
+&lt;li&gt;Resolución en O(log N) saltos&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Blockchain ligera para autoridad&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Namecoin o Ethereum Name Service (ENS) para registro de dominios&lt;/li&gt;
+&lt;li&gt;Proof-of-Authority en lugar de PoW para eficiencia&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;Cálculo de capacidad&lt;/strong&gt;:&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Parámetro&lt;/th&gt;
+          &lt;th&gt;Valor&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Nodos totales&lt;/td&gt;
+          &lt;td&gt;10⁸ (100 millones)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Tamaño de tabla DHT por nodo&lt;/td&gt;
+          &lt;td&gt;log₂(10⁸) ≈ 27 entradas&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Memoria por entrada&lt;/td&gt;
+          &lt;td&gt;100 bytes (ID + IP + metadata)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Memoria total por nodo&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;strong&gt;2.7 KB&lt;/strong&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Saltos de resolución promedio&lt;/td&gt;
+          &lt;td&gt;log₂(10⁸)/2 ≈ 14 saltos&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Latencia por salto&lt;/td&gt;
+          &lt;td&gt;20 ms (promedio terrestre)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Tiempo de resolución total&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;strong&gt;~280 ms&lt;/strong&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;nivel-2-escala-galáctica-10---10-nodos&#34;&gt;Nivel 2: Escala Galáctica (10⁹ - 10¹² nodos)
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Contexto&lt;/strong&gt;: Sistema solar colonizado (Luna, Marte, cinturón de asteroides, lunas de Júpiter/Saturno).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Desafíos técnicos&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Latencia variable: 3 min (Tierra-Marte en oposición cercana) a 22 min (oposición lejana)&lt;/li&gt;
+&lt;li&gt;Particiones de red inevitables durante conjunciones solares&lt;/li&gt;
+&lt;li&gt;Movimiento orbital constante de los nodos&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Soluciones propuestas&lt;/strong&gt;:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Modelo de consistencia eventual&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;CRDT (Conflict-free Replicated Data Types) para registros DNS&lt;/li&gt;
+&lt;li&gt;Inspirado en CassandraDB y Amazon Dynamo&lt;/li&gt;
+&lt;li&gt;Cada planeta mantiene caché completa con timestamps&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Protocolo Delay-Tolerant Networking (DTN)&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;RFC 4838 - Bundle Protocol&lt;/li&gt;
+&lt;li&gt;Usado por NASA en comunicaciones espaciales profundas&lt;/li&gt;
+&lt;li&gt;Store-and-forward con reconocimientos programados&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Resolución predictiva&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Precalcular órbitas y ventanas de comunicación&lt;/li&gt;
+&lt;li&gt;Caché proactiva basada en efemérides&lt;/li&gt;
+&lt;li&gt;Algoritmo: &amp;ldquo;Resolver antes de que se solicite&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;Jerarquía propuesta&lt;/strong&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;.sol → .planet → .settlement → .district → .host
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ejemplos:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- gateway.olympuscity.mars.sol
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- research.europamission.jupiter.sol
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- mining.ceres.asteroid.sol
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:37511/posts/2025-12-22-dns-universal-ddnsc/dns-scales.svg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Escalas de distribución DNS&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Cálculo de latencia interplanetaria&lt;/strong&gt;:&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Ruta&lt;/th&gt;
+          &lt;th&gt;Distancia min (UA)&lt;/th&gt;
+          &lt;th&gt;Latencia luz (min)&lt;/th&gt;
+          &lt;th&gt;Ventana de comunicación&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Tierra-Luna&lt;/td&gt;
+          &lt;td&gt;0.0026&lt;/td&gt;
+          &lt;td&gt;1.3 segundos&lt;/td&gt;
+          &lt;td&gt;Continua&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Tierra-Marte&lt;/td&gt;
+          &lt;td&gt;0.38&lt;/td&gt;
+          &lt;td&gt;3.2&lt;/td&gt;
+          &lt;td&gt;80% del año (evitando conjunciones)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Tierra-Júpiter&lt;/td&gt;
+          &lt;td&gt;4.2&lt;/td&gt;
+          &lt;td&gt;35&lt;/td&gt;
+          &lt;td&gt;70% del año&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Tierra-Saturno&lt;/td&gt;
+          &lt;td&gt;8.0&lt;/td&gt;
+          &lt;td&gt;67&lt;/td&gt;
+          &lt;td&gt;65% del año&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Tierra-Nube de Oort&lt;/td&gt;
+          &lt;td&gt;50,000&lt;/td&gt;
+          &lt;td&gt;0.8 años&lt;/td&gt;
+          &lt;td&gt;Requerido relay&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;nivel-3-escala-universal-10-nodos&#34;&gt;Nivel 3: Escala Universal (10¹³+ nodos)
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Contexto&lt;/strong&gt;: Civilización multi-estelar (ciencia ficción dura, proyecto de investigación teórica).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Desafíos técnicos&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Latencias de años-luz (4.2 años a Alpha Centauri)&lt;/li&gt;
+&lt;li&gt;Imposibilidad física de consenso global&lt;/li&gt;
+&lt;li&gt;Equivalencia conceptual con universos desconectados&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Modelo propuesto: &amp;ldquo;Federación de Universos DNS&amp;rdquo;&lt;/strong&gt;:&lt;/p&gt;
+&lt;p&gt;Cada sistema estelar opera como &lt;strong&gt;universo DNS independiente&lt;/strong&gt; con federación opcional:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Autoridad local absoluta&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Cada estrella es TLD: &lt;code&gt;.alphacen&lt;/code&gt;, &lt;code&gt;.sirius&lt;/code&gt;, &lt;code&gt;.kepler442&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;No requiere consenso con otros sistemas&lt;/li&gt;
+&lt;li&gt;Propiedad comunal del sistema estelar&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Relay interestelar&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Naves que viajan entre sistemas llevan &amp;ldquo;paquetes de actualización&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;Similar a Sneakernet pero a escala interestelar&lt;/li&gt;
+&lt;li&gt;Protocolo: &amp;ldquo;eventual consistency with years of delay&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Nombres federados opcionales&lt;/strong&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;.galaxy.milkyway → .arm → .sector → .system → .planet
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ejemplo: station.newearth.alphacen.orion.milkyway.galaxy
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;Cálculo de capacidad teórica&lt;/strong&gt;:&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Escala&lt;/th&gt;
+          &lt;th&gt;Nodos estimados&lt;/th&gt;
+          &lt;th&gt;Tiempo de sincronización completa&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Sistema solar&lt;/td&gt;
+          &lt;td&gt;10⁹&lt;/td&gt;
+          &lt;td&gt;Horas (DTN)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;100 años-luz (esfera local)&lt;/td&gt;
+          &lt;td&gt;10¹²&lt;/td&gt;
+          &lt;td&gt;Siglos (imposible sincronización real-time)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Galaxia Vía Láctea&lt;/td&gt;
+          &lt;td&gt;10¹⁵&lt;/td&gt;
+          &lt;td&gt;100,000 años (solo federación histórica)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Universo observable&lt;/td&gt;
+          &lt;td&gt;10²⁴+&lt;/td&gt;
+          &lt;td&gt;Imposible (causalidad física)&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;organización-gobernanza-descentralizada&#34;&gt;Organización: Gobernanza Descentralizada
+&lt;/h2&gt;&lt;h3 id=&#34;modelo-para-brisecomorg&#34;&gt;Modelo para brisecom.org
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Propuesta organizativa&lt;/strong&gt; inspirada en Internet Engineering Task Force (IETF) y ICANN, pero descentralizada:&lt;/p&gt;
+&lt;h4 id=&#34;estructura-de-la-fundación&#34;&gt;Estructura de la Fundación
+&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Comité Técnico&lt;/strong&gt; (5-7 miembros)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Especificaciones de protocolos&lt;/li&gt;
+&lt;li&gt;Auditoría de implementaciones&lt;/li&gt;
+&lt;li&gt;Revisión de RFCs&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Consejo de Gobernanza&lt;/strong&gt; (rotativo, basado en contribuciones)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Asignación de TLDs planetarios/galácticos&lt;/li&gt;
+&lt;li&gt;Resolución de conflictos de nombres&lt;/li&gt;
+&lt;li&gt;Votación: 1 nodo activo = 1 voto&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Grants de Investigación&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Financiación mediante criptomonedas (DAO)&lt;/li&gt;
+&lt;li&gt;Revisión peer-to-peer de propuestas&lt;/li&gt;
+&lt;li&gt;Transparencia total en blockchain&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;modelo-de-financiación&#34;&gt;Modelo de Financiación
+&lt;/h4&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Fuentes de ingresos:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├── Donaciones criptográficas (ETH, BTC)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├── Grants de investigación espacial (NASA, ESA, SpaceX)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├── Venta de nombres premium en subastas (.mars, .io de Júpiter)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├── Servicios de consultoría para redes comunitarias
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;└── Publicaciones académicas y patentes abiertas
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Distribución:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├── 60% Salarios equipo investigación (incluyendo tu rol)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├── 20% Infraestructura servidores y experimentos
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├── 15% Grants a proyectos externos
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;└── 5% Reserva operativa
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;gobernanza-web-30&#34;&gt;Gobernanza Web 3.0
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;DAO (Decentralized Autonomous Organization)&lt;/strong&gt; para decisiones críticas:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Contrato inteligente en Ethereum&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Cada implementación del protocolo = 1 token de voto&lt;/li&gt;
+&lt;li&gt;Propuestas on-chain con período de votación&lt;/li&gt;
+&lt;li&gt;Ejecución automática de decisiones aprobadas&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;IPFS para almacenamiento&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Registros DNS históricos en IPFS&lt;/li&gt;
+&lt;li&gt;Content addressing: &lt;code&gt;/ipns/ddnsc.brisecom.org&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Inmutabilidad y censorship-resistant&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;protocolos-y-proyectos-relacionados&#34;&gt;Protocolos y Proyectos Relacionados
+&lt;/h2&gt;&lt;h3 id=&#34;ecosistema-web-30&#34;&gt;Ecosistema Web 3.0
+&lt;/h3&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Proyecto&lt;/th&gt;
+          &lt;th&gt;Relevancia&lt;/th&gt;
+          &lt;th&gt;Integración propuesta&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;ENS (Ethereum Name Service)&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;Nombres descentralizados en blockchain&lt;/td&gt;
+          &lt;td&gt;Backend de autoridad para TLDs premium&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;IPFS/IPNS&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;Almacenamiento distribuido content-addressed&lt;/td&gt;
+          &lt;td&gt;Replicación de zonas DNS, caché distribuida&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;libp2p&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;Stack de networking peer-to-peer&lt;/td&gt;
+          &lt;td&gt;Capa de transporte para nodos DDNSC&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Handshake (HNS)&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;Blockchain DNS alternativo descentralizado&lt;/td&gt;
+          &lt;td&gt;Competidor/complemento para registro raíz&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;OrbitDB&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;Base de datos distribuida sobre IPFS&lt;/td&gt;
+          &lt;td&gt;Almacenamiento de registros DNS dinámicos&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;GNUnet Name System (GNS)&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;Sistema de nombres seguro y descentralizado&lt;/td&gt;
+          &lt;td&gt;Inspiración para resolución con privacidad&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;protocolos-de-comunicación-espacial&#34;&gt;Protocolos de Comunicación Espacial
+&lt;/h3&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Protocolo&lt;/th&gt;
+          &lt;th&gt;Estándar&lt;/th&gt;
+          &lt;th&gt;Aplicación en DNS Universal&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;DTN Bundle Protocol&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;RFC 4838, RFC 5050&lt;/td&gt;
+          &lt;td&gt;Transporte de actualizaciones DNS con alta latencia&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;CCSDS File Delivery Protocol&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;CCSDS 727.0-B-5&lt;/td&gt;
+          &lt;td&gt;Sincronización de zonas completas&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Licklider Transmission Protocol&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;RFC 5326&lt;/td&gt;
+          &lt;td&gt;Sesiones confiables en enlaces intermitentes&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Proximity-1 Space Link Protocol&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;CCSDS 211.0-B-5&lt;/td&gt;
+          &lt;td&gt;Capa física para comunicaciones interplanetarias&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;arquitectura-de-integración&#34;&gt;Arquitectura de Integración
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:37511/posts/2025-12-22-dns-universal-ddnsc/dns-web3-org.svg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Organización descentralizada&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Capa de Aplicación: DNS Queries (UDP/TCP puerto 53, DoH, DoT)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;         ↓
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Capa de Resolución: DDNSC + DHT (Kademlia)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;         ↓
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Capa de Autoridad: ENS/Handshake Blockchain + OrbitDB
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;         ↓
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Capa de Transporte: libp2p (terrestre) / DTN Bundle (espacial)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;         ↓
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Capa de Almacenamiento: IPFS (caché) + Bind (servidor local)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;         ↓
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Capa de Red: Internet (IP) / Delay-Tolerant Networks
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;áreas-de-investigación-abiertas&#34;&gt;Áreas de Investigación Abiertas
+&lt;/h2&gt;&lt;h3 id=&#34;1-resolución-con-latencia-extrema&#34;&gt;1. Resolución con Latencia Extrema
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Problema&lt;/strong&gt;: Resolver &lt;code&gt;colony.mars.sol&lt;/code&gt; desde Tierra cuando Marte está detrás del Sol.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Hipótesis&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Sistema de &amp;ldquo;proxy predictions&amp;rdquo; basado en ML&lt;/li&gt;
+&lt;li&gt;Caché inteligente que aprende patrones de consultas&lt;/li&gt;
+&lt;li&gt;Modelo: &amp;ldquo;Si no puedo preguntar, predigo la respuesta probable&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Experimento propuesto&lt;/strong&gt;:
+Simular red de nodos con latencias programadas (3-22 minutos aleatorios) y medir tasas de acierto de caché predictiva vs. caché tradicional LRU.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Financiación estimada&lt;/strong&gt;: €50,000 (1 año, 1 investigador postdoc + infraestructura)&lt;/p&gt;
+&lt;h3 id=&#34;2-crdt-para-registros-dns&#34;&gt;2. CRDT para Registros DNS
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Problema&lt;/strong&gt;: Dos nodos actualizan el mismo nombre simultáneamente en planetas diferentes.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Propuesta&lt;/strong&gt;: Implementar CRDT (LWW-Element-Set) para registros A/AAAA/SRV.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Desafío técnico&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Timestamps requieren sincronización de relojes&lt;/li&gt;
+&lt;li&gt;En espacio: GPS no funciona, necesitamos pulsar timing&lt;/li&gt;
+&lt;li&gt;Alternativa: Vector clocks con contador lógico&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Código prototipo&lt;/strong&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;DNSRecord_CRDT&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;fm&#34;&gt;__init__&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;value&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;lamport_clock&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;name&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;name&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;value&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;value&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;clock&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;lamport_clock&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;# Contador lógico&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;node_id&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;uuid&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;uuid4&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;merge&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;other&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;c1&#34;&gt;# Last-Write-Wins con desempate por node_id&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;other&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;clock&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;clock&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;other&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;k&#34;&gt;elif&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;other&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;clock&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;clock&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;other&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;other&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;node_id&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;node_id&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;else&lt;/span&gt; &lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;strong&gt;Financiación estimada&lt;/strong&gt;: €80,000 (18 meses, implementación + paper)&lt;/p&gt;
+&lt;h3 id=&#34;3-economía-de-nombres-espaciales&#34;&gt;3. Economía de Nombres Espaciales
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Pregunta&lt;/strong&gt;: ¿Cuánto vale &lt;code&gt;olympus.mars&lt;/code&gt;? ¿Quién lo controla?&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Modelo propuesto&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Subastas al estilo ENS con smart contracts&lt;/li&gt;
+&lt;li&gt;Ingresos financian infraestructura de relay&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;Homesteading&amp;rdquo;: primero en colonizar = primero en registrar&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Investigación socioeconómica&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Estudios de aceptación con comunidades espaciales&lt;/li&gt;
+&lt;li&gt;Simulación de mercados secundarios&lt;/li&gt;
+&lt;li&gt;Análisis de propiedad intelectual interplanetaria&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Financiación estimada&lt;/strong&gt;: €120,000 (2 años, equipo interdisciplinar: derecho espacial + economía + ingeniería)&lt;/p&gt;
+&lt;h3 id=&#34;4-seguridad-sin-pki-centralizada&#34;&gt;4. Seguridad sin PKI Centralizada
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Problema&lt;/strong&gt;: DNSSEC depende de claves raíz controladas por ICANN. Imposible en federación interestelar.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Alternativas&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Web of Trust&lt;/strong&gt; (PGP-style) entre sistemas estelares&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Blockchain como raíz de confianza&lt;/strong&gt; (cada sistema publica su clave pública)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Quantum-resistant signatures&lt;/strong&gt; para registros que durarán siglos&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Experimento&lt;/strong&gt;:
+Implementar DNSSEC con Ed25519 (post-quantum) sobre blockchain Ethereum como raíz de confianza alternativa.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Financiación estimada&lt;/strong&gt;: €100,000 (2 años, experto en criptografía + desarrollador blockchain)&lt;/p&gt;
+&lt;h3 id=&#34;5-simulación-de-red-galáctica&#34;&gt;5. Simulación de Red Galáctica
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Objetivo&lt;/strong&gt;: Software que simule red de 10¹² nodos con latencias realistas orbitales.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Componentes&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Motor de física orbital (efemérides precisas)&lt;/li&gt;
+&lt;li&gt;Simulador de protocolos de red (ns-3 extendido)&lt;/li&gt;
+&lt;li&gt;Visualizador 3D de topología dinámica&lt;/li&gt;
+&lt;li&gt;Benchmark de algoritmos de resolución&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Entregables&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Framework open-source&lt;/li&gt;
+&lt;li&gt;Dataset de trazas sintéticas&lt;/li&gt;
+&lt;li&gt;Papers en conferencias de networking (SIGCOMM, NSDI)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Financiación estimada&lt;/strong&gt;: €200,000 (3 años, 2 ingenieros software + HPC cluster)&lt;/p&gt;
+&lt;h2 id=&#34;cálculos-y-estimaciones&#34;&gt;Cálculos y Estimaciones
+&lt;/h2&gt;&lt;h3 id=&#34;ancho-de-banda-requerido&#34;&gt;Ancho de Banda Requerido
+&lt;/h3&gt;&lt;p&gt;Para actualización completa de zona DNS planetaria:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Nodos por planeta: 10⁹
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Registros por nodo: 5 (A, AAAA, 3× SRV)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Tamaño por registro: 100 bytes
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Tamaño total zona: 10⁹ × 5 × 100 = 500 GB
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Ventana de sincronización Tierra-Marte: 20 minutos = 1200 segundos
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Ancho de banda necesario: 500 GB / 1200 s = 417 MB/s = 3.3 Gbps
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Comparación: Deep Space Network de NASA alcanza 250 Mbps actualmente
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;→ Necesitamos 13× mejora en tecnología de comunicación espacial
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;coste-energético-de-consenso-blockchain&#34;&gt;Coste Energético de Consenso Blockchain
+&lt;/h3&gt;&lt;p&gt;Blockchain ligera (Proof-of-Authority con 100 validadores):&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Consumo por validador: 100W (Raspberry Pi 4)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Validadores totales: 100
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Consumo total: 10 kW
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Coste anual (electricidad a €0.20/kWh):
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;10 kW × 24 h × 365 días × €0.20 = €17,520
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;En Marte (energía solar + baterías):
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Panel solar: 5 kW pico, €10,000 instalación + transporte
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Baterías: €15,000
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;→ Payback period: 1.4 años en Tierra, amortizado en 5 años en Marte
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;escalabilidad-de-dht&#34;&gt;Escalabilidad de DHT
+&lt;/h3&gt;&lt;p&gt;Para N nodos, cada uno mantiene k vecinos (típicamente k = 20):&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;N (nodos)&lt;/th&gt;
+          &lt;th&gt;log₂(N)&lt;/th&gt;
+          &lt;th&gt;Memoria/nodo&lt;/th&gt;
+          &lt;th&gt;Saltos promedio&lt;/th&gt;
+          &lt;th&gt;Latencia resolución (50ms/salto)&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;10³&lt;/td&gt;
+          &lt;td&gt;10&lt;/td&gt;
+          &lt;td&gt;2 KB&lt;/td&gt;
+          &lt;td&gt;5&lt;/td&gt;
+          &lt;td&gt;250 ms&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;10⁶&lt;/td&gt;
+          &lt;td&gt;20&lt;/td&gt;
+          &lt;td&gt;4 KB&lt;/td&gt;
+          &lt;td&gt;10&lt;/td&gt;
+          &lt;td&gt;500 ms&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;10⁹&lt;/td&gt;
+          &lt;td&gt;30&lt;/td&gt;
+          &lt;td&gt;6 KB&lt;/td&gt;
+          &lt;td&gt;15&lt;/td&gt;
+          &lt;td&gt;750 ms&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;10¹²&lt;/td&gt;
+          &lt;td&gt;40&lt;/td&gt;
+          &lt;td&gt;8 KB&lt;/td&gt;
+          &lt;td&gt;20&lt;/td&gt;
+          &lt;td&gt;1000 ms&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;Conclusión&lt;/strong&gt;: DHT escala logarítmicamente, viable hasta escala planetaria completa.&lt;/p&gt;
+&lt;h2 id=&#34;conclusión-factibilidad-y-próximos-pasos&#34;&gt;Conclusión: Factibilidad y Próximos Pasos
+&lt;/h2&gt;&lt;h3 id=&#34;es-factible&#34;&gt;¿Es Factible?
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Escala planetaria (10⁸ nodos)&lt;/strong&gt;: &lt;strong&gt;SÍ, factible ahora&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Tecnología existe (DHT, blockchain, DDNSC)&lt;/li&gt;
+&lt;li&gt;Proyecto piloto: Red comunitaria guifi.net (~38,000 nodos actualmente)&lt;/li&gt;
+&lt;li&gt;Coste estimado: €500K para MVP en 3 años&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Escala galáctica (sistema solar)&lt;/strong&gt;: &lt;strong&gt;Factible en 20-30 años&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Depende de colonización espacial (NASA Artemis, SpaceX Starship)&lt;/li&gt;
+&lt;li&gt;DTN ya probado por NASA&lt;/li&gt;
+&lt;li&gt;Coste estimado: €10M para prototipo funcional&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Escala universal&lt;/strong&gt;: &lt;strong&gt;Teóricamente interesante, físicamente imposible&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Violaría causalidad relativista&lt;/li&gt;
+&lt;li&gt;Válido como ejercicio de diseño de sistemas extremos&lt;/li&gt;
+&lt;li&gt;Aplicaciones terrestres: simulación de redes ultra-distribuidas&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;roadmap-para-brisecomorg&#34;&gt;Roadmap para brisecom.org
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Fase 1 (Años 1-2): Fundamentos&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Implementar DDNSC con DHT (Kademlia)&lt;/li&gt;
+&lt;li&gt;PoC con 1000 nodos simulados&lt;/li&gt;
+&lt;li&gt;Paper en conferencia (NSDI/SIGCOMM)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Coste&lt;/strong&gt;: €150K (2 ingenieros fullstack)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Fase 2 (Años 2-4): Integración Web 3.0&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Backend con ENS + IPFS&lt;/li&gt;
+&lt;li&gt;DAO para gobernanza&lt;/li&gt;
+&lt;li&gt;Red piloto con 10K nodos reales&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Coste&lt;/strong&gt;: €300K (experto blockchain + 2 devs)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Fase 3 (Años 4-6): Simulación Espacial&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Framework de simulación orbital&lt;/li&gt;
+&lt;li&gt;Colaboración con ESA/NASA&lt;/li&gt;
+&lt;li&gt;Grants de investigación espacial&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Coste&lt;/strong&gt;: €500K (cluster HPC + equipo de 4)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Fase 4 (Años 6-10): Despliegue Real&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Experimento en ISS o misión lunar&lt;/li&gt;
+&lt;li&gt;Licencias y patentes&lt;/li&gt;
+&lt;li&gt;Spin-off comercial&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Coste&lt;/strong&gt;: €2M (depende de partners espaciales)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;financiación-sugerida&#34;&gt;Financiación Sugerida
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Fuentes inmediatas&lt;/strong&gt;:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;European Research Council (ERC Starting Grant): €1.5M&lt;/li&gt;
+&lt;li&gt;Horizon Europe (Cluster 4 - Digital &amp;amp; Space): €2M&lt;/li&gt;
+&lt;li&gt;ESA Open Space Innovation Platform: €500K&lt;/li&gt;
+&lt;li&gt;Ethereum Foundation Grants: €200K&lt;/li&gt;
+&lt;li&gt;Crowdfunding crypto (DAI/ETH): €100K&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;Total disponible potencial&lt;/strong&gt;: €4.3M para 5 años&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Tu salario&lt;/strong&gt;: €60K-80K/año (competitivo para investigador senior en España), sostenible con €300K anuales de presupuesto.&lt;/p&gt;
+&lt;h2 id=&#34;referencias-y-enlaces&#34;&gt;Referencias y Enlaces
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;DDNSC GitHub&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://github.com/javi-jimenez/ddnsc&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/javi-jimenez/ddnsc&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;RFC 2136&lt;/strong&gt; - Dynamic Updates in DNS: &lt;a class=&#34;link&#34; href=&#34;https://tools.ietf.org/html/rfc2136&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://tools.ietf.org/html/rfc2136&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;RFC 4838&lt;/strong&gt; - Delay-Tolerant Networking: &lt;a class=&#34;link&#34; href=&#34;https://tools.ietf.org/html/rfc4838&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://tools.ietf.org/html/rfc4838&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ENS Documentation&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://docs.ens.domains/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://docs.ens.domains/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;IPFS Specifications&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://specs.ipfs.tech/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://specs.ipfs.tech/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Handshake Whitepaper&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://handshake.org/files/handshake.txt&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://handshake.org/files/handshake.txt&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;NASA Deep Space Network&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://www.nasa.gov/directorates/heo/scan/services/networks/dsn&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www.nasa.gov/directorates/heo/scan/services/networks/dsn&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Kademlia DHT&lt;/strong&gt;: Maymounkov &amp;amp; Mazières (2002) - Peer-to-peer information system&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;CRDTs&lt;/strong&gt;: Shapiro et al. (2011) - Conflict-free Replicated Data Types&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Nota del autor&lt;/strong&gt;: Este artículo parte de investigación y análisis del proyecto DDNSC de código abierto. El texto ha sido generado con ayuda de inteligencia artificial basándose en conceptos técnicos reales de sistemas distribuidos, protocolos de networking espacial, y arquitecturas Web 3.0. Los cálculos son aproximaciones teóricas para propósitos de investigación.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Para brisecom.org&lt;/strong&gt;: Este trabajo representa una propuesta inicial de línea de investigación. Se solicita revisión peer-to-peer y feedback de la comunidad científica y espacial antes de proceder con solicitudes de financiación.&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>How to improve</title>
-        <link>http://localhost:33939/posts/2024-05-14-how-to-improve/</link>
+        <link>http://localhost:37511/posts/2024-05-14-how-to-improve/</link>
         <pubDate>Tue, 14 May 2024 00:00:00 +0200</pubDate>
         
-        <guid>http://localhost:33939/posts/2024-05-14-how-to-improve/</guid>
+        <guid>http://localhost:37511/posts/2024-05-14-how-to-improve/</guid>
         <description>&lt;!-- preview image on social media --&gt;
 &lt;meta property=&#34;og:image&#34; content=&#34;/assets/img/a.jpg&#34; /&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:33939/a.jpg&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:37511/a.jpg&#34;
 	
 	
 	
@@ -35,14 +822,14 @@ Practice after certification&lt;/p&gt;
         </item>
         <item>
         <title>Three layers abstraction</title>
-        <link>http://localhost:33939/posts/2024-03-31-three-layers-abstraction/</link>
+        <link>http://localhost:37511/posts/2024-03-31-three-layers-abstraction/</link>
         <pubDate>Sun, 31 Mar 2024 20:52:00 +0200</pubDate>
         
-        <guid>http://localhost:33939/posts/2024-03-31-three-layers-abstraction/</guid>
-        <description>&lt;p&gt;&lt;img src=&#34;http://localhost:33939/posts/2024-03-31-three-layers-abstraction/three-layers-as-leafs-gettyimages-1000px-157287379-2048x2048.jpg&#34;
+        <guid>http://localhost:37511/posts/2024-03-31-three-layers-abstraction/</guid>
+        <description>&lt;p&gt;&lt;img src=&#34;http://localhost:37511/posts/2024-03-31-three-layers-abstraction/three-layers-as-leafs-gettyimages-1000px-157287379-2048x2048.jpg&#34;
 	width=&#34;1000&#34;
 	height=&#34;667&#34;
-	srcset=&#34;http://localhost:33939/posts/2024-03-31-three-layers-abstraction/three-layers-as-leafs-gettyimages-1000px-157287379-2048x2048_hu_e10b507ce78069a5.jpg 480w, http://localhost:33939/posts/2024-03-31-three-layers-abstraction/three-layers-as-leafs-gettyimages-1000px-157287379-2048x2048_hu_9afc46b1fd8fc6be.jpg 1024w&#34;
+	srcset=&#34;http://localhost:37511/posts/2024-03-31-three-layers-abstraction/three-layers-as-leafs-gettyimages-1000px-157287379-2048x2048_hu_e10b507ce78069a5.jpg 480w, http://localhost:37511/posts/2024-03-31-three-layers-abstraction/three-layers-as-leafs-gettyimages-1000px-157287379-2048x2048_hu_9afc46b1fd8fc6be.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;Three Layers as Leafs&#34;
@@ -84,33 +871,33 @@ Practice after certification&lt;/p&gt;
         </item>
         <item>
         <title>VBD</title>
-        <link>http://localhost:33939/posts/2024-03-31-vbd/</link>
+        <link>http://localhost:37511/posts/2024-03-31-vbd/</link>
         <pubDate>Sun, 31 Mar 2024 20:52:00 +0200</pubDate>
         
-        <guid>http://localhost:33939/posts/2024-03-31-vbd/</guid>
+        <guid>http://localhost:37511/posts/2024-03-31-vbd/</guid>
         <description></description>
         </item>
         <item>
         <title>Layers</title>
-        <link>http://localhost:33939/posts/2024-03-31-layers/</link>
+        <link>http://localhost:37511/posts/2024-03-31-layers/</link>
         <pubDate>Sun, 31 Mar 2024 20:44:00 +0200</pubDate>
         
-        <guid>http://localhost:33939/posts/2024-03-31-layers/</guid>
+        <guid>http://localhost:37511/posts/2024-03-31-layers/</guid>
         <description>&lt;p xmlns:cc=&#34;http://creativecommons.org/ns#&#34; xmlns:dct=&#34;http://purl.org/dc/terms/&#34;&gt;&lt;a property=&#34;dct:title&#34; rel=&#34;cc:attributionURL&#34; href=&#34;https://github.com/javi-jimenez/posts/&#34;&gt;Posts&lt;/a&gt; by &lt;a rel=&#34;cc:attributionURL dct:creator&#34; property=&#34;cc:attributionName&#34; href=&#34;https://github.com/javi-jimenez&#34;&gt;Francisco Javier Jiménez Gómez&lt;/a&gt; is licensed under &lt;a href=&#34;https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1&#34; target=&#34;_blank&#34; rel=&#34;license noopener noreferrer&#34; style=&#34;display:inline-block;&#34;&gt;CC BY-NC-SA 4.0&lt;img style=&#34;height:22px!important;margin-left:3px;vertical-align:text-bottom;&#34; src=&#34;https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1&#34;&gt;&lt;img style=&#34;height:22px!important;margin-left:3px;vertical-align:text-bottom;&#34; src=&#34;https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1&#34;&gt;&lt;img style=&#34;height:22px!important;margin-left:3px;vertical-align:text-bottom;&#34; src=&#34;https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1&#34;&gt;&lt;img style=&#34;height:22px!important;margin-left:3px;vertical-align:text-bottom;&#34; src=&#34;https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 </description>
         </item>
         <item>
         <title>VBD, Fractal Architecture: View, Business and Data. Input and Output.</title>
-        <link>http://localhost:33939/posts/2024-03-31-vbd-fractal-architecture-view-business-and-data-input-and-output/</link>
+        <link>http://localhost:37511/posts/2024-03-31-vbd-fractal-architecture-view-business-and-data-input-and-output/</link>
         <pubDate>Sun, 31 Mar 2024 20:44:00 +0200</pubDate>
         
-        <guid>http://localhost:33939/posts/2024-03-31-vbd-fractal-architecture-view-business-and-data-input-and-output/</guid>
+        <guid>http://localhost:37511/posts/2024-03-31-vbd-fractal-architecture-view-business-and-data-input-and-output/</guid>
         <description>&lt;meta property=&#34;og:image&#34; content=&#34;2024-03-31-vbd-fractal-architecture-view-business-and-data-input-and-output/fractal-maldelbrot-illustration-1000px-gettyimages-488635425-2048x2048.jpg&#34; /&gt;
 &lt;meta name=&#34;twitter:image&#34; content=&#34;2024-03-31-vbd-fractal-architecture-view-business-and-data-input-and-output/fractal-maldelbrot-illustration-1000px-gettyimages-488635425-2048x2048.jpg&#34; /&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:33939/posts/2024-03-31-vbd-fractal-architecture-view-business-and-data-input-and-output/fractal-maldelbrot-illustration-1000px-gettyimages-488635425-2048x2048.jpg&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:37511/posts/2024-03-31-vbd-fractal-architecture-view-business-and-data-input-and-output/fractal-maldelbrot-illustration-1000px-gettyimages-488635425-2048x2048.jpg&#34;
 	width=&#34;1000&#34;
 	height=&#34;750&#34;
-	srcset=&#34;http://localhost:33939/posts/2024-03-31-vbd-fractal-architecture-view-business-and-data-input-and-output/fractal-maldelbrot-illustration-1000px-gettyimages-488635425-2048x2048_hu_71538f2550c6dc83.jpg 480w, http://localhost:33939/posts/2024-03-31-vbd-fractal-architecture-view-business-and-data-input-and-output/fractal-maldelbrot-illustration-1000px-gettyimages-488635425-2048x2048_hu_50dd66516025c0b2.jpg 1024w&#34;
+	srcset=&#34;http://localhost:37511/posts/2024-03-31-vbd-fractal-architecture-view-business-and-data-input-and-output/fractal-maldelbrot-illustration-1000px-gettyimages-488635425-2048x2048_hu_71538f2550c6dc83.jpg 480w, http://localhost:37511/posts/2024-03-31-vbd-fractal-architecture-view-business-and-data-input-and-output/fractal-maldelbrot-illustration-1000px-gettyimages-488635425-2048x2048_hu_50dd66516025c0b2.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;Maldelbrot set&#34;
@@ -140,16 +927,16 @@ Practice after certification&lt;/p&gt;
         </item>
         <item>
         <title>Monoliths and microservices</title>
-        <link>http://localhost:33939/posts/2023-12-24-monoliths-and-microservices/</link>
+        <link>http://localhost:37511/posts/2023-12-24-monoliths-and-microservices/</link>
         <pubDate>Sun, 24 Dec 2023 00:00:00 +0200</pubDate>
         
-        <guid>http://localhost:33939/posts/2023-12-24-monoliths-and-microservices/</guid>
+        <guid>http://localhost:37511/posts/2023-12-24-monoliths-and-microservices/</guid>
         <description>&lt;!-- preview image on social media --&gt;
 &lt;meta property=&#34;og:image&#34; content=&#34;2023-12-24-monoliths-and-microservices/inca-bricks-1000px.jpg&#34; /&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:33939/posts/2023-12-24-monoliths-and-microservices/inca-bricks-1000px.jpg&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:37511/posts/2023-12-24-monoliths-and-microservices/inca-bricks-1000px.jpg&#34;
 	width=&#34;1000&#34;
 	height=&#34;1005&#34;
-	srcset=&#34;http://localhost:33939/posts/2023-12-24-monoliths-and-microservices/inca-bricks-1000px_hu_4ba43dc18399bd24.jpg 480w, http://localhost:33939/posts/2023-12-24-monoliths-and-microservices/inca-bricks-1000px_hu_cc9f36dc5358d227.jpg 1024w&#34;
+	srcset=&#34;http://localhost:37511/posts/2023-12-24-monoliths-and-microservices/inca-bricks-1000px_hu_4ba43dc18399bd24.jpg 480w, http://localhost:37511/posts/2023-12-24-monoliths-and-microservices/inca-bricks-1000px_hu_cc9f36dc5358d227.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;Monoliths and MicroServices&#34;

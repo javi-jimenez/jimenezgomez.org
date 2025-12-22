@@ -1,0 +1,229 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e293b;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="earthGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="60%" style="stop-color:#3b82f6;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:0" />
+    </radialGradient>
+    <radialGradient id="solarGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="60%" style="stop-color:#f59e0b;stop-opacity:0.2" />
+      <stop offset="100%" style="stop-color:#f59e0b;stop-opacity:0" />
+    </radialGradient>
+    <radialGradient id="galaxyGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="70%" style="stop-color:#a855f7;stop-opacity:0.2" />
+      <stop offset="100%" style="stop-color:#a855f7;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1400" height="900" fill="url(#bgGrad)"/>
+  
+  <!-- Title -->
+  <text x="700" y="50" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#ffffff" text-anchor="middle">
+    Escalas de Distribución DNS
+  </text>
+  <text x="700" y="85" font-family="Arial, sans-serif" font-size="16" fill="#94a3b8" text-anchor="middle">
+    Del ámbito local a la escala universal
+  </text>
+  
+  <!-- Scale 1: LOCAL/PLANETARY (Earth) -->
+  <g id="scale-local">
+    <!-- Glow -->
+    <circle cx="250" cy="300" r="150" fill="url(#earthGlow)"/>
+    
+    <!-- Earth -->
+    <circle cx="250" cy="300" r="80" fill="#1e40af" stroke="#3b82f6" stroke-width="3"/>
+    <circle cx="250" cy="300" r="75" fill="none" stroke="#60a5fa" stroke-width="1" opacity="0.5"/>
+    
+    <!-- Continents representation -->
+    <ellipse cx="230" cy="285" rx="25" ry="15" fill="#2563eb" opacity="0.7"/>
+    <ellipse cx="265" cy="310" rx="30" ry="20" fill="#2563eb" opacity="0.7"/>
+    
+    <!-- Network nodes -->
+    <circle cx="200" cy="260" r="3" fill="#60a5fa"/>
+    <circle cx="280" cy="270" r="3" fill="#60a5fa"/>
+    <circle cx="230" cy="330" r="3" fill="#60a5fa"/>
+    <circle cx="270" cy="320" r="3" fill="#60a5fa"/>
+    <circle cx="250" cy="300" r="3" fill="#22d3ee"/>
+    
+    <!-- Connections -->
+    <line x1="200" y1="260" x2="250" y2="300" stroke="#3b82f6" stroke-width="1" opacity="0.4"/>
+    <line x1="280" y1="270" x2="250" y2="300" stroke="#3b82f6" stroke-width="1" opacity="0.4"/>
+    <line x1="230" y1="330" x2="250" y2="300" stroke="#3b82f6" stroke-width="1" opacity="0.4"/>
+    <line x1="270" y1="320" x2="250" y2="300" stroke="#3b82f6" stroke-width="1" opacity="0.4"/>
+    
+    <!-- Info box -->
+    <rect x="100" y="420" width="300" height="160" rx="8" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    <text x="250" y="450" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#60a5fa" text-anchor="middle">
+      ESCALA PLANETARIA
+    </text>
+    <text x="120" y="480" font-family="monospace" font-size="13" fill="#94a3b8">
+      • Nodos: 10⁴ - 10⁸
+    </text>
+    <text x="120" y="502" font-family="monospace" font-size="13" fill="#94a3b8">
+      • Latencia: 10-500 ms
+    </text>
+    <text x="120" y="524" font-family="monospace" font-size="13" fill="#94a3b8">
+      • Tecnología: DHT, DDNSC
+    </text>
+    <text x="120" y="546" font-family="monospace" font-size="13" fill="#94a3b8">
+      • Estado: FACTIBLE HOY
+    </text>
+    <text x="120" y="568" font-family="monospace" font-size="13" fill="#10b981">
+      ✓ Prototipo: 3 años
+    </text>
+  </g>
+  
+  <!-- Scale 2: SOLAR SYSTEM -->
+  <g id="scale-solar">
+    <!-- Glow -->
+    <circle cx="700" cy="300" r="180" fill="url(#solarGlow)"/>
+    
+    <!-- Sun -->
+    <circle cx="700" cy="300" r="25" fill="#fbbf24" stroke="#f59e0b" stroke-width="2"/>
+    
+    <!-- Orbits -->
+    <circle cx="700" cy="300" r="60" fill="none" stroke="#475569" stroke-width="1" stroke-dasharray="5,5" opacity="0.3"/>
+    <circle cx="700" cy="300" r="95" fill="none" stroke="#475569" stroke-width="1" stroke-dasharray="5,5" opacity="0.3"/>
+    <circle cx="700" cy="300" r="130" fill="none" stroke="#475569" stroke-width="1" stroke-dasharray="5,5" opacity="0.3"/>
+    
+    <!-- Earth -->
+    <circle cx="760" cy="300" r="12" fill="#3b82f6"/>
+    <text x="760" y="330" font-family="Arial, sans-serif" font-size="10" fill="#60a5fa" text-anchor="middle">Tierra</text>
+    
+    <!-- Mars -->
+    <circle cx="655" cy="370" r="10" fill="#dc2626"/>
+    <text x="655" y="395" font-family="Arial, sans-serif" font-size="10" fill="#ef4444" text-anchor="middle">Marte</text>
+    
+    <!-- Jupiter -->
+    <circle cx="830" cy="300" r="15" fill="#d97706"/>
+    <text x="830" y="280" font-family="Arial, sans-serif" font-size="10" fill="#f59e0b" text-anchor="middle">Júpiter</text>
+    
+    <!-- Communication beams -->
+    <line x1="760" y1="300" x2="655" y2="370" stroke="#f97316" stroke-width="2" opacity="0.5" stroke-dasharray="5,5"/>
+    <line x1="760" y1="300" x2="830" y2="300" stroke="#f97316" stroke-width="2" opacity="0.5" stroke-dasharray="5,5"/>
+    
+    <!-- Signal indicators -->
+    <circle cx="707" cy="335" r="3" fill="#f97316" opacity="0.8">
+      <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="795" cy="300" r="3" fill="#f97316" opacity="0.8">
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="1.5s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Info box -->
+    <rect x="550" y="420" width="300" height="160" rx="8" fill="#1e293b" stroke="#f97316" stroke-width="2"/>
+    <text x="700" y="450" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#fb923c" text-anchor="middle">
+      ESCALA GALÁCTICA
+    </text>
+    <text x="570" y="480" font-family="monospace" font-size="13" fill="#94a3b8">
+      • Nodos: 10⁹ - 10¹²
+    </text>
+    <text x="570" y="502" font-family="monospace" font-size="13" fill="#94a3b8">
+      • Latencia: 3-60 minutos
+    </text>
+    <text x="570" y="524" font-family="monospace" font-size="13" fill="#94a3b8">
+      • Tecnología: DTN, CRDTs
+    </text>
+    <text x="570" y="546" font-family="monospace" font-size="13" fill="#94a3b8">
+      • Estado: Factible 2040-2050
+    </text>
+    <text x="570" y="568" font-family="monospace" font-size="13" fill="#fbbf24">
+      ⚠ Depende colonización
+    </text>
+  </g>
+  
+  <!-- Scale 3: GALACTIC/UNIVERSAL -->
+  <g id="scale-galaxy">
+    <!-- Glow -->
+    <circle cx="1150" cy="300" r="180" fill="url(#galaxyGlow)"/>
+    
+    <!-- Galaxy spiral -->
+    <ellipse cx="1150" cy="300" rx="100" ry="60" fill="none" stroke="#a855f7" stroke-width="3" opacity="0.6"/>
+    <ellipse cx="1150" cy="300" rx="80" ry="48" fill="none" stroke="#c084fc" stroke-width="2" opacity="0.4"/>
+    <ellipse cx="1150" cy="300" rx="60" ry="36" fill="none" stroke="#e9d5ff" stroke-width="1" opacity="0.3"/>
+    
+    <!-- Galaxy center -->
+    <circle cx="1150" cy="300" r="15" fill="#7c3aed" opacity="0.8"/>
+    
+    <!-- Stars/systems -->
+    <circle cx="1100" cy="270" r="4" fill="#a855f7"/>
+    <circle cx="1200" cy="280" r="4" fill="#a855f7"/>
+    <circle cx="1180" cy="340" r="4" fill="#a855f7"/>
+    <circle cx="1120" cy="330" r="4" fill="#a855f7"/>
+    <circle cx="1070" cy="300" r="4" fill="#a855f7"/>
+    <circle cx="1230" cy="310" r="4" fill="#a855f7"/>
+    
+    <!-- Light rays -->
+    <line x1="1150" y1="300" x2="1100" y2="270" stroke="#c084fc" stroke-width="1" opacity="0.2"/>
+    <line x1="1150" y1="300" x2="1200" y2="280" stroke="#c084fc" stroke-width="1" opacity="0.2"/>
+    <line x1="1150" y1="300" x2="1180" y2="340" stroke="#c084fc" stroke-width="1" opacity="0.2"/>
+    <line x1="1150" y1="300" x2="1120" y2="330" stroke="#c084fc" stroke-width="1" opacity="0.2"/>
+    <line x1="1150" y1="300" x2="1070" y2="300" stroke="#c084fc" stroke-width="1" opacity="0.2"/>
+    <line x1="1150" y1="300" x2="1230" y2="310" stroke="#c084fc" stroke-width="1" opacity="0.2"/>
+    
+    <!-- Info box -->
+    <rect x="1000" y="420" width="300" height="160" rx="8" fill="#1e293b" stroke="#a855f7" stroke-width="2"/>
+    <text x="1150" y="450" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#c084fc" text-anchor="middle">
+      ESCALA UNIVERSAL
+    </text>
+    <text x="1020" y="480" font-family="monospace" font-size="13" fill="#94a3b8">
+      • Nodos: 10¹³+
+    </text>
+    <text x="1020" y="502" font-family="monospace" font-size="13" fill="#94a3b8">
+      • Latencia: Años-luz
+    </text>
+    <text x="1020" y="524" font-family="monospace" font-size="13" fill="#94a3b8">
+      • Tecnología: Federación
+    </text>
+    <text x="1020" y="546" font-family="monospace" font-size="13" fill="#94a3b8">
+      • Estado: Teórico
+    </text>
+    <text x="1020" y="568" font-family="monospace" font-size="13" fill="#dc2626">
+      ✗ Límites causalidad
+    </text>
+  </g>
+  
+  <!-- Comparative table -->
+  <rect x="100" y="650" width="1200" height="200" rx="10" fill="#0f172a" stroke="#475569" stroke-width="2"/>
+  <text x="700" y="685" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#ffffff" text-anchor="middle">
+    Comparativa de Características
+  </text>
+  
+  <!-- Table headers -->
+  <text x="250" y="720" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#60a5fa" text-anchor="middle">PLANETARIA</text>
+  <text x="700" y="720" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#fb923c" text-anchor="middle">GALÁCTICA</text>
+  <text x="1150" y="720" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#c084fc" text-anchor="middle">UNIVERSAL</text>
+  
+  <!-- Row 1: Consistency -->
+  <text x="120" y="750" font-family="Arial, sans-serif" font-size="12" fill="#cbd5e1">Consistencia:</text>
+  <text x="250" y="750" font-family="monospace" font-size="11" fill="#94a3b8" text-anchor="middle">Fuerte</text>
+  <text x="700" y="750" font-family="monospace" font-size="11" fill="#94a3b8" text-anchor="middle">Eventual</text>
+  <text x="1150" y="750" font-family="monospace" font-size="11" fill="#94a3b8" text-anchor="middle">Independiente</text>
+  
+  <!-- Row 2: Sync time -->
+  <text x="120" y="775" font-family="Arial, sans-serif" font-size="12" fill="#cbd5e1">Sincronización:</text>
+  <text x="250" y="775" font-family="monospace" font-size="11" fill="#94a3b8" text-anchor="middle">Segundos</text>
+  <text x="700" y="775" font-family="monospace" font-size="11" fill="#94a3b8" text-anchor="middle">Horas</text>
+  <text x="1150" y="775" font-family="monospace" font-size="11" fill="#94a3b8" text-anchor="middle">Años</text>
+  
+  <!-- Row 3: Cost -->
+  <text x="120" y="800" font-family="Arial, sans-serif" font-size="12" fill="#cbd5e1">Coste MVP:</text>
+  <text x="250" y="800" font-family="monospace" font-size="11" fill="#94a3b8" text-anchor="middle">€500K</text>
+  <text x="700" y="800" font-family="monospace" font-size="11" fill="#94a3b8" text-anchor="middle">€10M</text>
+  <text x="1150" y="800" font-family="monospace" font-size="11" fill="#94a3b8" text-anchor="middle">N/A</text>
+  
+  <!-- Row 4: Timeline -->
+  <text x="120" y="825" font-family="Arial, sans-serif" font-size="12" fill="#cbd5e1">Timeline:</text>
+  <text x="250" y="825" font-family="monospace" font-size="11" fill="#10b981" text-anchor="middle">2025-2028</text>
+  <text x="700" y="825" font-family="monospace" font-size="11" fill="#fbbf24" text-anchor="middle">2040-2050</text>
+  <text x="1150" y="825" font-family="monospace" font-size="11" fill="#64748b" text-anchor="middle">Siglo XXII+</text>
+  
+  <!-- Footer -->
+  <text x="700" y="875" font-family="Arial, sans-serif" font-size="11" fill="#64748b" text-anchor="middle">
+    Escalabilidad logarítmica: O(log N) con DHT | Proyecto brisecom.org
+  </text>
+</svg>
