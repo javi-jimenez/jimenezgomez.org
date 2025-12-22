@@ -61,6 +61,9 @@ copyright = 'Francisco Javier Jiménez Gómez'
 [[params.widgets.page]]
   type = 'toc'
 
+[[params.widgets.page]]
+  type = 'share'
+
 # Enlaces sociales
 [[menu.social]]
   identifier = 'github'

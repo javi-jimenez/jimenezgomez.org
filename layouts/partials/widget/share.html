@@ -1,0 +1,111 @@
+{{ if not .Context.Params.hideShare }}
+<section class="widget archives">
+    <div class="widget-icon">
+        {{ partial "helper/icon" "link" }}
+    </div>
+    <h2 class="widget-title section-title">{{ T "widget.share.title" | default "Compartir" }}</h2>
+    
+    <div class="widget--share">
+        <div class="share-buttons">
+            {{- $pageTitle := .Context.Title -}}
+            {{- $pageURL := .Context.Permalink -}}
+            {{- $pageDesc := .Context.Description | default .Context.Summary -}}
+            
+            {{- /* Twitter */ -}}
+            <a href="https://twitter.com/intent/tweet?url={{ $pageURL }}&text={{ $pageTitle }}" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               class="share-button share-twitter"
+               title="Compartir en Twitter">
+                {{ partial "helper/icon" "brand-twitter" }}
+                <span>Twitter</span>
+            </a>
+            
+            {{- /* LinkedIn */ -}}
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ $pageURL }}" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               class="share-button share-linkedin"
+               title="Compartir en LinkedIn">
+                {{ partial "helper/icon" "brand-linkedin" }}
+                <span>LinkedIn</span>
+            </a>
+            
+            {{- /* Facebook */ -}}
+            <a href="https://www.facebook.com/sharer/sharer.php?u={{ $pageURL }}" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               class="share-button share-facebook"
+               title="Compartir en Facebook">
+                {{ partial "helper/icon" "brand-facebook" }}
+                <span>Facebook</span>
+            </a>
+            
+            {{- /* Email */ -}}
+            <a href="mailto:?subject={{ $pageTitle }}&body={{ $pageDesc }}%0A%0A{{ $pageURL }}" 
+               class="share-button share-email"
+               title="Compartir por email">
+                {{ partial "helper/icon" "mail" }}
+                <span>Email</span>
+            </a>
+            
+            {{- /* Copy Link */ -}}
+            <button class="share-button share-copy" 
+                    data-url="{{ $pageURL }}"
+                    title="Copiar enlace">
+                {{ partial "helper/icon" "link" }}
+                <span>Copiar</span>
+            </button>
+            
+            {{- /* Print */ -}}
+            <button class="share-button share-print" 
+                    onclick="window.print()"
+                    title="Imprimir artículo">
+                {{ partial "helper/icon" "printer" }}
+                <span>Imprimir</span>
+            </button>
+        </div>
+    </div>
+</section>
+
+<script>
+// Copy to clipboard functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const copyBtn = document.querySelector('.share-copy');
+    if (copyBtn) {
+        copyBtn.addEventListener('click', function() {
+            const url = this.getAttribute('data-url');
+            
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(url).then(function() {
+                    const originalText = copyBtn.querySelector('span').textContent;
+                    copyBtn.querySelector('span').textContent = '¡Copiado!';
+                    setTimeout(function() {
+                        copyBtn.querySelector('span').textContent = originalText;
+                    }, 2000);
+                }).catch(function(err) {
+                    console.error('Error al copiar: ', err);
+                });
+            } else {
+                // Fallback for older browsers
+                const textArea = document.createElement('textarea');
+                textArea.value = url;
+                document.body.appendChild(textArea);
+                textArea.select();
+                try {
+                    document.execCommand('copy');
+                    const originalText = copyBtn.querySelector('span').textContent;
+                    copyBtn.querySelector('span').textContent = '¡Copiado!';
+                    setTimeout(function() {
+                        copyBtn.querySelector('span').textContent = originalText;
+                    }, 2000);
+                } catch (err) {
+                    console.error('Error al copiar: ', err);
+                }
+                document.body.removeChild(textArea);
+            }
+        });
+    }
+});
+</script>
+{{ end }}
