@@ -4,6 +4,8 @@ title = 'Francisco Javier Jiménez Gómez'
 theme = 'stack'
 copyright = 'Francisco Javier Jiménez Gómez'
 
+# Google Analytics (Measurement ID)
+googleAnalytics = "G-STC35RLKFB"
 [params]
   mainSections = ['posts']
   rssFullContent = true
