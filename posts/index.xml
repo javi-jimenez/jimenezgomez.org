@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Artículos on Francisco Javier Jiménez Gómez</title>
-        <link>http://localhost:37511/posts/</link>
+        <link>https://jimenezgomez.org/posts/</link>
         <description>Recent content in Artículos on Francisco Javier Jiménez Gómez</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>es</language>
         <copyright>Francisco Javier Jiménez Gómez</copyright>
-        <lastBuildDate>Mon, 22 Dec 2025 14:30:00 +0200</lastBuildDate><atom:link href="http://localhost:37511/posts/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 22 Dec 2025 14:30:00 +0200</lastBuildDate><atom:link href="https://jimenezgomez.org/posts/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>DNS Universal: De lo Planetario a lo Galáctico</title>
-        <link>http://localhost:37511/posts/2025-12-22-dns-universal-ddnsc/</link>
+        <link>https://jimenezgomez.org/posts/2025-12-22-dns-universal-ddnsc/</link>
         <pubDate>Mon, 22 Dec 2025 14:30:00 +0200</pubDate>
         
-        <guid>http://localhost:37511/posts/2025-12-22-dns-universal-ddnsc/</guid>
-        <description>&lt;img src="http://localhost:37511/posts/2025-12-22-dns-universal-ddnsc/dns-universe-architecture.svg" alt="Featured image of post DNS Universal: De lo Planetario a lo Galáctico" /&gt;&lt;h2 id=&#34;introducción-el-problema-del-direccionamiento-universal&#34;&gt;Introducción: El Problema del Direccionamiento Universal
+        <guid>https://jimenezgomez.org/posts/2025-12-22-dns-universal-ddnsc/</guid>
+        <description>&lt;img src="https://jimenezgomez.org/posts/2025-12-22-dns-universal-ddnsc/dns-universe-architecture.svg" alt="Featured image of post DNS Universal: De lo Planetario a lo Galáctico" /&gt;&lt;h2 id=&#34;introducción-el-problema-del-direccionamiento-universal&#34;&gt;Introducción: El Problema del Direccionamiento Universal
 &lt;/h2&gt;&lt;p&gt;El &lt;strong&gt;Domain Name System (DNS)&lt;/strong&gt; actual funciona bajo supuestos terrestres: latencias medidas en milisegundos, infraestructura física concentrada, y una autoridad central (ICANN). Pero ¿qué ocurre cuando necesitamos direccionar servicios en una colonia marciana, en estaciones orbitales, o incluso entre sistemas estelares?&lt;/p&gt;
 &lt;p&gt;El proyecto &lt;a class=&#34;link&#34; href=&#34;https://github.com/javi-jimenez/ddnsc&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;DDNSC (Distributed DNS Cache)&lt;/a&gt; proporciona los cimientos técnicos para resolver este problema mediante &lt;strong&gt;publicación descentralizada de servicios&lt;/strong&gt; usando protocolos estándar (RFC 2136, Avahi/Zeroconf). Este artículo propone una extensión conceptual hacia escalas planetarias, galácticas y universales, integrando tecnologías Web 3.0 y protocolos emergentes.&lt;/p&gt;
@@ -44,7 +44,7 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;h3 id=&#34;limitación-actual-escala-1000-nodos&#34;&gt;Limitación Actual: Escala ~1000 Nodos
 &lt;/h3&gt;&lt;p&gt;El propio proyecto reconoce que la escalabilidad se limita a ~1000 nodos en su forma actual. Necesitamos arquitectura distribuida verdadera para escalas mayores.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:37511/posts/2025-12-22-dns-universal-ddnsc/dns-universe-architecture.svg&#34;
+&lt;p&gt;&lt;img src=&#34;https://jimenezgomez.org/posts/2025-12-22-dns-universal-ddnsc/dns-universe-architecture.svg&#34;
 	
 	
 	
@@ -185,7 +185,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- mining.ceres.asteroid.sol
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:37511/posts/2025-12-22-dns-universal-ddnsc/dns-scales.svg&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://jimenezgomez.org/posts/2025-12-22-dns-universal-ddnsc/dns-scales.svg&#34;
 	
 	
 	
@@ -468,7 +468,7 @@
   &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h3 id=&#34;arquitectura-de-integración&#34;&gt;Arquitectura de Integración
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:37511/posts/2025-12-22-dns-universal-ddnsc/dns-web3-org.svg&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://jimenezgomez.org/posts/2025-12-22-dns-universal-ddnsc/dns-web3-org.svg&#34;
 	
 	
 	
@@ -796,11 +796,11 @@ Implementar DNSSEC con Ed25519 (post-quantum) sobre blockchain Ethereum como ra�
         </item>
         <item>
         <title>Identidad Visual de Laia: Diseñando la Imagen de la IA Ética</title>
-        <link>http://localhost:37511/posts/2025-12-18-laia-brand-identity/</link>
+        <link>https://jimenezgomez.org/posts/2025-12-18-laia-brand-identity/</link>
         <pubDate>Thu, 18 Dec 2025 09:30:00 +0200</pubDate>
         
-        <guid>http://localhost:37511/posts/2025-12-18-laia-brand-identity/</guid>
-        <description>&lt;img src="http://localhost:37511/posts/2025-12-18-laia-brand-identity/laia-brand-showcase.svg" alt="Featured image of post Identidad Visual de Laia: Diseñando la Imagen de la IA Ética" /&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:37511/posts/2025-12-18-laia-brand-identity/laia-brand-hero.svg&#34;
+        <guid>https://jimenezgomez.org/posts/2025-12-18-laia-brand-identity/</guid>
+        <description>&lt;img src="https://jimenezgomez.org/posts/2025-12-18-laia-brand-identity/laia-brand-showcase.svg" alt="Featured image of post Identidad Visual de Laia: Diseñando la Imagen de la IA Ética" /&gt;&lt;p&gt;&lt;img src=&#34;https://jimenezgomez.org/posts/2025-12-18-laia-brand-identity/laia-brand-hero.svg&#34;
 	
 	
 	
@@ -841,7 +841,7 @@ Implementar DNSSEC con Ed25519 (post-quantum) sobre blockchain Ethereum como ra�
 &lt;hr&gt;
 &lt;h2 id=&#34;el-sistema-de-identidad-visual&#34;&gt;El Sistema de Identidad Visual
 &lt;/h2&gt;&lt;h3 id=&#34;1-logo-principal&#34;&gt;1. Logo Principal
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:37511/posts/2025-12-18-laia-brand-identity/laia-logo-main.svg&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://jimenezgomez.org/posts/2025-12-18-laia-brand-identity/laia-logo-main.svg&#34;
 	
 	
 	
@@ -861,7 +861,7 @@ Implementar DNSSEC con Ed25519 (post-quantum) sobre blockchain Ethereum como ra�
 &lt;p&gt;&lt;strong&gt;Uso&lt;/strong&gt;: Documentación oficial, presentaciones, web principal&lt;/p&gt;
 &lt;hr&gt;
 &lt;h3 id=&#34;2-icono-compacto&#34;&gt;2. Icono Compacto
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:37511/posts/2025-12-18-laia-brand-identity/laia-icon-compact.svg&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://jimenezgomez.org/posts/2025-12-18-laia-brand-identity/laia-icon-compact.svg&#34;
 	
 	
 	
@@ -881,7 +881,7 @@ Implementar DNSSEC con Ed25519 (post-quantum) sobre blockchain Ethereum como ra�
 &lt;hr&gt;
 &lt;h3 id=&#34;3-avatar-para-redes-sociales&#34;&gt;3. Avatar para Redes Sociales
 &lt;/h3&gt;&lt;h4 id=&#34;github-profile&#34;&gt;GitHub Profile
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:37511/posts/2025-12-18-laia-brand-identity/laia-avatar-github.svg&#34;
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://jimenezgomez.org/posts/2025-12-18-laia-brand-identity/laia-avatar-github.svg&#34;
 	
 	
 	
@@ -898,7 +898,7 @@ Implementar DNSSEC con Ed25519 (post-quantum) sobre blockchain Ethereum como ra�
 &lt;li&gt;Esquema circular&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h4 id=&#34;twitterx-profile&#34;&gt;Twitter/X Profile
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:37511/posts/2025-12-18-laia-brand-identity/laia-avatar-twitter.svg&#34;
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://jimenezgomez.org/posts/2025-12-18-laia-brand-identity/laia-avatar-twitter.svg&#34;
 	
 	
 	
@@ -915,7 +915,7 @@ Implementar DNSSEC con Ed25519 (post-quantum) sobre blockchain Ethereum como ra�
 &lt;li&gt;Fondo degradado&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h4 id=&#34;linkedin-profile&#34;&gt;LinkedIn Profile
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:37511/posts/2025-12-18-laia-brand-identity/laia-avatar-linkedin.svg&#34;
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://jimenezgomez.org/posts/2025-12-18-laia-brand-identity/laia-avatar-linkedin.svg&#34;
 	
 	
 	
@@ -933,7 +933,7 @@ Implementar DNSSEC con Ed25519 (post-quantum) sobre blockchain Ethereum como ra�
 &lt;/ul&gt;
 &lt;hr&gt;
 &lt;h3 id=&#34;4-banner-para-github-readme&#34;&gt;4. Banner para GitHub README
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:37511/posts/2025-12-18-laia-brand-identity/laia-banner-github.svg&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://jimenezgomez.org/posts/2025-12-18-laia-brand-identity/laia-banner-github.svg&#34;
 	
 	
 	
@@ -959,7 +959,7 @@ Implementar DNSSEC con Ed25519 (post-quantum) sobre blockchain Ethereum como ra�
 &lt;hr&gt;
 &lt;h3 id=&#34;5-variantes-de-color&#34;&gt;5. Variantes de Color
 &lt;/h3&gt;&lt;h4 id=&#34;versión-light-para-fondos-claros&#34;&gt;Versión Light (para fondos claros)
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:37511/posts/2025-12-18-laia-brand-identity/laia-logo-light.svg&#34;
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://jimenezgomez.org/posts/2025-12-18-laia-brand-identity/laia-logo-light.svg&#34;
 	
 	
 	
@@ -970,7 +970,7 @@ Implementar DNSSEC con Ed25519 (post-quantum) sobre blockchain Ethereum como ra�
 	
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;versión-dark-para-fondos-oscuros&#34;&gt;Versión Dark (para fondos oscuros)
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:37511/posts/2025-12-18-laia-brand-identity/laia-logo-dark.svg&#34;
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://jimenezgomez.org/posts/2025-12-18-laia-brand-identity/laia-logo-dark.svg&#34;
 	
 	
 	
@@ -981,7 +981,7 @@ Implementar DNSSEC con Ed25519 (post-quantum) sobre blockchain Ethereum como ra�
 	
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;versión-monocromática&#34;&gt;Versión Monocromática
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:37511/posts/2025-12-18-laia-brand-identity/laia-logo-mono.svg&#34;
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://jimenezgomez.org/posts/2025-12-18-laia-brand-identity/laia-logo-mono.svg&#34;
 	
 	
 	
@@ -994,7 +994,7 @@ Implementar DNSSEC con Ed25519 (post-quantum) sobre blockchain Ethereum como ra�
 &lt;hr&gt;
 &lt;h3 id=&#34;6-assets-para-social-media-posts&#34;&gt;6. Assets para Social Media Posts
 &lt;/h3&gt;&lt;h4 id=&#34;instagram-post-template&#34;&gt;Instagram Post Template
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:37511/posts/2025-12-18-laia-brand-identity/laia-social-instagram.svg&#34;
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://jimenezgomez.org/posts/2025-12-18-laia-brand-identity/laia-social-instagram.svg&#34;
 	
 	
 	
@@ -1011,7 +1011,7 @@ Implementar DNSSEC con Ed25519 (post-quantum) sobre blockchain Ethereum como ra�
 &lt;li&gt;Facebook shares&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h4 id=&#34;twitter-card&#34;&gt;Twitter Card
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:37511/posts/2025-12-18-laia-brand-identity/laia-social-twitter-card.svg&#34;
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://jimenezgomez.org/posts/2025-12-18-laia-brand-identity/laia-social-twitter-card.svg&#34;
 	
 	
 	
@@ -1316,11 +1316,11 @@ Implementar DNSSEC con Ed25519 (post-quantum) sobre blockchain Ethereum como ra�
         </item>
         <item>
         <title>Laia: Inteligencia Artificial Ética - Un Proyecto de Investigación</title>
-        <link>http://localhost:37511/posts/2025-12-18-laia-intelligent-agent/</link>
+        <link>https://jimenezgomez.org/posts/2025-12-18-laia-intelligent-agent/</link>
         <pubDate>Thu, 18 Dec 2025 08:00:00 +0200</pubDate>
         
-        <guid>http://localhost:37511/posts/2025-12-18-laia-intelligent-agent/</guid>
-        <description>&lt;img src="http://localhost:37511/posts/2025-12-18-laia-intelligent-agent/laia-thumbnail.svg" alt="Featured image of post Laia: Inteligencia Artificial Ética - Un Proyecto de Investigación" /&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:37511/posts/2025-12-18-laia-intelligent-agent/laia-header.svg&#34;
+        <guid>https://jimenezgomez.org/posts/2025-12-18-laia-intelligent-agent/</guid>
+        <description>&lt;img src="https://jimenezgomez.org/posts/2025-12-18-laia-intelligent-agent/laia-thumbnail.svg" alt="Featured image of post Laia: Inteligencia Artificial Ética - Un Proyecto de Investigación" /&gt;&lt;p&gt;&lt;img src=&#34;https://jimenezgomez.org/posts/2025-12-18-laia-intelligent-agent/laia-header.svg&#34;
 	
 	
 	
@@ -1621,10 +1621,10 @@ Implementar DNSSEC con Ed25519 (post-quantum) sobre blockchain Ethereum como ra�
         </item>
         <item>
         <title>SPA blog in one file</title>
-        <link>http://localhost:37511/posts/2025-12-02-08-54-spa-blog-in-one-file/</link>
+        <link>https://jimenezgomez.org/posts/2025-12-02-08-54-spa-blog-in-one-file/</link>
         <pubDate>Tue, 02 Dec 2025 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:37511/posts/2025-12-02-08-54-spa-blog-in-one-file/</guid>
+        <guid>https://jimenezgomez.org/posts/2025-12-02-08-54-spa-blog-in-one-file/</guid>
         <description>&lt;style&gt;
 img {
   display: block;
@@ -1642,66 +1642,17 @@ img {
 </description>
         </item>
         <item>
-        <title>Apps</title>
-        <link>http://localhost:37511/posts/2025-05-16-apps/</link>
-        <pubDate>Fri, 16 May 2025 00:00:00 +0000</pubDate>
-        
-        <guid>http://localhost:37511/posts/2025-05-16-apps/</guid>
-        <description>&lt;style&gt;
-img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-&lt;/style&gt;
-&lt;h2 id=&#34;apps&#34;&gt;Apps
-&lt;/h2&gt;&lt;p&gt;Some apps I like:&lt;/p&gt;
-&lt;h3 id=&#34;visual-studio-code&#34;&gt;Visual Studio Code
-&lt;/h3&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://code.visualstudio.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://code.visualstudio.com/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;A good choice for generating code, using git and editing markdown files.&lt;/p&gt;
-&lt;p&gt;It is good too for managing and generating code in Python, Java, Go, JavaScript, HTML and other web languages.&lt;/p&gt;
-&lt;p&gt;It has many integrations and allows working remotely using &amp;ldquo;Remotes&amp;rdquo;, including working inside containers as pre-built development environments.&lt;/p&gt;
-&lt;h3 id=&#34;floccus&#34;&gt;Floccus
-&lt;/h3&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://floccus.org/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://floccus.org/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;It is a browser bookmark manager.&lt;/p&gt;
-&lt;p&gt;The resulting bookmarks can be copied to other locations, and use that technique for syncronizing between browsers from different organizations.&lt;/p&gt;
-&lt;img src=&#34;floccus-bookmark-manager-with-backup-and-sync-using-files-syncronization-options-after-installing-2025-05-16_12-53.png&#34; alt=&#34;Floccus - Syncronization options after installing browser plugin&#34;&gt;
-&lt;p&gt;Easy and trivial for installing and using it.&lt;/p&gt;
-&lt;p&gt;It has the lower possible dependencies. For storing bookmarks locally, you only have to install it, and that is it, but if you install and do not use more than that, you are not getting the full power.&lt;/p&gt;
-&lt;p&gt;After storing the bookmarks using floccus, you have the chance, using app menus, of storing those bookmarks in many places, for bakcup or syncronization purposes.&lt;/p&gt;
-&lt;p&gt;It is installable in browsers as (202505161246):&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Firefox&lt;/li&gt;
-&lt;li&gt;Edge&lt;/li&gt;
-&lt;li&gt;Chrome&lt;/li&gt;
-&lt;li&gt;Android&lt;/li&gt;
-&lt;li&gt;iOS&lt;/li&gt;
-&lt;li&gt;Sources (you cant get them for customization)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;It supports syncronization (20250517) with:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Nextcloud Bookmarks&lt;/li&gt;
-&lt;li&gt;LinkWarden&lt;/li&gt;
-&lt;li&gt;WebDAV share&lt;/li&gt;
-&lt;li&gt;Git over HTTPS (for any git repository as local git, GitHub, Gitea, GitLab, and others)&lt;/li&gt;
-&lt;li&gt;Google Drive&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        </item>
-        <item>
         <title>Vera Architecture</title>
-        <link>http://localhost:37511/posts/2025-04-04-vero-architecture/</link>
+        <link>https://jimenezgomez.org/posts/2025-04-04-vero-architecture/</link>
         <pubDate>Fri, 04 Apr 2025 11:09:00 +0200</pubDate>
         
-        <guid>http://localhost:37511/posts/2025-04-04-vero-architecture/</guid>
+        <guid>https://jimenezgomez.org/posts/2025-04-04-vero-architecture/</guid>
         <description>&lt;meta property=&#34;og:image&#34; content=&#34;vera-arch-202504041121.drawio.png&#34; alt=&#34;Vera Architecture&#34; /&gt;
 &lt;meta name=&#34;twitter:image&#34; content=&#34;vera-arch-202504041121.drawio.png&#34; alt=&#34;Vera Architecture&#34; /&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:37511/posts/2025-04-04-vero-architecture/vera-arch-202504041121.drawio.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://jimenezgomez.org/posts/2025-04-04-vero-architecture/vera-arch-202504041121.drawio.png&#34;
 	width=&#34;625&#34;
 	height=&#34;385&#34;
-	srcset=&#34;http://localhost:37511/posts/2025-04-04-vero-architecture/vera-arch-202504041121.drawio_hu_696cb654530ddb2a.png 480w, http://localhost:37511/posts/2025-04-04-vero-architecture/vera-arch-202504041121.drawio_hu_49db9c91c029c8de.png 1024w&#34;
+	srcset=&#34;https://jimenezgomez.org/posts/2025-04-04-vero-architecture/vera-arch-202504041121.drawio_hu_696cb654530ddb2a.png 480w, https://jimenezgomez.org/posts/2025-04-04-vero-architecture/vera-arch-202504041121.drawio_hu_49db9c91c029c8de.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;Vera Architecture&#34;
@@ -1727,20 +1678,20 @@ img {
         </item>
         <item>
         <title>Minimal blog</title>
-        <link>http://localhost:37511/posts/2025-03-17-minimal-blog/</link>
+        <link>https://jimenezgomez.org/posts/2025-03-17-minimal-blog/</link>
         <pubDate>Mon, 17 Mar 2025 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:37511/posts/2025-03-17-minimal-blog/</guid>
+        <guid>https://jimenezgomez.org/posts/2025-03-17-minimal-blog/</guid>
         <description>&lt;h2 id=&#34;minimal-blog&#34;&gt;Minimal blog
 &lt;/h2&gt;&lt;p&gt;We use Jekyll and GitHub for building a minimal blog.&lt;/p&gt;
 </description>
         </item>
         <item>
         <title>Desarrollo con LaIA</title>
-        <link>http://localhost:37511/posts/2025-02-25-ia-development-based/</link>
+        <link>https://jimenezgomez.org/posts/2025-02-25-ia-development-based/</link>
         <pubDate>Tue, 25 Feb 2025 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:37511/posts/2025-02-25-ia-development-based/</guid>
+        <guid>https://jimenezgomez.org/posts/2025-02-25-ia-development-based/</guid>
         <description>&lt;p&gt;Recientemente recibí una propuesta para dedicar mi tiempo a un trabajo.&lt;/p&gt;
 &lt;p&gt;En la propuesta, al poco de comenzar las conversaciones, se incluyó un reto, crear un código con microservicios, usando arquitectura hexagonal, según comentaban.&lt;/p&gt;
 &lt;p&gt;Se me ocurrió, que dado que llevo muchísimas ofertas de trabajo revisadas y no he visto tal reto en alguna de ellas, hacer la tarea de la manera tan inusual en la que se propuso el inesperado reto, usando código generado por la inteligencia artificial, sería mi reto y pondría a prueba la efectividad de la misma.&lt;/p&gt;
@@ -1756,37 +1707,11 @@ img {
 </description>
         </item>
         <item>
-        <title>How to improve</title>
-        <link>http://localhost:37511/posts/2024-05-14-how-to-improve/</link>
-        <pubDate>Tue, 14 May 2024 00:00:00 +0200</pubDate>
-        
-        <guid>http://localhost:37511/posts/2024-05-14-how-to-improve/</guid>
-        <description>&lt;!-- preview image on social media --&gt;
-&lt;meta property=&#34;og:image&#34; content=&#34;/assets/img/a.jpg&#34; /&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:37511/a.jpg&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;How to improve&#34;
-	
-	
-&gt;&lt;/p&gt;
-&lt;p&gt;Acquire knowledge
-Practice
-Questions
-Time resources
-Certification as objective
-Practice after certification&lt;/p&gt;
-</description>
-        </item>
-        <item>
         <title>Optimización Web: buenas prácticas</title>
-        <link>http://localhost:37511/posts/2024-05-10-second/</link>
+        <link>https://jimenezgomez.org/posts/2024-05-10-second/</link>
         <pubDate>Fri, 10 May 2024 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:37511/posts/2024-05-10-second/</guid>
+        <guid>https://jimenezgomez.org/posts/2024-05-10-second/</guid>
         <description>&lt;p&gt;Este post trata sobre buenas prácticas para optimizar sitios web: carga diferida, compresión, uso responsable de fuentes y más.&lt;/p&gt;
 &lt;h3 id=&#34;puntos-clave&#34;&gt;Puntos clave
 &lt;/h3&gt;&lt;ol&gt;
@@ -1804,14 +1729,14 @@ Practice after certification&lt;/p&gt;
         </item>
         <item>
         <title>Three layers abstraction</title>
-        <link>http://localhost:37511/posts/2024-03-31-three-layers-abstraction/</link>
+        <link>https://jimenezgomez.org/posts/2024-03-31-three-layers-abstraction/</link>
         <pubDate>Sun, 31 Mar 2024 20:52:00 +0200</pubDate>
         
-        <guid>http://localhost:37511/posts/2024-03-31-three-layers-abstraction/</guid>
-        <description>&lt;p&gt;&lt;img src=&#34;http://localhost:37511/posts/2024-03-31-three-layers-abstraction/three-layers-as-leafs-gettyimages-1000px-157287379-2048x2048.jpg&#34;
+        <guid>https://jimenezgomez.org/posts/2024-03-31-three-layers-abstraction/</guid>
+        <description>&lt;p&gt;&lt;img src=&#34;https://jimenezgomez.org/posts/2024-03-31-three-layers-abstraction/three-layers-as-leafs-gettyimages-1000px-157287379-2048x2048.jpg&#34;
 	width=&#34;1000&#34;
 	height=&#34;667&#34;
-	srcset=&#34;http://localhost:37511/posts/2024-03-31-three-layers-abstraction/three-layers-as-leafs-gettyimages-1000px-157287379-2048x2048_hu_e10b507ce78069a5.jpg 480w, http://localhost:37511/posts/2024-03-31-three-layers-abstraction/three-layers-as-leafs-gettyimages-1000px-157287379-2048x2048_hu_9afc46b1fd8fc6be.jpg 1024w&#34;
+	srcset=&#34;https://jimenezgomez.org/posts/2024-03-31-three-layers-abstraction/three-layers-as-leafs-gettyimages-1000px-157287379-2048x2048_hu_e10b507ce78069a5.jpg 480w, https://jimenezgomez.org/posts/2024-03-31-three-layers-abstraction/three-layers-as-leafs-gettyimages-1000px-157287379-2048x2048_hu_9afc46b1fd8fc6be.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;Three Layers as Leafs&#34;
@@ -1852,34 +1777,17 @@ Practice after certification&lt;/p&gt;
 </description>
         </item>
         <item>
-        <title>VBD</title>
-        <link>http://localhost:37511/posts/2024-03-31-vbd/</link>
-        <pubDate>Sun, 31 Mar 2024 20:52:00 +0200</pubDate>
-        
-        <guid>http://localhost:37511/posts/2024-03-31-vbd/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Layers</title>
-        <link>http://localhost:37511/posts/2024-03-31-layers/</link>
-        <pubDate>Sun, 31 Mar 2024 20:44:00 +0200</pubDate>
-        
-        <guid>http://localhost:37511/posts/2024-03-31-layers/</guid>
-        <description>&lt;p xmlns:cc=&#34;http://creativecommons.org/ns#&#34; xmlns:dct=&#34;http://purl.org/dc/terms/&#34;&gt;&lt;a property=&#34;dct:title&#34; rel=&#34;cc:attributionURL&#34; href=&#34;https://github.com/javi-jimenez/posts/&#34;&gt;Posts&lt;/a&gt; by &lt;a rel=&#34;cc:attributionURL dct:creator&#34; property=&#34;cc:attributionName&#34; href=&#34;https://github.com/javi-jimenez&#34;&gt;Francisco Javier Jiménez Gómez&lt;/a&gt; is licensed under &lt;a href=&#34;https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1&#34; target=&#34;_blank&#34; rel=&#34;license noopener noreferrer&#34; style=&#34;display:inline-block;&#34;&gt;CC BY-NC-SA 4.0&lt;img style=&#34;height:22px!important;margin-left:3px;vertical-align:text-bottom;&#34; src=&#34;https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1&#34;&gt;&lt;img style=&#34;height:22px!important;margin-left:3px;vertical-align:text-bottom;&#34; src=&#34;https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1&#34;&gt;&lt;img style=&#34;height:22px!important;margin-left:3px;vertical-align:text-bottom;&#34; src=&#34;https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1&#34;&gt;&lt;img style=&#34;height:22px!important;margin-left:3px;vertical-align:text-bottom;&#34; src=&#34;https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-</description>
-        </item>
-        <item>
         <title>VBD, Fractal Architecture: View, Business and Data. Input and Output.</title>
-        <link>http://localhost:37511/posts/2024-03-31-vbd-fractal-architecture-view-business-and-data-input-and-output/</link>
+        <link>https://jimenezgomez.org/posts/2024-03-31-vbd-fractal-architecture-view-business-and-data-input-and-output/</link>
         <pubDate>Sun, 31 Mar 2024 20:44:00 +0200</pubDate>
         
-        <guid>http://localhost:37511/posts/2024-03-31-vbd-fractal-architecture-view-business-and-data-input-and-output/</guid>
+        <guid>https://jimenezgomez.org/posts/2024-03-31-vbd-fractal-architecture-view-business-and-data-input-and-output/</guid>
         <description>&lt;meta property=&#34;og:image&#34; content=&#34;2024-03-31-vbd-fractal-architecture-view-business-and-data-input-and-output/fractal-maldelbrot-illustration-1000px-gettyimages-488635425-2048x2048.jpg&#34; /&gt;
 &lt;meta name=&#34;twitter:image&#34; content=&#34;2024-03-31-vbd-fractal-architecture-view-business-and-data-input-and-output/fractal-maldelbrot-illustration-1000px-gettyimages-488635425-2048x2048.jpg&#34; /&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:37511/posts/2024-03-31-vbd-fractal-architecture-view-business-and-data-input-and-output/fractal-maldelbrot-illustration-1000px-gettyimages-488635425-2048x2048.jpg&#34;
+&lt;p&gt;&lt;img src=&#34;https://jimenezgomez.org/posts/2024-03-31-vbd-fractal-architecture-view-business-and-data-input-and-output/fractal-maldelbrot-illustration-1000px-gettyimages-488635425-2048x2048.jpg&#34;
 	width=&#34;1000&#34;
 	height=&#34;750&#34;
-	srcset=&#34;http://localhost:37511/posts/2024-03-31-vbd-fractal-architecture-view-business-and-data-input-and-output/fractal-maldelbrot-illustration-1000px-gettyimages-488635425-2048x2048_hu_71538f2550c6dc83.jpg 480w, http://localhost:37511/posts/2024-03-31-vbd-fractal-architecture-view-business-and-data-input-and-output/fractal-maldelbrot-illustration-1000px-gettyimages-488635425-2048x2048_hu_50dd66516025c0b2.jpg 1024w&#34;
+	srcset=&#34;https://jimenezgomez.org/posts/2024-03-31-vbd-fractal-architecture-view-business-and-data-input-and-output/fractal-maldelbrot-illustration-1000px-gettyimages-488635425-2048x2048_hu_71538f2550c6dc83.jpg 480w, https://jimenezgomez.org/posts/2024-03-31-vbd-fractal-architecture-view-business-and-data-input-and-output/fractal-maldelbrot-illustration-1000px-gettyimages-488635425-2048x2048_hu_50dd66516025c0b2.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;Maldelbrot set&#34;
@@ -1909,16 +1817,16 @@ Practice after certification&lt;/p&gt;
         </item>
         <item>
         <title>Monoliths and microservices</title>
-        <link>http://localhost:37511/posts/2023-12-24-monoliths-and-microservices/</link>
+        <link>https://jimenezgomez.org/posts/2023-12-24-monoliths-and-microservices/</link>
         <pubDate>Sun, 24 Dec 2023 00:00:00 +0200</pubDate>
         
-        <guid>http://localhost:37511/posts/2023-12-24-monoliths-and-microservices/</guid>
+        <guid>https://jimenezgomez.org/posts/2023-12-24-monoliths-and-microservices/</guid>
         <description>&lt;!-- preview image on social media --&gt;
 &lt;meta property=&#34;og:image&#34; content=&#34;2023-12-24-monoliths-and-microservices/inca-bricks-1000px.jpg&#34; /&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:37511/posts/2023-12-24-monoliths-and-microservices/inca-bricks-1000px.jpg&#34;
+&lt;p&gt;&lt;img src=&#34;https://jimenezgomez.org/posts/2023-12-24-monoliths-and-microservices/inca-bricks-1000px.jpg&#34;
 	width=&#34;1000&#34;
 	height=&#34;1005&#34;
-	srcset=&#34;http://localhost:37511/posts/2023-12-24-monoliths-and-microservices/inca-bricks-1000px_hu_4ba43dc18399bd24.jpg 480w, http://localhost:37511/posts/2023-12-24-monoliths-and-microservices/inca-bricks-1000px_hu_cc9f36dc5358d227.jpg 1024w&#34;
+	srcset=&#34;https://jimenezgomez.org/posts/2023-12-24-monoliths-and-microservices/inca-bricks-1000px_hu_4ba43dc18399bd24.jpg 480w, https://jimenezgomez.org/posts/2023-12-24-monoliths-and-microservices/inca-bricks-1000px_hu_cc9f36dc5358d227.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;Monoliths and MicroServices&#34;
@@ -1948,14 +1856,14 @@ Practice after certification&lt;/p&gt;
         </item>
         <item>
         <title>Computer Science base technologies, part II</title>
-        <link>http://localhost:37511/posts/2023-10-19-computer-science-base-technologies-2/</link>
+        <link>https://jimenezgomez.org/posts/2023-10-19-computer-science-base-technologies-2/</link>
         <pubDate>Thu, 19 Oct 2023 20:38:00 +0200</pubDate>
         
-        <guid>http://localhost:37511/posts/2023-10-19-computer-science-base-technologies-2/</guid>
-        <description>&lt;p&gt;&lt;img src=&#34;http://localhost:37511/posts/2023-10-19-computer-science-base-technologies-2/low-code-example-app-for-reading-dht22-data-from-api.png&#34;
+        <guid>https://jimenezgomez.org/posts/2023-10-19-computer-science-base-technologies-2/</guid>
+        <description>&lt;p&gt;&lt;img src=&#34;https://jimenezgomez.org/posts/2023-10-19-computer-science-base-technologies-2/low-code-example-app-for-reading-dht22-data-from-api.png&#34;
 	width=&#34;1270&#34;
 	height=&#34;863&#34;
-	srcset=&#34;http://localhost:37511/posts/2023-10-19-computer-science-base-technologies-2/low-code-example-app-for-reading-dht22-data-from-api_hu_4f6bc6134d5154bf.png 480w, http://localhost:37511/posts/2023-10-19-computer-science-base-technologies-2/low-code-example-app-for-reading-dht22-data-from-api_hu_73d5028b4da26dd7.png 1024w&#34;
+	srcset=&#34;https://jimenezgomez.org/posts/2023-10-19-computer-science-base-technologies-2/low-code-example-app-for-reading-dht22-data-from-api_hu_4f6bc6134d5154bf.png 480w, https://jimenezgomez.org/posts/2023-10-19-computer-science-base-technologies-2/low-code-example-app-for-reading-dht22-data-from-api_hu_73d5028b4da26dd7.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;Low code platform example for reading DHT22 data using an API&#34;
@@ -1992,10 +1900,10 @@ Practice after certification&lt;/p&gt;
         </item>
         <item>
         <title>Computer Science base technologies, part I</title>
-        <link>http://localhost:37511/posts/2023-10-18-computer-science-base-technologies/</link>
+        <link>https://jimenezgomez.org/posts/2023-10-18-computer-science-base-technologies/</link>
         <pubDate>Wed, 18 Oct 2023 20:49:00 +0200</pubDate>
         
-        <guid>http://localhost:37511/posts/2023-10-18-computer-science-base-technologies/</guid>
+        <guid>https://jimenezgomez.org/posts/2023-10-18-computer-science-base-technologies/</guid>
         <description>&lt;style&gt;
 img {
   display: block;
@@ -2024,23 +1932,15 @@ img {
 </description>
         </item>
         <item>
-        <title>Why to improve? part 3. Base materials for Computer Engineers</title>
-        <link>http://localhost:37511/posts/2023-10-14-why-to-improve-3-base-materials-for-computer-engineers/</link>
-        <pubDate>Sat, 14 Oct 2023 12:18:00 +0200</pubDate>
-        
-        <guid>http://localhost:37511/posts/2023-10-14-why-to-improve-3-base-materials-for-computer-engineers/</guid>
-        <description></description>
-        </item>
-        <item>
         <title>Why to improve? part 2. Technologies and the look for the base knowledge</title>
-        <link>http://localhost:37511/posts/2023-10-13-why-to-improve-2-look-for-base-technologies/</link>
+        <link>https://jimenezgomez.org/posts/2023-10-13-why-to-improve-2-look-for-base-technologies/</link>
         <pubDate>Fri, 13 Oct 2023 23:18:00 +0200</pubDate>
         
-        <guid>http://localhost:37511/posts/2023-10-13-why-to-improve-2-look-for-base-technologies/</guid>
-        <description>&lt;p&gt;&lt;img src=&#34;http://localhost:37511/posts/2023-10-13-why-to-improve-2-look-for-base-technologies/light-bulb-book.webp&#34;
+        <guid>https://jimenezgomez.org/posts/2023-10-13-why-to-improve-2-look-for-base-technologies/</guid>
+        <description>&lt;p&gt;&lt;img src=&#34;https://jimenezgomez.org/posts/2023-10-13-why-to-improve-2-look-for-base-technologies/light-bulb-book.webp&#34;
 	width=&#34;1024&#34;
 	height=&#34;682&#34;
-	srcset=&#34;http://localhost:37511/posts/2023-10-13-why-to-improve-2-look-for-base-technologies/light-bulb-book_hu_dcc25ae0ce4e573b.webp 480w, http://localhost:37511/posts/2023-10-13-why-to-improve-2-look-for-base-technologies/light-bulb-book_hu_b0375d28bec578f6.webp 1024w&#34;
+	srcset=&#34;https://jimenezgomez.org/posts/2023-10-13-why-to-improve-2-look-for-base-technologies/light-bulb-book_hu_dcc25ae0ce4e573b.webp 480w, https://jimenezgomez.org/posts/2023-10-13-why-to-improve-2-look-for-base-technologies/light-bulb-book_hu_b0375d28bec578f6.webp 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;Light Bulb Book&#34;
@@ -2070,10 +1970,10 @@ img {
         </item>
         <item>
         <title>Quotes</title>
-        <link>http://localhost:37511/posts/2023-07-01-quotes/</link>
+        <link>https://jimenezgomez.org/posts/2023-07-01-quotes/</link>
         <pubDate>Sat, 01 Jul 2023 05:33:00 +0200</pubDate>
         
-        <guid>http://localhost:37511/posts/2023-07-01-quotes/</guid>
+        <guid>https://jimenezgomez.org/posts/2023-07-01-quotes/</guid>
         <description>&lt;blockquote&gt;
 &lt;p&gt;History is written,
 in blank pages.&lt;/p&gt;
@@ -2097,15 +1997,15 @@ in blank pages.&lt;/p&gt;
         </item>
         <item>
         <title>Network Operative System</title>
-        <link>http://localhost:37511/posts/2023-05-17-network-operative-system/</link>
+        <link>https://jimenezgomez.org/posts/2023-05-17-network-operative-system/</link>
         <pubDate>Wed, 17 May 2023 23:10:00 +0200</pubDate>
         
-        <guid>http://localhost:37511/posts/2023-05-17-network-operative-system/</guid>
+        <guid>https://jimenezgomez.org/posts/2023-05-17-network-operative-system/</guid>
         <description>&lt;p&gt;Document about the idea of the need of a Network Operative System, the idea was spreaded around 2013.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:37511/posts/2023-05-17-network-operative-system/network-operative-system-header-1000x563.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://jimenezgomez.org/posts/2023-05-17-network-operative-system/network-operative-system-header-1000x563.png&#34;
 	width=&#34;1000&#34;
 	height=&#34;563&#34;
-	srcset=&#34;http://localhost:37511/posts/2023-05-17-network-operative-system/network-operative-system-header-1000x563_hu_59afdd0aa8b7966e.png 480w, http://localhost:37511/posts/2023-05-17-network-operative-system/network-operative-system-header-1000x563_hu_f758871a262f9f10.png 1024w&#34;
+	srcset=&#34;https://jimenezgomez.org/posts/2023-05-17-network-operative-system/network-operative-system-header-1000x563_hu_59afdd0aa8b7966e.png 480w, https://jimenezgomez.org/posts/2023-05-17-network-operative-system/network-operative-system-header-1000x563_hu_f758871a262f9f10.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;Internet in binary code&#34;
@@ -2129,14 +2029,14 @@ in blank pages.&lt;/p&gt;
         </item>
         <item>
         <title>Why to improve?</title>
-        <link>http://localhost:37511/posts/2023-05-17-why-to-improve/</link>
+        <link>https://jimenezgomez.org/posts/2023-05-17-why-to-improve/</link>
         <pubDate>Wed, 17 May 2023 23:10:00 +0200</pubDate>
         
-        <guid>http://localhost:37511/posts/2023-05-17-why-to-improve/</guid>
-        <description>&lt;p&gt;&lt;img src=&#34;http://localhost:37511/posts/2023-05-17-why-to-improve/equations.png&#34;
+        <guid>https://jimenezgomez.org/posts/2023-05-17-why-to-improve/</guid>
+        <description>&lt;p&gt;&lt;img src=&#34;https://jimenezgomez.org/posts/2023-05-17-why-to-improve/equations.png&#34;
 	width=&#34;719&#34;
 	height=&#34;405&#34;
-	srcset=&#34;http://localhost:37511/posts/2023-05-17-why-to-improve/equations_hu_b44d7884f427a9f6.png 480w, http://localhost:37511/posts/2023-05-17-why-to-improve/equations_hu_a9ebae73522564ad.png 1024w&#34;
+	srcset=&#34;https://jimenezgomez.org/posts/2023-05-17-why-to-improve/equations_hu_b44d7884f427a9f6.png 480w, https://jimenezgomez.org/posts/2023-05-17-why-to-improve/equations_hu_a9ebae73522564ad.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;Equations&#34;
@@ -2159,15 +2059,15 @@ in blank pages.&lt;/p&gt;
         </item>
         <item>
         <title>Internet of Services</title>
-        <link>http://localhost:37511/posts/2023-05-17-internet-of-services/</link>
+        <link>https://jimenezgomez.org/posts/2023-05-17-internet-of-services/</link>
         <pubDate>Wed, 17 May 2023 21:56:26 +0200</pubDate>
         
-        <guid>http://localhost:37511/posts/2023-05-17-internet-of-services/</guid>
+        <guid>https://jimenezgomez.org/posts/2023-05-17-internet-of-services/</guid>
         <description>&lt;p&gt;Document about an idea from around 2013 of Internet being a group of services, as alternative for seeing them as a group of things.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:37511/posts/2023-05-17-internet-of-services/cloud-services-boxes-1000x538.jpg&#34;
+&lt;p&gt;&lt;img src=&#34;https://jimenezgomez.org/posts/2023-05-17-internet-of-services/cloud-services-boxes-1000x538.jpg&#34;
 	width=&#34;1000&#34;
 	height=&#34;538&#34;
-	srcset=&#34;http://localhost:37511/posts/2023-05-17-internet-of-services/cloud-services-boxes-1000x538_hu_6577d0a2c0cdb3c7.jpg 480w, http://localhost:37511/posts/2023-05-17-internet-of-services/cloud-services-boxes-1000x538_hu_d89c1c62710739d.jpg 1024w&#34;
+	srcset=&#34;https://jimenezgomez.org/posts/2023-05-17-internet-of-services/cloud-services-boxes-1000x538_hu_6577d0a2c0cdb3c7.jpg 480w, https://jimenezgomez.org/posts/2023-05-17-internet-of-services/cloud-services-boxes-1000x538_hu_d89c1c62710739d.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;Services connected&#34;

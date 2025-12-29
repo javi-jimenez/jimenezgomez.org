@@ -1,20 +1,28 @@
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
-    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=37511&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+    <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Introducción: El Problema del Direccionamiento Universal El Domain Name System (DNS) actual funciona bajo supuestos terrestres: latencias medidas en milisegundos, infraestructura física concentrada, y una autoridad central (ICANN). Pero ¿qué ocurre cuando necesitamos direccionar servicios en una colonia marciana, en estaciones orbitales, o incluso entre sistemas estelares?\nEl proyecto DDNSC (Distributed DNS Cache) proporciona los cimientos técnicos para resolver este problema mediante publicación descentralizada de servicios usando protocolos estándar (RFC 2136, Avahi/Zeroconf). Este artículo propone una extensión conceptual hacia escalas planetarias, galácticas y universales, integrando tecnologías Web 3.0 y protocolos emergentes.\n">
 <title>DNS Universal: De lo Planetario a lo Galáctico</title>
 
-<link rel='canonical' href='http://localhost:37511/posts/2025-12-22-dns-universal-ddnsc/'>
+<link rel='canonical' href='https://jimenezgomez.org/posts/2025-12-22-dns-universal-ddnsc/'>
 
 <link rel="stylesheet" href="/scss/style.min.59b58f238e9d9f5a2316c8c571baf8fd0a88712acfb1cebdb6cef18e9f18a4e4.css"><meta property='og:title' content="DNS Universal: De lo Planetario a lo Galáctico">
 <meta property='og:description' content="Introducción: El Problema del Direccionamiento Universal El Domain Name System (DNS) actual funciona bajo supuestos terrestres: latencias medidas en milisegundos, infraestructura física concentrada, y una autoridad central (ICANN). Pero ¿qué ocurre cuando necesitamos direccionar servicios en una colonia marciana, en estaciones orbitales, o incluso entre sistemas estelares?\nEl proyecto DDNSC (Distributed DNS Cache) proporciona los cimientos técnicos para resolver este problema mediante publicación descentralizada de servicios usando protocolos estándar (RFC 2136, Avahi/Zeroconf). Este artículo propone una extensión conceptual hacia escalas planetarias, galácticas y universales, integrando tecnologías Web 3.0 y protocolos emergentes.\n">
-<meta property='og:url' content='http://localhost:37511/posts/2025-12-22-dns-universal-ddnsc/'>
+<meta property='og:url' content='https://jimenezgomez.org/posts/2025-12-22-dns-universal-ddnsc/'>
 <meta property='og:site_name' content='Francisco Javier Jiménez Gómez'>
-<meta property='og:type' content='article'><meta property='article:section' content='Posts' /><meta property='article:tag' content='DNS' /><meta property='article:tag' content='distributed systems' /><meta property='article:tag' content='web3' /><meta property='article:tag' content='space' /><meta property='article:tag' content='research' /><meta property='article:published_time' content='2025-12-22T14:30:00&#43;02:00'/><meta property='article:modified_time' content='2025-12-22T14:30:00&#43;02:00'/><meta property='og:image' content='http://localhost:37511/posts/2025-12-22-dns-universal-ddnsc/dns-universe-architecture.svg' />
+<meta property='og:type' content='article'><meta property='article:section' content='Posts' /><meta property='article:tag' content='DNS' /><meta property='article:tag' content='distributed systems' /><meta property='article:tag' content='web3' /><meta property='article:tag' content='space' /><meta property='article:tag' content='research' /><meta property='article:published_time' content='2025-12-22T14:30:00&#43;02:00'/><meta property='article:modified_time' content='2025-12-22T14:30:00&#43;02:00'/><meta property='og:image' content='https://jimenezgomez.org/posts/2025-12-22-dns-universal-ddnsc/dns-universe-architecture.svg' />
 <meta name="twitter:title" content="DNS Universal: De lo Planetario a lo Galáctico">
 <meta name="twitter:description" content="Introducción: El Problema del Direccionamiento Universal El Domain Name System (DNS) actual funciona bajo supuestos terrestres: latencias medidas en milisegundos, infraestructura física concentrada, y una autoridad central (ICANN). Pero ¿qué ocurre cuando necesitamos direccionar servicios en una colonia marciana, en estaciones orbitales, o incluso entre sistemas estelares?\nEl proyecto DDNSC (Distributed DNS Cache) proporciona los cimientos técnicos para resolver este problema mediante publicación descentralizada de servicios usando protocolos estándar (RFC 2136, Avahi/Zeroconf). Este artículo propone una extensión conceptual hacia escalas planetarias, galácticas y universales, integrando tecnologías Web 3.0 y protocolos emergentes.\n"><meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content='http://localhost:37511/posts/2025-12-22-dns-universal-ddnsc/dns-universe-architecture.svg' />
+    <meta name="twitter:image" content='https://jimenezgomez.org/posts/2025-12-22-dns-universal-ddnsc/dns-universe-architecture.svg' />
     <link rel="shortcut icon" href="/img/favicon.ico" />
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-STC35RLKFB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);} 
+  gtag('js', new Date());
+  gtag('config', 'G-STC35RLKFB', { 'anonymize_ip': true });
+</script>
 
     </head>
     <body class="
@@ -491,7 +499,7 @@
     <h2 class="widget-title section-title">Compartir</h2>
     
     <div class="widget--share">
-        <div class="share-buttons"><a href="https://twitter.com/intent/tweet?url=http%3a%2f%2flocalhost%3a37511%2fposts%2f2025-12-22-dns-universal-ddnsc%2f&text=DNS%20Universal%3a%20De%20lo%20Planetario%20a%20lo%20Gal%c3%a1ctico" 
+        <div class="share-buttons"><a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fjimenezgomez.org%2fposts%2f2025-12-22-dns-universal-ddnsc%2f&text=DNS%20Universal%3a%20De%20lo%20Planetario%20a%20lo%20Gal%c3%a1ctico" 
                target="_blank" 
                rel="noopener noreferrer"
                class="share-button share-twitter"
@@ -504,7 +512,7 @@
 
 
                 <span>Twitter</span>
-            </a><a href="https://www.linkedin.com/sharing/share-offsite/?url=http%3a%2f%2flocalhost%3a37511%2fposts%2f2025-12-22-dns-universal-ddnsc%2f" 
+            </a><a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3a%2f%2fjimenezgomez.org%2fposts%2f2025-12-22-dns-universal-ddnsc%2f" 
                target="_blank" 
                rel="noopener noreferrer"
                class="share-button share-linkedin"
@@ -519,7 +527,7 @@
 </svg>
 
                 <span>LinkedIn</span>
-            </a><a href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2flocalhost%3a37511%2fposts%2f2025-12-22-dns-universal-ddnsc%2f" 
+            </a><a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fjimenezgomez.org%2fposts%2f2025-12-22-dns-universal-ddnsc%2f" 
                target="_blank" 
                rel="noopener noreferrer"
                class="share-button share-facebook"
@@ -530,7 +538,7 @@
 </svg>
 
                 <span>Facebook</span>
-            </a><a href="mailto:?subject=DNS%20Universal%3a%20De%20lo%20Planetario%20a%20lo%20Gal%c3%a1ctico&body=%3ch2%20id%3d%22introducci%c3%b3n-el-problema-del-direccionamiento-universal%22%3eIntroducci%c3%b3n%3a%20El%20Problema%20del%20Direccionamiento%20Universal%0a%3c%2fh2%3e%3cp%3eEl%20%3cstrong%3eDomain%20Name%20System%20%28DNS%29%3c%2fstrong%3e%20actual%20funciona%20bajo%20supuestos%20terrestres%3a%20latencias%20medidas%20en%20milisegundos%2c%20infraestructura%20f%c3%adsica%20concentrada%2c%20y%20una%20autoridad%20central%20%28ICANN%29.%20Pero%20%c2%bfqu%c3%a9%20ocurre%20cuando%20necesitamos%20direccionar%20servicios%20en%20una%20colonia%20marciana%2c%20en%20estaciones%20orbitales%2c%20o%20incluso%20entre%20sistemas%20estelares%3f%3c%2fp%3e%0a%3cp%3eEl%20proyecto%20%3ca%20class%3d%22link%22%20href%3d%22https%3a%2f%2fgithub.com%2fjavi-jimenez%2fddnsc%22%20%20target%3d%22_blank%22%20rel%3d%22noopener%22%0a%20%20%20%20%3eDDNSC%20%28Distributed%20DNS%20Cache%29%3c%2fa%3e%20proporciona%20los%20cimientos%20t%c3%a9cnicos%20para%20resolver%20este%20problema%20mediante%20%3cstrong%3epublicaci%c3%b3n%20descentralizada%20de%20servicios%3c%2fstrong%3e%20usando%20protocolos%20est%c3%a1ndar%20%28RFC%202136%2c%20Avahi%2fZeroconf%29.%20Este%20art%c3%adculo%20propone%20una%20extensi%c3%b3n%20conceptual%20hacia%20escalas%20planetarias%2c%20gal%c3%a1cticas%20y%20universales%2c%20integrando%20tecnolog%c3%adas%20Web%203.0%20y%20protocolos%20emergentes.%3c%2fp%3e%0A%0Ahttp%3a%2f%2flocalhost%3a37511%2fposts%2f2025-12-22-dns-universal-ddnsc%2f" 
+            </a><a href="mailto:?subject=DNS%20Universal%3a%20De%20lo%20Planetario%20a%20lo%20Gal%c3%a1ctico&body=%3ch2%20id%3d%22introducci%c3%b3n-el-problema-del-direccionamiento-universal%22%3eIntroducci%c3%b3n%3a%20El%20Problema%20del%20Direccionamiento%20Universal%0a%3c%2fh2%3e%3cp%3eEl%20%3cstrong%3eDomain%20Name%20System%20%28DNS%29%3c%2fstrong%3e%20actual%20funciona%20bajo%20supuestos%20terrestres%3a%20latencias%20medidas%20en%20milisegundos%2c%20infraestructura%20f%c3%adsica%20concentrada%2c%20y%20una%20autoridad%20central%20%28ICANN%29.%20Pero%20%c2%bfqu%c3%a9%20ocurre%20cuando%20necesitamos%20direccionar%20servicios%20en%20una%20colonia%20marciana%2c%20en%20estaciones%20orbitales%2c%20o%20incluso%20entre%20sistemas%20estelares%3f%3c%2fp%3e%0a%3cp%3eEl%20proyecto%20%3ca%20class%3d%22link%22%20href%3d%22https%3a%2f%2fgithub.com%2fjavi-jimenez%2fddnsc%22%20%20target%3d%22_blank%22%20rel%3d%22noopener%22%0a%20%20%20%20%3eDDNSC%20%28Distributed%20DNS%20Cache%29%3c%2fa%3e%20proporciona%20los%20cimientos%20t%c3%a9cnicos%20para%20resolver%20este%20problema%20mediante%20%3cstrong%3epublicaci%c3%b3n%20descentralizada%20de%20servicios%3c%2fstrong%3e%20usando%20protocolos%20est%c3%a1ndar%20%28RFC%202136%2c%20Avahi%2fZeroconf%29.%20Este%20art%c3%adculo%20propone%20una%20extensi%c3%b3n%20conceptual%20hacia%20escalas%20planetarias%2c%20gal%c3%a1cticas%20y%20universales%2c%20integrando%20tecnolog%c3%adas%20Web%203.0%20y%20protocolos%20emergentes.%3c%2fp%3e%0A%0Ahttps%3a%2f%2fjimenezgomez.org%2fposts%2f2025-12-22-dns-universal-ddnsc%2f" 
                class="share-button share-email"
                title="Compartir por email">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-mail" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -541,7 +549,7 @@
 
                 <span>Email</span>
             </a><button class="share-button share-copy" 
-                    data-url="http://localhost:37511/posts/2025-12-22-dns-universal-ddnsc/"
+                    data-url="https://jimenezgomez.org/posts/2025-12-22-dns-universal-ddnsc/"
                     title="Copiar enlace">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
@@ -1686,7 +1694,7 @@ Implementar DNSSEC con Ed25519 (post-quantum) sobre blockchain Ethereum como ra�
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
-            </script><script type="text/javascript" src="/ts/main.628c773f6dcceb7d79571d48660443df72f948b603d1647a8e1a71099fe0ec1b.js" defer></script>
+            </script><script type="text/javascript" src="/ts/main.c922af694cc257bf1ecc41c0dd7b0430f9114ec280ccf67cd2c6ad55f5316c4e.js" defer></script>
 <script>
     (function () {
         const customFont = document.createElement('link');

@@ -2,47 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Writing on Francisco Javier Jiménez Gómez</title>
-        <link>http://localhost:37511/categories/writing/</link>
+        <link>https://jimenezgomez.org/categories/writing/</link>
         <description>Recent content in Writing on Francisco Javier Jiménez Gómez</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>es</language>
         <copyright>Francisco Javier Jiménez Gómez</copyright>
-        <lastBuildDate>Tue, 14 May 2024 00:00:00 +0200</lastBuildDate><atom:link href="http://localhost:37511/categories/writing/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>How to improve</title>
-        <link>http://localhost:37511/posts/2024-05-14-how-to-improve/</link>
-        <pubDate>Tue, 14 May 2024 00:00:00 +0200</pubDate>
-        
-        <guid>http://localhost:37511/posts/2024-05-14-how-to-improve/</guid>
-        <description>&lt;!-- preview image on social media --&gt;
-&lt;meta property=&#34;og:image&#34; content=&#34;/assets/img/a.jpg&#34; /&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:37511/a.jpg&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;How to improve&#34;
-	
-	
-&gt;&lt;/p&gt;
-&lt;p&gt;Acquire knowledge
-Practice
-Questions
-Time resources
-Certification as objective
-Practice after certification&lt;/p&gt;
-</description>
-        </item>
-        <item>
+        <lastBuildDate>Sun, 31 Mar 2024 20:52:00 +0200</lastBuildDate><atom:link href="https://jimenezgomez.org/categories/writing/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Three layers abstraction</title>
-        <link>http://localhost:37511/posts/2024-03-31-three-layers-abstraction/</link>
+        <link>https://jimenezgomez.org/posts/2024-03-31-three-layers-abstraction/</link>
         <pubDate>Sun, 31 Mar 2024 20:52:00 +0200</pubDate>
         
-        <guid>http://localhost:37511/posts/2024-03-31-three-layers-abstraction/</guid>
-        <description>&lt;p&gt;&lt;img src=&#34;http://localhost:37511/posts/2024-03-31-three-layers-abstraction/three-layers-as-leafs-gettyimages-1000px-157287379-2048x2048.jpg&#34;
+        <guid>https://jimenezgomez.org/posts/2024-03-31-three-layers-abstraction/</guid>
+        <description>&lt;p&gt;&lt;img src=&#34;https://jimenezgomez.org/posts/2024-03-31-three-layers-abstraction/three-layers-as-leafs-gettyimages-1000px-157287379-2048x2048.jpg&#34;
 	width=&#34;1000&#34;
 	height=&#34;667&#34;
-	srcset=&#34;http://localhost:37511/posts/2024-03-31-three-layers-abstraction/three-layers-as-leafs-gettyimages-1000px-157287379-2048x2048_hu_e10b507ce78069a5.jpg 480w, http://localhost:37511/posts/2024-03-31-three-layers-abstraction/three-layers-as-leafs-gettyimages-1000px-157287379-2048x2048_hu_9afc46b1fd8fc6be.jpg 1024w&#34;
+	srcset=&#34;https://jimenezgomez.org/posts/2024-03-31-three-layers-abstraction/three-layers-as-leafs-gettyimages-1000px-157287379-2048x2048_hu_e10b507ce78069a5.jpg 480w, https://jimenezgomez.org/posts/2024-03-31-three-layers-abstraction/three-layers-as-leafs-gettyimages-1000px-157287379-2048x2048_hu_9afc46b1fd8fc6be.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;Three Layers as Leafs&#34;
@@ -83,34 +57,17 @@ Practice after certification&lt;/p&gt;
 </description>
         </item>
         <item>
-        <title>VBD</title>
-        <link>http://localhost:37511/posts/2024-03-31-vbd/</link>
-        <pubDate>Sun, 31 Mar 2024 20:52:00 +0200</pubDate>
-        
-        <guid>http://localhost:37511/posts/2024-03-31-vbd/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Layers</title>
-        <link>http://localhost:37511/posts/2024-03-31-layers/</link>
-        <pubDate>Sun, 31 Mar 2024 20:44:00 +0200</pubDate>
-        
-        <guid>http://localhost:37511/posts/2024-03-31-layers/</guid>
-        <description>&lt;p xmlns:cc=&#34;http://creativecommons.org/ns#&#34; xmlns:dct=&#34;http://purl.org/dc/terms/&#34;&gt;&lt;a property=&#34;dct:title&#34; rel=&#34;cc:attributionURL&#34; href=&#34;https://github.com/javi-jimenez/posts/&#34;&gt;Posts&lt;/a&gt; by &lt;a rel=&#34;cc:attributionURL dct:creator&#34; property=&#34;cc:attributionName&#34; href=&#34;https://github.com/javi-jimenez&#34;&gt;Francisco Javier Jiménez Gómez&lt;/a&gt; is licensed under &lt;a href=&#34;https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1&#34; target=&#34;_blank&#34; rel=&#34;license noopener noreferrer&#34; style=&#34;display:inline-block;&#34;&gt;CC BY-NC-SA 4.0&lt;img style=&#34;height:22px!important;margin-left:3px;vertical-align:text-bottom;&#34; src=&#34;https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1&#34;&gt;&lt;img style=&#34;height:22px!important;margin-left:3px;vertical-align:text-bottom;&#34; src=&#34;https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1&#34;&gt;&lt;img style=&#34;height:22px!important;margin-left:3px;vertical-align:text-bottom;&#34; src=&#34;https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1&#34;&gt;&lt;img style=&#34;height:22px!important;margin-left:3px;vertical-align:text-bottom;&#34; src=&#34;https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-</description>
-        </item>
-        <item>
         <title>VBD, Fractal Architecture: View, Business and Data. Input and Output.</title>
-        <link>http://localhost:37511/posts/2024-03-31-vbd-fractal-architecture-view-business-and-data-input-and-output/</link>
+        <link>https://jimenezgomez.org/posts/2024-03-31-vbd-fractal-architecture-view-business-and-data-input-and-output/</link>
         <pubDate>Sun, 31 Mar 2024 20:44:00 +0200</pubDate>
         
-        <guid>http://localhost:37511/posts/2024-03-31-vbd-fractal-architecture-view-business-and-data-input-and-output/</guid>
+        <guid>https://jimenezgomez.org/posts/2024-03-31-vbd-fractal-architecture-view-business-and-data-input-and-output/</guid>
         <description>&lt;meta property=&#34;og:image&#34; content=&#34;2024-03-31-vbd-fractal-architecture-view-business-and-data-input-and-output/fractal-maldelbrot-illustration-1000px-gettyimages-488635425-2048x2048.jpg&#34; /&gt;
 &lt;meta name=&#34;twitter:image&#34; content=&#34;2024-03-31-vbd-fractal-architecture-view-business-and-data-input-and-output/fractal-maldelbrot-illustration-1000px-gettyimages-488635425-2048x2048.jpg&#34; /&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:37511/posts/2024-03-31-vbd-fractal-architecture-view-business-and-data-input-and-output/fractal-maldelbrot-illustration-1000px-gettyimages-488635425-2048x2048.jpg&#34;
+&lt;p&gt;&lt;img src=&#34;https://jimenezgomez.org/posts/2024-03-31-vbd-fractal-architecture-view-business-and-data-input-and-output/fractal-maldelbrot-illustration-1000px-gettyimages-488635425-2048x2048.jpg&#34;
 	width=&#34;1000&#34;
 	height=&#34;750&#34;
-	srcset=&#34;http://localhost:37511/posts/2024-03-31-vbd-fractal-architecture-view-business-and-data-input-and-output/fractal-maldelbrot-illustration-1000px-gettyimages-488635425-2048x2048_hu_71538f2550c6dc83.jpg 480w, http://localhost:37511/posts/2024-03-31-vbd-fractal-architecture-view-business-and-data-input-and-output/fractal-maldelbrot-illustration-1000px-gettyimages-488635425-2048x2048_hu_50dd66516025c0b2.jpg 1024w&#34;
+	srcset=&#34;https://jimenezgomez.org/posts/2024-03-31-vbd-fractal-architecture-view-business-and-data-input-and-output/fractal-maldelbrot-illustration-1000px-gettyimages-488635425-2048x2048_hu_71538f2550c6dc83.jpg 480w, https://jimenezgomez.org/posts/2024-03-31-vbd-fractal-architecture-view-business-and-data-input-and-output/fractal-maldelbrot-illustration-1000px-gettyimages-488635425-2048x2048_hu_50dd66516025c0b2.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;Maldelbrot set&#34;
@@ -140,16 +97,16 @@ Practice after certification&lt;/p&gt;
         </item>
         <item>
         <title>Monoliths and microservices</title>
-        <link>http://localhost:37511/posts/2023-12-24-monoliths-and-microservices/</link>
+        <link>https://jimenezgomez.org/posts/2023-12-24-monoliths-and-microservices/</link>
         <pubDate>Sun, 24 Dec 2023 00:00:00 +0200</pubDate>
         
-        <guid>http://localhost:37511/posts/2023-12-24-monoliths-and-microservices/</guid>
+        <guid>https://jimenezgomez.org/posts/2023-12-24-monoliths-and-microservices/</guid>
         <description>&lt;!-- preview image on social media --&gt;
 &lt;meta property=&#34;og:image&#34; content=&#34;2023-12-24-monoliths-and-microservices/inca-bricks-1000px.jpg&#34; /&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:37511/posts/2023-12-24-monoliths-and-microservices/inca-bricks-1000px.jpg&#34;
+&lt;p&gt;&lt;img src=&#34;https://jimenezgomez.org/posts/2023-12-24-monoliths-and-microservices/inca-bricks-1000px.jpg&#34;
 	width=&#34;1000&#34;
 	height=&#34;1005&#34;
-	srcset=&#34;http://localhost:37511/posts/2023-12-24-monoliths-and-microservices/inca-bricks-1000px_hu_4ba43dc18399bd24.jpg 480w, http://localhost:37511/posts/2023-12-24-monoliths-and-microservices/inca-bricks-1000px_hu_cc9f36dc5358d227.jpg 1024w&#34;
+	srcset=&#34;https://jimenezgomez.org/posts/2023-12-24-monoliths-and-microservices/inca-bricks-1000px_hu_4ba43dc18399bd24.jpg 480w, https://jimenezgomez.org/posts/2023-12-24-monoliths-and-microservices/inca-bricks-1000px_hu_cc9f36dc5358d227.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;Monoliths and MicroServices&#34;
@@ -179,14 +136,14 @@ Practice after certification&lt;/p&gt;
         </item>
         <item>
         <title>Computer Science base technologies, part II</title>
-        <link>http://localhost:37511/posts/2023-10-19-computer-science-base-technologies-2/</link>
+        <link>https://jimenezgomez.org/posts/2023-10-19-computer-science-base-technologies-2/</link>
         <pubDate>Thu, 19 Oct 2023 20:38:00 +0200</pubDate>
         
-        <guid>http://localhost:37511/posts/2023-10-19-computer-science-base-technologies-2/</guid>
-        <description>&lt;p&gt;&lt;img src=&#34;http://localhost:37511/posts/2023-10-19-computer-science-base-technologies-2/low-code-example-app-for-reading-dht22-data-from-api.png&#34;
+        <guid>https://jimenezgomez.org/posts/2023-10-19-computer-science-base-technologies-2/</guid>
+        <description>&lt;p&gt;&lt;img src=&#34;https://jimenezgomez.org/posts/2023-10-19-computer-science-base-technologies-2/low-code-example-app-for-reading-dht22-data-from-api.png&#34;
 	width=&#34;1270&#34;
 	height=&#34;863&#34;
-	srcset=&#34;http://localhost:37511/posts/2023-10-19-computer-science-base-technologies-2/low-code-example-app-for-reading-dht22-data-from-api_hu_4f6bc6134d5154bf.png 480w, http://localhost:37511/posts/2023-10-19-computer-science-base-technologies-2/low-code-example-app-for-reading-dht22-data-from-api_hu_73d5028b4da26dd7.png 1024w&#34;
+	srcset=&#34;https://jimenezgomez.org/posts/2023-10-19-computer-science-base-technologies-2/low-code-example-app-for-reading-dht22-data-from-api_hu_4f6bc6134d5154bf.png 480w, https://jimenezgomez.org/posts/2023-10-19-computer-science-base-technologies-2/low-code-example-app-for-reading-dht22-data-from-api_hu_73d5028b4da26dd7.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;Low code platform example for reading DHT22 data using an API&#34;
@@ -223,10 +180,10 @@ Practice after certification&lt;/p&gt;
         </item>
         <item>
         <title>Computer Science base technologies, part I</title>
-        <link>http://localhost:37511/posts/2023-10-18-computer-science-base-technologies/</link>
+        <link>https://jimenezgomez.org/posts/2023-10-18-computer-science-base-technologies/</link>
         <pubDate>Wed, 18 Oct 2023 20:49:00 +0200</pubDate>
         
-        <guid>http://localhost:37511/posts/2023-10-18-computer-science-base-technologies/</guid>
+        <guid>https://jimenezgomez.org/posts/2023-10-18-computer-science-base-technologies/</guid>
         <description>&lt;style&gt;
 img {
   display: block;
@@ -255,23 +212,15 @@ img {
 </description>
         </item>
         <item>
-        <title>Why to improve? part 3. Base materials for Computer Engineers</title>
-        <link>http://localhost:37511/posts/2023-10-14-why-to-improve-3-base-materials-for-computer-engineers/</link>
-        <pubDate>Sat, 14 Oct 2023 12:18:00 +0200</pubDate>
-        
-        <guid>http://localhost:37511/posts/2023-10-14-why-to-improve-3-base-materials-for-computer-engineers/</guid>
-        <description></description>
-        </item>
-        <item>
         <title>Why to improve? part 2. Technologies and the look for the base knowledge</title>
-        <link>http://localhost:37511/posts/2023-10-13-why-to-improve-2-look-for-base-technologies/</link>
+        <link>https://jimenezgomez.org/posts/2023-10-13-why-to-improve-2-look-for-base-technologies/</link>
         <pubDate>Fri, 13 Oct 2023 23:18:00 +0200</pubDate>
         
-        <guid>http://localhost:37511/posts/2023-10-13-why-to-improve-2-look-for-base-technologies/</guid>
-        <description>&lt;p&gt;&lt;img src=&#34;http://localhost:37511/posts/2023-10-13-why-to-improve-2-look-for-base-technologies/light-bulb-book.webp&#34;
+        <guid>https://jimenezgomez.org/posts/2023-10-13-why-to-improve-2-look-for-base-technologies/</guid>
+        <description>&lt;p&gt;&lt;img src=&#34;https://jimenezgomez.org/posts/2023-10-13-why-to-improve-2-look-for-base-technologies/light-bulb-book.webp&#34;
 	width=&#34;1024&#34;
 	height=&#34;682&#34;
-	srcset=&#34;http://localhost:37511/posts/2023-10-13-why-to-improve-2-look-for-base-technologies/light-bulb-book_hu_dcc25ae0ce4e573b.webp 480w, http://localhost:37511/posts/2023-10-13-why-to-improve-2-look-for-base-technologies/light-bulb-book_hu_b0375d28bec578f6.webp 1024w&#34;
+	srcset=&#34;https://jimenezgomez.org/posts/2023-10-13-why-to-improve-2-look-for-base-technologies/light-bulb-book_hu_dcc25ae0ce4e573b.webp 480w, https://jimenezgomez.org/posts/2023-10-13-why-to-improve-2-look-for-base-technologies/light-bulb-book_hu_b0375d28bec578f6.webp 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;Light Bulb Book&#34;
@@ -301,10 +250,10 @@ img {
         </item>
         <item>
         <title>Quotes</title>
-        <link>http://localhost:37511/posts/2023-07-01-quotes/</link>
+        <link>https://jimenezgomez.org/posts/2023-07-01-quotes/</link>
         <pubDate>Sat, 01 Jul 2023 05:33:00 +0200</pubDate>
         
-        <guid>http://localhost:37511/posts/2023-07-01-quotes/</guid>
+        <guid>https://jimenezgomez.org/posts/2023-07-01-quotes/</guid>
         <description>&lt;blockquote&gt;
 &lt;p&gt;History is written,
 in blank pages.&lt;/p&gt;
