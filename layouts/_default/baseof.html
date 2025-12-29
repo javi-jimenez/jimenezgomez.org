@@ -29,7 +29,10 @@
         
         <!-- Footer uniforme -->
         {{- partial "portfolio-footer.html" . -}}
-        
+
+        {{/* Cookie consent banner partial (blocks GA until user accepts) */}}
+        {{- partial "cookies/consent.html" . -}}
+
         {{ partial "footer/include.html" . }}
     </body>
 </html>
