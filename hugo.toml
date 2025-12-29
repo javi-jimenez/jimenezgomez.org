@@ -7,6 +7,8 @@ copyright = 'Francisco Javier Jiménez Gómez'
 # Google Analytics (Measurement ID)
 googleAnalytics = "G-STC35RLKFB"
 [params]
+  # Google Analytics (also available as top-level `googleAnalytics`)
+  googleAnalytics = "G-STC35RLKFB"
   mainSections = ['posts']
   rssFullContent = true
   favicon = '/img/favicon.ico'

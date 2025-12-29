@@ -2,113 +2,105 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Categories on Francisco Javier Jiménez Gómez</title>
-        <link>http://localhost:37511/categories/</link>
+        <link>https://jimenezgomez.org/categories/</link>
         <description>Recent content in Categories on Francisco Javier Jiménez Gómez</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>es</language>
         <copyright>Francisco Javier Jiménez Gómez</copyright>
-        <lastBuildDate>Mon, 22 Dec 2025 14:30:00 +0200</lastBuildDate><atom:link href="http://localhost:37511/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 22 Dec 2025 14:30:00 +0200</lastBuildDate><atom:link href="https://jimenezgomez.org/categories/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Architecture</title>
-        <link>http://localhost:37511/categories/architecture/</link>
+        <link>https://jimenezgomez.org/categories/architecture/</link>
         <pubDate>Mon, 22 Dec 2025 14:30:00 +0200</pubDate>
         
-        <guid>http://localhost:37511/categories/architecture/</guid>
+        <guid>https://jimenezgomez.org/categories/architecture/</guid>
         <description></description>
         </item>
         <item>
         <title>Research</title>
-        <link>http://localhost:37511/categories/research/</link>
+        <link>https://jimenezgomez.org/categories/research/</link>
         <pubDate>Mon, 22 Dec 2025 14:30:00 +0200</pubDate>
         
-        <guid>http://localhost:37511/categories/research/</guid>
+        <guid>https://jimenezgomez.org/categories/research/</guid>
         <description></description>
         </item>
         <item>
         <title>Technology</title>
-        <link>http://localhost:37511/categories/technology/</link>
+        <link>https://jimenezgomez.org/categories/technology/</link>
         <pubDate>Mon, 22 Dec 2025 14:30:00 +0200</pubDate>
         
-        <guid>http://localhost:37511/categories/technology/</guid>
+        <guid>https://jimenezgomez.org/categories/technology/</guid>
         <description></description>
         </item>
         <item>
         <title>AI</title>
-        <link>http://localhost:37511/categories/ai/</link>
+        <link>https://jimenezgomez.org/categories/ai/</link>
         <pubDate>Thu, 18 Dec 2025 09:30:00 +0200</pubDate>
         
-        <guid>http://localhost:37511/categories/ai/</guid>
+        <guid>https://jimenezgomez.org/categories/ai/</guid>
         <description></description>
         </item>
         <item>
         <title>Branding</title>
-        <link>http://localhost:37511/categories/branding/</link>
+        <link>https://jimenezgomez.org/categories/branding/</link>
         <pubDate>Thu, 18 Dec 2025 09:30:00 +0200</pubDate>
         
-        <guid>http://localhost:37511/categories/branding/</guid>
+        <guid>https://jimenezgomez.org/categories/branding/</guid>
         <description></description>
         </item>
         <item>
         <title>Design</title>
-        <link>http://localhost:37511/categories/design/</link>
+        <link>https://jimenezgomez.org/categories/design/</link>
         <pubDate>Thu, 18 Dec 2025 09:30:00 +0200</pubDate>
         
-        <guid>http://localhost:37511/categories/design/</guid>
+        <guid>https://jimenezgomez.org/categories/design/</guid>
         <description></description>
         </item>
         <item>
         <title>Ethics</title>
-        <link>http://localhost:37511/categories/ethics/</link>
+        <link>https://jimenezgomez.org/categories/ethics/</link>
         <pubDate>Thu, 18 Dec 2025 08:00:00 +0200</pubDate>
         
-        <guid>http://localhost:37511/categories/ethics/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Layer</title>
-        <link>http://localhost:37511/categories/layer/</link>
-        <pubDate>Tue, 14 May 2024 00:00:00 +0200</pubDate>
-        
-        <guid>http://localhost:37511/categories/layer/</guid>
+        <guid>https://jimenezgomez.org/categories/ethics/</guid>
         <description></description>
         </item>
         <item>
         <title>Software</title>
-        <link>http://localhost:37511/categories/software/</link>
-        <pubDate>Tue, 14 May 2024 00:00:00 +0200</pubDate>
+        <link>https://jimenezgomez.org/categories/software/</link>
+        <pubDate>Sun, 31 Mar 2024 20:52:00 +0200</pubDate>
         
-        <guid>http://localhost:37511/categories/software/</guid>
+        <guid>https://jimenezgomez.org/categories/software/</guid>
         <description></description>
         </item>
         <item>
         <title>Writing</title>
-        <link>http://localhost:37511/categories/writing/</link>
-        <pubDate>Tue, 14 May 2024 00:00:00 +0200</pubDate>
+        <link>https://jimenezgomez.org/categories/writing/</link>
+        <pubDate>Sun, 31 Mar 2024 20:52:00 +0200</pubDate>
         
-        <guid>http://localhost:37511/categories/writing/</guid>
+        <guid>https://jimenezgomez.org/categories/writing/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Layer</title>
+        <link>https://jimenezgomez.org/categories/layer/</link>
+        <pubDate>Sun, 31 Mar 2024 20:44:00 +0200</pubDate>
+        
+        <guid>https://jimenezgomez.org/categories/layer/</guid>
         <description></description>
         </item>
         <item>
         <title>Book</title>
-        <link>http://localhost:37511/categories/book/</link>
+        <link>https://jimenezgomez.org/categories/book/</link>
         <pubDate>Thu, 19 Oct 2023 20:38:00 +0200</pubDate>
         
-        <guid>http://localhost:37511/categories/book/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Base</title>
-        <link>http://localhost:37511/categories/base/</link>
-        <pubDate>Sat, 14 Oct 2023 12:18:00 +0200</pubDate>
-        
-        <guid>http://localhost:37511/categories/base/</guid>
+        <guid>https://jimenezgomez.org/categories/book/</guid>
         <description></description>
         </item>
         <item>
         <title>Meta</title>
-        <link>http://localhost:37511/categories/meta/</link>
+        <link>https://jimenezgomez.org/categories/meta/</link>
         <pubDate>Sat, 01 Jul 2023 05:33:00 +0200</pubDate>
         
-        <guid>http://localhost:37511/categories/meta/</guid>
+        <guid>https://jimenezgomez.org/categories/meta/</guid>
         <description></description>
         </item>
         

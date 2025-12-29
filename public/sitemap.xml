@@ -2,228 +2,201 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:37511/categories/architecture/</loc>
+    <loc>https://jimenezgomez.org/categories/architecture/</loc>
     <lastmod>2025-12-22T14:30:00+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37511/posts/</loc>
+    <loc>https://jimenezgomez.org/posts/</loc>
     <lastmod>2025-12-22T14:30:00+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37511/categories/</loc>
+    <loc>https://jimenezgomez.org/categories/</loc>
     <lastmod>2025-12-22T14:30:00+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37511/tags/distributed-systems/</loc>
+    <loc>https://jimenezgomez.org/tags/distributed-systems/</loc>
     <lastmod>2025-12-22T14:30:00+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37511/tags/dns/</loc>
+    <loc>https://jimenezgomez.org/tags/dns/</loc>
     <lastmod>2025-12-22T14:30:00+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37511/posts/2025-12-22-dns-universal-ddnsc/</loc>
+    <loc>https://jimenezgomez.org/posts/2025-12-22-dns-universal-ddnsc/</loc>
     <lastmod>2025-12-22T14:30:00+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37511/categories/research/</loc>
+    <loc>https://jimenezgomez.org/categories/research/</loc>
     <lastmod>2025-12-22T14:30:00+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37511/tags/research/</loc>
+    <loc>https://jimenezgomez.org/tags/research/</loc>
     <lastmod>2025-12-22T14:30:00+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37511/tags/space/</loc>
+    <loc>https://jimenezgomez.org/tags/space/</loc>
     <lastmod>2025-12-22T14:30:00+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37511/tags/</loc>
+    <loc>https://jimenezgomez.org/tags/</loc>
     <lastmod>2025-12-22T14:30:00+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37511/categories/technology/</loc>
+    <loc>https://jimenezgomez.org/categories/technology/</loc>
     <lastmod>2025-12-22T14:30:00+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37511/tags/web3/</loc>
+    <loc>https://jimenezgomez.org/tags/web3/</loc>
     <lastmod>2025-12-22T14:30:00+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37511/categories/ai/</loc>
+    <loc>https://jimenezgomez.org/categories/ai/</loc>
     <lastmod>2025-12-18T09:30:00+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37511/tags/brand-identity/</loc>
+    <loc>https://jimenezgomez.org/tags/brand-identity/</loc>
     <lastmod>2025-12-18T09:30:00+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37511/categories/branding/</loc>
+    <loc>https://jimenezgomez.org/categories/branding/</loc>
     <lastmod>2025-12-18T09:30:00+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37511/tags/corporate-identity/</loc>
+    <loc>https://jimenezgomez.org/tags/corporate-identity/</loc>
     <lastmod>2025-12-18T09:30:00+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37511/categories/design/</loc>
+    <loc>https://jimenezgomez.org/categories/design/</loc>
     <lastmod>2025-12-18T09:30:00+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37511/posts/2025-12-18-laia-brand-identity/</loc>
+    <loc>https://jimenezgomez.org/posts/2025-12-18-laia-brand-identity/</loc>
     <lastmod>2025-12-18T09:30:00+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37511/tags/laia-project/</loc>
+    <loc>https://jimenezgomez.org/tags/laia-project/</loc>
     <lastmod>2025-12-18T09:30:00+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37511/tags/logo-design/</loc>
+    <loc>https://jimenezgomez.org/tags/logo-design/</loc>
     <lastmod>2025-12-18T09:30:00+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37511/tags/visual-design/</loc>
+    <loc>https://jimenezgomez.org/tags/visual-design/</loc>
     <lastmod>2025-12-18T09:30:00+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37511/tags/ai-ethics/</loc>
+    <loc>https://jimenezgomez.org/tags/ai-ethics/</loc>
     <lastmod>2025-12-18T08:00:00+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37511/categories/ethics/</loc>
+    <loc>https://jimenezgomez.org/categories/ethics/</loc>
     <lastmod>2025-12-18T08:00:00+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37511/posts/2025-12-18-laia-intelligent-agent/</loc>
+    <loc>https://jimenezgomez.org/posts/2025-12-18-laia-intelligent-agent/</loc>
     <lastmod>2025-12-18T08:00:00+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37511/tags/machine-learning/</loc>
+    <loc>https://jimenezgomez.org/tags/machine-learning/</loc>
     <lastmod>2025-12-18T08:00:00+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37511/tags/open-source/</loc>
+    <loc>https://jimenezgomez.org/tags/open-source/</loc>
     <lastmod>2025-12-18T08:00:00+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37511/tags/python/</loc>
+    <loc>https://jimenezgomez.org/tags/python/</loc>
     <lastmod>2025-12-18T08:00:00+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37511/tags/transparency/</loc>
+    <loc>https://jimenezgomez.org/tags/transparency/</loc>
     <lastmod>2025-12-18T08:00:00+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37511/</loc>
+    <loc>https://jimenezgomez.org/</loc>
     <lastmod>2025-12-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:37511/about/</loc>
+    <loc>https://jimenezgomez.org/about/</loc>
     <lastmod>2025-12-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:37511/archives/</loc>
+    <loc>https://jimenezgomez.org/archives/</loc>
     <lastmod>2025-12-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:37511/blog/</loc>
+    <loc>https://jimenezgomez.org/blog/</loc>
     <lastmod>2025-12-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:37511/posts/2025-12-02-08-54-spa-blog-in-one-file/</loc>
+    <loc>https://jimenezgomez.org/posts/2025-12-02-08-54-spa-blog-in-one-file/</loc>
     <lastmod>2025-12-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:37511/posts/2025-05-16-apps/</loc>
-    <lastmod>2025-05-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:37511/posts/2025-04-04-vero-architecture/</loc>
+    <loc>https://jimenezgomez.org/posts/2025-04-04-vero-architecture/</loc>
     <lastmod>2025-04-04T11:09:00+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37511/posts/2025-03-17-minimal-blog/</loc>
+    <loc>https://jimenezgomez.org/posts/2025-03-17-minimal-blog/</loc>
     <lastmod>2025-03-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:37511/posts/2025-02-25-ia-development-based/</loc>
+    <loc>https://jimenezgomez.org/posts/2025-02-25-ia-development-based/</loc>
     <lastmod>2025-02-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:37511/posts/2024-05-14-how-to-improve/</loc>
-    <lastmod>2024-05-14T00:00:00+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:37511/tags/howto/</loc>
-    <lastmod>2024-05-14T00:00:00+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:37511/tags/improve/</loc>
-    <lastmod>2024-05-14T00:00:00+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:37511/tags/knowledge/</loc>
-    <lastmod>2024-05-14T00:00:00+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:37511/categories/layer/</loc>
-    <lastmod>2024-05-14T00:00:00+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:37511/categories/software/</loc>
-    <lastmod>2024-05-14T00:00:00+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:37511/categories/writing/</loc>
-    <lastmod>2024-05-14T00:00:00+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:37511/posts/2024-05-10-second/</loc>
+    <loc>https://jimenezgomez.org/posts/2024-05-10-second/</loc>
     <lastmod>2024-05-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:37511/tags/performance/</loc>
+    <loc>https://jimenezgomez.org/tags/performance/</loc>
     <lastmod>2024-05-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:37511/tags/web/</loc>
+    <loc>https://jimenezgomez.org/tags/web/</loc>
     <lastmod>2024-05-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:37511/tags/fractal/</loc>
+    <loc>https://jimenezgomez.org/tags/fractal/</loc>
     <lastmod>2024-03-31T20:52:00+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37511/tags/layer/</loc>
+    <loc>https://jimenezgomez.org/tags/layer/</loc>
     <lastmod>2024-03-31T20:52:00+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37511/posts/2024-03-31-three-layers-abstraction/</loc>
+    <loc>https://jimenezgomez.org/categories/software/</loc>
     <lastmod>2024-03-31T20:52:00+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37511/posts/2024-03-31-vbd/</loc>
+    <loc>https://jimenezgomez.org/posts/2024-03-31-three-layers-abstraction/</loc>
     <lastmod>2024-03-31T20:52:00+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37511/posts/2024-03-31-layers/</loc>
+    <loc>https://jimenezgomez.org/categories/writing/</loc>
+    <lastmod>2024-03-31T20:52:00+02:00</lastmod>
+  </url><url>
+    <loc>https://jimenezgomez.org/categories/layer/</loc>
     <lastmod>2024-03-31T20:44:00+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37511/posts/2024-03-31-vbd-fractal-architecture-view-business-and-data-input-and-output/</loc>
+    <loc>https://jimenezgomez.org/posts/2024-03-31-vbd-fractal-architecture-view-business-and-data-input-and-output/</loc>
     <lastmod>2024-03-31T20:44:00+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37511/tags/microservice/</loc>
+    <loc>https://jimenezgomez.org/tags/microservice/</loc>
     <lastmod>2023-12-24T00:00:00+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37511/tags/monolith/</loc>
+    <loc>https://jimenezgomez.org/tags/monolith/</loc>
     <lastmod>2023-12-24T00:00:00+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37511/posts/2023-12-24-monoliths-and-microservices/</loc>
+    <loc>https://jimenezgomez.org/posts/2023-12-24-monoliths-and-microservices/</loc>
     <lastmod>2023-12-24T00:00:00+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37511/tags/base/</loc>
+    <loc>https://jimenezgomez.org/tags/base/</loc>
     <lastmod>2023-10-19T20:38:00+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37511/categories/book/</loc>
+    <loc>https://jimenezgomez.org/categories/book/</loc>
     <lastmod>2023-10-19T20:38:00+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37511/posts/2023-10-19-computer-science-base-technologies-2/</loc>
+    <loc>https://jimenezgomez.org/posts/2023-10-19-computer-science-base-technologies-2/</loc>
     <lastmod>2023-10-19T20:38:00+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37511/tags/core/</loc>
+    <loc>https://jimenezgomez.org/tags/core/</loc>
     <lastmod>2023-10-19T20:38:00+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37511/tags/flowchart/</loc>
+    <loc>https://jimenezgomez.org/tags/flowchart/</loc>
     <lastmod>2023-10-19T20:38:00+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37511/tags/technology/</loc>
+    <loc>https://jimenezgomez.org/tags/knowledge/</loc>
     <lastmod>2023-10-19T20:38:00+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37511/tags/uml/</loc>
+    <loc>https://jimenezgomez.org/tags/technology/</loc>
     <lastmod>2023-10-19T20:38:00+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37511/posts/2023-10-18-computer-science-base-technologies/</loc>
+    <loc>https://jimenezgomez.org/tags/uml/</loc>
+    <lastmod>2023-10-19T20:38:00+02:00</lastmod>
+  </url><url>
+    <loc>https://jimenezgomez.org/posts/2023-10-18-computer-science-base-technologies/</loc>
     <lastmod>2023-10-18T20:49:00+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37511/categories/base/</loc>
-    <lastmod>2023-10-14T12:18:00+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:37511/tags/materials/</loc>
-    <lastmod>2023-10-14T12:18:00+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:37511/posts/2023-10-14-why-to-improve-3-base-materials-for-computer-engineers/</loc>
-    <lastmod>2023-10-14T12:18:00+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:37511/posts/2023-10-13-why-to-improve-2-look-for-base-technologies/</loc>
+    <loc>https://jimenezgomez.org/posts/2023-10-13-why-to-improve-2-look-for-base-technologies/</loc>
     <lastmod>2023-10-13T23:18:00+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37511/categories/meta/</loc>
+    <loc>https://jimenezgomez.org/categories/meta/</loc>
     <lastmod>2023-07-01T05:33:00+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37511/tags/quote/</loc>
+    <loc>https://jimenezgomez.org/tags/quote/</loc>
     <lastmod>2023-07-01T05:33:00+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37511/posts/2023-07-01-quotes/</loc>
+    <loc>https://jimenezgomez.org/posts/2023-07-01-quotes/</loc>
     <lastmod>2023-07-01T05:33:00+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37511/posts/2023-05-17-network-operative-system/</loc>
+    <loc>https://jimenezgomez.org/posts/2023-05-17-network-operative-system/</loc>
     <lastmod>2023-05-17T23:10:00+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37511/posts/2023-05-17-why-to-improve/</loc>
+    <loc>https://jimenezgomez.org/posts/2023-05-17-why-to-improve/</loc>
     <lastmod>2023-05-17T23:10:00+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37511/posts/2023-05-17-internet-of-services/</loc>
+    <loc>https://jimenezgomez.org/posts/2023-05-17-internet-of-services/</loc>
     <lastmod>2023-05-17T21:56:26+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:37511/search/</loc>
+    <loc>https://jimenezgomez.org/search/</loc>
   </url>
 </urlset>
