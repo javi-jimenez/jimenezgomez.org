@@ -1,0 +1,42 @@
+<div id="cookie-consent" style="position:fixed;left:1rem;right:1rem;bottom:1rem;z-index:9999;display:none;">
+  <div style="max-width:980px;margin:0 auto;background:rgba(13,17,23,0.95);color:#e6edf3;border:1px solid rgba(255,255,255,0.04);padding:16px;border-radius:8px;box-shadow:0 6px 24px rgba(2,6,23,0.6);display:flex;gap:12px;align-items:center;">
+    <div style="flex:1;font-size:14px;line-height:1.4">
+      Este sitio usa cookies para medir tráfico con Google Analytics. Pulsa "Aceptar" para permitir su uso o "Rechazar" para negarlo. Más información en la política de privacidad.
+    </div>
+    <div style="display:flex;gap:8px">
+      <button id="cookie-accept" style="background:#58a6ff;color:#06202a;border:none;padding:8px 12px;border-radius:6px;cursor:pointer">Aceptar</button>
+      <button id="cookie-decline" style="background:transparent;color:#c9d1d9;border:1px solid rgba(255,255,255,0.06);padding:8px 12px;border-radius:6px;cursor:pointer">Rechazar</button>
+    </div>
+  </div>
+</div>
+<script>
+;(function(){
+  try{
+    var root = document.getElementById('cookie-consent');
+    var show = function(){ if(root) root.style.display = 'block'; };
+    var hide = function(){ if(root) root.style.display = 'none'; };
+    var set = function(v){ try{ localStorage.setItem('cookie_consent', v); }catch(e){} };
+    var get = function(){ try{ return localStorage.getItem('cookie_consent'); }catch(e){ return null; } };
+
+    var consent = get();
+    if(consent === 'granted'){
+      // already accepted, ensure GA loads
+      if(window.loadGoogleAnalytics) window.loadGoogleAnalytics();
+      return;
+    }
+    if(consent === 'denied'){
+      // explicit denied, do nothing
+      return;
+    }
+    // no decision -> show banner
+    show();
+
+    document.getElementById('cookie-accept').addEventListener('click', function(ev){
+      set('granted'); hide(); if(window.loadGoogleAnalytics) window.loadGoogleAnalytics();
+    });
+    document.getElementById('cookie-decline').addEventListener('click', function(ev){
+      set('denied'); hide();
+    });
+  }catch(e){/* silent */}
+})();
+</script>
