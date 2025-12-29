@@ -1,42 +1,94 @@
-<div id="cookie-consent" style="position:fixed;left:1rem;right:1rem;bottom:1rem;z-index:9999;display:none;">
+<div id="cookie-consent" style="position:fixed;left:1rem;right:1rem;bottom:1rem;z-index:9999;display:none;font-family:Inter,Arial,Helvetica,sans-serif;">
   <div style="max-width:980px;margin:0 auto;background:rgba(13,17,23,0.95);color:#e6edf3;border:1px solid rgba(255,255,255,0.04);padding:16px;border-radius:8px;box-shadow:0 6px 24px rgba(2,6,23,0.6);display:flex;gap:12px;align-items:center;">
     <div style="flex:1;font-size:14px;line-height:1.4">
-      Este sitio usa cookies para medir tráfico con Google Analytics. Pulsa "Aceptar" para permitir su uso o "Rechazar" para negarlo. Más información en la política de privacidad.
+      Este sitio usa cookies para medir tráfico y mejorar la experiencia. Puedes aceptar todas, rechazar o configurar tus preferencias. Más información en la <a href="/privacy/" style="color:#58a6ff;text-decoration:underline">política de privacidad</a>.
     </div>
     <div style="display:flex;gap:8px">
-      <button id="cookie-accept" style="background:#58a6ff;color:#06202a;border:none;padding:8px 12px;border-radius:6px;cursor:pointer">Aceptar</button>
+      <button id="cookie-configure" style="background:transparent;color:#c9d1d9;border:1px solid rgba(255,255,255,0.06);padding:8px 12px;border-radius:6px;cursor:pointer">Configurar</button>
       <button id="cookie-decline" style="background:transparent;color:#c9d1d9;border:1px solid rgba(255,255,255,0.06);padding:8px 12px;border-radius:6px;cursor:pointer">Rechazar</button>
+      <button id="cookie-accept" style="background:#58a6ff;color:#06202a;border:none;padding:8px 12px;border-radius:6px;cursor:pointer">Aceptar</button>
     </div>
   </div>
 </div>
+
+<!-- Modal de configuración (hidden) -->
+<div id="cookie-modal" aria-hidden="true" style="display:none;position:fixed;inset:0;z-index:10000;align-items:center;justify-content:center;">
+  <div style="position:absolute;inset:0;background:rgba(0,0,0,0.6)"></div>
+  <div role="dialog" aria-modal="true" style="position:relative;max-width:720px;margin:0 auto;background:#0d1117;color:#e6edf3;padding:20px;border-radius:8px;z-index:10001;">
+    <h3 style="margin:0 0 12px;font-size:18px">Preferencias de cookies</h3>
+    <p style="margin:0 0 12px;font-size:14px">Selecciona qué tipos de cookies autorizas.</p>
+    <label style="display:flex;align-items:center;gap:10px;margin-bottom:12px;font-size:14px">
+      <input type="checkbox" id="opt-analytics"> <strong>Analytics</strong> — Google Analytics (recopila datos de uso anónimos).
+    </label>
+    <div style="display:flex;gap:8px;justify-content:flex-end">
+      <button id="cookie-modal-cancel" style="background:transparent;color:#c9d1d9;border:1px solid rgba(255,255,255,0.06);padding:8px 12px;border-radius:6px;cursor:pointer">Cancelar</button>
+      <button id="cookie-modal-save" style="background:#58a6ff;color:#06202a;border:none;padding:8px 12px;border-radius:6px;cursor:pointer">Guardar preferencias</button>
+    </div>
+  </div>
+</div>
+
+<!-- Settings floating button -->
+<button id="cookie-settings-btn" title="Preferencias de cookies" style="position:fixed;left:1rem;bottom:1rem;z-index:9998;background:#15181b;color:#c9d1d9;border:1px solid rgba(255,255,255,0.04);padding:8px;border-radius:999px;display:none">Cookies</button>
+
 <script>
 ;(function(){
   try{
     var root = document.getElementById('cookie-consent');
+    var modal = document.getElementById('cookie-modal');
+    var settingsBtn = document.getElementById('cookie-settings-btn');
     var show = function(){ if(root) root.style.display = 'block'; };
     var hide = function(){ if(root) root.style.display = 'none'; };
-    var set = function(v){ try{ localStorage.setItem('cookie_consent', v); }catch(e){} };
-    var get = function(){ try{ return localStorage.getItem('cookie_consent'); }catch(e){ return null; } };
+    var showModal = function(){ if(modal) { modal.style.display = 'flex'; modal.setAttribute('aria-hidden','false'); } };
+    var hideModal = function(){ if(modal) { modal.style.display = 'none'; modal.setAttribute('aria-hidden','true'); } };
+    var setConsent = function(obj){ try{ localStorage.setItem('cookie_consent', obj.status); localStorage.setItem('cookie_consent_details', JSON.stringify(obj)); }catch(e){} };
+    var getConsent = function(){ try{ return localStorage.getItem('cookie_consent'); }catch(e){ return null; } };
+    var getDetails = function(){ try{ return JSON.parse(localStorage.getItem('cookie_consent_details')||'null'); }catch(e){ return null; } };
 
-    var consent = get();
+    var syncUI = function(){
+      var details = getDetails();
+      if(details && typeof details.analytics !== 'undefined'){
+        var cb = document.getElementById('opt-analytics'); if(cb) cb.checked = !!details.analytics;
+      }
+    };
+
+    // show settings button always so user can change later
+    var showSettingsBtn = function(){ if(settingsBtn) settingsBtn.style.display = 'block'; };
+
+    var consent = getConsent();
     if(consent === 'granted'){
-      // already accepted, ensure GA loads
-      if(window.loadGoogleAnalytics) window.loadGoogleAnalytics();
+      // already accepted
+      hide(); syncUI(); showSettingsBtn(); if(window.loadGoogleAnalytics){ var details = getDetails(); if(details && details.analytics) window.loadGoogleAnalytics(); }
       return;
     }
     if(consent === 'denied'){
-      // explicit denied, do nothing
-      return;
+      // explicit denied
+      hide(); syncUI(); showSettingsBtn(); return;
     }
     // no decision -> show banner
-    show();
+    show(); showSettingsBtn();
 
     document.getElementById('cookie-accept').addEventListener('click', function(ev){
-      set('granted'); hide(); if(window.loadGoogleAnalytics) window.loadGoogleAnalytics();
+      var analytics = true;
+      setConsent({ status: 'granted', analytics: analytics, ts: new Date().toISOString() });
+      hide(); showSettingsBtn(); if(analytics && window.loadGoogleAnalytics) window.loadGoogleAnalytics();
     });
     document.getElementById('cookie-decline').addEventListener('click', function(ev){
-      set('denied'); hide();
+      setConsent({ status: 'denied', analytics: false, ts: new Date().toISOString() });
+      hide(); showSettingsBtn();
     });
+    document.getElementById('cookie-configure').addEventListener('click', function(ev){ hide(); showModal(); syncUI(); });
+    if(settingsBtn) settingsBtn.addEventListener('click', function(){ showModal(); syncUI(); });
+
+    document.getElementById('cookie-modal-cancel').addEventListener('click', function(){ hideModal(); });
+    document.getElementById('cookie-modal-save').addEventListener('click', function(){
+      var analytics = !!document.getElementById('opt-analytics').checked;
+      var status = analytics ? 'granted' : 'denied';
+      setConsent({ status: status, analytics: analytics, ts: new Date().toISOString() });
+      hideModal(); hide(); showSettingsBtn(); if(analytics && window.loadGoogleAnalytics) window.loadGoogleAnalytics();
+    });
+
+    // expose a helper to clear consent (dev)
+    window.__clearCookieConsent = function(){ try{ localStorage.removeItem('cookie_consent'); localStorage.removeItem('cookie_consent_details'); hideModal(); hide(); show(); }catch(e){} };
   }catch(e){/* silent */}
 })();
 </script>
