@@ -2,6 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://jimenezgomez.org/privacy/</loc>
+    <lastmod>2025-12-29T00:00:00+01:00</lastmod>
+  </url><url>
     <loc>https://jimenezgomez.org/categories/architecture/</loc>
     <lastmod>2025-12-22T14:30:00+02:00</lastmod>
   </url><url>
@@ -20,10 +23,10 @@
     <loc>https://jimenezgomez.org/posts/2025-12-22-dns-universal-ddnsc/</loc>
     <lastmod>2025-12-22T14:30:00+02:00</lastmod>
   </url><url>
-    <loc>https://jimenezgomez.org/categories/research/</loc>
+    <loc>https://jimenezgomez.org/tags/research/</loc>
     <lastmod>2025-12-22T14:30:00+02:00</lastmod>
   </url><url>
-    <loc>https://jimenezgomez.org/tags/research/</loc>
+    <loc>https://jimenezgomez.org/categories/research/</loc>
     <lastmod>2025-12-22T14:30:00+02:00</lastmod>
   </url><url>
     <loc>https://jimenezgomez.org/tags/space/</loc>
@@ -140,6 +143,9 @@
     <loc>https://jimenezgomez.org/posts/2024-03-31-vbd-fractal-architecture-view-business-and-data-input-and-output/</loc>
     <lastmod>2024-03-31T20:44:00+02:00</lastmod>
   </url><url>
+    <loc>https://jimenezgomez.org/posts/2024-02-01-deb-get-winget-linux/</loc>
+    <lastmod>2024-02-01T09:00:00+01:00</lastmod>
+  </url><url>
     <loc>https://jimenezgomez.org/tags/microservice/</loc>
     <lastmod>2023-12-24T00:00:00+02:00</lastmod>
   </url><url>
@@ -196,6 +202,8 @@
   </url><url>
     <loc>https://jimenezgomez.org/posts/2023-05-17-internet-of-services/</loc>
     <lastmod>2023-05-17T21:56:26+02:00</lastmod>
+  </url><url>
+    <loc>https://jimenezgomez.org/posts/2025-12-30-assistant-context-standard/</loc>
   </url><url>
     <loc>https://jimenezgomez.org/search/</loc>
   </url>

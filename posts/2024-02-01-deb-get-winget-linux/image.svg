@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1">
+      <stop offset="0" stop-color="#0f172a"/>
+      <stop offset="1" stop-color="#0b4f6c"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#g)" rx="12"/>
+  <g transform="translate(80,80)">
+    <rect x="0" y="0" width="460" height="470" rx="18" fill="#0ea5a4" opacity="0.95"/>
+    <rect x="22" y="22" width="416" height="160" rx="12" fill="#062b2f" opacity="0.9"/>
+    <text x="40" y="120" font-family="Inter, sans-serif" font-size="48" fill="#ffffff">deb-get</text>
+    <g transform="translate(40,220)">
+      <rect x="0" y="0" width="120" height="80" rx="8" fill="#021b1c"/>
+      <rect x="140" y="0" width="120" height="80" rx="8" fill="#021b1c"/>
+      <rect x="280" y="0" width="120" height="80" rx="8" fill="#021b1c"/>
+      <text x="0" y="130" font-family="Inter, sans-serif" font-size="20" fill="#e6fffa">Instala .deb con un solo comando</text>
+    </g>
+  </g>
+  <g transform="translate(600,120)">
+    <text x="0" y="40" font-family="Inter, sans-serif" font-size="44" fill="#fff">El "winget" para Linux</text>
+    <text x="0" y="100" font-family="Inter, sans-serif" font-size="22" fill="#d1f2ef">Instalaciones nativas, sin contenedores</text>
+    <rect x="0" y="140" width="520" height="2" fill="#ffffff" opacity="0.12"/>
+    <text x="0" y="200" font-family="Inter, sans-serif" font-size="18" fill="#cdebf0">wget -qO- https://raw.githubusercontent.com/wimpysworld/deb-get/main/deb-get | sudo bash -s install deb-get</text>
+  </g>
+</svg>
