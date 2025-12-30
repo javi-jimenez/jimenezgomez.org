@@ -33,7 +33,7 @@ hugo server -D
 
 6) Revertir o cambiar ID
 
-- Para cambiar, edita `hugo.toml`, vuelve a ejecutar `hugo --cleanDestinationDir`, y commitea:
+- Para cambiar, edita `hugo.toml`, vuelve a ejecutar `hugo --cleanDestinationDir`, y registra los cambios y súbelos al repositorio:
 
 ```bash
 git add hugo.toml
