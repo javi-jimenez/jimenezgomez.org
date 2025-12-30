@@ -96,42 +96,42 @@
 &lt;/ol&gt;
 &lt;p&gt;&lt;strong&gt;Cálculo de capacidad&lt;/strong&gt;:&lt;/p&gt;
 &lt;table&gt;
-  &lt;thead&gt;
-      &lt;tr&gt;
-          &lt;th&gt;Parámetro&lt;/th&gt;
-          &lt;th&gt;Valor&lt;/th&gt;
-      &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Nodos totales&lt;/td&gt;
-          &lt;td&gt;10⁸ (100 millones)&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Tamaño de tabla DHT por nodo&lt;/td&gt;
-          &lt;td&gt;log₂(10⁸) ≈ 27 entradas&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Memoria por entrada&lt;/td&gt;
-          &lt;td&gt;100 bytes (ID + IP + metadata)&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;&lt;strong&gt;Memoria total por nodo&lt;/strong&gt;&lt;/td&gt;
-          &lt;td&gt;&lt;strong&gt;2.7 KB&lt;/strong&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Saltos de resolución promedio&lt;/td&gt;
-          &lt;td&gt;log₂(10⁸)/2 ≈ 14 saltos&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Latencia por salto&lt;/td&gt;
-          &lt;td&gt;20 ms (promedio terrestre)&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;&lt;strong&gt;Tiempo de resolución total&lt;/strong&gt;&lt;/td&gt;
-          &lt;td&gt;&lt;strong&gt;~280 ms&lt;/strong&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;/tbody&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Parámetro&lt;/th&gt;
+&lt;th&gt;Valor&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Nodos totales&lt;/td&gt;
+&lt;td&gt;10⁸ (100 millones)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Tamaño de tabla DHT por nodo&lt;/td&gt;
+&lt;td&gt;log₂(10⁸) ≈ 27 entradas&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Memoria por entrada&lt;/td&gt;
+&lt;td&gt;100 bytes (ID + IP + metadata)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Memoria total por nodo&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;2.7 KB&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Saltos de resolución promedio&lt;/td&gt;
+&lt;td&gt;log₂(10⁸)/2 ≈ 14 saltos&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Latencia por salto&lt;/td&gt;
+&lt;td&gt;20 ms (promedio terrestre)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Tiempo de resolución total&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;~280 ms&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h3 id=&#34;nivel-2-escala-galáctica-10---10-nodos&#34;&gt;Nivel 2: Escala Galáctica (10⁹ - 10¹² nodos)
 &lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Contexto&lt;/strong&gt;: Sistema solar colonizado (Luna, Marte, cinturón de asteroides, lunas de Júpiter/Saturno).&lt;/p&gt;
@@ -197,46 +197,46 @@
 &gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Cálculo de latencia interplanetaria&lt;/strong&gt;:&lt;/p&gt;
 &lt;table&gt;
-  &lt;thead&gt;
-      &lt;tr&gt;
-          &lt;th&gt;Ruta&lt;/th&gt;
-          &lt;th&gt;Distancia min (UA)&lt;/th&gt;
-          &lt;th&gt;Latencia luz (min)&lt;/th&gt;
-          &lt;th&gt;Ventana de comunicación&lt;/th&gt;
-      &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Tierra-Luna&lt;/td&gt;
-          &lt;td&gt;0.0026&lt;/td&gt;
-          &lt;td&gt;1.3 segundos&lt;/td&gt;
-          &lt;td&gt;Continua&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Tierra-Marte&lt;/td&gt;
-          &lt;td&gt;0.38&lt;/td&gt;
-          &lt;td&gt;3.2&lt;/td&gt;
-          &lt;td&gt;80% del año (evitando conjunciones)&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Tierra-Júpiter&lt;/td&gt;
-          &lt;td&gt;4.2&lt;/td&gt;
-          &lt;td&gt;35&lt;/td&gt;
-          &lt;td&gt;70% del año&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Tierra-Saturno&lt;/td&gt;
-          &lt;td&gt;8.0&lt;/td&gt;
-          &lt;td&gt;67&lt;/td&gt;
-          &lt;td&gt;65% del año&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Tierra-Nube de Oort&lt;/td&gt;
-          &lt;td&gt;50,000&lt;/td&gt;
-          &lt;td&gt;0.8 años&lt;/td&gt;
-          &lt;td&gt;Requerido relay&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;/tbody&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Ruta&lt;/th&gt;
+&lt;th&gt;Distancia min (UA)&lt;/th&gt;
+&lt;th&gt;Latencia luz (min)&lt;/th&gt;
+&lt;th&gt;Ventana de comunicación&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Tierra-Luna&lt;/td&gt;
+&lt;td&gt;0.0026&lt;/td&gt;
+&lt;td&gt;1.3 segundos&lt;/td&gt;
+&lt;td&gt;Continua&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Tierra-Marte&lt;/td&gt;
+&lt;td&gt;0.38&lt;/td&gt;
+&lt;td&gt;3.2&lt;/td&gt;
+&lt;td&gt;80% del año (evitando conjunciones)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Tierra-Júpiter&lt;/td&gt;
+&lt;td&gt;4.2&lt;/td&gt;
+&lt;td&gt;35&lt;/td&gt;
+&lt;td&gt;70% del año&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Tierra-Saturno&lt;/td&gt;
+&lt;td&gt;8.0&lt;/td&gt;
+&lt;td&gt;67&lt;/td&gt;
+&lt;td&gt;65% del año&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Tierra-Nube de Oort&lt;/td&gt;
+&lt;td&gt;50,000&lt;/td&gt;
+&lt;td&gt;0.8 años&lt;/td&gt;
+&lt;td&gt;Requerido relay&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h3 id=&#34;nivel-3-escala-universal-10-nodos&#34;&gt;Nivel 3: Escala Universal (10¹³+ nodos)
 &lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Contexto&lt;/strong&gt;: Civilización multi-estelar (ciencia ficción dura, proyecto de investigación teórica).&lt;/p&gt;
@@ -281,35 +281,35 @@
 &lt;/ol&gt;
 &lt;p&gt;&lt;strong&gt;Cálculo de capacidad teórica&lt;/strong&gt;:&lt;/p&gt;
 &lt;table&gt;
-  &lt;thead&gt;
-      &lt;tr&gt;
-          &lt;th&gt;Escala&lt;/th&gt;
-          &lt;th&gt;Nodos estimados&lt;/th&gt;
-          &lt;th&gt;Tiempo de sincronización completa&lt;/th&gt;
-      &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Sistema solar&lt;/td&gt;
-          &lt;td&gt;10⁹&lt;/td&gt;
-          &lt;td&gt;Horas (DTN)&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;100 años-luz (esfera local)&lt;/td&gt;
-          &lt;td&gt;10¹²&lt;/td&gt;
-          &lt;td&gt;Siglos (imposible sincronización real-time)&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Galaxia Vía Láctea&lt;/td&gt;
-          &lt;td&gt;10¹⁵&lt;/td&gt;
-          &lt;td&gt;100,000 años (solo federación histórica)&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Universo observable&lt;/td&gt;
-          &lt;td&gt;10²⁴+&lt;/td&gt;
-          &lt;td&gt;Imposible (causalidad física)&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;/tbody&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Escala&lt;/th&gt;
+&lt;th&gt;Nodos estimados&lt;/th&gt;
+&lt;th&gt;Tiempo de sincronización completa&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Sistema solar&lt;/td&gt;
+&lt;td&gt;10⁹&lt;/td&gt;
+&lt;td&gt;Horas (DTN)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;100 años-luz (esfera local)&lt;/td&gt;
+&lt;td&gt;10¹²&lt;/td&gt;
+&lt;td&gt;Siglos (imposible sincronización real-time)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Galaxia Vía Láctea&lt;/td&gt;
+&lt;td&gt;10¹⁵&lt;/td&gt;
+&lt;td&gt;100,000 años (solo federación histórica)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Universo observable&lt;/td&gt;
+&lt;td&gt;10²⁴+&lt;/td&gt;
+&lt;td&gt;Imposible (causalidad física)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h2 id=&#34;organización-gobernanza-descentralizada&#34;&gt;Organización: Gobernanza Descentralizada
 &lt;/h2&gt;&lt;h3 id=&#34;modelo-para-brisecomorg&#34;&gt;Modelo para brisecom.org
@@ -395,77 +395,77 @@
 &lt;h2 id=&#34;protocolos-y-proyectos-relacionados&#34;&gt;Protocolos y Proyectos Relacionados
 &lt;/h2&gt;&lt;h3 id=&#34;ecosistema-web-30&#34;&gt;Ecosistema Web 3.0
 &lt;/h3&gt;&lt;table&gt;
-  &lt;thead&gt;
-      &lt;tr&gt;
-          &lt;th&gt;Proyecto&lt;/th&gt;
-          &lt;th&gt;Relevancia&lt;/th&gt;
-          &lt;th&gt;Integración propuesta&lt;/th&gt;
-      &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-      &lt;tr&gt;
-          &lt;td&gt;&lt;strong&gt;ENS (Ethereum Name Service)&lt;/strong&gt;&lt;/td&gt;
-          &lt;td&gt;Nombres descentralizados en blockchain&lt;/td&gt;
-          &lt;td&gt;Backend de autoridad para TLDs premium&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;&lt;strong&gt;IPFS/IPNS&lt;/strong&gt;&lt;/td&gt;
-          &lt;td&gt;Almacenamiento distribuido content-addressed&lt;/td&gt;
-          &lt;td&gt;Replicación de zonas DNS, caché distribuida&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;&lt;strong&gt;libp2p&lt;/strong&gt;&lt;/td&gt;
-          &lt;td&gt;Stack de networking peer-to-peer&lt;/td&gt;
-          &lt;td&gt;Capa de transporte para nodos DDNSC&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;&lt;strong&gt;Handshake (HNS)&lt;/strong&gt;&lt;/td&gt;
-          &lt;td&gt;Blockchain DNS alternativo descentralizado&lt;/td&gt;
-          &lt;td&gt;Competidor/complemento para registro raíz&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;&lt;strong&gt;OrbitDB&lt;/strong&gt;&lt;/td&gt;
-          &lt;td&gt;Base de datos distribuida sobre IPFS&lt;/td&gt;
-          &lt;td&gt;Almacenamiento de registros DNS dinámicos&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;&lt;strong&gt;GNUnet Name System (GNS)&lt;/strong&gt;&lt;/td&gt;
-          &lt;td&gt;Sistema de nombres seguro y descentralizado&lt;/td&gt;
-          &lt;td&gt;Inspiración para resolución con privacidad&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;/tbody&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Proyecto&lt;/th&gt;
+&lt;th&gt;Relevancia&lt;/th&gt;
+&lt;th&gt;Integración propuesta&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;ENS (Ethereum Name Service)&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Nombres descentralizados en blockchain&lt;/td&gt;
+&lt;td&gt;Backend de autoridad para TLDs premium&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;IPFS/IPNS&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Almacenamiento distribuido content-addressed&lt;/td&gt;
+&lt;td&gt;Replicación de zonas DNS, caché distribuida&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;libp2p&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Stack de networking peer-to-peer&lt;/td&gt;
+&lt;td&gt;Capa de transporte para nodos DDNSC&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Handshake (HNS)&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Blockchain DNS alternativo descentralizado&lt;/td&gt;
+&lt;td&gt;Competidor/complemento para registro raíz&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;OrbitDB&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Base de datos distribuida sobre IPFS&lt;/td&gt;
+&lt;td&gt;Almacenamiento de registros DNS dinámicos&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;GNUnet Name System (GNS)&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Sistema de nombres seguro y descentralizado&lt;/td&gt;
+&lt;td&gt;Inspiración para resolución con privacidad&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h3 id=&#34;protocolos-de-comunicación-espacial&#34;&gt;Protocolos de Comunicación Espacial
 &lt;/h3&gt;&lt;table&gt;
-  &lt;thead&gt;
-      &lt;tr&gt;
-          &lt;th&gt;Protocolo&lt;/th&gt;
-          &lt;th&gt;Estándar&lt;/th&gt;
-          &lt;th&gt;Aplicación en DNS Universal&lt;/th&gt;
-      &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-      &lt;tr&gt;
-          &lt;td&gt;&lt;strong&gt;DTN Bundle Protocol&lt;/strong&gt;&lt;/td&gt;
-          &lt;td&gt;RFC 4838, RFC 5050&lt;/td&gt;
-          &lt;td&gt;Transporte de actualizaciones DNS con alta latencia&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;&lt;strong&gt;CCSDS File Delivery Protocol&lt;/strong&gt;&lt;/td&gt;
-          &lt;td&gt;CCSDS 727.0-B-5&lt;/td&gt;
-          &lt;td&gt;Sincronización de zonas completas&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;&lt;strong&gt;Licklider Transmission Protocol&lt;/strong&gt;&lt;/td&gt;
-          &lt;td&gt;RFC 5326&lt;/td&gt;
-          &lt;td&gt;Sesiones confiables en enlaces intermitentes&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;&lt;strong&gt;Proximity-1 Space Link Protocol&lt;/strong&gt;&lt;/td&gt;
-          &lt;td&gt;CCSDS 211.0-B-5&lt;/td&gt;
-          &lt;td&gt;Capa física para comunicaciones interplanetarias&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;/tbody&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Protocolo&lt;/th&gt;
+&lt;th&gt;Estándar&lt;/th&gt;
+&lt;th&gt;Aplicación en DNS Universal&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;DTN Bundle Protocol&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;RFC 4838, RFC 5050&lt;/td&gt;
+&lt;td&gt;Transporte de actualizaciones DNS con alta latencia&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;CCSDS File Delivery Protocol&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;CCSDS 727.0-B-5&lt;/td&gt;
+&lt;td&gt;Sincronización de zonas completas&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Licklider Transmission Protocol&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;RFC 5326&lt;/td&gt;
+&lt;td&gt;Sesiones confiables en enlaces intermitentes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Proximity-1 Space Link Protocol&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;CCSDS 211.0-B-5&lt;/td&gt;
+&lt;td&gt;Capa física para comunicaciones interplanetarias&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h3 id=&#34;arquitectura-de-integración&#34;&gt;Arquitectura de Integración
 &lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://jimenezgomez.org/posts/2025-12-22-dns-universal-ddnsc/dns-web3-org.svg&#34;
@@ -667,45 +667,45 @@ Implementar DNSSEC con Ed25519 (post-quantum) sobre blockchain Ethereum como ra�
 &lt;/div&gt;&lt;h3 id=&#34;escalabilidad-de-dht&#34;&gt;Escalabilidad de DHT
 &lt;/h3&gt;&lt;p&gt;Para N nodos, cada uno mantiene k vecinos (típicamente k = 20):&lt;/p&gt;
 &lt;table&gt;
-  &lt;thead&gt;
-      &lt;tr&gt;
-          &lt;th&gt;N (nodos)&lt;/th&gt;
-          &lt;th&gt;log₂(N)&lt;/th&gt;
-          &lt;th&gt;Memoria/nodo&lt;/th&gt;
-          &lt;th&gt;Saltos promedio&lt;/th&gt;
-          &lt;th&gt;Latencia resolución (50ms/salto)&lt;/th&gt;
-      &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-      &lt;tr&gt;
-          &lt;td&gt;10³&lt;/td&gt;
-          &lt;td&gt;10&lt;/td&gt;
-          &lt;td&gt;2 KB&lt;/td&gt;
-          &lt;td&gt;5&lt;/td&gt;
-          &lt;td&gt;250 ms&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;10⁶&lt;/td&gt;
-          &lt;td&gt;20&lt;/td&gt;
-          &lt;td&gt;4 KB&lt;/td&gt;
-          &lt;td&gt;10&lt;/td&gt;
-          &lt;td&gt;500 ms&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;10⁹&lt;/td&gt;
-          &lt;td&gt;30&lt;/td&gt;
-          &lt;td&gt;6 KB&lt;/td&gt;
-          &lt;td&gt;15&lt;/td&gt;
-          &lt;td&gt;750 ms&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;10¹²&lt;/td&gt;
-          &lt;td&gt;40&lt;/td&gt;
-          &lt;td&gt;8 KB&lt;/td&gt;
-          &lt;td&gt;20&lt;/td&gt;
-          &lt;td&gt;1000 ms&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;/tbody&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;N (nodos)&lt;/th&gt;
+&lt;th&gt;log₂(N)&lt;/th&gt;
+&lt;th&gt;Memoria/nodo&lt;/th&gt;
+&lt;th&gt;Saltos promedio&lt;/th&gt;
+&lt;th&gt;Latencia resolución (50ms/salto)&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;10³&lt;/td&gt;
+&lt;td&gt;10&lt;/td&gt;
+&lt;td&gt;2 KB&lt;/td&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;250 ms&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;10⁶&lt;/td&gt;
+&lt;td&gt;20&lt;/td&gt;
+&lt;td&gt;4 KB&lt;/td&gt;
+&lt;td&gt;10&lt;/td&gt;
+&lt;td&gt;500 ms&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;10⁹&lt;/td&gt;
+&lt;td&gt;30&lt;/td&gt;
+&lt;td&gt;6 KB&lt;/td&gt;
+&lt;td&gt;15&lt;/td&gt;
+&lt;td&gt;750 ms&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;10¹²&lt;/td&gt;
+&lt;td&gt;40&lt;/td&gt;
+&lt;td&gt;8 KB&lt;/td&gt;
+&lt;td&gt;20&lt;/td&gt;
+&lt;td&gt;1000 ms&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;&lt;strong&gt;Conclusión&lt;/strong&gt;: DHT escala logarítmicamente, viable hasta escala planetaria completa.&lt;/p&gt;
 &lt;h2 id=&#34;conclusión-factibilidad-y-próximos-pasos&#34;&gt;Conclusión: Factibilidad y Próximos Pasos
@@ -1652,7 +1652,7 @@ img {
 &lt;p&gt;&lt;img src=&#34;https://jimenezgomez.org/posts/2025-04-04-vero-architecture/vera-arch-202504041121.drawio.png&#34;
 	width=&#34;625&#34;
 	height=&#34;385&#34;
-	srcset=&#34;https://jimenezgomez.org/posts/2025-04-04-vero-architecture/vera-arch-202504041121.drawio_hu_696cb654530ddb2a.png 480w, https://jimenezgomez.org/posts/2025-04-04-vero-architecture/vera-arch-202504041121.drawio_hu_49db9c91c029c8de.png 1024w&#34;
+	srcset=&#34;https://jimenezgomez.org/posts/2025-04-04-vero-architecture/vera-arch-202504041121.drawio_hu8afc6bd5d57b631a58133bd569995666_66763_480x0_resize_box_3.png 480w, https://jimenezgomez.org/posts/2025-04-04-vero-architecture/vera-arch-202504041121.drawio_hu8afc6bd5d57b631a58133bd569995666_66763_1024x0_resize_box_3.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;Vera Architecture&#34;
@@ -1736,7 +1736,7 @@ img {
         <description>&lt;p&gt;&lt;img src=&#34;https://jimenezgomez.org/posts/2024-03-31-three-layers-abstraction/three-layers-as-leafs-gettyimages-1000px-157287379-2048x2048.jpg&#34;
 	width=&#34;1000&#34;
 	height=&#34;667&#34;
-	srcset=&#34;https://jimenezgomez.org/posts/2024-03-31-three-layers-abstraction/three-layers-as-leafs-gettyimages-1000px-157287379-2048x2048_hu_e10b507ce78069a5.jpg 480w, https://jimenezgomez.org/posts/2024-03-31-three-layers-abstraction/three-layers-as-leafs-gettyimages-1000px-157287379-2048x2048_hu_9afc46b1fd8fc6be.jpg 1024w&#34;
+	srcset=&#34;https://jimenezgomez.org/posts/2024-03-31-three-layers-abstraction/_hu057f930f56c58a73f0fbea0aa66b1537_243337_5d3e1d1b61c23dcf40e9bc504d60f8ca.jpg 480w, https://jimenezgomez.org/posts/2024-03-31-three-layers-abstraction/_hu057f930f56c58a73f0fbea0aa66b1537_243337_31a53c9b848bcaf87e7c49ee321d627f.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;Three Layers as Leafs&#34;
@@ -1787,7 +1787,7 @@ img {
 &lt;p&gt;&lt;img src=&#34;https://jimenezgomez.org/posts/2024-03-31-vbd-fractal-architecture-view-business-and-data-input-and-output/fractal-maldelbrot-illustration-1000px-gettyimages-488635425-2048x2048.jpg&#34;
 	width=&#34;1000&#34;
 	height=&#34;750&#34;
-	srcset=&#34;https://jimenezgomez.org/posts/2024-03-31-vbd-fractal-architecture-view-business-and-data-input-and-output/fractal-maldelbrot-illustration-1000px-gettyimages-488635425-2048x2048_hu_71538f2550c6dc83.jpg 480w, https://jimenezgomez.org/posts/2024-03-31-vbd-fractal-architecture-view-business-and-data-input-and-output/fractal-maldelbrot-illustration-1000px-gettyimages-488635425-2048x2048_hu_50dd66516025c0b2.jpg 1024w&#34;
+	srcset=&#34;https://jimenezgomez.org/posts/2024-03-31-vbd-fractal-architecture-view-business-and-data-input-and-output/_hubda60c3edc8fc7f406812c451cc5d519_381286_672fe457777eb02fe8a9c24b7cf47706.jpg 480w, https://jimenezgomez.org/posts/2024-03-31-vbd-fractal-architecture-view-business-and-data-input-and-output/_hubda60c3edc8fc7f406812c451cc5d519_381286_4dc3ce504dbf9cf16ea21ad279a77c9c.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;Maldelbrot set&#34;
@@ -1816,6 +1816,136 @@ img {
 </description>
         </item>
         <item>
+        <title>deb-get: El &#34;winget&#34; para Linux que necesitas para evitar los problemas de Snap</title>
+        <link>https://jimenezgomez.org/posts/2024-02-01-deb-get-winget-linux/</link>
+        <pubDate>Thu, 01 Feb 2024 09:00:00 +0100</pubDate>
+        
+        <guid>https://jimenezgomez.org/posts/2024-02-01-deb-get-winget-linux/</guid>
+        <description>&lt;img src="https://jimenezgomez.org/posts/2024-02-01-deb-get-winget-linux/image.svg" alt="Featured image of post deb-get: El &#34;winget&#34; para Linux que necesitas para evitar los problemas de Snap" /&gt;&lt;h1 id=&#34;deb-get-el-winget-para-linux-que-necesitas-para-evitar-los-problemas-de-snap&#34;&gt;deb-get: El &amp;ldquo;winget&amp;rdquo; para Linux que necesitas para evitar los problemas de Snap
+&lt;/h1&gt;&lt;p&gt;Autor: DeepSeek AI | Revisado y editado por: Enrique Jiménez Gómez
+Publicado en: jimenezgomez.org | Versión: 1.0 | Fecha: Febrero 2024&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;créditos-y-proceso-de-creación&#34;&gt;Créditos y Proceso de Creación
+&lt;/h2&gt;&lt;h3 id=&#34;autoría-y-participación&#34;&gt;Autoría y Participación:
+&lt;/h3&gt;&lt;p&gt;Este artículo es el resultado de una colaboración entre inteligencia artificial y experiencia práctica real:&lt;/p&gt;
+&lt;p&gt;DeepSeek AI (80%):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Investigación técnica de &lt;code&gt;deb-get&lt;/code&gt; y alternativas&lt;/li&gt;
+&lt;li&gt;Redacción del contenido estructurado&lt;/li&gt;
+&lt;li&gt;Ejemplos de código y comandos&lt;/li&gt;
+&lt;li&gt;Análisis comparativo entre sistemas de paquetes&lt;/li&gt;
+&lt;li&gt;Documentación de funcionalidades y características&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Enrique Jiménez Gómez (20%):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Experiencia práctica real con los problemas de Snap&lt;/li&gt;
+&lt;li&gt;Validación de comandos y procedimientos&lt;/li&gt;
+&lt;li&gt;Dirección editorial y enfoque del artículo&lt;/li&gt;
+&lt;li&gt;Casos reales de uso y problemática documentada&lt;/li&gt;
+&lt;li&gt;Revisión técnica y correcciones basadas en experiencia&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;proceso-de-desarrollo&#34;&gt;Proceso de Desarrollo:
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;Febrero 2024 - Enrique documenta problemas reales con Snap en su sistema&lt;/li&gt;
+&lt;li&gt;Investigación - Búsqueda de alternativas a sistemas de contenedores&lt;/li&gt;
+&lt;li&gt;Pruebas prácticas - Validación de &lt;code&gt;deb-get&lt;/code&gt; en entornos reales&lt;/li&gt;
+&lt;li&gt;Redacción - Creación del contenido estructurado por DeepSeek&lt;/li&gt;
+&lt;li&gt;Revisión - Corrección y validación por Enrique basada en experiencia práctica&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;contexto-del-artículo&#34;&gt;Contexto del Artículo:
+&lt;/h3&gt;&lt;p&gt;Este contenido surge de problemas documentados reales que Enrique experimentó en su blog jimenezgomez.org, específicamente:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Errores crípticos de Snap (&amp;ldquo;change finished in status &amp;quot;Hold&amp;quot;&amp;rdquo;)&lt;/li&gt;
+&lt;li&gt;Procesos bloqueados imposibles de resolver&lt;/li&gt;
+&lt;li&gt;La frustración expresada: &amp;ldquo;menudo desatino snap&amp;hellip;&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;La búsqueda activa de alternativas prácticas&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;el-problema-por-qué-snap-no-siempre-es-la-solución&#34;&gt;El Problema: Por qué Snap no siempre es la solución
+&lt;/h2&gt;&lt;p&gt;Si usas Ubuntu o alguna distribución derivada, seguramente te has encontrado con esta situación frustrante:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo snap remove firefox --revision&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;7599&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;error: snap &lt;span class=&#34;s2&#34;&gt;&amp;#34;firefox&amp;#34;&lt;/span&gt; has &lt;span class=&#34;s2&#34;&gt;&amp;#34;remove-snap&amp;#34;&lt;/span&gt; change in progress
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;O peor aún:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;error: change finished in status &lt;span class=&#34;s2&#34;&gt;&amp;#34;Hold&amp;#34;&lt;/span&gt; with no error message
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Estos errores crípticos y procesos bloqueados son experiencias comunes para usuarios de Snap. El sistema introduce complejidad innecesaria comparado con paquetes &lt;code&gt;.deb&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;la-solución-deb-get-el-winget-para-linux&#34;&gt;La Solución: deb-get, el &amp;ldquo;winget&amp;rdquo; para Linux
+&lt;/h2&gt;&lt;p&gt;Imagina tener la simplicidad de &lt;code&gt;winget&lt;/code&gt; pero para aplicaciones &lt;code&gt;.deb&lt;/code&gt; en Linux. Eso es &lt;code&gt;deb-get&lt;/code&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;qué-es-deb-get&#34;&gt;¿Qué es deb-get?
+&lt;/h3&gt;&lt;p&gt;&lt;code&gt;deb-get&lt;/code&gt; es un gestor de paquetes de alto nivel que simplifica la instalación de aplicaciones de terceros en formato &lt;code&gt;.deb&lt;/code&gt;. Actúa como una capa sobre &lt;code&gt;apt&lt;/code&gt; y &lt;code&gt;dpkg&lt;/code&gt;, proporcionando una interfaz unificada.&lt;/p&gt;
+&lt;h3 id=&#34;instalación-en-un-solo-comando&#34;&gt;Instalación en un solo comando:
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;wget -qO- https://raw.githubusercontent.com/wimpysworld/deb-get/main/deb-get &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; sudo bash -s install deb-get
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;por-qué-deb-get-es-superior-a-snap&#34;&gt;Por qué deb-get es superior a Snap
+&lt;/h2&gt;&lt;h3 id=&#34;1-rendimiento-nativo&#34;&gt;1. Rendimiento Nativo
+&lt;/h3&gt;&lt;p&gt;Las aplicaciones instaladas con &lt;code&gt;deb-get&lt;/code&gt; son &lt;code&gt;.deb&lt;/code&gt; tradicionales: inicio inmediato, integración completa y sin sobrecarga de contenedores.&lt;/p&gt;
+&lt;h3 id=&#34;2-gestión-simplificada&#34;&gt;2. Gestión Simplificada
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;deb-get search firefox
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;deb-get install google-chrome-stable
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;deb-get upgrade
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;deb-get list
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;3-sin-bloqueos-o-estados-hold&#34;&gt;3. Sin Bloqueos o Estados &amp;ldquo;Hold&amp;rdquo;
+&lt;/h3&gt;&lt;p&gt;Evita procesos bloqueados en segundo plano y estados misteriosos.&lt;/p&gt;
+&lt;h3 id=&#34;4-transparencia-y-control&#34;&gt;4. Transparencia y Control
+&lt;/h3&gt;&lt;p&gt;Puedes ver exactamente qué se instala, verificar firmas GPG e inspeccionar archivos.&lt;/p&gt;
+&lt;h2 id=&#34;catálogo-de-ejemplos&#34;&gt;Catálogo de ejemplos
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;deb-get install google-chrome-stable
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;deb-get install vscode
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;deb-get install signal-desktop
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;integración-con-tu-workflow&#34;&gt;Integración con tu workflow
+&lt;/h2&gt;&lt;p&gt;Ejemplos para usuario casual, administrador y desarrollador incluidos en el artículo original.&lt;/p&gt;
+&lt;h2 id=&#34;conclusión-de-vuelta-a-lo-simple&#34;&gt;Conclusión: De vuelta a lo simple
+&lt;/h2&gt;&lt;p&gt;&lt;code&gt;deb-get&lt;/code&gt; no es mágico, pero sí una respuesta práctica para gestionar aplicaciones de terceros sin las complicaciones de Snap.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Enlaces relevantes:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/wimpysworld/deb-get&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/wimpysworld/deb-get&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/wimpysworld/deb-get/wiki&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/wimpysworld/deb-get/wiki&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
         <title>Monoliths and microservices</title>
         <link>https://jimenezgomez.org/posts/2023-12-24-monoliths-and-microservices/</link>
         <pubDate>Sun, 24 Dec 2023 00:00:00 +0200</pubDate>
@@ -1826,7 +1956,7 @@ img {
 &lt;p&gt;&lt;img src=&#34;https://jimenezgomez.org/posts/2023-12-24-monoliths-and-microservices/inca-bricks-1000px.jpg&#34;
 	width=&#34;1000&#34;
 	height=&#34;1005&#34;
-	srcset=&#34;https://jimenezgomez.org/posts/2023-12-24-monoliths-and-microservices/inca-bricks-1000px_hu_4ba43dc18399bd24.jpg 480w, https://jimenezgomez.org/posts/2023-12-24-monoliths-and-microservices/inca-bricks-1000px_hu_cc9f36dc5358d227.jpg 1024w&#34;
+	srcset=&#34;https://jimenezgomez.org/posts/2023-12-24-monoliths-and-microservices/inca-bricks-1000px_hue395dfecc8087edfb381bfa56d1c31d7_508056_480x0_resize_q75_box.jpg 480w, https://jimenezgomez.org/posts/2023-12-24-monoliths-and-microservices/inca-bricks-1000px_hue395dfecc8087edfb381bfa56d1c31d7_508056_1024x0_resize_q75_box.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;Monoliths and MicroServices&#34;
@@ -1863,7 +1993,7 @@ img {
         <description>&lt;p&gt;&lt;img src=&#34;https://jimenezgomez.org/posts/2023-10-19-computer-science-base-technologies-2/low-code-example-app-for-reading-dht22-data-from-api.png&#34;
 	width=&#34;1270&#34;
 	height=&#34;863&#34;
-	srcset=&#34;https://jimenezgomez.org/posts/2023-10-19-computer-science-base-technologies-2/low-code-example-app-for-reading-dht22-data-from-api_hu_4f6bc6134d5154bf.png 480w, https://jimenezgomez.org/posts/2023-10-19-computer-science-base-technologies-2/low-code-example-app-for-reading-dht22-data-from-api_hu_73d5028b4da26dd7.png 1024w&#34;
+	srcset=&#34;https://jimenezgomez.org/posts/2023-10-19-computer-science-base-technologies-2/low-code-example-app-for-reading-dht22-data-from-api_hu342507f6a636695f9303e81ee7b0a881_85398_480x0_resize_box_3.png 480w, https://jimenezgomez.org/posts/2023-10-19-computer-science-base-technologies-2/low-code-example-app-for-reading-dht22-data-from-api_hu342507f6a636695f9303e81ee7b0a881_85398_1024x0_resize_box_3.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;Low code platform example for reading DHT22 data using an API&#34;
@@ -1940,7 +2070,7 @@ img {
         <description>&lt;p&gt;&lt;img src=&#34;https://jimenezgomez.org/posts/2023-10-13-why-to-improve-2-look-for-base-technologies/light-bulb-book.webp&#34;
 	width=&#34;1024&#34;
 	height=&#34;682&#34;
-	srcset=&#34;https://jimenezgomez.org/posts/2023-10-13-why-to-improve-2-look-for-base-technologies/light-bulb-book_hu_dcc25ae0ce4e573b.webp 480w, https://jimenezgomez.org/posts/2023-10-13-why-to-improve-2-look-for-base-technologies/light-bulb-book_hu_b0375d28bec578f6.webp 1024w&#34;
+	srcset=&#34;https://jimenezgomez.org/posts/2023-10-13-why-to-improve-2-look-for-base-technologies/light-bulb-book_hu011edf023c1eefa41e7957bfe7ff4f95_34132_480x0_resize_q75_h2_box_2.webp 480w, https://jimenezgomez.org/posts/2023-10-13-why-to-improve-2-look-for-base-technologies/light-bulb-book_hu011edf023c1eefa41e7957bfe7ff4f95_34132_1024x0_resize_q75_h2_box_2.webp 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;Light Bulb Book&#34;
@@ -2005,7 +2135,7 @@ in blank pages.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://jimenezgomez.org/posts/2023-05-17-network-operative-system/network-operative-system-header-1000x563.png&#34;
 	width=&#34;1000&#34;
 	height=&#34;563&#34;
-	srcset=&#34;https://jimenezgomez.org/posts/2023-05-17-network-operative-system/network-operative-system-header-1000x563_hu_59afdd0aa8b7966e.png 480w, https://jimenezgomez.org/posts/2023-05-17-network-operative-system/network-operative-system-header-1000x563_hu_f758871a262f9f10.png 1024w&#34;
+	srcset=&#34;https://jimenezgomez.org/posts/2023-05-17-network-operative-system/network-operative-system-header-1000x563_hub846f78b9571717d1f5961d480bd59e8_783204_480x0_resize_box_3.png 480w, https://jimenezgomez.org/posts/2023-05-17-network-operative-system/network-operative-system-header-1000x563_hub846f78b9571717d1f5961d480bd59e8_783204_1024x0_resize_box_3.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;Internet in binary code&#34;
@@ -2036,7 +2166,7 @@ in blank pages.&lt;/p&gt;
         <description>&lt;p&gt;&lt;img src=&#34;https://jimenezgomez.org/posts/2023-05-17-why-to-improve/equations.png&#34;
 	width=&#34;719&#34;
 	height=&#34;405&#34;
-	srcset=&#34;https://jimenezgomez.org/posts/2023-05-17-why-to-improve/equations_hu_b44d7884f427a9f6.png 480w, https://jimenezgomez.org/posts/2023-05-17-why-to-improve/equations_hu_a9ebae73522564ad.png 1024w&#34;
+	srcset=&#34;https://jimenezgomez.org/posts/2023-05-17-why-to-improve/equations_huf8f8957e946de7c3ace8fd5bd39a4146_351978_480x0_resize_box_3.png 480w, https://jimenezgomez.org/posts/2023-05-17-why-to-improve/equations_huf8f8957e946de7c3ace8fd5bd39a4146_351978_1024x0_resize_box_3.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;Equations&#34;
@@ -2067,7 +2197,7 @@ in blank pages.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://jimenezgomez.org/posts/2023-05-17-internet-of-services/cloud-services-boxes-1000x538.jpg&#34;
 	width=&#34;1000&#34;
 	height=&#34;538&#34;
-	srcset=&#34;https://jimenezgomez.org/posts/2023-05-17-internet-of-services/cloud-services-boxes-1000x538_hu_6577d0a2c0cdb3c7.jpg 480w, https://jimenezgomez.org/posts/2023-05-17-internet-of-services/cloud-services-boxes-1000x538_hu_d89c1c62710739d.jpg 1024w&#34;
+	srcset=&#34;https://jimenezgomez.org/posts/2023-05-17-internet-of-services/cloud-services-boxes-1000x538_hufdbba50eea861ba1783048350bbb1568_112846_480x0_resize_q75_box.jpg 480w, https://jimenezgomez.org/posts/2023-05-17-internet-of-services/cloud-services-boxes-1000x538_hufdbba50eea861ba1783048350bbb1568_112846_1024x0_resize_q75_box.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;Services connected&#34;
@@ -2098,6 +2228,49 @@ in blank pages.&lt;/p&gt;
 &lt;h3 id=&#34;related-standards-and-projects&#34;&gt;Related standards and projects
 &lt;/h3&gt;&lt;p&gt;There is a &lt;a class=&#34;link&#34; href=&#34;https://www.w3.org/standards/webofservices/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Web of Services standard&lt;/a&gt; in the W3C page.&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title></title>
+        <link>https://jimenezgomez.org/posts/2025-12-30-assistant-context-standard/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://jimenezgomez.org/posts/2025-12-30-assistant-context-standard/</guid>
+        <description>&lt;p&gt;Enlace al borrador formal (RFC): &lt;a class=&#34;link&#34; href=&#34;../../tools/rfcs/RFC-0001-ASSISTANT_CONTEXT.md&#34; &gt;RFC-0001: ASSISTANT_CONTEXT&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Proceso para comentarios (Request for Comments):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Abre un issue en el repositorio con el título &amp;ldquo;RFC-0001: comment: &lt;resumen&gt;&amp;rdquo; o ejecuta &lt;code&gt;tools/rfcs/open_rfc_issue.sh&lt;/code&gt; localmente con &lt;code&gt;GITHUB_REPOSITORY&lt;/code&gt; y &lt;code&gt;GITHUB_TOKEN&lt;/code&gt; en tu entorno para crear la issue automáticamente.&lt;/li&gt;
+&lt;li&gt;También puedes enviar un Pull Request con la propuesta de cambio sobre &lt;code&gt;tools/rfcs/RFC-0001-ASSISTANT_CONTEXT.md&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;author-francisco-javier&#34;&gt;title: &amp;ldquo;Propuesta: Estándar ASSISTANT_CONTEXT para continuidad entre sesiones&amp;rdquo;
+date: 2025-12-30T12:30:00+01:00
+draft: false
+layout: post
+author: &amp;ldquo;Francisco Javier&amp;rdquo;
+&lt;/h2&gt;&lt;p&gt;Este es un borrador de propuesta para un pequeño estándar que permita a asistentes automatizados (IA) y a sus usuarios mantener continuidad entre sesiones.&lt;/p&gt;
+&lt;p&gt;Motivación&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Cuando un asistente y un humano trabajan iterativamente en un repositorio o en tareas locales, es útil que exista un archivo estándar, legible por humanos y máquinas, que contenga el contexto mínimo necesario para reanudar trabajo.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Propuesta mínima (frontmatter YAML):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;id&lt;/code&gt;, &lt;code&gt;created_at&lt;/code&gt;, &lt;code&gt;updated_at&lt;/code&gt;, &lt;code&gt;user&lt;/code&gt;, &lt;code&gt;location&lt;/code&gt;, &lt;code&gt;purpose&lt;/code&gt;, &lt;code&gt;files_changed&lt;/code&gt;, &lt;code&gt;next_steps&lt;/code&gt;, &lt;code&gt;status&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Uso&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;El asistente crea o actualiza &lt;code&gt;ASSISTANT_CONTEXT.md&lt;/code&gt; en la carpeta de trabajo.&lt;/li&gt;
+&lt;li&gt;El archivo incluye un breve historial, comandos de verificación y enlaces a archivos clave.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Ventajas&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Facilita que distintos agentes (humanos o automáticos) retomen el trabajo sin perder pasos.&lt;/li&gt;
+&lt;li&gt;Sirve como contrato mínimo para colaboraciones asistidas por IA.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Invitación&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Comentad sugerencias, campos adicionales o formatos alternativos (JSON-LD, TOML). Si os gusta, puedo convertir esto en un PR y publicarlo como propuesta en este repositorio.&lt;/li&gt;
+&lt;/ul&gt;
 </description>
         </item>
         
