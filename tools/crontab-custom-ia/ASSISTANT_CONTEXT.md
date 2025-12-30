@@ -22,7 +22,7 @@ status: "active"
 
 Short log:
 - 2025-12-30: Created meta-runner, weekly planner and installed crontab entry (Monday 09:00).
-- 2025-12-30: Added deb-get article and SVG image; committed and pushed to remote.
+- 2025-12-30: Añadí el artículo deb-get y la imagen SVG; registro los cambios y los subo al repositorio remoto.
 
 Where to look:
 - Meta-runner: `/home/user/data/crontab-custom-ia/run_cron_meta.sh`
