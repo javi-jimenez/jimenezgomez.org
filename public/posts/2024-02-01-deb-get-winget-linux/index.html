@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="deb-get: El &ldquo;winget&rdquo; para Linux que necesitas para evitar los problemas de Snap Autor: DeepSeek AI | Revisado y editado por: Enrique Jiménez Gómez Publicado en: jimenezgomez.org | Versión: 1.0 | Fecha: Febrero 2024 Créditos y Proceso de Creación Autoría y Participación: Este artículo es el resultado de una colaboración entre inteligencia artificial y experiencia práctica real: DeepSeek AI (80%): Investigación técnica de deb-get y alternativas Redacción del contenido estructurado Ejemplos de código y comandos Análisis comparativo entre sistemas de paquetes Documentación de funcionalidades y características Enrique Jiménez Gómez (20%):">
+<title>deb-get: El &#34;winget&#34; para Linux que necesitas para evitar los problemas de Snap</title>
+
+<link rel='canonical' href='https://jimenezgomez.org/posts/2024-02-01-deb-get-winget-linux/'>
+
+<link rel="stylesheet" href="/scss/style.min.a1d909dbac0813cee4452d7e54b227c7a9e0a491e85a882978ca26eaf65bf8a6.css">++<meta property='og:title' content="deb-get: El \"winget\" para Linux que necesitas para evitar los problemas de Snap">
+<meta property='og:description' content="deb-get: El &ldquo;winget&rdquo; para Linux que necesitas para evitar los problemas de Snap Autor: DeepSeek AI | Revisado y editado por: Enrique Jiménez Gómez Publicado en: jimenezgomez.org | Versión: 1.0 | Fecha: Febrero 2024 Créditos y Proceso de Creación Autoría y Participación: Este artículo es el resultado de una colaboración entre inteligencia artificial y experiencia práctica real: DeepSeek AI (80%): Investigación técnica de deb-get y alternativas Redacción del contenido estructurado Ejemplos de código y comandos Análisis comparativo entre sistemas de paquetes Documentación de funcionalidades y características Enrique Jiménez Gómez (20%):">
+<meta property='og:url' content='https://jimenezgomez.org/posts/2024-02-01-deb-get-winget-linux/'>
+<meta property='og:site_name' content='Francisco Javier Jiménez Gómez'>
+<meta property='og:type' content='article'><meta property='article:section' content='Posts' /><meta property='article:published_time' content='2024-02-01T09:00:00&#43;01:00'/><meta property='article:modified_time' content='2024-02-01T09:00:00&#43;01:00'/><meta property='og:image' content='https://jimenezgomez.org/posts/2024-02-01-deb-get-winget-linux/image.svg' />
+<meta name="twitter:title" content="deb-get: El \"winget\" para Linux que necesitas para evitar los problemas de Snap">
+<meta name="twitter:description" content="deb-get: El &ldquo;winget&rdquo; para Linux que necesitas para evitar los problemas de Snap Autor: DeepSeek AI | Revisado y editado por: Enrique Jiménez Gómez Publicado en: jimenezgomez.org | Versión: 1.0 | Fecha: Febrero 2024 Créditos y Proceso de Creación Autoría y Participación: Este artículo es el resultado de una colaboración entre inteligencia artificial y experiencia práctica real: DeepSeek AI (80%): Investigación técnica de deb-get y alternativas Redacción del contenido estructurado Ejemplos de código y comandos Análisis comparativo entre sistemas de paquetes Documentación de funcionalidades y características Enrique Jiménez Gómez (20%):"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://jimenezgomez.org/posts/2024-02-01-deb-get-winget-linux/image.svg' />
+    <link rel="shortcut icon" href="/img/favicon.ico" />
+
+<script>
+
+(function(){
+  try{
+    window._ga_measurement_id = 'G-STC35RLKFB';
+    window.loadGoogleAnalytics = function(){
+      var id = window._ga_measurement_id;
+      if(!id) return;
+      if(id.indexOf('G-') === 0){
+        if(document.querySelector('script[data-ga-loaded]')) return;
+        var s = document.createElement('script'); s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=' + id; s.setAttribute('data-ga-loaded','1'); document.head.appendChild(s);
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);} window.gtag = gtag;
+        gtag('js', new Date());
+        gtag('config', id, { 'anonymize_ip': true });
+      } else {
+        
+        if(window.ga) return;
+        var s = document.createElement('script'); s.async = true; s.src = 'https://www.google-analytics.com/analytics.js'; document.head.appendChild(s);
+        window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments);}; ga.l = +new Date;
+        window.ga('create', id, 'auto'); window.ga('set','anonymizeIp', true); window.ga('send','pageview');
+      }
+    };
+    
+    try{ if(localStorage && localStorage.getItem('cookie_consent') === 'granted'){ window.loadGoogleAnalytics(); } }catch(e){}
+  }catch(e){}
+})();
+</script>
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<header class="site-header portfolio-header">
+    <nav class="portfolio-nav">
+        <div class="portfolio-container">
+            <a href="/" class="portfolio-logo">jimenez<span>gomez</span>.org</a>
+            <ul class="portfolio-nav-links">
+                <li><a href="/#proyectos">Proyectos</a></li>
+                <li><a href="/#comunidad">Comunidad</a></li>
+                <li><a href="/#contacto">Contacto</a></li>
+                <li><a href="/posts" class="portfolio-blog-link">📝 Blog</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<style>
+    .portfolio-header {
+        border-bottom: 1px solid var(--border, #30363d);
+        padding: 2rem 0;
+        background-color: rgba(13, 17, 23, 0.9);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+    .portfolio-nav .portfolio-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 24px;
+    }
+
+    .portfolio-logo {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: #f0f6fc;
+        text-decoration: none;
+    }
+
+    .portfolio-logo span {
+        color: #58a6ff;
+    }
+
+    .portfolio-nav-links {
+        display: flex;
+        list-style: none;
+        gap: 2.5rem;
+    }
+
+    .portfolio-nav-links a {
+        color: #c9d1d9;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s;
+    }
+
+    .portfolio-nav-links a:hover {
+        color: #58a6ff;
+    }
+
+    .portfolio-blog-link {
+        background: rgba(88, 166, 255, 0.1);
+        border: 1px solid #58a6ff;
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        color: #58a6ff;
+        font-weight: 600;
+        transition: all 0.3s;
+    }
+
+    .portfolio-blog-link:hover {
+        background: rgba(88, 166, 255, 0.2);
+    }
+
+    @media (max-width: 768px) {
+        .portfolio-nav-links {
+            flex-direction: column;
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: #0d1117;
+            padding: 1.5rem;
+            gap: 1rem;
+        }
+
+        .portfolio-nav-links.active {
+            display: flex;
+        }
+    }
+</style>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hub75f41ef041d440542bd5ac1c63eec07_47459_300x0_resize_box_3.png" width="300"
+                            height="286" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">💻</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">Francisco Javier Jiménez Gómez</a></h1>
+            <h2 class="site-description">Software Architecture &amp; Open Source</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/javi-jimenez'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://linkedin.com/in/ximenezfrancisco'
+                        target="_blank"
+                        title="LinkedIn"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-linkedin" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <rect x="4" y="4" width="16" height="16" rx="2" />
+  <line x1="8" y1="11" x2="8" y2="16" />
+  <line x1="8" y1="8" x2="8" y2="8.01" />
+  <line x1="12" y1="16" x2="12" y2="11" />
+  <path d="M16 16v-3a2 2 0 0 0 -4 0" />
+</svg>
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com/Lubok9'
+                        target="_blank"
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+        <li  class='current' >
+            <a href='/posts/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <polyline points="21 8 21 21 3 21 3 8"></polyline>
+  <rect x="1" y="3" width="22" height="5"></rect>
+  <line x1="10" y1="12" x2="14" y2="12"></line>
+</svg>
+
+                
+                <span>Artículos</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/blog/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-rss" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="5" cy="19" r="1" />
+  <path d="M4 4a16 16 0 0 1 16 16" />
+  <path d="M4 11a9 9 0 0 1 9 9" />
+</svg>
+
+
+
+                
+                <span>Blog</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Buscar</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>Dark Mode</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#créditos-y-proceso-de-creación">Créditos y Proceso de Creación</a>
+      <ol>
+        <li><a href="#autoría-y-participación">Autoría y Participación:</a></li>
+        <li><a href="#proceso-de-desarrollo">Proceso de Desarrollo:</a></li>
+        <li><a href="#contexto-del-artículo">Contexto del Artículo:</a></li>
+      </ol>
+    </li>
+    <li><a href="#el-problema-por-qué-snap-no-siempre-es-la-solución">El Problema: Por qué Snap no siempre es la solución</a></li>
+    <li><a href="#la-solución-deb-get-el-winget-para-linux">La Solución: deb-get, el &ldquo;winget&rdquo; para Linux</a>
+      <ol>
+        <li><a href="#qué-es-deb-get">¿Qué es deb-get?</a></li>
+        <li><a href="#instalación-en-un-solo-comando">Instalación en un solo comando:</a></li>
+      </ol>
+    </li>
+    <li><a href="#por-qué-deb-get-es-superior-a-snap">Por qué deb-get es superior a Snap</a>
+      <ol>
+        <li><a href="#1-rendimiento-nativo">1. Rendimiento Nativo</a></li>
+        <li><a href="#2-gestión-simplificada">2. Gestión Simplificada</a></li>
+        <li><a href="#3-sin-bloqueos-o-estados-hold">3. Sin Bloqueos o Estados &ldquo;Hold&rdquo;</a></li>
+        <li><a href="#4-transparencia-y-control">4. Transparencia y Control</a></li>
+      </ol>
+    </li>
+    <li><a href="#catálogo-de-ejemplos">Catálogo de ejemplos</a></li>
+    <li><a href="#integración-con-tu-workflow">Integración con tu workflow</a></li>
+    <li><a href="#conclusión-de-vuelta-a-lo-simple">Conclusión: De vuelta a lo simple</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+            
+                
+<section class="widget archives">
+    <div class="widget-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+    </div>
+    <h2 class="widget-title section-title">Compartir</h2>
+    
+    <div class="widget--share">
+        <div class="share-buttons"><a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fjimenezgomez.org%2fposts%2f2024-02-01-deb-get-winget-linux%2f&text=deb-get%3a%20El%20%22winget%22%20para%20Linux%20que%20necesitas%20para%20evitar%20los%20problemas%20de%20Snap" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               class="share-button share-twitter"
+               title="Compartir en Twitter">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                <span>Twitter</span>
+            </a><a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3a%2f%2fjimenezgomez.org%2fposts%2f2024-02-01-deb-get-winget-linux%2f" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               class="share-button share-linkedin"
+               title="Compartir en LinkedIn">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-linkedin" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <rect x="4" y="4" width="16" height="16" rx="2" />
+  <line x1="8" y1="11" x2="8" y2="16" />
+  <line x1="8" y1="8" x2="8" y2="8.01" />
+  <line x1="12" y1="16" x2="12" y2="11" />
+  <path d="M16 16v-3a2 2 0 0 0 -4 0" />
+</svg>
+
+                <span>LinkedIn</span>
+            </a><a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fjimenezgomez.org%2fposts%2f2024-02-01-deb-get-winget-linux%2f" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               class="share-button share-facebook"
+               title="Compartir en Facebook">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-facebook" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3"></path>
+</svg>
+
+                <span>Facebook</span>
+            </a><a href="mailto:?subject=deb-get%3a%20El%20%22winget%22%20para%20Linux%20que%20necesitas%20para%20evitar%20los%20problemas%20de%20Snap&body=deb-get%3a%20El%20%26ldquo%3bwinget%26rdquo%3b%20para%20Linux%20que%20necesitas%20para%20evitar%20los%20problemas%20de%20Snap%20Autor%3a%20DeepSeek%20AI%20%7c%20Revisado%20y%20editado%20por%3a%20Enrique%20Jim%c3%a9nez%20G%c3%b3mez%20Publicado%20en%3a%20jimenezgomez.org%20%7c%20Versi%c3%b3n%3a%201.0%20%7c%20Fecha%3a%20Febrero%202024%0aCr%c3%a9ditos%20y%20Proceso%20de%20Creaci%c3%b3n%20Autor%c3%ada%20y%20Participaci%c3%b3n%3a%20Este%20art%c3%adculo%20es%20el%20resultado%20de%20una%20colaboraci%c3%b3n%20entre%20inteligencia%20artificial%20y%20experiencia%20pr%c3%a1ctica%20real%3a%0aDeepSeek%20AI%20%2880%25%29%3a%0aInvestigaci%c3%b3n%20t%c3%a9cnica%20de%20deb-get%20y%20alternativas%20Redacci%c3%b3n%20del%20contenido%20estructurado%20Ejemplos%20de%20c%c3%b3digo%20y%20comandos%20An%c3%a1lisis%20comparativo%20entre%20sistemas%20de%20paquetes%20Documentaci%c3%b3n%20de%20funcionalidades%20y%20caracter%c3%adsticas%20Enrique%20Jim%c3%a9nez%20G%c3%b3mez%20%2820%25%29%3a%0A%0Ahttps%3a%2f%2fjimenezgomez.org%2fposts%2f2024-02-01-deb-get-winget-linux%2f" 
+               class="share-button share-email"
+               title="Compartir por email">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-mail" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z"></path>
+   <path d="M3 7l9 6l9 -6"></path>
+</svg>
+
+                <span>Email</span>
+            </a><button class="share-button share-copy" 
+                    data-url="https://jimenezgomez.org/posts/2024-02-01-deb-get-winget-linux/"
+                    title="Copiar enlace">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                <span>Copiar</span>
+            </button><button class="share-button share-print" 
+                    onclick="window.print()"
+                    title="Imprimir artículo">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-printer" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M17 17h2a2 2 0 0 0 2 -2v-4a2 2 0 0 0 -2 -2h-14a2 2 0 0 0 -2 2v4a2 2 0 0 0 2 2h2"></path>
+   <path d="M17 9v-4a2 2 0 0 0 -2 -2h-6a2 2 0 0 0 -2 2v4"></path>
+   <path d="M7 13m0 2a2 2 0 0 1 2 -2h6a2 2 0 0 1 2 2v4a2 2 0 0 1 -2 2h-6a2 2 0 0 1 -2 -2z"></path>
+</svg>
+
+                <span>Imprimir</span>
+            </button>
+        </div>
+    </div>
+</section>
+
+<script>
+
+document.addEventListener('DOMContentLoaded', function() {
+    const copyBtn = document.querySelector('.share-copy');
+    if (copyBtn) {
+        copyBtn.addEventListener('click', function() {
+            const url = this.getAttribute('data-url');
+            
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(url).then(function() {
+                    const originalText = copyBtn.querySelector('span').textContent;
+                    copyBtn.querySelector('span').textContent = '¡Copiado!';
+                    setTimeout(function() {
+                        copyBtn.querySelector('span').textContent = originalText;
+                    }, 2000);
+                }).catch(function(err) {
+                    console.error('Error al copiar: ', err);
+                });
+            } else {
+                
+                const textArea = document.createElement('textarea');
+                textArea.value = url;
+                document.body.appendChild(textArea);
+                textArea.select();
+                try {
+                    document.execCommand('copy');
+                    const originalText = copyBtn.querySelector('span').textContent;
+                    copyBtn.querySelector('span').textContent = '¡Copiado!';
+                    setTimeout(function() {
+                        copyBtn.querySelector('span').textContent = originalText;
+                    }, 2000);
+                } catch (err) {
+                    console.error('Error al copiar: ', err);
+                }
+                document.body.removeChild(textArea);
+            }
+        });
+    }
+});
+</script>
+
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/posts/2024-02-01-deb-get-winget-linux/">
+                
+                    <img src="/posts/2024-02-01-deb-get-winget-linux/image.svg" loading="lazy" alt="Featured image of post deb-get: El &#34;winget&#34; para Linux que necesitas para evitar los problemas de Snap" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/posts/2024-02-01-deb-get-winget-linux/">deb-get: El &#34;winget&#34; para Linux que necesitas para evitar los problemas de Snap</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published" datetime='2024-02-01T09:00:00&#43;01:00'>Feb 01, 2024</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    3 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="deb-get-el-winget-para-linux-que-necesitas-para-evitar-los-problemas-de-snap">deb-get: El &ldquo;winget&rdquo; para Linux que necesitas para evitar los problemas de Snap
+</h1><p>Autor: DeepSeek AI | Revisado y editado por: Enrique Jiménez Gómez
+Publicado en: jimenezgomez.org | Versión: 1.0 | Fecha: Febrero 2024</p>
+<hr>
+<h2 id="créditos-y-proceso-de-creación">Créditos y Proceso de Creación
+</h2><h3 id="autoría-y-participación">Autoría y Participación:
+</h3><p>Este artículo es el resultado de una colaboración entre inteligencia artificial y experiencia práctica real:</p>
+<p>DeepSeek AI (80%):</p>
+<ul>
+<li>Investigación técnica de <code>deb-get</code> y alternativas</li>
+<li>Redacción del contenido estructurado</li>
+<li>Ejemplos de código y comandos</li>
+<li>Análisis comparativo entre sistemas de paquetes</li>
+<li>Documentación de funcionalidades y características</li>
+</ul>
+<p>Enrique Jiménez Gómez (20%):</p>
+<ul>
+<li>Experiencia práctica real con los problemas de Snap</li>
+<li>Validación de comandos y procedimientos</li>
+<li>Dirección editorial y enfoque del artículo</li>
+<li>Casos reales de uso y problemática documentada</li>
+<li>Revisión técnica y correcciones basadas en experiencia</li>
+</ul>
+<h3 id="proceso-de-desarrollo">Proceso de Desarrollo:
+</h3><ol>
+<li>Febrero 2024 - Enrique documenta problemas reales con Snap en su sistema</li>
+<li>Investigación - Búsqueda de alternativas a sistemas de contenedores</li>
+<li>Pruebas prácticas - Validación de <code>deb-get</code> en entornos reales</li>
+<li>Redacción - Creación del contenido estructurado por DeepSeek</li>
+<li>Revisión - Corrección y validación por Enrique basada en experiencia práctica</li>
+</ol>
+<h3 id="contexto-del-artículo">Contexto del Artículo:
+</h3><p>Este contenido surge de problemas documentados reales que Enrique experimentó en su blog jimenezgomez.org, específicamente:</p>
+<ul>
+<li>Errores crípticos de Snap (&ldquo;change finished in status &quot;Hold&quot;&rdquo;)</li>
+<li>Procesos bloqueados imposibles de resolver</li>
+<li>La frustración expresada: &ldquo;menudo desatino snap&hellip;&rdquo;</li>
+<li>La búsqueda activa de alternativas prácticas</li>
+</ul>
+<hr>
+<h2 id="el-problema-por-qué-snap-no-siempre-es-la-solución">El Problema: Por qué Snap no siempre es la solución
+</h2><p>Si usas Ubuntu o alguna distribución derivada, seguramente te has encontrado con esta situación frustrante:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo snap remove firefox --revision<span class="o">=</span><span class="m">7599</span>
+</span></span><span class="line"><span class="cl">error: snap <span class="s2">&#34;firefox&#34;</span> has <span class="s2">&#34;remove-snap&#34;</span> change in progress
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>O peor aún:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">error: change finished in status <span class="s2">&#34;Hold&#34;</span> with no error message
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Estos errores crípticos y procesos bloqueados son experiencias comunes para usuarios de Snap. El sistema introduce complejidad innecesaria comparado con paquetes <code>.deb</code>.</p>
+<h2 id="la-solución-deb-get-el-winget-para-linux">La Solución: deb-get, el &ldquo;winget&rdquo; para Linux
+</h2><p>Imagina tener la simplicidad de <code>winget</code> pero para aplicaciones <code>.deb</code> en Linux. Eso es <code>deb-get</code>.</p>
+<h3 id="qué-es-deb-get">¿Qué es deb-get?
+</h3><p><code>deb-get</code> es un gestor de paquetes de alto nivel que simplifica la instalación de aplicaciones de terceros en formato <code>.deb</code>. Actúa como una capa sobre <code>apt</code> y <code>dpkg</code>, proporcionando una interfaz unificada.</p>
+<h3 id="instalación-en-un-solo-comando">Instalación en un solo comando:
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">wget -qO- https://raw.githubusercontent.com/wimpysworld/deb-get/main/deb-get <span class="p">|</span> sudo bash -s install deb-get
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="por-qué-deb-get-es-superior-a-snap">Por qué deb-get es superior a Snap
+</h2><h3 id="1-rendimiento-nativo">1. Rendimiento Nativo
+</h3><p>Las aplicaciones instaladas con <code>deb-get</code> son <code>.deb</code> tradicionales: inicio inmediato, integración completa y sin sobrecarga de contenedores.</p>
+<h3 id="2-gestión-simplificada">2. Gestión Simplificada
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">deb-get search firefox
+</span></span><span class="line"><span class="cl">deb-get install google-chrome-stable
+</span></span><span class="line"><span class="cl">deb-get upgrade
+</span></span><span class="line"><span class="cl">deb-get list
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="3-sin-bloqueos-o-estados-hold">3. Sin Bloqueos o Estados &ldquo;Hold&rdquo;
+</h3><p>Evita procesos bloqueados en segundo plano y estados misteriosos.</p>
+<h3 id="4-transparencia-y-control">4. Transparencia y Control
+</h3><p>Puedes ver exactamente qué se instala, verificar firmas GPG e inspeccionar archivos.</p>
+<h2 id="catálogo-de-ejemplos">Catálogo de ejemplos
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">deb-get install google-chrome-stable
+</span></span><span class="line"><span class="cl">deb-get install vscode
+</span></span><span class="line"><span class="cl">deb-get install signal-desktop
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="integración-con-tu-workflow">Integración con tu workflow
+</h2><p>Ejemplos para usuario casual, administrador y desarrollador incluidos en el artículo original.</p>
+<h2 id="conclusión-de-vuelta-a-lo-simple">Conclusión: De vuelta a lo simple
+</h2><p><code>deb-get</code> no es mágico, pero sí una respuesta práctica para gestionar aplicaciones de terceros sin las complicaciones de Snap.</p>
+<hr>
+<p>Enlaces relevantes:</p>
+<ul>
+<li><a class="link" href="https://github.com/wimpysworld/deb-get"  target="_blank" rel="noopener"
+    >https://github.com/wimpysworld/deb-get</a></li>
+<li><a class="link" href="https://github.com/wimpysworld/deb-get/wiki"  target="_blank" rel="noopener"
+    >https://github.com/wimpysworld/deb-get/wiki</a></li>
+</ul>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2025 Francisco Javier Jiménez Gómez
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.32.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        
+        <footer class="portfolio-footer">
+    <div class="portfolio-container">
+        <p>Este espacio está dedicado a compartir conocimiento y herramientas bajo filosofías de código abierto.</p>
+        <p>
+             <a href="https://www.linkedin.com/in/ximenezfrancisco/">LinkedIn</a> |
+            🐙 <a href="https://github.com/javi-jimenez">GitHub</a> |
+            🐦 <a href="https://twitter.com/Lubok9">Twitter</a>
+        </p>
+        <p style="margin-top: 2rem;">
+            © <span id="portfolioYear"></span> Francisco Javier Jiménez Gómez. Contenido bajo licencias open source.
+        </p>
+    </div>
+</footer>
+
+<style>
+    .portfolio-footer {
+        text-align: center;
+        padding: 3rem 0;
+        border-top: 1px solid var(--border, #30363d);
+        color: #8b949e;
+        font-size: 0.9rem;
+        background-color: rgba(13, 17, 23, 0.95);
+        margin-top: 5rem;
+    }
+
+    .portfolio-footer .portfolio-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 24px;
+    }
+
+    .portfolio-footer a {
+        color: #58a6ff;
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+
+    .portfolio-footer a:hover {
+        color: #79c0ff;
+        text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+        .portfolio-footer {
+            padding: 2rem 0;
+        }
+
+        .portfolio-footer p {
+            font-size: 0.85rem;
+        }
+    }
+</style>
+
+<script>
+    if (document.getElementById('portfolioYear')) {
+        document.getElementById('portfolioYear').textContent = new Date().getFullYear();
+    }
+</script>
+<div id="cookie-consent" style="position:fixed;left:1rem;right:1rem;bottom:1rem;z-index:9999;display:none;font-family:Inter,Arial,Helvetica,sans-serif;">
+  <div style="max-width:980px;margin:0 auto;background:rgba(13,17,23,0.95);color:#e6edf3;border:1px solid rgba(255,255,255,0.04);padding:16px;border-radius:8px;box-shadow:0 6px 24px rgba(2,6,23,0.6);display:flex;gap:12px;align-items:center;">
+    <div style="flex:1;font-size:14px;line-height:1.4">
+      Este sitio usa cookies para medir tráfico y mejorar la experiencia. Puedes aceptar todas, rechazar o configurar tus preferencias. Más información en la <a href="/privacy/" style="color:#58a6ff;text-decoration:underline">política de privacidad</a>.
+    </div>
+    <div style="display:flex;gap:8px">
+      <button id="cookie-configure" style="background:transparent;color:#c9d1d9;border:1px solid rgba(255,255,255,0.06);padding:8px 12px;border-radius:6px;cursor:pointer">Configurar</button>
+      <button id="cookie-decline" style="background:transparent;color:#c9d1d9;border:1px solid rgba(255,255,255,0.06);padding:8px 12px;border-radius:6px;cursor:pointer">Rechazar</button>
+      <button id="cookie-accept" style="background:#58a6ff;color:#06202a;border:none;padding:8px 12px;border-radius:6px;cursor:pointer">Aceptar</button>
+    </div>
+  </div>
+</div>
+
+
+<div id="cookie-modal" aria-hidden="true" style="display:none;position:fixed;inset:0;z-index:10000;align-items:center;justify-content:center;">
+  <div style="position:absolute;inset:0;background:rgba(0,0,0,0.6)"></div>
+  <div role="dialog" aria-modal="true" style="position:relative;max-width:720px;margin:0 auto;background:#0d1117;color:#e6edf3;padding:20px;border-radius:8px;z-index:10001;">
+    <h3 style="margin:0 0 12px;font-size:18px">Preferencias de cookies</h3>
+    <p style="margin:0 0 12px;font-size:14px">Selecciona qué tipos de cookies autorizas.</p>
+    <label style="display:flex;align-items:center;gap:10px;margin-bottom:12px;font-size:14px">
+      <input type="checkbox" id="opt-analytics"> <strong>Analytics</strong> — Google Analytics (recopila datos de uso anónimos).
+    </label>
+    <div style="display:flex;gap:8px;justify-content:flex-end">
+      <button id="cookie-modal-cancel" style="background:transparent;color:#c9d1d9;border:1px solid rgba(255,255,255,0.06);padding:8px 12px;border-radius:6px;cursor:pointer">Cancelar</button>
+      <button id="cookie-modal-save" style="background:#58a6ff;color:#06202a;border:none;padding:8px 12px;border-radius:6px;cursor:pointer">Guardar preferencias</button>
+    </div>
+  </div>
+</div>
+
+
+<button id="cookie-settings-btn" title="Preferencias de cookies" style="position:fixed;left:1rem;bottom:1rem;z-index:9998;background:#15181b;color:#c9d1d9;border:1px solid rgba(255,255,255,0.04);padding:8px;border-radius:999px;display:none">Cookies</button>
+
+<script>
+;(function(){
+  try{
+    var root = document.getElementById('cookie-consent');
+    var modal = document.getElementById('cookie-modal');
+    var settingsBtn = document.getElementById('cookie-settings-btn');
+    var show = function(){ if(root) root.style.display = 'block'; };
+    var hide = function(){ if(root) root.style.display = 'none'; };
+    var showModal = function(){ if(modal) { modal.style.display = 'flex'; modal.setAttribute('aria-hidden','false'); } };
+    var hideModal = function(){ if(modal) { modal.style.display = 'none'; modal.setAttribute('aria-hidden','true'); } };
+    var setConsent = function(obj){ try{ localStorage.setItem('cookie_consent', obj.status); localStorage.setItem('cookie_consent_details', JSON.stringify(obj)); }catch(e){} };
+    var getConsent = function(){ try{ return localStorage.getItem('cookie_consent'); }catch(e){ return null; } };
+    var getDetails = function(){ try{ return JSON.parse(localStorage.getItem('cookie_consent_details')||'null'); }catch(e){ return null; } };
+
+    var syncUI = function(){
+      var details = getDetails();
+      if(details && typeof details.analytics !== 'undefined'){
+        var cb = document.getElementById('opt-analytics'); if(cb) cb.checked = !!details.analytics;
+      }
+    };
+
+    
+    var showSettingsBtn = function(){ if(settingsBtn) settingsBtn.style.display = 'block'; };
+
+    var consent = getConsent();
+    if(consent === 'granted'){
+      
+      hide(); syncUI(); showSettingsBtn(); if(window.loadGoogleAnalytics){ var details = getDetails(); if(details && details.analytics) window.loadGoogleAnalytics(); }
+      return;
+    }
+    if(consent === 'denied'){
+      
+      hide(); syncUI(); showSettingsBtn(); return;
+    }
+    
+    show(); showSettingsBtn();
+
+    document.getElementById('cookie-accept').addEventListener('click', function(ev){
+      var analytics = true;
+      setConsent({ status: 'granted', analytics: analytics, ts: new Date().toISOString() });
+      hide(); showSettingsBtn(); if(analytics && window.loadGoogleAnalytics) window.loadGoogleAnalytics();
+    });
+    document.getElementById('cookie-decline').addEventListener('click', function(ev){
+      setConsent({ status: 'denied', analytics: false, ts: new Date().toISOString() });
+      hide(); showSettingsBtn();
+    });
+    document.getElementById('cookie-configure').addEventListener('click', function(ev){ hide(); showModal(); syncUI(); });
+    if(settingsBtn) settingsBtn.addEventListener('click', function(){ showModal(); syncUI(); });
+
+    document.getElementById('cookie-modal-cancel').addEventListener('click', function(){ hideModal(); });
+    document.getElementById('cookie-modal-save').addEventListener('click', function(){
+      var analytics = !!document.getElementById('opt-analytics').checked;
+      var status = analytics ? 'granted' : 'denied';
+      setConsent({ status: status, analytics: analytics, ts: new Date().toISOString() });
+      hideModal(); hide(); showSettingsBtn(); if(analytics && window.loadGoogleAnalytics) window.loadGoogleAnalytics();
+    });
+
+    
+    window.__clearCookieConsent = function(){ try{ localStorage.removeItem('cookie_consent'); localStorage.removeItem('cookie_consent_details'); hideModal(); hide(); show(); }catch(e){} };
+  }catch(e){ }
+})();
+</script>
+<script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.1b0ba7ce83d6eb010f2cfd489f5c8da35ae36f98bcdc08b1e8cd11011eb1e2ad.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

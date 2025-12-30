@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Software on Francisco Javier Jiménez Gómez</title>
+        <title>software on Francisco Javier Jiménez Gómez</title>
         <link>https://jimenezgomez.org/categories/software/</link>
-        <description>Recent content in Software on Francisco Javier Jiménez Gómez</description>
+        <description>Recent content in software on Francisco Javier Jiménez Gómez</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>es</language>
         <copyright>Francisco Javier Jiménez Gómez</copyright>
@@ -16,7 +16,7 @@
         <description>&lt;p&gt;&lt;img src=&#34;https://jimenezgomez.org/posts/2024-03-31-three-layers-abstraction/three-layers-as-leafs-gettyimages-1000px-157287379-2048x2048.jpg&#34;
 	width=&#34;1000&#34;
 	height=&#34;667&#34;
-	srcset=&#34;https://jimenezgomez.org/posts/2024-03-31-three-layers-abstraction/three-layers-as-leafs-gettyimages-1000px-157287379-2048x2048_hu_e10b507ce78069a5.jpg 480w, https://jimenezgomez.org/posts/2024-03-31-three-layers-abstraction/three-layers-as-leafs-gettyimages-1000px-157287379-2048x2048_hu_9afc46b1fd8fc6be.jpg 1024w&#34;
+	srcset=&#34;https://jimenezgomez.org/posts/2024-03-31-three-layers-abstraction/_hu057f930f56c58a73f0fbea0aa66b1537_243337_5d3e1d1b61c23dcf40e9bc504d60f8ca.jpg 480w, https://jimenezgomez.org/posts/2024-03-31-three-layers-abstraction/_hu057f930f56c58a73f0fbea0aa66b1537_243337_31a53c9b848bcaf87e7c49ee321d627f.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;Three Layers as Leafs&#34;
@@ -67,7 +67,7 @@
 &lt;p&gt;&lt;img src=&#34;https://jimenezgomez.org/posts/2024-03-31-vbd-fractal-architecture-view-business-and-data-input-and-output/fractal-maldelbrot-illustration-1000px-gettyimages-488635425-2048x2048.jpg&#34;
 	width=&#34;1000&#34;
 	height=&#34;750&#34;
-	srcset=&#34;https://jimenezgomez.org/posts/2024-03-31-vbd-fractal-architecture-view-business-and-data-input-and-output/fractal-maldelbrot-illustration-1000px-gettyimages-488635425-2048x2048_hu_71538f2550c6dc83.jpg 480w, https://jimenezgomez.org/posts/2024-03-31-vbd-fractal-architecture-view-business-and-data-input-and-output/fractal-maldelbrot-illustration-1000px-gettyimages-488635425-2048x2048_hu_50dd66516025c0b2.jpg 1024w&#34;
+	srcset=&#34;https://jimenezgomez.org/posts/2024-03-31-vbd-fractal-architecture-view-business-and-data-input-and-output/_hubda60c3edc8fc7f406812c451cc5d519_381286_672fe457777eb02fe8a9c24b7cf47706.jpg 480w, https://jimenezgomez.org/posts/2024-03-31-vbd-fractal-architecture-view-business-and-data-input-and-output/_hubda60c3edc8fc7f406812c451cc5d519_381286_4dc3ce504dbf9cf16ea21ad279a77c9c.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;Maldelbrot set&#34;
@@ -106,7 +106,7 @@
 &lt;p&gt;&lt;img src=&#34;https://jimenezgomez.org/posts/2023-12-24-monoliths-and-microservices/inca-bricks-1000px.jpg&#34;
 	width=&#34;1000&#34;
 	height=&#34;1005&#34;
-	srcset=&#34;https://jimenezgomez.org/posts/2023-12-24-monoliths-and-microservices/inca-bricks-1000px_hu_4ba43dc18399bd24.jpg 480w, https://jimenezgomez.org/posts/2023-12-24-monoliths-and-microservices/inca-bricks-1000px_hu_cc9f36dc5358d227.jpg 1024w&#34;
+	srcset=&#34;https://jimenezgomez.org/posts/2023-12-24-monoliths-and-microservices/inca-bricks-1000px_hue395dfecc8087edfb381bfa56d1c31d7_508056_480x0_resize_q75_box.jpg 480w, https://jimenezgomez.org/posts/2023-12-24-monoliths-and-microservices/inca-bricks-1000px_hue395dfecc8087edfb381bfa56d1c31d7_508056_1024x0_resize_q75_box.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;Monoliths and MicroServices&#34;
