@@ -6,6 +6,13 @@ layout: post
 author: "Francisco Javier"
 ---
 
+Enlace al borrador formal (RFC): [RFC-0001: ASSISTANT_CONTEXT](../../tools/rfcs/RFC-0001-ASSISTANT_CONTEXT.md)
+
+Proceso para comentarios (Request for Comments):
+
+- Abre un issue en el repositorio con el título "RFC-0001: comment: <resumen>" o ejecuta `tools/rfcs/open_rfc_issue.sh` localmente con `GITHUB_REPOSITORY` y `GITHUB_TOKEN` en tu entorno para crear la issue automáticamente.
+- También puedes enviar un Pull Request con la propuesta de cambio sobre `tools/rfcs/RFC-0001-ASSISTANT_CONTEXT.md`.
+
 Este es un borrador de propuesta para un pequeño estándar que permita a asistentes automatizados (IA) y a sus usuarios mantener continuidad entre sesiones.
 
 Motivación
