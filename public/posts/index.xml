@@ -7,7 +7,44 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>es</language>
         <copyright>Francisco Javier Jiménez Gómez</copyright>
-        <lastBuildDate>Mon, 22 Dec 2025 14:30:00 +0200</lastBuildDate><atom:link href="https://jimenezgomez.org/posts/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 30 Dec 2025 12:30:00 +0100</lastBuildDate><atom:link href="https://jimenezgomez.org/posts/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Propuesta: Estándar ASSISTANT_CONTEXT para continuidad entre sesiones</title>
+        <link>https://jimenezgomez.org/posts/2025-12-30-assistant-context-standard/</link>
+        <pubDate>Tue, 30 Dec 2025 12:30:00 +0100</pubDate>
+        
+        <guid>https://jimenezgomez.org/posts/2025-12-30-assistant-context-standard/</guid>
+        <description>&lt;p&gt;Enlace al borrador formal (RFC): &lt;a class=&#34;link&#34; href=&#34;../../tools/rfcs/RFC-0001-ASSISTANT_CONTEXT.md&#34; &gt;RFC-0001: ASSISTANT_CONTEXT&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Proceso para comentarios (Request for Comments):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Abre un issue en el repositorio con el título &amp;ldquo;RFC-0001: comment: &lt;resumen&gt;&amp;rdquo; o ejecuta &lt;code&gt;tools/rfcs/open_rfc_issue.sh&lt;/code&gt; localmente con &lt;code&gt;GITHUB_REPOSITORY&lt;/code&gt; y &lt;code&gt;GITHUB_TOKEN&lt;/code&gt; en tu entorno para crear la issue automáticamente.&lt;/li&gt;
+&lt;li&gt;También puedes enviar un Pull Request con la propuesta de cambio sobre &lt;code&gt;tools/rfcs/RFC-0001-ASSISTANT_CONTEXT.md&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Este es un borrador de propuesta para un pequeño estándar que permita a asistentes automatizados (IA) y a sus usuarios mantener continuidad entre sesiones.&lt;/p&gt;
+&lt;p&gt;Motivación&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Cuando un asistente y un humano trabajan iterativamente en un repositorio o en tareas locales, es útil que exista un archivo estándar, legible por humanos y máquinas, que contenga el contexto mínimo necesario para reanudar trabajo.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Propuesta mínima (frontmatter YAML):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;id&lt;/code&gt;, &lt;code&gt;created_at&lt;/code&gt;, &lt;code&gt;updated_at&lt;/code&gt;, &lt;code&gt;user&lt;/code&gt;, &lt;code&gt;location&lt;/code&gt;, &lt;code&gt;purpose&lt;/code&gt;, &lt;code&gt;files_changed&lt;/code&gt;, &lt;code&gt;next_steps&lt;/code&gt;, &lt;code&gt;status&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Uso&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;El asistente crea o actualiza &lt;code&gt;ASSISTANT_CONTEXT.md&lt;/code&gt; en la carpeta de trabajo.&lt;/li&gt;
+&lt;li&gt;El archivo incluye un breve historial, comandos de verificación y enlaces a archivos clave.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Ventajas&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Facilita que distintos agentes (humanos o automáticos) retomen el trabajo sin perder pasos.&lt;/li&gt;
+&lt;li&gt;Sirve como contrato mínimo para colaboraciones asistidas por IA.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Invitación&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Comentad sugerencias, campos adicionales o formatos alternativos (JSON-LD, TOML). Si os gusta, puedo convertir esto en un PR y publicarlo como propuesta en este repositorio.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
         <title>DNS Universal: De lo Planetario a lo Galáctico</title>
         <link>https://jimenezgomez.org/posts/2025-12-22-dns-universal-ddnsc/</link>
         <pubDate>Mon, 22 Dec 2025 14:30:00 +0200</pubDate>
@@ -2228,49 +2265,6 @@ in blank pages.&lt;/p&gt;
 &lt;h3 id=&#34;related-standards-and-projects&#34;&gt;Related standards and projects
 &lt;/h3&gt;&lt;p&gt;There is a &lt;a class=&#34;link&#34; href=&#34;https://www.w3.org/standards/webofservices/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Web of Services standard&lt;/a&gt; in the W3C page.&lt;/p&gt;
-</description>
-        </item>
-        <item>
-        <title></title>
-        <link>https://jimenezgomez.org/posts/2025-12-30-assistant-context-standard/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>https://jimenezgomez.org/posts/2025-12-30-assistant-context-standard/</guid>
-        <description>&lt;p&gt;Enlace al borrador formal (RFC): &lt;a class=&#34;link&#34; href=&#34;../../tools/rfcs/RFC-0001-ASSISTANT_CONTEXT.md&#34; &gt;RFC-0001: ASSISTANT_CONTEXT&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Proceso para comentarios (Request for Comments):&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Abre un issue en el repositorio con el título &amp;ldquo;RFC-0001: comment: &lt;resumen&gt;&amp;rdquo; o ejecuta &lt;code&gt;tools/rfcs/open_rfc_issue.sh&lt;/code&gt; localmente con &lt;code&gt;GITHUB_REPOSITORY&lt;/code&gt; y &lt;code&gt;GITHUB_TOKEN&lt;/code&gt; en tu entorno para crear la issue automáticamente.&lt;/li&gt;
-&lt;li&gt;También puedes enviar un Pull Request con la propuesta de cambio sobre &lt;code&gt;tools/rfcs/RFC-0001-ASSISTANT_CONTEXT.md&lt;/code&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;author-francisco-javier&#34;&gt;title: &amp;ldquo;Propuesta: Estándar ASSISTANT_CONTEXT para continuidad entre sesiones&amp;rdquo;
-date: 2025-12-30T12:30:00+01:00
-draft: false
-layout: post
-author: &amp;ldquo;Francisco Javier&amp;rdquo;
-&lt;/h2&gt;&lt;p&gt;Este es un borrador de propuesta para un pequeño estándar que permita a asistentes automatizados (IA) y a sus usuarios mantener continuidad entre sesiones.&lt;/p&gt;
-&lt;p&gt;Motivación&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Cuando un asistente y un humano trabajan iterativamente en un repositorio o en tareas locales, es útil que exista un archivo estándar, legible por humanos y máquinas, que contenga el contexto mínimo necesario para reanudar trabajo.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Propuesta mínima (frontmatter YAML):&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;id&lt;/code&gt;, &lt;code&gt;created_at&lt;/code&gt;, &lt;code&gt;updated_at&lt;/code&gt;, &lt;code&gt;user&lt;/code&gt;, &lt;code&gt;location&lt;/code&gt;, &lt;code&gt;purpose&lt;/code&gt;, &lt;code&gt;files_changed&lt;/code&gt;, &lt;code&gt;next_steps&lt;/code&gt;, &lt;code&gt;status&lt;/code&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Uso&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;El asistente crea o actualiza &lt;code&gt;ASSISTANT_CONTEXT.md&lt;/code&gt; en la carpeta de trabajo.&lt;/li&gt;
-&lt;li&gt;El archivo incluye un breve historial, comandos de verificación y enlaces a archivos clave.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Ventajas&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Facilita que distintos agentes (humanos o automáticos) retomen el trabajo sin perder pasos.&lt;/li&gt;
-&lt;li&gt;Sirve como contrato mínimo para colaboraciones asistidas por IA.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Invitación&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Comentad sugerencias, campos adicionales o formatos alternativos (JSON-LD, TOML). Si os gusta, puedo convertir esto en un PR y publicarlo como propuesta en este repositorio.&lt;/li&gt;
-&lt;/ul&gt;
 </description>
         </item>
         
