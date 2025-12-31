@@ -1,5 +1,39 @@
 kind: pipeline
 type: docker
+name: default
+
+steps:
+  - name: build
+    image: klakegg/hugo:0.113.0-ext-alpine
+    commands:
+      - hugo --minify
+
+  - name: deploy
+    image: alpine:3.18
+    environment:
+      FTP_HOST:
+        from_secret: FTP_HOST
+      FTP_USER:
+        from_secret: FTP_USER
+      FTP_PASSWORD:
+        from_secret: FTP_PASSWORD
+      FTP_REMOTE_PATH:
+        from_secret: FTP_REMOTE_PATH
+    commands:
+      - apk add --no-cache lftp
+      - |
+        if [ -z "${FTP_HOST}" ] || [ -z "${FTP_USER}" ] || [ -z "${FTP_PASSWORD}" ]; then
+          echo "FTP credentials not provided; skipping deploy"
+          exit 0
+        fi
+      - |
+        lftp -u "${FTP_USER}","${FTP_PASSWORD}" "${FTP_HOST}" -e "mirror -R public ${FTP_REMOTE_PATH} --delete --verbose; bye"
+
+trigger:
+  branch:
+    - main
+kind: pipeline
+type: docker
 name: Deploy Hugo Blog
 
 trigger:

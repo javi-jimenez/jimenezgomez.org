@@ -1,0 +1,21 @@
+Resumen LinkedIn – DNS universal
+
+Breve resumen:
+
+He publicado un artículo que propone una visión práctica del "DNS universal": una forma de pensar el sistema de nombres como una infraestructura distribuida, resistente y orientada a servicios, que facilita descubrimiento y gobernanza en entornos heterogéneos. Explico por qué los modelos actuales limitan interoperabilidad y cómo un enfoque por capas y políticas (resoluciones locales, federación, y firmas) puede mejorar privacidad y robustez.
+
+Texto sugerido para LinkedIn (español):
+
+"Nuevo artículo: 'DNS universal' — repensando el servicio de nombres para la web moderna. Propongo un enfoque por capas que combina resolución local, federación y controles de política para aumentar la interoperabilidad, la privacidad y la resiliencia. Ideal para equipos de infra, SREs y arquitectos. Lee el artículo completo: https://jimenezgomez.org/posts/2025-12-22-dns-universal-ddnsc/ #DNS #Arquitectura #Infraestructura #SRE"
+
+Hashtags sugeridos:
+
+#DNS #Infraestructura #SRE #Seguridad #Arquitectura
+
+Post corto (para Buffer o publicación directa):
+
+"'DNS universal' — un enfoque por capas para un servicio de nombres más interoperable y privado. Lee más: https://jimenezgomez.org/posts/2025-12-22-dns-universal-ddnsc/"
+
+Uso de Buffer:
+
+- No es obligatorio usar Buffer; puedes publicar directamente en LinkedIn desde su UI o usar la API para programar. Si quieres programar y gestionar varias redes, Buffer facilita la cola y tracking. Si prefieres que lo programe desde aquí, necesito tus credenciales de Buffer (no recomendable). Mejor: te entrego el texto y tú lo subes o lo programas desde tu cuenta.
