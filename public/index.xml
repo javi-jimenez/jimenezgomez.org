@@ -13,12 +13,97 @@
         <pubDate>Fri, 02 Jan 2026 19:30:00 +0000</pubDate>
         
         <guid>https://jimenezgomez.org/posts/2026-01-02-assistant-context-standard/</guid>
-        <description>&lt;p&gt;Protocolo Unificado de Contexto para Asistentes (PUCA / ACS)
-Propuesta evolucionada del Assistant Context Standard para interoperabilidad entre asistentes.
-Jan 02, 2026
-4 minute read&lt;/p&gt;
-&lt;p&gt;Para poder mejorar tu estándar y redactar ese artículo técnico, necesito conocer los detalles específicos de tu propuesta (ya que, aunque comprendo la lógica de un estándar de contexto, no puedo leer el contenido íntegro de tu web debido a restricciones de acceso a ciertos dominios privados o recientes).&lt;/p&gt;
-&lt;p&gt;Sin embargo, basándome en la arquitectura ideal de un “Assistant Context Standard” y en las carencias que veo a diario en la interacción humano-IA, aquí tienes una propuesta evolucionada que integra tu visión con mejoras técnicas de última generación.&lt;/p&gt;
+        <description>&lt;p&gt;Para poder mejorar tu estándar y redactar ese artículo técnico, necesito conocer los detalles específicos de tu propuesta (ya que, aunque comprendo la lógica de un estándar de contexto, no puedo leer el contenido íntegro de tu web debido a restricciones de acceso a ciertos dominios privados o recientes).&lt;/p&gt;
+&lt;p&gt;Sin embargo, basándome en la arquitectura ideal de un &lt;strong&gt;&amp;ldquo;Assistant Context Standard&amp;rdquo;&lt;/strong&gt; y en las carencias que veo a diario en la interacción humano-IA, aquí tienes una propuesta evolucionada que integra tu visión con mejoras técnicas de última generación.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;protocolo-unificado-de-contexto-para-asistentes-puca--acs&#34;&gt;Protocolo Unificado de Contexto para Asistentes (PUCA / ACS)
+&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;Autor:&lt;/strong&gt; Gemini (AI Model) / Basado en la propuesta original de &lt;strong&gt;JimenezGomez.org&lt;/strong&gt;
+&lt;strong&gt;Fecha:&lt;/strong&gt; 2 de enero de 2026
+&lt;strong&gt;Hora:&lt;/strong&gt; 20:30 UTC
+&lt;strong&gt;Creditos de Propuesta Original:&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;https://jimenezgomez.org/posts/2025-12-30-assistant-context-standard/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://jimenezgomez.org/posts/2025-12-30-assistant-context-standard/&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;1-introducción-el-problema-del-efecto-amnesia&#34;&gt;1. Introducción: El problema del &amp;ldquo;Efecto Amnesia&amp;rdquo;
+&lt;/h2&gt;&lt;p&gt;A pesar de la potencia de los LLMs, el trabajo en entornos locales y distribuidos sufre de una desconexión crítica: la IA no sabe qué ocurrió en la sesión anterior si el motor o la interfaz cambian. Proponemos un estándar basado en archivos de manifiesto situados en la raíz de los proyectos para garantizar la continuidad del flujo de trabajo.&lt;/p&gt;
+&lt;h2 id=&#34;2-estructura-del-estándar-mejorado-propuesta-v20&#34;&gt;2. Estructura del Estándar Mejorado (Propuesta v2.0)
+&lt;/h2&gt;&lt;p&gt;Para que un estándar sea efectivo, debe ser ligero y legible tanto para humanos como para máquinas. Sugerimos la creación de un archivo &lt;code&gt;.ai-context.json&lt;/code&gt; o &lt;code&gt;.assistant.md&lt;/code&gt; con la siguiente estructura mejorada:&lt;/p&gt;
+&lt;h3 id=&#34;a-el-manifiesto-de-tarea-task_state&#34;&gt;A. El Manifiesto de Tarea (&lt;code&gt;task_state&lt;/code&gt;)
+&lt;/h3&gt;&lt;p&gt;No basta con decir qué se está haciendo; hay que definir el &amp;ldquo;Estado de la Misión&amp;rdquo;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Current Goal:&lt;/strong&gt; El objetivo macro actual.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Sub-tasks:&lt;/strong&gt; Lista de verificación (Checklist) de tareas pendientes y completadas.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Blocking Issues:&lt;/strong&gt; Impedimentos técnicos encontrados en sesiones previas.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;b-diccionario-de-entidades-knowledge_graph&#34;&gt;B. Diccionario de Entidades (&lt;code&gt;knowledge_graph&lt;/code&gt;)
+&lt;/h3&gt;&lt;p&gt;Para evitar que la IA confunda términos en proyectos grandes:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Definitions:&lt;/strong&gt; Glosario de términos específicos del negocio o del código.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Key Files:&lt;/strong&gt; Mapeo de archivos críticos y su función (evita que la IA tenga que leer todo el repo para entender la arquitectura).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;c-registro-de-decisiones-de-diseño-adr---architecture-decision-records&#34;&gt;C. Registro de Decisiones de Diseño (ADR - Architecture Decision Records)
+&lt;/h3&gt;&lt;p&gt;El mayor fallo de contexto es cuando la IA sugiere cambiar algo que ya se decidió no hacer.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Decisions:&lt;/strong&gt; &amp;ldquo;Usamos UUID en lugar de ID incremental por X razón&amp;rdquo;. Esto evita bucles de sugerencias erróneas.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;3-mejoras-agregadas-aportación-de-la-ia&#34;&gt;3. Mejoras Agregadas (Aportación de la IA)
+&lt;/h2&gt;&lt;p&gt;He añadido tres capas técnicas que tu estándar original puede adoptar para ser más robusto:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Capa de Jerarquía de Herencia:&lt;/strong&gt; Si hay un archivo en &lt;code&gt;/root&lt;/code&gt; y otro en &lt;code&gt;/root/module_A&lt;/code&gt;, el asistente debe fusionarlos. El archivo de subdirectorio tiene prioridad sobre el global. Esto permite &amp;ldquo;Contexto por Módulo&amp;rdquo;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Firma de Sesión (Hash de Estado):&lt;/strong&gt;
+Incluir un &lt;code&gt;last_state_hash&lt;/code&gt; que resuma el estado del código. Si el asistente detecta que el código cambió drásticamente desde la última lectura del contexto, debe alertar al usuario para actualizar el manifiesto.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Token Budget Management:&lt;/strong&gt;
+Instrucción explícita de &amp;ldquo;Priority Levels&amp;rdquo;. Si el archivo de contexto crece mucho, el estándar define qué partes se pueden omitir (ej. el historial antiguo) y qué partes son obligatorias (el Goal actual).&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;4-implementación-práctica-ejemplo-de-archivo&#34;&gt;4. Implementación Práctica (Ejemplo de Archivo)
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;# .ai-context.yaml&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;standard_version&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;2.0&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;project_name&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;Phoenix System&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;author_context&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;JimenezGomez&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;current_sprint&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;	&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;task&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;Refactorización de la capa de autenticación&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;	&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;status&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;In_Progress (60%)&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;	&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;last_action&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;Migración de JWT a cookies HttpOnly terminada&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;rules&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;	&lt;/span&gt;- &lt;span class=&#34;s2&#34;&gt;&amp;#34;No usar librerías externas para el manejo de fechas&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;	&lt;/span&gt;- &lt;span class=&#34;s2&#34;&gt;&amp;#34;Mantener compatibilidad con Python 3.9&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;knowledge_base&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;	&lt;/span&gt;- &lt;span class=&#34;s2&#34;&gt;&amp;#34;UserDB: Tabla principal en PostgreSQL&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;	&lt;/span&gt;- &lt;span class=&#34;s2&#34;&gt;&amp;#34;Legacy_Auth: No tocar hasta el sprint 4&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;last_update&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;2026-01-02 20:25&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id=&#34;5-conclusión&#34;&gt;5. Conclusión
+&lt;/h2&gt;&lt;p&gt;El &lt;strong&gt;Assistant Context Standard&lt;/strong&gt; propuesto por JimenezGomez y refinado en este documento elimina la fricción de entrada en cada nueva sesión de IA. Al tratar el contexto como &lt;strong&gt;código persistente&lt;/strong&gt; y no como &lt;strong&gt;memoria volátil&lt;/strong&gt;, permitimos que el desarrollo asistido por IA sea verdaderamente profesional y escalable.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;Nota del Asistente:&lt;/strong&gt; He redactado este artículo integrando tu visión de persistencia en directorios con mi capacidad de estructuración técnica. Si quieres que profundice en algún punto técnico (como la integración con el protocolo MCP), dímelo.&lt;/p&gt;
 </description>
         </item>
         <item>
@@ -56,6 +141,67 @@ Jan 02, 2026
 &lt;ul&gt;
 &lt;li&gt;Comentad sugerencias, campos adicionales o formatos alternativos (JSON-LD, TOML). Si os gusta, puedo convertir esto en un PR y publicarlo como propuesta en este repositorio.&lt;/li&gt;
 &lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>Costo computacional y afinidad a la verdad: lenguajes formales vs ML (Borrador)</title>
+        <link>https://jimenezgomez.org/posts/2025-12-30-ia-formal-vs-ml-draft/</link>
+        <pubDate>Tue, 30 Dec 2025 10:00:00 +0100</pubDate>
+        
+        <guid>https://jimenezgomez.org/posts/2025-12-30-ia-formal-vs-ml-draft/</guid>
+        <description>&lt;p&gt;Este artículo compara, en modo borrador, el coste computacional y la afinidad a la verdad de dos enfoques para construir sistemas de IA: los métodos basados en lenguajes formales (especificación, verificación, síntesis) y las aproximaciones del aprendizaje automático (ML) dominantes en la actualidad.&lt;/p&gt;
+&lt;h2 id=&#34;introducción&#34;&gt;Introducción
+&lt;/h2&gt;&lt;p&gt;En las próximas generaciones veremos dos paradigmas competir y complementarse: los métodos formales (modelado lógico, verificación, síntesis por especificación) y las aproximaciones estadísticas actuales (redes neuronales, transformers). Aquí comparo su coste computacional esperado a corto y medio plazo, su escalabilidad y lo que llamo &amp;ldquo;afinidad a la verdad&amp;rdquo;: la propensión del sistema a producir salidas correctas, justificables y verificables.&lt;/p&gt;
+&lt;h2 id=&#34;definiciones-rápidas&#34;&gt;Definiciones rápidas
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Lenguajes formales: sistemas construidos sobre lógica matemática, gramáticas y autómatas; incluyen verificación por modelo, pruebas formales y síntesis programática.&lt;/li&gt;
+&lt;li&gt;Aprendizaje automático (ML): modelos estadísticos que aproximan funciones a partir de datos; sus garantías son probabilísticas.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;coste-computacional-según-horizonte-temporal&#34;&gt;Coste computacional según horizonte temporal
+&lt;/h2&gt;&lt;p&gt;Usamos tres ejes: coste de desarrollo inicial, coste de cómputo para entrenamiento/compilación/verificación y coste de mantenimiento/adaptación.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Corto plazo (1–3 años): ML domina tareas de lenguaje/visión; métodos formales permanecen en nichos críticos.&lt;/li&gt;
+&lt;li&gt;Medio plazo (3–7 años): mejoras en síntesis y verificación reducirán costes en dominios estructurados; ML mejora en eficiencia (distillation, sparsity, hardware dedicado).&lt;/li&gt;
+&lt;li&gt;Largo plazo (&amp;gt;7 años): aparecen híbridos (especificaciones que guían ML; ML que sugiere invariantes formales); la relación coste/beneficio dependerá mucho del hardware disponible.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;estimaciones-orientativas-resumen&#34;&gt;Estimaciones orientativas (resumen)
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Métodos formales: coste humano alto para especificar; verificación puede ser intensiva (desde 10^2 a 10^4 core-segundos para módulos no triviales, según abstracción y herramienta). Mantenimiento eficiente si hay buena modularidad.&lt;/li&gt;
+&lt;li&gt;ML: entrenamiento de grandes modelos modernos puede usar 10^6–10^9 GPU-segundos a escala máxima; inferencia optimizada baja el coste por petición.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;factores-que-cambian-la-relación-coste&#34;&gt;Factores que cambian la relación coste
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Hardware especializado (TPU, NPU, aceleradores de SMT) y avances algorítmicos pueden reducir costes en ambos bandos.&lt;/li&gt;
+&lt;li&gt;Datos vs. especificaciones: obtener datos etiquetados es costoso; especificar formalmente propiedades también lo es.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;afinidad-a-la-verdad-definición-y-comparación&#34;&gt;Afinidad a la verdad (definición y comparación)
+&lt;/h2&gt;&lt;p&gt;Definimos &amp;ldquo;afinidad a la verdad&amp;rdquo; como la capacidad del sistema para producir salidas que correspondan a hechos, invariantes o requisitos verificables, y para justificar por qué la salida es correcta.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Lenguajes formales: alta afinidad a la verdad cuando la especificación es correcta y completa; la verificación ofrece pruebas dentro del modelo formal. Riesgo: si la especificación es pobre, las garantías son engañosas (GIGO).&lt;/li&gt;
+&lt;li&gt;ML: afinidad probabilística dependiente de la calidad y cobertura de los datos; puede alucinar o mostrar sesgos; explicabilidad limitada salvo empleando técnicas XAI.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;híbridos&#34;&gt;Híbridos
+&lt;/h2&gt;&lt;p&gt;Los enfoques híbridos (ML que sugiere candidatos, métodos formales que verifican) ofrecen un equilibrio: reducción del espacio de búsqueda gracias a ML y garantía de corrección proporcionada por verificación. En muchos dominios este patrón ofrece mejor coste/verdad que cualquiera de los enfoques por separado.&lt;/p&gt;
+&lt;h2 id=&#34;aplicaciones-por-dominio&#34;&gt;Aplicaciones por dominio
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Críticos (médico, aeroespacial): preferible formal; coste mayor pero la afinidad a la verdad y trazabilidad justifican la inversión.&lt;/li&gt;
+&lt;li&gt;NLP creativo y generación: ML domina; garantías formales costosas y difíciles.&lt;/li&gt;
+&lt;li&gt;Sistemas mixtos (negocio+reglas): combinación práctica: reglas formales + ML para ranking.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;economía-práctica&#34;&gt;Economía práctica
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Proyecto formal crítico: mayor coste humano y herramientas; alta amortización si el fallo tiene coste elevado.&lt;/li&gt;
+&lt;li&gt;Proyecto ML grande: costes de infra (GPU/TPU), datos y operación; escalabilidad reduce coste por usuario.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;conclusión-borrador--revisión-pendiente&#34;&gt;Conclusión (BORRADOR — revisión pendiente)
+&lt;/h2&gt;&lt;p&gt;ADVERTENCIA: esta conclusión se deja como borrador por petición del autor. El equilibrio entre coste computacional y afinidad a la verdad no es una elección binaria; sin embargo, la afirmación de que &amp;ldquo;la convergencia será la norma&amp;rdquo; requiere matices: depende fuertemente del dominio, del coste social del error y de las mejoras en técnicas formales y de ML.&lt;/p&gt;
+&lt;p&gt;Puntos abiertos (para revisar):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;¿Qué peso dar a la verificación probabilística frente a la verificación clásica en sistemas mixtos?&lt;/li&gt;
+&lt;li&gt;¿Cómo cuantificar correctamente el coste humano de especificar sistemas complejos frente al coste de obtención y curación de datos? (necesario para ROI real)&lt;/li&gt;
+&lt;li&gt;¿Cuál es el horizonte realista para que la síntesis guiada por ML reduzca el coste de verificación en la práctica?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Indícame cómo quieres modificar la conclusión y la dejo actualizada. El post está marcado &lt;code&gt;draft: true&lt;/code&gt; y no lo subiré a git salvo que me lo indiques.&lt;/p&gt;
 </description>
         </item>
         <item>
@@ -1802,6 +1948,55 @@ img {
 </description>
         </item>
         <item>
+        <title>Apps</title>
+        <link>https://jimenezgomez.org/posts/2025-05-16-apps/</link>
+        <pubDate>Fri, 16 May 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://jimenezgomez.org/posts/2025-05-16-apps/</guid>
+        <description>&lt;style&gt;
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+&lt;/style&gt;
+&lt;h2 id=&#34;apps&#34;&gt;Apps
+&lt;/h2&gt;&lt;p&gt;Some apps I like:&lt;/p&gt;
+&lt;h3 id=&#34;visual-studio-code&#34;&gt;Visual Studio Code
+&lt;/h3&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://code.visualstudio.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://code.visualstudio.com/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;A good choice for generating code, using git and editing markdown files.&lt;/p&gt;
+&lt;p&gt;It is good too for managing and generating code in Python, Java, Go, JavaScript, HTML and other web languages.&lt;/p&gt;
+&lt;p&gt;It has many integrations and allows working remotely using &amp;ldquo;Remotes&amp;rdquo;, including working inside containers as pre-built development environments.&lt;/p&gt;
+&lt;h3 id=&#34;floccus&#34;&gt;Floccus
+&lt;/h3&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://floccus.org/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://floccus.org/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;It is a browser bookmark manager.&lt;/p&gt;
+&lt;p&gt;The resulting bookmarks can be copied to other locations, and use that technique for syncronizing between browsers from different organizations.&lt;/p&gt;
+&lt;img src=&#34;floccus-bookmark-manager-with-backup-and-sync-using-files-syncronization-options-after-installing-2025-05-16_12-53.png&#34; alt=&#34;Floccus - Syncronization options after installing browser plugin&#34;&gt;
+&lt;p&gt;Easy and trivial for installing and using it.&lt;/p&gt;
+&lt;p&gt;It has the lower possible dependencies. For storing bookmarks locally, you only have to install it, and that is it, but if you install and do not use more than that, you are not getting the full power.&lt;/p&gt;
+&lt;p&gt;After storing the bookmarks using floccus, you have the chance, using app menus, of storing those bookmarks in many places, for bakcup or syncronization purposes.&lt;/p&gt;
+&lt;p&gt;It is installable in browsers as (202505161246):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Firefox&lt;/li&gt;
+&lt;li&gt;Edge&lt;/li&gt;
+&lt;li&gt;Chrome&lt;/li&gt;
+&lt;li&gt;Android&lt;/li&gt;
+&lt;li&gt;iOS&lt;/li&gt;
+&lt;li&gt;Sources (you cant get them for customization)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;It supports syncronization (20250517) with:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Nextcloud Bookmarks&lt;/li&gt;
+&lt;li&gt;LinkWarden&lt;/li&gt;
+&lt;li&gt;WebDAV share&lt;/li&gt;
+&lt;li&gt;Git over HTTPS (for any git repository as local git, GitHub, Gitea, GitLab, and others)&lt;/li&gt;
+&lt;li&gt;Google Drive&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
         <title>Vera Architecture</title>
         <link>https://jimenezgomez.org/posts/2025-04-04-vero-architecture/</link>
         <pubDate>Fri, 04 Apr 2025 11:09:00 +0200</pubDate>
@@ -1864,6 +2059,32 @@ img {
 &lt;p&gt;La inteligencia artificial, es capaz de generar código para problemas que se le planteen, genera código funcional y completo, que se ajusta a la definición del problema.&lt;/p&gt;
 &lt;p&gt;El resultado se puede ampliar o modificar con consultas posteriores y genera nuevo código funcional, incorporando la modificación que le indiquemos.&lt;/p&gt;
 &lt;p&gt;Se debe especificar muy bien el problema, para que el ressultado sea ajustado a lo que se quiere.&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>How to improve</title>
+        <link>https://jimenezgomez.org/posts/2024-05-14-how-to-improve/</link>
+        <pubDate>Tue, 14 May 2024 00:00:00 +0200</pubDate>
+        
+        <guid>https://jimenezgomez.org/posts/2024-05-14-how-to-improve/</guid>
+        <description>&lt;!-- preview image on social media --&gt;
+&lt;meta property=&#34;og:image&#34; content=&#34;/assets/img/a.jpg&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;https://jimenezgomez.org/a.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;How to improve&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;Acquire knowledge
+Practice
+Questions
+Time resources
+Certification as objective
+Practice after certification&lt;/p&gt;
 </description>
         </item>
         <item>
@@ -1934,6 +2155,23 @@ img {
 &lt;p&gt;As you see, you can extend the concept to other domains.&lt;/p&gt;
 &lt;p&gt;This brief idea can be of help when we design or think about architecture.&lt;/p&gt;
 &lt;p&gt;Finally, to fit this idea into the Fractal Architecture, all three (or any you have) layers, must be considered as an atomic autonomous block with an input and an output, as a black box pattern.&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>VBD</title>
+        <link>https://jimenezgomez.org/posts/2024-03-31-vbd/</link>
+        <pubDate>Sun, 31 Mar 2024 20:52:00 +0200</pubDate>
+        
+        <guid>https://jimenezgomez.org/posts/2024-03-31-vbd/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Layers</title>
+        <link>https://jimenezgomez.org/posts/2024-03-31-layers/</link>
+        <pubDate>Sun, 31 Mar 2024 20:44:00 +0200</pubDate>
+        
+        <guid>https://jimenezgomez.org/posts/2024-03-31-layers/</guid>
+        <description>&lt;p xmlns:cc=&#34;http://creativecommons.org/ns#&#34; xmlns:dct=&#34;http://purl.org/dc/terms/&#34;&gt;&lt;a property=&#34;dct:title&#34; rel=&#34;cc:attributionURL&#34; href=&#34;https://github.com/javi-jimenez/posts/&#34;&gt;Posts&lt;/a&gt; by &lt;a rel=&#34;cc:attributionURL dct:creator&#34; property=&#34;cc:attributionName&#34; href=&#34;https://github.com/javi-jimenez&#34;&gt;Francisco Javier Jiménez Gómez&lt;/a&gt; is licensed under &lt;a href=&#34;https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1&#34; target=&#34;_blank&#34; rel=&#34;license noopener noreferrer&#34; style=&#34;display:inline-block;&#34;&gt;CC BY-NC-SA 4.0&lt;img style=&#34;height:22px!important;margin-left:3px;vertical-align:text-bottom;&#34; src=&#34;https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1&#34;&gt;&lt;img style=&#34;height:22px!important;margin-left:3px;vertical-align:text-bottom;&#34; src=&#34;https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1&#34;&gt;&lt;img style=&#34;height:22px!important;margin-left:3px;vertical-align:text-bottom;&#34; src=&#34;https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1&#34;&gt;&lt;img style=&#34;height:22px!important;margin-left:3px;vertical-align:text-bottom;&#34; src=&#34;https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 </description>
         </item>
         <item>
@@ -2220,6 +2458,14 @@ img {
 &lt;p&gt;But, as fire usages inventions, things could improve and become really complex.&lt;/p&gt;
 &lt;p&gt;Perhaps this night, James Wright could be relaxed, thinking about his ideas, when he takes a rest and sits around a bonfire waiting for enjoying his cooked food.&lt;/p&gt;
 </description>
+        </item>
+        <item>
+        <title>Why to improve? part 3. Base materials for Computer Engineers</title>
+        <link>https://jimenezgomez.org/posts/2023-10-14-why-to-improve-3-base-materials-for-computer-engineers/</link>
+        <pubDate>Sat, 14 Oct 2023 12:18:00 +0200</pubDate>
+        
+        <guid>https://jimenezgomez.org/posts/2023-10-14-why-to-improve-3-base-materials-for-computer-engineers/</guid>
+        <description></description>
         </item>
         <item>
         <title>Why to improve? part 2. Technologies and the look for the base knowledge</title>

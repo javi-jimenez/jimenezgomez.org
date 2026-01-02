@@ -422,6 +422,40 @@
         
             
                 
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#1-introducción-el-problema-del-efecto-amnesia">1. Introducción: El problema del &ldquo;Efecto Amnesia&rdquo;</a></li>
+    <li><a href="#2-estructura-del-estándar-mejorado-propuesta-v20">2. Estructura del Estándar Mejorado (Propuesta v2.0)</a>
+      <ol>
+        <li><a href="#a-el-manifiesto-de-tarea-task_state">A. El Manifiesto de Tarea (<code>task_state</code>)</a></li>
+        <li><a href="#b-diccionario-de-entidades-knowledge_graph">B. Diccionario de Entidades (<code>knowledge_graph</code>)</a></li>
+        <li><a href="#c-registro-de-decisiones-de-diseño-adr---architecture-decision-records">C. Registro de Decisiones de Diseño (ADR - Architecture Decision Records)</a></li>
+      </ol>
+    </li>
+    <li><a href="#3-mejoras-agregadas-aportación-de-la-ia">3. Mejoras Agregadas (Aportación de la IA)</a></li>
+    <li><a href="#4-implementación-práctica-ejemplo-de-archivo">4. Implementación Práctica (Ejemplo de Archivo)</a></li>
+    <li><a href="#5-conclusión">5. Conclusión</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
             
         
             
@@ -614,7 +648,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
                 <time class="article-time--reading">
-                    1 minute read
+                    4 minute read
                 </time>
             </div>
         
@@ -629,12 +663,97 @@ document.addEventListener('DOMContentLoaded', function() {
     <section class="article-content">
     
     
-    <p>Protocolo Unificado de Contexto para Asistentes (PUCA / ACS)
-Propuesta evolucionada del Assistant Context Standard para interoperabilidad entre asistentes.
-Jan 02, 2026
-4 minute read</p>
-<p>Para poder mejorar tu estándar y redactar ese artículo técnico, necesito conocer los detalles específicos de tu propuesta (ya que, aunque comprendo la lógica de un estándar de contexto, no puedo leer el contenido íntegro de tu web debido a restricciones de acceso a ciertos dominios privados o recientes).</p>
-<p>Sin embargo, basándome en la arquitectura ideal de un “Assistant Context Standard” y en las carencias que veo a diario en la interacción humano-IA, aquí tienes una propuesta evolucionada que integra tu visión con mejoras técnicas de última generación.</p>
+    <p>Para poder mejorar tu estándar y redactar ese artículo técnico, necesito conocer los detalles específicos de tu propuesta (ya que, aunque comprendo la lógica de un estándar de contexto, no puedo leer el contenido íntegro de tu web debido a restricciones de acceso a ciertos dominios privados o recientes).</p>
+<p>Sin embargo, basándome en la arquitectura ideal de un <strong>&ldquo;Assistant Context Standard&rdquo;</strong> y en las carencias que veo a diario en la interacción humano-IA, aquí tienes una propuesta evolucionada que integra tu visión con mejoras técnicas de última generación.</p>
+<hr>
+<h1 id="protocolo-unificado-de-contexto-para-asistentes-puca--acs">Protocolo Unificado de Contexto para Asistentes (PUCA / ACS)
+</h1><p><strong>Autor:</strong> Gemini (AI Model) / Basado en la propuesta original de <strong>JimenezGomez.org</strong>
+<strong>Fecha:</strong> 2 de enero de 2026
+<strong>Hora:</strong> 20:30 UTC
+<strong>Creditos de Propuesta Original:</strong> <a class="link" href="https://jimenezgomez.org/posts/2025-12-30-assistant-context-standard/"  target="_blank" rel="noopener"
+    >https://jimenezgomez.org/posts/2025-12-30-assistant-context-standard/</a></p>
+<hr>
+<h2 id="1-introducción-el-problema-del-efecto-amnesia">1. Introducción: El problema del &ldquo;Efecto Amnesia&rdquo;
+</h2><p>A pesar de la potencia de los LLMs, el trabajo en entornos locales y distribuidos sufre de una desconexión crítica: la IA no sabe qué ocurrió en la sesión anterior si el motor o la interfaz cambian. Proponemos un estándar basado en archivos de manifiesto situados en la raíz de los proyectos para garantizar la continuidad del flujo de trabajo.</p>
+<h2 id="2-estructura-del-estándar-mejorado-propuesta-v20">2. Estructura del Estándar Mejorado (Propuesta v2.0)
+</h2><p>Para que un estándar sea efectivo, debe ser ligero y legible tanto para humanos como para máquinas. Sugerimos la creación de un archivo <code>.ai-context.json</code> o <code>.assistant.md</code> con la siguiente estructura mejorada:</p>
+<h3 id="a-el-manifiesto-de-tarea-task_state">A. El Manifiesto de Tarea (<code>task_state</code>)
+</h3><p>No basta con decir qué se está haciendo; hay que definir el &ldquo;Estado de la Misión&rdquo;:</p>
+<ul>
+<li><strong>Current Goal:</strong> El objetivo macro actual.</li>
+<li><strong>Sub-tasks:</strong> Lista de verificación (Checklist) de tareas pendientes y completadas.</li>
+<li><strong>Blocking Issues:</strong> Impedimentos técnicos encontrados en sesiones previas.</li>
+</ul>
+<h3 id="b-diccionario-de-entidades-knowledge_graph">B. Diccionario de Entidades (<code>knowledge_graph</code>)
+</h3><p>Para evitar que la IA confunda términos en proyectos grandes:</p>
+<ul>
+<li><strong>Definitions:</strong> Glosario de términos específicos del negocio o del código.</li>
+<li><strong>Key Files:</strong> Mapeo de archivos críticos y su función (evita que la IA tenga que leer todo el repo para entender la arquitectura).</li>
+</ul>
+<h3 id="c-registro-de-decisiones-de-diseño-adr---architecture-decision-records">C. Registro de Decisiones de Diseño (ADR - Architecture Decision Records)
+</h3><p>El mayor fallo de contexto es cuando la IA sugiere cambiar algo que ya se decidió no hacer.</p>
+<ul>
+<li><strong>Decisions:</strong> &ldquo;Usamos UUID en lugar de ID incremental por X razón&rdquo;. Esto evita bucles de sugerencias erróneas.</li>
+</ul>
+<h2 id="3-mejoras-agregadas-aportación-de-la-ia">3. Mejoras Agregadas (Aportación de la IA)
+</h2><p>He añadido tres capas técnicas que tu estándar original puede adoptar para ser más robusto:</p>
+<ol>
+<li><strong>Capa de Jerarquía de Herencia:</strong> Si hay un archivo en <code>/root</code> y otro en <code>/root/module_A</code>, el asistente debe fusionarlos. El archivo de subdirectorio tiene prioridad sobre el global. Esto permite &ldquo;Contexto por Módulo&rdquo;.</li>
+<li><strong>Firma de Sesión (Hash de Estado):</strong>
+Incluir un <code>last_state_hash</code> que resuma el estado del código. Si el asistente detecta que el código cambió drásticamente desde la última lectura del contexto, debe alertar al usuario para actualizar el manifiesto.</li>
+<li><strong>Token Budget Management:</strong>
+Instrucción explícita de &ldquo;Priority Levels&rdquo;. Si el archivo de contexto crece mucho, el estándar define qué partes se pueden omitir (ej. el historial antiguo) y qué partes son obligatorias (el Goal actual).</li>
+</ol>
+<h2 id="4-implementación-práctica-ejemplo-de-archivo">4. Implementación Práctica (Ejemplo de Archivo)
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="c"># .ai-context.yaml</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">standard_version</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;2.0&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">project_name</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;Phoenix System&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">author_context</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;JimenezGomez&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">current_sprint</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="nt">task</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;Refactorización de la capa de autenticación&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="nt">status</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;In_Progress (60%)&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="nt">last_action</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;Migración de JWT a cookies HttpOnly terminada&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">rules</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span>- <span class="s2">&#34;No usar librerías externas para el manejo de fechas&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span>- <span class="s2">&#34;Mantener compatibilidad con Python 3.9&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">knowledge_base</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span>- <span class="s2">&#34;UserDB: Tabla principal en PostgreSQL&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span>- <span class="s2">&#34;Legacy_Auth: No tocar hasta el sprint 4&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">last_update</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;2026-01-02 20:25&#34;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="5-conclusión">5. Conclusión
+</h2><p>El <strong>Assistant Context Standard</strong> propuesto por JimenezGomez y refinado en este documento elimina la fricción de entrada en cada nueva sesión de IA. Al tratar el contexto como <strong>código persistente</strong> y no como <strong>memoria volátil</strong>, permitimos que el desarrollo asistido por IA sea verdaderamente profesional y escalable.</p>
+<hr>
+<p><strong>Nota del Asistente:</strong> He redactado este artículo integrando tu visión de persistencia en directorios con mi capacidad de estructuración técnica. Si quieres que profundice en algún punto técnico (como la integración con el protocolo MCP), dímelo.</p>
 
 </section>
 

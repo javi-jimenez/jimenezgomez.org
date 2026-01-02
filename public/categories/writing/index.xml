@@ -7,7 +7,33 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>es</language>
         <copyright>Francisco Javier Jiménez Gómez</copyright>
-        <lastBuildDate>Sun, 31 Mar 2024 20:52:00 +0200</lastBuildDate><atom:link href="https://jimenezgomez.org/categories/writing/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 14 May 2024 00:00:00 +0200</lastBuildDate><atom:link href="https://jimenezgomez.org/categories/writing/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>How to improve</title>
+        <link>https://jimenezgomez.org/posts/2024-05-14-how-to-improve/</link>
+        <pubDate>Tue, 14 May 2024 00:00:00 +0200</pubDate>
+        
+        <guid>https://jimenezgomez.org/posts/2024-05-14-how-to-improve/</guid>
+        <description>&lt;!-- preview image on social media --&gt;
+&lt;meta property=&#34;og:image&#34; content=&#34;/assets/img/a.jpg&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;https://jimenezgomez.org/a.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;How to improve&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;Acquire knowledge
+Practice
+Questions
+Time resources
+Certification as objective
+Practice after certification&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>Three layers abstraction</title>
         <link>https://jimenezgomez.org/posts/2024-03-31-three-layers-abstraction/</link>
         <pubDate>Sun, 31 Mar 2024 20:52:00 +0200</pubDate>
@@ -54,6 +80,23 @@
 &lt;p&gt;As you see, you can extend the concept to other domains.&lt;/p&gt;
 &lt;p&gt;This brief idea can be of help when we design or think about architecture.&lt;/p&gt;
 &lt;p&gt;Finally, to fit this idea into the Fractal Architecture, all three (or any you have) layers, must be considered as an atomic autonomous block with an input and an output, as a black box pattern.&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>VBD</title>
+        <link>https://jimenezgomez.org/posts/2024-03-31-vbd/</link>
+        <pubDate>Sun, 31 Mar 2024 20:52:00 +0200</pubDate>
+        
+        <guid>https://jimenezgomez.org/posts/2024-03-31-vbd/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Layers</title>
+        <link>https://jimenezgomez.org/posts/2024-03-31-layers/</link>
+        <pubDate>Sun, 31 Mar 2024 20:44:00 +0200</pubDate>
+        
+        <guid>https://jimenezgomez.org/posts/2024-03-31-layers/</guid>
+        <description>&lt;p xmlns:cc=&#34;http://creativecommons.org/ns#&#34; xmlns:dct=&#34;http://purl.org/dc/terms/&#34;&gt;&lt;a property=&#34;dct:title&#34; rel=&#34;cc:attributionURL&#34; href=&#34;https://github.com/javi-jimenez/posts/&#34;&gt;Posts&lt;/a&gt; by &lt;a rel=&#34;cc:attributionURL dct:creator&#34; property=&#34;cc:attributionName&#34; href=&#34;https://github.com/javi-jimenez&#34;&gt;Francisco Javier Jiménez Gómez&lt;/a&gt; is licensed under &lt;a href=&#34;https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1&#34; target=&#34;_blank&#34; rel=&#34;license noopener noreferrer&#34; style=&#34;display:inline-block;&#34;&gt;CC BY-NC-SA 4.0&lt;img style=&#34;height:22px!important;margin-left:3px;vertical-align:text-bottom;&#34; src=&#34;https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1&#34;&gt;&lt;img style=&#34;height:22px!important;margin-left:3px;vertical-align:text-bottom;&#34; src=&#34;https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1&#34;&gt;&lt;img style=&#34;height:22px!important;margin-left:3px;vertical-align:text-bottom;&#34; src=&#34;https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1&#34;&gt;&lt;img style=&#34;height:22px!important;margin-left:3px;vertical-align:text-bottom;&#34; src=&#34;https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 </description>
         </item>
         <item>
@@ -210,6 +253,14 @@ img {
 &lt;p&gt;But, as fire usages inventions, things could improve and become really complex.&lt;/p&gt;
 &lt;p&gt;Perhaps this night, James Wright could be relaxed, thinking about his ideas, when he takes a rest and sits around a bonfire waiting for enjoying his cooked food.&lt;/p&gt;
 </description>
+        </item>
+        <item>
+        <title>Why to improve? part 3. Base materials for Computer Engineers</title>
+        <link>https://jimenezgomez.org/posts/2023-10-14-why-to-improve-3-base-materials-for-computer-engineers/</link>
+        <pubDate>Sat, 14 Oct 2023 12:18:00 +0200</pubDate>
+        
+        <guid>https://jimenezgomez.org/posts/2023-10-14-why-to-improve-3-base-materials-for-computer-engineers/</guid>
+        <description></description>
         </item>
         <item>
         <title>Why to improve? part 2. Technologies and the look for the base knowledge</title>
