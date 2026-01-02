@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>ia on Francisco Javier Jiménez Gómez</title>
+        <link>https://jimenezgomez.org/tags/ia/</link>
+        <description>Recent content in ia on Francisco Javier Jiménez Gómez</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>es</language>
+        <copyright>Francisco Javier Jiménez Gómez</copyright>
+        <lastBuildDate>Tue, 30 Dec 2025 10:00:00 +0100</lastBuildDate><atom:link href="https://jimenezgomez.org/tags/ia/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Costo computacional y afinidad a la verdad: lenguajes formales vs ML (Borrador)</title>
+        <link>https://jimenezgomez.org/posts/2025-12-30-ia-formal-vs-ml-draft/</link>
+        <pubDate>Tue, 30 Dec 2025 10:00:00 +0100</pubDate>
+        
+        <guid>https://jimenezgomez.org/posts/2025-12-30-ia-formal-vs-ml-draft/</guid>
+        <description>&lt;p&gt;Este artículo compara, en modo borrador, el coste computacional y la afinidad a la verdad de dos enfoques para construir sistemas de IA: los métodos basados en lenguajes formales (especificación, verificación, síntesis) y las aproximaciones del aprendizaje automático (ML) dominantes en la actualidad.&lt;/p&gt;
+&lt;h2 id=&#34;introducción&#34;&gt;Introducción
+&lt;/h2&gt;&lt;p&gt;En las próximas generaciones veremos dos paradigmas competir y complementarse: los métodos formales (modelado lógico, verificación, síntesis por especificación) y las aproximaciones estadísticas actuales (redes neuronales, transformers). Aquí comparo su coste computacional esperado a corto y medio plazo, su escalabilidad y lo que llamo &amp;ldquo;afinidad a la verdad&amp;rdquo;: la propensión del sistema a producir salidas correctas, justificables y verificables.&lt;/p&gt;
+&lt;h2 id=&#34;definiciones-rápidas&#34;&gt;Definiciones rápidas
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Lenguajes formales: sistemas construidos sobre lógica matemática, gramáticas y autómatas; incluyen verificación por modelo, pruebas formales y síntesis programática.&lt;/li&gt;
+&lt;li&gt;Aprendizaje automático (ML): modelos estadísticos que aproximan funciones a partir de datos; sus garantías son probabilísticas.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;coste-computacional-según-horizonte-temporal&#34;&gt;Coste computacional según horizonte temporal
+&lt;/h2&gt;&lt;p&gt;Usamos tres ejes: coste de desarrollo inicial, coste de cómputo para entrenamiento/compilación/verificación y coste de mantenimiento/adaptación.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Corto plazo (1–3 años): ML domina tareas de lenguaje/visión; métodos formales permanecen en nichos críticos.&lt;/li&gt;
+&lt;li&gt;Medio plazo (3–7 años): mejoras en síntesis y verificación reducirán costes en dominios estructurados; ML mejora en eficiencia (distillation, sparsity, hardware dedicado).&lt;/li&gt;
+&lt;li&gt;Largo plazo (&amp;gt;7 años): aparecen híbridos (especificaciones que guían ML; ML que sugiere invariantes formales); la relación coste/beneficio dependerá mucho del hardware disponible.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;estimaciones-orientativas-resumen&#34;&gt;Estimaciones orientativas (resumen)
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Métodos formales: coste humano alto para especificar; verificación puede ser intensiva (desde 10^2 a 10^4 core-segundos para módulos no triviales, según abstracción y herramienta). Mantenimiento eficiente si hay buena modularidad.&lt;/li&gt;
+&lt;li&gt;ML: entrenamiento de grandes modelos modernos puede usar 10^6–10^9 GPU-segundos a escala máxima; inferencia optimizada baja el coste por petición.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;factores-que-cambian-la-relación-coste&#34;&gt;Factores que cambian la relación coste
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Hardware especializado (TPU, NPU, aceleradores de SMT) y avances algorítmicos pueden reducir costes en ambos bandos.&lt;/li&gt;
+&lt;li&gt;Datos vs. especificaciones: obtener datos etiquetados es costoso; especificar formalmente propiedades también lo es.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;afinidad-a-la-verdad-definición-y-comparación&#34;&gt;Afinidad a la verdad (definición y comparación)
+&lt;/h2&gt;&lt;p&gt;Definimos &amp;ldquo;afinidad a la verdad&amp;rdquo; como la capacidad del sistema para producir salidas que correspondan a hechos, invariantes o requisitos verificables, y para justificar por qué la salida es correcta.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Lenguajes formales: alta afinidad a la verdad cuando la especificación es correcta y completa; la verificación ofrece pruebas dentro del modelo formal. Riesgo: si la especificación es pobre, las garantías son engañosas (GIGO).&lt;/li&gt;
+&lt;li&gt;ML: afinidad probabilística dependiente de la calidad y cobertura de los datos; puede alucinar o mostrar sesgos; explicabilidad limitada salvo empleando técnicas XAI.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;híbridos&#34;&gt;Híbridos
+&lt;/h2&gt;&lt;p&gt;Los enfoques híbridos (ML que sugiere candidatos, métodos formales que verifican) ofrecen un equilibrio: reducción del espacio de búsqueda gracias a ML y garantía de corrección proporcionada por verificación. En muchos dominios este patrón ofrece mejor coste/verdad que cualquiera de los enfoques por separado.&lt;/p&gt;
+&lt;h2 id=&#34;aplicaciones-por-dominio&#34;&gt;Aplicaciones por dominio
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Críticos (médico, aeroespacial): preferible formal; coste mayor pero la afinidad a la verdad y trazabilidad justifican la inversión.&lt;/li&gt;
+&lt;li&gt;NLP creativo y generación: ML domina; garantías formales costosas y difíciles.&lt;/li&gt;
+&lt;li&gt;Sistemas mixtos (negocio+reglas): combinación práctica: reglas formales + ML para ranking.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;economía-práctica&#34;&gt;Economía práctica
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Proyecto formal crítico: mayor coste humano y herramientas; alta amortización si el fallo tiene coste elevado.&lt;/li&gt;
+&lt;li&gt;Proyecto ML grande: costes de infra (GPU/TPU), datos y operación; escalabilidad reduce coste por usuario.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;conclusión-borrador--revisión-pendiente&#34;&gt;Conclusión (BORRADOR — revisión pendiente)
+&lt;/h2&gt;&lt;p&gt;ADVERTENCIA: esta conclusión se deja como borrador por petición del autor. El equilibrio entre coste computacional y afinidad a la verdad no es una elección binaria; sin embargo, la afirmación de que &amp;ldquo;la convergencia será la norma&amp;rdquo; requiere matices: depende fuertemente del dominio, del coste social del error y de las mejoras en técnicas formales y de ML.&lt;/p&gt;
+&lt;p&gt;Puntos abiertos (para revisar):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;¿Qué peso dar a la verificación probabilística frente a la verificación clásica en sistemas mixtos?&lt;/li&gt;
+&lt;li&gt;¿Cómo cuantificar correctamente el coste humano de especificar sistemas complejos frente al coste de obtención y curación de datos? (necesario para ROI real)&lt;/li&gt;
+&lt;li&gt;¿Cuál es el horizonte realista para que la síntesis guiada por ML reduzca el coste de verificación en la práctica?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Indícame cómo quieres modificar la conclusión y la dejo actualizada. El post está marcado &lt;code&gt;draft: true&lt;/code&gt; y no lo subiré a git salvo que me lo indiques.&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

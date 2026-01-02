@@ -2,13 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://jimenezgomez.org/tags/ai/</loc>
+    <lastmod>2026-01-02T19:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://jimenezgomez.org/posts/</loc>
+    <lastmod>2026-01-02T19:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://jimenezgomez.org/tags/assistant-context/</loc>
+    <lastmod>2026-01-02T19:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://jimenezgomez.org/tags/gemini/</loc>
+    <lastmod>2026-01-02T19:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://jimenezgomez.org/posts/2026-01-02-assistant-context-standard/</loc>
+    <lastmod>2026-01-02T19:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://jimenezgomez.org/tags/standard/</loc>
+    <lastmod>2026-01-02T19:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://jimenezgomez.org/tags/</loc>
+    <lastmod>2026-01-02T19:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://jimenezgomez.org/posts/2025-12-30-assistant-context-standard/</loc>
+    <lastmod>2025-12-30T12:30:00+01:00</lastmod>
+  </url><url>
     <loc>https://jimenezgomez.org/privacy/</loc>
     <lastmod>2025-12-29T00:00:00+01:00</lastmod>
   </url><url>
     <loc>https://jimenezgomez.org/categories/architecture/</loc>
-    <lastmod>2025-12-22T14:30:00+02:00</lastmod>
-  </url><url>
-    <loc>https://jimenezgomez.org/posts/</loc>
     <lastmod>2025-12-22T14:30:00+02:00</lastmod>
   </url><url>
     <loc>https://jimenezgomez.org/categories/</loc>
@@ -30,9 +51,6 @@
     <lastmod>2025-12-22T14:30:00+02:00</lastmod>
   </url><url>
     <loc>https://jimenezgomez.org/tags/space/</loc>
-    <lastmod>2025-12-22T14:30:00+02:00</lastmod>
-  </url><url>
-    <loc>https://jimenezgomez.org/tags/</loc>
     <lastmod>2025-12-22T14:30:00+02:00</lastmod>
   </url><url>
     <loc>https://jimenezgomez.org/categories/technology/</loc>
@@ -202,8 +220,6 @@
   </url><url>
     <loc>https://jimenezgomez.org/posts/2023-05-17-internet-of-services/</loc>
     <lastmod>2023-05-17T21:56:26+02:00</lastmod>
-  </url><url>
-    <loc>https://jimenezgomez.org/posts/2025-12-30-assistant-context-standard/</loc>
   </url><url>
     <loc>https://jimenezgomez.org/search/</loc>
   </url>
