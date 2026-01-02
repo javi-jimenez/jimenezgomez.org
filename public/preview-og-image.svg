@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="100%" height="100%" fill="#0b1226" />
+  <g fill="#ffffff" font-family="Inter, Arial, Helvetica, sans-serif">
+    <text x="60" y="160" font-size="44" font-weight="700">Protocolo Unificado de Contexto para Asistentes</text>
+    <text x="60" y="220" font-size="28" opacity="0.9">PUCA / ACS — Assistant Context Standard</text>
+    <text x="60" y="320" font-size="20" opacity="0.75">Gemini · 2 de enero de 2026 · 20:30 UTC</text>
+  </g>
+  <g fill="#6ce0ff">
+    <rect x="60" y="400" width="480" height="8" rx="4" />
+  </g>
+  <g transform="translate(900,80)" fill="#8aa0ff">
+    <rect x="0" y="0" width="220" height="140" rx="8" fill="#111827" opacity="0.12" />
+    <text x="12" y="36" font-family="Inter, Arial, Helvetica, sans-serif" font-size="18" fill="#cfe3ff">Assistant Context</text>
+  </g>
+</svg>
