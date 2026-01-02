@@ -1,0 +1,27 @@
+name: Content reminder
+
+on:
+  schedule:
+    # weekly on Monday 10:00 UTC (customize as needed)
+    - cron: '0 10 * * MON'
+  workflow_dispatch: {}
+
+jobs:
+  check-drafts:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Run draft checker
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          REMINDER_DAYS: '30' # drafts older than this (days) are flagged
+        run: |
+          python3 scripts/check_posts_and_create_issue.py

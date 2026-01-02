@@ -7,7 +7,21 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>es</language>
         <copyright>Francisco Javier Jiménez Gómez</copyright>
-        <lastBuildDate>Tue, 30 Dec 2025 12:30:00 +0100</lastBuildDate><atom:link href="https://jimenezgomez.org/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 02 Jan 2026 19:30:00 +0000</lastBuildDate><atom:link href="https://jimenezgomez.org/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Protocolo Unificado de Contexto para Asistentes (PUCA / ACS)</title>
+        <link>https://jimenezgomez.org/posts/2026-01-02-assistant-context-standard/</link>
+        <pubDate>Fri, 02 Jan 2026 19:30:00 +0000</pubDate>
+        
+        <guid>https://jimenezgomez.org/posts/2026-01-02-assistant-context-standard/</guid>
+        <description>&lt;p&gt;Protocolo Unificado de Contexto para Asistentes (PUCA / ACS)
+Propuesta evolucionada del Assistant Context Standard para interoperabilidad entre asistentes.
+Jan 02, 2026
+4 minute read&lt;/p&gt;
+&lt;p&gt;Para poder mejorar tu estándar y redactar ese artículo técnico, necesito conocer los detalles específicos de tu propuesta (ya que, aunque comprendo la lógica de un estándar de contexto, no puedo leer el contenido íntegro de tu web debido a restricciones de acceso a ciertos dominios privados o recientes).&lt;/p&gt;
+&lt;p&gt;Sin embargo, basándome en la arquitectura ideal de un “Assistant Context Standard” y en las carencias que veo a diario en la interacción humano-IA, aquí tienes una propuesta evolucionada que integra tu visión con mejoras técnicas de última generación.&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>Propuesta: Estándar ASSISTANT_CONTEXT para continuidad entre sesiones</title>
         <link>https://jimenezgomez.org/posts/2025-12-30-assistant-context-standard/</link>
         <pubDate>Tue, 30 Dec 2025 12:30:00 +0100</pubDate>
@@ -68,7 +82,7 @@
         <pubDate>Mon, 22 Dec 2025 14:30:00 +0200</pubDate>
         
         <guid>https://jimenezgomez.org/posts/2025-12-22-dns-universal-ddnsc/</guid>
-        <description>&lt;img src="https://jimenezgomez.org/posts/2025-12-22-dns-universal-ddnsc/dns-universe-architecture.svg" alt="Featured image of post DNS Universal: De lo Planetario a lo Galáctico" /&gt;&lt;h2 id=&#34;introducción-el-problema-del-direccionamiento-universal&#34;&gt;Introducción: El Problema del Direccionamiento Universal
+        <description>&lt;h2 id=&#34;introducción-el-problema-del-direccionamiento-universal&#34;&gt;Introducción: El Problema del Direccionamiento Universal
 &lt;/h2&gt;&lt;p&gt;El &lt;strong&gt;Domain Name System (DNS)&lt;/strong&gt; actual funciona bajo supuestos terrestres: latencias medidas en milisegundos, infraestructura física concentrada, y una autoridad central (ICANN). Pero ¿qué ocurre cuando necesitamos direccionar servicios en una colonia marciana, en estaciones orbitales, o incluso entre sistemas estelares?&lt;/p&gt;
 &lt;p&gt;El proyecto &lt;a class=&#34;link&#34; href=&#34;https://github.com/javi-jimenez/ddnsc&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;DDNSC (Distributed DNS Cache)&lt;/a&gt; proporciona los cimientos técnicos para resolver este problema mediante &lt;strong&gt;publicación descentralizada de servicios&lt;/strong&gt; usando protocolos estándar (RFC 2136, Avahi/Zeroconf). Este artículo propone una extensión conceptual hacia escalas planetarias, galácticas y universales, integrando tecnologías Web 3.0 y protocolos emergentes.&lt;/p&gt;
@@ -855,7 +869,7 @@ Implementar DNSSEC con Ed25519 (post-quantum) sobre blockchain Ethereum como ra�
         <pubDate>Thu, 18 Dec 2025 09:30:00 +0200</pubDate>
         
         <guid>https://jimenezgomez.org/posts/2025-12-18-laia-brand-identity/</guid>
-        <description>&lt;img src="https://jimenezgomez.org/posts/2025-12-18-laia-brand-identity/laia-brand-showcase.svg" alt="Featured image of post Identidad Visual de Laia: Diseñando la Imagen de la IA Ética" /&gt;&lt;p&gt;&lt;img src=&#34;https://jimenezgomez.org/posts/2025-12-18-laia-brand-identity/laia-brand-hero.svg&#34;
+        <description>&lt;p&gt;&lt;img src=&#34;https://jimenezgomez.org/posts/2025-12-18-laia-brand-identity/laia-brand-hero.svg&#34;
 	
 	
 	
@@ -1375,7 +1389,7 @@ Implementar DNSSEC con Ed25519 (post-quantum) sobre blockchain Ethereum como ra�
         <pubDate>Thu, 18 Dec 2025 08:00:00 +0200</pubDate>
         
         <guid>https://jimenezgomez.org/posts/2025-12-18-laia-intelligent-agent/</guid>
-        <description>&lt;img src="https://jimenezgomez.org/posts/2025-12-18-laia-intelligent-agent/laia-thumbnail.svg" alt="Featured image of post Laia: Inteligencia Artificial Ética - Un Proyecto de Investigación" /&gt;&lt;p&gt;&lt;img src=&#34;https://jimenezgomez.org/posts/2025-12-18-laia-intelligent-agent/laia-header.svg&#34;
+        <description>&lt;p&gt;&lt;img src=&#34;https://jimenezgomez.org/posts/2025-12-18-laia-intelligent-agent/laia-header.svg&#34;
 	
 	
 	
@@ -1967,7 +1981,7 @@ img {
         <pubDate>Thu, 01 Feb 2024 09:00:00 +0100</pubDate>
         
         <guid>https://jimenezgomez.org/posts/2024-02-01-deb-get-winget-linux/</guid>
-        <description>&lt;img src="https://jimenezgomez.org/posts/2024-02-01-deb-get-winget-linux/image.svg" alt="Featured image of post deb-get: El &#34;winget&#34; para Linux que necesitas para evitar los problemas de Snap" /&gt;&lt;h1 id=&#34;deb-get-el-winget-para-linux-que-necesitas-para-evitar-los-problemas-de-snap&#34;&gt;deb-get: El &amp;ldquo;winget&amp;rdquo; para Linux que necesitas para evitar los problemas de Snap
+        <description>&lt;h1 id=&#34;deb-get-el-winget-para-linux-que-necesitas-para-evitar-los-problemas-de-snap&#34;&gt;deb-get: El &amp;ldquo;winget&amp;rdquo; para Linux que necesitas para evitar los problemas de Snap
 &lt;/h1&gt;&lt;p&gt;Autor: DeepSeek AI | Revisado y editado por: Enrique Jiménez Gómez
 Publicado en: jimenezgomez.org | Versión: 1.0 | Fecha: Febrero 2024&lt;/p&gt;
 &lt;hr&gt;
