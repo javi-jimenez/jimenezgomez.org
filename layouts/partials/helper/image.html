@@ -29,11 +29,17 @@
 
 {{ else }}
     {{/* Fallback: if the page has resources of type image, use the first one */}}
-    {{ $imgs := .Resources.ByType "image" }}
-    {{ if $imgs }}
-        {{ if gt (len $imgs) 0 }}
-            {{ $first := index $imgs 0 }}
-            {{ $result = merge $result (dict "exists" true "permalink" $first.RelPermalink "resource" $first) }}
+    {{/* Prefer a generated thumbnail if present */}}
+    {{ $thumb := .Resources.GetMatch "og-image-600x315.*" }}
+    {{ if $thumb }}
+        {{ $result = merge $result (dict "exists" true "permalink" $thumb.RelPermalink "resource" $thumb) }}
+    {{ else }}
+        {{ $imgs := .Resources.ByType "image" }}
+        {{ if $imgs }}
+            {{ if gt (len $imgs) 0 }}
+                {{ $first := index $imgs 0 }}
+                {{ $result = merge $result (dict "exists" true "permalink" $first.RelPermalink "resource" $first) }}
+            {{ end }}
         {{ end }}
     {{ end }}
     {{ if not $result.exists }}
