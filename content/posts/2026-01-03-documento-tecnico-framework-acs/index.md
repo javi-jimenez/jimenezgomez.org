@@ -1,5 +1,5 @@
 ---
-title: "Documento Técnico: Framework ACS (Assistant Context Standard)"
+title: "Framework ACS (Assistant Context Standard)"
 date: 2026-01-03T09:05:00+01:00
 draft: false
 layout: post
