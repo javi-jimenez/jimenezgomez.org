@@ -7,7 +7,51 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>es</language>
         <copyright>Francisco Javier Jiménez Gómez</copyright>
-        <lastBuildDate>Sat, 03 Jan 2026 07:30:00 +0100</lastBuildDate><atom:link href="https://jimenezgomez.org/posts/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 03 Jan 2026 09:05:00 +0100</lastBuildDate><atom:link href="https://jimenezgomez.org/posts/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Documento Técnico: Framework ACS (Assistant Context Standard)</title>
+        <link>https://jimenezgomez.org/posts/2026-01-03-documento-tecnico-framework-acs/</link>
+        <pubDate>Sat, 03 Jan 2026 09:05:00 +0100</pubDate>
+        
+        <guid>https://jimenezgomez.org/posts/2026-01-03-documento-tecnico-framework-acs/</guid>
+        <description>&lt;h2 id=&#34;motivación&#34;&gt;Motivación
+&lt;/h2&gt;&lt;p&gt;Las IAs actuales operan en silos de memoria efímeros (ventanas de contexto). Esto genera &amp;ldquo;alucinaciones&amp;rdquo; por pérdida de datos y falta de trazabilidad en proyectos complejos. El Framework ACS nace para dotar a la IA de una memoria externa estructurada, separando la verdad del usuario del razonamiento de la máquina.&lt;/p&gt;
+&lt;h2 id=&#34;1-arquitectura-de-segmentación-lógica&#34;&gt;1. Arquitectura de Segmentación Lógica
+&lt;/h2&gt;&lt;p&gt;El sistema se basa en la tripartición de la información:&lt;/p&gt;
+&lt;h3 id=&#34;a-capa-de-axiomas-documento-de-control&#34;&gt;A. Capa de Axiomas (Documento de Control)
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Definición: Hechos inmutables y reglas de control dictadas por el Usuario.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Función: Actúa como el &amp;ldquo;ADN&amp;rdquo; del contexto. Si no está en el Axioma, no existe para la IA.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Protocolo: Incluye las bases generales (BH-GEN) y las específicas de investigación (BH-INVESTIGACION).&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;b-capa-de-proceso-la-ia&#34;&gt;B. Capa de Proceso (La IA)
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Definición: Motor de razonamiento lógico.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Función: Aplica los Axiomas para resolver problemas sin contaminar la base de datos original.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;c-capa-de-inferenciashipótesis-documento-de-resultados&#34;&gt;C. Capa de Inferencias/Hipótesis (Documento de Resultados)
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Definición: El &amp;ldquo;output&amp;rdquo; del sistema.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Función: Registro de análisis, hallazgos y sugerencias. Estos datos son provisionales hasta que el usuario los valide y los traslade a la Capa de Axiomas.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;Este documento plantea una base minimalista para implementar ACS en flujos que requieran trazabilidad, reproducibilidad y separación explícita entre hechos (Axiomas) y razonamientos provisionales (Inferencias). Las implementaciones concretas pueden añadir metadatos de versión, firmas de autor y mecanimos de validación para transitar inferencias a axiomas de forma controlada.&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>Domando el Caos de la IA</title>
         <link>https://jimenezgomez.org/posts/2026-01-03-domando-el-caos-de-la-ia/</link>
         <pubDate>Sat, 03 Jan 2026 07:30:00 +0100</pubDate>
