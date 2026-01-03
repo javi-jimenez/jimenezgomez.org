@@ -1,7 +1,7 @@
----
-title: "Desarrollo con LaIA"
+---title: "Desarrollo con LaIA"
 date: 2025-02-25
 layout: post
+image: "og-image.svg"
 ---
 
 Recientemente recibí una propuesta para dedicar mi tiempo a un trabajo.

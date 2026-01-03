@@ -1,10 +1,10 @@
----
-title: "How to improve"
+---title: "How to improve"
 date: 2024-05-14T00:00:00+02:00
 draft: true
 categories: [writing, software, architecture, layer]
 tags: [howto, improve, knowledge]
 layout: post
+image: "og-image.svg"
 ---
 
 <!-- preview image on social media -->

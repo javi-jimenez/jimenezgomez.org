@@ -1,10 +1,10 @@
----
-title: "Computer Science base technologies, part II"
+---title: "Computer Science base technologies, part II"
 date: 2023-10-19T20:38:00+02:00
 draft: false
 categories: [writing, book, technology]
 tags: [technology, knowledge, base, core, uml, flowchart]
 layout: post
+image: "og-image.svg"
 ---
 
  ![Low code platform example for reading DHT22 data using an API](low-code-example-app-for-reading-dht22-data-from-api.png)

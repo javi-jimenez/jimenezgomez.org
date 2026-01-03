@@ -1,10 +1,10 @@
----
-title: "Three layers abstraction"
+---title: "Three layers abstraction"
 date: 2024-03-31 20:52:00 +02:00
 draft: false
 categories: [writing, software, architecture]
 tags: [layer, fractal]
 layout: post
+image: "og-image.svg"
 ---
 
 ![Three Layers as Leafs](three-layers-as-leafs-gettyimages-1000px-157287379-2048x2048.jpg)

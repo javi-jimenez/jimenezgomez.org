@@ -1,7 +1,7 @@
----
-title: "Minimal blog"
+---title: "Minimal blog"
 date: 2025-03-17
 layout: post
+image: "og-image.svg"
 ---
 
 ## Minimal blog

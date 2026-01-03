@@ -1,8 +1,8 @@
----
-title: "Why to improve?"
+---title: "Why to improve?"
 date: 2023-05-17T23:10:00+02:00
 draft: false
 layout: post
+image: "og-image.svg"
 ---
 
 ![Equations](equations.png)

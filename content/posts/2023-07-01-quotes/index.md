@@ -1,10 +1,10 @@
----
-title: "Quotes"
+---title: "Quotes"
 date: 2023-07-01 05:33:00 +02:00
 draft: false
 categories: [writing, meta]
 tags: [quote]
 layout: post
+image: "og-image.svg"
 ---
 
 > History is written,
