@@ -1,8 +1,8 @@
----
-title: "Network Operative System"
+---title: "Network Operative System"
 date: 2023-05-17T23:10:00+02:00
 draft: false
 layout: post
+image: "og-image.svg"
 ---
 
 Document about the idea of the need of a Network Operative System, the idea was spreaded around 2013.

@@ -1,8 +1,8 @@
----
-title: "Apps"
+---title: "Apps"
 date: 2025-05-16
 layout: post
 draft: true
+image: "og-image.svg"
 ---
 
 <style>

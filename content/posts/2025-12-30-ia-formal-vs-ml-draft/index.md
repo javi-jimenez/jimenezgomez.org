@@ -1,9 +1,9 @@
----
-title: "Costo computacional y afinidad a la verdad: lenguajes formales vs ML (Borrador)"
+---title: "Costo computacional y afinidad a la verdad: lenguajes formales vs ML (Borrador)"
 date: 2025-12-30T10:00:00+01:00
 draft: true
 layout: post
 tags: [ia, formal-methods, machine-learning, research]
+image: "og-image.svg"
 ---
 
 Este artículo compara, en modo borrador, el coste computacional y la afinidad a la verdad de dos enfoques para construir sistemas de IA: los métodos basados en lenguajes formales (especificación, verificación, síntesis) y las aproximaciones del aprendizaje automático (ML) dominantes en la actualidad.

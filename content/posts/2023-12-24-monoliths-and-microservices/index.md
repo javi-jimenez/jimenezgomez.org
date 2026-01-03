@@ -1,10 +1,10 @@
----
-title: "Monoliths and microservices"
+---title: "Monoliths and microservices"
 date: 2023-12-24T00:00:00+02:00
 draft: false
 categories: [writing, software, architecture, layer]
 tags: [monolith, microservice]
 layout: post
+image: "og-image.svg"
 ---
 
 <!-- preview image on social media -->

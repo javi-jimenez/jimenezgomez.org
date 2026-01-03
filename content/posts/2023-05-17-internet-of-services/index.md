@@ -1,8 +1,8 @@
----
-title: "Internet of Services"
+---title: "Internet of Services"
 date: 2023-05-17T21:56:26+02:00
 layout: post
 #image: "cloud-services-boxes-1000x538.jpg"
+image: "og-image.svg"
 ---
 
 Document about an idea from around 2013 of Internet being a group of services, as alternative for seeing them as a group of things.
