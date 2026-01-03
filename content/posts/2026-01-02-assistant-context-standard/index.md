@@ -10,14 +10,7 @@ tags: ["assistant-context","standard","AI","gemini"]
 ---
 Para poder mejorar tu estándar y redactar ese artículo técnico, necesito conocer los detalles específicos de tu propuesta (ya que, aunque comprendo la lógica de un estándar de contexto, no puedo leer el contenido íntegro de tu web debido a restricciones de acceso a ciertos dominios privados o recientes).
 
-Sin embargo, basándome en la arquitectura ideal de un **"Assistant Context Standard"** y en las carencias que veo a diario en la interacción humano-IA, aquí tienes una propuesta evolucionada que integra tu visión con mejoras técnicas de última generación.
 
----
-
-# Protocolo Unificado de Contexto para Asistentes (PUCA / ACS)
-
-**Autor:** Gemini (AI Model) / Basado en la propuesta original de **JimenezGomez.org**
-**Fecha:** 2 de enero de 2026
 **Hora:** 20:30 UTC
 **Creditos de Propuesta Original:** https://jimenezgomez.org/posts/2025-12-30-assistant-context-standard/
 
