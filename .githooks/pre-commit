@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+set -euo pipefail
+# Pre-commit hook: for staged posts (content/posts/**/index.md) generate og-image.svg and thumbnails,
+# then add generated files to the commit.
+
+STAGED_INDEXS=$(git diff --cached --name-only --diff-filter=ACM | grep -E '^content/posts/.+/index.md' || true)
+if [ -z "$STAGED_INDEXS" ]; then
+  exit 0
+fi
+
+echo "pre-commit: generating OG + thumbnails for staged posts..."
+for md in $STAGED_INDEXS; do
+  dir=$(dirname "$md")
+  echo " - $dir"
+  # ensure og-image.svg exists and frontmatter updated
+  python3 tools/generate-og-image.py "$dir" --set-frontmatter || true
+done
+
+# generate thumbnails only for posts that have og-image.svg
+for md in $STAGED_INDEXS; do
+  dir=$(dirname "$md")
+  if [ -f "$dir/og-image.svg" ]; then
+    ./tools/generate-og-thumbnails.sh || true
+    # add generated files
+    git add "$dir/og-image.svg" || true
+    git add "$dir/og-image-1200x630.png" || true
+    git add "$dir/og-image-600x315.png" || true
+  fi
+done
+
+echo "pre-commit: done."
+exit 0
