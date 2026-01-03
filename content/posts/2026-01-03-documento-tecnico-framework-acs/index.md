@@ -3,7 +3,7 @@ title: "Documento Técnico: Framework ACS (Assistant Context Standard)"
 date: 2026-01-03T11:00:00+01:00
 draft: false
 layout: post
-image: "/og/acs-og-image.svg"
+image: "og-image.svg"
 categories: [technology, arquitectura]
 ---
 
