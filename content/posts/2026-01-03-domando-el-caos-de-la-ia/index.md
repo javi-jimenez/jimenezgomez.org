@@ -14,6 +14,8 @@ Abstract: El fin de la amnesia artificial
 
 En un mundo saturado de información, las Inteligencias Artificiales sufren de un mal común: la falta de memoria persistente y estructurada. Presentamos el Framework ACS (Assistant Context Standard), una metodología innovadora que separa los hechos de las suposiciones, permitiendo a empresas e investigadores convertir a la IA en un socio estratégico con memoria infinita y razonamiento trazable.
 
+![Imagen ilustrativa del artículo](imagen-ilustrativa-documento-tecnico-acs-blog-jimenezgomez.org.jpg)
+
 ## La paradoja del genio olvidadizo
 
 Imagine contratar al consultor más brillante del mundo, pero con una condición: cada mañana, al entrar en su oficina, olvida quién es usted y en qué trabajaron ayer. Esa es la realidad de las IAs actuales. El Framework ACS soluciona esto mediante la creación de un "Cerebro Externo".
