@@ -8,9 +8,6 @@ categories: [technology, arquitectura]
 ---
 
 ## Motivación
-
-![Imagen ilustrativa](imagen-ilustrativa-documento-tecnico-acs-blog-jimenezgomez.org.jpg)
-
 Las IAs actuales operan en silos de memoria efímeros (ventanas de contexto). Esto genera "alucinaciones" por pérdida de datos y falta de trazabilidad en proyectos complejos. El Framework ACS nace para dotar a la IA de una memoria externa estructurada, separando la verdad del usuario del razonamiento de la máquina.
 
 ## 1. Arquitectura de Segmentación Lógica
