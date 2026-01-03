@@ -2,10 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://jimenezgomez.org/tags/ai/</loc>
-    <lastmod>2026-01-02T19:30:00+00:00</lastmod>
+    <loc>https://jimenezgomez.org/tags/acs/</loc>
+    <lastmod>2026-01-03T07:30:00+01:00</lastmod>
   </url><url>
     <loc>https://jimenezgomez.org/posts/</loc>
+    <lastmod>2026-01-03T07:30:00+01:00</lastmod>
+  </url><url>
+    <loc>https://jimenezgomez.org/tags/divulgaci%C3%B3n/</loc>
+    <lastmod>2026-01-03T07:30:00+01:00</lastmod>
+  </url><url>
+    <loc>https://jimenezgomez.org/posts/2026-01-03-domando-el-caos-de-la-ia/</loc>
+    <lastmod>2026-01-03T07:30:00+01:00</lastmod>
+  </url><url>
+    <loc>https://jimenezgomez.org/tags/framework/</loc>
+    <lastmod>2026-01-03T07:30:00+01:00</lastmod>
+  </url><url>
+    <loc>https://jimenezgomez.org/tags/ia/</loc>
+    <lastmod>2026-01-03T07:30:00+01:00</lastmod>
+  </url><url>
+    <loc>https://jimenezgomez.org/tags/</loc>
+    <lastmod>2026-01-03T07:30:00+01:00</lastmod>
+  </url><url>
+    <loc>https://jimenezgomez.org/tags/ai/</loc>
     <lastmod>2026-01-02T19:30:00+00:00</lastmod>
   </url><url>
     <loc>https://jimenezgomez.org/tags/assistant-context/</loc>
@@ -20,9 +38,6 @@
     <loc>https://jimenezgomez.org/tags/standard/</loc>
     <lastmod>2026-01-02T19:30:00+00:00</lastmod>
   </url><url>
-    <loc>https://jimenezgomez.org/tags/</loc>
-    <lastmod>2026-01-02T19:30:00+00:00</lastmod>
-  </url><url>
     <loc>https://jimenezgomez.org/posts/2025-12-30-assistant-context-standard/</loc>
     <lastmod>2025-12-30T12:30:00+01:00</lastmod>
   </url><url>
@@ -30,9 +45,6 @@
     <lastmod>2025-12-30T10:00:00+01:00</lastmod>
   </url><url>
     <loc>https://jimenezgomez.org/tags/formal-methods/</loc>
-    <lastmod>2025-12-30T10:00:00+01:00</lastmod>
-  </url><url>
-    <loc>https://jimenezgomez.org/tags/ia/</loc>
     <lastmod>2025-12-30T10:00:00+01:00</lastmod>
   </url><url>
     <loc>https://jimenezgomez.org/tags/machine-learning/</loc>

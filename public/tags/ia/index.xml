@@ -7,7 +7,35 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>es</language>
         <copyright>Francisco Javier Jiménez Gómez</copyright>
-        <lastBuildDate>Tue, 30 Dec 2025 10:00:00 +0100</lastBuildDate><atom:link href="https://jimenezgomez.org/tags/ia/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 03 Jan 2026 07:30:00 +0100</lastBuildDate><atom:link href="https://jimenezgomez.org/tags/ia/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Domando el Caos de la IA</title>
+        <link>https://jimenezgomez.org/posts/2026-01-03-domando-el-caos-de-la-ia/</link>
+        <pubDate>Sat, 03 Jan 2026 07:30:00 +0100</pubDate>
+        
+        <guid>https://jimenezgomez.org/posts/2026-01-03-domando-el-caos-de-la-ia/</guid>
+        <description>&lt;p&gt;📝 Artículo de Divulgación: &amp;ldquo;Domando el Caos de la IA&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;Abstract: El fin de la amnesia artificial&lt;/p&gt;
+&lt;p&gt;En un mundo saturado de información, las Inteligencias Artificiales sufren de un mal común: la falta de memoria persistente y estructurada. Presentamos el Framework ACS (Assistant Context Standard), una metodología innovadora que separa los hechos de las suposiciones, permitiendo a empresas e investigadores convertir a la IA en un socio estratégico con memoria infinita y razonamiento trazable.&lt;/p&gt;
+&lt;h2 id=&#34;la-paradoja-del-genio-olvidadizo&#34;&gt;La paradoja del genio olvidadizo
+&lt;/h2&gt;&lt;p&gt;Imagine contratar al consultor más brillante del mundo, pero con una condición: cada mañana, al entrar en su oficina, olvida quién es usted y en qué trabajaron ayer. Esa es la realidad de las IAs actuales. El Framework ACS soluciona esto mediante la creación de un &amp;ldquo;Cerebro Externo&amp;rdquo;.&lt;/p&gt;
+&lt;h2 id=&#34;de-la-especulación-a-la-lógica-axiomas-vs-inferencias&#34;&gt;De la especulación a la lógica: Axiomas vs. Inferencias
+&lt;/h2&gt;&lt;p&gt;La mayoría de los usuarios &amp;ldquo;hablan&amp;rdquo; con la IA esperando que recuerde todo. Nosotros proponemos un cambio de paradigma basado en dos pilares:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;El Axioma (La Verdad):&lt;/strong&gt; Son los datos que usted, como humano, define. &amp;ldquo;Valencia está en España&amp;rdquo;, &amp;ldquo;Nuestro presupuesto es X&amp;rdquo;. La IA tiene prohibido dudar de esto.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;La Inferencia (El Hallazgo):&lt;/strong&gt; Es lo que la IA deduce. &amp;ldquo;Si el presupuesto es X y el precio sube, tenemos un riesgo&amp;rdquo;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Al separar estos dos mundos, eliminamos el riesgo de que la IA invente hechos. Creamos un sistema donde el humano dicta la realidad y la máquina procesa las posibilidades.&lt;/p&gt;
+&lt;h2 id=&#34;aplicaciones-de-la-geopolítica-a-la-inversión&#34;&gt;Aplicaciones: De la Geopolítica a la Inversión
+&lt;/h2&gt;&lt;p&gt;Este sistema permite monitorear desde la logística en Valencia hasta el riesgo de conflicto global (WWIII) con una precisión matemática. Para un inversor, esto significa trazabilidad total: usted sabe exactamente por qué la IA tomó una decisión, basándose en qué axioma específico.&lt;/p&gt;
+&lt;h2 id=&#34;conclusión&#34;&gt;Conclusión
+&lt;/h2&gt;&lt;p&gt;El Framework ACS no es solo una forma de usar IA; es un estándar de gestión del conocimiento. Es la herramienta que permite pasar de &amp;ldquo;jugar&amp;rdquo; con la IA a &amp;ldquo;gobernar&amp;rdquo; la información para la toma de decisiones críticas en un mundo volátil.&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>Costo computacional y afinidad a la verdad: lenguajes formales vs ML (Borrador)</title>
         <link>https://jimenezgomez.org/posts/2025-12-30-ia-formal-vs-ml-draft/</link>
         <pubDate>Tue, 30 Dec 2025 10:00:00 +0100</pubDate>

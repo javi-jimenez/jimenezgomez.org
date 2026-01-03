@@ -7,7 +7,39 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>es</language>
         <copyright>Francisco Javier Jiménez Gómez</copyright>
-        <lastBuildDate>Fri, 02 Jan 2026 19:30:00 +0000</lastBuildDate><atom:link href="https://jimenezgomez.org/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 03 Jan 2026 07:30:00 +0100</lastBuildDate><atom:link href="https://jimenezgomez.org/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>ACS</title>
+        <link>https://jimenezgomez.org/tags/acs/</link>
+        <pubDate>Sat, 03 Jan 2026 07:30:00 +0100</pubDate>
+        
+        <guid>https://jimenezgomez.org/tags/acs/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>divulgación</title>
+        <link>https://jimenezgomez.org/tags/divulgaci%C3%B3n/</link>
+        <pubDate>Sat, 03 Jan 2026 07:30:00 +0100</pubDate>
+        
+        <guid>https://jimenezgomez.org/tags/divulgaci%C3%B3n/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>framework</title>
+        <link>https://jimenezgomez.org/tags/framework/</link>
+        <pubDate>Sat, 03 Jan 2026 07:30:00 +0100</pubDate>
+        
+        <guid>https://jimenezgomez.org/tags/framework/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>ia</title>
+        <link>https://jimenezgomez.org/tags/ia/</link>
+        <pubDate>Sat, 03 Jan 2026 07:30:00 +0100</pubDate>
+        
+        <guid>https://jimenezgomez.org/tags/ia/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>AI</title>
         <link>https://jimenezgomez.org/tags/ai/</link>
         <pubDate>Fri, 02 Jan 2026 19:30:00 +0000</pubDate>
@@ -45,14 +77,6 @@
         <pubDate>Tue, 30 Dec 2025 10:00:00 +0100</pubDate>
         
         <guid>https://jimenezgomez.org/tags/formal-methods/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>ia</title>
-        <link>https://jimenezgomez.org/tags/ia/</link>
-        <pubDate>Tue, 30 Dec 2025 10:00:00 +0100</pubDate>
-        
-        <guid>https://jimenezgomez.org/tags/ia/</guid>
         <description></description>
         </item>
         <item>
