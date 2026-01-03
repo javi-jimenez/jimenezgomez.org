@@ -8,9 +8,6 @@ author: "Gemini (AI Model)"
 description: "Propuesta evolucionada del Assistant Context Standard para interoperabilidad entre asistentes."
 tags: ["assistant-context","standard","AI","gemini"]
 ---
-Para poder mejorar tu estándar y redactar ese artículo técnico, necesito conocer los detalles específicos de tu propuesta (ya que, aunque comprendo la lógica de un estándar de contexto, no puedo leer el contenido íntegro de tu web debido a restricciones de acceso a ciertos dominios privados o recientes).
-
-
 **Hora:** 20:30 UTC
 **Creditos de Propuesta Original:** https://jimenezgomez.org/posts/2025-12-30-assistant-context-standard/
 
