@@ -21,3 +21,9 @@ Automation suggestions
 
 - Add a pre-commit hook that runs the script for newly created post folders.
 - Add a CI check that verifies every post has an `image` frontmatter value.
+
+Thumbnails
+
+- A helper `tools/generate-og-thumbnails.sh` is included to rasterize `og-image.svg` into PNG
+	thumbnails (`og-image-1200x630.png`, `og-image-600x315.png`). It uses ImageMagick `convert`,
+	`rsvg-convert` or `cairosvg` if available. There's a Makefile target `make gen-og-png`.
