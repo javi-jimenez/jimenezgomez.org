@@ -38,3 +38,13 @@ Suggested next steps I can do for you:
 - Add a small README or usage notes for contributors.
 
 Saved session snapshot: This file records the essential state and commands to reproduce the work done by the assistant.
+
+Assistant context update rule:
+- When the user asks the assistant to "actualiza el fichero de contexto" or to "update the context file", the assistant MUST update `.assistant/CONTEXT.md` with the current project state, including:
+   - brief summary of recent changes
+   - list of important files and scripts added or modified
+   - commands to reproduce any generated assets (OG images, thumbnails)
+   - any notes about environment requirements (Inkscape, librsvg, fonts)
+   - a short reminder line: "REMEMBER: ask the assistant to update the context file when you want the session state saved"
+
+This file is the canonical place for session context; other assistants or automation should read it to resume work.
