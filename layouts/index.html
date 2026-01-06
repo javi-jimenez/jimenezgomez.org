@@ -1,3 +1,46 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{{ .Site.Title }}</title>
+  <style>
+    :root{--bg:#f6f8fb;--card:#ffffff;--muted:#6b7280}
+    body{font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; background:var(--bg); color:#0f172a; margin:0}
+    .container{max-width:1100px;margin:2rem auto;padding:1rem}
+    h1{margin:0 0 1rem;font-size:1.6rem}
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.25rem}
+    .card{background:var(--card);border-radius:10px;box-shadow:0 6px 18px rgba(15,23,42,0.06);overflow:hidden;display:flex;flex-direction:column}
+    .card img{width:100%;height:180px;object-fit:cover;display:block}
+    .card-body{padding:1rem;display:flex;flex-direction:column;gap:.5rem}
+    .card-title{font-size:1.05rem;margin:0;color:inherit}
+    .card-excerpt{color:var(--muted);font-size:0.95rem;line-height:1.4}
+    .card a.title-link{text-decoration:none;color:inherit}
+    @media (max-width:520px){.card img{height:150px}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>{{ .Site.Title }}</h1>
+    <div class="grid">
+      {{ range .Site.RegularPages.ByDate.Reverse }}
+        <article class="card">
+          {{ $img := .Params.og_image | default .Params.image }}
+          {{ if $img }}
+            <a href="{{ .RelPermalink }}">
+              <img src="{{ printf "%s%s" .RelPermalink $img }}" alt="{{ .Title }}">
+            </a>
+          {{ end }}
+          <div class="card-body">
+            <a class="title-link" href="{{ .RelPermalink }}"><h2 class="card-title">{{ .Title }}</h2></a>
+            <p class="card-excerpt">{{ if .Summary }}{{ .Summary }}{{ else }}{{ .Plain | truncate 200 }}{{ end }}</p>
+          </div>
+        </article>
+      {{ end }}
+    </div>
+  </div>
+</body>
+</html>
 <!DOCTYPE html>
 <html lang="es">
 <head>
