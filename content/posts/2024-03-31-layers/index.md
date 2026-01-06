@@ -1,3 +1,8 @@
+---
+og_image: og-image-1200x630.png
+image: og-image-1200x630.png
+---
+
 ---title: "Layers"
 author: Francisco Javier Jiménez Gómez
 date: 2024-03-31 20:44:00 +02:00

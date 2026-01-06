@@ -1,20 +1,12 @@
 ---
 title: "Laia: Inteligencia Artificial Ética - Un Proyecto de Investigación"
-date: 2025-12-18T08:00:00+02:00
+date: "2025-12-18T08:00:00+02:00"
 draft: false
 layout: post
-image: "laia-thumbnail.svg"
-categories:
-  - AI
-  - Ethics
-  - Research
-tags:
-  - AI Ethics
-  - Machine Learning
-  - Python
-  - Open Source
-  - Research
-  - Transparency
+image: laia-thumbnail.svg
+categories: 
+tags: 
+og_image: laia-ai.jpg
 ---
 
 ![Laia - Ethical AI Research](laia-header.svg)

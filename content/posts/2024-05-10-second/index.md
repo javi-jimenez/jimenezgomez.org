@@ -1,3 +1,8 @@
+---
+og_image: og-image-1200x630.png
+image: og-image-1200x630.png
+---
+
 ---title: "Optimización Web: buenas prácticas"
 date: "2024-05-10"
 tags: ["web", "performance"]

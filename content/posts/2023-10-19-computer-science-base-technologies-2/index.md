@@ -1,3 +1,8 @@
+---
+og_image: og-image-1200x630.png
+image: og-image-1200x630.png
+---
+
 ---title: "Computer Science base technologies, part II"
 date: 2023-10-19T20:38:00+02:00
 draft: false

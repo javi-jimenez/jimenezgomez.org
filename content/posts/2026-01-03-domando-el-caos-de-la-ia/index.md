@@ -1,11 +1,12 @@
 ---
-title: "Domando el Caos de la IA"
-date: 2026-01-03T07:30:00+01:00
+title: Domando el Caos de la IA
+date: "2026-01-03T07:30:00+01:00"
 draft: false
 layout: post
-image: "imagen-ilustrativa-documento-tecnico-acs-blog-jimenezgomez.org.jpg"
+image: imagen-ilustrativa-documento-tecnico-acs-blog-jimenezgomez.org.jpg
 description: "Framework ACS (Assistant Context Standard): separar axiomas de inferencias para memoria trazable en IA."
-tags: ["divulgación","ACS","IA","framework"]
+tags: "["divulgación","ACS","IA","framework"]"
+og_image: imagen-ilustrativa-documento-tecnico-acs-blog-jimenezgomez.org.jpg
 ---
 
 📝 Artículo de Divulgación: "Domando el Caos de la IA"

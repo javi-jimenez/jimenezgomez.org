@@ -1,3 +1,8 @@
+---
+og_image: og-image-1200x630.png
+image: og-image-1200x630.png
+---
+
 ---title: "Desarrollo con LaIA"
 date: 2025-02-25
 layout: post

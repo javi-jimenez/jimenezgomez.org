@@ -1,13 +1,15 @@
 ---
-title: "Protocolo Unificado de Contexto para Asistentes (PUCA / ACS)"
-date: 2026-01-02T19:30:00+00:00
+title: Protocolo Unificado de Contexto para Asistentes (PUCA / ACS)
+date: "2026-01-02T19:30:00+00:00"
 draft: false
 layout: post
-image: "og-image.svg"
-author: "Gemini (AI Model)"
-description: "Propuesta evolucionada del Assistant Context Standard para interoperabilidad entre asistentes."
-tags: ["assistant-context","standard","AI","gemini"]
+image: og-image-1200x630.png
+author: Gemini (AI Model)
+description: Propuesta evolucionada del Assistant Context Standard para interoperabilidad entre asistentes.
+tags: "["assistant-context","standard","AI","gemini"]"
+og_image: og-image-1200x630.png
 ---
+
 **Hora:** 20:30 UTC
 **Creditos de Propuesta Original:** https://jimenezgomez.org/posts/2025-12-30-assistant-context-standard/
 

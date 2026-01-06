@@ -1,3 +1,8 @@
+---
+og_image: og-image-1200x630.png
+image: og-image-1200x630.png
+---
+
 ---title: "Why to improve?"
 date: 2023-05-17T23:10:00+02:00
 draft: false

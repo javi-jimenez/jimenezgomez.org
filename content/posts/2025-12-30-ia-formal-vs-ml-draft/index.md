@@ -1,3 +1,8 @@
+---
+og_image: og-image-1200x630.png
+image: og-image-1200x630.png
+---
+
 ---title: "Costo computacional y afinidad a la verdad: lenguajes formales vs ML (Borrador)"
 date: 2025-12-30T10:00:00+01:00
 draft: true

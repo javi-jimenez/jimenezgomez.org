@@ -1,0 +1,13 @@
+{{/* Card partial: expects page as . (a Page object) */}}
+<article class="card">
+  {{ $img := .Params.og_image | default .Params.image }}
+  {{ if $img }}
+    <a href="{{ .RelPermalink }}">
+      <img src="{{ printf "%s%s" .RelPermalink $img }}" alt="{{ .Title }}">
+    </a>
+  {{ end }}
+  <div class="card-body">
+    <a class="title-link" href="{{ .RelPermalink }}"><h2 class="card-title">{{ .Title }}</h2></a>
+    <p class="card-excerpt">{{ if .Summary }}{{ .Summary }}{{ else }}{{ .Plain | truncate 200 }}{{ end }}</p>
+  </div>
+</article>

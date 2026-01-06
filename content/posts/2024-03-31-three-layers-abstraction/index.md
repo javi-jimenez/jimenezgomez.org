@@ -1,3 +1,8 @@
+---
+og_image: og-image-1200x630.png
+image: og-image-1200x630.png
+---
+
 ---title: "Three layers abstraction"
 date: 2024-03-31 20:52:00 +02:00
 draft: false
