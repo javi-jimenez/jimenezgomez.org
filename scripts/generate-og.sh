@@ -64,17 +64,13 @@ envsubst < "$TEMPLATE" > "$OUT_SVG"
 
 echo "Generated $OUT_SVG"
 
-# render PNGs: prefer inkscape (more robust), fall back to rsvg-convert
+# render PNGs: require inkscape (more robust). Do not fall back to rsvg-convert to avoid librsvg crashes.
 if command -v inkscape >/dev/null 2>&1; then
   inkscape "$OUT_SVG" --export-filename="$OUT_PNG1" -w 1200 -h 630
   inkscape "$OUT_SVG" --export-filename="$OUT_PNG2" -w 600 -h 315
   echo "Rendered PNGs with inkscape"
-elif command -v rsvg-convert >/dev/null 2>&1; then
-  rsvg-convert -w 1200 -h 630 -o "$OUT_PNG1" "$OUT_SVG"
-  rsvg-convert -w 600 -h 315 -o "$OUT_PNG2" "$OUT_SVG"
-  echo "Rendered PNGs with rsvg-convert"
 else
-  echo "No SVG renderer found (inkscape or rsvg-convert). SVG generated at $OUT_SVG"
+  echo "Inkscape not found. SVG generated at $OUT_SVG. Install inkscape to render PNGs."
   exit 0
 fi
 
