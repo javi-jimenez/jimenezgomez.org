@@ -1,3 +1,8 @@
+---
+og_image: og-image-1200x630.png
+image: og-image-1200x630.png
+---
+
 ---title: "Vera Architecture"
 date: 2025-04-04T11:09:00+02:00
 draft: false

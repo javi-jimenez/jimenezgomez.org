@@ -1,11 +1,12 @@
 ---
 title: "DNS Universal: De lo Planetario a lo Galáctico"
-date: 2025-12-22T14:30:00+02:00
+date: "2025-12-22T14:30:00+02:00"
 draft: false
 layout: post
-image: "dns-universe-architecture.svg"
-categories: ["architecture", "technology", "research"]
-tags: ["DNS", "distributed systems", "web3", "space", "research"]
+image: dns-universe-architecture.svg
+categories: "["architecture", "technology", "research"]"
+tags: "["DNS", "distributed systems", "web3", "space", "research"]"
+og_image: dns-universe-architecture.png
 ---
 
 ## Introducción: El Problema del Direccionamiento Universal

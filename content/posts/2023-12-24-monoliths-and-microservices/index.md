@@ -1,3 +1,8 @@
+---
+og_image: og-image-1200x630.png
+image: og-image-1200x630.png
+---
+
 ---title: "Monoliths and microservices"
 date: 2023-12-24T00:00:00+02:00
 draft: false

@@ -1,12 +1,12 @@
 ---
 title: "Resiliencia en la conectividad - La combinación perfecta: Smartphone sin SIM + teléfono básico eterno"
-date: 2026-01-06T12:35:00+01:00
+date: "2026-01-06T12:35:00+01:00"
 draft: false
 layout: post
-image: "og-image.svg"
-og_image: "og-image-1200x630.png"
+image: og-image-1200x630.png
+og_image: og-image-1200x630.png
 description: "Estrategia dual: smartphone sin SIM en WiFi y teléfono básico para llamadas urgentes, para recuperar atención y batería."
-tags: ["movilidad","resiliencia","productividad","teléfono"]
+tags: "["movilidad","resiliencia","productividad","teléfono"]"
 ---
 
 # Resiliencia en la conectividad - La combinación perfecta: Smartphone sin SIM + teléfono básico eterno

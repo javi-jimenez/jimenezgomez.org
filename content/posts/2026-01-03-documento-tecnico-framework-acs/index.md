@@ -1,10 +1,11 @@
 ---
-title: "Framework ACS (Assistant Context Standard)"
-date: 2026-01-03T09:05:00+01:00
+title: Framework ACS (Assistant Context Standard)
+date: "2026-01-03T09:05:00+01:00"
 draft: false
 layout: post
-image: "og-image.svg"
+image: og-image-1200x630.png
 categories: [technology, arquitectura]
+og_image: og-image-1200x630.png
 ---
 
 ## Motivación
