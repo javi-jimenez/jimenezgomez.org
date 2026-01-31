@@ -1,15 +1,14 @@
 ---
 og_image: og-image-1200x630.png
-image: og-image-1200x630.png
----
-
----title: "VBD"
-author: Francisco Javier Jiménez Gómez
+image: "og-image.svg"
+tags:
+title: "VBD"
+author: "Francisco Javier Jiménez Gómez"
 date: 2024-03-31 20:52:00 +02:00
 draft: true
 categories: [writing, software, architecture, layer]
-tags: [layer]
+tags:
+  - layer
 image: "og-image.svg"
+tags:
 ---
-
-

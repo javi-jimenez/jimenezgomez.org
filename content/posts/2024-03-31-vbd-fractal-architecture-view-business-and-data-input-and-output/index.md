@@ -1,17 +1,17 @@
 ---
 og_image: og-image-1200x630.png
-image: og-image-1200x630.png
----
-
----title: "VBD, Fractal Architecture: View, Business and Data. Input and Output."
+image: "og-image.svg"
+tags:
+title: "VBD, Fractal Architecture: View, Business and Data. Input and Output."
 date: 2024-03-31 20:44:00 +02:00
 draft: false
 categories: [writing, software, architecture, layer]
-tags: [layer]
+tags:
+  - layer
 layout: post
 image: "og-image.svg"
+tags:
 ---
-
 <meta property="og:image" content="2024-03-31-vbd-fractal-architecture-view-business-and-data-input-and-output/fractal-maldelbrot-illustration-1000px-gettyimages-488635425-2048x2048.jpg" />
 
 <meta name="twitter:image" content="2024-03-31-vbd-fractal-architecture-view-business-and-data-input-and-output/fractal-maldelbrot-illustration-1000px-gettyimages-488635425-2048x2048.jpg" />

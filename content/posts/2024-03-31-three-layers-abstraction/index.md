@@ -1,17 +1,18 @@
 ---
 og_image: og-image-1200x630.png
-image: og-image-1200x630.png
----
-
----title: "Three layers abstraction"
+image: "og-image.svg"
+tags:
+title: "Three layers abstraction"
 date: 2024-03-31 20:52:00 +02:00
 draft: false
 categories: [writing, software, architecture]
-tags: [layer, fractal]
+tags:
+  - layer
+  - fractal
 layout: post
 image: "og-image.svg"
+tags:
 ---
-
 ![Three Layers as Leafs](three-layers-as-leafs-gettyimages-1000px-157287379-2048x2048.jpg)
 
 The software design can be simplified in three layers:

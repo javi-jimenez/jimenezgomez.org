@@ -1,17 +1,18 @@
 ---
 og_image: og-image-1200x630.png
-image: og-image-1200x630.png
----
-
----title: "Monoliths and microservices"
+image: "og-image.svg"
+tags:
+title: "Monoliths and microservices"
 date: 2023-12-24T00:00:00+02:00
 draft: false
 categories: [writing, software, architecture, layer]
-tags: [monolith, microservice]
+tags:
+  - monolith
+  - microservice
 layout: post
 image: "og-image.svg"
+tags:
 ---
-
 <!-- preview image on social media -->
 <meta property="og:image" content="2023-12-24-monoliths-and-microservices/inca-bricks-1000px.jpg" />
 

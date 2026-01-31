@@ -1,17 +1,19 @@
 ---
 og_image: og-image-1200x630.png
-image: og-image-1200x630.png
----
-
----title: "How to improve"
+image: "og-image.svg"
+tags:
+title: "How to improve"
 date: 2024-05-14T00:00:00+02:00
 draft: true
 categories: [writing, software, architecture, layer]
-tags: [howto, improve, knowledge]
+tags:
+  - howto
+  - improve
+  - knowledge
 layout: post
 image: "og-image.svg"
+tags:
 ---
-
 <!-- preview image on social media -->
 <meta property="og:image" content="/assets/img/a.jpg" />
 

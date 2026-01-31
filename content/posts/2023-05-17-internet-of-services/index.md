@@ -1,15 +1,14 @@
 ---
 og_image: og-image-1200x630.png
-image: og-image-1200x630.png
----
-
----title: "Internet of Services"
+image: "og-image.svg"
+tags:
+title: "Internet of Services"
 date: 2023-05-17T21:56:26+02:00
 layout: post
 #image: "cloud-services-boxes-1000x538.jpg"
 image: "og-image.svg"
+tags:
 ---
-
 Document about an idea from around 2013 of Internet being a group of services, as alternative for seeing them as a group of things.
 
 ![Services connected](cloud-services-boxes-1000x538.jpg)

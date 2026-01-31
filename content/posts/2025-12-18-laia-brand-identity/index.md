@@ -14,8 +14,9 @@ tags:
   - Logo Design
   - Laia Project
   - Corporate Identity
+tags:
+tags: []
 ---
-
 ![Laia Brand Identity](laia-brand-hero.svg)
 
 ## La Identidad Visual de un Proyecto que Mira a las Estrellas
@@ -47,7 +48,6 @@ Los nodos y conexiones representan:
 - **Interconexión de ideas**
 - **Colaboración abierta**
 
----
 
 ## El Sistema de Identidad Visual
 
@@ -63,7 +63,6 @@ El logo principal combina:
 
 **Uso**: Documentación oficial, presentaciones, web principal
 
----
 
 ### 2. Icono Compacto
 
@@ -75,7 +74,6 @@ Versión simplificada para:
 - Iconos de sistema
 - Espacios reducidos
 
----
 
 ### 3. Avatar para Redes Sociales
 
@@ -103,7 +101,6 @@ Versión profesional con:
 - Fondo más conservador
 - Énfasis en seriedad
 
----
 
 ### 4. Banner para GitHub README
 
@@ -120,7 +117,6 @@ Incluye:
 - Constelaciones animadas (en versión web)
 - Efectos de luz y profundidad
 
----
 
 ### 5. Variantes de Color
 
@@ -133,7 +129,6 @@ Incluye:
 #### Versión Monocromática
 ![Logo Mono](laia-logo-mono.svg)
 
----
 
 ### 6. Assets para Social Media Posts
 
@@ -153,7 +148,6 @@ Formato 2:1 (1200x600px) para:
 - Open Graph images
 - Previews en enlaces compartidos
 
----
 
 ## Guía de Uso
 
@@ -212,7 +206,6 @@ El logo debe mantener un espacio libre equivalente a la altura de la letra "A" e
 --laia-accent-sky:   #38bdf8  /* Cielo */
 ```
 
----
 
 ## Filosofía del Diseño
 
@@ -244,7 +237,6 @@ Compatible con:
 - Funciona sin color (solo formas)
 - Texto alternativo siempre disponible
 
----
 
 ## Recursos Descargables
 
@@ -281,7 +273,6 @@ laia/                                 # Repositorio principal
     └── brand-guidelines.md         # Guía de marca (este artículo)
 ```
 
----
 
 ## Aplicaciones en el Mundo Real
 
@@ -310,7 +301,6 @@ El diseño se adapta perfectamente a:
 - Credenciales y lanyards
 - Escenografía
 
----
 
 ## El Significado Profundo
 
@@ -331,7 +321,6 @@ El diseño trasciende idiomas y culturas. Una estrella es una estrella en cualqu
 ### Futuro y Tradición
 Combina elementos futuristas (redes neuronales, tecnología) con símbolos atemporales (estrellas, que han guiado a la humanidad desde la antigüedad).
 
----
 
 ## Evolución de la Marca
 
@@ -354,7 +343,6 @@ Esta es la versión 1.0 de la identidad visual de Laia. Como el propio proyecto,
 - Sub-marcas para diferentes productos
 - Adaptaciones culturales regionales
 
----
 
 ## Créditos y Licencia
 
@@ -375,7 +363,6 @@ Los assets de marca están disponibles bajo Creative Commons Attribution 4.0 (CC
 
 **Uso comercial**: Requiere aprobación previa del equipo Laia.
 
----
 
 ## Comunidad y Feedback
 
@@ -386,7 +373,6 @@ Los assets de marca están disponibles bajo Creative Commons Attribution 4.0 (CC
 - Twitter: #LaiaProject #EthicalAI
 - LinkedIn: Menciona @franciscojavierjimenezgomez
 
----
 
 ## Conclusión: Diseño con Propósito
 
@@ -399,7 +385,6 @@ La identidad visual de Laia no es solo un logo bonito. Es:
 
 Cada vez que veas la estrella de Laia, recuerda: estamos construyendo inteligencia artificial que mira a las estrellas mientras mantiene los pies en la tierra, guiados por la ética, la transparencia y el bien común.
 
----
 
 **Explora el proyecto completo:**  
 🔗 [github.com/javi-jimenez/laia](https://github.com/javi-jimenez/laia)  

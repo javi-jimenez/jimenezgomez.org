@@ -4,8 +4,8 @@ date: 2026-01-31T23:13:00+01:00
 draft: false
 layout: post
 image: "og-image.svg"
+tags: []
 ---
-
 Texto inspirado en tradiciones valencianas, psicografías y símbolos esotéricos. Parte del texto fue elaborado con ayuda de modelos (ej. Google Gemini) y contraste histórico.
 
 ![Retrato del Encubierto](portrait.png)

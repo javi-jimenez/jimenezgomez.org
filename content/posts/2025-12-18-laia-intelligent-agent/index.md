@@ -3,12 +3,12 @@ title: "Laia: Inteligencia Artificial Ética - Un Proyecto de Investigación"
 date: "2025-12-18T08:00:00+02:00"
 draft: false
 layout: post
-image: laia-thumbnail.svg
-categories: 
-tags: 
+image: "og-image.svg"
+categories: []
+tags:
 og_image: laia-ai.jpg
+tags:
 ---
-
 ![Laia - Ethical AI Research](laia-header.svg)
 
 ## Laia: La que habla dulce o se expresa con claridad
@@ -269,7 +269,6 @@ Este proyecto necesita de una comunidad comprometida. Si crees en una IA ética,
 
 Juntos podemos construir tecnologías de IA esenciales para un futuro digital sostenible.
 
----
 
 **Website:** [laia.brisecom.org](https://laia.brisecom.org/)  
 **GitHub:** [github.com/javi-jimenez/laia](https://github.com/javi-jimenez/laia)  
@@ -280,4 +279,3 @@ Juntos podemos construir tecnologías de IA esenciales para un futuro digital so
 ---
 
 *"La verdadera medida de la inteligencia artificial no está en lo que puede hacer, sino en cómo mejora la vida de las personas mientras respeta sus derechos y dignidad."*
-

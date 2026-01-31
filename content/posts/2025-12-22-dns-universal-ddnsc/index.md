@@ -3,12 +3,20 @@ title: "DNS Universal: De lo Planetario a lo Galáctico"
 date: "2025-12-22T14:30:00+02:00"
 draft: false
 layout: post
-image: dns-universe-architecture.svg
-categories: "["architecture", "technology", "research"]"
-tags: "["DNS", "distributed systems", "web3", "space", "research"]"
+image: "og-image.svg"
+categories:
+   - architecture
+   - technology
+   - research
+tags:
+   - DNS
+   - distributed systems
+   - web3
+   - space
+   - research
 og_image: dns-universe-architecture.png
+tags: []
 ---
-
 ## Introducción: El Problema del Direccionamiento Universal
 
 El **Domain Name System (DNS)** actual funciona bajo supuestos terrestres: latencias medidas en milisegundos, infraestructura física concentrada, y una autoridad central (ICANN). Pero ¿qué ocurre cuando necesitamos direccionar servicios en una colonia marciana, en estaciones orbitales, o incluso entre sistemas estelares?

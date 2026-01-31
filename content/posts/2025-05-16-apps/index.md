@@ -1,15 +1,14 @@
 ---
 og_image: og-image-1200x630.png
-image: og-image-1200x630.png
----
-
----title: "Apps"
+image: "og-image.svg"
+tags:
+title: "Apps"
 date: 2025-05-16
 layout: post
 draft: true
 image: "og-image.svg"
+tags:
 ---
-
 <style>
 img {
   display: block;

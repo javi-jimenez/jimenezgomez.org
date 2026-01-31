@@ -1,15 +1,15 @@
 ---
-title: Framework ACS (Assistant Context Standard)
-date: "2026-01-03T09:05:00+01:00"
+title: "Framework ACS (Assistant Context Standard)"
+date: 2026-01-03T09:05:00+01:00
 draft: false
 layout: post
-image: og-image-1200x630.png
+image: "og-image.svg"
 categories: [technology, arquitectura]
-og_image: og-image-1200x630.png
+tags:
+tags:
 ---
-
 ## Motivación
-![Ilustración ACS](og-image.svg)
+:![Ilustración ACS](og-image.svg)
 
 Las IAs actuales operan en silos de memoria efímeros (ventanas de contexto). Esto genera "alucinaciones" por pérdida de datos y falta de trazabilidad en proyectos complejos. El Framework ACS nace para dotar a la IA de una memoria externa estructurada, separando la verdad del usuario del razonamiento de la máquina.
 

@@ -3,17 +3,22 @@ title: "Resiliencia en la conectividad - La combinación perfecta: Smartphone si
 date: "2026-01-06T12:35:00+01:00"
 draft: false
 layout: post
-image: og-image-1200x630.png
+image: "og-image.svg"
 og_image: og-image-1200x630.png
 description: "Estrategia dual: smartphone sin SIM en WiFi y teléfono básico para llamadas urgentes, para recuperar atención y batería."
-tags: "["movilidad","resiliencia","productividad","teléfono"]"
+# Tags
+tags:
+   - movilidad
+   - resiliencia
+   - productividad
+   - teléfono
+tags:
+tags: []
 ---
-
 # Resiliencia en la conectividad - La combinación perfecta: Smartphone sin SIM + teléfono básico eterno
 
 ![Foto de un Smartphone moderno sin tarjeta sim junto a un teléfono básico de batería duradera, sobre una mesa con carga inalámbrica desactivada.](202601061235-smartphone-without-sim-and-onlyphone-with-long-duration-battery.png)
 
----
 
 ## RESUMEN EJECUTIVO: LA DOBLE VIDA DIGITAL INTELIGENTE
 
@@ -21,7 +26,6 @@ En la era de la hiperconexión, una solución revolucionaria está ganando adept
 
 La metodología es simple pero poderosa: a todos los contactos se les pide que **utilicen la red celular únicamente para llamadas urgentes o importantes**, reservando WhatsApp, Telegram y redes sociales para comunicaciones no urgentes que se atenderán en momentos designados. Esta separación física de funciones crea barreras naturales contra la distracción constante.
 
----
 
 ## EL PROBLEMA: LA TIRANÍA DEL DISPOSITIVO ÚNICO
 
@@ -35,7 +39,6 @@ El smartphone moderno se ha convertido en un **aparato schizofrénico** que comb
 
 Esta convergencia tiene un costo cognitivo demostrado: **interrupciones constantes, incapacidad para concentrarse, ansiedad por desconexión y reducción de la calidad del sueño**. Según estudios de la Universidad de California, recuperar la concentración después de una notificación puede tomar hasta 23 minutos.
 
----
 
 ## LA SOLUCIÓN TÉCNICA: DOS DISPOSITIVOS, DOS PROPÓSITOS
 
@@ -69,7 +72,6 @@ Esta convergencia tiene un costo cognitivo demostrado: **interrupciones constant
 - **Xiaomi Qin 1S:** Pantalla táctil mínima con hotspot WiFi
 - **Schok Classic:** Flip phone moderno con 7 días de batería
 
----
 
 ## EL PROTOCOLO DE COMUNICACIÓN: EDUCAR AL ENTORNO
 
@@ -85,7 +87,6 @@ La efectividad del sistema depende de un **cambio de protocolo comunicacional**:
    - Llamadas al teléfono básico: respuesta inmediata (urgencias)
    - Mensajes en apps: respuesta en ventanas de 30 minutos, 2-3 veces al día
 
----
 
 ## BENEFICIOS TANGIBLES DEMOSTRADOS
 
@@ -106,7 +107,6 @@ La efectividad del sistema depende de un **cambio de protocolo comunicacional**:
 - **Límites saludables:** Se respetan horarios y tiempos de respuesta
 - **Presencia real:** Menos tentación de revisar el teléfono en reuniones sociales
 
----
 
 ## IMPLEMENTACIÓN PASO A PASO
 
@@ -125,7 +125,6 @@ La efectividad del sistema depende de un **cambio de protocolo comunicacional**:
 2. Optimizar configuración de ambos dispositivos
 3. Evaluar y ajustar horarios según necesidades reales
 
----
 
 ## OBJECIONES FRECUENTES Y SOLUCIONES
 
@@ -144,7 +143,6 @@ La efectividad del sistema depende de un **cambio de protocolo comunicacional**:
 - Quienes insisten en llamar por trivialidades, gradualmente aprenden
 - Filtras automáticamente relaciones según respeto a tus límites
 
----
 
 ## CASOS DE ÉXITO REALES
 
@@ -157,7 +155,6 @@ Usuarios que sufrían "phantom vibration syndrome" (síndrome de la vibración f
 ### **Familias con niños:**
 Padres establecen el teléfono básico como "línea familiar" siempre disponible, mientras limitan su exposición a pantallas innecesarias.
 
----
 
 ## CONCLUSIÓN: SOBERANÍA DIGITAL RECUPERADA
 

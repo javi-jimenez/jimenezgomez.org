@@ -1,17 +1,20 @@
 ---
 og_image: og-image-1200x630.png
-image: og-image-1200x630.png
----
-
----title: "Why to improve? part 2. Technologies and the look for the base knowledge"
+image: "og-image.svg"
+tags:
+title: "Why to improve? part 2. Technologies and the look for the base knowledge"
 date: 2023-10-13T23:18:00+02:00
 draft: false
 categories: [writing, book, technology]
-tags: [technology, knowledge, base, core]
+tags:
+  - technology
+  - knowledge
+  - base
+  - core
 layout: post
 image: "og-image.svg"
+tags:
 ---
-
 ![Light Bulb Book](light-bulb-book.webp)
 
 Today James Wright gets to the rest time of the day, tired but happy. He knows that he did it well, the better he could do it.

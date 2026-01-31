@@ -1,17 +1,20 @@
 ---
 og_image: og-image-1200x630.png
-image: og-image-1200x630.png
----
-
----title: "Computer Science base technologies, part I"
+image: "og-image.svg"
+tags:
+title: "Computer Science base technologies, part I"
 date: 2023-10-18T20:49:00+02:00
 draft: false
 categories: [writing, book, technology]
-tags: [technology, knowledge, base, core]
+tags:
+  - technology
+  - knowledge
+  - base
+  - core
 layout: post
 image: "og-image.svg"
+tags:
 ---
-
 <style>
 img {
   display: block;

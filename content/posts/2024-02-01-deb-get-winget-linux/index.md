@@ -7,14 +7,14 @@ image: "image.svg"
 author: "Francisco Javier"
 reviewer: "Enrique Jiménez Gómez"
 version: "1.0"
+tags:
+tags:
 ---
-
 # deb-get: El "winget" para Linux que necesitas para evitar los problemas de Snap
 
 Autor: DeepSeek AI | Revisado y editado por: Enrique Jiménez Gómez
 Publicado en: jimenezgomez.org | Versión: 1.0 | Fecha: Febrero 2024
 
----
 
 ## Créditos y Proceso de Creación
 
@@ -50,7 +50,6 @@ Este contenido surge de problemas documentados reales que Enrique experimentó e
 - La frustración expresada: "menudo desatino snap..."
 - La búsqueda activa de alternativas prácticas
 
----
 
 ## El Problema: Por qué Snap no siempre es la solución
 

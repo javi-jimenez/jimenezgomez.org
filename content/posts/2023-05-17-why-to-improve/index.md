@@ -1,15 +1,14 @@
 ---
 og_image: og-image-1200x630.png
-image: og-image-1200x630.png
----
-
----title: "Why to improve?"
+image: "og-image.svg"
+tags:
+title: "Why to improve?"
 date: 2023-05-17T23:10:00+02:00
 draft: false
 layout: post
 image: "og-image.svg"
+tags:
 ---
-
 ![Equations](equations.png)
 
 Today James Wright gets to the rest time of the day tired, but happy, he knows that he did it well, the better he could do it.

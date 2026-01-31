@@ -1,15 +1,14 @@
 ---
 og_image: og-image-1200x630.png
-image: og-image-1200x630.png
----
-
----title: "SPA blog in one file"
+image: "og-image.svg"
+tags:
+title: "SPA blog in one file"
 date: 2025-12-02
 layout: post
 draft: false
 image: "og-image.svg"
+tags:
 ---
-
 <style>
 img {
   display: block;

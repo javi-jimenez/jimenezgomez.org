@@ -1,15 +1,14 @@
 ---
 og_image: og-image-1200x630.png
-image: og-image-1200x630.png
----
-
----title: "Vera Architecture"
+image: "og-image.svg"
+tags:
+title: "Vera Architecture"
 date: 2025-04-04T11:09:00+02:00
 draft: false
 layout: post
 image: "og-image.svg"
+tags:
 ---
-
 <meta property="og:image" content="vera-arch-202504041121.drawio.png" alt="Vera Architecture" />
 
 <meta name="twitter:image" content="vera-arch-202504041121.drawio.png" alt="Vera Architecture" />
