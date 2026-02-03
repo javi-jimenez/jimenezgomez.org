@@ -1,12 +1,10 @@
 ---
 og_image: og-image-1200x630.png
 image: "og-image.svg"
-tags:
 title: "Network Operative System"
 date: 2023-05-17T23:10:00+02:00
 draft: false
 layout: post
-image: "og-image.svg"
 tags:
 ---
 Document about the idea of the need of a Network Operative System, the idea was spreaded around 2013.
