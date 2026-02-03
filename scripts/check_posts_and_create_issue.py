@@ -96,7 +96,11 @@ def find_pending_posts():
             elif age_days >= DRIFT_DAYS:
                 reason = f"draft older than {DRIFT_DAYS} days (modified {mtime.date()})"
         if reason:
-            rel = str(post.relative_to(Path.cwd()))
+            try:
+                rel = str(post.resolve().relative_to(Path.cwd().resolve()))
+            except Exception:
+                # If resolution/relative_to fails, fall back to the original path string
+                rel = str(post)
             pending.append({'path': rel, 'date': date_s or '', 'reason': reason})
     return pending
 
