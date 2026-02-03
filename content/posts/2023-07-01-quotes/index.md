@@ -8,8 +8,6 @@ categories: [writing, meta]
 tags:
   - quote
 layout: post
-image: "og-image.svg"
-tags:
 ---
 > History is written,
 in blank pages.
