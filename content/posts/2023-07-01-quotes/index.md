@@ -1,7 +1,6 @@
 ---
 og_image: og-image-1200x630.png
 image: "og-image.svg"
-tags:
 title: "Quotes"
 date: 2023-07-01 05:33:00 +02:00
 draft: false
