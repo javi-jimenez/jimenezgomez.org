@@ -4,6 +4,32 @@ name: default
 
 steps:
   - name: build
+    image: klakegg/hugo:0.155.2-ext
+    commands:
+      - hugo --minify
+
+  - name: deploy
+    image: plugins/ftp
+    settings:
+      host:
+        from_secret: FTP_SERVER
+      username:
+        from_secret: FTP_USERNAME
+      password:
+        from_secret: FTP_PASSWORD
+      port: 21
+      target: /jimenezgomez.org/
+      source: public
+
+trigger:
+  event:
+    - push
+kind: pipeline
+type: docker
+name: default
+
+steps:
+  - name: build
     image: klakegg/hugo:0.113.0-ext-alpine
     commands:
       - hugo --minify
