@@ -7,8 +7,7 @@ date: 2025-12-30T12:30:00+01:00
 draft: false
 layout: post
 author: "Francisco Javier"
-image: "og-image.svg"
-tags:
+---
 ---
 Enlace al borrador formal (RFC): [RFC-0001: ASSISTANT_CONTEXT](../../tools/rfcs/RFC-0001-ASSISTANT_CONTEXT.md)
 

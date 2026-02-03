@@ -21,8 +21,8 @@ googleAnalytics = "G-STC35RLKFB"
     subtitle = 'Software Architecture & Open Source'
     [params.sidebar.avatar]
       enabled = true
-      local = true
-      src = 'img/avatar.png'
+      local = false
+      src = '/img/blog-logo.jpg'
 
   # Footer
   [params.footer]

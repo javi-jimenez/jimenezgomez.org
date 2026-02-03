@@ -12,8 +12,6 @@ tags:
    - resiliencia
    - productividad
    - teléfono
-tags:
-tags: []
 ---
 # Resiliencia en la conectividad - La combinación perfecta: Smartphone sin SIM + teléfono básico eterno
 

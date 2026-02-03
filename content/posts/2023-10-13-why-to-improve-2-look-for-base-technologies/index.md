@@ -5,15 +5,14 @@ tags:
 title: "Why to improve? part 2. Technologies and the look for the base knowledge"
 date: 2023-10-13T23:18:00+02:00
 draft: false
-categories: [writing, book, technology]
-tags:
+categories:
+  - writing
+  - book
   - technology
   - knowledge
   - base
   - core
 layout: post
-image: "og-image.svg"
-tags:
 ---
 ![Light Bulb Book](light-bulb-book.webp)
 

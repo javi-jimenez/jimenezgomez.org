@@ -4,7 +4,9 @@ image: "og-image.svg"
 title: "Quotes"
 date: 2023-07-01 05:33:00 +02:00
 draft: false
-categories: [writing, meta]
+categories:
+  - writing
+  - meta
 tags:
   - quote
 layout: post

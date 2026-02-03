@@ -4,10 +4,9 @@ date: "2025-12-18T08:00:00+02:00"
 draft: false
 layout: post
 image: "og-image.svg"
-categories: []
+categories:
 tags:
 og_image: laia-ai.jpg
-tags:
 ---
 ![Laia - Ethical AI Research](laia-header.svg)
 

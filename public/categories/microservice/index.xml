@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>microservice on Francisco Javier Jiménez Gómez</title><link>https://jimenezgomez.org/categories/microservice/</link><description>Recent content in microservice on Francisco Javier Jiménez Gómez</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>Francisco Javier Jiménez Gómez</copyright><lastBuildDate>Sun, 24 Dec 2023 00:00:00 +0200</lastBuildDate><atom:link href="https://jimenezgomez.org/categories/microservice/index.xml" rel="self" type="application/rss+xml"/><item><title>Monoliths and microservices</title><link>https://jimenezgomez.org/posts/2023-12-24-monoliths-and-microservices/</link><pubDate>Sun, 24 Dec 2023 00:00:00 +0200</pubDate><guid>https://jimenezgomez.org/posts/2023-12-24-monoliths-and-microservices/</guid><description>&lt;img src="https://jimenezgomez.org/posts/2023-12-24-monoliths-and-microservices/og-image.svg" alt="Featured image of post Monoliths and microservices" />&lt;!-- preview image on social media -->
+&lt;hr>
+&lt;meta property="og:image" content="2023-12-24-monoliths-and-microservices/inca-bricks-1000px.jpg" />
+&lt;p>&lt;img src="https://jimenezgomez.org/posts/2023-12-24-monoliths-and-microservices/inca-bricks-1000px.jpg"
+width="1000"
+height="1005"
+srcset="https://jimenezgomez.org/posts/2023-12-24-monoliths-and-microservices/inca-bricks-1000px_hue395dfecc8087edfb381bfa56d1c31d7_508056_480x0_resize_q75_box.jpg 480w, https://jimenezgomez.org/posts/2023-12-24-monoliths-and-microservices/inca-bricks-1000px_hue395dfecc8087edfb381bfa56d1c31d7_508056_1024x0_resize_q75_box.jpg 1024w"
+loading="lazy"
+alt="Monoliths and MicroServices"
+class="gallery-image"
+data-flex-grow="99"
+data-flex-basis="238px"
+>&lt;/p>
+&lt;p>Monoliths are the first approach to an application build.&lt;/p>
+&lt;p>Microservices are the refinement and the evolution of monoliths.&lt;/p>
+&lt;p>If the system is designed carefuly from the begining, a system composed of microservices can be built. But the base is always a monolith, not as complex as some final products that must be converted to microservices.&lt;/p>
+&lt;p>Commonly, a monolith is a big microservice, that is, a complex system that must be divided or splitted into parts to manage it properly.&lt;/p>
+&lt;p>It happens the same as with files that compose an application, which have a lot of methods or are very complex, the recommendation is to reduce the size and complexity of the file. By that reason, big files and big applications, share the same principle (problem), complexity.&lt;/p>
+&lt;p>Microservices allow to reduce complexity, between other things.&lt;/p>
+&lt;p>A system composed with microservices and a monolith are, almost the same. The monolith calls to other funcionalities are made using libraries, the calls in a system composed by microservices are made using message queues, but in essence, it is the same.&lt;/p>
+&lt;p>The only difference is the way to call methods, or better said, to call funcionality.&lt;/p>
+&lt;p>Abstracting the concept, we can write an application that call to methods, but internally it is calling to other remote services, that has been doing from time ago.&lt;/p>
+&lt;p>If you want to center your efforts in architecture, you can design services that can be used to compose multiple big systems. That will allow you to think in sharing functionality. You must center your efforts in functionality, and you must design and build the minimal autonomous system. That minimal autonomous system must be perfected and reused. Microservices, with remote calls, ease this, in relation to distributing systems, but the diagram must be the same as with monoliths.&lt;/p>
+&lt;p>The base for reusing funcionality, modules, services or whatever is to build the minimal functionality in one module, an autonomous system.&lt;/p>
+&lt;p>The diagram in a monolith or a microservice must be the same, the only change is the way calls are made. You must abstract it the most you can to get that.&lt;/p>
+&lt;p>A requirement for making autonomous systems is to develop based on the use of interfaces. Today we know API, which is the same idea. A public face to the world.&lt;/p>
+&lt;p>As a final note I must to say that you must to specify the ADT or Abstract Data Type or your internal data structures, the allowed input and the allowed or expected output.&lt;/p>
+&lt;p>And as another useful tip: An interesting standarization of Abstract Data Types is the project schema.org, which contains vocabularies for including and standarize those data types. For example, you know what to expect when working with a postal address, it has a postal code, it is a street or other type of place, and similar things. With that, when you receive an Address compliant with schema.org, you know what the names of the fields are and which is the meaning of each field.&lt;/p></description></item></channel></rss>

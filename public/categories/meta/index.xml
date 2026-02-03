@@ -1,39 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-    <channel>
-        <title>meta on Francisco Javier Jiménez Gómez</title>
-        <link>https://jimenezgomez.org/categories/meta/</link>
-        <description>Recent content in meta on Francisco Javier Jiménez Gómez</description>
-        <generator>Hugo -- gohugo.io</generator>
-        <language>es</language>
-        <copyright>Francisco Javier Jiménez Gómez</copyright>
-        <lastBuildDate>Sat, 01 Jul 2023 05:33:00 +0200</lastBuildDate><atom:link href="https://jimenezgomez.org/categories/meta/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>Quotes</title>
-        <link>https://jimenezgomez.org/posts/2023-07-01-quotes/</link>
-        <pubDate>Sat, 01 Jul 2023 05:33:00 +0200</pubDate>
-        
-        <guid>https://jimenezgomez.org/posts/2023-07-01-quotes/</guid>
-        <description>&lt;blockquote&gt;
-&lt;p&gt;History is written,
-in blank pages.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Read books that create moments of inspiration, not the opposite.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Everybody wants to be somebody.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;There are several realities: The group reality is a reality. That of the world is another reality. Your own is another reality.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Expand your sight, go outside, across the door, to the reality of life.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;First make it work, then make it right, then make it fast. — @KentBeck&lt;/p&gt;
-&lt;/blockquote&gt;
-</description>
-        </item>
-        
-    </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>meta on Francisco Javier Jiménez Gómez</title><link>https://jimenezgomez.org/categories/meta/</link><description>Recent content in meta on Francisco Javier Jiménez Gómez</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>Francisco Javier Jiménez Gómez</copyright><lastBuildDate>Sat, 01 Jul 2023 05:33:00 +0200</lastBuildDate><atom:link href="https://jimenezgomez.org/categories/meta/index.xml" rel="self" type="application/rss+xml"/><item><title>Quotes</title><link>https://jimenezgomez.org/posts/2023-07-01-quotes/</link><pubDate>Sat, 01 Jul 2023 05:33:00 +0200</pubDate><guid>https://jimenezgomez.org/posts/2023-07-01-quotes/</guid><description>&lt;img src="https://jimenezgomez.org/posts/2023-07-01-quotes/og-image.svg" alt="Featured image of post Quotes" />&lt;blockquote>
+&lt;p>History is written,
+in blank pages.&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>Read books that create moments of inspiration, not the opposite.&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>Everybody wants to be somebody.&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>There are several realities: The group reality is a reality. That of the world is another reality. Your own is another reality.&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>Expand your sight, go outside, across the door, to the reality of life.&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>First make it work, then make it right, then make it fast. — @KentBeck&lt;/p>
+&lt;/blockquote></description></item></channel></rss>

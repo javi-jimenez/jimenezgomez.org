@@ -4,10 +4,9 @@ date: 2026-01-28T12:00:00+01:00
 draft: false
 layout: post
 tags:
-image: "thumb.svg"
-og_image: "og-image.svg"
-tags:
 ---
+image: "og-image.svg"
+og_image: "og-image.svg"---
 Hablar de "La Fé" implica abordar varias dimensiones: la religiosa, la íntima y la práctica. A continuación se recogen ideas clave para entender qué significa actuar en base a la Fé y cómo hacerlo de manera sólida.
 
 ## Definición tradicional

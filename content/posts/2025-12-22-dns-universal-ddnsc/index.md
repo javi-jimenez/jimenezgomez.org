@@ -15,7 +15,6 @@ tags:
    - space
    - research
 og_image: dns-universe-architecture.png
-tags: []
 ---
 ## Introducción: El Problema del Direccionamiento Universal
 

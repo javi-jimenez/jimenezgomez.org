@@ -1,13 +1,41 @@
-{{/* Card partial: expects page as . (a Page object) */}}
+{{/* Card partial: render a card using theme image helper */}}
+{{ $page := . }}
+{{ $image := partialCached "helper/image" (dict "Context" $page "Type" "articleList") $page.RelPermalink "card" }}
 <article class="card">
-  {{ $img := .Params.og_image | default .Params.image }}
-  {{ if $img }}
-    <a href="{{ .RelPermalink }}">
-      <img src="{{ printf "%s%s" .RelPermalink $img }}" alt="{{ .Title }}">
+  {{ if $image.exists }}
+    <a href="{{ $page.RelPermalink }}" class="card-image-link">
+      {{ if $image.resource }}
+        {{- $thumb := $image.resource.Fill "400x200" -}}
+        <img src="{{ $thumb.RelPermalink }}" alt="{{ $page.Title }}" class="card-img-preview">
+      {{ else }}
+        <img src="{{ $image.permalink }}" alt="{{ $page.Title }}" class="card-img-preview">
+      {{ end }}
     </a>
   {{ end }}
+
+  <div class="card-body">
+    <a class="title-link" href="{{ $page.RelPermalink }}"><h2 class="card-title">{{ $page.Title }}</h2></a>
+    <p class="card-excerpt">{{ partial "helper/clean_excerpt.html" (dict "Page" $page "Len" 120) }}</p>
+  </div>
+</article>
+{{/* Card partial: expects page as . (a Page object) */}}
+<article class="card">
+  {{/* Prefer explicit image param, then og_image, then first page resource */}}
+  {{ $defaultImg := "/img/default-post.svg" }}
+  {{ $img := .Params.image | default .Params.og_image | default $defaultImg }}
+  {{ with .Resources.Match "*" }}
+    {{ if not $img }}
+      {{ $first := index . 0 }}
+      {{ $img = $first.RelPermalink }}
+    {{ end }}
+  {{ end }}
+
+  <a href="{{ .RelPermalink }}" class="card-image-link">
+    <img src="{{ if (strings.HasPrefix $img "/") }}{{ $img }}{{ else }}{{ printf "%s%s" .RelPermalink $img }}{{ end }}" alt="{{ .Title }}" class="card-img-preview">
+  </a>
+
   <div class="card-body">
     <a class="title-link" href="{{ .RelPermalink }}"><h2 class="card-title">{{ .Title }}</h2></a>
-    <p class="card-excerpt">{{ if .Summary }}{{ .Summary }}{{ else }}{{ .Plain | truncate 200 }}{{ end }}</p>
+    <p class="card-excerpt">{{ partial "helper/clean_excerpt.html" (dict "Page" . "Len" 120) }}</p>
   </div>
 </article>

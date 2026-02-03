@@ -5,14 +5,14 @@ tags:
 title: "Why to improve? part 3. Base materials for Computer Engineers"
 date: 2023-10-14T12:18:00+02:00
 draft: true
-categories: [writing, book, technology, base]
-tags:
+categories:
+  - writing
+  - book
   - technology
-  - knowledge
   - base
+  - knowledge
   - core
   - materials
 layout: post
-image: "og-image.svg"
-tags:
 ---
+

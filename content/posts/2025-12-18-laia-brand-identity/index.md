@@ -3,7 +3,7 @@ title: "Identidad Visual de Laia: Diseñando la Imagen de la IA Ética"
 date: 2025-12-18T09:30:00+02:00
 draft: false
 layout: post
-image: "laia-brand-showcase.svg"
+image: "og-image.svg"
 categories:
   - Design
   - Branding
@@ -14,8 +14,6 @@ tags:
   - Logo Design
   - Laia Project
   - Corporate Identity
-tags:
-tags: []
 ---
 ![Laia Brand Identity](laia-brand-hero.svg)
 

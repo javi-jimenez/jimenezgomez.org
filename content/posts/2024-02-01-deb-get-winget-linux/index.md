@@ -3,11 +3,10 @@ title: "deb-get: El \"winget\" para Linux que necesitas para evitar los problema
 date: 2024-02-01T09:00:00+01:00
 draft: false
 layout: post
-image: "image.svg"
+image: "og-image.svg"
 author: "Francisco Javier"
 reviewer: "Enrique Jiménez Gómez"
 version: "1.0"
-tags:
 tags:
 ---
 # deb-get: El "winget" para Linux que necesitas para evitar los problemas de Snap

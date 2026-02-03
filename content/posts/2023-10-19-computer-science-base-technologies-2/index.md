@@ -5,8 +5,9 @@ tags:
 title: "Computer Science base technologies, part II"
 date: 2023-10-19T20:38:00+02:00
 draft: false
-categories: [writing, book, technology]
-tags:
+categories:
+  - writing
+  - book
   - technology
   - knowledge
   - base
@@ -14,10 +15,9 @@ tags:
   - uml
   - flowchart
 layout: post
-image: "og-image.svg"
-tags:
 ---
 ![Low code platform example for reading DHT22 data using an API](low-code-example-app-for-reading-dht22-data-from-api.png)
+
 
 At the time of writing a program, you can think about many ideas for that, much of them can be very popular, but the least thing that you want, is to fight against code or deployments if you only want to build an app with a graphical interface for managing your data.
 

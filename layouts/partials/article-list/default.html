@@ -1,0 +1,25 @@
+{{/* Blog list item: show image, title, date and tags */}}
+<article class="blog-list-item">
+  {{ $image := partialCached "helper/image" (dict "Context" . "Type" "articleList") .RelPermalink "articleList" }}
+  {{ if $image.exists }}
+    <a href="{{ .RelPermalink }}" class="article-image-link">
+      {{ if $image.resource }}
+        {{ $thumb := $image.resource.Fill "400x200" }}
+        <img src="{{ $thumb.RelPermalink }}" alt="{{ .Title }}" loading="lazy">
+      {{ else }}
+        <img src="{{ $image.permalink }}" alt="{{ .Title }}" loading="lazy">
+      {{ end }}
+    </a>
+  {{ end }}
+
+  <div class="article-meta">
+    <h2 class="article-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+    <div class="article-meta-row">
+      <time datetime='{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}'>{{ .Date | time.Format (or .Site.Params.dateFormat.published "Jan 02, 2006") }}</time>
+      {{ with .Params.tags }}
+        <span class="article-tags">{{ range $i, $t := . }}{{ if $i }}, {{ end }}<a href="/tags/{{ urlize $t }}">{{ $t }}</a>{{ end }}</span>
+      {{ end }}
+    </div>
+    <p class="article-excerpt">{{ partial "helper/clean_excerpt.html" (dict "Page" . "Len" 180) }}</p>
+  </div>
+</article>

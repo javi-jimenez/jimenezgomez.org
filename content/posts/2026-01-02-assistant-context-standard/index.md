@@ -12,8 +12,6 @@ tags:
   - AI
   - gemini
 og_image: og-image-1200x630.png
-tags:
-tags: []
 ---
 **Hora:** 20:30 UTC
 **Creditos de Propuesta Original:** https://jimenezgomez.org/posts/2025-12-30-assistant-context-standard/

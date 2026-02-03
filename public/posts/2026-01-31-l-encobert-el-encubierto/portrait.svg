@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1600" viewBox="0 0 600 800" role="img" aria-label="Retrato estilizado del Encubierto">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0f1720"/>
+      <stop offset="50%" stop-color="#332b3a"/>
+      <stop offset="100%" stop-color="#1b1b2b"/>
+    </linearGradient>
+    <radialGradient id="halo" cx="50%" cy="22%" r="45%">
+      <stop offset="0%" stop-color="#2ee6a8" stop-opacity="0.45"/>
+      <stop offset="60%" stop-color="#0b1220" stop-opacity="0.0"/>
+    </radialGradient>
+    <linearGradient id="cloth" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#090909"/>
+      <stop offset="100%" stop-color="#1c1c1c"/>
+    </linearGradient>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="1.5" result="b"/>
+      <feBlend in="SourceGraphic" in2="b" mode="normal"/>
+    </filter>
+  </defs>
+
+  <rect width="100%" height="100%" fill="url(#bg)" />
+
+  <!-- halo sutil detrás de la cabeza -->
+  <circle cx="300" cy="160" r="160" fill="url(#halo)" opacity="0.9" />
+
+  <!-- figura central estilizada -->
+  <g transform="translate(0,40)" filter="url(#soft)">
+    <!-- túnica / torso -->
+    <path d="M180 260 C180 200 220 160 300 160 C380 160 420 200 420 260 L420 520 C420 560 380 590 300 590 C220 590 180 560 180 520 Z" fill="url(#cloth)" />
+
+    <!-- hombros y mangas suaves -->
+    <path d="M120 260 C140 240 170 240 200 260" stroke="#0b0b0b" stroke-width="18" stroke-linecap="round" fill="none" opacity="0.9" />
+    <path d="M480 260 C460 240 430 240 400 260" stroke="#0b0b0b" stroke-width="18" stroke-linecap="round" fill="none" opacity="0.9" />
+
+    <!-- cabeza estilizada -->
+    <g>
+      <ellipse cx="300" cy="150" rx="78" ry="96" fill="#efdccb" />
+
+      <!-- pelo media melena, con pinceladas -->
+      <path d="M230 90 C210 120 210 160 240 190 C260 205 280 215 300 215 C320 215 340 205 360 190 C390 160 390 120 370 90 C350 68 320 70 300 82 C290 88 270 88 250 84 C240 82 235 86 230 90 Z" fill="#0b0b0b" opacity="0.98" />
+      <path d="M245 115 C260 130 280 138 300 138 C320 138 340 130 355 115" stroke="#111" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.6" />
+
+      <!-- rasgos: ojos verdes con brillo interior -->
+      <g>
+        <ellipse cx="270" cy="150" rx="14" ry="9" fill="#6fe39a" />
+        <ellipse cx="330" cy="150" rx="14" ry="9" fill="#58c97a" />
+        <circle cx="270" cy="150" r="3.5" fill="#05210b" />
+        <circle cx="330" cy="150" r="3.5" fill="#05210b" />
+        <circle cx="275" cy="146" r="3" fill="#d9ffef" opacity="0.85" />
+        <circle cx="334" cy="146" r="3" fill="#d9ffef" opacity="0.85" />
+      </g>
+
+      <!-- nariz y boca sugeridas con pinceladas -->
+      <path d="M300 170 C295 176 305 184 300 190" stroke="#b47d67" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.85" />
+      <path d="M285 204 C295 210 305 210 315 204" stroke="#6b3f3f" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.7" />
+    </g>
+
+    <!-- manos y pies insinuados, descalzo -->
+    <g fill="#efdccb" opacity="0.95">
+      <ellipse cx="230" cy="540" rx="28" ry="12" />
+      <ellipse cx="370" cy="540" rx="28" ry="12" />
+    </g>
+  </g>
+
+  <!-- firma pictórica sutil -->
+  <g transform="translate(420,720) scale(0.9)" opacity="0.6">
+    <path d="M0 0 C20 -6 40 -6 60 0" stroke="#27412a" stroke-width="3" fill="none" stroke-linecap="round" />
+  </g>
+</svg>

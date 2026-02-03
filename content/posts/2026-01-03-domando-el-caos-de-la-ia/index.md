@@ -4,16 +4,14 @@ date: "2026-01-03T07:30:00+01:00"
 draft: false
 layout: post
 image: "og-image.svg"
+---
 description: "Framework ACS (Assistant Context Standard): separar axiomas de inferencias para memoria trazable en IA."
 tags:
   - divulgación
   - ACS
   - IA
   - framework
-og_image: imagen-ilustrativa-documento-tecnico-acs-blog-jimenezgomez.org.jpg
-tags:
-tags:
----
+og_image: imagen-ilustrativa-documento-tecnico-acs-blog-jimenezgomez.org.jpg---
 📝 Artículo de Divulgación: "Domando el Caos de la IA"
 
 Abstract: El fin de la amnesia artificial

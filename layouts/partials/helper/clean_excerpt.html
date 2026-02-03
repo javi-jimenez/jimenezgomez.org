@@ -1,0 +1,46 @@
+{{/*
+  Helper partial: clean_excerpt
+  Usage: {{ partial "helper/clean_excerpt.html" (dict "Page" . "Len" 120) }}
+  - removes leading malformed frontmatter blocks
+  - unescapes common HTML entities
+  - plainifies and truncates to desired length
+*/}}
+{{ $ctx := . }}
+{{ $p := index $ctx "Page" }}
+{{ if not $p }}{{ return "" }}{{ end }}
+{{ $len := 120 }}
+{{ with index $ctx "Len" }}{{ $len = . }}{{ end }}
+
+{{/* prefer Summary if present, otherwise Plain */}}
+{{ $text := cond (and (isset $p "Summary") (ne $p.Summary "")) $p.Summary $p.Plain }}
+
+{{/* remove possible duplicated/malformed frontmatter at the top */}}
+{{ $re := `(?s)^---.*?---\s*` }}
+{{ $clean := replaceRE $re $text "" }}
+
+{{/* replace common HTML entities */}}
+{{ $clean = replace $clean "&ldquo;" "\"" }}
+{{ $clean = replace $clean "&rdquo;" "\"" }}
+{{ $clean = replace $clean "&lsquo;" "'" }}
+{{ $clean = replace $clean "&rsquo;" "'" }}
+{{ $clean = replace $clean "&mdash;" "—" }}
+{{ $clean = replace $clean "&ndash;" "-" }}
+{{ $clean = replace $clean "&amp;" "&" }}
+{{ $clean = replace $clean "&quot;" "\"" }}
+{{ $clean = replace $clean "&nbsp;" " " }}
+{{ $clean = replace $clean "&ntilde;" "ñ" }}
+{{ $clean = replace $clean "&aacute;" "á" }}
+{{ $clean = replace $clean "&eacute;" "é" }}
+{{ $clean = replace $clean "&iacute;" "í" }}
+{{ $clean = replace $clean "&oacute;" "ó" }}
+{{ $clean = replace $clean "&uacute;" "ú" }}
+
+{{/* convert to plain text and trim */}}
+{{ $clean = $clean | plainify | trim " \n\t" }}
+
+{{/* truncate to length */}}
+{{ if gt (len $clean) $len }}
+  {{ $clean = (slice $clean 0 $len) | printf "%s..." }}
+{{ end }}
+
+{{- $clean -}}

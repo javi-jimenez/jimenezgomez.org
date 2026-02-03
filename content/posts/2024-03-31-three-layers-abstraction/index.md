@@ -5,15 +5,16 @@ tags:
 title: "Three layers abstraction"
 date: 2024-03-31 20:52:00 +02:00
 draft: false
-categories: [writing, software, architecture]
-tags:
+categories:
+  - writing
+  - software
+  - architecture
   - layer
   - fractal
 layout: post
-image: "og-image.svg"
-tags:
 ---
 ![Three Layers as Leafs](three-layers-as-leafs-gettyimages-1000px-157287379-2048x2048.jpg)
+---
 
 The software design can be simplified in three layers:
 - View

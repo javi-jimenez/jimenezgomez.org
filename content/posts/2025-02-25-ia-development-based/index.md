@@ -5,10 +5,9 @@ tags:
 title: "Desarrollo con LaIA"
 date: 2025-02-25
 layout: post
-image: "og-image.svg"
-tags:
 ---
 Recientemente recibí una propuesta para dedicar mi tiempo a un trabajo.
+---
 
 En la propuesta, al poco de comenzar las conversaciones, se incluyó un reto, crear un código con microservicios, usando arquitectura hexagonal, según comentaban.
 

@@ -3,9 +3,9 @@ title: "Callbacks optimizadas con IA: hacer el código más lineal y legible"
 date: 2026-01-30T12:00:00+01:00
 draft: false
 layout: post
-image: "thumb.svg"
+image: "og-image.svg"
+---
 og_image: "og-image.svg"
-tags:
 tags:
 ---
 En proyectos reales, las callbacks pueden crecer hasta convertirse en código difícil de razonar. Hoy veremos cómo la inteligencia artificial (IA) puede ayudarnos a refactorizar callbacks hacia formas más lineales y legibles, y qué patrones y prácticas aplicar para mantener la mantenibilidad.

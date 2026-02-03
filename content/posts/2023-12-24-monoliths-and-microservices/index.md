@@ -5,15 +5,17 @@ tags:
 title: "Monoliths and microservices"
 date: 2023-12-24T00:00:00+02:00
 draft: false
-categories: [writing, software, architecture, layer]
-tags:
+categories:
+  - writing
+  - software
+  - architecture
+  - layer
   - monolith
   - microservice
 layout: post
-image: "og-image.svg"
-tags:
 ---
 <!-- preview image on social media -->
+---
 <meta property="og:image" content="2023-12-24-monoliths-and-microservices/inca-bricks-1000px.jpg" />
 
 ![Monoliths and MicroServices](inca-bricks-1000px.jpg)

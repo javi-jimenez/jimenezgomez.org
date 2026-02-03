@@ -4,8 +4,9 @@ date: 2026-01-03T09:05:00+01:00
 draft: false
 layout: post
 image: "og-image.svg"
-categories: [technology, arquitectura]
-tags:
+categories:
+  - technology
+  - arquitectura
 tags:
 ---
 ## Motivación
