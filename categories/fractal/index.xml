@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>fractal on Francisco Javier Jiménez Gómez</title><link>https://jimenezgomez.org/categories/fractal/</link><description>Recent content in fractal on Francisco Javier Jiménez Gómez</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>Francisco Javier Jiménez Gómez</copyright><lastBuildDate>Sun, 31 Mar 2024 20:52:00 +0200</lastBuildDate><atom:link href="https://jimenezgomez.org/categories/fractal/index.xml" rel="self" type="application/rss+xml"/><item><title>Three layers abstraction</title><link>https://jimenezgomez.org/posts/2024-03-31-three-layers-abstraction/</link><pubDate>Sun, 31 Mar 2024 20:52:00 +0200</pubDate><guid>https://jimenezgomez.org/posts/2024-03-31-three-layers-abstraction/</guid><description>&lt;img src="https://jimenezgomez.org/posts/2024-03-31-three-layers-abstraction/og-image.svg" alt="Featured image of post Three layers abstraction" />&lt;h2 id="three-layers-as-leafsthree-layers-as-leafs-gettyimages-1000px-157287379-2048x2048jpg">&lt;img src="https://jimenezgomez.org/posts/2024-03-31-three-layers-abstraction/three-layers-as-leafs-gettyimages-1000px-157287379-2048x2048.jpg"
+width="1000"
+height="667"
+srcset="https://jimenezgomez.org/posts/2024-03-31-three-layers-abstraction/_hu057f930f56c58a73f0fbea0aa66b1537_243337_5d3e1d1b61c23dcf40e9bc504d60f8ca.jpg 480w, https://jimenezgomez.org/posts/2024-03-31-three-layers-abstraction/_hu057f930f56c58a73f0fbea0aa66b1537_243337_31a53c9b848bcaf87e7c49ee321d627f.jpg 1024w"
+loading="lazy"
+alt="Three Layers as Leafs"
+class="gallery-image"
+data-flex-grow="149"
+data-flex-basis="359px"
+>
+&lt;/h2>&lt;p>The software design can be simplified in three layers:&lt;/p>
+&lt;ul>
+&lt;li>View&lt;/li>
+&lt;li>Business&lt;/li>
+&lt;li>Data&lt;/li>
+&lt;/ul>
+&lt;p>For example, in a web application, you have:&lt;/p>
+&lt;ul>
+&lt;li>View, usually in JavaScript, HTML and CSS&lt;/li>
+&lt;li>Business, usually JavaScript or a backend API&lt;/li>
+&lt;li>Data, the pure data, that can be structured data as a database or a dictionary, for example&lt;/li>
+&lt;/ul>
+&lt;p>If we want to stablish a relation between layers and Fractal Architecture, we can view the previous Business layer as composed of three layers:&lt;/p>
+&lt;ul>
+&lt;li>View, the backend API&lt;/li>
+&lt;li>Business, the Domain&lt;/li>
+&lt;li>Data, the objects that represent the underlying data&lt;/li>
+&lt;/ul>
+&lt;p>In the initial decomposition, the Data layer can be seen again as a three layer design:&lt;/p>
+&lt;ul>
+&lt;li>View, the accepted commands and the REPL or API&lt;/li>
+&lt;li>Business, the internal logic or the database application&lt;/li>
+&lt;li>Data, the internal structures used by the application to effectively store the data&lt;/li>
+&lt;/ul>
+&lt;p>As you see, you can extend the concept to other domains.&lt;/p>
+&lt;p>This brief idea can be of help when we design or think about architecture.&lt;/p>
+&lt;p>Finally, to fit this idea into the Fractal Architecture, all three (or any you have) layers, must be considered as an atomic autonomous block with an input and an output, as a black box pattern.&lt;/p></description></item></channel></rss>

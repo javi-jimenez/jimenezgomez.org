@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="640" viewBox="0 0 600 800" role="img" aria-label="Miniatura estilizada del Encubierto">
+  <defs>
+    <linearGradient id="tbg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0f1720"/>
+      <stop offset="100%" stop-color="#1b1b2b"/>
+    </linearGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#tbg)" />
+  <g transform="translate(60,40) scale(0.5)">
+    <circle cx="300" cy="160" r="120" fill="#18302a" opacity="0.28" />
+    <ellipse cx="300" cy="150" rx="68" ry="82" fill="#efdccb" />
+    <path d="M240 100 C225 125 225 150 250 170 C270 183 290 190 300 190 C310 190 330 183 350 170 C375 150 375 125 360 100 C345 84 320 86 300 96 C290 102 270 102 255 98 Z" fill="#0b0b0b" />
+    <ellipse cx="270" cy="150" rx="10" ry="7" fill="#6fe39a" />
+    <ellipse cx="330" cy="150" rx="10" ry="7" fill="#58c97a" />
+  </g>
+</svg>

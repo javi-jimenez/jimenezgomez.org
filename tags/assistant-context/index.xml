@@ -1,105 +1,83 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-    <channel>
-        <title>assistant-context on Francisco Javier Jiménez Gómez</title>
-        <link>https://jimenezgomez.org/tags/assistant-context/</link>
-        <description>Recent content in assistant-context on Francisco Javier Jiménez Gómez</description>
-        <generator>Hugo -- gohugo.io</generator>
-        <language>es</language>
-        <copyright>Francisco Javier Jiménez Gómez</copyright>
-        <lastBuildDate>Fri, 02 Jan 2026 19:30:00 +0000</lastBuildDate><atom:link href="https://jimenezgomez.org/tags/assistant-context/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>Protocolo Unificado de Contexto para Asistentes (PUCA / ACS)</title>
-        <link>https://jimenezgomez.org/posts/2026-01-02-assistant-context-standard/</link>
-        <pubDate>Fri, 02 Jan 2026 19:30:00 +0000</pubDate>
-        
-        <guid>https://jimenezgomez.org/posts/2026-01-02-assistant-context-standard/</guid>
-        <description>&lt;p&gt;&lt;strong&gt;Hora:&lt;/strong&gt; 20:30 UTC
-&lt;strong&gt;Creditos de Propuesta Original:&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;https://jimenezgomez.org/posts/2025-12-30-assistant-context-standard/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://jimenezgomez.org/posts/2025-12-30-assistant-context-standard/&lt;/a&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;1-introducción-el-problema-del-efecto-amnesia&#34;&gt;1. Introducción: El problema del &amp;ldquo;Efecto Amnesia&amp;rdquo;
-&lt;/h2&gt;&lt;p&gt;A pesar de la potencia de los LLMs, el trabajo en entornos locales y distribuidos sufre de una desconexión crítica: la IA no sabe qué ocurrió en la sesión anterior si el motor o la interfaz cambian. Proponemos un estándar basado en archivos de manifiesto situados en la raíz de los proyectos para garantizar la continuidad del flujo de trabajo.&lt;/p&gt;
-&lt;h2 id=&#34;2-estructura-del-estándar-mejorado-propuesta-v20&#34;&gt;2. Estructura del Estándar Mejorado (Propuesta v2.0)
-&lt;/h2&gt;&lt;p&gt;Para que un estándar sea efectivo, debe ser ligero y legible tanto para humanos como para máquinas. Sugerimos la creación de un archivo &lt;code&gt;.ai-context.json&lt;/code&gt; o &lt;code&gt;.assistant.md&lt;/code&gt; con la siguiente estructura mejorada:&lt;/p&gt;
-&lt;h3 id=&#34;a-el-manifiesto-de-tarea-task_state&#34;&gt;A. El Manifiesto de Tarea (&lt;code&gt;task_state&lt;/code&gt;)
-&lt;/h3&gt;&lt;p&gt;No basta con decir qué se está haciendo; hay que definir el &amp;ldquo;Estado de la Misión&amp;rdquo;:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Current Goal:&lt;/strong&gt; El objetivo macro actual.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Sub-tasks:&lt;/strong&gt; Lista de verificación (Checklist) de tareas pendientes y completadas.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Blocking Issues:&lt;/strong&gt; Impedimentos técnicos encontrados en sesiones previas.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;b-diccionario-de-entidades-knowledge_graph&#34;&gt;B. Diccionario de Entidades (&lt;code&gt;knowledge_graph&lt;/code&gt;)
-&lt;/h3&gt;&lt;p&gt;Para evitar que la IA confunda términos en proyectos grandes:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Definitions:&lt;/strong&gt; Glosario de términos específicos del negocio o del código.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Key Files:&lt;/strong&gt; Mapeo de archivos críticos y su función (evita que la IA tenga que leer todo el repo para entender la arquitectura).&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;c-registro-de-decisiones-de-diseño-adr---architecture-decision-records&#34;&gt;C. Registro de Decisiones de Diseño (ADR - Architecture Decision Records)
-&lt;/h3&gt;&lt;p&gt;El mayor fallo de contexto es cuando la IA sugiere cambiar algo que ya se decidió no hacer.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Decisions:&lt;/strong&gt; &amp;ldquo;Usamos UUID en lugar de ID incremental por X razón&amp;rdquo;. Esto evita bucles de sugerencias erróneas.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;3-mejoras-agregadas-aportación-de-la-ia&#34;&gt;3. Mejoras Agregadas (Aportación de la IA)
-&lt;/h2&gt;&lt;p&gt;He añadido tres capas técnicas que tu estándar original puede adoptar para ser más robusto:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;Capa de Jerarquía de Herencia:&lt;/strong&gt; Si hay un archivo en &lt;code&gt;/root&lt;/code&gt; y otro en &lt;code&gt;/root/module_A&lt;/code&gt;, el asistente debe fusionarlos. El archivo de subdirectorio tiene prioridad sobre el global. Esto permite &amp;ldquo;Contexto por Módulo&amp;rdquo;.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Firma de Sesión (Hash de Estado):&lt;/strong&gt;
-Incluir un &lt;code&gt;last_state_hash&lt;/code&gt; que resuma el estado del código. Si el asistente detecta que el código cambió drásticamente desde la última lectura del contexto, debe alertar al usuario para actualizar el manifiesto.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Token Budget Management:&lt;/strong&gt;
-Instrucción explícita de &amp;ldquo;Priority Levels&amp;rdquo;. Si el archivo de contexto crece mucho, el estándar define qué partes se pueden omitir (ej. el historial antiguo) y qué partes son obligatorias (el Goal actual).&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;4-implementación-práctica-ejemplo-de-archivo&#34;&gt;4. Implementación Práctica (Ejemplo de Archivo)
-&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;# .ai-context.yaml&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;standard_version&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;2.0&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;project_name&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;Phoenix System&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;author_context&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;JimenezGomez&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;current_sprint&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;	&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;task&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;Refactorización de la capa de autenticación&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;	&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;status&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;In_Progress (60%)&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;	&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;last_action&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;Migración de JWT a cookies HttpOnly terminada&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;rules&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;	&lt;/span&gt;- &lt;span class=&#34;s2&#34;&gt;&amp;#34;No usar librerías externas para el manejo de fechas&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;	&lt;/span&gt;- &lt;span class=&#34;s2&#34;&gt;&amp;#34;Mantener compatibilidad con Python 3.9&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;knowledge_base&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;	&lt;/span&gt;- &lt;span class=&#34;s2&#34;&gt;&amp;#34;UserDB: Tabla principal en PostgreSQL&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;	&lt;/span&gt;- &lt;span class=&#34;s2&#34;&gt;&amp;#34;Legacy_Auth: No tocar hasta el sprint 4&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;last_update&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;2026-01-02 20:25&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;hr&gt;
-&lt;h2 id=&#34;5-conclusión&#34;&gt;5. Conclusión
-&lt;/h2&gt;&lt;p&gt;El &lt;strong&gt;Assistant Context Standard&lt;/strong&gt; propuesto por JimenezGomez y refinado en este documento elimina la fricción de entrada en cada nueva sesión de IA. Al tratar el contexto como &lt;strong&gt;código persistente&lt;/strong&gt; y no como &lt;strong&gt;memoria volátil&lt;/strong&gt;, permitimos que el desarrollo asistido por IA sea verdaderamente profesional y escalable.&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;&lt;strong&gt;Nota del Asistente:&lt;/strong&gt; He redactado este artículo integrando tu visión de persistencia en directorios con mi capacidad de estructuración técnica. Si quieres que profundice en algún punto técnico (como la integración con el protocolo MCP), dímelo.&lt;/p&gt;
-</description>
-        </item>
-        
-    </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>assistant-context on Francisco Javier Jiménez Gómez</title><link>https://jimenezgomez.org/tags/assistant-context/</link><description>Recent content in assistant-context on Francisco Javier Jiménez Gómez</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>Francisco Javier Jiménez Gómez</copyright><lastBuildDate>Fri, 02 Jan 2026 19:30:00 +0000</lastBuildDate><atom:link href="https://jimenezgomez.org/tags/assistant-context/index.xml" rel="self" type="application/rss+xml"/><item><title>Protocolo Unificado de Contexto para Asistentes (PUCA / ACS)</title><link>https://jimenezgomez.org/posts/2026-01-02-assistant-context-standard/</link><pubDate>Fri, 02 Jan 2026 19:30:00 +0000</pubDate><guid>https://jimenezgomez.org/posts/2026-01-02-assistant-context-standard/</guid><description>&lt;img src="https://jimenezgomez.org/posts/2026-01-02-assistant-context-standard/og-image.svg" alt="Featured image of post Protocolo Unificado de Contexto para Asistentes (PUCA / ACS)" />&lt;p>&lt;strong>Hora:&lt;/strong> 20:30 UTC
+&lt;strong>Creditos de Propuesta Original:&lt;/strong> &lt;a class="link" href="https://jimenezgomez.org/posts/2025-12-30-assistant-context-standard/" target="_blank" rel="noopener"
+>https://jimenezgomez.org/posts/2025-12-30-assistant-context-standard/&lt;/a>&lt;/p>
+&lt;h2 id="1-introducción-el-problema-del-efecto-amnesia">1. Introducción: El problema del &amp;ldquo;Efecto Amnesia&amp;rdquo;
+&lt;/h2>&lt;p>A pesar de la potencia de los LLMs, el trabajo en entornos locales y distribuidos sufre de una desconexión crítica: la IA no sabe qué ocurrió en la sesión anterior si el motor o la interfaz cambian. Proponemos un estándar basado en archivos de manifiesto situados en la raíz de los proyectos para garantizar la continuidad del flujo de trabajo.&lt;/p>
+&lt;h2 id="2-estructura-del-estándar-mejorado-propuesta-v20">2. Estructura del Estándar Mejorado (Propuesta v2.0)
+&lt;/h2>&lt;p>Para que un estándar sea efectivo, debe ser ligero y legible tanto para humanos como para máquinas. Sugerimos la creación de un archivo &lt;code>.ai-context.json&lt;/code> o &lt;code>.assistant.md&lt;/code> con la siguiente estructura mejorada:&lt;/p>
+&lt;h3 id="a-el-manifiesto-de-tarea-task_state">A. El Manifiesto de Tarea (&lt;code>task_state&lt;/code>)
+&lt;/h3>&lt;p>No basta con decir qué se está haciendo; hay que definir el &amp;ldquo;Estado de la Misión&amp;rdquo;:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Current Goal:&lt;/strong> El objetivo macro actual.&lt;/li>
+&lt;li>&lt;strong>Sub-tasks:&lt;/strong> Lista de verificación (Checklist) de tareas pendientes y completadas.&lt;/li>
+&lt;li>&lt;strong>Blocking Issues:&lt;/strong> Impedimentos técnicos encontrados en sesiones previas.&lt;/li>
+&lt;/ul>
+&lt;h3 id="b-diccionario-de-entidades-knowledge_graph">B. Diccionario de Entidades (&lt;code>knowledge_graph&lt;/code>)
+&lt;/h3>&lt;p>Para evitar que la IA confunda términos en proyectos grandes:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Definitions:&lt;/strong> Glosario de términos específicos del negocio o del código.&lt;/li>
+&lt;li>&lt;strong>Key Files:&lt;/strong> Mapeo de archivos críticos y su función (evita que la IA tenga que leer todo el repo para entender la arquitectura).&lt;/li>
+&lt;/ul>
+&lt;h3 id="c-registro-de-decisiones-de-diseño-adr---architecture-decision-records">C. Registro de Decisiones de Diseño (ADR - Architecture Decision Records)
+&lt;/h3>&lt;p>El mayor fallo de contexto es cuando la IA sugiere cambiar algo que ya se decidió no hacer.&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Decisions:&lt;/strong> &amp;ldquo;Usamos UUID en lugar de ID incremental por X razón&amp;rdquo;. Esto evita bucles de sugerencias erróneas.&lt;/li>
+&lt;/ul>
+&lt;h2 id="3-mejoras-agregadas-aportación-de-la-ia">3. Mejoras Agregadas (Aportación de la IA)
+&lt;/h2>&lt;p>He añadido tres capas técnicas que tu estándar original puede adoptar para ser más robusto:&lt;/p>
+&lt;ol>
+&lt;li>&lt;strong>Capa de Jerarquía de Herencia:&lt;/strong> Si hay un archivo en &lt;code>/root&lt;/code> y otro en &lt;code>/root/module_A&lt;/code>, el asistente debe fusionarlos. El archivo de subdirectorio tiene prioridad sobre el global. Esto permite &amp;ldquo;Contexto por Módulo&amp;rdquo;.&lt;/li>
+&lt;li>&lt;strong>Firma de Sesión (Hash de Estado):&lt;/strong>
+Incluir un &lt;code>last_state_hash&lt;/code> que resuma el estado del código. Si el asistente detecta que el código cambió drásticamente desde la última lectura del contexto, debe alertar al usuario para actualizar el manifiesto.&lt;/li>
+&lt;li>&lt;strong>Token Budget Management:&lt;/strong>
+Instrucción explícita de &amp;ldquo;Priority Levels&amp;rdquo;. Si el archivo de contexto crece mucho, el estándar define qué partes se pueden omitir (ej. el historial antiguo) y qué partes son obligatorias (el Goal actual).&lt;/li>
+&lt;/ol>
+&lt;h2 id="4-implementación-práctica-ejemplo-de-archivo">4. Implementación Práctica (Ejemplo de Archivo)
+&lt;/h2>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-yaml" data-lang="yaml">&lt;span class="line">&lt;span class="cl">&lt;span class="c"># .ai-context.yaml&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">standard_version&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s2">&amp;#34;2.0&amp;#34;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">project_name&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s2">&amp;#34;Phoenix System&amp;#34;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">author_context&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s2">&amp;#34;JimenezGomez&amp;#34;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">current_sprint&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">task&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s2">&amp;#34;Refactorización de la capa de autenticación&amp;#34;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">status&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s2">&amp;#34;In_Progress (60%)&amp;#34;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">last_action&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s2">&amp;#34;Migración de JWT a cookies HttpOnly terminada&amp;#34;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">rules&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="s2">&amp;#34;No usar librerías externas para el manejo de fechas&amp;#34;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="s2">&amp;#34;Mantener compatibilidad con Python 3.9&amp;#34;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">knowledge_base&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="s2">&amp;#34;UserDB: Tabla principal en PostgreSQL&amp;#34;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="s2">&amp;#34;Legacy_Auth: No tocar hasta el sprint 4&amp;#34;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">last_update&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s2">&amp;#34;2026-01-02 20:25&amp;#34;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="5-conclusión">5. Conclusión
+&lt;/h2>&lt;p>El &lt;strong>Assistant Context Standard&lt;/strong> propuesto por JimenezGomez y refinado en este documento elimina la fricción de entrada en cada nueva sesión de IA. Al tratar el contexto como &lt;strong>código persistente&lt;/strong> y no como &lt;strong>memoria volátil&lt;/strong>, permitimos que el desarrollo asistido por IA sea verdaderamente profesional y escalable.&lt;/p>
+&lt;hr>
+&lt;p>&lt;strong>Nota del Asistente:&lt;/strong> He redactado este artículo integrando tu visión de persistencia en directorios con mi capacidad de estructuración técnica. Si quieres que profundice en algún punto técnico (como la integración con el protocolo MCP), dímelo.&lt;/p></description></item></channel></rss>
