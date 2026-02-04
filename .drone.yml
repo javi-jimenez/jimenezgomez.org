@@ -6,7 +6,7 @@ steps:
   - name: build
     image: klakegg/hugo:0.155.2-ext
     commands:
-      - hugo --minify
+      - sh scripts/generate-html.sh
 
   - name: deploy
     image: plugins/ftp
@@ -32,7 +32,7 @@ steps:
   - name: build
     image: klakegg/hugo:0.113.0-ext-alpine
     commands:
-      - hugo --minify
+      - sh scripts/generate-html.sh
 
   - name: deploy
     image: alpine:3.18
