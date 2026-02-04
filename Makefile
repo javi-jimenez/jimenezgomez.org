@@ -14,17 +14,23 @@ gen-og-png:
 HUGO_DOCKER_IMAGE ?= klakegg/hugo:0.155.2-ext
 DOCKER_IMAGE ?= jimenezgomez-blog
 
+# Load environment from .env file into the shell for recipes that need it.
+# Uses POSIX-compatible `.` sourcing and `set -a` to export variables.
+ENV_LOAD = if [ -f .env ]; then set -a; . .env; set +a; fi
+
 help:
 	@echo "Available targets: html build serve docker-build docker-tag drone-exec ftp-deploy deploy commit push ci gen-og gen-og-png"
 
 html:
 	@echo "Generating site HTML..."
+	$(ENV_LOAD)
 	sh scripts/generate-html.sh
 
 build: html
 
 serve:
 	@echo "Starting Hugo server (local or Docker fallback)..."
+	$(ENV_LOAD)
 	@if command -v hugo >/dev/null 2>&1; then \
 		hugo server -D; \
 	else \
@@ -37,6 +43,7 @@ docker-build:
 
 docker-tag:
 	@echo "Tagging Docker image with commit sha (if available)"
+	$(ENV_LOAD)
 	@if [ -n "$$DRONE_COMMIT_SHA" ]; then \
 		docker tag $(DOCKER_IMAGE):latest $(DOCKER_IMAGE):$${DRONE_COMMIT_SHA:0:8}; \
 	else \
@@ -49,6 +56,7 @@ drone-exec:
 
 ftp-deploy:
 	@echo "Deploying public/ via FTP (uses lftp or Dockerized lftp)."
+	$(ENV_LOAD)
 	@if [ -z "$$FTP_HOST" ] || [ -z "$$FTP_USER" ] || [ -z "$$FTP_PASSWORD" ] || [ -z "$$FTP_REMOTE_PATH" ]; then \
 		echo "FTP_HOST/USER/PASSWORD/REMOTE_PATH not set; skipping deploy"; exit 0; \
 	fi
