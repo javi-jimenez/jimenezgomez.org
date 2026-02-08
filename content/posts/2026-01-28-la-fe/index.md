@@ -1,9 +1,9 @@
----
-title: "La Fé"
+---title: "La Fé"
 date: 2026-01-28T12:00:00+01:00
 draft: false
 layout: post
 tags:
+image: "og-image.svg"
 ---
 image: "og-image.svg"
 og_image: "og-image.svg"---

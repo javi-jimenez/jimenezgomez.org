@@ -47,10 +47,3 @@ Los relatos locales vinculan a Valencia con catalizadores espirituales (Santo C�
 ## Reflexión final
 
 El Encubierto funciona como figura liminal: mezcla de rey oculto, asceta y salvador profético. Más que una persona singular, representa una expectativa colectiva de renovación radical que reaparece en distintos momentos de crisis. Su descripción (joven de negro, descalzo, ojos verdes, media melena) es hoy una imagen potente que recoge huellas históricas y capas simbólicas que atraviesan lo político, lo religioso y lo místico.
-
-
-Si quieres, puedo:
-
-- Añadir versión PNG/OG de las imágenes.
-- Traducir el texto al valenciano o inglés.
-- Ampliar con citas de archivos e índices de referencia.

@@ -1,0 +1,6 @@
+# Ignore local environment overrides containing secrets
+.env
+
+# Local editor / OS files
+.DS_Store
+thumbs.db
