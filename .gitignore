@@ -4,6 +4,3 @@
 # Local editor / OS files
 .DS_Store
 thumbs.db
-
-# tmp
-env-orig
