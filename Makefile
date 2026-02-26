@@ -71,6 +71,10 @@ deploy: html ftp-deploy
 
 ci: build docker-build docker-tag
 
+install-hooks:
+	@echo "Installing git hooks (sets core.hooksPath to .githooks)"
+	@./tools/install-git-hooks.sh
+
 commit:
 	@echo "Staging changes and committing"
 	@git add scripts/generate-html.sh .drone.yml Makefile || true

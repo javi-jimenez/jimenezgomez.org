@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+echo "pre-push: regenerating site HTML (make html)..."
+# Ensure environment is loaded if present
+if [ -f "$(pwd)/.env" ]; then
+  set -a; . "$(pwd)/.env"; set +a
+fi
+
+# Run the HTML generation; fail the push if it fails
+if make html; then
+  echo "pre-push: make html succeeded"
+else
+  echo "pre-push: make html failed — aborting push" >&2
+  exit 1
+fi
+
+exit 0
