@@ -1,8 +1,8 @@
----
-title: "El Espejismo del Open Source: ¿Libertad o Despojo Programado?"
+---title: "El Espejismo del Open Source: ¿Libertad o Despojo Programado?"
 date: 2026-02-26T11:09:00+01:00
 draft: false
 layout: post
+image: "og-image.svg"
 ---
 
 En la narrativa técnica contemporánea, el Código Abierto se presenta como la cúspide de la democratización del conocimiento. Sin embargo, tras el velo de la colaboración desinteresada, subyace una estructura de incentivos que, con frecuencia, opera como un mecanismo de expropiación para el autor independiente.
