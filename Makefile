@@ -14,9 +14,10 @@ gen-og-png:
 HUGO_DOCKER_IMAGE ?= klakegg/hugo:0.155.2-ext
 DOCKER_IMAGE ?= jimenezgomez-blog
 
-# Load environment from .env file into the shell for recipes that need it.
-# Uses POSIX-compatible `.` sourcing and `set -a` to export variables.
-ENV_LOAD = if [ -f .env ]; then set -a; . .env; set +a; fi
+# Load environment from `.env` file into the shell for recipes that need it.
+# Use $(CURDIR) so sourcing works regardless of the shell's working directory
+# (prevents ".: .env: not found" when make runs recipes in different shells).
+ENV_LOAD = if [ -f "$(CURDIR)/.env" ]; then set -a; . "$(CURDIR)/.env"; set +a; fi
 
 help:
 	@echo "Available targets: html build serve docker-build docker-tag drone-exec ftp-deploy deploy commit push ci gen-og gen-og-png"
