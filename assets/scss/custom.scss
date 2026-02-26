@@ -2,3 +2,9 @@
 
 /* Import share widget styles */
 @import "custom/share-widget";
+
+/* Ensure avatar images keep aspect ratio and are not stretched */
+.sidebar header .site-avatar .site-logo {
+	object-fit: cover;
+	object-position: center center;
+}
