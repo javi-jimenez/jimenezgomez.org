@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300">
+  <defs>
+    <linearGradient id="heroBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0c4a6e;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#075985;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0369a1;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <rect width="1200" height="300" fill="url(#heroBg)"/>
+  
+  <!-- Starfield -->
+  <circle cx="100" cy="50" r="2" fill="#bfdbfe" opacity="0.7"/>
+  <circle cx="950" cy="80" r="1.5" fill="#bfdbfe" opacity="0.6"/>
+  <circle cx="200" cy="220" r="1.8" fill="#bfdbfe" opacity="0.8"/>
+  <circle cx="1050" cy="190" r="1.3" fill="#bfdbfe" opacity="0.5"/>
+  <circle cx="300" cy="40" r="1.6" fill="#bfdbfe" opacity="0.6"/>
+  
+  <!-- Central composition -->
+  <g transform="translate(300, 150)">
+    <path d="M 0,-45 L 12,-12 L 45,0 L 12,12 L 0,45 L -12,12 L -45,0 L -12,-12 Z" 
+          fill="#bfdbfe" opacity="0.9"/>
+    <circle cx="0" cy="0" r="25" fill="none" stroke="#60a5fa" stroke-width="2" opacity="0.4"/>
+    <circle cx="0" cy="0" r="12" fill="#3b82f6"/>
+  </g>
+  
+  <text x="420" y="165" font-family="'Segoe UI', Arial" font-size="72" font-weight="300" 
+        fill="#f0f9ff" letter-spacing="16">LAIA</text>
+  
+  <text x="830" y="130" font-family="'Segoe UI', Arial" font-size="20" font-weight="300"
+        fill="#bfdbfe" letter-spacing="3">VISUAL IDENTITY</text>
+  <text x="830" y="160" font-family="'Segoe UI', Arial" font-size="16" font-weight="300"
+        fill="#93c5fd" letter-spacing="2">Ethical AI Design System</text>
+  <text x="830" y="185" font-family="'Segoe UI', Arial" font-size="13" 
+        fill="#60a5fa" letter-spacing="1">Stars · Networks · Transparency</text>
+</svg>

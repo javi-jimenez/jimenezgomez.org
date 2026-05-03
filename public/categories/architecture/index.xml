@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>architecture on Francisco Javier Jiménez Gómez</title><link>https://jimenezgomez.org/categories/architecture/</link><description>Recent content in architecture on Francisco Javier Jiménez Gómez</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>Francisco Javier Jiménez Gómez</copyright><lastBuildDate>Mon, 22 Dec 2025 14:30:00 +0200</lastBuildDate><atom:link href="https://jimenezgomez.org/categories/architecture/index.xml" rel="self" type="application/rss+xml"/><item><title>DNS Universal: De lo Planetario a lo Galáctico</title><link>https://jimenezgomez.org/posts/2025-12-22-dns-universal-ddnsc/</link><pubDate>Mon, 22 Dec 2025 14:30:00 +0200</pubDate><guid>https://jimenezgomez.org/posts/2025-12-22-dns-universal-ddnsc/</guid><description>&lt;img src="https://jimenezgomez.org/posts/2025-12-22-dns-universal-ddnsc/og-image.svg" alt="Featured image of post DNS Universal: De lo Planetario a lo Galáctico" />&lt;h2 id="introducción-el-problema-del-direccionamiento-universal">Introducción: El Problema del Direccionamiento Universal
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>architecture on Francisco Javier Jiménez Gómez</title><link>https://jimenezgomez.org/categories/architecture/</link><description>Recent content in architecture on Francisco Javier Jiménez Gómez</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>Francisco Javier Jiménez Gómez</copyright><lastBuildDate>Mon, 22 Dec 2025 14:30:00 +0200</lastBuildDate><atom:link href="https://jimenezgomez.org/categories/architecture/index.xml" rel="self" type="application/rss+xml"/><item><title>DNS Universal: De lo Planetario a lo Galáctico</title><link>https://jimenezgomez.org/posts-jg.org/2025-12-22-dns-universal-ddnsc/</link><pubDate>Mon, 22 Dec 2025 14:30:00 +0200</pubDate><guid>https://jimenezgomez.org/posts-jg.org/2025-12-22-dns-universal-ddnsc/</guid><description>&lt;img src="https://jimenezgomez.org/posts-jg.org/2025-12-22-dns-universal-ddnsc/og-image.svg" alt="Featured image of post DNS Universal: De lo Planetario a lo Galáctico" />&lt;h2 id="introducción-el-problema-del-direccionamiento-universal">Introducción: El Problema del Direccionamiento Universal
 &lt;/h2>&lt;p>El &lt;strong>Domain Name System (DNS)&lt;/strong> actual funciona bajo supuestos terrestres: latencias medidas en milisegundos, infraestructura física concentrada, y una autoridad central (ICANN). Pero ¿qué ocurre cuando necesitamos direccionar servicios en una colonia marciana, en estaciones orbitales, o incluso entre sistemas estelares?&lt;/p>
 &lt;p>El proyecto &lt;a class="link" href="https://github.com/javi-jimenez/ddnsc" target="_blank" rel="noopener"
 >DDNSC (Distributed DNS Cache)&lt;/a> proporciona los cimientos técnicos para resolver este problema mediante &lt;strong>publicación descentralizada de servicios&lt;/strong> usando protocolos estándar (RFC 2136, Avahi/Zeroconf). Este artículo propone una extensión conceptual hacia escalas planetarias, galácticas y universales, integrando tecnologías Web 3.0 y protocolos emergentes.&lt;/p>
@@ -29,7 +29,7 @@
 &lt;/div>
 &lt;/div>&lt;h3 id="limitación-actual-escala-1000-nodos">Limitación Actual: Escala ~1000 Nodos
 &lt;/h3>&lt;p>El propio proyecto reconoce que la escalabilidad se limita a ~1000 nodos en su forma actual. Necesitamos arquitectura distribuida verdadera para escalas mayores.&lt;/p>
-&lt;p>&lt;img src="https://jimenezgomez.org/posts/2025-12-22-dns-universal-ddnsc/dns-universe-architecture.svg"
+&lt;p>&lt;img src="https://jimenezgomez.org/posts-jg.org/2025-12-22-dns-universal-ddnsc/dns-universe-architecture.svg"
 loading="lazy"
 alt="Arquitectura DNS Universal"
 >&lt;/p>
@@ -164,7 +164,7 @@ alt="Arquitectura DNS Universal"
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">- mining.ceres.asteroid.sol
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>&lt;img src="https://jimenezgomez.org/posts/2025-12-22-dns-universal-ddnsc/dns-scales.svg"
+&lt;/div>&lt;p>&lt;img src="https://jimenezgomez.org/posts-jg.org/2025-12-22-dns-universal-ddnsc/dns-scales.svg"
 loading="lazy"
 alt="Escalas de distribución DNS"
 >&lt;/p>
@@ -441,7 +441,7 @@ alt="Escalas de distribución DNS"
 &lt;/tbody>
 &lt;/table>
 &lt;h3 id="arquitectura-de-integración">Arquitectura de Integración
-&lt;/h3>&lt;p>&lt;img src="https://jimenezgomez.org/posts/2025-12-22-dns-universal-ddnsc/dns-web3-org.svg"
+&lt;/h3>&lt;p>&lt;img src="https://jimenezgomez.org/posts-jg.org/2025-12-22-dns-universal-ddnsc/dns-web3-org.svg"
 loading="lazy"
 alt="Organización descentralizada"
 >&lt;/p>
@@ -758,10 +758,10 @@ Implementar DNSSEC con Ed25519 (post-quantum) sobre blockchain Ethereum como ra�
 &lt;blockquote>
 &lt;p>&lt;strong>Nota del autor&lt;/strong>: Este artículo parte de investigación y análisis del proyecto DDNSC de código abierto. El texto ha sido generado con ayuda de inteligencia artificial basándose en conceptos técnicos reales de sistemas distribuidos, protocolos de networking espacial, y arquitecturas Web 3.0. Los cálculos son aproximaciones teóricas para propósitos de investigación.&lt;/p>
 &lt;/blockquote>
-&lt;p>&lt;strong>Para brisecom.org&lt;/strong>: Este trabajo representa una propuesta inicial de línea de investigación. Se solicita revisión peer-to-peer y feedback de la comunidad científica y espacial antes de proceder con solicitudes de financiación.&lt;/p></description></item><item><title>Three layers abstraction</title><link>https://jimenezgomez.org/posts/2024-03-31-three-layers-abstraction/</link><pubDate>Sun, 31 Mar 2024 20:52:00 +0200</pubDate><guid>https://jimenezgomez.org/posts/2024-03-31-three-layers-abstraction/</guid><description>&lt;img src="https://jimenezgomez.org/posts/2024-03-31-three-layers-abstraction/og-image.svg" alt="Featured image of post Three layers abstraction" />&lt;h2 id="three-layers-as-leafsthree-layers-as-leafs-gettyimages-1000px-157287379-2048x2048jpg">&lt;img src="https://jimenezgomez.org/posts/2024-03-31-three-layers-abstraction/three-layers-as-leafs-gettyimages-1000px-157287379-2048x2048.jpg"
+&lt;p>&lt;strong>Para brisecom.org&lt;/strong>: Este trabajo representa una propuesta inicial de línea de investigación. Se solicita revisión peer-to-peer y feedback de la comunidad científica y espacial antes de proceder con solicitudes de financiación.&lt;/p></description></item><item><title>Three layers abstraction</title><link>https://jimenezgomez.org/posts-jg.org/2024-03-31-three-layers-abstraction/</link><pubDate>Sun, 31 Mar 2024 20:52:00 +0200</pubDate><guid>https://jimenezgomez.org/posts-jg.org/2024-03-31-three-layers-abstraction/</guid><description>&lt;img src="https://jimenezgomez.org/posts-jg.org/2024-03-31-three-layers-abstraction/og-image.svg" alt="Featured image of post Three layers abstraction" />&lt;h2 id="three-layers-as-leafsthree-layers-as-leafs-gettyimages-1000px-157287379-2048x2048jpg">&lt;img src="https://jimenezgomez.org/posts-jg.org/2024-03-31-three-layers-abstraction/three-layers-as-leafs-gettyimages-1000px-157287379-2048x2048.jpg"
 width="1000"
 height="667"
-srcset="https://jimenezgomez.org/posts/2024-03-31-three-layers-abstraction/_hu057f930f56c58a73f0fbea0aa66b1537_243337_5d3e1d1b61c23dcf40e9bc504d60f8ca.jpg 480w, https://jimenezgomez.org/posts/2024-03-31-three-layers-abstraction/_hu057f930f56c58a73f0fbea0aa66b1537_243337_31a53c9b848bcaf87e7c49ee321d627f.jpg 1024w"
+srcset="https://jimenezgomez.org/posts-jg.org/2024-03-31-three-layers-abstraction/_hu057f930f56c58a73f0fbea0aa66b1537_243337_5d3e1d1b61c23dcf40e9bc504d60f8ca.jpg 480w, https://jimenezgomez.org/posts-jg.org/2024-03-31-three-layers-abstraction/_hu057f930f56c58a73f0fbea0aa66b1537_243337_31a53c9b848bcaf87e7c49ee321d627f.jpg 1024w"
 loading="lazy"
 alt="Three Layers as Leafs"
 class="gallery-image"
@@ -794,13 +794,13 @@ data-flex-basis="359px"
 &lt;/ul>
 &lt;p>As you see, you can extend the concept to other domains.&lt;/p>
 &lt;p>This brief idea can be of help when we design or think about architecture.&lt;/p>
-&lt;p>Finally, to fit this idea into the Fractal Architecture, all three (or any you have) layers, must be considered as an atomic autonomous block with an input and an output, as a black box pattern.&lt;/p></description></item><item><title>VBD, Fractal Architecture: View, Business and Data. Input and Output.</title><link>https://jimenezgomez.org/posts/2024-03-31-vbd-fractal-architecture-view-business-and-data-input-and-output/</link><pubDate>Sun, 31 Mar 2024 20:44:00 +0200</pubDate><guid>https://jimenezgomez.org/posts/2024-03-31-vbd-fractal-architecture-view-business-and-data-input-and-output/</guid><description>&lt;img src="https://jimenezgomez.org/posts/2024-03-31-vbd-fractal-architecture-view-business-and-data-input-and-output/og-image.svg" alt="Featured image of post VBD, Fractal Architecture: View, Business and Data. Input and Output." />&lt;meta property="og:image" content="2024-03-31-vbd-fractal-architecture-view-business-and-data-input-and-output/fractal-maldelbrot-illustration-1000px-gettyimages-488635425-2048x2048.jpg" />
+&lt;p>Finally, to fit this idea into the Fractal Architecture, all three (or any you have) layers, must be considered as an atomic autonomous block with an input and an output, as a black box pattern.&lt;/p></description></item><item><title>VBD, Fractal Architecture: View, Business and Data. Input and Output.</title><link>https://jimenezgomez.org/posts-jg.org/2024-03-31-vbd-fractal-architecture-view-business-and-data-input-and-output/</link><pubDate>Sun, 31 Mar 2024 20:44:00 +0200</pubDate><guid>https://jimenezgomez.org/posts-jg.org/2024-03-31-vbd-fractal-architecture-view-business-and-data-input-and-output/</guid><description>&lt;img src="https://jimenezgomez.org/posts-jg.org/2024-03-31-vbd-fractal-architecture-view-business-and-data-input-and-output/og-image.svg" alt="Featured image of post VBD, Fractal Architecture: View, Business and Data. Input and Output." />&lt;meta property="og:image" content="2024-03-31-vbd-fractal-architecture-view-business-and-data-input-and-output/fractal-maldelbrot-illustration-1000px-gettyimages-488635425-2048x2048.jpg" />
 ---
 &lt;meta name="twitter:image" content="2024-03-31-vbd-fractal-architecture-view-business-and-data-input-and-output/fractal-maldelbrot-illustration-1000px-gettyimages-488635425-2048x2048.jpg" />
-&lt;p>&lt;img src="https://jimenezgomez.org/posts/2024-03-31-vbd-fractal-architecture-view-business-and-data-input-and-output/fractal-maldelbrot-illustration-1000px-gettyimages-488635425-2048x2048.jpg"
+&lt;p>&lt;img src="https://jimenezgomez.org/posts-jg.org/2024-03-31-vbd-fractal-architecture-view-business-and-data-input-and-output/fractal-maldelbrot-illustration-1000px-gettyimages-488635425-2048x2048.jpg"
 width="1000"
 height="750"
-srcset="https://jimenezgomez.org/posts/2024-03-31-vbd-fractal-architecture-view-business-and-data-input-and-output/_hubda60c3edc8fc7f406812c451cc5d519_381286_672fe457777eb02fe8a9c24b7cf47706.jpg 480w, https://jimenezgomez.org/posts/2024-03-31-vbd-fractal-architecture-view-business-and-data-input-and-output/_hubda60c3edc8fc7f406812c451cc5d519_381286_4dc3ce504dbf9cf16ea21ad279a77c9c.jpg 1024w"
+srcset="https://jimenezgomez.org/posts-jg.org/2024-03-31-vbd-fractal-architecture-view-business-and-data-input-and-output/_hubda60c3edc8fc7f406812c451cc5d519_381286_672fe457777eb02fe8a9c24b7cf47706.jpg 480w, https://jimenezgomez.org/posts-jg.org/2024-03-31-vbd-fractal-architecture-view-business-and-data-input-and-output/_hubda60c3edc8fc7f406812c451cc5d519_381286_4dc3ce504dbf9cf16ea21ad279a77c9c.jpg 1024w"
 loading="lazy"
 alt="Maldelbrot set"
 class="gallery-image"
@@ -821,13 +821,13 @@ data-flex-basis="320px"
 &lt;p>If you try to extract that pattern from designs, you will find that it is usually repeated. This is related to Fractal Architecture.&lt;/p>
 &lt;p>If you see this from an holistic point of view, and you put the best effort in your application, with one specific and well designed functionallity, this lead us to a basic design principle: do one thing and do it well, as in the unix-like world.&lt;/p>
 &lt;p>This has deep implications in microservices, in the case where you design an autonomous service, for a single task and you put a lot of effort in doing that task really well.&lt;/p>
-&lt;p>You can then link microservices between them, using an orchestrator or not, the key point is to have services that do one task and do it well.&lt;/p></description></item><item><title>Monoliths and microservices</title><link>https://jimenezgomez.org/posts/2023-12-24-monoliths-and-microservices/</link><pubDate>Sun, 24 Dec 2023 00:00:00 +0200</pubDate><guid>https://jimenezgomez.org/posts/2023-12-24-monoliths-and-microservices/</guid><description>&lt;img src="https://jimenezgomez.org/posts/2023-12-24-monoliths-and-microservices/og-image.svg" alt="Featured image of post Monoliths and microservices" />&lt;!-- preview image on social media -->
+&lt;p>You can then link microservices between them, using an orchestrator or not, the key point is to have services that do one task and do it well.&lt;/p></description></item><item><title>Monoliths and microservices</title><link>https://jimenezgomez.org/posts-jg.org/2023-12-24-monoliths-and-microservices/</link><pubDate>Sun, 24 Dec 2023 00:00:00 +0200</pubDate><guid>https://jimenezgomez.org/posts-jg.org/2023-12-24-monoliths-and-microservices/</guid><description>&lt;img src="https://jimenezgomez.org/posts-jg.org/2023-12-24-monoliths-and-microservices/og-image.svg" alt="Featured image of post Monoliths and microservices" />&lt;!-- preview image on social media -->
 &lt;hr>
 &lt;meta property="og:image" content="2023-12-24-monoliths-and-microservices/inca-bricks-1000px.jpg" />
-&lt;p>&lt;img src="https://jimenezgomez.org/posts/2023-12-24-monoliths-and-microservices/inca-bricks-1000px.jpg"
+&lt;p>&lt;img src="https://jimenezgomez.org/posts-jg.org/2023-12-24-monoliths-and-microservices/inca-bricks-1000px.jpg"
 width="1000"
 height="1005"
-srcset="https://jimenezgomez.org/posts/2023-12-24-monoliths-and-microservices/inca-bricks-1000px_hue395dfecc8087edfb381bfa56d1c31d7_508056_480x0_resize_q75_box.jpg 480w, https://jimenezgomez.org/posts/2023-12-24-monoliths-and-microservices/inca-bricks-1000px_hue395dfecc8087edfb381bfa56d1c31d7_508056_1024x0_resize_q75_box.jpg 1024w"
+srcset="https://jimenezgomez.org/posts-jg.org/2023-12-24-monoliths-and-microservices/inca-bricks-1000px_hue395dfecc8087edfb381bfa56d1c31d7_508056_480x0_resize_q75_box.jpg 480w, https://jimenezgomez.org/posts-jg.org/2023-12-24-monoliths-and-microservices/inca-bricks-1000px_hue395dfecc8087edfb381bfa56d1c31d7_508056_1024x0_resize_q75_box.jpg 1024w"
 loading="lazy"
 alt="Monoliths and MicroServices"
 class="gallery-image"

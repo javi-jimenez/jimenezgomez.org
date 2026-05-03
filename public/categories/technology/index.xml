@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>technology on Francisco Javier Jiménez Gómez</title><link>https://jimenezgomez.org/categories/technology/</link><description>Recent content in technology on Francisco Javier Jiménez Gómez</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>Francisco Javier Jiménez Gómez</copyright><lastBuildDate>Sat, 03 Jan 2026 09:05:00 +0100</lastBuildDate><atom:link href="https://jimenezgomez.org/categories/technology/index.xml" rel="self" type="application/rss+xml"/><item><title>Framework ACS (Assistant Context Standard)</title><link>https://jimenezgomez.org/posts/2026-01-03-documento-tecnico-framework-acs/</link><pubDate>Sat, 03 Jan 2026 09:05:00 +0100</pubDate><guid>https://jimenezgomez.org/posts/2026-01-03-documento-tecnico-framework-acs/</guid><description>&lt;img src="https://jimenezgomez.org/posts/2026-01-03-documento-tecnico-framework-acs/og-image.svg" alt="Featured image of post Framework ACS (Assistant Context Standard)" />&lt;h2 id="motivación">Motivación
-&lt;/h2>&lt;p>:&lt;img src="https://jimenezgomez.org/posts/2026-01-03-documento-tecnico-framework-acs/og-image.svg"
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>technology on Francisco Javier Jiménez Gómez</title><link>https://jimenezgomez.org/categories/technology/</link><description>Recent content in technology on Francisco Javier Jiménez Gómez</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>Francisco Javier Jiménez Gómez</copyright><lastBuildDate>Sat, 03 Jan 2026 09:05:00 +0100</lastBuildDate><atom:link href="https://jimenezgomez.org/categories/technology/index.xml" rel="self" type="application/rss+xml"/><item><title>Framework ACS (Assistant Context Standard)</title><link>https://jimenezgomez.org/posts-jg.org/2026-01-03-documento-tecnico-framework-acs/</link><pubDate>Sat, 03 Jan 2026 09:05:00 +0100</pubDate><guid>https://jimenezgomez.org/posts-jg.org/2026-01-03-documento-tecnico-framework-acs/</guid><description>&lt;img src="https://jimenezgomez.org/posts-jg.org/2026-01-03-documento-tecnico-framework-acs/og-image.svg" alt="Featured image of post Framework ACS (Assistant Context Standard)" />&lt;h2 id="motivación">Motivación
+&lt;/h2>&lt;p>:&lt;img src="https://jimenezgomez.org/posts-jg.org/2026-01-03-documento-tecnico-framework-acs/og-image.svg"
 loading="lazy"
 alt="Ilustración ACS"
 >&lt;/p>
@@ -37,7 +37,7 @@ alt="Ilustración ACS"
 &lt;/li>
 &lt;/ul>
 &lt;hr>
-&lt;p>Este documento plantea una base minimalista para implementar ACS en flujos que requieran trazabilidad, reproducibilidad y separación explícita entre hechos (Axiomas) y razonamientos provisionales (Inferencias). Las implementaciones concretas pueden añadir metadatos de versión, firmas de autor y mecanimos de validación para transitar inferencias a axiomas de forma controlada.&lt;/p></description></item><item><title>DNS Universal: De lo Planetario a lo Galáctico</title><link>https://jimenezgomez.org/posts/2025-12-22-dns-universal-ddnsc/</link><pubDate>Mon, 22 Dec 2025 14:30:00 +0200</pubDate><guid>https://jimenezgomez.org/posts/2025-12-22-dns-universal-ddnsc/</guid><description>&lt;img src="https://jimenezgomez.org/posts/2025-12-22-dns-universal-ddnsc/og-image.svg" alt="Featured image of post DNS Universal: De lo Planetario a lo Galáctico" />&lt;h2 id="introducción-el-problema-del-direccionamiento-universal">Introducción: El Problema del Direccionamiento Universal
+&lt;p>Este documento plantea una base minimalista para implementar ACS en flujos que requieran trazabilidad, reproducibilidad y separación explícita entre hechos (Axiomas) y razonamientos provisionales (Inferencias). Las implementaciones concretas pueden añadir metadatos de versión, firmas de autor y mecanimos de validación para transitar inferencias a axiomas de forma controlada.&lt;/p></description></item><item><title>DNS Universal: De lo Planetario a lo Galáctico</title><link>https://jimenezgomez.org/posts-jg.org/2025-12-22-dns-universal-ddnsc/</link><pubDate>Mon, 22 Dec 2025 14:30:00 +0200</pubDate><guid>https://jimenezgomez.org/posts-jg.org/2025-12-22-dns-universal-ddnsc/</guid><description>&lt;img src="https://jimenezgomez.org/posts-jg.org/2025-12-22-dns-universal-ddnsc/og-image.svg" alt="Featured image of post DNS Universal: De lo Planetario a lo Galáctico" />&lt;h2 id="introducción-el-problema-del-direccionamiento-universal">Introducción: El Problema del Direccionamiento Universal
 &lt;/h2>&lt;p>El &lt;strong>Domain Name System (DNS)&lt;/strong> actual funciona bajo supuestos terrestres: latencias medidas en milisegundos, infraestructura física concentrada, y una autoridad central (ICANN). Pero ¿qué ocurre cuando necesitamos direccionar servicios en una colonia marciana, en estaciones orbitales, o incluso entre sistemas estelares?&lt;/p>
 &lt;p>El proyecto &lt;a class="link" href="https://github.com/javi-jimenez/ddnsc" target="_blank" rel="noopener"
 >DDNSC (Distributed DNS Cache)&lt;/a> proporciona los cimientos técnicos para resolver este problema mediante &lt;strong>publicación descentralizada de servicios&lt;/strong> usando protocolos estándar (RFC 2136, Avahi/Zeroconf). Este artículo propone una extensión conceptual hacia escalas planetarias, galácticas y universales, integrando tecnologías Web 3.0 y protocolos emergentes.&lt;/p>
@@ -68,7 +68,7 @@ alt="Ilustración ACS"
 &lt;/div>
 &lt;/div>&lt;h3 id="limitación-actual-escala-1000-nodos">Limitación Actual: Escala ~1000 Nodos
 &lt;/h3>&lt;p>El propio proyecto reconoce que la escalabilidad se limita a ~1000 nodos en su forma actual. Necesitamos arquitectura distribuida verdadera para escalas mayores.&lt;/p>
-&lt;p>&lt;img src="https://jimenezgomez.org/posts/2025-12-22-dns-universal-ddnsc/dns-universe-architecture.svg"
+&lt;p>&lt;img src="https://jimenezgomez.org/posts-jg.org/2025-12-22-dns-universal-ddnsc/dns-universe-architecture.svg"
 loading="lazy"
 alt="Arquitectura DNS Universal"
 >&lt;/p>
@@ -203,7 +203,7 @@ alt="Arquitectura DNS Universal"
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">- mining.ceres.asteroid.sol
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>&lt;img src="https://jimenezgomez.org/posts/2025-12-22-dns-universal-ddnsc/dns-scales.svg"
+&lt;/div>&lt;p>&lt;img src="https://jimenezgomez.org/posts-jg.org/2025-12-22-dns-universal-ddnsc/dns-scales.svg"
 loading="lazy"
 alt="Escalas de distribución DNS"
 >&lt;/p>
@@ -480,7 +480,7 @@ alt="Escalas de distribución DNS"
 &lt;/tbody>
 &lt;/table>
 &lt;h3 id="arquitectura-de-integración">Arquitectura de Integración
-&lt;/h3>&lt;p>&lt;img src="https://jimenezgomez.org/posts/2025-12-22-dns-universal-ddnsc/dns-web3-org.svg"
+&lt;/h3>&lt;p>&lt;img src="https://jimenezgomez.org/posts-jg.org/2025-12-22-dns-universal-ddnsc/dns-web3-org.svg"
 loading="lazy"
 alt="Organización descentralizada"
 >&lt;/p>
@@ -797,10 +797,10 @@ Implementar DNSSEC con Ed25519 (post-quantum) sobre blockchain Ethereum como ra�
 &lt;blockquote>
 &lt;p>&lt;strong>Nota del autor&lt;/strong>: Este artículo parte de investigación y análisis del proyecto DDNSC de código abierto. El texto ha sido generado con ayuda de inteligencia artificial basándose en conceptos técnicos reales de sistemas distribuidos, protocolos de networking espacial, y arquitecturas Web 3.0. Los cálculos son aproximaciones teóricas para propósitos de investigación.&lt;/p>
 &lt;/blockquote>
-&lt;p>&lt;strong>Para brisecom.org&lt;/strong>: Este trabajo representa una propuesta inicial de línea de investigación. Se solicita revisión peer-to-peer y feedback de la comunidad científica y espacial antes de proceder con solicitudes de financiación.&lt;/p></description></item><item><title>Computer Science base technologies, part II</title><link>https://jimenezgomez.org/posts/2023-10-19-computer-science-base-technologies-2/</link><pubDate>Thu, 19 Oct 2023 20:38:00 +0200</pubDate><guid>https://jimenezgomez.org/posts/2023-10-19-computer-science-base-technologies-2/</guid><description>&lt;img src="https://jimenezgomez.org/posts/2023-10-19-computer-science-base-technologies-2/og-image.svg" alt="Featured image of post Computer Science base technologies, part II" />&lt;p>&lt;img src="https://jimenezgomez.org/posts/2023-10-19-computer-science-base-technologies-2/low-code-example-app-for-reading-dht22-data-from-api.png"
+&lt;p>&lt;strong>Para brisecom.org&lt;/strong>: Este trabajo representa una propuesta inicial de línea de investigación. Se solicita revisión peer-to-peer y feedback de la comunidad científica y espacial antes de proceder con solicitudes de financiación.&lt;/p></description></item><item><title>Computer Science base technologies, part II</title><link>https://jimenezgomez.org/posts-jg.org/2023-10-19-computer-science-base-technologies-2/</link><pubDate>Thu, 19 Oct 2023 20:38:00 +0200</pubDate><guid>https://jimenezgomez.org/posts-jg.org/2023-10-19-computer-science-base-technologies-2/</guid><description>&lt;img src="https://jimenezgomez.org/posts-jg.org/2023-10-19-computer-science-base-technologies-2/og-image.svg" alt="Featured image of post Computer Science base technologies, part II" />&lt;p>&lt;img src="https://jimenezgomez.org/posts-jg.org/2023-10-19-computer-science-base-technologies-2/low-code-example-app-for-reading-dht22-data-from-api.png"
 width="1270"
 height="863"
-srcset="https://jimenezgomez.org/posts/2023-10-19-computer-science-base-technologies-2/low-code-example-app-for-reading-dht22-data-from-api_hu342507f6a636695f9303e81ee7b0a881_85398_480x0_resize_box_3.png 480w, https://jimenezgomez.org/posts/2023-10-19-computer-science-base-technologies-2/low-code-example-app-for-reading-dht22-data-from-api_hu342507f6a636695f9303e81ee7b0a881_85398_1024x0_resize_box_3.png 1024w"
+srcset="https://jimenezgomez.org/posts-jg.org/2023-10-19-computer-science-base-technologies-2/low-code-example-app-for-reading-dht22-data-from-api_hu342507f6a636695f9303e81ee7b0a881_85398_480x0_resize_box_3.png 480w, https://jimenezgomez.org/posts-jg.org/2023-10-19-computer-science-base-technologies-2/low-code-example-app-for-reading-dht22-data-from-api_hu342507f6a636695f9303e81ee7b0a881_85398_1024x0_resize_box_3.png 1024w"
 loading="lazy"
 alt="Low code platform example for reading DHT22 data using an API"
 class="gallery-image"
@@ -828,7 +828,7 @@ data-flex-basis="353px"
 &lt;p>With this post, the fundamentals for allowing someone to write applications is complete.&lt;/p>
 &lt;p>I have to say that this kind of low-code or no-code applications have much more and complete features, this post is made for getting one of the basic ideas.&lt;/p>
 &lt;p>We will continue with interesting posts in a near future, now we have to take a rest and prepare all for finishing properly the year, and prepare the next one.&lt;/p>
-&lt;p>I am sure it will be plenty of good and interesting projects. The AI is right now in the next door.&lt;/p></description></item><item><title>Computer Science base technologies, part I</title><link>https://jimenezgomez.org/posts/2023-10-18-computer-science-base-technologies/</link><pubDate>Wed, 18 Oct 2023 20:49:00 +0200</pubDate><guid>https://jimenezgomez.org/posts/2023-10-18-computer-science-base-technologies/</guid><description>&lt;img src="https://jimenezgomez.org/posts/2023-10-18-computer-science-base-technologies/og-image.svg" alt="Featured image of post Computer Science base technologies, part I" />&lt;style>
+&lt;p>I am sure it will be plenty of good and interesting projects. The AI is right now in the next door.&lt;/p></description></item><item><title>Computer Science base technologies, part I</title><link>https://jimenezgomez.org/posts-jg.org/2023-10-18-computer-science-base-technologies/</link><pubDate>Wed, 18 Oct 2023 20:49:00 +0200</pubDate><guid>https://jimenezgomez.org/posts-jg.org/2023-10-18-computer-science-base-technologies/</guid><description>&lt;img src="https://jimenezgomez.org/posts-jg.org/2023-10-18-computer-science-base-technologies/og-image.svg" alt="Featured image of post Computer Science base technologies, part I" />&lt;style>
 img {
 display: block;
 margin-left: auto;
@@ -852,10 +852,10 @@ margin-right: auto;
 &lt;p>That is the first step in the programming computer path.&lt;/p>
 &lt;p>All people is able to do it, and could be doing it right now.&lt;/p>
 &lt;p>But, as fire usages inventions, things could improve and become really complex.&lt;/p>
-&lt;p>Perhaps this night, James Wright could be relaxed, thinking about his ideas, when he takes a rest and sits around a bonfire waiting for enjoying his cooked food.&lt;/p></description></item><item><title>Why to improve? part 2. Technologies and the look for the base knowledge</title><link>https://jimenezgomez.org/posts/2023-10-13-why-to-improve-2-look-for-base-technologies/</link><pubDate>Fri, 13 Oct 2023 23:18:00 +0200</pubDate><guid>https://jimenezgomez.org/posts/2023-10-13-why-to-improve-2-look-for-base-technologies/</guid><description>&lt;img src="https://jimenezgomez.org/posts/2023-10-13-why-to-improve-2-look-for-base-technologies/og-image.svg" alt="Featured image of post Why to improve? part 2. Technologies and the look for the base knowledge" />&lt;p>&lt;img src="https://jimenezgomez.org/posts/2023-10-13-why-to-improve-2-look-for-base-technologies/light-bulb-book.webp"
+&lt;p>Perhaps this night, James Wright could be relaxed, thinking about his ideas, when he takes a rest and sits around a bonfire waiting for enjoying his cooked food.&lt;/p></description></item><item><title>Why to improve? part 2. Technologies and the look for the base knowledge</title><link>https://jimenezgomez.org/posts-jg.org/2023-10-13-why-to-improve-2-look-for-base-technologies/</link><pubDate>Fri, 13 Oct 2023 23:18:00 +0200</pubDate><guid>https://jimenezgomez.org/posts-jg.org/2023-10-13-why-to-improve-2-look-for-base-technologies/</guid><description>&lt;img src="https://jimenezgomez.org/posts-jg.org/2023-10-13-why-to-improve-2-look-for-base-technologies/og-image.svg" alt="Featured image of post Why to improve? part 2. Technologies and the look for the base knowledge" />&lt;p>&lt;img src="https://jimenezgomez.org/posts-jg.org/2023-10-13-why-to-improve-2-look-for-base-technologies/light-bulb-book.webp"
 width="1024"
 height="682"
-srcset="https://jimenezgomez.org/posts/2023-10-13-why-to-improve-2-look-for-base-technologies/light-bulb-book_hu011edf023c1eefa41e7957bfe7ff4f95_34132_480x0_resize_q75_h2_box_2.webp 480w, https://jimenezgomez.org/posts/2023-10-13-why-to-improve-2-look-for-base-technologies/light-bulb-book_hu011edf023c1eefa41e7957bfe7ff4f95_34132_1024x0_resize_q75_h2_box_2.webp 1024w"
+srcset="https://jimenezgomez.org/posts-jg.org/2023-10-13-why-to-improve-2-look-for-base-technologies/light-bulb-book_hu011edf023c1eefa41e7957bfe7ff4f95_34132_480x0_resize_q75_h2_box_2.webp 480w, https://jimenezgomez.org/posts-jg.org/2023-10-13-why-to-improve-2-look-for-base-technologies/light-bulb-book_hu011edf023c1eefa41e7957bfe7ff4f95_34132_1024x0_resize_q75_h2_box_2.webp 1024w"
 loading="lazy"
 alt="Light Bulb Book"
 class="gallery-image"
