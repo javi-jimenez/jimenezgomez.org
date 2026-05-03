@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>research on Francisco Javier Jiménez Gómez</title><link>https://jimenezgomez.org/categories/research/</link><description>Recent content in research on Francisco Javier Jiménez Gómez</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>Francisco Javier Jiménez Gómez</copyright><lastBuildDate>Mon, 22 Dec 2025 14:30:00 +0200</lastBuildDate><atom:link href="https://jimenezgomez.org/categories/research/index.xml" rel="self" type="application/rss+xml"/><item><title>DNS Universal: De lo Planetario a lo Galáctico</title><link>https://jimenezgomez.org/posts-jg.org/2025-12-22-dns-universal-ddnsc/</link><pubDate>Mon, 22 Dec 2025 14:30:00 +0200</pubDate><guid>https://jimenezgomez.org/posts-jg.org/2025-12-22-dns-universal-ddnsc/</guid><description>&lt;img src="https://jimenezgomez.org/posts-jg.org/2025-12-22-dns-universal-ddnsc/og-image.svg" alt="Featured image of post DNS Universal: De lo Planetario a lo Galáctico" />&lt;h2 id="introducción-el-problema-del-direccionamiento-universal">Introducción: El Problema del Direccionamiento Universal
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>research on Francisco Javier Jiménez Gómez</title><link>https://jimenezgomez.org/categories/research/</link><description>Recent content in research on Francisco Javier Jiménez Gómez</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>Francisco Javier Jiménez Gómez</copyright><lastBuildDate>Mon, 22 Dec 2025 14:30:00 +0200</lastBuildDate><atom:link href="https://jimenezgomez.org/categories/research/index.xml" rel="self" type="application/rss+xml"/><item><title>DNS Universal: De lo Planetario a lo Galáctico</title><link>https://jimenezgomez.org/posts/2025-12-22-dns-universal-ddnsc/</link><pubDate>Mon, 22 Dec 2025 14:30:00 +0200</pubDate><guid>https://jimenezgomez.org/posts/2025-12-22-dns-universal-ddnsc/</guid><description>&lt;img src="https://jimenezgomez.org/posts/2025-12-22-dns-universal-ddnsc/og-image.svg" alt="Featured image of post DNS Universal: De lo Planetario a lo Galáctico" />&lt;h2 id="introducción-el-problema-del-direccionamiento-universal">Introducción: El Problema del Direccionamiento Universal
 &lt;/h2>&lt;p>El &lt;strong>Domain Name System (DNS)&lt;/strong> actual funciona bajo supuestos terrestres: latencias medidas en milisegundos, infraestructura física concentrada, y una autoridad central (ICANN). Pero ¿qué ocurre cuando necesitamos direccionar servicios en una colonia marciana, en estaciones orbitales, o incluso entre sistemas estelares?&lt;/p>
 &lt;p>El proyecto &lt;a class="link" href="https://github.com/javi-jimenez/ddnsc" target="_blank" rel="noopener"
 >DDNSC (Distributed DNS Cache)&lt;/a> proporciona los cimientos técnicos para resolver este problema mediante &lt;strong>publicación descentralizada de servicios&lt;/strong> usando protocolos estándar (RFC 2136, Avahi/Zeroconf). Este artículo propone una extensión conceptual hacia escalas planetarias, galácticas y universales, integrando tecnologías Web 3.0 y protocolos emergentes.&lt;/p>
@@ -29,7 +29,7 @@
 &lt;/div>
 &lt;/div>&lt;h3 id="limitación-actual-escala-1000-nodos">Limitación Actual: Escala ~1000 Nodos
 &lt;/h3>&lt;p>El propio proyecto reconoce que la escalabilidad se limita a ~1000 nodos en su forma actual. Necesitamos arquitectura distribuida verdadera para escalas mayores.&lt;/p>
-&lt;p>&lt;img src="https://jimenezgomez.org/posts-jg.org/2025-12-22-dns-universal-ddnsc/dns-universe-architecture.svg"
+&lt;p>&lt;img src="https://jimenezgomez.org/posts/2025-12-22-dns-universal-ddnsc/dns-universe-architecture.svg"
 loading="lazy"
 alt="Arquitectura DNS Universal"
 >&lt;/p>
@@ -164,7 +164,7 @@ alt="Arquitectura DNS Universal"
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">- mining.ceres.asteroid.sol
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>&lt;img src="https://jimenezgomez.org/posts-jg.org/2025-12-22-dns-universal-ddnsc/dns-scales.svg"
+&lt;/div>&lt;p>&lt;img src="https://jimenezgomez.org/posts/2025-12-22-dns-universal-ddnsc/dns-scales.svg"
 loading="lazy"
 alt="Escalas de distribución DNS"
 >&lt;/p>
@@ -441,7 +441,7 @@ alt="Escalas de distribución DNS"
 &lt;/tbody>
 &lt;/table>
 &lt;h3 id="arquitectura-de-integración">Arquitectura de Integración
-&lt;/h3>&lt;p>&lt;img src="https://jimenezgomez.org/posts-jg.org/2025-12-22-dns-universal-ddnsc/dns-web3-org.svg"
+&lt;/h3>&lt;p>&lt;img src="https://jimenezgomez.org/posts/2025-12-22-dns-universal-ddnsc/dns-web3-org.svg"
 loading="lazy"
 alt="Organización descentralizada"
 >&lt;/p>
