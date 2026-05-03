@@ -12,7 +12,7 @@
             {{- $pageDesc := .Context.Description | default .Context.Summary -}}
             
             {{- /* Twitter */ -}}
-            <a href="https://twitter.com/intent/tweet?url={{ $pageURL }}&text={{ $pageTitle }}" 
+            <a href="https://twitter.com/intent/tweet?url={{ $pageURL }}&text={{ $pageTitle }}"
                target="_blank" 
                rel="noopener noreferrer"
                class="share-button share-twitter"
@@ -22,7 +22,7 @@
             </a>
             
             {{- /* LinkedIn */ -}}
-            <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ $pageURL }}" 
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ $pageURL }}"
                target="_blank" 
                rel="noopener noreferrer"
                class="share-button share-linkedin"
@@ -32,7 +32,7 @@
             </a>
             
             {{- /* Facebook */ -}}
-            <a href="https://www.facebook.com/sharer/sharer.php?u={{ $pageURL }}" 
+            <a href="https://www.facebook.com/sharer/sharer.php?u={{ $pageURL }}"
                target="_blank" 
                rel="noopener noreferrer"
                class="share-button share-facebook"
@@ -42,12 +42,20 @@
             </a>
             
             {{- /* Email */ -}}
-            <a href="mailto:?subject={{ $pageTitle }}&body={{ $pageDesc }}%0A%0A{{ $pageURL }}" 
+            <a href="mailto:?subject={{ $pageTitle }}&body={{ $pageDesc }}%0A%0A{{ $pageURL }}"
                class="share-button share-email"
                title="Compartir por email">
                 {{ partial "helper/icon" "mail" }}
                 <span>Email</span>
             </a>
+            
+            {{- /* Share API */ -}}
+            <button class="share-button share-native" 
+                    title="Compartir"
+                    onclick="if(navigator.share){navigator.share({title: '{{ $pageTitle }}', text: '{{ $pageTitle }}\n', url: '{{ $pageURL }}'.replace('#', '?')}).catch(function(e){console.log('Share failed:', e);});} else { alert('Tu navegador no soporta esta función, usa el botón de Copiar'); }">
+                {{ partial "helper/icon" "share" }}
+                <span>Compartir</span>
+            </button>
             
             {{- /* Copy Link */ -}}
             <button class="share-button share-copy" 
