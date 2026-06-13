@@ -1,5 +1,5 @@
 ---
-title: "deb-get: The \"
+title: "deb-get: The \"winget\" for Linux that you need to avoid Snap problems"
 date: 2024-02-01T09:00:00+01:00
 draft: false
 layout: post

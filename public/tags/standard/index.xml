@@ -1,38 +1,38 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>standard on Francisco Javier Jiménez Gómez</title><link>https://jimenezgomez.org/tags/standard/</link><description>Recent content in standard on Francisco Javier Jiménez Gómez</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>Francisco Javier Jiménez Gómez</copyright><lastBuildDate>Fri, 02 Jan 2026 19:30:00 +0000</lastBuildDate><atom:link href="https://jimenezgomez.org/tags/standard/index.xml" rel="self" type="application/rss+xml"/><item><title>Protocolo Unificado de Contexto para Asistentes (PUCA / ACS)</title><link>https://jimenezgomez.org/posts/2026-01-02-assistant-context-standard/</link><pubDate>Fri, 02 Jan 2026 19:30:00 +0000</pubDate><guid>https://jimenezgomez.org/posts/2026-01-02-assistant-context-standard/</guid><description>&lt;img src="https://jimenezgomez.org/posts/2026-01-02-assistant-context-standard/og-image.svg" alt="Featured image of post Protocolo Unificado de Contexto para Asistentes (PUCA / ACS)" />&lt;p>&lt;strong>Hora:&lt;/strong> 20:30 UTC
-&lt;strong>Creditos de Propuesta Original:&lt;/strong> &lt;a class="link" href="https://jimenezgomez.org/posts/2025-12-30-assistant-context-standard/" target="_blank" rel="noopener"
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>standard on Francisco Javier Jiménez Gómez</title><link>https://jimenezgomez.org/tags/standard/</link><description>Recent content in standard on Francisco Javier Jiménez Gómez</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>Francisco Javier Jiménez Gómez</copyright><lastBuildDate>Fri, 02 Jan 2026 19:30:00 +0000</lastBuildDate><atom:link href="https://jimenezgomez.org/tags/standard/index.xml" rel="self" type="application/rss+xml"/><item><title>Protocolo Unificado de Contexto para Asistentes (PUCA / ACS)</title><link>https://jimenezgomez.org/posts/2026-01-02-assistant-context-standard/</link><pubDate>Fri, 02 Jan 2026 19:30:00 +0000</pubDate><guid>https://jimenezgomez.org/posts/2026-01-02-assistant-context-standard/</guid><description>&lt;img src="https://jimenezgomez.org/posts/2026-01-02-assistant-context-standard/og-image.svg" alt="Featured image of post Protocolo Unificado de Contexto para Asistentes (PUCA / ACS)" />&lt;p>&lt;strong>Time:&lt;/strong> 20:30 UTC
+&lt;strong>Original Proposal Credits:&lt;/strong> &lt;a class="link" href="https://jimenezgomez.org/posts/2025-12-30-assistant-context-standard/" target="_blank" rel="noopener"
 >https://jimenezgomez.org/posts/2025-12-30-assistant-context-standard/&lt;/a>&lt;/p>
-&lt;h2 id="1-introducción-el-problema-del-efecto-amnesia">1. Introducción: El problema del &amp;ldquo;Efecto Amnesia&amp;rdquo;
-&lt;/h2>&lt;p>A pesar de la potencia de los LLMs, el trabajo en entornos locales y distribuidos sufre de una desconexión crítica: la IA no sabe qué ocurrió en la sesión anterior si el motor o la interfaz cambian. Proponemos un estándar basado en archivos de manifiesto situados en la raíz de los proyectos para garantizar la continuidad del flujo de trabajo.&lt;/p>
-&lt;h2 id="2-estructura-del-estándar-mejorado-propuesta-v20">2. Estructura del Estándar Mejorado (Propuesta v2.0)
-&lt;/h2>&lt;p>Para que un estándar sea efectivo, debe ser ligero y legible tanto para humanos como para máquinas. Sugerimos la creación de un archivo &lt;code>.ai-context.json&lt;/code> o &lt;code>.assistant.md&lt;/code> con la siguiente estructura mejorada:&lt;/p>
-&lt;h3 id="a-el-manifiesto-de-tarea-task_state">A. El Manifiesto de Tarea (&lt;code>task_state&lt;/code>)
-&lt;/h3>&lt;p>No basta con decir qué se está haciendo; hay que definir el &amp;ldquo;Estado de la Misión&amp;rdquo;:&lt;/p>
+&lt;h2 id="1-introduction-the-problem-of-the-amnesia-effect">1. Introduction: The problem of the &amp;ldquo;Amnesia Effect&amp;rdquo;
+&lt;/h2>&lt;p>Despite the power of LLMs, working in local and distributed environments suffers from a critical disconnect: the AI does not know what happened in the previous session if the engine or interface changes. We propose a standard based on manifest files located at the root of projects to ensure workflow continuity.&lt;/p>
+&lt;h2 id="2-structure-of-the-enhanced-standard-proposal-v20">2. Structure of the Enhanced Standard (Proposal v2.0)
+&lt;/h2>&lt;p>For a standard to be effective, it must be lightweight and readable by both humans and machines. We suggest creating a &lt;code>.ai-context.json&lt;/code> or &lt;code>.assistant.md&lt;/code> file with the following improved structure:&lt;/p>
+&lt;h3 id="a-the-task-manifest-task_state">A. The Task Manifest (&lt;code>task_state&lt;/code>)
+&lt;/h3>&lt;p>It is not enough to say what is being done; You have to define the &amp;ldquo;Mission State&amp;rdquo;:&lt;/p>
 &lt;ul>
-&lt;li>&lt;strong>Current Goal:&lt;/strong> El objetivo macro actual.&lt;/li>
-&lt;li>&lt;strong>Sub-tasks:&lt;/strong> Lista de verificación (Checklist) de tareas pendientes y completadas.&lt;/li>
-&lt;li>&lt;strong>Blocking Issues:&lt;/strong> Impedimentos técnicos encontrados en sesiones previas.&lt;/li>
+&lt;li>&lt;strong>Current Goal:&lt;/strong> The current macro goal.&lt;/li>
+&lt;li>&lt;strong>Sub-tasks:&lt;/strong> Checklist of pending and completed tasks.&lt;/li>
+&lt;li>&lt;strong>Blocking Issues:&lt;/strong> Technical obstacles found in previous sessions.&lt;/li>
 &lt;/ul>
-&lt;h3 id="b-diccionario-de-entidades-knowledge_graph">B. Diccionario de Entidades (&lt;code>knowledge_graph&lt;/code>)
-&lt;/h3>&lt;p>Para evitar que la IA confunda términos en proyectos grandes:&lt;/p>
+&lt;h3 id="b-entity-dictionary-knowledge_graph">B. Entity Dictionary (&lt;code>knowledge_graph&lt;/code>)
+&lt;/h3>&lt;p>To prevent AI from confusing terms in large projects:&lt;/p>
 &lt;ul>
-&lt;li>&lt;strong>Definitions:&lt;/strong> Glosario de términos específicos del negocio o del código.&lt;/li>
-&lt;li>&lt;strong>Key Files:&lt;/strong> Mapeo de archivos críticos y su función (evita que la IA tenga que leer todo el repo para entender la arquitectura).&lt;/li>
+&lt;li>&lt;strong>Definitions:&lt;/strong> Glossary of business or code-specific terms.&lt;/li>
+&lt;li>&lt;strong>Key Files:&lt;/strong> Mapping of critical files and their function (prevents the AI ​​from having to read the entire repo to understand the architecture).&lt;/li>
 &lt;/ul>
-&lt;h3 id="c-registro-de-decisiones-de-diseño-adr---architecture-decision-records">C. Registro de Decisiones de Diseño (ADR - Architecture Decision Records)
-&lt;/h3>&lt;p>El mayor fallo de contexto es cuando la IA sugiere cambiar algo que ya se decidió no hacer.&lt;/p>
+&lt;h3 id="c-architecture-decision-records-adr">C. Architecture Decision Records (ADR)
+&lt;/h3>&lt;p>The biggest context failure is when the AI suggests changing something that you have already decided not to do.&lt;/p>
 &lt;ul>
-&lt;li>&lt;strong>Decisions:&lt;/strong> &amp;ldquo;Usamos UUID en lugar de ID incremental por X razón&amp;rdquo;. Esto evita bucles de sugerencias erróneas.&lt;/li>
+&lt;li>&lt;strong>Decisions:&lt;/strong> &amp;ldquo;We use UUID instead of incremental ID for X reason.&amp;rdquo; This avoids loops of bad suggestions.&lt;/li>
 &lt;/ul>
-&lt;h2 id="3-mejoras-agregadas-aportación-de-la-ia">3. Mejoras Agregadas (Aportación de la IA)
-&lt;/h2>&lt;p>He añadido tres capas técnicas que tu estándar original puede adoptar para ser más robusto:&lt;/p>
+&lt;h2 id="3-added-improvements-ai-contribution">3. Added Improvements (AI Contribution)
+&lt;/h2>&lt;p>I&amp;rsquo;ve added three technical layers that your original standard can adopt to be more robust:&lt;/p>
 &lt;ol>
-&lt;li>&lt;strong>Capa de Jerarquía de Herencia:&lt;/strong> Si hay un archivo en &lt;code>/root&lt;/code> y otro en &lt;code>/root/module_A&lt;/code>, el asistente debe fusionarlos. El archivo de subdirectorio tiene prioridad sobre el global. Esto permite &amp;ldquo;Contexto por Módulo&amp;rdquo;.&lt;/li>
-&lt;li>&lt;strong>Firma de Sesión (Hash de Estado):&lt;/strong>
-Incluir un &lt;code>last_state_hash&lt;/code> que resuma el estado del código. Si el asistente detecta que el código cambió drásticamente desde la última lectura del contexto, debe alertar al usuario para actualizar el manifiesto.&lt;/li>
+&lt;li>&lt;strong>Inheritance Hierarchy Layer:&lt;/strong> If there is one file in &lt;code>/root&lt;/code> and another in &lt;code>/root/module_A&lt;/code>, the wizard should merge them. The subdirectory file takes priority over the global one. This allows &amp;ldquo;Context per Module&amp;rdquo;.&lt;/li>
+&lt;li>&lt;strong>Session Signature (State Hash):&lt;/strong>
+Include a &lt;code>last_state_hash&lt;/code> that summarizes the state of the code. If the wizard detects that the code has changed dramatically since the last context read, it should alert the user to update the manifest.&lt;/li>
 &lt;li>&lt;strong>Token Budget Management:&lt;/strong>
-Instrucción explícita de &amp;ldquo;Priority Levels&amp;rdquo;. Si el archivo de contexto crece mucho, el estándar define qué partes se pueden omitir (ej. el historial antiguo) y qué partes son obligatorias (el Goal actual).&lt;/li>
+Explicit &amp;ldquo;Priority Levels&amp;rdquo; instruction. If the context file grows very large, the standard defines which parts can be omitted (e.g. the old history) and which parts are mandatory (the current Goal).&lt;/li>
 &lt;/ol>
-&lt;h2 id="4-implementación-práctica-ejemplo-de-archivo">4. Implementación Práctica (Ejemplo de Archivo)
+&lt;h2 id="4-practical-implementation-example-file">4. Practical Implementation (Example File)
 &lt;/h2>&lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
@@ -77,7 +77,7 @@ Instrucción explícita de &amp;ldquo;Priority Levels&amp;rdquo;. Si el archivo 
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">last_update&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s2">&amp;#34;2026-01-02 20:25&amp;#34;&lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;h2 id="5-conclusión">5. Conclusión
-&lt;/h2>&lt;p>El &lt;strong>Assistant Context Standard&lt;/strong> propuesto por JimenezGomez y refinado en este documento elimina la fricción de entrada en cada nueva sesión de IA. Al tratar el contexto como &lt;strong>código persistente&lt;/strong> y no como &lt;strong>memoria volátil&lt;/strong>, permitimos que el desarrollo asistido por IA sea verdaderamente profesional y escalable.&lt;/p>
+&lt;/div>&lt;h2 id="5-conclusion">5. Conclusion
+&lt;/h2>&lt;p>The &lt;strong>Assistant Context Standard&lt;/strong> proposed by JimenezGomez and refined in this paper eliminates input friction in each new AI session. By treating context as &lt;strong>persistent code&lt;/strong> and not &lt;strong>volatile memory&lt;/strong>, we enable AI-assisted development to be truly professional and scalable.&lt;/p>
 &lt;hr>
-&lt;p>&lt;strong>Nota del Asistente:&lt;/strong> He redactado este artículo integrando tu visión de persistencia en directorios con mi capacidad de estructuración técnica. Si quieres que profundice en algún punto técnico (como la integración con el protocolo MCP), dímelo.&lt;/p></description></item></channel></rss>
+&lt;p>&lt;strong>Assistant Note:&lt;/strong> I have written this article integrating your vision of directory persistence with my technical structuring ability. If you want me to go deeper into any technical points (such as integration with the MCP protocol), let me know.&lt;/p></description></item></channel></rss>
