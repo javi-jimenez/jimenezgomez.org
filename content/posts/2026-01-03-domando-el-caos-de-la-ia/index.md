@@ -5,39 +5,39 @@ draft: false
 layout: post
 image: "og-image.svg"
 ---
-description: "Framework ACS (Assistant Context Standard): separar axiomas de inferencias para memoria trazable en IA."
+description: "ACS (Assistant Context Standard) framework: separating axioms from inferences for traceable memory in AI."
 tags:
-  - divulgación
+  - disclosure
   - ACS
-  - IA
-  - framework
-og_image: imagen-ilustrativa-documento-tecnico-acs-blog-jimenezgomez.org.jpg---
-📝 Artículo de Divulgación: "Domando el Caos de la IA"
+  - AI
+  -framework
+og_image: illustrative-image-technical-document-acs-blog-jimenezgomez.org.jpg---
+📝 Dissemination Article: "Taming the Chaos of AI"
 
-Abstract: El fin de la amnesia artificial
+Abstract: The end of artificial amnesia
 
-En un mundo saturado de información, las Inteligencias Artificiales sufren de un mal común: la falta de memoria persistente y estructurada. Presentamos el Framework ACS (Assistant Context Standard), una metodología innovadora que separa los hechos de las suposiciones, permitiendo a empresas e investigadores convertir a la IA en un socio estratégico con memoria infinita y razonamiento trazable.
+In a world saturated with information, Artificial Intelligences suffer from a common evil: the lack of persistent and structured memory. Introducing the ACS Framework (Assistant Context Standard), an innovative methodology that separates facts from assumptions, allowing companies and researchers to turn AI into a strategic partner with infinite memory and traceable reasoning.
 
-![Imagen ilustrativa del artículo](imagen-ilustrativa-documento-tecnico-acs-blog-jimenezgomez.org.jpg)
+![Illustrative image of the article](illustrative-image-technical-document-acs-blog-jimenezgomez.org.jpg)
 
-## La paradoja del genio olvidadizo
+## The paradox of the forgetful genius
 
-Imagine contratar al consultor más brillante del mundo, pero con una condición: cada mañana, al entrar en su oficina, olvida quién es usted y en qué trabajaron ayer. Esa es la realidad de las IAs actuales. El Framework ACS soluciona esto mediante la creación de un "Cerebro Externo".
+Imagine hiring the most brilliant consultant in the world, but on one condition: Every morning when you walk into their office, you forget who you are and what you worked on yesterday. That is the reality of current AIs. The ACS Framework solves this by creating an "External Brain".
 
-## De la especulación a la lógica: Axiomas vs. Inferencias
+## From speculation to logic: Axioms vs. Inferences
 
-La mayoría de los usuarios "hablan" con la IA esperando que recuerde todo. Nosotros proponemos un cambio de paradigma basado en dos pilares:
+Most users "talk" to the AI expecting it to remember everything. We propose a paradigm shift based on two pillars:
 
-- **El Axioma (La Verdad):** Son los datos que usted, como humano, define. "Valencia está en España", "Nuestro presupuesto es X". La IA tiene prohibido dudar de esto.
+- **The Axiom (The Truth):** It is the data that you, as a human, define. "Valencia is in Spain", "Our budget is X". The AI ​​is prohibited from doubting this.
 
-- **La Inferencia (El Hallazgo):** Es lo que la IA deduce. "Si el presupuesto es X y el precio sube, tenemos un riesgo".
+- **The Inference (The Finding):** It is what the AI ​​deduces. "If the budget is X and the price goes up, we have a risk."
 
-Al separar estos dos mundos, eliminamos el riesgo de que la IA invente hechos. Creamos un sistema donde el humano dicta la realidad y la máquina procesa las posibilidades.
+By separating these two worlds, we eliminate the risk of AI making up facts. We create a system where the human dictates reality and the machine processes the possibilities.
 
-## Aplicaciones: De la Geopolítica a la Inversión
+## Applications: From Geopolitics to Investment
 
-Este sistema permite monitorear desde la logística en Valencia hasta el riesgo de conflicto global (WWIII) con una precisión matemática. Para un inversor, esto significa trazabilidad total: usted sabe exactamente por qué la IA tomó una decisión, basándose en qué axioma específico.
+This system allows monitoring everything from logistics in Valencia to the risk of global conflict (WWIII) with mathematical precision. For an investor, this means full traceability: you know exactly why the AI ​​made a decision, based on which specific axiom.
 
-## Conclusión
+## Conclusion
 
-El Framework ACS no es solo una forma de usar IA; es un estándar de gestión del conocimiento. Es la herramienta que permite pasar de "jugar" con la IA a "gobernar" la información para la toma de decisiones críticas en un mundo volátil.
+The ACS Framework is not just a way to use AI; It is a knowledge management standard. It is the tool that allows us to go from "playing" with AI to "governing" information for making critical decisions in a volatile world.

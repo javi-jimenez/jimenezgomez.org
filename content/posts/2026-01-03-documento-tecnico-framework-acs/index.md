@@ -1,5 +1,5 @@
 ---
-title: "Framework ACS (Assistant Context Standard)"
+title: "ACS Framework (Assistant Context Standard)"
 date: 2026-01-03T09:05:00+01:00
 draft: false
 layout: post
@@ -9,35 +9,35 @@ categories:
   - arquitectura
 tags:
 ---
-## Motivación
-:![Ilustración ACS](og-image.svg)
+## Motivation
+:![ACS Illustration](og-image.svg)
 
-Las IAs actuales operan en silos de memoria efímeros (ventanas de contexto). Esto genera "alucinaciones" por pérdida de datos y falta de trazabilidad en proyectos complejos. El Framework ACS nace para dotar a la IA de una memoria externa estructurada, separando la verdad del usuario del razonamiento de la máquina.
+Current AIs operate in ephemeral memory silos (context windows). This generates "hallucinations" due to data loss and lack of traceability in complex projects. The ACS Framework was created to provide AI with a structured external memory, separating the user's truth from the machine's reasoning.
 
-## 1. Arquitectura de Segmentación Lógica
+## 1. Logical Segmentation Architecture
 
-El sistema se basa en la tripartición de la información:
+The system is based on the tripartition of information:
 
-### A. Capa de Axiomas (Documento de Control)
+### A. Axiom Layer (Control Document)
 
-- Definición: Hechos inmutables y reglas de control dictadas por el Usuario.
+- Definition: Immutable facts and control rules dictated by the User.
 
-- Función: Actúa como el "ADN" del contexto. Si no está en el Axioma, no existe para la IA.
+- Function: Acts as the "DNA" of the context. If it's not in the Axiom, it doesn't exist for AI.
 
-- Protocolo: Incluye las bases generales (BH-GEN) y las específicas de investigación (BH-INVESTIGACION).
+- Protocol: Includes the general bases (BH-GEN) and the specific research bases (BH-INVESTIGATION).
 
-### B. Capa de Proceso (La IA)
+### B. Process Layer (AI)
 
-- Definición: Motor de razonamiento lógico.
+- Definition: Logical reasoning engine.
 
-- Función: Aplica los Axiomas para resolver problemas sin contaminar la base de datos original.
+- Function: Apply the Axioms to solve problems without contaminating the original database.
 
-### C. Capa de Inferencias/Hipótesis (Documento de Resultados)
+### C. Inference/Hypothesis Layer (Results Document)
 
-- Definición: El "output" del sistema.
+- Definition: The "output" of the system.
 
-- Función: Registro de análisis, hallazgos y sugerencias. Estos datos son provisionales hasta que el usuario los valide y los traslade a la Capa de Axiomas.
+- Function: Record of analysis, findings and suggestions. This data is provisional until the user validates it and transfers it to the Axioms Layer.
 
 ---
 
-Este documento plantea una base minimalista para implementar ACS en flujos que requieran trazabilidad, reproducibilidad y separación explícita entre hechos (Axiomas) y razonamientos provisionales (Inferencias). Las implementaciones concretas pueden añadir metadatos de versión, firmas de autor y mecanimos de validación para transitar inferencias a axiomas de forma controlada.
+This document proposes a minimalist basis for implementing ACS in flows that require traceability, reproducibility and explicit separation between facts (Axioms) and provisional reasoning (Inferences). Concrete implementations can add version metadata, author signatures, and validation mechanisms to transition inferences to axioms in a controlled manner.

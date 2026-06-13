@@ -2,35 +2,35 @@
 og_image: og-image-1200x630.png
 image: "og-image.svg"
 tags:
-title: "Propuesta: Estándar ASSISTANT_CONTEXT para continuidad entre sesiones"
+title: "Proposal: ASSISTANT_CONTEXT standard for continuity between sessions"
 date: 2025-12-30T12:30:00+01:00
 draft: false
 layout: post
 author: "Francisco Javier"
 ---
 ---
-Enlace al borrador formal (RFC): [RFC-0001: ASSISTANT_CONTEXT](../../tools/rfcs/RFC-0001-ASSISTANT_CONTEXT.md)
+Link to formal draft (RFC): [RFC-0001: ASSISTANT_CONTEXT](../../tools/rfcs/RFC-0001-ASSISTANT_CONTEXT.md)
 
-Proceso para comentarios (Request for Comments):
+Process for comments (Request for Comments):
 
-- Abre un issue en el repositorio con el título "RFC-0001: comment: <resumen>" o ejecuta `tools/rfcs/open_rfc_issue.sh` localmente con `GITHUB_REPOSITORY` y `GITHUB_TOKEN` en tu entorno para crear la issue automáticamente.
-- También puedes enviar un Pull Request con la propuesta de cambio sobre `tools/rfcs/RFC-0001-ASSISTANT_CONTEXT.md`.
+- Open an issue in the repository with the title "RFC-0001: comment: <summary>" or run `tools/rfcs/open_rfc_issue.sh` locally with `GITHUB_REPOSITORY` and `GITHUB_TOKEN` in your environment to create the issue automatically.
+- You can also send a Pull Request with the change proposal on `tools/rfcs/RFC-0001-ASSISTANT_CONTEXT.md`.
 
-Este es un borrador de propuesta para un pequeño estándar que permita a asistentes automatizados (IA) y a sus usuarios mantener continuidad entre sesiones.
+This is a draft proposal for a small standard that allows automated assistants (AI) and their users to maintain continuity between sessions.
 
-Motivación
-- Cuando un asistente y un humano trabajan iterativamente en un repositorio o en tareas locales, es útil que exista un archivo estándar, legible por humanos y máquinas, que contenga el contexto mínimo necesario para reanudar trabajo.
+Motivation
+- When an assistant and a human work iteratively on a repository or on local tasks, it is useful for a standard file, human- and machine-readable, to exist that contains the minimum context necessary to resume work.
 
-Propuesta mínima (frontmatter YAML):
+Minimum proposal (YAML frontmatter):
 - `id`, `created_at`, `updated_at`, `user`, `location`, `purpose`, `files_changed`, `next_steps`, `status`.
 
-Uso
-- El asistente crea o actualiza `ASSISTANT_CONTEXT.md` en la carpeta de trabajo.
-- El archivo incluye un breve historial, comandos de verificación y enlaces a archivos clave.
+Use
+- The assistant creates or updates `ASSISTANT_CONTEXT.md` in the working folder.
+- The file includes a brief history, verification commands and links to key files.
 
-Ventajas
-- Facilita que distintos agentes (humanos o automáticos) retomen el trabajo sin perder pasos.
-- Sirve como contrato mínimo para colaboraciones asistidas por IA.
+Advantages
+- Makes it easier for different agents (human or automatic) to resume work without losing steps.
+- Serves as a minimum contract for AI-assisted collaborations.
 
-Invitación
-- Comentad sugerencias, campos adicionales o formatos alternativos (JSON-LD, TOML). Si os gusta, puedo convertir esto en un PR y publicarlo como propuesta en este repositorio.
+Invitation
+- Comment suggestions, additional fields or alternative formats (JSON-LD, TOML). If you like it, I can turn this into a PR and publish it as a proposal in this repository.

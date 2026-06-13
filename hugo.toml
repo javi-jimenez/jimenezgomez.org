@@ -1,5 +1,5 @@
 baseURL = 'https://jimenezgomez.org/'
-languageCode = 'es'
+languageCode = 'en'
 title = 'Francisco Javier Jiménez Gómez'
 theme = 'stack'
 copyright = 'Francisco Javier Jiménez Gómez'

@@ -13,50 +13,50 @@ tags:
   - gemini
 og_image: og-image-1200x630.png
 ---
-**Hora:** 20:30 UTC
-**Creditos de Propuesta Original:** https://jimenezgomez.org/posts/2025-12-30-assistant-context-standard/
+**Time:** 20:30 UTC
+**Original Proposal Credits:** https://jimenezgomez.org/posts/2025-12-30-assistant-context-standard/
 
 
-## 1. Introducción: El problema del "Efecto Amnesia"
+## 1. Introduction: The problem of the "Amnesia Effect"
 
-A pesar de la potencia de los LLMs, el trabajo en entornos locales y distribuidos sufre de una desconexión crítica: la IA no sabe qué ocurrió en la sesión anterior si el motor o la interfaz cambian. Proponemos un estándar basado en archivos de manifiesto situados en la raíz de los proyectos para garantizar la continuidad del flujo de trabajo.
+Despite the power of LLMs, working in local and distributed environments suffers from a critical disconnect: the AI does not know what happened in the previous session if the engine or interface changes. We propose a standard based on manifest files located at the root of projects to ensure workflow continuity.
 
-## 2. Estructura del Estándar Mejorado (Propuesta v2.0)
+## 2. Structure of the Enhanced Standard (Proposal v2.0)
 
-Para que un estándar sea efectivo, debe ser ligero y legible tanto para humanos como para máquinas. Sugerimos la creación de un archivo `.ai-context.json` o `.assistant.md` con la siguiente estructura mejorada:
+For a standard to be effective, it must be lightweight and readable by both humans and machines. We suggest creating a `.ai-context.json` or `.assistant.md` file with the following improved structure:
 
-### A. El Manifiesto de Tarea (`task_state`)
+### A. The Task Manifest (`task_state`)
 
-No basta con decir qué se está haciendo; hay que definir el "Estado de la Misión":
+It is not enough to say what is being done; You have to define the "Mission State":
 
-* **Current Goal:** El objetivo macro actual.
-* **Sub-tasks:** Lista de verificación (Checklist) de tareas pendientes y completadas.
-* **Blocking Issues:** Impedimentos técnicos encontrados en sesiones previas.
+* **Current Goal:** The current macro goal.
+* **Sub-tasks:** Checklist of pending and completed tasks.
+* **Blocking Issues:** Technical obstacles found in previous sessions.
 
-### B. Diccionario de Entidades (`knowledge_graph`)
+### B. Entity Dictionary (`knowledge_graph`)
 
-Para evitar que la IA confunda términos en proyectos grandes:
+To prevent AI from confusing terms in large projects:
 
-* **Definitions:** Glosario de términos específicos del negocio o del código.
-* **Key Files:** Mapeo de archivos críticos y su función (evita que la IA tenga que leer todo el repo para entender la arquitectura).
+* **Definitions:** Glossary of business or code-specific terms.
+* **Key Files:** Mapping of critical files and their function (prevents the AI ​​from having to read the entire repo to understand the architecture).
 
-### C. Registro de Decisiones de Diseño (ADR - Architecture Decision Records)
+### C. Architecture Decision Records (ADR)
 
-El mayor fallo de contexto es cuando la IA sugiere cambiar algo que ya se decidió no hacer.
+The biggest context failure is when the AI suggests changing something that you have already decided not to do.
 
-* **Decisions:** "Usamos UUID en lugar de ID incremental por X razón". Esto evita bucles de sugerencias erróneas.
+* **Decisions:** "We use UUID instead of incremental ID for X reason." This avoids loops of bad suggestions.
 
-## 3. Mejoras Agregadas (Aportación de la IA)
+## 3. Added Improvements (AI Contribution)
 
-He añadido tres capas técnicas que tu estándar original puede adoptar para ser más robusto:
+I've added three technical layers that your original standard can adopt to be more robust:
 
-1. **Capa de Jerarquía de Herencia:** Si hay un archivo en `/root` y otro en `/root/module_A`, el asistente debe fusionarlos. El archivo de subdirectorio tiene prioridad sobre el global. Esto permite "Contexto por Módulo".
-2. **Firma de Sesión (Hash de Estado):**
-Incluir un `last_state_hash` que resuma el estado del código. Si el asistente detecta que el código cambió drásticamente desde la última lectura del contexto, debe alertar al usuario para actualizar el manifiesto.
+1. **Inheritance Hierarchy Layer:** If there is one file in `/root` and another in `/root/module_A`, the wizard should merge them. The subdirectory file takes priority over the global one. This allows "Context per Module".
+2. **Session Signature (State Hash):**
+Include a `last_state_hash` that summarizes the state of the code. If the wizard detects that the code has changed dramatically since the last context read, it should alert the user to update the manifest.
 3. **Token Budget Management:**
-Instrucción explícita de "Priority Levels". Si el archivo de contexto crece mucho, el estándar define qué partes se pueden omitir (ej. el historial antiguo) y qué partes son obligatorias (el Goal actual).
+Explicit "Priority Levels" instruction. If the context file grows very large, the standard defines which parts can be omitted (e.g. the old history) and which parts are mandatory (the current Goal).
 
-## 4. Implementación Práctica (Ejemplo de Archivo)
+## 4. Practical Implementation (Example File)
 
 ```yaml
 # .ai-context.yaml
@@ -82,10 +82,10 @@ last_update: "2026-01-02 20:25"
 ```
 
 
-## 5. Conclusión
+## 5. Conclusion
 
-El **Assistant Context Standard** propuesto por JimenezGomez y refinado en este documento elimina la fricción de entrada en cada nueva sesión de IA. Al tratar el contexto como **código persistente** y no como **memoria volátil**, permitimos que el desarrollo asistido por IA sea verdaderamente profesional y escalable.
+The **Assistant Context Standard** proposed by JimenezGomez and refined in this paper eliminates input friction in each new AI session. By treating context as **persistent code** and not **volatile memory**, we enable AI-assisted development to be truly professional and scalable.
 
 ---
 
-**Nota del Asistente:** He redactado este artículo integrando tu visión de persistencia en directorios con mi capacidad de estructuración técnica. Si quieres que profundice en algún punto técnico (como la integración con el protocolo MCP), dímelo.
+**Assistant Note:** I have written this article integrating your vision of directory persistence with my technical structuring ability. If you want me to go deeper into any technical points (such as integration with the MCP protocol), let me know.

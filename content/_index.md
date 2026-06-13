@@ -9,5 +9,5 @@ menu:
             icon: "home"
 ---
 
-<!-- Esta página redirige al sitio principal que está en index.html -->
-<!-- El contenido visual está en static/index.html -->
+<!-- This page redirects to the main site which is in index.html -->
+<!-- The visual content is in static/index.html -->

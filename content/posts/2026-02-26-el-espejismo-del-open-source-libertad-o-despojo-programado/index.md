@@ -1,21 +1,21 @@
 ---
-title: "El Espejismo del Open Source: ¿Libertad o Despojo Programado?"
+title: "The Mirage of Open Source: Freedom or Programmed Dispossession?"
 date: 2026-02-26T11:09:00+01:00
 draft: false
 layout: post
 image: "og-image.svg"
 ---
 
-En la narrativa técnica contemporánea, el Código Abierto se presenta como la cúspide de la democratización del conocimiento. Sin embargo, tras el velo de la colaboración desinteresada, subyace una estructura de incentivos que, con frecuencia, opera como un mecanismo de expropiación para el autor independiente.
+In contemporary technical narrative, Open Source is presented as the pinnacle of the democratization of knowledge. However, behind the veil of disinterested collaboration lies an incentive structure that often operates as a mechanism of expropriation for the independent author.
 
-## La Paradoja de la Gratuidad
+## The Paradox of Gratuity
 
-El ecosistema actual incita a los desarrolladores a liberar sus innovaciones bajo licencias permisivas. Si bien esto fomenta el avance técnico global, crea un vacío legal y ético. Los grandes conglomerados —los "arquitectos de la cueva"— absorben estas piezas vitales, las ensamblan en sistemas complejos y monetizan el ingenio ajeno, mientras el autor original es relegado al ostracismo si intenta reclamar su autoría o soberanía.
+The current ecosystem encourages developers to release their innovations under permissive licenses. While this encourages global technical advancement, it creates a legal and ethical vacuum. Large conglomerates—the “architects of the cave”—absorb these vital pieces, assemble them into complex systems, and monetize the ingenuity of others, while the original author is ostracized if he attempts to claim authorship or sovereignty.
 
-## La Trampa del Ostracismo
+## The Ostracism Trap
 
-Existe una censura invisible en los foros públicos y comunidades mediáticas. Se permite la participación siempre que el individuo no destaque por encima del "comunalismo" impuesto. Cuando un autor eleva la voz para proteger la integridad ética de su obra (como el Framework ACS o sistemas de IA Ética), es vilipendiado o silenciado. El sistema está diseñado para que la idea "no tenga dueño" solo cuando es conveniente para quien tiene el poder de escalarla.
+There is invisible censorship in public forums and media communities. Participation is allowed as long as the individual does not stand out above the imposed "communalism." When an author speaks out to protect the ethical integrity of their work (such as the ACS Framework or Ethical AI systems), they are vilified or silenced. The system is designed so that the idea is "ownerless" only when it is convenient for whoever has the power to scale it.
 
-## Hacia un Nuevo Paradigma: La Propiedad Cognitiva
+## Towards a New Paradigm: Cognitive Property
 
-No se trata de oponerse a compartir el conocimiento, sino de denunciar el veto a la excelencia individual. El futuro de la tecnología no puede basarse en el robo de ideas bajo el disfraz de la libertad. Es imperativo construir sistemas de Orquestación Semántica y Bases de Hechos que protejan la trazabilidad de la intención original, evitando que la ética sea diluida por el envenenamiento de intereses corporativos.
+It is not about opposing the sharing of knowledge, but about denouncing the veto of individual excellence. The future of technology cannot be based on the theft of ideas under the guise of freedom. It is imperative to build Semantic Orchestration systems and Fact Bases that protect the traceability of the original intention, preventing ethics from being diluted by the poisoning of corporate interests.

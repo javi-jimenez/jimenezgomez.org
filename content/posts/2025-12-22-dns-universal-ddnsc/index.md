@@ -1,5 +1,5 @@
 ---
-title: "DNS Universal: De lo Planetario a lo Galáctico"
+title: "Universal DNS: From the Planetary to the Galactic"
 date: "2025-12-22T14:30:00+02:00"
 draft: false
 layout: post
@@ -16,22 +16,22 @@ tags:
    - research
 og_image: dns-universe-architecture.png
 ---
-## Introducción: El Problema del Direccionamiento Universal
+## Introduction: The Universal Addressing Problem
 
-El **Domain Name System (DNS)** actual funciona bajo supuestos terrestres: latencias medidas en milisegundos, infraestructura física concentrada, y una autoridad central (ICANN). Pero ¿qué ocurre cuando necesitamos direccionar servicios en una colonia marciana, en estaciones orbitales, o incluso entre sistemas estelares?
+The current **Domain Name System (DNS)** operates under terrestrial assumptions: latencies measured in milliseconds, concentrated physical infrastructure, and a central authority (ICANN). But what happens when we need to direct services in a Martian colony, in orbital stations, or even between star systems?
 
-El proyecto [DDNSC (Distributed DNS Cache)](https://github.com/javi-jimenez/ddnsc) proporciona los cimientos técnicos para resolver este problema mediante **publicación descentralizada de servicios** usando protocolos estándar (RFC 2136, Avahi/Zeroconf). Este artículo propone una extensión conceptual hacia escalas planetarias, galácticas y universales, integrando tecnologías Web 3.0 y protocolos emergentes.
+The [DDNSC (Distributed DNS Cache)](https://github.com/javi-jimenez/ddnsc) project provides the technical foundation to solve this problem by **decentralized service publishing** using standard protocols (RFC 2136, Avahi/Zeroconf). This article proposes a conceptual extension towards planetary, galactic and universal scales, integrating Web 3.0 technologies and emerging protocols.
 
-## El Proyecto DDNSC: Base Tecnológica
+## The DDNSC Project: Technological Base
 
-### Arquitectura Actual
+### Current Architecture
 
-DDNSC permite que cualquier nodo publique sus propios servicios en servidores DNS remotos sin autorización centralizada:
+DDNSC allows any node to publish its own services to remote DNS servers without centralized authorization:
 
-- **Cliente**: Script `avahi-publish-remote.sh` que usa `nsupdate` (RFC 2136)
-- **Servidor**: Bind con zonas dinámicamente actualizables
-- **Descubrimiento**: Avahi para búsqueda de servicios (similar a mDNS/Bonjour)
-- **Distribución**: Anycast para replicar servidores DNS por zonas
+- **Client**: `avahi-publish-remote.sh` script using `nsupdate` (RFC 2136)
+- **Server**: Bind with dynamically updateable zones
+- **Discovery**: Avahi for service search (similar to mDNS/Bonjour)
+- **Distribution**: Anycast to replicate DNS servers by zones
 
 ```bash
 # Publicar un servicio SSH en dominio ddns
@@ -41,79 +41,79 @@ DDNSC permite que cualquier nodo publique sus propios servicios en servidores DN
 avahi_publish_remote_myips ddns
 ```
 
-### Limitación Actual: Escala ~1000 Nodos
+### Current Limitation: Scale ~1000 Nodes
 
-El propio proyecto reconoce que la escalabilidad se limita a ~1000 nodos en su forma actual. Necesitamos arquitectura distribuida verdadera para escalas mayores.
+The project itself acknowledges that scalability is limited to ~1000 nodes in its current form. We need true distributed architecture for larger scales.
 
-![Arquitectura DNS Universal](dns-universe-architecture.svg)
+![Universal DNS Architecture](dns-universe-architecture.svg)
 
-## Escalabilidad: De Planetario a Universal
+## Scalability: From Planetarium to Universal
 
-### Nivel 1: Escala Planetaria (10⁴ - 10⁸ nodos)
+### Level 1: Planetary Scale (10⁴ - 10⁸ nodes)
 
-**Contexto**: Redes comunitarias terrestres, IoT masivo, ciudades inteligentes.
+**Context**: Terrestrial community networks, massive IoT, smart cities.
 
-**Desafíos técnicos**:
-- Latencia máxima: 100-500 ms (round-trip terrestre)
-- Sincronización entre zonas horarias
-- Resiliencia ante particiones de red regionales
+**Technical challenges**:
+- Maximum latency: 100-500 ms (terrestrial round-trip)
+- Synchronization between time zones
+- Resilience to regional network partitions
 
-**Soluciones propuestas**:
+**Proposed solutions**:
 
-1. **Jerarquía geográfica multi-capa**:
+1. **Multi-layer geographic hierarchy**:
    ```
    .earth → .continent → .country → .region → .local
    ejemplo: server.barcelona.catalunya.europe.earth
    ```
 
-2. **DHT (Distributed Hash Table) para resolución**:
-   - Protocolo Kademlia (usado en BitTorrent, IPFS)
-   - Cada nodo mantiene tabla de ~log(N) vecinos
-   - Resolución en O(log N) saltos
+2. **DHT (Distributed Hash Table) for resolution**:
+   - Kademlia protocol (used in BitTorrent, IPFS)
+   - Each node maintains a table of ~log(N) neighbors
+   - Resolution in O(log N) steps
 
-3. **Blockchain ligera para autoridad**:
-   - Namecoin o Ethereum Name Service (ENS) para registro de dominios
-   - Proof-of-Authority en lugar de PoW para eficiencia
+3. **Lightweight blockchain for authority**:
+   - Namecoin or Ethereum Name Service (ENS) for domain registration
+   - Proof-of-Authority instead of PoW for efficiency
 
-**Cálculo de capacidad**:
+**Capacity calculation**:
 
-| Parámetro | Valor |
+| Parameter | Value |
 |-----------|-------|
-| Nodos totales | 10⁸ (100 millones) |
-| Tamaño de tabla DHT por nodo | log₂(10⁸) ≈ 27 entradas |
-| Memoria por entrada | 100 bytes (ID + IP + metadata) |
-| **Memoria total por nodo** | **2.7 KB** |
-| Saltos de resolución promedio | log₂(10⁸)/2 ≈ 14 saltos |
-| Latencia por salto | 20 ms (promedio terrestre) |
-| **Tiempo de resolución total** | **~280 ms** |
+| Total nodes | 10⁸ (100 million) |
+| DHT table size per node | log₂(10⁸) ≈ 27 entries |
+| Memory per entry | 100 bytes (ID + IP + metadata) |
+| **Total memory per node** | **2.7KB** |
+| Average resolution jumps | log₂(10⁸)/2 ≈ 14 hops |
+| Hop Latency | 20 ms (earth average) |
+| **Total resolution time** | **~280ms** |
 
-### Nivel 2: Escala Galáctica (10⁹ - 10¹² nodos)
+### Level 2: Galactic Scale (10⁹ - 10¹² nodes)
 
-**Contexto**: Sistema solar colonizado (Luna, Marte, cinturón de asteroides, lunas de Júpiter/Saturno).
+**Context**: Colonized solar system (Moon, Mars, asteroid belt, moons of Jupiter/Saturn).
 
-**Desafíos técnicos**:
-- Latencia variable: 3 min (Tierra-Marte en oposición cercana) a 22 min (oposición lejana)
-- Particiones de red inevitables durante conjunciones solares
-- Movimiento orbital constante de los nodos
+**Technical challenges**:
+- Variable latency: 3 min (Earth-Mars at close opposition) to 22 min (far opposition)
+- Network partitions unavoidable during solar conjunctions
+- Constant orbital movement of the nodes
 
-**Soluciones propuestas**:
+**Proposed solutions**:
 
-1. **Modelo de consistencia eventual**:
-   - CRDT (Conflict-free Replicated Data Types) para registros DNS
-   - Inspirado en CassandraDB y Amazon Dynamo
-   - Cada planeta mantiene caché completa con timestamps
+1. **Eventual consistency model**:
+   - CRDT (Conflict-free Replicated Data Types) for DNS records
+   - Inspired by CassandraDB and Amazon Dynamo
+   - Each planet maintains full cache with timestamps
 
-2. **Protocolo Delay-Tolerant Networking (DTN)**:
+2. **Delay-Tolerant Networking (DTN) Protocol**:
    - RFC 4838 - Bundle Protocol
-   - Usado por NASA en comunicaciones espaciales profundas
-   - Store-and-forward con reconocimientos programados
+   - Used by NASA in deep space communications
+   - Store-and-forward with scheduled recognitions
 
-3. **Resolución predictiva**:
-   - Precalcular órbitas y ventanas de comunicación
-   - Caché proactiva basada en efemérides
-   - Algoritmo: "Resolver antes de que se solicite"
+3. **Predictive resolution**:
+   - Precalculate orbits and communication windows
+   - Proactive cache based on ephemeris
+   - Algorithm: "Resolve before request"
 
-**Jerarquía propuesta**:
+**Proposed hierarchy**:
 ```
 .sol → .planet → .settlement → .district → .host
 ejemplos:
@@ -122,80 +122,80 @@ ejemplos:
 - mining.ceres.asteroid.sol
 ```
 
-![Escalas de distribución DNS](dns-scales.svg)
+![DNS Distribution Scales](dns-scales.svg)
 
-**Cálculo de latencia interplanetaria**:
+**Interplanetary latency calculation**:
 
-| Ruta | Distancia min (UA) | Latencia luz (min) | Ventana de comunicación |
-|------|-------------------|-------------------|------------------------|
-| Tierra-Luna | 0.0026 | 1.3 segundos | Continua |
-| Tierra-Marte | 0.38 | 3.2 | 80% del año (evitando conjunciones) |
-| Tierra-Júpiter | 4.2 | 35 | 70% del año |
-| Tierra-Saturno | 8.0 | 67 | 65% del año |
-| Tierra-Nube de Oort | 50,000 | 0.8 años | Requerido relay |
+| Route | Min distance (AU) | Light latency (min) | Communication window |
+|------|------|-------------------|-------------------------|
+| Earth-Moon | 0.0026 | 1.3 seconds | Continued |
+| Earth-Mars | 0.38 | 3.2 | 80% of the year (avoiding conjunctions) |
+| Earth-Jupiter | 4.2 | 35 | 70% of the year |
+| Earth-Saturn | 8.0 | 67 | 65% of the year |
+| Earth-Oort Cloud | 50,000 | 0.8 years | Relay required |
 
-### Nivel 3: Escala Universal (10¹³+ nodos)
+### Level 3: Universal Scale (10¹³+ nodes)
 
-**Contexto**: Civilización multi-estelar (ciencia ficción dura, proyecto de investigación teórica).
+**Context**: Multi-stellar civilization (hard science fiction, theoretical research project).
 
-**Desafíos técnicos**:
-- Latencias de años-luz (4.2 años a Alpha Centauri)
-- Imposibilidad física de consenso global
-- Equivalencia conceptual con universos desconectados
+**Technical challenges**:
+- Light-year latencies (4.2 years to Alpha Centauri)
+- Physical impossibility of global consensus
+- Conceptual equivalence with disconnected universes
 
-**Modelo propuesto: "Federación de Universos DNS"**:
+**Proposed model: "Federation of DNS Universes"**:
 
-Cada sistema estelar opera como **universo DNS independiente** con federación opcional:
+Each star system operates as **independent DNS universe** with optional federation:
 
-1. **Autoridad local absoluta**:
-   - Cada estrella es TLD: `.alphacen`, `.sirius`, `.kepler442`
-   - No requiere consenso con otros sistemas
-   - Propiedad comunal del sistema estelar
+1. **Absolute local authority**:
+   - Each star is TLD: `.alphacen`, `.sirius`, `.kepler442`
+   - Does not require consensus with other systems
+   - Communal ownership of the star system
 
-2. **Relay interestelar**:
-   - Naves que viajan entre sistemas llevan "paquetes de actualización"
-   - Similar a Sneakernet pero a escala interestelar
-   - Protocolo: "eventual consistency with years of delay"
+2. **Interstellar Relay**:
+   - Ships traveling between systems carry "upgrade packages"
+   - Similar to Sneakernet but on an interstellar scale
+   - Protocol: "eventual consistency with years of delay"
 
-3. **Nombres federados opcionales**:
+3. **Optional Federated Names**:
    ```
    .galaxy.milkyway → .arm → .sector → .system → .planet
    ejemplo: station.newearth.alphacen.orion.milkyway.galaxy
    ```
 
-**Cálculo de capacidad teórica**:
+**Theoretical capacity calculation**:
 
-| Escala | Nodos estimados | Tiempo de sincronización completa |
+| Scale | Estimated nodes | Full Sync Time |
 |--------|----------------|----------------------------------|
-| Sistema solar | 10⁹ | Horas (DTN) |
-| 100 años-luz (esfera local) | 10¹² | Siglos (imposible sincronización real-time) |
-| Galaxia Vía Láctea | 10¹⁵ | 100,000 años (solo federación histórica) |
-| Universo observable | 10²⁴+ | Imposible (causalidad física) |
+| Solar system | 10⁹ | Hours (DTN) |
+| 100 light-years (local sphere) | 10¹² | Centuries (real-time synchronization impossible) |
+| Milky Way Galaxy | 10¹⁵ | 100,000 years (historical federation only) |
+| Observable universe | 10²⁴+ | Impossible (physical causality) |
 
-## Organización: Gobernanza Descentralizada
+## Organization: Decentralized Governance
 
-### Modelo para brisecom.org
+### Model for brisecom.org
 
-**Propuesta organizativa** inspirada en Internet Engineering Task Force (IETF) y ICANN, pero descentralizada:
+**Organizational proposal** inspired by the Internet Engineering Task Force (IETF) and ICANN, but decentralized:
 
-#### Estructura de la Fundación
+#### Foundation Structure
 
-1. **Comité Técnico** (5-7 miembros)
-   - Especificaciones de protocolos
-   - Auditoría de implementaciones
-   - Revisión de RFCs
+1. **Technical Committee** (5-7 members)
+   - Protocol specifications
+   - Implementation audit
+   - Review of RFCs
 
-2. **Consejo de Gobernanza** (rotativo, basado en contribuciones)
-   - Asignación de TLDs planetarios/galácticos
-   - Resolución de conflictos de nombres
-   - Votación: 1 nodo activo = 1 voto
+2. **Governance Council** (rotating, contribution-based)
+   - Assignment of planetary/galactic TLDs
+   - Name conflict resolution
+   - Voting: 1 active node = 1 vote
 
-3. **Grants de Investigación**
-   - Financiación mediante criptomonedas (DAO)
-   - Revisión peer-to-peer de propuestas
-   - Transparencia total en blockchain
+3. **Research Grants**
+   - Financing through cryptocurrencies (DAO)
+   - Peer-to-peer review of proposals
+   - Total transparency in blockchain
 
-#### Modelo de Financiación
+#### Financing Model
 
 ```
 Fuentes de ingresos:
@@ -212,45 +212,45 @@ Distribución:
 └── 5% Reserva operativa
 ```
 
-### Gobernanza Web 3.0
+### Web 3.0 Governance
 
-**DAO (Decentralized Autonomous Organization)** para decisiones críticas:
+**DAO (Decentralized Autonomous Organization)** for critical decisions:
 
-- **Contrato inteligente en Ethereum**:
-  - Cada implementación del protocolo = 1 token de voto
-  - Propuestas on-chain con período de votación
-  - Ejecución automática de decisiones aprobadas
+- **Smart contract on Ethereum**:
+  - Each protocol implementation = 1 voting token
+  - On-chain proposals with voting period
+  - Automatic execution of approved decisions
 
-- **IPFS para almacenamiento**:
-  - Registros DNS históricos en IPFS
+- **IPFS for storage**:
+  - Historical DNS records in IPFS
   - Content addressing: `/ipns/ddnsc.brisecom.org`
-  - Inmutabilidad y censorship-resistant
+  - Immutability and censorship-resistant
 
-## Protocolos y Proyectos Relacionados
+## Related Protocols and Projects
 
-### Ecosistema Web 3.0
+### Web 3.0 Ecosystem
 
-| Proyecto | Relevancia | Integración propuesta |
+| Project | Relevance | Proposed integration |
 |----------|-----------|----------------------|
-| **ENS (Ethereum Name Service)** | Nombres descentralizados en blockchain | Backend de autoridad para TLDs premium |
-| **IPFS/IPNS** | Almacenamiento distribuido content-addressed | Replicación de zonas DNS, caché distribuida |
-| **libp2p** | Stack de networking peer-to-peer | Capa de transporte para nodos DDNSC |
-| **Handshake (HNS)** | Blockchain DNS alternativo descentralizado | Competidor/complemento para registro raíz |
-| **OrbitDB** | Base de datos distribuida sobre IPFS | Almacenamiento de registros DNS dinámicos |
-| **GNUnet Name System (GNS)** | Sistema de nombres seguro y descentralizado | Inspiración para resolución con privacidad |
+| **ENS (Ethereum Name Service)** | Decentralized names on blockchain | Authority backend for premium TLDs |
+| **IPFS/IPNS** | Content-addressed distributed storage | DNS zone replication, distributed cache |
+| **libp2p** | Peer-to-peer networking stack | Transport layer for DDNSC nodes |
+| **Handshake (HNS)** | Decentralized Alternative DNS Blockchain | Competitor/plugin for root registry |
+| **OrbitDB** | Distributed database over IPFS | Storing dynamic DNS records |
+| **GNUnet Name System (GNS)** | Secure and decentralized naming system | Inspiration for resolution with privacy |
 
-### Protocolos de Comunicación Espacial
+### Space Communication Protocols
 
-| Protocolo | Estándar | Aplicación en DNS Universal |
+| Protocol | Standard | Application in Universal DNS |
 |-----------|----------|----------------------------|
-| **DTN Bundle Protocol** | RFC 4838, RFC 5050 | Transporte de actualizaciones DNS con alta latencia |
-| **CCSDS File Delivery Protocol** | CCSDS 727.0-B-5 | Sincronización de zonas completas |
-| **Licklider Transmission Protocol** | RFC 5326 | Sesiones confiables en enlaces intermitentes |
-| **Proximity-1 Space Link Protocol** | CCSDS 211.0-B-5 | Capa física para comunicaciones interplanetarias |
+| **DTN Bundle Protocol** | RFC 4838, RFC 5050 | Transporting DNS updates with high latency |
+| **CCSDS File Delivery Protocol** | CCSDS 727.0-B-5 | Full zone synchronization |
+| **Licklider Transmission Protocol** | RFC5326 | Reliable sessions on intermittent links |
+| **Proximity-1 Space Link Protocol** | CCSDS 211.0-B-5 | Physical layer for interplanetary communications |
 
-### Arquitectura de Integración
+### Integration Architecture
 
-![Organización descentralizada](dns-web3-org.svg)
+![Decentralized organization](dns-web3-org.svg)
 
 ```
 Capa de Aplicación: DNS Queries (UDP/TCP puerto 53, DoH, DoT)
@@ -266,34 +266,34 @@ Capa de Almacenamiento: IPFS (caché) + Bind (servidor local)
 Capa de Red: Internet (IP) / Delay-Tolerant Networks
 ```
 
-## Áreas de Investigación Abiertas
+## Open Research Areas
 
-### 1. Resolución con Latencia Extrema
+### 1. Resolution with Extreme Latency
 
-**Problema**: Resolver `colony.mars.sol` desde Tierra cuando Marte está detrás del Sol.
+**Problem**: Resolving `colony.mars.sol` from Earth when Mars is behind the Sun.
 
-**Hipótesis**: 
-- Sistema de "proxy predictions" basado en ML
-- Caché inteligente que aprende patrones de consultas
-- Modelo: "Si no puedo preguntar, predigo la respuesta probable"
+**Hypothesis**: 
+- ML-based "proxy predictions" system
+- Smart cache that learns query patterns
+- Model: "If I can't ask, I predict the probable answer"
 
-**Experimento propuesto**:
-Simular red de nodos con latencias programadas (3-22 minutos aleatorios) y medir tasas de acierto de caché predictiva vs. caché tradicional LRU.
+**Proposed experiment**:
+Simulate node network with scheduled latencies (3-22 random minutes) and measure predictive cache hit rates vs. traditional LRU cache.
 
-**Financiación estimada**: €50,000 (1 año, 1 investigador postdoc + infraestructura)
+**Estimated funding**: €50,000 (1 year, 1 postdoc researcher + infrastructure)
 
-### 2. CRDT para Registros DNS
+### 2. CRDT for DNS Records
 
-**Problema**: Dos nodos actualizan el mismo nombre simultáneamente en planetas diferentes.
+**Problem**: Two nodes update the same name simultaneously on different planets.
 
-**Propuesta**: Implementar CRDT (LWW-Element-Set) para registros A/AAAA/SRV.
+**Proposal**: Implement CRDT (LWW-Element-Set) for A/AAAA/SRV records.
 
-**Desafío técnico**: 
-- Timestamps requieren sincronización de relojes
-- En espacio: GPS no funciona, necesitamos pulsar timing
-- Alternativa: Vector clocks con contador lógico
+**Technical challenge**: 
+- Timestamps require clock synchronization
+- In space: GPS does not work, we need to press timing
+- Alternative: Vector clocks with logic counter
 
-**Código prototipo**:
+**Prototype code**:
 ```python
 class DNSRecord_CRDT:
     def __init__(self, name, value, lamport_clock):
@@ -311,60 +311,60 @@ class DNSRecord_CRDT:
         return self
 ```
 
-**Financiación estimada**: €80,000 (18 meses, implementación + paper)
+**Estimated funding**: €80,000 (18 months, implementation + paper)
 
-### 3. Economía de Nombres Espaciales
+### 3. Space Name Economy
 
-**Pregunta**: ¿Cuánto vale `olympus.mars`? ¿Quién lo controla?
+**Question**: How much is `olympus.mars` worth? Who controls it?
 
-**Modelo propuesto**:
-- Subastas al estilo ENS con smart contracts
-- Ingresos financian infraestructura de relay
-- "Homesteading": primero en colonizar = primero en registrar
+**Proposed model**:
+- ENS-style auctions with smart contracts
+- Revenue finances relay infrastructure
+- "Homesteading": first to colonize = first to register
 
-**Investigación socioeconómica**:
-- Estudios de aceptación con comunidades espaciales
-- Simulación de mercados secundarios
-- Análisis de propiedad intelectual interplanetaria
+**Socioeconomic research**:
+- Acceptance studies with spatial communities
+- Simulation of secondary markets
+- Analysis of interplanetary intellectual property
 
-**Financiación estimada**: €120,000 (2 años, equipo interdisciplinar: derecho espacial + economía + ingeniería)
+**Estimated funding**: €120,000 (2 years, interdisciplinary team: space law + economics + engineering)
 
-### 4. Seguridad sin PKI Centralizada
+### 4. Security without Centralized PKI
 
-**Problema**: DNSSEC depende de claves raíz controladas por ICANN. Imposible en federación interestelar.
+**Issue**: DNSSEC depends on root keys controlled by ICANN. Impossible in interstellar federation.
 
-**Alternativas**:
-- **Web of Trust** (PGP-style) entre sistemas estelares
-- **Blockchain como raíz de confianza** (cada sistema publica su clave pública)
-- **Quantum-resistant signatures** para registros que durarán siglos
+**Alternatives**:
+- **Web of Trust** (PGP-style) between star systems
+- **Blockchain as a root of trust** (each system publishes its public key)
+- **Quantum-resistant signatures** for records that will last centuries
 
-**Experimento**:
-Implementar DNSSEC con Ed25519 (post-quantum) sobre blockchain Ethereum como raíz de confianza alternativa.
+**Experiment**:
+Implement DNSSEC with Ed25519 (post-quantum) on the Ethereum blockchain as an alternative root of trust.
 
-**Financiación estimada**: €100,000 (2 años, experto en criptografía + desarrollador blockchain)
+**Estimated funding**: €100,000 (2 years, crypto expert + blockchain developer)
 
-### 5. Simulación de Red Galáctica
+### 5. Galactic Network Simulation
 
-**Objetivo**: Software que simule red de 10¹² nodos con latencias realistas orbitales.
+**Objective**: Software that simulates a 10¹² node network with realistic orbital latencies.
 
-**Componentes**:
-- Motor de física orbital (efemérides precisas)
-- Simulador de protocolos de red (ns-3 extendido)
-- Visualizador 3D de topología dinámica
-- Benchmark de algoritmos de resolución
+**Components**:
+- Orbital physics engine (precise ephemeris)
+- Network protocol simulator (ns-3 extended)
+- 3D dynamic topology viewer
+- Benchmark of resolution algorithms
 
-**Entregables**:
-- Framework open-source
-- Dataset de trazas sintéticas
-- Papers en conferencias de networking (SIGCOMM, NSDI)
+**Deliverables**:
+- Open-source framework
+- Synthetic trace dataset
+- Papers at networking conferences (SIGCOMM, NSDI)
 
-**Financiación estimada**: €200,000 (3 años, 2 ingenieros software + HPC cluster)
+**Estimated funding**: €200,000 (3 years, 2 software engineers + HPC cluster)
 
-## Cálculos y Estimaciones
+## Calculations and Estimates
 
-### Ancho de Banda Requerido
+### Required Bandwidth
 
-Para actualización completa de zona DNS planetaria:
+For complete planetary DNS zone update:
 
 ```
 Nodos por planeta: 10⁹
@@ -379,9 +379,9 @@ Comparación: Deep Space Network de NASA alcanza 250 Mbps actualmente
 → Necesitamos 13× mejora en tecnología de comunicación espacial
 ```
 
-### Coste Energético de Consenso Blockchain
+### Blockchain Consensus Energy Cost
 
-Blockchain ligera (Proof-of-Authority con 100 validadores):
+Lightweight Blockchain (Proof-of-Authority with 100 validators):
 
 ```
 Consumo por validador: 100W (Raspberry Pi 4)
@@ -397,78 +397,77 @@ Baterías: €15,000
 → Payback period: 1.4 años en Tierra, amortizado en 5 años en Marte
 ```
 
-### Escalabilidad de DHT
+### DHT Scalability
 
-Para N nodos, cada uno mantiene k vecinos (típicamente k = 20):
+For N nodes, each maintains k neighbors (typically k = 20):
 
-| N (nodos) | log₂(N) | Memoria/nodo | Saltos promedio | Latencia resolución (50ms/salto) |
-|-----------|---------|--------------|-----------------|----------------------------------|
-| 10³ | 10 | 2 KB | 5 | 250 ms |
-| 10⁶ | 20 | 4 KB | 10 | 500 ms |
-| 10⁹ | 30 | 6 KB | 15 | 750 ms |
-| 10¹² | 40 | 8 KB | 20 | 1000 ms |
+| N (nodes) | log₂(N) | Memory/node | Average jumps | Resolution latency (50ms/hop) |
+|--------|---------|--------------|-----------------|----------------------------------|
+| 10³ | 10 | 2KB | 5 | 250ms |
+| 10⁶ | 20 | 4KB | 10 | 500ms |
+| 10⁹ | 30 | 6KB | 15 | 750ms |
+| 10¹² | 40 | 8KB | 20 | 1000ms |
 
-**Conclusión**: DHT escala logarítmicamente, viable hasta escala planetaria completa.
+**Conclusion**: DHT scales logarithmically, viable up to full planetary scale.
 
-## Conclusión: Factibilidad y Próximos Pasos
+## Conclusion: Feasibility and Next Steps
+### Is it Feasible?
 
-### ¿Es Factible?
+**Planetary scale (10⁸ nodes)**: **YES, feasible now**
+- Technology exists (DHT, blockchain, DDNSC)
+- Pilot project: guifi.net community network (~38,000 nodes currently)
+- Estimated cost: €500K for MVP in 3 years
 
-**Escala planetaria (10⁸ nodos)**: **SÍ, factible ahora**
-- Tecnología existe (DHT, blockchain, DDNSC)
-- Proyecto piloto: Red comunitaria guifi.net (~38,000 nodos actualmente)
-- Coste estimado: €500K para MVP en 3 años
+**Galactic scale (solar system)**: **Feasible in 20-30 years**
+- Depends on space colonization (NASA Artemis, SpaceX Starship)
+- DTN already tested by NASA
+- Estimated cost: €10M for functional prototype
 
-**Escala galáctica (sistema solar)**: **Factible en 20-30 años**
-- Depende de colonización espacial (NASA Artemis, SpaceX Starship)
-- DTN ya probado por NASA
-- Coste estimado: €10M para prototipo funcional
+**Universal scale**: **Theoretically interesting, physically impossible**
+- It would violate relativistic causality
+- Valid as an extreme systems design exercise
+- Terrestrial applications: simulation of ultra-distributed networks
 
-**Escala universal**: **Teóricamente interesante, físicamente imposible**
-- Violaría causalidad relativista
-- Válido como ejercicio de diseño de sistemas extremos
-- Aplicaciones terrestres: simulación de redes ultra-distribuidas
+### Roadmap for brisecom.org
 
-### Roadmap para brisecom.org
+**Phase 1 (Years 1-2): Foundations**
+- Implement DDNSC with DHT (Kademlia)
+- PoC with 1000 simulated nodes
+- Paper in conference (NSDI/SIGCOMM)
+- **Cost**: €150K (2 fullstack engineers)
 
-**Fase 1 (Años 1-2): Fundamentos**
-- Implementar DDNSC con DHT (Kademlia)
-- PoC con 1000 nodos simulados
-- Paper en conferencia (NSDI/SIGCOMM)
-- **Coste**: €150K (2 ingenieros fullstack)
+**Phase 2 (Years 2-4): Web 3.0 Integration**
+- Backend with ENS + IPFS
+- DAO for governance
+- Pilot network with 10K real nodes
+- **Cost**: €300K (blockchain expert + 2 devs)
 
-**Fase 2 (Años 2-4): Integración Web 3.0**
-- Backend con ENS + IPFS
-- DAO para gobernanza
-- Red piloto con 10K nodos reales
-- **Coste**: €300K (experto blockchain + 2 devs)
+**Phase 3 (Years 4-6): Space Simulation**
+- Orbital simulation framework
+- Collaboration with ESA/NASA
+- Space research grants
+- **Cost**: €500K (HPC cluster + team of 4)
 
-**Fase 3 (Años 4-6): Simulación Espacial**
-- Framework de simulación orbital
-- Colaboración con ESA/NASA
-- Grants de investigación espacial
-- **Coste**: €500K (cluster HPC + equipo de 4)
+**Phase 4 (Years 6-10): Actual Deployment**
+- Experiment on ISS or lunar mission
+- Licenses and patents
+- Commercial spin-off
+- **Cost**: €2M (depends on space partners)
 
-**Fase 4 (Años 6-10): Despliegue Real**
-- Experimento en ISS o misión lunar
-- Licencias y patentes
-- Spin-off comercial
-- **Coste**: €2M (depende de partners espaciales)
+### Suggested Financing
 
-### Financiación Sugerida
-
-**Fuentes inmediatas**:
+**Immediate sources**:
 1. European Research Council (ERC Starting Grant): €1.5M
 2. Horizon Europe (Cluster 4 - Digital & Space): €2M
 3. ESA Open Space Innovation Platform: €500K
 4. Ethereum Foundation Grants: €200K
-5. Crowdfunding crypto (DAI/ETH): €100K
+5. Crypto crowdfunding (DAI/ETH): €100K
 
-**Total disponible potencial**: €4.3M para 5 años
+**Total available potential**: €4.3M for 5 years
 
-**Tu salario**: €60K-80K/año (competitivo para investigador senior en España), sostenible con €300K anuales de presupuesto.
+**Your salary**: €60K-80K/year (competitive for senior researcher in Spain), sustainable with €300K annual budget.
 
-## Referencias y Enlaces
+## References and Links
 
 - **DDNSC GitHub**: https://github.com/javi-jimenez/ddnsc
 - **RFC 2136** - Dynamic Updates in DNS: https://tools.ietf.org/html/rfc2136
@@ -482,6 +481,6 @@ Para N nodos, cada uno mantiene k vecinos (típicamente k = 20):
 
 ---
 
-> **Nota del autor**: Este artículo parte de investigación y análisis del proyecto DDNSC de código abierto. El texto ha sido generado con ayuda de inteligencia artificial basándose en conceptos técnicos reales de sistemas distribuidos, protocolos de networking espacial, y arquitecturas Web 3.0. Los cálculos son aproximaciones teóricas para propósitos de investigación.
+> **Author's note**: This article is based on research and analysis of the open source DDNSC project. The text has been generated with the help of artificial intelligence based on real technical concepts of distributed systems, spatial networking protocols, and Web 3.0 architectures. The calculations are theoretical approximations for research purposes.
 
-**Para brisecom.org**: Este trabajo representa una propuesta inicial de línea de investigación. Se solicita revisión peer-to-peer y feedback de la comunidad científica y espacial antes de proceder con solicitudes de financiación.
+**For brisecom.org**: This work represents an initial proposal for a line of research. Peer-to-peer review and feedback from the science and space community is requested before proceeding with funding applications.

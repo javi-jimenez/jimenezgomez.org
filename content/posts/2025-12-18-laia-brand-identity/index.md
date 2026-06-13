@@ -1,5 +1,5 @@
 ---
-title: "Identidad Visual de Laia: Diseñando la Imagen de la IA Ética"
+title: "Laia Visual Identity: Designing the Image of Ethical AI"
 date: 2025-12-18T09:30:00+02:00
 draft: false
 layout: post
@@ -17,141 +17,141 @@ tags:
 ---
 ![Laia Brand Identity](laia-brand-hero.svg)
 
-## La Identidad Visual de un Proyecto que Mira a las Estrellas
+## The Visual Identity of a Project that Looks to the Stars
 
-Cuando hablamos de **Laia**, hablamos de inteligencia artificial ética, transparencia y un futuro sostenible. La identidad visual del proyecto no es solo estética: es una declaración de principios visualizada.
+When we talk about **Laia**, we talk about ethical artificial intelligence, transparency and a sustainable future. The visual identity of the project is not just aesthetic: it is a visualized declaration of principles.
 
-### El Concepto: Inteligencia de las Estrellas
+### The Concept: Intelligence of the Stars
 
-El diseño de Laia se inspira en tres conceptos fundamentales:
+Laia's design is inspired by three fundamental concepts:
 
-#### 🌟 **Las Estrellas como Metáfora**
-Las estrellas representan:
-- **Guía y orientación**: Como las estrellas han guiado a la humanidad durante milenios
-- **Luz en la oscuridad**: Iluminar el camino de la IA ética
-- **Aspiración**: Alcanzar las estrellas en innovación responsable
-- **Conexión**: Las constelaciones conectan puntos, como las redes neuronales conectan conocimiento
+#### 🌟 **Stars as Metaphor**
+The stars represent:
+- **Guidance and orientation**: How the stars have guided humanity for millennia
+- **Light in the darkness**: Lighting the path of ethical AI
+- **Aspiration**: Reach for the stars in responsible innovation
+- **Connection**: Constellations connect points, like neural networks connect knowledge
 
-#### 🔵 **La Paleta Azul**
-El azul profundo y sus variantes simbolizan:
-- **Confianza y profesionalidad**
-- **Tecnología e innovación**
-- **Serenidad y estabilidad**
-- **El cosmos infinito de posibilidades**
+#### 🔵 **The Blue Palette**
+Deep blue and its variants symbolize:
+- **Trust and professionalism**
+- **Technology and innovation**
+- **Serenity and stability**
+- **The infinite cosmos of possibilities**
 
-#### 🔗 **La Red Neuronal**
-Los nodos y conexiones representan:
-- **Inteligencia artificial y aprendizaje**
-- **Transparencia en los procesos**
-- **Interconexión de ideas**
-- **Colaboración abierta**
-
-
-## El Sistema de Identidad Visual
-
-### 1. Logo Principal
-
-![Logo Principal Laia](laia-logo-main.svg)
-
-El logo principal combina:
-- Estrella central de 8 puntas (símbolo de guía y dirección)
-- Anillo orbital que sugiere movimiento y procesamiento continuo
-- Nodos de red neuronal
-- Tipografía limpia y moderna con espaciado amplio
-
-**Uso**: Documentación oficial, presentaciones, web principal
+#### 🔗 **The Neural Network**
+The nodes and connections represent:
+- **Artificial intelligence and learning**
+- **Transparency in processes**
+- **Interconnection of ideas**
+- **Open collaboration**
 
 
-### 2. Icono Compacto
+## The Visual Identity System
 
-![Icono Compacto](laia-icon-compact.svg)
+### 1. Main Logo
 
-Versión simplificada para:
-- Favicon del sitio web
-- Aplicaciones móviles
-- Iconos de sistema
-- Espacios reducidos
+![Laia Main Logo](laia-logo-main.svg)
+
+The main logo combines:
+- Central 8-point star (guide and direction symbol)
+- Orbital ring suggesting continuous movement and processing
+- Neural network nodes
+- Clean, modern typography with wide spacing
+
+**Use**: Official documentation, presentations, main website
 
 
-### 3. Avatar para Redes Sociales
+### 2. Compact Icon
+
+![Compact Icon](laia-icon-compact.svg)
+
+Simplified version for:
+- Website favicon
+- Mobile applications
+- System icons
+- Small spaces
+
+
+### 3. Avatar for Social Networks
 
 #### GitHub Profile
 ![GitHub Avatar](laia-avatar-github.svg)
 
-Diseño oscuro optimizado para GitHub con:
-- Fondo compatible con tema dark
-- Alto contraste
-- Esquema circular
+Dark layout optimized for GitHub with:
+- Background compatible with dark theme
+- High contrast
+- Circular scheme
 
 #### Twitter/X Profile
 ![Twitter Avatar](laia-avatar-twitter.svg)
 
-Versión vibrante para redes sociales con:
-- Colores más saturados
-- Diseño que destaca en feeds
-- Fondo degradado
+Vibrant version for social networks with:
+- More saturated colors
+- Design that stands out in feeds
+- Gradient background
 
 #### LinkedIn Profile
 ![LinkedIn Avatar](laia-avatar-linkedin.svg)
 
-Versión profesional con:
-- Paleta corporativa
-- Fondo más conservador
-- Énfasis en seriedad
+Professional version with:
+- Corporate palette
+- More conservative background
+- Emphasis on seriousness
 
 
-### 4. Banner para GitHub README
+### 4. Banner for GitHub README
 
 ![GitHub Banner](laia-banner-github.svg)
 
-Banner panorámico (1200x400px) para:
-- Parte superior del README.md
-- Página principal del repositorio
-- Documentación del proyecto
+Panoramic banner (1200x400px) for:
+- Top of the README.md
+- Repository main page
+- Project documentation
 
-Incluye:
-- Logo y nombre del proyecto
+Includes:
+- Logo and name of the project
 - Tagline: "Ethical Artificial Intelligence"
-- Constelaciones animadas (en versión web)
-- Efectos de luz y profundidad
+- Animated constellations (web version)
+- Light and depth effects
 
 
-### 5. Variantes de Color
+### 5. Color Variants
 
-#### Versión Light (para fondos claros)
+#### Light version (for light backgrounds)
 ![Logo Light](laia-logo-light.svg)
 
-#### Versión Dark (para fondos oscuros)
+#### Dark version (for dark backgrounds)
 ![Logo Dark](laia-logo-dark.svg)
 
-#### Versión Monocromática
-![Logo Mono](laia-logo-mono.svg)
+#### Monochrome Version
+![Mono Logo](laia-logo-mono.svg)
 
 
-### 6. Assets para Social Media Posts
+### 6. Assets for Social Media Posts
 
 #### Instagram Post Template
 ![Instagram Template](laia-social-instagram.svg)
 
-Formato cuadrado (1080x1080px) para:
-- Posts de Instagram
+Square format (1080x1080px) for:
+- Instagram Posts
 - LinkedIn posts
-- Facebook shares
+-Facebook shares
 
 #### Twitter Card
 ![Twitter Card](laia-social-twitter-card.svg)
 
-Formato 2:1 (1200x600px) para:
-- Twitter cards
+2:1 format (1200x600px) for:
+-Twitter cards
 - Open Graph images
-- Previews en enlaces compartidos
+- Previews on shared links
 
 
-## Guía de Uso
+## Use Guide
 
-### Espaciado y Área de Seguridad
+### Spacing and Safety Area
 
-El logo debe mantener un espacio libre equivalente a la altura de la letra "A" en LAIA alrededor de todos sus lados.
+The logo must maintain free space equivalent to the height of the letter "A" in LAIA around all sides.
 
 ```
 ┌─────────────────────────────────┐
@@ -165,27 +165,26 @@ El logo debe mantener un espacio libre equivalente a la altura de la letra "A" e
 └─────────────────────────────────┘
 ```
 
-### Tamaños Mínimos
+### Minimum Sizes
 
-- **Logo completo**: No menor a 120px de ancho
-- **Icono solo**: No menor a 32px
+- **Full logo**: No less than 120px wide
+- **Icon only**: No less than 32px
 - **Favicon**: 16x16px, 32x32px, 64x64px
 
-### Fondos Permitidos
+### Allowed Funds
 
-✅ **Recomendados:**
-- Azul marino oscuro (#0f172a - #1e293b)
-- Blanco puro (#ffffff)
-- Gris muy claro (#f8fafc)
-- Degradados azules sutiles
+✅ **Recommended:**
+- Dark navy blue (#0f172a - #1e293b)
+- Pure white (#ffffff)
+- Very light gray (#f8fafc)
+- Subtle blue gradients
 
-❌ **Evitar:**
-- Fondos con patrones complejos
-- Colores que compitan con el azul del logo
-- Imágenes de fondo sin overlay oscuro
+❌ **Avoid:**
+- Backgrounds with complex patterns
+- Colors that compete with the blue of the logo
+- Background images without dark overlay
 
-### Paleta de Colores Oficial
-
+### Official Color Palette
 ```css
 /* Colores Primarios */
 --laia-blue-deep:    #0c4a6e  /* Azul profundo */
@@ -205,40 +204,40 @@ El logo debe mantener un espacio libre equivalente a la altura de la letra "A" e
 ```
 
 
-## Filosofía del Diseño
+## Design Philosophy
 
-### Minimalismo Significativo
+### Meaningful Minimalism
 
-Cada elemento tiene un propósito:
-- **Estrella**: Guía, aspiración, claridad
-- **Círculos orbitales**: Procesamiento continuo, ciclos de aprendizaje
-- **Nodos**: Transparencia, red de conocimiento
-- **Espacio negativo**: Respiro, claridad, accesibilidad
+Each element has a purpose:
+- **Star**: Guidance, aspiration, clarity
+- **Orbital circles**: Continuous processing, learning cycles
+- **Nodes**: Transparency, knowledge network
+- **Negative space**: Breath, clarity, accessibility
 
-### Escalabilidad
+### Scalability
 
-El diseño funciona desde 16px (favicon) hasta tamaños de valla publicitaria sin perder legibilidad ni impacto visual.
+The design works from 16px (favicon) to billboard sizes without losing readability or visual impact.
 
-### Versatilidad
+### Versatility
 
-Compatible con:
-- Temas dark y light
-- Impresión en blanco y negro
-- Bordados y serigrafía
-- Animaciones web
-- Realidad aumentada (preparado para 3D)
+Compatible with:
+- Dark and light themes
+- Black and white printing
+- Embroidery and screen printing
+- Web animations
+- Augmented reality (3D ready)
 
-### Accesibilidad
+### Accessibility
 
-- Contraste mínimo WCAG AAA
-- Legible para personas con daltonismo
-- Funciona sin color (solo formas)
-- Texto alternativo siempre disponible
+- WCAG AAA minimum contrast
+- Readable for people with color blindness
+- Works without color (shapes only)
+- Alt text always available
 
 
-## Recursos Descargables
+## Downloadable Resources
 
-Todos los assets SVG de este artículo están disponibles en este mismo post del blog. Puedes descargarlos directamente haciendo clic derecho sobre cada imagen y seleccionando "Guardar imagen como..." o accediendo a la carpeta del post:
+All SVG assets for this article are available in this same blog post. You can download them directly by right clicking on each image and selecting "Save image as..." or by accessing the post folder:
 
 ```bash
 content/posts/2025-12-18-laia-brand-identity/
@@ -255,9 +254,9 @@ content/posts/2025-12-18-laia-brand-identity/
 └── laia-social-twitter-card.svg
 ```
 
-### Estructura Futura Propuesta
+### Proposed Future Structure
 
-Para organizar mejor los assets en el repositorio oficial de Laia, se recomienda crear una estructura como:
+To better organize the assets in the official Laia repository, it is recommended to create a structure like:
 
 ```bash
 laia/                                 # Repositorio principal
@@ -272,126 +271,126 @@ laia/                                 # Repositorio principal
 ```
 
 
-## Aplicaciones en el Mundo Real
+## Real World Applications
 
-### Sitio Web
-El diseño se adapta perfectamente a:
+### Website
+The design adapts perfectly to:
 - Hero sections
-- Headers y footers
+- Headers and footers
 - Loading screens
 - Error pages (404, 500)
 
-### Documentación
-- Portadas de documentos técnicos
-- Diagramas de arquitectura
-- Presentaciones corporativas
-- Material educativo
+### Documentation
+- Covers of technical documents
+- Architecture diagrams
+- Corporate presentations
+- Educational material
 
 ### Merchandising
-- Camisetas y sudaderas
-- Tazas y botellas
-- Stickers y pegatinas
-- Mochilas y bolsas
+- T-shirts and sweatshirts
+- Cups and bottles
+- Stickers and stickers
+- Backpacks and bags
 
-### Eventos
-- Roll-ups y banners
-- Slides de presentación
-- Credenciales y lanyards
-- Escenografía
-
-
-## El Significado Profundo
-
-Esta identidad visual no es casualidad. Cada decisión de diseño refleja los valores del proyecto:
-
-### Transparencia
-Los elementos están claramente definidos, sin trucos visuales ni complejidad innecesaria. Lo que ves es lo que es.
-
-### Conexión
-Los nodos conectados representan la naturaleza colaborativa del proyecto open source y la interconexión del conocimiento humano y artificial.
-
-### Aspiración
-La estrella apunta hacia arriba, simbolizando la ambición de alcanzar nuevas alturas en IA ética sin perder los pies del suelo.
-
-### Universalidad
-El diseño trasciende idiomas y culturas. Una estrella es una estrella en cualquier parte del mundo.
-
-### Futuro y Tradición
-Combina elementos futuristas (redes neuronales, tecnología) con símbolos atemporales (estrellas, que han guiado a la humanidad desde la antigüedad).
+### Events
+- Roll-ups and banners
+- Presentation slides
+- Credentials and lanyards
+- Scenography
 
 
-## Evolución de la Marca
+## The Deep Meaning
 
-Esta es la versión 1.0 de la identidad visual de Laia. Como el propio proyecto, está diseñada para evolucionar:
+This visual identity is no coincidence. Each design decision reflects the values of the project:
 
-### Roadmap Visual
+### Transparency
+The elements are clearly defined, without visual tricks or unnecessary complexity. What you see is what it is.
 
-**2025-2026**: Fase actual
-- Consolidación de la identidad base
-- Creación de templates y recursos
-- Feedback de la comunidad
+### Connection
+The connected nodes represent the collaborative nature of the open source project and the interconnection of human and artificial knowledge.
 
-**2027-2028**: Evolución
-- Posibles animaciones más complejas
-- Versiones 3D del logo
-- Realidad aumentada para eventos
+### Aspiration
+The star points upward, symbolizing the ambition to reach new heights in ethical AI without losing its feet on the ground.
 
-**2029+**: Madurez
-- Sistema de diseño completo
-- Sub-marcas para diferentes productos
-- Adaptaciones culturales regionales
+### Universality
+Design transcends languages and cultures. A star is a star anywhere in the world.
+
+### Future and Tradition
+It combines futuristic elements (neural networks, technology) with timeless symbols (stars, which have guided humanity since ancient times).
 
 
-## Créditos y Licencia
+## Brand Evolution
 
-### Diseño
-Identidad visual creada específicamente para el proyecto Laia, reflejando su misión de inteligencia artificial ética, transparente y sostenible.
+This is version 1.0 of Laia's visual identity. Like the project itself, it is designed to evolve:
 
-### Tipografía
-- **Familia principal**: Segoe UI / Arial (universalmente disponibles)
-- **Alternativas**: Inter, Open Sans para interfaces digitales
-- **Espaciado**: Amplio (letter-spacing: 3-12px) para reflejar claridad
+### Visual Roadmap
 
-### Licencia
-Los assets de marca están disponibles bajo Creative Commons Attribution 4.0 (CC BY 4.0) para:
-- Promoción del proyecto
-- Contenido educativo
-- Material de conferencias
-- Artículos y publicaciones
+**2025-2026**: Current phase
+- Consolidation of the base identity
+- Creation of templates and resources
+- Community feedback
 
-**Uso comercial**: Requiere aprobación previa del equipo Laia.
+**2027-2028**: Evolution
+- Possible more complex animations
+- 3D versions of the logo
+- Augmented reality for events
+
+**2029+**: Maturity
+- Complete design system
+- Sub-brands for different products
+- Regional cultural adaptations
 
 
-## Comunidad y Feedback
+## Credits and License
 
-¿Tienes ideas para mejorar la identidad visual? ¿Has creado adaptaciones creativas?
+### Design
+Visual identity created specifically for the Laia project, reflecting its mission of ethical, transparent and sustainable artificial intelligence.
 
-**Comparte en:**
-- GitHub Discussions: Ideas y propuestas
+### Typography
+- **Main family**: Segoe UI / Arial (universally available)
+- **Alternatives**: Inter, Open Sans for digital interfaces
+- **Spacing**: Wide (letter-spacing: 3-12px) to reflect clarity
+
+### License
+Brand assets are available under Creative Commons Attribution 4.0 (CC BY 4.0) for:
+- Project promotion
+- Educational content
+- Conference material
+- Articles and publications
+
+**Commercial use**: Requires prior approval from the Laia team.
+
+
+## Community and Feedback
+
+Do you have ideas to improve visual identity? Have you created creative adaptations?
+
+**Share on:**
+- GitHub Discussions: Ideas and proposals
 - Twitter: #LaiaProject #EthicalAI
-- LinkedIn: Menciona @franciscojavierjimenezgomez
+- LinkedIn: Mention @franciscojavierjimenezgomez
 
 
-## Conclusión: Diseño con Propósito
+## Conclusion: Design with Purpose
 
-La identidad visual de Laia no es solo un logo bonito. Es:
+Laia's visual identity is not just a pretty logo. It is:
 
-✨ Una **declaración de valores**  
-🌟 Una **invitación a colaborar**  
-🔵 Un **símbolo de confianza**  
-🌍 Una **promesa de futuro mejor**
+✨ A **statement of values**  
+🌟 An **invitation to collaborate**  
+🔵 A **symbol of trust**  
+🌍 A **promise of a better future**
 
-Cada vez que veas la estrella de Laia, recuerda: estamos construyendo inteligencia artificial que mira a las estrellas mientras mantiene los pies en la tierra, guiados por la ética, la transparencia y el bien común.
+Every time you see Laia's star, remember: we are building artificial intelligence that looks to the stars while keeping its feet on the ground, guided by ethics, transparency and the common good.
 
 
-**Explora el proyecto completo:**  
+**Explore the full project:**  
 🔗 [github.com/javi-jimenez/laia](https://github.com/javi-jimenez/laia)  
 🌐 [laia.brisecom.org](https://laia.brisecom.org/)
 
-**Usa los recursos:**  
-📦 Todos los assets están en `/brand` en el repositorio  
-📖 Brand Guidelines (PDF) disponible próximamente
+**Use the resources:**  
+📦 All assets are in `/brand` in the repository  
+📖 Brand Guidelines (PDF) coming soon
 
 ---
 
-*"Un buen diseño es tan poco diseño como sea posible. Pero debe contar una historia."* — Adaptado de Dieter Rams
+*"Good design is as little design as possible. But it must tell a story."* — Adapted from Dieter Rams

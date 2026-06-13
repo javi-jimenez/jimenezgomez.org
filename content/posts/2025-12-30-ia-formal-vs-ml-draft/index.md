@@ -2,81 +2,91 @@
 og_image: og-image-1200x630.png
 image: "og-image.svg"
 tags:
-title: "Costo computacional y afinidad a la verdad: lenguajes formales vs ML (Borrador)"
+title: "Computational cost and truth affinity: formal languages ​​vs ML (Draft)"
 date: 2025-12-30T10:00:00+01:00
 draft: true
 layout: post
   - ia
 ---
-  - formal-methods
-  - machine-learning
-  - research---
-Este artículo compara, en modo borrador, el coste computacional y la afinidad a la verdad de dos enfoques para construir sistemas de IA: los métodos basados en lenguajes formales (especificación, verificación, síntesis) y las aproximaciones del aprendizaje automático (ML) dominantes en la actualidad.
+- formal-methods
+  - machine learning
+  -research---
+This article compares, in draft mode, the computational cost and truth-friendliness of two approaches to building AI systems: methods based on formal languages (specification, verification, synthesis) and the currently dominant machine learning (ML) approaches.
 
-Introducción
-----------
-En las próximas generaciones veremos dos paradigmas competir y complementarse: los métodos formales (modelado lógico, verificación, síntesis por especificación) y las aproximaciones estadísticas actuales (redes neuronales, transformers). Aquí comparo su coste computacional esperado a corto y medio plazo, su escalabilidad y lo que llamo "afinidad a la verdad": la propensión del sistema a producir salidas correctas, justificables y verificables.
+Introduction
+---
+-------
+In the next generations we will see two paradigms compete and complement each other: formal methods (logical modeling, verification, synthesis by specification) and current statistical approaches (neural networks, transformers). Here I compare its expected short- and medium-term computational cost, its scalability, and what I call "truth affinity": the system's propensity to produce correct, justifiable, and verifiable outputs.
 
-Definiciones rápidas
---------------------
-- Lenguajes formales: sistemas construidos sobre lógica matemática, gramáticas y autómatas; incluyen verificación por modelo, pruebas formales y síntesis programática.
-- Aprendizaje automático (ML): modelos estadísticos que aproximan funciones a partir de datos; sus garantías son probabilísticas.
+Quick definitions
+---
+-----------------
+- Formal languages: systems built on mathematical logic, grammars and automata; They include model checking, formal testing, and programmatic synthesis.
+- Machine learning (ML): statistical models that approximate functions from data; its guarantees are probabilistic.
 
-Coste computacional según horizonte temporal
--------------------------------------------
-Usamos tres ejes: coste de desarrollo inicial, coste de cómputo para entrenamiento/compilación/verificación y coste de mantenimiento/adaptación.
+Computational cost according to time horizon
+---
+----------------------------------------
+We use three axes: initial development cost, computational cost for training/compiling/verification, and maintenance/adaptation cost.
 
-- Corto plazo (1–3 años): ML domina tareas de lenguaje/visión; métodos formales permanecen en nichos críticos.
-- Medio plazo (3–7 años): mejoras en síntesis y verificación reducirán costes en dominios estructurados; ML mejora en eficiencia (distillation, sparsity, hardware dedicado).
-- Largo plazo (>7 años): aparecen híbridos (especificaciones que guían ML; ML que sugiere invariantes formales); la relación coste/beneficio dependerá mucho del hardware disponible.
+- Short term (1–3 years): ML masters language/vision tasks; Formal methods remain in critical niches.
+- Medium term (3–7 years): improvements in synthesis and verification will reduce costs in structured domains; ML improves efficiency (distillation, sparsity, dedicated hardware).
+- Long term (>7 years): hybrids appear (specifications that guide ML; ML that suggests formal invariants); The cost/benefit ratio will depend a lot on the hardware available.
 
-Estimaciones orientativas (resumen)
+Guidance estimates (summary)
+---
+-------------------------------
+
+- Formal methods: high human cost to specify; Verification can be intensive (from 10^2 to 10^4 core-seconds for non-trivial modules, depending on abstraction and tool). Efficient maintenance if there is good modularity.
+- ML: Modern large model training can use 10^6–10^9 GPU-seconds at full scale; Optimized inference lowers the cost per request.
+
+Factors that change the cost ratio
+---
 ----------------------------------
 
-- Métodos formales: coste humano alto para especificar; verificación puede ser intensiva (desde 10^2 a 10^4 core-segundos para módulos no triviales, según abstracción y herramienta). Mantenimiento eficiente si hay buena modularidad.
-- ML: entrenamiento de grandes modelos modernos puede usar 10^6–10^9 GPU-segundos a escala máxima; inferencia optimizada baja el coste por petición.
+- Specialized hardware (TPU, NPU, SMT accelerators) and algorithmic advances can reduce costs on both sides.
+- Data vs. specifications: obtaining labeled data is expensive; formally specifying properties is also important.
 
-Factores que cambian la relación coste
--------------------------------------
-
-- Hardware especializado (TPU, NPU, aceleradores de SMT) y avances algorítmicos pueden reducir costes en ambos bandos.
-- Datos vs. especificaciones: obtener datos etiquetados es costoso; especificar formalmente propiedades también lo es.
-
-Afinidad a la verdad (definición y comparación)
---------------------------------------------
-
-Definimos "afinidad a la verdad" como la capacidad del sistema para producir salidas que correspondan a hechos, invariantes o requisitos verificables, y para justificar por qué la salida es correcta.
-
-- Lenguajes formales: alta afinidad a la verdad cuando la especificación es correcta y completa; la verificación ofrece pruebas dentro del modelo formal. Riesgo: si la especificación es pobre, las garantías son engañosas (GIGO).
-- ML: afinidad probabilística dependiente de la calidad y cobertura de los datos; puede alucinar o mostrar sesgos; explicabilidad limitada salvo empleando técnicas XAI.
-
-Híbridos
---------
-
-Los enfoques híbridos (ML que sugiere candidatos, métodos formales que verifican) ofrecen un equilibrio: reducción del espacio de búsqueda gracias a ML y garantía de corrección proporcionada por verificación. En muchos dominios este patrón ofrece mejor coste/verdad que cualquiera de los enfoques por separado.
-
-Aplicaciones por dominio
-------------------------
-
-- Críticos (médico, aeroespacial): preferible formal; coste mayor pero la afinidad a la verdad y trazabilidad justifican la inversión.
-- NLP creativo y generación: ML domina; garantías formales costosas y difíciles.
-- Sistemas mixtos (negocio+reglas): combinación práctica: reglas formales + ML para ranking.
-
-Economía práctica
------------------
-
-- Proyecto formal crítico: mayor coste humano y herramientas; alta amortización si el fallo tiene coste elevado.
-- Proyecto ML grande: costes de infra (GPU/TPU), datos y operación; escalabilidad reduce coste por usuario.
-
-Conclusión (BORRADOR — revisión pendiente)
+Affinity to truth (definition and comparison)
+---
 -----------------------------------------
 
-ADVERTENCIA: esta conclusión se deja como borrador por petición del autor. El equilibrio entre coste computacional y afinidad a la verdad no es una elección binaria; sin embargo, la afirmación de que "la convergencia será la norma" requiere matices: depende fuertemente del dominio, del coste social del error y de las mejoras en técnicas formales y de ML.
+We define "truth affinity" as the ability of the system to produce outputs that correspond to verifiable facts, invariants, or requirements, and to justify why the output is correct.
 
-Puntos abiertos (para revisar):
+- Formal languages: high affinity for truth when the specification is correct and complete; verification provides evidence within the formal model. Risk: If the specification is poor, the warranties are misleading (GIGO).
+- ML: probabilistic affinity dependent on data quality and coverage; may hallucinate or show biases; Limited explainability except using XAI techniques.
 
-- ¿Qué peso dar a la verificación probabilística frente a la verificación clásica en sistemas mixtos?
-- ¿Cómo cuantificar correctamente el coste humano de especificar sistemas complejos frente al coste de obtención y curación de datos? (necesario para ROI real)
-- ¿Cuál es el horizonte realista para que la síntesis guiada por ML reduzca el coste de verificación en la práctica?
+Hybrids
+---
+-----
 
-Indícame cómo quieres modificar la conclusión y la dejo actualizada. El post está marcado `draft: true` y no lo subiré a git salvo que me lo indiques.
+Hybrid approaches (ML suggesting candidates, formal methods verifying) offer a balance: search space reduction thanks to ML and correctness guarantee provided by verification. In many domains this pattern offers better cost/truth than either approach alone.
+
+Applications by domain
+---
+---------------------
+
+- Critical (medical, aerospace): formal preferred; higher cost but the affinity to truth and traceability justify the investment.
+- Creative NLP and generation: ML dominates; expensive and difficult formal guarantees.
+- Mixed systems (business+rules): practical combination: formal rules + ML for ranking.
+
+Practical economics
+---
+--------------
+
+- Critical formal project: higher human cost and tools; high amortization if the failure has a high cost.
+- Large ML project: infrastructure (GPU/TPU), data and operation costs; Scalability reduces cost per user.
+
+Conclusion (DRAFT — review pending)
+---
+--------------------------------------
+
+WARNING: This conclusion is left as a draft at the author's request. The balance between computational cost and truth affinity is not a binary choice; However, the claim that "convergence will be the norm" requires nuance: it depends heavily on the domain, the social cost of error, and improvements in formal and ML techniques.
+
+Open points (to review):
+
+- What weight should be given to probabilistic verification compared to classical verification in mixed systems?
+- How to correctly quantify the human cost of specifying complex systems versus the cost of obtaining and curating data? (required for real ROI)
+- What is the realistic horizon for ML-guided synthesis to reduce the verification cost in practice?
+
+Tell me how you want to modify the conclusion and I will update it. The post is marked `draft: true` and I will not upload it to git unless you tell me to.

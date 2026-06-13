@@ -1,5 +1,5 @@
 ---
-title: "Artículos"
+title: "Articles"
 menu:
     main:
         weight: 2
@@ -7,4 +7,4 @@ menu:
             icon: archive
 ---
 
-> **Nota:** Los artículos de este blog parten de ideas, investigación y desarrollo del autor. Los textos están generados con ayuda de inteligencia artificial.
+> **Note:** The articles on this blog are based on ideas, research, and development by the author. The texts are generated with the help of artificial intelligence.

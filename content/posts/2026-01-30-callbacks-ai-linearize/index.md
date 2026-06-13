@@ -1,5 +1,5 @@
 ---
-title: "Callbacks optimizadas con IA: hacer el código más lineal y legible"
+title: "AI-optimized callbacks: make code more linear and readable"
 date: 2026-01-30T12:00:00+01:00
 draft: false
 layout: post
@@ -8,55 +8,55 @@ image: "og-image.svg"
 og_image: "og-image.svg"
 tags:
 ---
-En proyectos reales, las callbacks pueden crecer hasta convertirse en código difícil de razonar. Hoy veremos cómo la inteligencia artificial (IA) puede ayudarnos a refactorizar callbacks hacia formas más lineales y legibles, y qué patrones y prácticas aplicar para mantener la mantenibilidad.
+In real projects, callbacks can grow into code that is difficult to reason with. Today we will see how artificial intelligence (AI) can help us refactor callbacks into more linear and readable forms, and what patterns and practices to apply to maintain maintainability.
 
-**Qué cubre este post**
-- Por qué las callbacks se vuelven problemáticas
-- Cómo usar IA para proponer refactorings útiles
-- Patrones para convertir callbacks en flujos lineales (promesas / async-await / pipelines)
-- Ejemplos concretos antes/después
-- Pasos prácticos para integrar estas mejoras en tu flujo de trabajo
+**What this post covers**
+- Why callbacks become problematic
+- How to use AI to propose useful refactorings
+- Patterns to convert callbacks into linear flows (promises / async-await / pipelines)
+- Concrete examples before/after
+- Practical steps to integrate these improvements into your workflow
 
-**Problema**
-Las callbacks anidadas generan código con alta complejidad cognitiva: indentación profunda, manejo de errores disperso y nombres poco descriptivos. Esto ralentiza el desarrollo y aumenta el riesgo de bugs.
+**Problem**
+Nested callbacks generate code with high cognitive complexity: deep indentation, sparse error handling, and non-descriptive names. This slows down development and increases the risk of bugs.
 
-**Cómo ayuda la IA**
-- Detecta patrones repetidos y sugiere extracción de funciones.
-- Propone transformaciones (callbacks -> promesas -> async/await).
-- Genera pruebas unitarias y casos límite para el nuevo diseño.
-- Sugiere nombres y comentarios más descriptivos.
+**How AI helps**
+- Detects repeated patterns and suggests feature extraction.
+- Proposes transformations (callbacks -> promises -> async/await).
+- Generate unit tests and edge cases for the new design.
+- Suggest more descriptive names and comments.
 
-Nota: la IA no reemplaza el juicio humano; acelera tareas mecánicas y propuestas, que luego debemos validar.
+Note: AI does not replace human judgment; accelerates mechanical and proposed tasks, which we must then validate.
 
-**Estrategias para linealizar y mejorar legibilidad**
+**Strategies to linearize and improve readability**
 
-1. Promesas y `async/await`
+1. Promises and `async/await`
 
-   - Reemplazar la anidación con promesas encadenadas o `async/await` produce flujo top-to-bottom.
+   - Replacing nesting with chained promises or `async/await` produces top-to-bottom flow.
 
-2. Extracción de funciones y responsabilidad única
+2. Function extraction and single responsibility
 
-   - Extraer operaciones en funciones pequeñas y con nombres claros.
+   - Extract operations in small functions with clear names.
 
-3. Composición funcional y pipelines
+3. Functional composition and pipelines
 
-   - Encapsular operaciones en funciones puras y componerlas en una tubería.
+   - Encapsulate operations in pure functions and compose them in a pipeline.
 
-4. Manejo de errores centralizado
+4. Centralized error handling
 
-   - Evitar replicar `if (err) return cb(err)` en cada nivel; usar try/catch o middleware de errores.
+   - Avoid replicating `if (err) return cb(err)` at each level; use try/catch or error middleware.
 
-5. Tipado y contratos
+5. Typing and contracts
 
-   - Añadir tipos (TypeScript) o validaciones explicitas ayuda a entender contratos y evita checks dispersos.
+   - Adding types (TypeScript) or explicit validations helps understand contracts and avoids scattered checks.
 
-6. Pruebas y transformaciones asistidas por IA
+6. AI-assisted testing and transformations
 
-   - Pedir a la IA que genere tests para el comportamiento actual antes de refactorizar y tests para la versión resultante.
+   - Ask the AI to generate tests for the current behavior before refactoring and tests for the resulting version.
 
-**Ejemplo práctico**
+**Practical example**
 
-Antes (callback hell):
+Before (callback hell):
 
 ```js
 function getUserAndSave(id, cb) {
@@ -73,7 +73,7 @@ function getUserAndSave(id, cb) {
 }
 ```
 
-Después (async/await, más lineal):
+After (async/await, more linear):
 
 ```js
 async function getUserAndSave(id) {
@@ -93,7 +93,7 @@ async function getUserAndSave(id) {
 })();
 ```
 
-Composición con pipeline (cuando hay transformaciones encadenadas):
+Composition with pipeline (when there are chained transformations):
 
 ```js
 const pipeline = (fns) => (input) =>
@@ -108,28 +108,27 @@ const getUserAndSavePipeline = pipeline([fetchUser, fetchProfile, saveProfile]);
 getUserAndSavePipeline(42).then(console.log).catch(console.error);
 ```
 
-**Cómo integrar IA en el flujo de trabajo**
+**How to integrate AI into your workflow**
 
-1. Extrae una función pequeña que represente la unidad de trabajo (p. ej. `getUserAndSave`).
-2. Pide a la IA: "Refactoriza esta función para usar async/await y añade tests". Valida los tests.
-3. Pide a la IA que sugiera nombres mejores para las funciones extraídas y que verifique casos límite.
-4. Ejecuta linters y formateadores (Prettier, ESLint) para homogeneizar estilo.
+1. Extract a small function that represents the unit of work (e.g. `getUserAndSave`).
+2. Ask the AI: "Refactor this function to use async/await and add tests." Validate the tests.
+3. Ask the AI ​​to suggest better names for the extracted features and check edge cases.
+4. Run linters and formatters (Prettier, ESLint) to homogenize style.
 
-Ejemplo de prompt minimal para la IA:
+Example of minimal prompt for AI:
 
 ```
 Refactoriza esta función callback para que use async/await, extrae responsabilidades en funciones pequeñas, añade tests unitarios Mocha/Chai y sugiere nombres claros.
 ```
 
-**Buenas prácticas adicionales**
-- Prefiere `return` temprano para reducir indentación.
-- Mantén las funciones por debajo de ~40 líneas cuando sea posible.
-- Documenta las precondiciones y postcondiciones.
-- Usa types (TypeScript) para clarificar contratos.
+**Additional best practices**
+- Prefer early return to reduce indentation.
+- Keep functions under ~40 lines when possible.
+- Document preconditions and postconditions.
+- Use types (TypeScript) to clarify contracts.
 
-**Conclusión**
+**Conclusion**
 
-La IA acelera y apunta refactorings repetitivos: transformar callbacks en flujos lineales mejora la legibilidad y testabilidad. Combina las sugerencias de la IA con revisiones de código y pruebas automatizadas antes de aceptar cambios en producción.
+AI accelerates and targets repetitive refactorings: transforming callbacks into linear flows improves readability and testability. Combine AI suggestions with code reviews and automated testing before accepting changes into production.
 
-¿Quieres que genere las pruebas unitarias y un PR con los cambios propuestos para un archivo concreto en tu repo? Puedo hacerlo si me indicas el archivo objetivo.
-
+Do you want me to generate unit tests and a PR with the proposed changes for a specific file in your repo? I can do it if you tell me the target file.

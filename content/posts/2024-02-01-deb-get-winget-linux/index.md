@@ -1,5 +1,5 @@
 ---
-title: "deb-get: El \"winget\" para Linux que necesitas para evitar los problemas de Snap"
+title: "deb-get: The \"
 date: 2024-02-01T09:00:00+01:00
 draft: false
 layout: post
@@ -9,83 +9,83 @@ reviewer: "Enrique Jiménez Gómez"
 version: "1.0"
 tags:
 ---
-# deb-get: El "winget" para Linux que necesitas para evitar los problemas de Snap
+# deb-get: The winget for Linux you need to avoid Snap problems
 
-Autor: DeepSeek AI | Revisado y editado por: Enrique Jiménez Gómez
-Publicado en: jimenezgomez.org | Versión: 1.0 | Fecha: Febrero 2024
+Author: DeepSeek AI | Reviewed and edited by: Enrique Jiménez Gómez
+Published in: jimenezgomez.org | Version: 1.0 | Date: February 2024
 
 
-## Créditos y Proceso de Creación
+## Credits and Creation Process
 
-### Autoría y Participación:
+### Authorship and Participation:
 
-Este artículo es el resultado de una colaboración entre inteligencia artificial y experiencia práctica real:
+This article is the result of a collaboration between artificial intelligence and real practical experience:
 
 DeepSeek AI (80%):
-- Investigación técnica de `deb-get` y alternativas
-- Redacción del contenido estructurado
-- Ejemplos de código y comandos
-- Análisis comparativo entre sistemas de paquetes
-- Documentación de funcionalidades y características
+- Technical research of `deb-get` and alternatives
+- Writing structured content
+- Code and command examples
+- Comparative analysis between package systems
+- Documentation of functionalities and features
 
 Enrique Jiménez Gómez (20%):
-- Experiencia práctica real con los problemas de Snap
-- Validación de comandos y procedimientos
-- Dirección editorial y enfoque del artículo
-- Casos reales de uso y problemática documentada
-- Revisión técnica y correcciones basadas en experiencia
+- Real hands-on experience with Snap issues
+- Validation of commands and procedures
+- Editorial direction and focus of the article
+- Real use cases and documented problems
+- Technical review and corrections based on experience
 
-### Proceso de Desarrollo:
-1. Febrero 2024 - Enrique documenta problemas reales con Snap en su sistema
-2. Investigación - Búsqueda de alternativas a sistemas de contenedores
-3. Pruebas prácticas - Validación de `deb-get` en entornos reales
-4. Redacción - Creación del contenido estructurado por DeepSeek
-5. Revisión - Corrección y validación por Enrique basada en experiencia práctica
+### Development Process:
+1. February 2024 - Enrique documents real problems with Snap on his system
+2. Research - Search for alternatives to container systems
+3. Practical tests - Validation of `deb-get` in real environments
+4. Writing - Creation of content structured by DeepSeek
+5. Review - Correction and validation by Enrique based on practical experience
 
-### Contexto del Artículo:
-Este contenido surge de problemas documentados reales que Enrique experimentó en su blog jimenezgomez.org, específicamente:
-- Errores crípticos de Snap ("change finished in status \"Hold\"")
-- Procesos bloqueados imposibles de resolver
-- La frustración expresada: "menudo desatino snap..."
-- La búsqueda activa de alternativas prácticas
+### Article Context:
+This content arises from actual documented issues that Enrique experienced on his blog jimenezgomez.org, specifically:
+- Cryptic Snap errors ("change finished in status \"Hold\"")
+- Blocked processes impossible to resolve
+- Frustration expressed: "what a nonsense snap..."
+- The active search for practical alternatives
 
 
-## El Problema: Por qué Snap no siempre es la solución
+## The Problem: Why Snap is not always the solution
 
-Si usas Ubuntu o alguna distribución derivada, seguramente te has encontrado con esta situación frustrante:
+If you use Ubuntu or some derived distribution, you have surely encountered this frustrating situation:
 
 ```bash
 sudo snap remove firefox --revision=7599
 error: snap "firefox" has "remove-snap" change in progress
 ```
 
-O peor aún:
+Or worse yet:
 ```bash
 error: change finished in status "Hold" with no error message
 ```
 
-Estos errores crípticos y procesos bloqueados son experiencias comunes para usuarios de Snap. El sistema introduce complejidad innecesaria comparado con paquetes `.deb`.
+These cryptic errors and blocked processes are common experiences for Snap users. The system introduces unnecessary complexity compared to `.deb` packages.
 
-## La Solución: deb-get, el "winget" para Linux
+## The Solution: deb-get, the "winget" for Linux
 
-Imagina tener la simplicidad de `winget` pero para aplicaciones `.deb` en Linux. Eso es `deb-get`.
+Imagine having the simplicity of `winget` but for `.deb` applications on Linux. That's `deb-get`.
 
-### ¿Qué es deb-get?
+### What is deb-get?
 
-`deb-get` es un gestor de paquetes de alto nivel que simplifica la instalación de aplicaciones de terceros en formato `.deb`. Actúa como una capa sobre `apt` y `dpkg`, proporcionando una interfaz unificada.
+`deb-get` is a high-level package manager that simplifies the installation of third-party applications in `.deb` format. It acts as a layer on top of `apt` and `dpkg`, providing a unified interface.
 
-### Instalación en un solo comando:
+### Installation in a single command:
 
 ```bash
 wget -qO- https://raw.githubusercontent.com/wimpysworld/deb-get/main/deb-get | sudo bash -s install deb-get
 ```
 
-## Por qué deb-get es superior a Snap
+##Why deb-get is superior to Snap
 
-### 1. Rendimiento Nativo
-Las aplicaciones instaladas con `deb-get` son `.deb` tradicionales: inicio inmediato, integración completa y sin sobrecarga de contenedores.
+### 1. Native Performance
+Applications installed with `deb-get` are traditional `.deb`: immediate startup, full integration, and no container overhead.
 
-### 2. Gestión Simplificada
+### 2. Simplified Management
 ```bash
 deb-get search firefox
 deb-get install google-chrome-stable
@@ -93,29 +93,29 @@ deb-get upgrade
 deb-get list
 ```
 
-### 3. Sin Bloqueos o Estados "Hold"
-Evita procesos bloqueados en segundo plano y estados misteriosos.
+### 3. No Locks or "Hold" States
+Avoid blocked background processes and mysterious states.
 
-### 4. Transparencia y Control
-Puedes ver exactamente qué se instala, verificar firmas GPG e inspeccionar archivos.
+### 4. Transparency and Control
+You can see exactly what is installed, check GPG signatures, and inspect files.
 
-## Catálogo de ejemplos
+## Catalog of examples
 ```bash
 deb-get install google-chrome-stable
 deb-get install vscode
 deb-get install signal-desktop
 ```
 
-## Integración con tu workflow
+## Integration with your workflow
 
-Ejemplos para usuario casual, administrador y desarrollador incluidos en el artículo original.
+Examples for casual user, administrator and developer included in the original article.
 
-## Conclusión: De vuelta a lo simple
+## Conclusion: Back to simple
 
-`deb-get` no es mágico, pero sí una respuesta práctica para gestionar aplicaciones de terceros sin las complicaciones de Snap.
+`deb-get` is not magic, but it is a practical answer to manage third-party applications without the complications of Snap.
 
 ---
 
-Enlaces relevantes:
+Relevant links:
 - https://github.com/wimpysworld/deb-get
 - https://github.com/wimpysworld/deb-get/wiki

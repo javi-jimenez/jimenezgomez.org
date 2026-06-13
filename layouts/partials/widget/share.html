@@ -52,7 +52,7 @@
             {{- /* Share API */ -}}
             <button class="share-button share-native" 
                     title="Compartir"
-                    onclick="if(navigator.share){navigator.share({title: '{{ $pageTitle }}', text: '{{ $pageTitle }}\n', url: '{{ $pageURL }}'.replace('#', '?')}).catch(function(e){console.log('Share failed:', e);});} else { alert('Tu navegador no soporta esta función, usa el botón de Copiar'); }">
+                    onclick="if(navigator.share){navigator.share({title: '{{ $pageTitle }}', text: '{{ $pageTitle }}\n', url: '{{ $pageURL }}'.replace('#', '?')}).catch(function(e){console.log('Share failed:', e);});} else { alert('Your browser does not support this function, use the Copy button'); }">
                 {{ partial "helper/icon" "share" }}
                 <span>Compartir</span>
             </button>

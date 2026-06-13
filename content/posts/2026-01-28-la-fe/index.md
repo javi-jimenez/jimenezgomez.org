@@ -1,4 +1,5 @@
----title: "La Fé"
+---
+title: "Faith"
 date: 2026-01-28T12:00:00+01:00
 draft: false
 layout: post
@@ -7,37 +8,37 @@ image: "og-image.svg"
 ---
 image: "og-image.svg"
 og_image: "og-image.svg"---
-Hablar de "La Fé" implica abordar varias dimensiones: la religiosa, la íntima y la práctica. A continuación se recogen ideas clave para entender qué significa actuar en base a la Fé y cómo hacerlo de manera sólida.
+Talking about "The Faith" implies addressing several dimensions: the religious, the intimate and the practical. Below are key ideas to understand what it means to act based on Faith and how to do it in a solid way.
 
-## Definición tradicional
+## Traditional definition
 
-Una definición religiosa, citada en catecismos, dice: "Confiar en lo que no se ve". Esa frase resume la dimensión de creencia en aquello que no puede demostrarse empíricamente, y que sin embargo orienta comportamientos y decisiones.
+A religious definition, cited in catechisms, says: "To trust in what is not seen." That phrase summarizes the dimension of belief in that which cannot be demonstrated empirically, and which nevertheless guides behaviors and decisions.
 
-## Una mirada interna
+## An inside look
 
-La Fé también puede entenderse como confiar en el instinto, el anhelo, la vocación o esa luz interna que nos guía. Es una confianza profunda en una dirección personal: una intuición o llamado que no siempre encaja con razones inmediatas, pero que tiene sentido para quien la siente.
+Faith can also be understood as trusting instinct, desire, vocation or that internal light that guides us. It is a deep trust in a personal direction: an intuition or calling that does not always fit with immediate reasons, but that makes sense to those who feel it.
 
-## Mantener una base sólida
+## Maintain a solid foundation
 
-Para avanzar de forma estable hacia un objetivo hace falta una base sólida. Avanzar "por Fé" no debe implicar destruir lo que ya se es o se hace; al contrario, el progreso responsable debe permitir conservar y fortalecer los cimientos personales. No conviene romper hábitos, valores o estructuras fundamentales sin una razón sólida y sin garantizar su sustitución por algo igual de estable.
+To move steadily towards a goal you need a solid foundation. Moving forward "by Faith" should not imply destroying what one already is or does; On the contrary, responsible progress must allow us to preserve and strengthen personal foundations. It is not advisable to break fundamental habits, values ​​or structures without a solid reason and without guaranteeing their replacement by something equally stable.
 
-## Zona de confort y límites
+## Comfort zone and limits
 
-No se debe permitir que la excusa de la Fé justifique salir imprudentemente de la zona de confort, ni que otros te obliguen a abandonarla. La zona de confort contiene elementos necesarios para la estabilidad emocional y económica; abandonarla sin preparación puede debilitar la base que permite alcanzar nuevas metas.
+The excuse of Faith should not be allowed to justify recklessly leaving your comfort zone, nor should others force you to abandon it. The comfort zone contains elements necessary for emotional and economic stability; abandoning it without preparation can weaken the foundation that allows you to achieve new goals.
 
-## Riesgos cuando la base se deteriora
+## Risks when the foundation deteriorates
 
-Si permitimos que nuestra base sólida se deteriore —por iniciativa propia o por la influencia de terceros— nos volvemos vulnerables. Alguien malintencionado puede aprovechar esa debilidad para socavar nuestros cimientos y establecer una nueva base que no nos favorezca. Por eso es importante evaluar cambios desde la protección de lo esencial.
+If we allow our solid foundation to deteriorate—on our own initiative or through the influence of others—we become vulnerable. Someone malicious can take advantage of that weakness to undermine our foundations and establish a new foundation that does not favor us. That is why it is important to evaluate changes from the protection of what is essential.
 
-## Relación con la pirámide de Maslow
+## Relationship with Maslow's pyramid
 
-La pirámide de Maslow nos recuerda que para optar a necesidades "superiores" necesitamos cubrir las básicas. La Fé puede impulsar aspiraciones elevadas, pero sin una base que cubra necesidades fundamentales (seguridad, pertenencia, salud) esas aspiraciones corren el riesgo de quedar inalcanzables o de volverse peligrosas.
+Maslow's pyramid reminds us that to qualify for "higher" needs we need to cover our basic needs. Faith can fuel lofty aspirations, but without a foundation that covers fundamental needs (security, belonging, health) those aspirations run the risk of remaining unattainable or becoming dangerous.
 
-## Recomendaciones prácticas
+## Practical recommendations
 
-- Distingue entre inspiración y desestabilización: la Fé como guía, no como excusa para destruir lo básico.
-- Avanza preservando cimientos: cualquier paso debe evaluarse respecto a su impacto en tus fundamentos.
-- Protege tu zona de confort esencial: no permitas que otros te arranquen lo que te sostiene.
-- Busca equilibrio: compagina la confianza interna con medidas concretas de seguridad y planificación.
+- Distinguish between inspiration and destabilization: Faith as a guide, not as an excuse to destroy the basics.
+- Move forward while preserving foundations: any step must be evaluated with respect to its impact on your foundations.
+- Protect your essential comfort zone: don't let others take away what sustains you.
+- Seek balance: combine internal trust with concrete security and planning measures.
 
-Actuar con Fé sano es dejar que esa confianza sea una brújula, pero andar con los pies apoyados en una base firme.
+Acting with healthy Faith is letting that trust be a compass, but walking with your feet supported on a firm base.
