@@ -7,7 +7,7 @@ image: "og-image.svg"
 tags: []
 ---
 
-![universal data container](./universal-data-container.svg)
+![universal data container](universal-data-container.svg)
 
 In the past decade, the tech world has been divided by a seemingly endless debate: SQL vs. NoSQL. We've seen endless articles pitting them as opponents, as if you had to choose one. But in practice, the most robust and flexible architectures don't choose. They combine.
 
