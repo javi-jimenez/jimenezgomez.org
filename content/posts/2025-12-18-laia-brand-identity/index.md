@@ -155,13 +155,13 @@ The logo must maintain free space equivalent to the height of the letter "A" in 
 
 ```
 ┌─────────────────────────────────┐
-│          ÁREA LIBRE             │
+│           CLEAR SPACE           │
 │    ┌─────────────────┐          │
 │    │                 │          │
 │    │   LOGO LAIA     │          │
 │    │                 │          │
 │    └─────────────────┘          │
-│          ÁREA LIBRE             │
+│           CLEAR SPACE           │
 └─────────────────────────────────┘
 ```
 
@@ -171,7 +171,7 @@ The logo must maintain free space equivalent to the height of the letter "A" in 
 - **Icon only**: No less than 32px
 - **Favicon**: 16x16px, 32x32px, 64x64px
 
-### Allowed Funds
+### Allowed Backgrounds
 
 ✅ **Recommended:**
 - Dark navy blue (#0f172a - #1e293b)
@@ -186,21 +186,21 @@ The logo must maintain free space equivalent to the height of the letter "A" in 
 
 ### Official Color Palette
 ```css
-/* Colores Primarios */
---laia-blue-deep:    #0c4a6e  /* Azul profundo */
---laia-blue-primary: #0369a1  /* Azul principal */
---laia-blue-light:   #60a5fa  /* Azul claro */
---laia-blue-pale:    #bfdbfe  /* Azul pálido */
+/* Primary Colors */
+--laia-blue-deep:    #0c4a6e  /* Deep blue */
+--laia-blue-primary: #0369a1  /* Primary blue */
+--laia-blue-light:   #60a5fa  /* Light blue */
+--laia-blue-pale:    #bfdbfe  /* Pale blue */
 
-/* Colores Neutros */
---laia-dark:         #0f172a  /* Fondo oscuro */
---laia-slate:        #1e293b  /* Gris pizarra */
---laia-gray:         #94a3b8  /* Gris medio */
---laia-light:        #f0f9ff  /* Casi blanco */
+/* Neutral Colors */
+--laia-dark:         #0f172a  /* Dark background */
+--laia-slate:        #1e293b  /* Slate gray */
+--laia-gray:         #94a3b8  /* Medium gray */
+--laia-light:        #f0f9ff  /* Almost white */
 
-/* Colores de Acento */
+/* Accent Colors */
 --laia-accent-cyan:  #06b6d4  /* Cyan */
---laia-accent-sky:   #38bdf8  /* Cielo */
+--laia-accent-sky:   #38bdf8  /* Sky blue */
 ```
 
 
@@ -259,15 +259,15 @@ content/posts/2025-12-18-laia-brand-identity/
 To better organize the assets in the official Laia repository, it is recommended to create a structure like:
 
 ```bash
-laia/                                 # Repositorio principal
-├── brand/                           # Carpeta de identidad visual
-│   ├── logo/                       # Variantes del logo
-│   ├── icons/                      # Iconos en múltiples tamaños
-│   ├── avatars/                    # Perfiles redes sociales
-│   ├── banners/                    # Banners y headers
-│   └── social/                     # Templates redes sociales
+laia/                                 # Main repository
+├── brand/                           # Visual identity folder
+│   ├── logo/                       # Logo variants
+│   ├── icons/                      # Icons in multiple sizes
+│   ├── avatars/                    # Social media profiles
+│   ├── banners/                    # Banners and headers
+│   └── social/                     # Social media templates
 └── docs/
-    └── brand-guidelines.md         # Guía de marca (este artículo)
+  └── brand-guidelines.md         # Brand guidelines (this article)
 ```
 
 

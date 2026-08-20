@@ -6,7 +6,7 @@ layout: post
 image: "og-image.svg"
 categories:
   - technology
-  - arquitectura
+  - architecture
 tags:
 ---
 ## Motivation

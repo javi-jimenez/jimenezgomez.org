@@ -34,10 +34,10 @@ DDNSC allows any node to publish its own services to remote DNS servers without 
 - **Distribution**: Anycast to replicate DNS servers by zones
 
 ```bash
-# Publicar un servicio SSH en dominio ddns
+# Publish an SSH service in the ddns domain
 ./avahi_publish_remote_service myssh _ssh._tcp 22 ddns
 
-# Publicar automáticamente todas las IPs del host
+# Automatically publish all host IPs
 avahi_publish_remote_myips ddns
 ```
 
@@ -63,7 +63,7 @@ The project itself acknowledges that scalability is limited to ~1000 nodes in it
 1. **Multi-layer geographic hierarchy**:
    ```
    .earth → .continent → .country → .region → .local
-   ejemplo: server.barcelona.catalunya.europe.earth
+   example: server.barcelona.catalunya.europe.earth
    ```
 
 2. **DHT (Distributed Hash Table) for resolution**:
@@ -116,7 +116,7 @@ The project itself acknowledges that scalability is limited to ~1000 nodes in it
 **Proposed hierarchy**:
 ```
 .sol → .planet → .settlement → .district → .host
-ejemplos:
+examples:
 - gateway.olympuscity.mars.sol
 - research.europamission.jupiter.sol
 - mining.ceres.asteroid.sol
@@ -160,7 +160,7 @@ Each star system operates as **independent DNS universe** with optional federati
 3. **Optional Federated Names**:
    ```
    .galaxy.milkyway → .arm → .sector → .system → .planet
-   ejemplo: station.newearth.alphacen.orion.milkyway.galaxy
+   example: station.newearth.alphacen.orion.milkyway.galaxy
    ```
 
 **Theoretical capacity calculation**:
@@ -198,18 +198,18 @@ Each star system operates as **independent DNS universe** with optional federati
 #### Financing Model
 
 ```
-Fuentes de ingresos:
-├── Donaciones criptográficas (ETH, BTC)
-├── Grants de investigación espacial (NASA, ESA, SpaceX)
-├── Venta de nombres premium en subastas (.mars, .io de Júpiter)
-├── Servicios de consultoría para redes comunitarias
-└── Publicaciones académicas y patentes abiertas
+Revenue sources:
+├── Crypto donations (ETH, BTC)
+├── Space research grants (NASA, ESA, SpaceX)
+├── Premium name auctions (.mars, Jupiter's .io)
+├── Consulting services for community networks
+└── Academic publications and open patents
 
-Distribución:
-├── 60% Salarios equipo investigación (incluyendo tu rol)
-├── 20% Infraestructura servidores y experimentos
-├── 15% Grants a proyectos externos
-└── 5% Reserva operativa
+Allocation:
+├── 60% Research team salaries (including your role)
+├── 20% Server infrastructure and experiments
+├── 15% Grants for external projects
+└── 5% Operational reserve
 ```
 
 ### Web 3.0 Governance
@@ -253,17 +253,17 @@ Distribución:
 ![Decentralized organization](dns-web3-org.svg)
 
 ```
-Capa de Aplicación: DNS Queries (UDP/TCP puerto 53, DoH, DoT)
+Application Layer: DNS Queries (UDP/TCP port 53, DoH, DoT)
          ↓
-Capa de Resolución: DDNSC + DHT (Kademlia)
+Resolution Layer: DDNSC + DHT (Kademlia)
          ↓
-Capa de Autoridad: ENS/Handshake Blockchain + OrbitDB
+Authority Layer: ENS/Handshake Blockchain + OrbitDB
          ↓
-Capa de Transporte: libp2p (terrestre) / DTN Bundle (espacial)
+Transport Layer: libp2p (terrestrial) / DTN Bundle (space)
          ↓
-Capa de Almacenamiento: IPFS (caché) + Bind (servidor local)
+Storage Layer: IPFS (cache) + Bind (local server)
          ↓
-Capa de Red: Internet (IP) / Delay-Tolerant Networks
+Network Layer: Internet (IP) / Delay-Tolerant Networks
 ```
 
 ## Open Research Areas
@@ -299,11 +299,11 @@ class DNSRecord_CRDT:
     def __init__(self, name, value, lamport_clock):
         self.name = name
         self.value = value
-        self.clock = lamport_clock  # Contador lógico
+      self.clock = lamport_clock  # Logical counter
         self.node_id = uuid.uuid4()
     
     def merge(self, other):
-        # Last-Write-Wins con desempate por node_id
+      # Last-Write-Wins with node_id tiebreaker
         if other.clock > self.clock:
             return other
         elif other.clock == self.clock:
@@ -367,16 +367,16 @@ Implement DNSSEC with Ed25519 (post-quantum) on the Ethereum blockchain as an al
 For complete planetary DNS zone update:
 
 ```
-Nodos por planeta: 10⁹
-Registros por nodo: 5 (A, AAAA, 3× SRV)
-Tamaño por registro: 100 bytes
-Tamaño total zona: 10⁹ × 5 × 100 = 500 GB
+Nodes per planet: 10⁹
+Records per node: 5 (A, AAAA, 3× SRV)
+Size per record: 100 bytes
+Total zone size: 10⁹ × 5 × 100 = 500 GB
 
-Ventana de sincronización Tierra-Marte: 20 minutos = 1200 segundos
-Ancho de banda necesario: 500 GB / 1200 s = 417 MB/s = 3.3 Gbps
+Earth-Mars sync window: 20 minutes = 1200 seconds
+Required bandwidth: 500 GB / 1200 s = 417 MB/s = 3.3 Gbps
 
-Comparación: Deep Space Network de NASA alcanza 250 Mbps actualmente
-→ Necesitamos 13× mejora en tecnología de comunicación espacial
+Comparison: NASA's Deep Space Network currently reaches 250 Mbps
+→ We need a 13× improvement in space communication technology
 ```
 
 ### Blockchain Consensus Energy Cost
@@ -384,17 +384,17 @@ Comparación: Deep Space Network de NASA alcanza 250 Mbps actualmente
 Lightweight Blockchain (Proof-of-Authority with 100 validators):
 
 ```
-Consumo por validador: 100W (Raspberry Pi 4)
-Validadores totales: 100
-Consumo total: 10 kW
+Consumption per validator: 100W (Raspberry Pi 4)
+Total validators: 100
+Total consumption: 10 kW
 
-Coste anual (electricidad a €0.20/kWh):
-10 kW × 24 h × 365 días × €0.20 = €17,520
+Annual cost (electricity at €0.20/kWh):
+10 kW × 24 h × 365 days × €0.20 = €17,520
 
-En Marte (energía solar + baterías):
-Panel solar: 5 kW pico, €10,000 instalación + transporte
-Baterías: €15,000
-→ Payback period: 1.4 años en Tierra, amortizado en 5 años en Marte
+On Mars (solar + battery energy):
+Solar panel: 5 kW peak, €10,000 installation + transport
+Batteries: €15,000
+→ Payback period: 1.4 years on Earth, amortized in 5 years on Mars
 ```
 
 ### DHT Scalability

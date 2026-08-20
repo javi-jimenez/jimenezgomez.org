@@ -59,10 +59,10 @@ alt="ACS Illustration"
 &lt;/span>&lt;span class="lnt">5
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Publicar un servicio SSH en dominio ddns&lt;/span>
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Publish an SSH service in the ddns domain&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">./avahi_publish_remote_service myssh _ssh._tcp &lt;span class="m">22&lt;/span> ddns
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Publicar automáticamente todas las IPs del host&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Automatically publish all host IPs&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">avahi_publish_remote_myips ddns
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
@@ -92,7 +92,7 @@ alt="Universal DNS Architecture"
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">.earth → .continent → .country → .region → .local
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ejemplo: server.barcelona.catalunya.europe.earth
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">example: server.barcelona.catalunya.europe.earth
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;/li>
@@ -197,7 +197,7 @@ alt="Universal DNS Architecture"
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">.sol → .planet → .settlement → .district → .host
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ejemplos:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">examples:
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">- gateway.olympuscity.mars.sol
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">- research.europamission.jupiter.sol
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">- mining.ceres.asteroid.sol
@@ -286,7 +286,7 @@ alt="DNS Distribution Scales"
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">.galaxy.milkyway → .arm → .sector → .system → .planet
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ejemplo: station.newearth.alphacen.orion.milkyway.galaxy
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">example: station.newearth.alphacen.orion.milkyway.galaxy
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;/li>
@@ -370,18 +370,18 @@ alt="DNS Distribution Scales"
 &lt;/span>&lt;span class="lnt">12
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">Fuentes de ingresos:
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">├── Donaciones criptográficas (ETH, BTC)
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">├── Grants de investigación espacial (NASA, ESA, SpaceX)
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">├── Venta de nombres premium en subastas (.mars, .io de Júpiter)
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">├── Servicios de consultoría para redes comunitarias
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">└── Publicaciones académicas y patentes abiertas
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">Revenue sources:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">├── Crypto donations (ETH, BTC)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">├── Space research grants (NASA, ESA, SpaceX)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">├── Premium name auctions (.mars, Jupiter&amp;#39;s .io)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">├── Consulting services for community networks
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">└── Academic publications and open patents
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Distribución:
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">├── 60% Salarios equipo investigación (incluyendo tu rol)
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">├── 20% Infraestructura servidores y experimentos
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">├── 15% Grants a proyectos externos
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">└── 5% Reserva operativa
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Allocation:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">├── 60% Research team salaries (including your role)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">├── 20% Server infrastructure and experiments
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">├── 15% Grants for external projects
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">└── 5% Operational reserve
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;h3 id="web-30-governance">Web 3.0 Governance
@@ -499,17 +499,17 @@ alt="Decentralized organization"
 &lt;/span>&lt;span class="lnt">11
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">Capa de Aplicación: DNS Queries (UDP/TCP puerto 53, DoH, DoT)
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">Application Layer: DNS Queries (UDP/TCP port 53, DoH, DoT)
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ↓
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Capa de Resolución: DDNSC + DHT (Kademlia)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Resolution Layer: DDNSC + DHT (Kademlia)
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ↓
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Capa de Autoridad: ENS/Handshake Blockchain + OrbitDB
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Authority Layer: ENS/Handshake Blockchain + OrbitDB
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ↓
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Capa de Transporte: libp2p (terrestre) / DTN Bundle (espacial)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Transport Layer: libp2p (terrestrial) / DTN Bundle (space)
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ↓
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Capa de Almacenamiento: IPFS (caché) + Bind (servidor local)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Storage Layer: IPFS (cache) + Bind (local server)
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ↓
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Capa de Red: Internet (IP) / Delay-Tolerant Networks
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Network Layer: Internet (IP) / Delay-Tolerant Networks
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;h2 id="open-research-areas">Open Research Areas
@@ -556,11 +556,11 @@ Simulate node network with scheduled latencies (3-22 random minutes) and measure
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">def&lt;/span> &lt;span class="fm">__init__&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="bp">self&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">name&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">value&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">lamport_clock&lt;/span>&lt;span class="p">):&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">name&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">name&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">value&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">value&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">clock&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">lamport_clock&lt;/span> &lt;span class="c1"># Contador lógico&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">clock&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">lamport_clock&lt;/span> &lt;span class="c1"># Logical counter&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">node_id&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">uuid&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">uuid4&lt;/span>&lt;span class="p">()&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">def&lt;/span> &lt;span class="nf">merge&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="bp">self&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">other&lt;/span>&lt;span class="p">):&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1"># Last-Write-Wins con desempate por node_id&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1"># Last-Write-Wins with node_id tiebreaker&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="n">other&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">clock&lt;/span> &lt;span class="o">&amp;gt;&lt;/span> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">clock&lt;/span>&lt;span class="p">:&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="n">other&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">elif&lt;/span> &lt;span class="n">other&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">clock&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">clock&lt;/span>&lt;span class="p">:&lt;/span>
@@ -628,16 +628,16 @@ Implement DNSSEC with Ed25519 (post-quantum) on the Ethereum blockchain as an al
 &lt;/span>&lt;span class="lnt">10
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">Nodos por planeta: 10⁹
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Registros por nodo: 5 (A, AAAA, 3× SRV)
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Tamaño por registro: 100 bytes
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Tamaño total zona: 10⁹ × 5 × 100 = 500 GB
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">Nodes per planet: 10⁹
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Records per node: 5 (A, AAAA, 3× SRV)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Size per record: 100 bytes
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Total zone size: 10⁹ × 5 × 100 = 500 GB
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Ventana de sincronización Tierra-Marte: 20 minutos = 1200 segundos
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Ancho de banda necesario: 500 GB / 1200 s = 417 MB/s = 3.3 Gbps
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Earth-Mars sync window: 20 minutes = 1200 seconds
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Required bandwidth: 500 GB / 1200 s = 417 MB/s = 3.3 Gbps
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Comparación: Deep Space Network de NASA alcanza 250 Mbps actualmente
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">→ Necesitamos 13× mejora en tecnología de comunicación espacial
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Comparison: NASA&amp;#39;s Deep Space Network currently reaches 250 Mbps
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">→ We need a 13× improvement in space communication technology
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;h3 id="blockchain-consensus-energy-cost">Blockchain Consensus Energy Cost
@@ -657,17 +657,17 @@ Implement DNSSEC with Ed25519 (post-quantum) on the Ethereum blockchain as an al
 &lt;/span>&lt;span class="lnt">11
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">Consumo por validador: 100W (Raspberry Pi 4)
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Validadores totales: 100
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Consumo total: 10 kW
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">Consumption per validator: 100W (Raspberry Pi 4)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Total validators: 100
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Total consumption: 10 kW
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Coste anual (electricidad a €0.20/kWh):
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">10 kW × 24 h × 365 días × €0.20 = €17,520
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Annual cost (electricity at €0.20/kWh):
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">10 kW × 24 h × 365 days × €0.20 = €17,520
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">En Marte (energía solar + baterías):
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Panel solar: 5 kW pico, €10,000 instalación + transporte
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Baterías: €15,000
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">→ Payback period: 1.4 años en Tierra, amortizado en 5 años en Marte
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">On Mars (solar + battery energy):
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Solar panel: 5 kW peak, €10,000 installation + transport
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Batteries: €15,000
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">→ Payback period: 1.4 years on Earth, amortized in 5 years on Mars
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;h3 id="dht-scalability">DHT Scalability

@@ -9,8 +9,8 @@
   <g transform="translate(80,80)">
     <rect x="0" y="0" width="1040" height="470" rx="18" fill-opacity="0.06" fill="#ffffff"/>
     <text x="40" y="120" font-family="Inter, Arial, Helvetica, sans-serif" font-size="52" fill="#ffffff" font-weight="700">ACS — Assistant Context Standard</text>
-    <text x="40" y="190" font-family="Inter, Arial, Helvetica, sans-serif" font-size="28" fill="#e6f7fb">Framework para memoria externa y trazabilidad de IA</text>
-    <text x="40" y="260" font-family="Inter, Arial, Helvetica, sans-serif" font-size="20" fill="#cfeef7">Axiomas · Proceso · Inferencias</text>
-    <text x="40" y="360" font-family="Inter, Arial, Helvetica, sans-serif" font-size="18" fill="#bdeef7">Documento Técnico — jimenezgomez.org — 2026</text>
+    <text x="40" y="190" font-family="Inter, Arial, Helvetica, sans-serif" font-size="28" fill="#e6f7fb">Framework for external memory and AI traceability</text>
+    <text x="40" y="260" font-family="Inter, Arial, Helvetica, sans-serif" font-size="20" fill="#cfeef7">Axioms · Process · Inferences</text>
+    <text x="40" y="360" font-family="Inter, Arial, Helvetica, sans-serif" font-size="18" fill="#bdeef7">Technical Document — jimenezgomez.org — 2026</text>
   </g>
 </svg>

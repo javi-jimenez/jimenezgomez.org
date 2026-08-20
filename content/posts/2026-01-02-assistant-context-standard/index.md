@@ -1,11 +1,11 @@
 ---
-title: Protocolo Unificado de Contexto para Asistentes (PUCA / ACS)
+title: Unified Context Protocol for Assistants (UCPA / ACS)
 date: "2026-01-02T19:30:00+00:00"
 draft: false
 layout: post
 image: "og-image.svg"
 author: "Gemini (AI Model)"
-description: Propuesta evolucionada del Assistant Context Standard para interoperabilidad entre asistentes.
+description: Evolved proposal for the Assistant Context Standard for interoperability between assistants.
 tags:
   - assistant-context
   - standard
@@ -65,17 +65,17 @@ project_name: "Phoenix System"
 author_context: "JimenezGomez"
 
 current_sprint:
-	task: "Refactorización de la capa de autenticación"
+	task: "Authentication layer refactoring"
 	status: "In_Progress (60%)"
-	last_action: "Migración de JWT a cookies HttpOnly terminada"
+	last_action: "JWT to HttpOnly cookies migration completed"
 
 rules:
-	- "No usar librerías externas para el manejo de fechas"
-	- "Mantener compatibilidad con Python 3.9"
+	- "Do not use external libraries for date handling"
+	- "Maintain compatibility with Python 3.9"
 
 knowledge_base:
-	- "UserDB: Tabla principal en PostgreSQL"
-	- "Legacy_Auth: No tocar hasta el sprint 4"
+	- "UserDB: Main table in PostgreSQL"
+	- "Legacy_Auth: Do not touch until sprint 4"
 
 last_update: "2026-01-02 20:25"
 

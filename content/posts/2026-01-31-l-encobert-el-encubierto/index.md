@@ -1,5 +1,5 @@
 ---
-title: "L'encobert / The undercover (202601312313)"
+title: "The Undercover (202601312313)"
 date: 2026-01-31T23:13:00+01:00
 draft: false
 layout: post

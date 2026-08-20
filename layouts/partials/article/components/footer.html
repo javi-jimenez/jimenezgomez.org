@@ -2,13 +2,13 @@
     {{ partial "article/components/tags" . }}
 
     <section class="article-actions" style="display: flex; gap: 15px; margin-top: 20px; margin-bottom: 20px; align-items: center; justify-content: flex-end;">
-        <button type="button" class="share-button share-print" onclick="window.print()" title="Imprimir artículo">
+        <button type="button" class="share-button share-print" onclick="window.print()" title="Print article">
             {{ partial "helper/icon" "printer" }}
-            <span>Imprimir</span>
+            <span>Print</span>
         </button>
-        <button type="button" class="share-button share-copy" onclick="event.preventDefault(); const shareUrl = window.location.href.replace('#', '?'); if(navigator.share){navigator.share({title: document.title, text: document.title + '\n', url: shareUrl}).catch(function(e){console.log('Share failed:', e);});} else { navigator.clipboard.writeText(shareUrl); alert('Enlace copiado al portapapeles'); }" title="Compartir artículo">
+        <button type="button" class="share-button share-copy" onclick="event.preventDefault(); const shareUrl = window.location.href.replace('#', '?'); if(navigator.share){navigator.share({title: document.title, text: document.title + '\n', url: shareUrl}).catch(function(e){console.log('Share failed:', e);});} else { navigator.clipboard.writeText(shareUrl); alert('Link copied to clipboard'); }" title="Share article">
             {{ partial "helper/icon" "share" }}
-            <span>Compartir</span>
+            <span>Share</span>
         </button>
     </section>
 

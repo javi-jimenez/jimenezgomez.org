@@ -1,17 +1,17 @@
 ---
-title: Domando el Caos de la IA
+title: "Taming the Chaos of AI"
 date: "2026-01-03T07:30:00+01:00"
 draft: false
 layout: post
 image: "og-image.svg"
----
 description: "ACS (Assistant Context Standard) framework: separating axioms from inferences for traceable memory in AI."
 tags:
   - disclosure
   - ACS
   - AI
-  -framework
-og_image: illustrative-image-technical-document-acs-blog-jimenezgomez.org.jpg---
+  - framework
+og_image: "illustrative-image-technical-document-acs-blog-jimenezgomez.org.jpg"
+---
 📝 Dissemination Article: "Taming the Chaos of AI"
 
 Abstract: The end of artificial amnesia
@@ -40,4 +40,4 @@ This system allows monitoring everything from logistics in Valencia to the risk 
 
 ## Conclusion
 
-The ACS Framework is not just a way to use AI; It is a knowledge management standard. It is the tool that allows us to go from "playing" with AI to "governing" information for making critical decisions in a volatile world.
+The ACS Framework is not just a way to use AI; it is a knowledge management standard. It is the tool that allows us to go from "playing" with AI to "governing" information for making critical decisions in a volatile world.

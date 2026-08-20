@@ -164,13 +164,13 @@ alt="Twitter Card"
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">┌─────────────────────────────────┐
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│ ÁREA LIBRE │
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│ CLEAR SPACE │
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│ ┌─────────────────┐ │
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│ │ │ │
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│ │ LOGO LAIA │ │
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│ │ │ │
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│ └─────────────────┘ │
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│ ÁREA LIBRE │
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│ CLEAR SPACE │
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">└─────────────────────────────────┘
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
@@ -180,7 +180,7 @@ alt="Twitter Card"
 &lt;li>&lt;strong>Icon only&lt;/strong>: No less than 32px&lt;/li>
 &lt;li>&lt;strong>Favicon&lt;/strong>: 16x16px, 32x32px, 64x64px&lt;/li>
 &lt;/ul>
-&lt;h3 id="allowed-funds">Allowed Funds
+&lt;h3 id="allowed-backgrounds">Allowed Backgrounds
 &lt;/h3>&lt;p>✅ &lt;strong>Recommended:&lt;/strong>&lt;/p>
 &lt;ul>
 &lt;li>Dark navy blue (#0f172a - #1e293b)&lt;/li>
@@ -214,21 +214,21 @@ alt="Twitter Card"
 &lt;/span>&lt;span class="lnt">15
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-css" data-lang="css">&lt;span class="line">&lt;span class="cl">&lt;span class="c">/* Colores Primarios */&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nt">--laia-blue-deep&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="p">#&lt;/span>&lt;span class="nn">0c4a6e&lt;/span> &lt;span class="c">/* Azul profundo */&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nt">--laia-blue-primary&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="p">#&lt;/span>&lt;span class="nn">0369a1&lt;/span> &lt;span class="c">/* Azul principal */&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nt">--laia-blue-light&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="p">#&lt;/span>&lt;span class="nn">60a5fa&lt;/span> &lt;span class="c">/* Azul claro */&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nt">--laia-blue-pale&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="p">#&lt;/span>&lt;span class="nn">bfdbfe&lt;/span> &lt;span class="c">/* Azul pálido */&lt;/span>
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-css" data-lang="css">&lt;span class="line">&lt;span class="cl">&lt;span class="c">/* Primary Colors */&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nt">--laia-blue-deep&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="p">#&lt;/span>&lt;span class="nn">0c4a6e&lt;/span> &lt;span class="c">/* Deep blue */&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nt">--laia-blue-primary&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="p">#&lt;/span>&lt;span class="nn">0369a1&lt;/span> &lt;span class="c">/* Primary blue */&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nt">--laia-blue-light&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="p">#&lt;/span>&lt;span class="nn">60a5fa&lt;/span> &lt;span class="c">/* Light blue */&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nt">--laia-blue-pale&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="p">#&lt;/span>&lt;span class="nn">bfdbfe&lt;/span> &lt;span class="c">/* Pale blue */&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c">/* Colores Neutros */&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nt">--laia-dark&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="p">#&lt;/span>&lt;span class="nn">0f172a&lt;/span> &lt;span class="c">/* Fondo oscuro */&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nt">--laia-slate&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="p">#&lt;/span>&lt;span class="nn">1e293b&lt;/span> &lt;span class="c">/* Gris pizarra */&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nt">--laia-gray&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="p">#&lt;/span>&lt;span class="nn">94a3b8&lt;/span> &lt;span class="c">/* Gris medio */&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nt">--laia-light&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="p">#&lt;/span>&lt;span class="nn">f0f9ff&lt;/span> &lt;span class="c">/* Casi blanco */&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c">/* Neutral Colors */&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nt">--laia-dark&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="p">#&lt;/span>&lt;span class="nn">0f172a&lt;/span> &lt;span class="c">/* Dark background */&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nt">--laia-slate&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="p">#&lt;/span>&lt;span class="nn">1e293b&lt;/span> &lt;span class="c">/* Slate gray */&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nt">--laia-gray&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="p">#&lt;/span>&lt;span class="nn">94a3b8&lt;/span> &lt;span class="c">/* Medium gray */&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nt">--laia-light&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="p">#&lt;/span>&lt;span class="nn">f0f9ff&lt;/span> &lt;span class="c">/* Almost white */&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c">/* Colores de Acento */&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c">/* Accent Colors */&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nt">--laia-accent-cyan&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="p">#&lt;/span>&lt;span class="nn">06b6d4&lt;/span> &lt;span class="c">/* Cyan */&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nt">--laia-accent-sky&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="p">#&lt;/span>&lt;span class="nn">38bdf8&lt;/span> &lt;span class="c">/* Cielo */&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nt">--laia-accent-sky&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="p">#&lt;/span>&lt;span class="nn">38bdf8&lt;/span> &lt;span class="c">/* Sky blue */&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;h2 id="design-philosophy">Design Philosophy
@@ -305,15 +305,15 @@ alt="Twitter Card"
 &lt;/span>&lt;span class="lnt">9
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">laia/ &lt;span class="c1"># Repositorio principal&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">├── brand/ &lt;span class="c1"># Carpeta de identidad visual&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│ ├── logo/ &lt;span class="c1"># Variantes del logo&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│ ├── icons/ &lt;span class="c1"># Iconos en múltiples tamaños&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│ ├── avatars/ &lt;span class="c1"># Perfiles redes sociales&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│ ├── banners/ &lt;span class="c1"># Banners y headers&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│ └── social/ &lt;span class="c1"># Templates redes sociales&lt;/span>
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">laia/ &lt;span class="c1"># Main repository&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">├── brand/ &lt;span class="c1"># Visual identity folder&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│ ├── logo/ &lt;span class="c1"># Logo variants&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│ ├── icons/ &lt;span class="c1"># Icons in multiple sizes&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│ ├── avatars/ &lt;span class="c1"># Social media profiles&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│ ├── banners/ &lt;span class="c1"># Banners and headers&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│ └── social/ &lt;span class="c1"># Social media templates&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">└── docs/
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> └── brand-guidelines.md &lt;span class="c1"># Guía de marca (este artículo)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> └── brand-guidelines.md &lt;span class="c1"># Brand guidelines (this article)&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;h2 id="real-world-applications">Real World Applications

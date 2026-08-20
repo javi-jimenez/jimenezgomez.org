@@ -4,15 +4,15 @@ image: "og-image.svg"
 tags:
   - web
   - performance
-title: "Optimización Web: buenas prácticas"
+title: "Web Optimization: Best Practices"
 date: "2024-05-10"
 draft: true
 ---
-Este post trata sobre buenas prácticas para optimizar sitios web: carga diferida, compresión, uso responsable de fuentes y más.
+This post covers best practices for optimizing websites: lazy loading, compression, responsible font usage, and more.
 
 ---
-### Puntos clave
+### Key Points
 
-1. Reducir payloads.
-2. Priorizar contenido visible.
-3. Medir con herramientas reales.
+1. Reduce payloads.
+2. Prioritize visible content.
+3. Measure with real tools.

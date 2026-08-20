@@ -43,7 +43,7 @@ googleAnalytics = "G-STC35RLKFB"
       enabled = true
       default = 'Licensed under CC BY-NC-SA 4.0'
 
-# Widgets en la página principal
+# Widgets on the homepage
 [[params.widgets.homepage]]
   type = 'search'
 
@@ -68,7 +68,7 @@ googleAnalytics = "G-STC35RLKFB"
 [[params.widgets.page]]
   type = 'share'
 
-# Enlaces sociales
+# Social links
 [[menu.social]]
   identifier = 'github'
   name = 'GitHub'
@@ -90,7 +90,7 @@ googleAnalytics = "G-STC35RLKFB"
   [menu.social.params]
     icon = 'brand-linkedin'
 
-# Menú principal (opcional)
+# Main menu (optional)
 [[menu.main]]
   identifier = 'home'
   name = 'Home'

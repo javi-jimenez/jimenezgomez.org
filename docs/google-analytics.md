@@ -1,39 +1,39 @@
-# Google Analytics (GA4) — Configuración y verificación
+# Google Analytics (GA4) — Configuration and Verification
 
-Este fichero explica cómo cambiar el Measurement ID y verificar la instalación localmente.
+This file explains how to change the Measurement ID and verify the setup locally.
 
-1) Dónde poner el Measurement ID
+1) Where to set the Measurement ID
 
-- Edita `hugo.toml` y actualiza la clave `googleAnalytics` con tu Measurement ID (ejemplo `G-XXXXXXXXX`).
+- Edit `hugo.toml` and update the `googleAnalytics` key with your Measurement ID (for example `G-XXXXXXXXX`).
 
-2) Regenerar el sitio localmente
+2) Rebuild the site locally
 
 ```bash
-# Desde la raíz del repo
+# From the repository root
 git pull origin main
 hugo --cleanDestinationDir
-# (o para desarrollo)
+# (or for development)
 hugo server -D
 ```
 
-3) Verificar que el script se ha inyectado
+3) Verify that the script was injected
 
-- Abre `public/index.html` y busca `gtag('config'` o tu ID `G-...`.
-- Desde el navegador, en la página pública (ej. `http://localhost:1313/`) abre Herramientas de desarrollador → Network y filtra por `googletagmanager` o `gtag`.
+- Open `public/index.html` and search for `gtag('config'` or your `G-...` ID.
+- In the browser, on the public page (for example `http://localhost:1313/`), open Developer Tools → Network and filter by `googletagmanager` or `gtag`.
 
-4) Verificación en Google
+4) Verify in Google Analytics
 
-- Entra en Google Analytics → Realtime → Live view y observa si hay actividad.
-- Para comprobar que el sitio envía datos: usa el Google Tag Assistant o la extensión `GA Debug`.
+- Go to Google Analytics → Realtime → Live view and check whether activity appears.
+- To confirm that the site is sending data, use Google Tag Assistant or the `GA Debug` extension.
 
-5) Privacidad y recomendaciones
+5) Privacy and recommendations
 
-- El partial activa `anonymize_ip` por defecto en `gtag('config', ..., { 'anonymize_ip': true })`.
-- Si prefieres no incluir analytics en entornos de desarrollo, puedes envolver la variable en el partial o añadir una condición en `hugo.toml`.
+- The partial enables `anonymize_ip` by default in `gtag('config', ..., { 'anonymize_ip': true })`.
+- If you prefer not to include analytics in development environments, wrap the variable in the partial or add a condition in `hugo.toml`.
 
-6) Revertir o cambiar ID
+6) Revert or change the ID
 
-- Para cambiar, edita `hugo.toml`, vuelve a ejecutar `hugo --cleanDestinationDir`, y registra los cambios y súbelos al repositorio:
+- To change it, edit `hugo.toml`, run `hugo --cleanDestinationDir` again, then commit and push the changes:
 
 ```bash
 git add hugo.toml
@@ -41,4 +41,4 @@ git commit -m "Update Google Analytics Measurement ID"
 git push
 ```
 
-Si quieres, puedo añadir también comprobaciones automáticas en CI para asegurar que `googleAnalytics` está vacío en branches no-main.
+If you want, I can also add automatic CI checks to ensure `googleAnalytics` is empty on non-main branches.

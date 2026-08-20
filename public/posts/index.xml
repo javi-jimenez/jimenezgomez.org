@@ -1,10 +1,75 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Articles on Francisco Javier Jiménez Gómez</title><link>https://jimenezgomez.org/posts/</link><description>Recent content in Articles on Francisco Javier Jiménez Gómez</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>Francisco Javier Jiménez Gómez</copyright><lastBuildDate>Thu, 26 Feb 2026 11:09:00 +0100</lastBuildDate><atom:link href="https://jimenezgomez.org/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>The Mirage of Open Source: Freedom or Programmed Dispossession?</title><link>https://jimenezgomez.org/posts/2026-02-26-el-espejismo-del-open-source-libertad-o-despojo-programado/</link><pubDate>Thu, 26 Feb 2026 11:09:00 +0100</pubDate><guid>https://jimenezgomez.org/posts/2026-02-26-el-espejismo-del-open-source-libertad-o-despojo-programado/</guid><description>&lt;img src="https://jimenezgomez.org/posts/2026-02-26-el-espejismo-del-open-source-libertad-o-despojo-programado/og-image.svg" alt="Featured image of post The Mirage of Open Source: Freedom or Programmed Dispossession?" />&lt;p>In contemporary technical narrative, Open Source is presented as the pinnacle of the democratization of knowledge. However, behind the veil of disinterested collaboration lies an incentive structure that often operates as a mechanism of expropriation for the independent author.&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Articles on Francisco Javier Jiménez Gómez</title><link>https://jimenezgomez.org/posts/</link><description>Recent content in Articles on Francisco Javier Jiménez Gómez</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>Francisco Javier Jiménez Gómez</copyright><lastBuildDate>Thu, 20 Aug 2026 08:27:00 +0100</lastBuildDate><atom:link href="https://jimenezgomez.org/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>📄 Article: The Universal Container: Why SQL + JSON is the Most Practical Data Architecture Today (202608200826)</title><link>https://jimenezgomez.org/posts/2026-08-20-universal-data-container/</link><pubDate>Thu, 20 Aug 2026 08:27:00 +0100</pubDate><guid>https://jimenezgomez.org/posts/2026-08-20-universal-data-container/</guid><description>&lt;img src="https://jimenezgomez.org/posts/2026-08-20-universal-data-container/universal-data-container.svg" alt="Featured image of post 📄 Article: The Universal Container: Why SQL + JSON is the Most Practical Data Architecture Today (202608200826)" />&lt;p>&lt;img src="https://jimenezgomez.org/universal-data-container.svg"
+loading="lazy"
+alt="universal data container"
+>&lt;/p>
+&lt;p>In the past decade, the tech world has been divided by a seemingly endless debate: SQL vs. NoSQL. We&amp;rsquo;ve seen endless articles pitting them as opponents, as if you had to choose one. But in practice, the most robust and flexible architectures don&amp;rsquo;t choose. They combine.&lt;/p>
+&lt;p>After years of working on projects that span from community networks to AI agents, I&amp;rsquo;ve found a practical pattern that works: &lt;strong>using SQL as the universal container and JSON as the flexible payload&lt;/strong>. It&amp;rsquo;s not a new idea, but it&amp;rsquo;s often overlooked in favor of more dogmatic approaches.&lt;/p>
+&lt;p>Here&amp;rsquo;s why this matters.&lt;/p>
+&lt;hr>
+&lt;h2 id="-the-problem-with-the-debate">🧩 The Problem with The Debate
+&lt;/h2>&lt;p>The problem is that the SQL vs. NoSQL debate forces a false dichotomy. NoSQL databases like MongoDB are great for flexibility. They let you store data without a predefined schema. If you need a new field, you just add it. However, they can struggle with complex transactions and reporting. SQL databases like PostgreSQL are powerful and reliable. They enforce data integrity and are excellent for querying relationships. But changing the schema can be a pain.&lt;/p>
+&lt;p>So you end up with a trade-off: &lt;strong>flexibility or integrity?&lt;/strong> But what if you didn&amp;rsquo;t have to choose?&lt;/p>
+&lt;hr>
+&lt;h2 id="-the-solution-the-container-pattern">💡 The Solution: The Container Pattern
+&lt;/h2>&lt;p>The solution is to use SQL as the &lt;strong>container&lt;/strong> and JSON as the &lt;strong>payload&lt;/strong>. This is the architecture I&amp;rsquo;ve used in projects like &lt;strong>laia&lt;/strong> and &lt;strong>gcodis&lt;/strong>, where data comes from diverse sources and needs to be processed, stored, and analyzed.&lt;/p>
+&lt;p>The core idea is simple:&lt;/p>
+&lt;ol>
+&lt;li>&lt;strong>The SQL Table:&lt;/strong> Create a simple table with a primary key and a JSON column.&lt;/li>
+&lt;li>&lt;strong>The Flexible Payload:&lt;/strong> Store all the variable data as a JSON object in that column.&lt;/li>
+&lt;li>&lt;strong>The Transformation:&lt;/strong> Use SQL&amp;rsquo;s ETL capabilities to parse, transform, and load this data into more structured tables as needed.&lt;/li>
+&lt;/ol>
+&lt;hr>
+&lt;h2 id="-a-practical-example">🛠️ A Practical Example
+&lt;/h2>&lt;p>Imagine you are ingesting data from an AI agent or a community network log. The data is messy. Some entries have a &lt;code>user_id&lt;/code>, some have a &lt;code>device_id&lt;/code>. The fields change over time. Instead of updating the schema of a database table for every small change, you store the raw data in a JSON column.&lt;/p>
+&lt;p>You can then use a simple ETL process to transform and normalize this data into a more structured form for analysis.&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;span class="lnt">8
+&lt;/span>&lt;span class="lnt">9
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-sql" data-lang="sql">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">-- Ingest raw data
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="k">INSERT&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">INTO&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">raw_data&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="k">source&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">payload&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="k">VALUES&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;agent_laia&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s1">&amp;#39;{&amp;#34;user_id&amp;#34;: 123, &amp;#34;action&amp;#34;: &amp;#34;login&amp;#34;}&amp;#39;&lt;/span>&lt;span class="p">);&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">-- Transform and load for reporting
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="k">INSERT&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">INTO&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">user_actions&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">user_id&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">action&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="k">SELECT&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">payload&lt;/span>&lt;span class="o">-&amp;gt;&amp;gt;&lt;/span>&lt;span class="s1">&amp;#39;user_id&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">payload&lt;/span>&lt;span class="o">-&amp;gt;&amp;gt;&lt;/span>&lt;span class="s1">&amp;#39;action&amp;#39;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="k">FROM&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">raw_data&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="k">WHERE&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">payload&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">?&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s1">&amp;#39;user_id&amp;#39;&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;hr>
+&lt;h2 id="-why-this-works">✅ Why This Works
+&lt;/h2>&lt;p>This pattern offers several advantages:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Flexibility&lt;/strong>: You can store data from multiple sources without worrying about schemas.&lt;/li>
+&lt;li>&lt;strong>Simplicity&lt;/strong>: You don&amp;rsquo;t need complex migration scripts for every little change.&lt;/li>
+&lt;li>&lt;strong>Reliability&lt;/strong>: You still have the ACID properties of SQL for your core data.&lt;/li>
+&lt;li>&lt;strong>Performance&lt;/strong>: With indexing on JSON fields (like JSONB in PostgreSQL), queries are still fast.&lt;/li>
+&lt;li>&lt;strong>Observability&lt;/strong>: You keep a complete audit trail of the raw data.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="-a-bit-of-history">📜 A Bit of History
+&lt;/h2>&lt;p>I first encountered this pattern when working with large-scale community network projects like &lt;strong>Clommunity and CONFINE&lt;/strong>. We had to integrate data from various sensors, services, and user logs. A rigid SQL schema would have been a bottleneck. A NoSQL-only approach would have made reporting very difficult.&lt;/p>
+&lt;p>The solution was to store the raw data as it arrived in a PostgreSQL JSONB column and then use ETL pipelines to normalize it for specific use cases. The same approach has proven valuable in my work on &lt;strong>AI and automation&lt;/strong>, where the needs of the system often evolve faster than a database schema can be safely changed.&lt;/p>
+&lt;hr>
+&lt;h2 id="-so-sql-or-nosql">🏗️ So, SQL or NoSQL?
+&lt;/h2>&lt;p>The answer is &lt;strong>both&lt;/strong>. Use SQL for what it does best: integrity, transactions, and querying. Use JSON for what it does best: storing semi-structured data without ceremony. The container pattern is not about choosing a single tool. It&amp;rsquo;s about building a more practical, resilient architecture.&lt;/p>
+&lt;p>It&amp;rsquo;s a lesson learned from years of working on real projects.&lt;/p></description></item><item><title>The Mirage of Open Source: Freedom or Programmed Dispossession?</title><link>https://jimenezgomez.org/posts/2026-02-26-el-espejismo-del-open-source-libertad-o-despojo-programado/</link><pubDate>Thu, 26 Feb 2026 11:09:00 +0100</pubDate><guid>https://jimenezgomez.org/posts/2026-02-26-el-espejismo-del-open-source-libertad-o-despojo-programado/</guid><description>&lt;img src="https://jimenezgomez.org/posts/2026-02-26-el-espejismo-del-open-source-libertad-o-despojo-programado/og-image.svg" alt="Featured image of post The Mirage of Open Source: Freedom or Programmed Dispossession?" />&lt;p>In contemporary technical narrative, Open Source is presented as the pinnacle of the democratization of knowledge. However, behind the veil of disinterested collaboration lies an incentive structure that often operates as a mechanism of expropriation for the independent author.&lt;/p>
 &lt;h2 id="the-paradox-of-gratuity">The Paradox of Gratuity
 &lt;/h2>&lt;p>The current ecosystem encourages developers to release their innovations under permissive licenses. While this encourages global technical advancement, it creates a legal and ethical vacuum. Large conglomerates—the “architects of the cave”—absorb these vital pieces, assemble them into complex systems, and monetize the ingenuity of others, while the original author is ostracized if he attempts to claim authorship or sovereignty.&lt;/p>
 &lt;h2 id="the-ostracism-trap">The Ostracism Trap
 &lt;/h2>&lt;p>There is invisible censorship in public forums and media communities. Participation is allowed as long as the individual does not stand out above the imposed &amp;ldquo;communalism.&amp;rdquo; When an author speaks out to protect the ethical integrity of their work (such as the ACS Framework or Ethical AI systems), they are vilified or silenced. The system is designed so that the idea is &amp;ldquo;ownerless&amp;rdquo; only when it is convenient for whoever has the power to scale it.&lt;/p>
 &lt;h2 id="towards-a-new-paradigm-cognitive-property">Towards a New Paradigm: Cognitive Property
-&lt;/h2>&lt;p>It is not about opposing the sharing of knowledge, but about denouncing the veto of individual excellence. The future of technology cannot be based on the theft of ideas under the guise of freedom. It is imperative to build Semantic Orchestration systems and Fact Bases that protect the traceability of the original intention, preventing ethics from being diluted by the poisoning of corporate interests.&lt;/p></description></item><item><title>L'encobert / The undercover (202601312313)</title><link>https://jimenezgomez.org/posts/2026-01-31-l-encobert-el-encubierto/</link><pubDate>Sat, 31 Jan 2026 23:13:00 +0100</pubDate><guid>https://jimenezgomez.org/posts/2026-01-31-l-encobert-el-encubierto/</guid><description>&lt;img src="https://jimenezgomez.org/posts/2026-01-31-l-encobert-el-encubierto/og-image.svg" alt="Featured image of post L'encobert / The undercover (202601312313)" />&lt;p>Text inspired by Valencian traditions, psychographics and esoteric symbols. Part of the text was prepared with the help of models (e.g. Google Gemini) and historical contrast.&lt;/p>
+&lt;/h2>&lt;p>It is not about opposing the sharing of knowledge, but about denouncing the veto of individual excellence. The future of technology cannot be based on the theft of ideas under the guise of freedom. It is imperative to build Semantic Orchestration systems and Fact Bases that protect the traceability of the original intention, preventing ethics from being diluted by the poisoning of corporate interests.&lt;/p></description></item><item><title>The Undercover (202601312313)</title><link>https://jimenezgomez.org/posts/2026-01-31-l-encobert-el-encubierto/</link><pubDate>Sat, 31 Jan 2026 23:13:00 +0100</pubDate><guid>https://jimenezgomez.org/posts/2026-01-31-l-encobert-el-encubierto/</guid><description>&lt;img src="https://jimenezgomez.org/posts/2026-01-31-l-encobert-el-encubierto/og-image.svg" alt="Featured image of post The Undercover (202601312313)" />&lt;p>Text inspired by Valencian traditions, psychographics and esoteric symbols. Part of the text was prepared with the help of models (e.g. Google Gemini) and historical contrast.&lt;/p>
 &lt;p>&lt;img src="https://jimenezgomez.org/posts/2026-01-31-l-encobert-el-encubierto/portrait.png"
 width="423"
 height="615"
@@ -39,9 +104,7 @@ data-flex-basis="165px"
 &lt;li>Studies on Joaquín de Fiore, Arnau de Vilanova and the apocalyptic imaginary in the Mediterranean.&lt;/li>
 &lt;/ul>
 &lt;h2 id="final-reflection">Final reflection
-&lt;/h2>&lt;p>The Undercover functions as a liminal figure: a mixture of hidden king, ascetic and prophetic savior. More than a singular person, he represents a collective expectation of radical renewal that reappears in different moments of crisis. His description (young man in black, barefoot, green eyes, medium hair) is today a powerful image that collects historical traces and symbolic layers that cross the political, the religious and the mystical.&lt;/p></description></item><item><title>AI-optimized callbacks: make code more linear and readable</title><link>https://jimenezgomez.org/posts/2026-01-30-callbacks-ai-linearize/</link><pubDate>Fri, 30 Jan 2026 12:00:00 +0100</pubDate><guid>https://jimenezgomez.org/posts/2026-01-30-callbacks-ai-linearize/</guid><description>&lt;img src="https://jimenezgomez.org/posts/2026-01-30-callbacks-ai-linearize/og-image.svg" alt="Featured image of post AI-optimized callbacks: make code more linear and readable" />&lt;h2 id="tags">og_image: &amp;ldquo;og-image.svg&amp;rdquo;
-tags:
-&lt;/h2>&lt;p>In real projects, callbacks can grow into code that is difficult to reason with. Today we will see how artificial intelligence (AI) can help us refactor callbacks into more linear and readable forms, and what patterns and practices to apply to maintain maintainability.&lt;/p>
+&lt;/h2>&lt;p>The Undercover functions as a liminal figure: a mixture of hidden king, ascetic and prophetic savior. More than a singular person, he represents a collective expectation of radical renewal that reappears in different moments of crisis. His description (young man in black, barefoot, green eyes, medium hair) is today a powerful image that collects historical traces and symbolic layers that cross the political, the religious and the mystical.&lt;/p></description></item><item><title>AI-optimized callbacks: make code more linear and readable</title><link>https://jimenezgomez.org/posts/2026-01-30-callbacks-ai-linearize/</link><pubDate>Fri, 30 Jan 2026 12:00:00 +0100</pubDate><guid>https://jimenezgomez.org/posts/2026-01-30-callbacks-ai-linearize/</guid><description>&lt;img src="https://jimenezgomez.org/posts/2026-01-30-callbacks-ai-linearize/og-image.svg" alt="Featured image of post AI-optimized callbacks: make code more linear and readable" />&lt;p>In real projects, callbacks can grow into code that is difficult to reason with. Today we will see how artificial intelligence (AI) can help us refactor callbacks into more linear and readable forms, and what patterns and practices to apply to maintain maintainability.&lt;/p>
 &lt;p>&lt;strong>What this post covers&lt;/strong>&lt;/p>
 &lt;ul>
 &lt;li>Why callbacks become problematic&lt;/li>
@@ -157,13 +220,13 @@ Nested callbacks generate code with high cognitive complexity: deep indentation,
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="nx">storage&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">save&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">profile&lt;/span>&lt;span class="p">);&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// Uso con manejo centralizado de errores
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// Usage with centralized error handling
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="kr">async&lt;/span> &lt;span class="p">()&lt;/span> &lt;span class="p">=&amp;gt;&lt;/span> &lt;span class="p">{&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">try&lt;/span> &lt;span class="p">{&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kr">const&lt;/span> &lt;span class="nx">result&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kr">await&lt;/span> &lt;span class="nx">getUserAndSave&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">42&lt;/span>&lt;span class="p">);&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">console&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">log&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;Guardado:&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">result&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">console&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">log&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;Saved:&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">result&lt;/span>&lt;span class="p">);&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span> &lt;span class="k">catch&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">err&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">console&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">error&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;Error en flujo:&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">err&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">console&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">error&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;Flow error:&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">err&lt;/span>&lt;span class="p">);&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">})();&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
@@ -208,7 +271,7 @@ Nested callbacks generate code with high cognitive complexity: deep indentation,
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">Refactoriza esta función callback para que use async/await, extrae responsabilidades en funciones pequeñas, añade tests unitarios Mocha/Chai y sugiere nombres claros.
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">Refactor this callback-based function to use async/await, extract responsibilities into small functions, add Mocha/Chai unit tests, and suggest clear names.
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>&lt;strong>Additional best practices&lt;/strong>&lt;/p>
@@ -310,11 +373,8 @@ data-flex-basis="240px"
 &lt;li>&lt;strong>Different response times:&lt;/strong>&lt;/li>
 &lt;/ol>
 &lt;ul>
-&lt;li>Calls to the basic telephone: immediate response (emergencies)
-&lt;ul>
+&lt;li>Calls to the basic telephone: immediate response (emergencies)&lt;/li>
 &lt;li>Messages in apps: response in 30-minute windows, 2-3 times a day&lt;/li>
-&lt;/ul>
-&lt;/li>
 &lt;/ul>
 &lt;h2 id="demonstrated-tangible-benefits">DEMONSTRATED TANGIBLE BENEFITS
 &lt;/h2>&lt;h3 id="productivity-and-mental-health">&lt;strong>Productivity and Mental Health:&lt;/strong>
@@ -371,8 +431,8 @@ data-flex-basis="240px"
 &lt;/ul>
 &lt;h3 id="my-contacts-are-not-going-to-adapt">&lt;strong>&amp;ldquo;My contacts are not going to adapt&amp;rdquo;&lt;/strong>
 &lt;/h3>&lt;ul>
-&lt;li>Most respect clear systems when explained politely
--Those who insist on calling for trivialities gradually learn&lt;/li>
+&lt;li>Most respect clear systems when explained politely&lt;/li>
+&lt;li>Those who insist on calling for trivialities gradually learn&lt;/li>
 &lt;li>Automatically filter relationships according to your limits&lt;/li>
 &lt;/ul>
 &lt;h2 id="real-success-stories">REAL SUCCESS STORIES
@@ -432,16 +492,7 @@ alt="ACS Illustration"
 &lt;/li>
 &lt;/ul>
 &lt;hr>
-&lt;p>This document proposes a minimalist basis for implementing ACS in flows that require traceability, reproducibility and explicit separation between facts (Axioms) and provisional reasoning (Inferences). Concrete implementations can add version metadata, author signatures, and validation mechanisms to transition inferences to axioms in a controlled manner.&lt;/p></description></item><item><title>Domando el Caos de la IA</title><link>https://jimenezgomez.org/posts/2026-01-03-domando-el-caos-de-la-ia/</link><pubDate>Sat, 03 Jan 2026 07:30:00 +0100</pubDate><guid>https://jimenezgomez.org/posts/2026-01-03-domando-el-caos-de-la-ia/</guid><description>&lt;img src="https://jimenezgomez.org/posts/2026-01-03-domando-el-caos-de-la-ia/og-image.svg" alt="Featured image of post Domando el Caos de la IA" />&lt;p>description: &amp;ldquo;ACS (Assistant Context Standard) framework: separating axioms from inferences for traceable memory in AI.&amp;rdquo;
-tags:&lt;/p>
-&lt;ul>
-&lt;li>disclosure&lt;/li>
-&lt;li>ACS&lt;/li>
-&lt;li>AI
--framework
-og_image: illustrative-image-technical-document-acs-blog-jimenezgomez.org.jpg&amp;mdash;
-📝 Dissemination Article: &amp;ldquo;Taming the Chaos of AI&amp;rdquo;&lt;/li>
-&lt;/ul>
+&lt;p>This document proposes a minimalist basis for implementing ACS in flows that require traceability, reproducibility and explicit separation between facts (Axioms) and provisional reasoning (Inferences). Concrete implementations can add version metadata, author signatures, and validation mechanisms to transition inferences to axioms in a controlled manner.&lt;/p></description></item><item><title>Taming the Chaos of AI</title><link>https://jimenezgomez.org/posts/2026-01-03-domando-el-caos-de-la-ia/</link><pubDate>Sat, 03 Jan 2026 07:30:00 +0100</pubDate><guid>https://jimenezgomez.org/posts/2026-01-03-domando-el-caos-de-la-ia/</guid><description>&lt;img src="https://jimenezgomez.org/posts/2026-01-03-domando-el-caos-de-la-ia/og-image.svg" alt="Featured image of post Taming the Chaos of AI" />&lt;p>📝 Dissemination Article: &amp;ldquo;Taming the Chaos of AI&amp;rdquo;&lt;/p>
 &lt;p>Abstract: The end of artificial amnesia&lt;/p>
 &lt;p>In a world saturated with information, Artificial Intelligences suffer from a common evil: the lack of persistent and structured memory. Introducing the ACS Framework (Assistant Context Standard), an innovative methodology that separates facts from assumptions, allowing companies and researchers to turn AI into a strategic partner with infinite memory and traceable reasoning.&lt;/p>
 &lt;p>&lt;img src="https://jimenezgomez.org/illustrative-image-technical-document-acs-blog-jimenezgomez.org.jpg"
@@ -464,7 +515,7 @@ alt="Illustrative image of the article"
 &lt;h2 id="applications-from-geopolitics-to-investment">Applications: From Geopolitics to Investment
 &lt;/h2>&lt;p>This system allows monitoring everything from logistics in Valencia to the risk of global conflict (WWIII) with mathematical precision. For an investor, this means full traceability: you know exactly why the AI ​​made a decision, based on which specific axiom.&lt;/p>
 &lt;h2 id="conclusion">Conclusion
-&lt;/h2>&lt;p>The ACS Framework is not just a way to use AI; It is a knowledge management standard. It is the tool that allows us to go from &amp;ldquo;playing&amp;rdquo; with AI to &amp;ldquo;governing&amp;rdquo; information for making critical decisions in a volatile world.&lt;/p></description></item><item><title>Protocolo Unificado de Contexto para Asistentes (PUCA / ACS)</title><link>https://jimenezgomez.org/posts/2026-01-02-assistant-context-standard/</link><pubDate>Fri, 02 Jan 2026 19:30:00 +0000</pubDate><guid>https://jimenezgomez.org/posts/2026-01-02-assistant-context-standard/</guid><description>&lt;img src="https://jimenezgomez.org/posts/2026-01-02-assistant-context-standard/og-image.svg" alt="Featured image of post Protocolo Unificado de Contexto para Asistentes (PUCA / ACS)" />&lt;p>&lt;strong>Time:&lt;/strong> 20:30 UTC
+&lt;/h2>&lt;p>The ACS Framework is not just a way to use AI; it is a knowledge management standard. It is the tool that allows us to go from &amp;ldquo;playing&amp;rdquo; with AI to &amp;ldquo;governing&amp;rdquo; information for making critical decisions in a volatile world.&lt;/p></description></item><item><title>Unified Context Protocol for Assistants (UCPA / ACS)</title><link>https://jimenezgomez.org/posts/2026-01-02-assistant-context-standard/</link><pubDate>Fri, 02 Jan 2026 19:30:00 +0000</pubDate><guid>https://jimenezgomez.org/posts/2026-01-02-assistant-context-standard/</guid><description>&lt;img src="https://jimenezgomez.org/posts/2026-01-02-assistant-context-standard/og-image.svg" alt="Featured image of post Unified Context Protocol for Assistants (UCPA / ACS)" />&lt;p>&lt;strong>Time:&lt;/strong> 20:30 UTC
 &lt;strong>Original Proposal Credits:&lt;/strong> &lt;a class="link" href="https://jimenezgomez.org/posts/2025-12-30-assistant-context-standard/" target="_blank" rel="noopener"
 >https://jimenezgomez.org/posts/2025-12-30-assistant-context-standard/&lt;/a>&lt;/p>
 &lt;h2 id="1-introduction-the-problem-of-the-amnesia-effect">1. Introduction: The problem of the &amp;ldquo;Amnesia Effect&amp;rdquo;
@@ -528,17 +579,17 @@ Explicit &amp;ldquo;Priority Levels&amp;rdquo; instruction. If the context file 
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">author_context&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s2">&amp;#34;JimenezGomez&amp;#34;&lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">current_sprint&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">task&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s2">&amp;#34;Refactorización de la capa de autenticación&amp;#34;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">task&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s2">&amp;#34;Authentication layer refactoring&amp;#34;&lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">status&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s2">&amp;#34;In_Progress (60%)&amp;#34;&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">last_action&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s2">&amp;#34;Migración de JWT a cookies HttpOnly terminada&amp;#34;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">last_action&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s2">&amp;#34;JWT to HttpOnly cookies migration completed&amp;#34;&lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">rules&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="s2">&amp;#34;No usar librerías externas para el manejo de fechas&amp;#34;&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="s2">&amp;#34;Mantener compatibilidad con Python 3.9&amp;#34;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="s2">&amp;#34;Do not use external libraries for date handling&amp;#34;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="s2">&amp;#34;Maintain compatibility with Python 3.9&amp;#34;&lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">knowledge_base&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="s2">&amp;#34;UserDB: Tabla principal en PostgreSQL&amp;#34;&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="s2">&amp;#34;Legacy_Auth: No tocar hasta el sprint 4&amp;#34;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="s2">&amp;#34;UserDB: Main table in PostgreSQL&amp;#34;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="s2">&amp;#34;Legacy_Auth: Do not touch until sprint 4&amp;#34;&lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">last_update&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s2">&amp;#34;2026-01-02 20:25&amp;#34;&lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
@@ -597,10 +648,10 @@ Explicit &amp;ldquo;Priority Levels&amp;rdquo; instruction. If the context file 
 &lt;/span>&lt;span class="lnt">5
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Publicar un servicio SSH en dominio ddns&lt;/span>
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Publish an SSH service in the ddns domain&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">./avahi_publish_remote_service myssh _ssh._tcp &lt;span class="m">22&lt;/span> ddns
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Publicar automáticamente todas las IPs del host&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Automatically publish all host IPs&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">avahi_publish_remote_myips ddns
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
@@ -630,7 +681,7 @@ alt="Universal DNS Architecture"
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">.earth → .continent → .country → .region → .local
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ejemplo: server.barcelona.catalunya.europe.earth
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">example: server.barcelona.catalunya.europe.earth
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;/li>
@@ -735,7 +786,7 @@ alt="Universal DNS Architecture"
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">.sol → .planet → .settlement → .district → .host
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ejemplos:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">examples:
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">- gateway.olympuscity.mars.sol
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">- research.europamission.jupiter.sol
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">- mining.ceres.asteroid.sol
@@ -824,7 +875,7 @@ alt="DNS Distribution Scales"
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">.galaxy.milkyway → .arm → .sector → .system → .planet
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ejemplo: station.newearth.alphacen.orion.milkyway.galaxy
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">example: station.newearth.alphacen.orion.milkyway.galaxy
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;/li>
@@ -908,18 +959,18 @@ alt="DNS Distribution Scales"
 &lt;/span>&lt;span class="lnt">12
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">Fuentes de ingresos:
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">├── Donaciones criptográficas (ETH, BTC)
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">├── Grants de investigación espacial (NASA, ESA, SpaceX)
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">├── Venta de nombres premium en subastas (.mars, .io de Júpiter)
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">├── Servicios de consultoría para redes comunitarias
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">└── Publicaciones académicas y patentes abiertas
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">Revenue sources:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">├── Crypto donations (ETH, BTC)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">├── Space research grants (NASA, ESA, SpaceX)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">├── Premium name auctions (.mars, Jupiter&amp;#39;s .io)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">├── Consulting services for community networks
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">└── Academic publications and open patents
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Distribución:
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">├── 60% Salarios equipo investigación (incluyendo tu rol)
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">├── 20% Infraestructura servidores y experimentos
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">├── 15% Grants a proyectos externos
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">└── 5% Reserva operativa
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Allocation:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">├── 60% Research team salaries (including your role)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">├── 20% Server infrastructure and experiments
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">├── 15% Grants for external projects
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">└── 5% Operational reserve
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;h3 id="web-30-governance">Web 3.0 Governance
@@ -1037,17 +1088,17 @@ alt="Decentralized organization"
 &lt;/span>&lt;span class="lnt">11
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">Capa de Aplicación: DNS Queries (UDP/TCP puerto 53, DoH, DoT)
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">Application Layer: DNS Queries (UDP/TCP port 53, DoH, DoT)
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ↓
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Capa de Resolución: DDNSC + DHT (Kademlia)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Resolution Layer: DDNSC + DHT (Kademlia)
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ↓
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Capa de Autoridad: ENS/Handshake Blockchain + OrbitDB
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Authority Layer: ENS/Handshake Blockchain + OrbitDB
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ↓
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Capa de Transporte: libp2p (terrestre) / DTN Bundle (espacial)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Transport Layer: libp2p (terrestrial) / DTN Bundle (space)
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ↓
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Capa de Almacenamiento: IPFS (caché) + Bind (servidor local)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Storage Layer: IPFS (cache) + Bind (local server)
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ↓
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Capa de Red: Internet (IP) / Delay-Tolerant Networks
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Network Layer: Internet (IP) / Delay-Tolerant Networks
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;h2 id="open-research-areas">Open Research Areas
@@ -1094,11 +1145,11 @@ Simulate node network with scheduled latencies (3-22 random minutes) and measure
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">def&lt;/span> &lt;span class="fm">__init__&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="bp">self&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">name&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">value&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">lamport_clock&lt;/span>&lt;span class="p">):&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">name&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">name&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">value&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">value&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">clock&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">lamport_clock&lt;/span> &lt;span class="c1"># Contador lógico&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">clock&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">lamport_clock&lt;/span> &lt;span class="c1"># Logical counter&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">node_id&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">uuid&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">uuid4&lt;/span>&lt;span class="p">()&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">def&lt;/span> &lt;span class="nf">merge&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="bp">self&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">other&lt;/span>&lt;span class="p">):&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1"># Last-Write-Wins con desempate por node_id&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1"># Last-Write-Wins with node_id tiebreaker&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="n">other&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">clock&lt;/span> &lt;span class="o">&amp;gt;&lt;/span> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">clock&lt;/span>&lt;span class="p">:&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="n">other&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">elif&lt;/span> &lt;span class="n">other&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">clock&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">clock&lt;/span>&lt;span class="p">:&lt;/span>
@@ -1166,16 +1217,16 @@ Implement DNSSEC with Ed25519 (post-quantum) on the Ethereum blockchain as an al
 &lt;/span>&lt;span class="lnt">10
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">Nodos por planeta: 10⁹
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Registros por nodo: 5 (A, AAAA, 3× SRV)
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Tamaño por registro: 100 bytes
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Tamaño total zona: 10⁹ × 5 × 100 = 500 GB
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">Nodes per planet: 10⁹
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Records per node: 5 (A, AAAA, 3× SRV)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Size per record: 100 bytes
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Total zone size: 10⁹ × 5 × 100 = 500 GB
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Ventana de sincronización Tierra-Marte: 20 minutos = 1200 segundos
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Ancho de banda necesario: 500 GB / 1200 s = 417 MB/s = 3.3 Gbps
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Earth-Mars sync window: 20 minutes = 1200 seconds
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Required bandwidth: 500 GB / 1200 s = 417 MB/s = 3.3 Gbps
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Comparación: Deep Space Network de NASA alcanza 250 Mbps actualmente
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">→ Necesitamos 13× mejora en tecnología de comunicación espacial
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Comparison: NASA&amp;#39;s Deep Space Network currently reaches 250 Mbps
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">→ We need a 13× improvement in space communication technology
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;h3 id="blockchain-consensus-energy-cost">Blockchain Consensus Energy Cost
@@ -1195,17 +1246,17 @@ Implement DNSSEC with Ed25519 (post-quantum) on the Ethereum blockchain as an al
 &lt;/span>&lt;span class="lnt">11
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">Consumo por validador: 100W (Raspberry Pi 4)
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Validadores totales: 100
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Consumo total: 10 kW
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">Consumption per validator: 100W (Raspberry Pi 4)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Total validators: 100
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Total consumption: 10 kW
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Coste anual (electricidad a €0.20/kWh):
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">10 kW × 24 h × 365 días × €0.20 = €17,520
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Annual cost (electricity at €0.20/kWh):
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">10 kW × 24 h × 365 days × €0.20 = €17,520
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">En Marte (energía solar + baterías):
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Panel solar: 5 kW pico, €10,000 instalación + transporte
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Baterías: €15,000
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">→ Payback period: 1.4 años en Tierra, amortizado en 5 años en Marte
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">On Mars (solar + battery energy):
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Solar panel: 5 kW peak, €10,000 installation + transport
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Batteries: €15,000
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">→ Payback period: 1.4 years on Earth, amortized in 5 years on Mars
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;h3 id="dht-scalability">DHT Scalability
@@ -1501,13 +1552,13 @@ alt="Twitter Card"
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">┌─────────────────────────────────┐
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│ ÁREA LIBRE │
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│ CLEAR SPACE │
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│ ┌─────────────────┐ │
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│ │ │ │
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│ │ LOGO LAIA │ │
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│ │ │ │
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│ └─────────────────┘ │
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│ ÁREA LIBRE │
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│ CLEAR SPACE │
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">└─────────────────────────────────┘
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
@@ -1517,7 +1568,7 @@ alt="Twitter Card"
 &lt;li>&lt;strong>Icon only&lt;/strong>: No less than 32px&lt;/li>
 &lt;li>&lt;strong>Favicon&lt;/strong>: 16x16px, 32x32px, 64x64px&lt;/li>
 &lt;/ul>
-&lt;h3 id="allowed-funds">Allowed Funds
+&lt;h3 id="allowed-backgrounds">Allowed Backgrounds
 &lt;/h3>&lt;p>✅ &lt;strong>Recommended:&lt;/strong>&lt;/p>
 &lt;ul>
 &lt;li>Dark navy blue (#0f172a - #1e293b)&lt;/li>
@@ -1551,21 +1602,21 @@ alt="Twitter Card"
 &lt;/span>&lt;span class="lnt">15
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-css" data-lang="css">&lt;span class="line">&lt;span class="cl">&lt;span class="c">/* Colores Primarios */&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nt">--laia-blue-deep&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="p">#&lt;/span>&lt;span class="nn">0c4a6e&lt;/span> &lt;span class="c">/* Azul profundo */&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nt">--laia-blue-primary&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="p">#&lt;/span>&lt;span class="nn">0369a1&lt;/span> &lt;span class="c">/* Azul principal */&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nt">--laia-blue-light&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="p">#&lt;/span>&lt;span class="nn">60a5fa&lt;/span> &lt;span class="c">/* Azul claro */&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nt">--laia-blue-pale&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="p">#&lt;/span>&lt;span class="nn">bfdbfe&lt;/span> &lt;span class="c">/* Azul pálido */&lt;/span>
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-css" data-lang="css">&lt;span class="line">&lt;span class="cl">&lt;span class="c">/* Primary Colors */&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nt">--laia-blue-deep&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="p">#&lt;/span>&lt;span class="nn">0c4a6e&lt;/span> &lt;span class="c">/* Deep blue */&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nt">--laia-blue-primary&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="p">#&lt;/span>&lt;span class="nn">0369a1&lt;/span> &lt;span class="c">/* Primary blue */&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nt">--laia-blue-light&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="p">#&lt;/span>&lt;span class="nn">60a5fa&lt;/span> &lt;span class="c">/* Light blue */&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nt">--laia-blue-pale&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="p">#&lt;/span>&lt;span class="nn">bfdbfe&lt;/span> &lt;span class="c">/* Pale blue */&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c">/* Colores Neutros */&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nt">--laia-dark&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="p">#&lt;/span>&lt;span class="nn">0f172a&lt;/span> &lt;span class="c">/* Fondo oscuro */&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nt">--laia-slate&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="p">#&lt;/span>&lt;span class="nn">1e293b&lt;/span> &lt;span class="c">/* Gris pizarra */&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nt">--laia-gray&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="p">#&lt;/span>&lt;span class="nn">94a3b8&lt;/span> &lt;span class="c">/* Gris medio */&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nt">--laia-light&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="p">#&lt;/span>&lt;span class="nn">f0f9ff&lt;/span> &lt;span class="c">/* Casi blanco */&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c">/* Neutral Colors */&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nt">--laia-dark&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="p">#&lt;/span>&lt;span class="nn">0f172a&lt;/span> &lt;span class="c">/* Dark background */&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nt">--laia-slate&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="p">#&lt;/span>&lt;span class="nn">1e293b&lt;/span> &lt;span class="c">/* Slate gray */&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nt">--laia-gray&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="p">#&lt;/span>&lt;span class="nn">94a3b8&lt;/span> &lt;span class="c">/* Medium gray */&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nt">--laia-light&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="p">#&lt;/span>&lt;span class="nn">f0f9ff&lt;/span> &lt;span class="c">/* Almost white */&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c">/* Colores de Acento */&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c">/* Accent Colors */&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nt">--laia-accent-cyan&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="p">#&lt;/span>&lt;span class="nn">06b6d4&lt;/span> &lt;span class="c">/* Cyan */&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nt">--laia-accent-sky&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="p">#&lt;/span>&lt;span class="nn">38bdf8&lt;/span> &lt;span class="c">/* Cielo */&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nt">--laia-accent-sky&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="p">#&lt;/span>&lt;span class="nn">38bdf8&lt;/span> &lt;span class="c">/* Sky blue */&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;h2 id="design-philosophy">Design Philosophy
@@ -1642,15 +1693,15 @@ alt="Twitter Card"
 &lt;/span>&lt;span class="lnt">9
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">laia/ &lt;span class="c1"># Repositorio principal&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">├── brand/ &lt;span class="c1"># Carpeta de identidad visual&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│ ├── logo/ &lt;span class="c1"># Variantes del logo&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│ ├── icons/ &lt;span class="c1"># Iconos en múltiples tamaños&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│ ├── avatars/ &lt;span class="c1"># Perfiles redes sociales&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│ ├── banners/ &lt;span class="c1"># Banners y headers&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│ └── social/ &lt;span class="c1"># Templates redes sociales&lt;/span>
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">laia/ &lt;span class="c1"># Main repository&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">├── brand/ &lt;span class="c1"># Visual identity folder&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│ ├── logo/ &lt;span class="c1"># Logo variants&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│ ├── icons/ &lt;span class="c1"># Icons in multiple sizes&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│ ├── avatars/ &lt;span class="c1"># Social media profiles&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│ ├── banners/ &lt;span class="c1"># Banners and headers&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│ └── social/ &lt;span class="c1"># Social media templates&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">└── docs/
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> └── brand-guidelines.md &lt;span class="c1"># Guía de marca (este artículo)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> └── brand-guidelines.md &lt;span class="c1"># Brand guidelines (this article)&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;h2 id="real-world-applications">Real World Applications
@@ -1857,22 +1908,22 @@ alt="Laia - Ethical AI Research"
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">┌─────────────────────────────────────────┐
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│ API Gateway &amp;amp; Autenticación │
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│ API Gateway &amp;amp; Authentication │
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">├─────────────────────────────────────────┤
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│ Servicios Core │
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│ - Autenticación OAuth2/JWT │
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│ - Procesamiento de IA │
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│ - Almacenamiento Distribuido │
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│ - Colaboración en Tiempo Real │
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│ Core Services │
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│ - OAuth2/JWT Authentication │
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│ - AI Processing │
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│ - Distributed Storage │
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│ - Real-Time Collaboration │
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">├─────────────────────────────────────────┤
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│ Capa de Datos │
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│ Data Layer │
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│ - SQL (PostgreSQL) │
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│ - NoSQL (almacenamiento distribuido) │
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│ - NoSQL (distributed storage) │
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">├─────────────────────────────────────────┤
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│ Seguridad &amp;amp; Monitoreo │
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│ - Cifrado TLS/SSL, AES-256 │
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│ - Auditoría (ELK Stack) │
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│ - Monitoreo (Prometheus/Grafana) │
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│ Security &amp;amp; Monitoring │
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│ - TLS/SSL Encryption, AES-256 │
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│ - Auditing (ELK Stack) │
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│ - Monitoring (Prometheus/Grafana) │
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">└─────────────────────────────────────────┘
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
@@ -2045,7 +2096,7 @@ alt="Laia - Ethical AI Research"
 >github.com/javi-jimenez/laia&lt;/a>&lt;br>
 &lt;strong>LinkedIn:&lt;/strong> &lt;a class="link" href="https://www.linkedin.com/in/ximenezfrancisco/" target="_blank" rel="noopener"
 >Francisco Javier Jiménez Gómez&lt;/a>&lt;/p>
-&lt;p>&lt;strong>Tags:&lt;/strong> #AIÉtica #Artificial Intelligence #OpenSource #Research #Transparency #Common Good #Sustainability&lt;/p>
+&lt;p>&lt;strong>Tags:&lt;/strong> #EthicalAI #ArtificialIntelligence #OpenSource #Research #Transparency #CommonGood #Sustainability&lt;/p>
 &lt;hr>
 &lt;p>&lt;em>&amp;ldquo;The true measure of artificial intelligence is not in what it can do, but in how it improves people&amp;rsquo;s lives while respecting their rights and dignity.&amp;rdquo;&lt;/em>&lt;/p></description></item><item><title>SPA blog in one file</title><link>https://jimenezgomez.org/posts/2025-12-02-08-54-spa-blog-in-one-file/</link><pubDate>Tue, 02 Dec 2025 00:00:00 +0000</pubDate><guid>https://jimenezgomez.org/posts/2025-12-02-08-54-spa-blog-in-one-file/</guid><description>&lt;img src="https://jimenezgomez.org/posts/2025-12-02-08-54-spa-blog-in-one-file/og-image.svg" alt="Featured image of post SPA blog in one file" />&lt;hr>
 &lt;style>

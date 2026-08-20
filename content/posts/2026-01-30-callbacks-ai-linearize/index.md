@@ -4,7 +4,6 @@ date: 2026-01-30T12:00:00+01:00
 draft: false
 layout: post
 image: "og-image.svg"
----
 og_image: "og-image.svg"
 tags:
 ---
@@ -82,13 +81,13 @@ async function getUserAndSave(id) {
   return storage.save(profile);
 }
 
-// Uso con manejo centralizado de errores
+// Usage with centralized error handling
 (async () => {
   try {
     const result = await getUserAndSave(42);
-    console.log('Guardado:', result);
+    console.log('Saved:', result);
   } catch (err) {
-    console.error('Error en flujo:', err);
+    console.error('Flow error:', err);
   }
 })();
 ```
@@ -118,7 +117,7 @@ getUserAndSavePipeline(42).then(console.log).catch(console.error);
 Example of minimal prompt for AI:
 
 ```
-Refactoriza esta función callback para que use async/await, extrae responsabilidades en funciones pequeñas, añade tests unitarios Mocha/Chai y sugiere nombres claros.
+Refactor this callback-based function to use async/await, extract responsibilities into small functions, add Mocha/Chai unit tests, and suggest clear names.
 ```
 
 **Additional best practices**

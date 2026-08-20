@@ -5,13 +5,13 @@ draft: false
 layout: post
 image: "og-image.svg"
 og_image: og-image-1200x630.png
-description: "Estrategia dual: smartphone sin SIM en WiFi y teléfono básico para llamadas urgentes, para recuperar atención y batería."
+description: "Dual strategy: a SIM-free smartphone on Wi-Fi and a basic phone for urgent calls to regain attention and battery life."
 # Tags
 tags:
-   - movilidad
-   - resiliencia
-   - productividad
-   - teléfono
+   - mobility
+   - resilience
+   - productivity
+   - phone
 ---
 # Resilience in connectivity - The perfect combination: SIM-free smartphone + eternal basic phone
 
@@ -83,7 +83,7 @@ The effectiveness of the system depends on a **change in communication protocol*
 2. **Smartphone without SIM:** At home or office, connected to WiFi at established times
 3. **Different response times:**
 - Calls to the basic telephone: immediate response (emergencies)
-   - Messages in apps: response in 30-minute windows, 2-3 times a day
+- Messages in apps: response in 30-minute windows, 2-3 times a day
 
 
 ## DEMONSTRATED TANGIBLE BENEFITS
@@ -138,7 +138,7 @@ The effectiveness of the system depends on a **change in communication protocol*
 
 ### **"My contacts are not going to adapt"**
 - Most respect clear systems when explained politely
--Those who insist on calling for trivialities gradually learn
+- Those who insist on calling for trivialities gradually learn
 - Automatically filter relationships according to your limits
 
 

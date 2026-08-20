@@ -89,22 +89,22 @@ The project contemplates a scalable and modular architecture based on cloud comp
 
 ```
 ┌─────────────────────────────────────────┐
-│     API Gateway & Autenticación         │
+│      API Gateway & Authentication       │
 ├─────────────────────────────────────────┤
-│  Servicios Core                         │
-│  - Autenticación OAuth2/JWT             │
-│  - Procesamiento de IA                  │
-│  - Almacenamiento Distribuido           │
-│  - Colaboración en Tiempo Real          │
+│  Core Services                          │
+│  - OAuth2/JWT Authentication            │
+│  - AI Processing                        │
+│  - Distributed Storage                  │
+│  - Real-Time Collaboration              │
 ├─────────────────────────────────────────┤
-│  Capa de Datos                          │
+│  Data Layer                             │
 │  - SQL (PostgreSQL)                     │
-│  - NoSQL (almacenamiento distribuido)   │
+│  - NoSQL (distributed storage)          │
 ├─────────────────────────────────────────┤
-│  Seguridad & Monitoreo                  │
-│  - Cifrado TLS/SSL, AES-256             │
-│  - Auditoría (ELK Stack)                │
-│  - Monitoreo (Prometheus/Grafana)       │
+│  Security & Monitoring                  │
+│  - TLS/SSL Encryption, AES-256          │
+│  - Auditing (ELK Stack)                 │
+│  - Monitoring (Prometheus/Grafana)      │
 └─────────────────────────────────────────┘
 ```
 
@@ -271,7 +271,7 @@ Together we can build AI technologies essential for a sustainable digital future
 **GitHub:** [github.com/javi-jimenez/laia](https://github.com/javi-jimenez/laia)  
 **LinkedIn:** [Francisco Javier Jiménez Gómez](https://www.linkedin.com/in/ximenezfrancisco/)
 
-**Tags:** #AIÉtica #Artificial Intelligence #OpenSource #Research #Transparency #Common Good #Sustainability
+**Tags:** #EthicalAI #ArtificialIntelligence #OpenSource #Research #Transparency #CommonGood #Sustainability
 
 ---
 
