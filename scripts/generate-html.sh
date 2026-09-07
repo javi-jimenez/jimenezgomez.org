@@ -10,6 +10,7 @@ if command -v hugo >/dev/null 2>&1; then
   exit 0
 fi
 
-IMAGE="${HUGO_DOCKER_IMAGE:-klakegg/hugo:0.155.2-ext}"
+IMAGE="${HUGO_DOCKER_IMAGE:-ghcr.io/gohugoio/hugo:latest}"
 echo "Running Hugo via Docker image ${IMAGE}"
-docker run --rm -v "$PWD":/src -w /src "${IMAGE}" hugo --minify
+# La imagen oficial de gohugoio usa hugo como entrypoint (no repetir `hugo`).
+docker run --rm -v "$PWD":/src -w /src "${IMAGE}" --minify

@@ -1,0 +1,19 @@
+# Contexto de build de Docker: no enviar secretos ni artefactos
+# locales al daemon al construir imágenes del proyecto.
+
+# Secretos / entorno local
+.env
+
+# Artefactos generados
+public/
+resources/
+
+# Control de versiones y editor
+.git
+.gitignore
+.obsidian/
+.DS_Store
+thumbs.db
+
+# Temas y dependencias de terceros (se copian si hace falta explícitamente)
+themes/

@@ -1,0 +1,44 @@
+# ============================================================
+# Dockerfile.dev — contenedor de desarrollo portable
+#
+# Contiene el CLI de Drone + docker client + make, para poder
+# ejecutar TODO el flujo desde un contenedor sin instalar nada
+# en el host:
+#   make dev-container                 # shell interactivo
+#   make dev-container make drone-run  # ejecuta el pipeline .drone.yml
+#
+# El repo y el socket de Docker se montan desde el host
+# (ver target `dev-container` en el Makefile).
+# ============================================================
+
+FROM alpine:3.18
+
+# Herramientas base del contenedor de desarrollo
+RUN apk add --no-cache \
+    make \
+    docker-cli \
+    bash \
+    git \
+    curl \
+    ca-certificates
+
+# CLI de Drone (harness/drone-cli) como binario en /usr/local/bin
+ARG DRONE_CLI_VERSION=latest
+RUN set -eux; \
+    arch="$(apk --print-arch)"; \
+    case "$arch" in \
+      x86_64)  dlarch="amd64" ;; \
+      aarch64) dlarch="arm64" ;; \
+      *) echo "Unsupported arch: $arch" >&2; exit 1 ;; \
+    esac; \
+    if [ "$DRONE_CLI_VERSION" = "latest" ]; then \
+      url="https://github.com/harness/drone-cli/releases/latest/download/drone_linux_${dlarch}.tar.gz"; \
+    else \
+      url="https://github.com/harness/drone-cli/releases/download/${DRONE_CLI_VERSION}/drone_linux_${dlarch}.tar.gz"; \
+    fi; \
+    curl -fsSL "$url" | tar -xz -C /usr/local/bin drone; \
+    chmod +x /usr/local/bin/drone
+
+# Punto de entrada por defecto: shell interactivo (si se usa -it)
+WORKDIR /work
+CMD ["/bin/sh"]
