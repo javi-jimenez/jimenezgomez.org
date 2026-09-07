@@ -15,5 +15,5 @@ resources/
 .DS_Store
 thumbs.db
 
-# Temas y dependencias de terceros (se copian si hace falta explícitamente)
-themes/
+# Artefactos temporales de Hugo (lock de build)
+.hugo_build.lock
