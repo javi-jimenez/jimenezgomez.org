@@ -1,0 +1,34 @@
+# Workflow de Gitea Actions para jimenezgomez.org
+# Ejecuta los targets de Make (fuente de verdad). Disparo manual (workflow_dispatch).
+name: build
+
+on:
+  workflow_dispatch: {}
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: '0.145.0'
+          extended: true
+
+      - name: make dep
+        run: make dep
+
+      - name: make build
+        run: make build
+
+      - name: Upload public artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: public
+          path: public/
+          if-no-files-found: error
