@@ -1,5 +1,14 @@
 # Workflow de Gitea Actions para jimenezgomez.org
-# Ejecuta los targets de Make (fuente de verdad). Disparo manual (workflow_dispatch).
+#
+# Compila el sitio con Hugo (Makefile = fuente de verdad) y lo despliega
+# por FTP/FTPS al hosting de OVH.
+#
+# Secretos requeridos (Settings > Actions > Secrets del repo en Gitea):
+#   FTP_SERVER    - host FTP/FTPS
+#   FTP_USERNAME  - usuario FTP
+#   FTP_PASSWORD  - contraseña FTP
+# Opcional:
+#   FTP_REMOTE_PATH - ruta remota (por defecto /jimenezgomez.org/)
 name: build
 
 on:
@@ -8,7 +17,7 @@ on:
     branches: [main]
 
 jobs:
-  build:
+  build-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -20,15 +29,28 @@ jobs:
           hugo-version: '0.145.0'
           extended: true
 
-      - name: make dep
-        run: make dep
+      - name: Install lftp
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y lftp
 
-      - name: make build
+      - name: Build site (make build)
         run: make build
 
-      - name: Upload public artifact
+      - name: Deploy to OVH FTP (make ftp-deploy)
+        # Solo si los secretos están definidos (permite testear el build sin deploy).
+        if: ${{ secrets.FTP_SERVER != '' }}
+        env:
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+          FTP_REMOTE_PATH: ${{ secrets.FTP_REMOTE_PATH }}
+        run: make ftp-deploy
+
+      - name: Upload public artifact (respaldo)
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: public
           path: public/
-          if-no-files-found: error
+          if-no-files-found: warn

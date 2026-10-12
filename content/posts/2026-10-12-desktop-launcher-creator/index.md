@@ -3,7 +3,7 @@ title: "Desktop Launcher Creator: giving a launcher to the apps that ship withou
 date: 2026-10-12T00:00:00+02:00
 draft: false
 layout: post
-image: "screenshot.png"
+image: "og-image.svg"
 og_image: screenshot.png
 tags:
   - linux

@@ -5,3 +5,7 @@
 .DS_Store
 thumbs.db
 .obsidian/
+
+# Hugo build cache / lockfile (se regeneran en cada build)
+/resources/_gen/
+.hugo_build.lock

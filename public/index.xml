@@ -1,4 +1,892 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Home on Francisco Javier Jiménez Gómez</title><link>https://jimenezgomez.org/</link><description>Recent content in Home on Francisco Javier Jiménez Gómez</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>Francisco Javier Jiménez Gómez</copyright><lastBuildDate>Thu, 20 Aug 2026 08:27:00 +0100</lastBuildDate><atom:link href="https://jimenezgomez.org/index.xml" rel="self" type="application/rss+xml"/><item><title>📄 Article: The Universal Container: Why SQL + JSON is the Most Practical Data Architecture Today (202608200826)</title><link>https://jimenezgomez.org/posts/2026-08-20-universal-data-container/</link><pubDate>Thu, 20 Aug 2026 08:27:00 +0100</pubDate><guid>https://jimenezgomez.org/posts/2026-08-20-universal-data-container/</guid><description>&lt;img src="https://jimenezgomez.org/posts/2026-08-20-universal-data-container/universal-data-container.svg" alt="Featured image of post 📄 Article: The Universal Container: Why SQL + JSON is the Most Practical Data Architecture Today (202608200826)" />&lt;p>&lt;img src="https://jimenezgomez.org/universal-data-container.svg"
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Home on Francisco Javier Jiménez Gómez</title><link>https://jimenezgomez.org/</link><description>Recent content in Home on Francisco Javier Jiménez Gómez</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>Francisco Javier Jiménez Gómez</copyright><lastBuildDate>Mon, 12 Oct 2026 00:00:00 +0200</lastBuildDate><atom:link href="https://jimenezgomez.org/index.xml" rel="self" type="application/rss+xml"/><item><title>Desktop Launcher Creator: giving a launcher to the apps that ship without one</title><link>https://jimenezgomez.org/posts/2026-10-12-desktop-launcher-creator/</link><pubDate>Mon, 12 Oct 2026 00:00:00 +0200</pubDate><guid>https://jimenezgomez.org/posts/2026-10-12-desktop-launcher-creator/</guid><description>&lt;img src="https://jimenezgomez.org/posts/2026-10-12-desktop-launcher-creator/og-image.svg" alt="Featured image of post Desktop Launcher Creator: giving a launcher to the apps that ship without one" />&lt;h1 id="desktop-launcher-creator">Desktop Launcher Creator
+&lt;/h1>&lt;p>Modern Linux desktops receive applications from at least three different worlds:
+&lt;strong>Debian packages&lt;/strong>, &lt;strong>Snap&lt;/strong> and &lt;strong>Flatpak&lt;/strong>. Each has its own idea of where the
+application lives and, sometimes, whether it deserves an entry in the applications
+menu. The result is a familiar annoyance: a program you have installed is there,
+but you cannot find it — and there is no obvious way to create a launcher for it.&lt;/p>
+&lt;p>&lt;strong>Desktop Launcher Creator&lt;/strong> is a small GTK application that fixes exactly that.
+It scans the applications installed through Debian, Snap and Flatpak, shows them
+in a simple list, and creates a &lt;code>.desktop&lt;/code> launcher for whatever you select.&lt;/p>
+&lt;p>&lt;img src="https://jimenezgomez.org/posts/2026-10-12-desktop-launcher-creator/screenshot.png"
+width="616"
+height="666"
+srcset="https://jimenezgomez.org/posts/2026-10-12-desktop-launcher-creator/screenshot_hu918fdd2cc0ff13044cfd5c3d88827e29_62216_480x0_resize_box_3.png 480w, https://jimenezgomez.org/posts/2026-10-12-desktop-launcher-creator/screenshot_hu918fdd2cc0ff13044cfd5c3d88827e29_62216_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+alt="Desktop Launcher Creator"
+class="gallery-image"
+data-flex-grow="92"
+data-flex-basis="221px"
+>&lt;/p>
+&lt;h2 id="what-it-does">What it does
+&lt;/h2>&lt;ul>
+&lt;li>&lt;strong>Reads installed applications&lt;/strong> from the Debian, Snap and Flatpak sources.&lt;/li>
+&lt;li>&lt;strong>Shows them in a single list&lt;/strong>, so you can see what is actually installed.&lt;/li>
+&lt;li>&lt;strong>Creates a &lt;code>.desktop&lt;/code> launcher&lt;/strong> for the one you pick, ready to appear in your
+applications menu.&lt;/li>
+&lt;/ul>
+&lt;p>The interface is intentionally minimal: a source selector (&lt;code>Debian | Snap | Flatpak&lt;/code>), the list of applications, a destination and a single action button.
+No configuration files to hand-edit, no guessing at &lt;code>Exec=&lt;/code> lines.&lt;/p>
+&lt;h2 id="how-it-is-built">How it is built
+&lt;/h2>&lt;p>The application is written in &lt;strong>Python 3.12&lt;/strong> with &lt;strong>GTK 3&lt;/strong> (PyGObject and
+pycairo). It follows the same philosophy I keep coming back to: keep the core
+logic independent from the interface, and let the interface be an adapter. In
+this case the &lt;em>core&lt;/em> is &amp;ldquo;enumerate installed applications and produce a launcher
+file&amp;rdquo;; the GTK window is just one way to drive it.&lt;/p>
+&lt;p>It is licensed under the &lt;strong>GPL-3.0-or-later&lt;/strong>.&lt;/p>
+&lt;h2 id="getting-it">Getting it
+&lt;/h2>&lt;p>Pre-built packages are attached to every release:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Debian/Ubuntu&lt;/strong>: &lt;code>.deb&lt;/code>&lt;/li>
+&lt;li>&lt;strong>Flatpak&lt;/strong>: &lt;code>.flatpak&lt;/code> bundle&lt;/li>
+&lt;li>&lt;strong>Snap&lt;/strong>: &lt;code>.snap&lt;/code>&lt;/li>
+&lt;li>&lt;strong>AppImage&lt;/strong>: portable &lt;code>.AppImage&lt;/code>&lt;/li>
+&lt;li>&lt;strong>Python&lt;/strong>: wheel and source distribution (&lt;code>.whl&lt;/code>, &lt;code>.tar.gz&lt;/code>)&lt;/li>
+&lt;/ul>
+&lt;p>You can find them under the &lt;em>Releases&lt;/em> section of the project:&lt;/p>
+&lt;ul>
+&lt;li>GitHub: &lt;a class="link" href="https://github.com/javi-jimenez/desktop-launcher-creator/releases" target="_blank" rel="noopener"
+>https://github.com/javi-jimenez/desktop-launcher-creator/releases&lt;/a>&lt;/li>
+&lt;li>Gitea (self-hosted): &lt;a class="link" href="https://gitea.app.brisecom.net/gitea/desktop-launcher-creator/releases" target="_blank" rel="noopener"
+>https://gitea.app.brisecom.net/gitea/desktop-launcher-creator/releases&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>Every release is built automatically from a tagged commit, so the artifacts and
+the source always match.&lt;/p></description></item><item><title>From Unix Commands to APIs: Designing Software Around Contracts, Not Interfaces</title><link>https://jimenezgomez.org/posts/2026-09-07-contract-first-interface-agnostic-design/</link><pubDate>Mon, 07 Sep 2026 00:00:00 +0000</pubDate><guid>https://jimenezgomez.org/posts/2026-09-07-contract-first-interface-agnostic-design/</guid><description>&lt;img src="https://jimenezgomez.org/posts/2026-09-07-contract-first-interface-agnostic-design/og-image.svg" alt="Featured image of post From Unix Commands to APIs: Designing Software Around Contracts, Not Interfaces" />&lt;h1 id="from-unix-commands-to-apis-designing-software-around-contracts-not-interfaces">From Unix Commands to APIs: Designing Software Around Contracts, Not Interfaces
+&lt;/h1>&lt;p>There is a recurring problem in software engineering that is rarely discussed explicitly: we often design the program around its user interface.&lt;/p>
+&lt;p>A command-line application becomes a collection of commands. A web application becomes a collection of HTTP endpoints. A desktop application becomes a collection of screens and event handlers.&lt;/p>
+&lt;p>Then, sooner or later, someone wants an API, a CLI, a GUI, a Python library, or a browser extension.&lt;/p>
+&lt;p>The result is often duplication, adapters built on top of other adapters, and business logic scattered across presentation layers.&lt;/p>
+&lt;p>There is another way.&lt;/p>
+&lt;p>The approach I have been exploring can be summarized as:&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>Define the operation and its input/output contract first. Make the interface an adapter.&lt;/strong>&lt;/p>
+&lt;/blockquote>
+&lt;p>I would call this &lt;strong>Contract-First, Interface-Agnostic Design&lt;/strong>.&lt;/p>
+&lt;p>It is not a completely new architecture. It is a practical combination of several established ideas: Unix philosophy, separation of concerns, hexagonal architecture (Ports and Adapters), structured data contracts, and file-based persistence.&lt;/p>
+&lt;p>But putting them together leads to a particularly useful design style for small Unix-oriented tools.&lt;/p>
+&lt;h2 id="the-interface-should-not-define-the-program">The Interface Should Not Define the Program
+&lt;/h2>&lt;p>Consider a simple operation:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-text" data-lang="text">&lt;span class="line">&lt;span class="cl">get secret
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>The important question is not whether this operation is exposed through HTTP or a shell command.&lt;/p>
+&lt;p>The important question is:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-text" data-lang="text">&lt;span class="line">&lt;span class="cl">What does &amp;#34;get secret&amp;#34; mean?
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">What does it receive?
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">What does it return?
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">What errors can it produce?
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>For example:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-text" data-lang="text">&lt;span class="line">&lt;span class="cl">Input:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> path = &amp;#34;brisecom/ovh&amp;#34;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Output:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> name
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> type
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> content
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> metadata
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Errors:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> NOT_FOUND
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ACCESS_DENIED
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> DECRYPTION_FAILED
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Once this contract exists, many interfaces can implement it.&lt;/p>
+&lt;p>A command-line interface might expose:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">secrets get brisecom/ovh
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>An HTTP API might expose:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-http" data-lang="http">&lt;span class="line">&lt;span class="cl">&lt;span class="err">GET /v1/secrets/brisecom/ovh
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>A Python client might expose:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">secrets&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">get&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;brisecom/ovh&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>A graphical application might present:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-text" data-lang="text">&lt;span class="line">&lt;span class="cl">Secrets
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">+-- brisecom
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> +-- ovh
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>But underneath, they are all invoking the same operation.&lt;/p>
+&lt;p>The operation is the important abstraction.&lt;/p>
+&lt;p>The interface is not.&lt;/p>
+&lt;h2 id="unix-already-had-this-idea">Unix Already Had This Idea
+&lt;/h2>&lt;p>The Unix philosophy has always encouraged small programs that do one thing well and communicate through simple interfaces.&lt;/p>
+&lt;p>For example:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">cat file &lt;span class="p">|&lt;/span> grep something &lt;span class="p">|&lt;/span> sort
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Each program has a relatively simple contract:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-text" data-lang="text">&lt;span class="line">&lt;span class="cl">input -&amp;gt; processing -&amp;gt; output
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Standard input, standard output, standard error and exit codes provide a surprisingly powerful protocol.&lt;/p>
+&lt;p>The problem is that modern application development often abandons this simplicity.&lt;/p>
+&lt;p>Instead of:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-text" data-lang="text">&lt;span class="line">&lt;span class="cl">input -&amp;gt; operation -&amp;gt; output
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>we get:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-text" data-lang="text">&lt;span class="line">&lt;span class="cl">HTTP request
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">controller
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">framework
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">service
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ORM
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">database
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">model
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">serializer
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">HTTP response
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Sometimes all of that is justified.&lt;/p>
+&lt;p>Sometimes it is simply accidental complexity.&lt;/p>
+&lt;h2 id="structured-output-changes-everything">Structured Output Changes Everything
+&lt;/h2>&lt;p>A traditional Unix command might print:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-text" data-lang="text">&lt;span class="line">&lt;span class="cl">Secret found: brisecom/ovh
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Username: paco
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Password: ********
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>That is convenient for a human but difficult for another program to consume reliably.&lt;/p>
+&lt;p>Instead, the command can provide structured output:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;span class="lnt">8
+&lt;/span>&lt;span class="lnt">9
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-json" data-lang="json">&lt;span class="line">&lt;span class="cl">&lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;ok&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kc">true&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;data&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;name&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;brisecom/ovh&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;username&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;paco&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;password&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;...&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;error&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kc">null&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Now the same program becomes useful to both humans and machines.&lt;/p>
+&lt;p>For example:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">secrets get brisecom/ovh &lt;span class="p">|&lt;/span> jq .data.password
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>The CLI has effectively become a small API over standard output.&lt;/p>
+&lt;p>This is an important design principle:&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>Machine-readable output should be a first-class interface, not an afterthought.&lt;/strong>&lt;/p>
+&lt;/blockquote>
+&lt;p>For CLI programs, I particularly like the traditional Unix separation:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-text" data-lang="text">&lt;span class="line">&lt;span class="cl">stdout -&amp;gt; data
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">stderr -&amp;gt; human diagnostics
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">exit code -&amp;gt; success/failure
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>That gives shell scripts a stable contract without sacrificing usability for humans.&lt;/p>
+&lt;h2 id="the-core-should-know-nothing-about-http">The Core Should Know Nothing About HTTP
+&lt;/h2>&lt;p>Suppose we implement:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="k">def&lt;/span> &lt;span class="nf">get_secret&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">path&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">...&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>That function should not know whether the caller is:&lt;/p>
+&lt;ul>
+&lt;li>a browser,&lt;/li>
+&lt;li>curl,&lt;/li>
+&lt;li>a Python program,&lt;/li>
+&lt;li>a desktop application,&lt;/li>
+&lt;li>a shell script,&lt;/li>
+&lt;li>or another server.&lt;/li>
+&lt;/ul>
+&lt;p>It should simply perform the operation and return a result.&lt;/p>
+&lt;p>Bad design:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="k">def&lt;/span> &lt;span class="nf">get_secret&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">path&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;Looking for secret...&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="n">jsonify&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="o">...&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Now the business operation knows about both the console and HTTP.&lt;/p>
+&lt;p>A better design is:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="k">def&lt;/span> &lt;span class="nf">get_secret&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">path&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="n">store&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">get&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">path&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>The HTTP layer converts that result into HTTP.&lt;/p>
+&lt;p>The CLI layer converts it into terminal output.&lt;/p>
+&lt;p>The Python library exposes it as a Python object.&lt;/p>
+&lt;p>The core remains independent.&lt;/p>
+&lt;p>This is essentially the &lt;strong>Ports and Adapters&lt;/strong> idea applied at a very practical scale.&lt;/p>
+&lt;h2 id="files-can-be-the-authority">Files Can Be the Authority
+&lt;/h2>&lt;p>This becomes particularly interesting when the persistent data is deliberately kept outside the service.&lt;/p>
+&lt;p>Imagine a secret store:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;span class="lnt">8
+&lt;/span>&lt;span class="lnt">9
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-text" data-lang="text">&lt;span class="line">&lt;span class="cl">~/.password-store/
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">+-- github.gpg
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">+-- google.gpg
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">+-- amazon.gpg
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">|
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">+-- brisecom/
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> +-- ovh.gpg
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> +-- cloudflare.gpg
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>The service does not own a database containing these secrets.&lt;/p>
+&lt;p>The files are the authority.&lt;/p>
+&lt;p>GPG provides encryption.&lt;/p>
+&lt;p>The filesystem provides persistence.&lt;/p>
+&lt;p>Git can provide versioning.&lt;/p>
+&lt;p>Syncthing can provide synchronization.&lt;/p>
+&lt;p>A service can provide an API.&lt;/p>
+&lt;p>A GUI can provide a graphical interface.&lt;/p>
+&lt;p>A browser extension can provide browser integration.&lt;/p>
+&lt;p>The architecture becomes:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-text" data-lang="text">&lt;span class="line">&lt;span class="cl"> ENCRYPTED FILES
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> +--------------+--------------+
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> | | |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> GPG Git Syncthing
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> v
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> SERVICE
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> +----+-----+---------+
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> | | | |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> CLI API GUI Browser
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>This is a very different philosophy from:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-text" data-lang="text">&lt;span class="line">&lt;span class="cl">Application
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Database
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Everything
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>The service becomes replaceable.&lt;/p>
+&lt;p>The data does not depend on the service.&lt;/p>
+&lt;h2 id="a-file-does-not-have-to-contain-text">A File Does Not Have to Contain Text
+&lt;/h2>&lt;p>This principle also avoids a common mistake: assuming that everything in a secrets system is a string.&lt;/p>
+&lt;p>Credentials can be text.&lt;/p>
+&lt;p>But secrets can also be:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-text" data-lang="text">&lt;span class="line">&lt;span class="cl">private keys
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">TLS certificates
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">PKCS#12 files
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">SSH keys
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">client certificates
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">configuration files
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">binary credentials
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>There is no reason to turn every one of these into a JSON record.&lt;/p>
+&lt;p>A file-based service can preserve the original object:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-text" data-lang="text">&lt;span class="line">&lt;span class="cl">certificate.p12.gpg
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">private-key.pem.gpg
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">client.key.gpg
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>The encrypted file remains opaque.&lt;/p>
+&lt;p>When requested, the service decrypts it and returns the original bytes.&lt;/p>
+&lt;p>This leads to another useful distinction:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-text" data-lang="text">&lt;span class="line">&lt;span class="cl">Structured secret -&amp;gt; JSON
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Binary secret -&amp;gt; bytes
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>The API does not need to understand every type of secret.&lt;/p>
+&lt;p>It only needs to understand the contract for storing and retrieving them.&lt;/p>
+&lt;h2 id="the-api-becomes-an-adapter">The API Becomes an Adapter
+&lt;/h2>&lt;p>Once the core operations are defined, an HTTP API becomes relatively boring.&lt;/p>
+&lt;p>And that is a good thing.&lt;/p>
+&lt;p>For example:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-http" data-lang="http">&lt;span class="line">&lt;span class="cl">&lt;span class="err">GET /v1/secrets
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="err">GET /v1/secrets/{path}
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="err">PUT /v1/secrets/{path}
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="err">DELETE /v1/secrets/{path}
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>The HTTP layer does four basic things:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-text" data-lang="text">&lt;span class="line">&lt;span class="cl">HTTP request
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">validate input
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">invoke operation
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">serialize result
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>It should not contain the actual storage logic.&lt;/p>
+&lt;p>The CLI does essentially the same:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-text" data-lang="text">&lt;span class="line">&lt;span class="cl">CLI arguments
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">validate input
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">invoke operation
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">serialize result
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>The difference is only the transport.&lt;/p>
+&lt;p>This is why designing the contract before designing the interface is so powerful.&lt;/p>
+&lt;h2 id="one-core-many-interfaces">One Core, Many Interfaces
+&lt;/h2>&lt;p>The resulting architecture is surprisingly simple:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-text" data-lang="text">&lt;span class="line">&lt;span class="cl"> +------------+
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> | Core |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> | Operations |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> +------+-----+
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> +-------------+-------------+
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> | | |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> CLI HTTP Library
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> | | |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> terminal REST/JSON Python/Go
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>The interfaces are replaceable.&lt;/p>
+&lt;p>The core operations are stable.&lt;/p>
+&lt;p>The persistent data is independent again.&lt;/p>
+&lt;p>That gives us three particularly useful layers:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-text" data-lang="text">&lt;span class="line">&lt;span class="cl">DATA
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">SERVICE
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">INTERFACE
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>For a Unix-oriented system, this is an extremely natural decomposition.&lt;/p>
+&lt;h2 id="this-is-not-microservices">This Is Not Microservices
+&lt;/h2>&lt;p>There is an important distinction here.&lt;/p>
+&lt;p>This architecture does not require dozens of services.&lt;/p>
+&lt;p>In fact, it often works best with one small program.&lt;/p>
+&lt;p>For example:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-text" data-lang="text">&lt;span class="line">&lt;span class="cl">secretsd
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>could be a single Go binary providing:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-text" data-lang="text">&lt;span class="line">&lt;span class="cl">CLI
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Unix socket
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">HTTP API
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>while the underlying storage remains:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-text" data-lang="text">&lt;span class="line">&lt;span class="cl">filesystem + GPG
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>There is no need for:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-text" data-lang="text">&lt;span class="line">&lt;span class="cl">Kubernetes
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">database cluster
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">message broker
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ORM
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">service mesh
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>unless the actual problem requires them.&lt;/p>
+&lt;p>The objective is not distributed architecture.&lt;/p>
+&lt;p>The objective is &lt;strong>clear boundaries&lt;/strong>.&lt;/p>
+&lt;h2 id="a-useful-set-of-rules">A Useful Set of Rules
+&lt;/h2>&lt;p>When designing this kind of application, I find the following rules useful.&lt;/p>
+&lt;h3 id="1-define-operations-before-interfaces">1. Define operations before interfaces
+&lt;/h3>&lt;p>Start with:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-text" data-lang="text">&lt;span class="line">&lt;span class="cl">get
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">put
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">delete
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">list
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">generate
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>not:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-text" data-lang="text">&lt;span class="line">&lt;span class="cl">GET /api/...
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">POST /api/...
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="2-define-input-and-output-explicitly">2. Define input and output explicitly
+&lt;/h3>&lt;p>Every operation should have a recognizable contract.&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-text" data-lang="text">&lt;span class="line">&lt;span class="cl">Input -&amp;gt; Operation -&amp;gt; Result
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="3-keep-presentation-out-of-the-core">3. Keep presentation out of the core
+&lt;/h3>&lt;p>The core should not know about:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-text" data-lang="text">&lt;span class="line">&lt;span class="cl">HTML
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">HTTP
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">terminals
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">GTK
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">React
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="4-make-machine-readable-output-first-class">4. Make machine-readable output first-class
+&lt;/h3>&lt;p>Use structured output where appropriate.&lt;/p>
+&lt;p>JSON is useful, but not mandatory for binary data.&lt;/p>
+&lt;h3 id="5-use-unix-conventions">5. Use Unix conventions
+&lt;/h3>&lt;p>For CLI applications:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-text" data-lang="text">&lt;span class="line">&lt;span class="cl">stdout = data
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">stderr = diagnostics
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">exit code = status
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="6-keep-persistent-data-independent">6. Keep persistent data independent
+&lt;/h3>&lt;p>If the filesystem is the authority, the service should not secretly create another database containing the same information.&lt;/p>
+&lt;h3 id="7-make-interfaces-replaceable">7. Make interfaces replaceable
+&lt;/h3>&lt;p>You should be able to remove the GUI without losing the data.&lt;/p>
+&lt;p>You should be able to replace the HTTP server without migrating the secrets.&lt;/p>
+&lt;p>You should be able to access the files directly when necessary.&lt;/p>
+&lt;h3 id="8-treat-errors-as-part-of-the-contract">8. Treat errors as part of the contract
+&lt;/h3>&lt;p>Do not make callers parse human error messages.&lt;/p>
+&lt;p>Prefer:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-text" data-lang="text">&lt;span class="line">&lt;span class="cl">NOT_FOUND
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ACCESS_DENIED
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">INVALID_INPUT
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">DECRYPTION_FAILED
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>with human-readable descriptions attached.&lt;/p>
+&lt;h2 id="the-deeper-principle">The Deeper Principle
+&lt;/h2>&lt;p>The interesting part is not really REST.&lt;/p>
+&lt;p>It is not JSON.&lt;/p>
+&lt;p>It is not even Unix.&lt;/p>
+&lt;p>The deeper principle is this:&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>Separate what the program does from how somebody talks to it.&lt;/strong>&lt;/p>
+&lt;/blockquote>
+&lt;p>Once that separation exists, adding an interface becomes relatively cheap.&lt;/p>
+&lt;p>Want a CLI?&lt;/p>
+&lt;p>Add an adapter.&lt;/p>
+&lt;p>Want REST?&lt;/p>
+&lt;p>Add an adapter.&lt;/p>
+&lt;p>Want a Python library?&lt;/p>
+&lt;p>Add an adapter.&lt;/p>
+&lt;p>Want a GUI?&lt;/p>
+&lt;p>Add an adapter.&lt;/p>
+&lt;p>Want a browser extension?&lt;/p>
+&lt;p>Add an adapter.&lt;/p>
+&lt;p>The underlying operation remains the same.&lt;/p>
+&lt;h2 id="from-application-to-system">From “Application” to “System”
+&lt;/h2>&lt;p>This way of thinking also changes how I understand small Unix programs.&lt;/p>
+&lt;p>A program does not necessarily need to be a complete application.&lt;/p>
+&lt;p>It can be a &lt;strong>capability&lt;/strong>.&lt;/p>
+&lt;p>For example:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-text" data-lang="text">&lt;span class="line">&lt;span class="cl">GPG
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>provides cryptographic capability.&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-text" data-lang="text">&lt;span class="line">&lt;span class="cl">filesystem
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>provides persistent storage.&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-text" data-lang="text">&lt;span class="line">&lt;span class="cl">pass
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>provides a password-management interface.&lt;/p>
+&lt;p>A new service can provide an API over the same underlying capability.&lt;/p>
+&lt;p>A GUI can provide another interface.&lt;/p>
+&lt;p>A browser extension can provide another.&lt;/p>
+&lt;p>The pieces remain useful independently.&lt;/p>
+&lt;p>This is very close to the original Unix idea of composing simple tools, but applied to modern APIs and software architecture.&lt;/p>
+&lt;h2 id="conclusion">Conclusion
+&lt;/h2>&lt;p>I do not think the answer to modern software complexity is always another framework.&lt;/p>
+&lt;p>Sometimes the better approach is to go back to a simpler question:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-text" data-lang="text">&lt;span class="line">&lt;span class="cl">What does this program actually do?
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Then define that operation clearly:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-text" data-lang="text">&lt;span class="line">&lt;span class="cl">Input
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Operation
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Output / Error
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Everything else can become an interface.&lt;/p>
+&lt;p>For systems such as a file-based secrets manager, this produces an architecture that is both traditional and modern:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;span class="lnt">8
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-text" data-lang="text">&lt;span class="line">&lt;span class="cl">Encrypted files
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> GPG/filesystem
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> Service
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> +----+-----+-----+
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">CLI API GUI Browser
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>The data remains portable.&lt;/p>
+&lt;p>The service remains replaceable.&lt;/p>
+&lt;p>The interfaces remain independent.&lt;/p>
+&lt;p>And the API is no longer something that has to be “added” to the application later.&lt;/p>
+&lt;p>&lt;strong>The API is simply another way of talking to the same program.&lt;/strong>&lt;/p></description></item><item><title>📄 Article: The Universal Container: Why SQL + JSON is the Most Practical Data Architecture Today (202608200826)</title><link>https://jimenezgomez.org/posts/2026-08-20-universal-data-container/</link><pubDate>Thu, 20 Aug 2026 08:27:00 +0100</pubDate><guid>https://jimenezgomez.org/posts/2026-08-20-universal-data-container/</guid><description>&lt;img src="https://jimenezgomez.org/posts/2026-08-20-universal-data-container/og-image.svg" alt="Featured image of post 📄 Article: The Universal Container: Why SQL + JSON is the Most Practical Data Architecture Today (202608200826)" />&lt;p>&lt;img src="https://jimenezgomez.org/posts/2026-08-20-universal-data-container/universal-data-container.svg"
 loading="lazy"
 alt="universal data container"
 >&lt;/p>
