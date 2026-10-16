@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Agentic AI on Francisco Javier Jiménez Gómez</title><link>https://jimenezgomez.org/tags/agentic-ai/</link><description>Recent content in Agentic AI on Francisco Javier Jiménez Gómez</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>Francisco Javier Jiménez Gómez</copyright><lastBuildDate>Fri, 16 Oct 2026 17:30:00 +0200</lastBuildDate><atom:link href="https://jimenezgomez.org/tags/agentic-ai/index.xml" rel="self" type="application/rss+xml"/><item><title>The Neptuno Network: A Collaborative Operational Framework for Human-AI Teams</title><link>https://jimenezgomez.org/posts/2026-10-16-neptuno-network-collaborative-framework/</link><pubDate>Fri, 16 Oct 2026 17:30:00 +0200</pubDate><guid>https://jimenezgomez.org/posts/2026-10-16-neptuno-network-collaborative-framework/</guid><description>&lt;img src="https://jimenezgomez.org/posts/2026-10-16-neptuno-network-collaborative-framework/og-image.svg" alt="Featured image of post The Neptuno Network: A Collaborative Operational Framework for Human-AI Teams" />&lt;p>Most conversations about artificial intelligence in the workplace still begin with the wrong question. They ask &lt;em>what can the model do?&lt;/em> — and then discover, months later, that the harder question was never answered: &lt;em>who is accountable when it does it?&lt;/em>&lt;/p>
+&lt;p>After thirty years building systems, I have learned that tools do not change organisations. &lt;strong>Operating models&lt;/strong> change organisations. This article describes the operating model we have built and are now publishing as a whitepaper: the Neptuno Network.&lt;/p>
+&lt;h2 id="the-problem-with-loose-collaboration">The problem with loose collaboration
+&lt;/h2>&lt;p>Adopting AI as a tool attached to a process works for isolated tasks. It breaks down as soon as the AI participates in &lt;em>ongoing&lt;/em> work — the same project, over weeks, across several people, on infrastructure the organisation does not fully control. Three failures appear, reliably:&lt;/p>
+&lt;ol>
+&lt;li>&lt;strong>Context loss.&lt;/strong> The system forgets the project between sessions, so every conversation restarts from zero.&lt;/li>
+&lt;li>&lt;strong>Responsibility diffusion.&lt;/strong> When an automated action causes harm, nobody can name who authorised it.&lt;/li>
+&lt;li>&lt;strong>Governance theatre.&lt;/strong> Ethics and compliance exist as policy documents, not as enforced technical constraints.&lt;/li>
+&lt;/ol>
+&lt;p>The Neptuno Network addresses those failures structurally rather than procedurally. It starts from a design principle that sounds almost administrative but is in fact technical: &lt;strong>separation of liability&lt;/strong>.&lt;/p>
+&lt;h2 id="three-entities-deliberately-separated">Three entities, deliberately separated
+&lt;/h2>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl"> +-------------------------------------------------------+
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> | BRISECOM SL |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> | (Commercial Umbrella, Governance &amp;amp; Operations) |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> +-------------------------------------------------------+
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> +------------------------------+------------------------------+
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> v v v
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> +--------------------+ +--------------------+ +--------------------+
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> | HUMAN WORKERS | | NEPTUNO NETWORK | | FRAMEWORK LAIA |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> | (Engineers, Staff, |&amp;lt;------&amp;gt;| (Distributed P2P / |&amp;lt;------&amp;gt;| (Logic Engine &amp;amp; |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> | Collaborators) | | Encrypted Fabric) | | Context Agents) |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> +--------------------+ +--------------------+ +--------------------+
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;strong>BRISECOM SL&lt;/strong> is the commercial umbrella: the legal, administrative and billing gateway, and the network authority that issues cryptographic credentials to both human workers and machine nodes.&lt;/p>
+&lt;p>&lt;strong>The Neptuno Network&lt;/strong> is the collaborative fabric: an encrypted mesh of workstations, local racks and edge devices, governed by strict role-based access control. Zero trust is not a slogan here — a node reaches exactly the resources relevant to its active projects, and nothing else.&lt;/p>
+&lt;p>&lt;strong>Framework LAIA&lt;/strong> is the agentic partner. Not a chatbot, but an active worker node: it maintains persistent project memory through the Assistant Context Standard, executes background tasks, audits code, and prepares administrative documentation.&lt;/p>
+&lt;p>The point of drawing these three apart is that each one can fail, be replaced, or be audited &lt;strong>independently&lt;/strong> without colliding with the others. The network transports. The agent reasons. The umbrella answers institutionally.&lt;/p>
+&lt;h2 id="human-in-the-loop-by-construction">Human in the loop, by construction
+&lt;/h2>&lt;p>Collaboration follows a structured, human-in-the-loop paradigm:&lt;/p>
+&lt;ol>
+&lt;li>&lt;strong>Task initialisation.&lt;/strong> A researcher or engineer defines the objective inside a P.A.R.A. structure on their own workstation.&lt;/li>
+&lt;li>&lt;strong>Context ingestion.&lt;/strong> LAIA ingests the documentation, snippets and project history it needs.&lt;/li>
+&lt;li>&lt;strong>Execution.&lt;/strong> LAIA performs non-critical work: generating interfaces, packaging build recipes, analysing data sets.&lt;/li>
+&lt;li>&lt;strong>Human review.&lt;/strong> LAIA submits proposals, pull requests and execution logs for final sign-off.&lt;/li>
+&lt;/ol>
+&lt;p>The critical constraint is at step four. &lt;strong>The agent&amp;rsquo;s output is a proposal, never a production action.&lt;/strong> Automation is limited to work whose failure is recoverable; irreversible operations require an explicit human signature. That single rule eliminates most of the scenarios that make agentic systems frightening to a risk committee.&lt;/p>
+&lt;h2 id="three-layers-of-protection">Three layers of protection
+&lt;/h2>&lt;p>Protecting core technology while allowing open collaboration is usually presented as a trade-off. It is not, if you separate the layers:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;span class="lnt">8
+&lt;/span>&lt;span class="lnt">9
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl"> +--------------------------------------+
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> | THREE-LAYER PROTECTION SYSTEM |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> +--------------------------------------+
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> +----------------------------------+----------------------------------+
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> v v v
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">[ LAYER 1: TRADEMARKS ] [ LAYER 2: COPYRIGHT ] [ LAYER 3: TRADE SECRET ]
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">OEPM / EUIPO Registration Cryptographic Code Signatures Duo-Layer NDAs &amp;amp; Strict
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">of LAIA, NEPTUNO, BRISECOM &amp;amp; Header Licensing Standards Network Isolation Protocol
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Registration establishes public ownership. Cryptographic signing establishes provenance. Trade-secret discipline protects what is deliberately left unpublished. All underlying intellectual property — the LAIA logic, the Neptuno architecture, the ACS protocols — remains owned by me as an individual and is licensed exclusively to BRISECOM SL. Collaborators sign duo-layer nondisclosure and IP assignment agreements before receiving a single access key.&lt;/p>
+&lt;h2 id="compliance-as-an-architectural-property">Compliance as an architectural property
+&lt;/h2>&lt;p>One sentence in the whitepaper matters more than the rest for European clients: our AI Act and GDPR compliance are &lt;strong>enforced properties of the architecture&lt;/strong>, not commitments to be verified after the fact.&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Human oversight (Article 14):&lt;/strong> an agent that cannot obtain a human signature cannot deploy.&lt;/li>
+&lt;li>&lt;strong>Traceability:&lt;/strong> every agentic action and contextual change is logged immutably.&lt;/li>
+&lt;li>&lt;strong>Data sovereignty:&lt;/strong> enterprise data stays on private, sovereign infrastructure, never leaking to public third-party model providers.&lt;/li>
+&lt;/ul>
+&lt;p>A system that logs immutably cannot be made to forget. That is a stronger guarantee than any policy.&lt;/p>
+&lt;h2 id="a-finite-audit-surface">A finite audit surface
+&lt;/h2>&lt;p>Finally, the stack is standardised across every node: Ubuntu/Xubuntu 24.04 LTS, &lt;code>uv&lt;/code> over &lt;code>pyproject.toml&lt;/code>, Python 3 with PyGObject (GTK3), and a CI/CD matrix targeting &lt;code>.whl&lt;/code>, &lt;code>.deb&lt;/code>, AppImage, Snap and Flatpak.&lt;/p>
+&lt;p>Standardisation is itself a governance measure. When every node runs the same toolchain and the same resolver, the audit surface is finite — a reviewer does not have to reason about an unknown environment.&lt;/p>
+&lt;h2 id="honest-limitations">Honest limitations
+&lt;/h2>&lt;p>Two constraints are stated plainly in the paper. First, the model assumes a &lt;strong>trusted root&lt;/strong>: the identity provider and the IP holder are single points by design — a deliberate trade of decentralisation for accountability. Second, the value of agentic collaboration depends on the quality of the context supplied; a poorly maintained knowledge vault degrades the agent regardless of the logic engine underneath. Both are accepted as the price of an auditable system.&lt;/p>
+&lt;h2 id="the-whitepaper">The whitepaper
+&lt;/h2>&lt;p>The full framework — architectural entities, collaboration workflows, the three-layer protection model, the technical stack and the complete references — is published today as &lt;strong>Whitepaper #12&lt;/strong> of the LAIA project:&lt;/p>
+&lt;p>&lt;strong>→ &lt;a class="link" href="https://github.com/javi-jimenez/laia/blob/main/whitepapers/collaborative-operational-framework-neptuno-network.md" target="_blank" rel="noopener"
+>Collaborative Operational Framework: Human-AI Synergy Across the Neptuno Network&lt;/a>&lt;/strong> &lt;em>(CC BY-NC-SA 4.0)&lt;/em>&lt;/p>
+&lt;p>The contribution of that paper is not a new algorithm. It is a &lt;strong>reproducible operational model&lt;/strong>: three entities, three protection layers, and a standardised stack, arranged so that responsibility never diffuses — even when part of the team is not human.&lt;/p>
+&lt;hr>
+&lt;p>&lt;em>Francisco Javier Jiménez Gómez — Valencia, October 2026&lt;/em>&lt;/p></description></item></channel></rss>
