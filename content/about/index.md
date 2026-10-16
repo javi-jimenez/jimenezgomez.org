@@ -13,7 +13,7 @@ menu:
 
 **Security Architect & Senior Developer**
 
-Specialist in Static Application Security Testing (SAST), Security Audits, Secure Software Development Life Cycle (S-SDLC), and Ethical Artificial Intelligence. More than 15 years of experience leading complex technological projects.
+Specialist in Static Application Security Testing (SAST), Security Audits, Secure Software Development Life Cycle (S-SDLC), and Ethical Artificial Intelligence. More than 30 years of experience leading complex technological projects.
 
 📍 Spain  
 

@@ -1,4 +1,202 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Home on Francisco Javier Jiménez Gómez</title><link>https://jimenezgomez.org/</link><description>Recent content in Home on Francisco Javier Jiménez Gómez</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>Francisco Javier Jiménez Gómez</copyright><lastBuildDate>Mon, 12 Oct 2026 00:00:00 +0200</lastBuildDate><atom:link href="https://jimenezgomez.org/index.xml" rel="self" type="application/rss+xml"/><item><title>Desktop Launcher Creator: giving a launcher to the apps that ship without one</title><link>https://jimenezgomez.org/posts/2026-10-12-desktop-launcher-creator/</link><pubDate>Mon, 12 Oct 2026 00:00:00 +0200</pubDate><guid>https://jimenezgomez.org/posts/2026-10-12-desktop-launcher-creator/</guid><description>&lt;img src="https://jimenezgomez.org/posts/2026-10-12-desktop-launcher-creator/og-image.svg" alt="Featured image of post Desktop Launcher Creator: giving a launcher to the apps that ship without one" />&lt;h1 id="desktop-launcher-creator">Desktop Launcher Creator
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Home on Francisco Javier Jiménez Gómez</title><link>https://jimenezgomez.org/</link><description>Recent content in Home on Francisco Javier Jiménez Gómez</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>Francisco Javier Jiménez Gómez</copyright><lastBuildDate>Fri, 16 Oct 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://jimenezgomez.org/index.xml" rel="self" type="application/rss+xml"/><item><title>Contact</title><link>https://jimenezgomez.org/contact/</link><pubDate>Fri, 16 Oct 2026 00:00:00 +0000</pubDate><guid>https://jimenezgomez.org/contact/</guid><description>&lt;h2 id="get-in-touch">Get in touch
+&lt;/h2>&lt;p>For consulting, audits, secure development or research collaboration, write to me
+using the form below. Messages are stored securely and read by a human.&lt;/p>
+&lt;div class="cform" data-endpoint="/contact.php"
+data-title="Contact"
+data-lead="Write to us and we will get back to you."
+data-ok="Thank you. Your message has been received."
+data-button="Send message">
+&lt;style>
+.cform {
+--cf-ink: #1f2937;
+--cf-muted: #6b7280;
+--cf-line: #d1d5db;
+--cf-bg: #ffffff;
+--cf-accent: #2563eb;
+--cf-err: #dc2626;
+--cf-ok: #059669;
+color-scheme: light;
+box-sizing: border-box;
+max-width: 36rem;
+margin: 0 auto;
+padding: 1.5rem;
+border: 1px solid var(--cf-line);
+border-radius: 10px;
+background: var(--cf-bg);
+color: var(--cf-ink);
+font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+font-size: 1rem;
+line-height: 1.5;
+text-align: left;
+}
+.cform *, .cform *::before, .cform *::after { box-sizing: inherit; }
+.cform h2 { margin: 0 0 .35rem; font-size: 1.3rem; font-weight: 700; color: inherit; }
+.cform .cf-lead { margin: 0 0 1.25rem; color: var(--cf-muted); font-size: .95rem; }
+.cform .cf-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.cform label { display: block; margin-bottom: 1rem; }
+.cform label > span { display: block; margin-bottom: .35rem; font-size: .85rem; font-weight: 600; color: inherit; }
+.cform input, .cform textarea {
+width: 100%; padding: .65rem .75rem;
+border: 1px solid var(--cf-line); border-radius: 6px;
+background: var(--cf-bg); color: var(--cf-ink);
+font: inherit; font-size: 1rem;
+transition: border-color .15s, box-shadow .15s;
+}
+.cform textarea { min-height: 9rem; resize: vertical; }
+.cform input:focus, .cform textarea:focus {
+outline: 0; border-color: var(--cf-accent);
+box-shadow: 0 0 0 3px rgba(37, 99, 235, .18);
+}
+.cform .cf-invalid { border-color: var(--cf-err) !important; }
+.cform button {
+display: inline-flex; align-items: center; gap: .4rem;
+padding: .7rem 1.4rem; border: 1px solid transparent; border-radius: 6px;
+background: var(--cf-accent); color: #fff;
+font: inherit; font-weight: 600; cursor: pointer;
+transition: opacity .15s;
+}
+.cform button:hover { opacity: .9; }
+.cform button[disabled] { opacity: .55; cursor: progress; }
+.cform .cf-status { margin: .9rem 0 0; font-size: .9rem; min-height: 1.2em; }
+.cform .cf-status.ok { color: var(--cf-ok); }
+.cform .cf-status.err { color: var(--cf-err); }
+.cform .cf-hp {
+position: absolute !important; left: -9999px !important;
+width: 1px; height: 1px; overflow: hidden;
+}
+@media (max-width: 600px) {
+.cform .cf-row { grid-template-columns: 1fr; gap: 0; }
+.cform { padding: 1.15rem; }
+}
+&lt;/style>
+&lt;h2 class="cf-title" hidden>&lt;/h2>
+&lt;p class="cf-lead" hidden>&lt;/p>
+&lt;form class="cf-form" novalidate>
+&lt;div class="cf-row">
+&lt;label>
+&lt;span>Name&lt;/span>
+&lt;input type="text" name="name" required minlength="2" maxlength="120" autocomplete="name">
+&lt;/label>
+&lt;label>
+&lt;span>Email&lt;/span>
+&lt;input type="email" name="email" required maxlength="160" autocomplete="email">
+&lt;/label>
+&lt;/div>
+&lt;label>
+&lt;span>Subject&lt;/span>
+&lt;input type="text" name="subject" required minlength="3" maxlength="160">
+&lt;/label>
+&lt;label>
+&lt;span>Message&lt;/span>
+&lt;textarea name="message" rows="6" required minlength="10" maxlength="5000">&lt;/textarea>
+&lt;/label>
+&lt;div class="cf-hp" aria-hidden="true">
+&lt;label>Website &lt;input type="text" name="website" tabindex="-1" autocomplete="off">&lt;/label>
+&lt;/div>
+&lt;input type="hidden" name="t" value="">
+&lt;input type="hidden" name="s" value="">
+&lt;button type="submit" class="cf-submit">Send&lt;/button>
+&lt;p class="cf-status" role="status" aria-live="polite">&lt;/p>
+&lt;/form>
+&lt;script>
+(function () {
+var root = document.currentScript.closest('.cform');
+if (!root) return;
+var form = root.querySelector('.cf-form');
+var status = root.querySelector('.cf-status');
+var submit = root.querySelector('.cf-submit');
+var titleEl = root.querySelector('.cf-title');
+var leadEl = root.querySelector('.cf-lead');
+var endpoint = root.getAttribute('data-endpoint') || '/contact.php';
+var title = root.getAttribute('data-title') || '';
+var lead = root.getAttribute('data-lead') || '';
+var okMsg = root.getAttribute('data-ok') || 'Thank you. Your message has been received.';
+var btnText = root.getAttribute('data-button') || 'Send';
+if (title) { titleEl.textContent = title; titleEl.hidden = false; }
+if (lead) { leadEl.textContent = lead; leadEl.hidden = false; }
+submit.textContent = btnText;
+var TOKEN_MIN_MS = 2300;
+var tokenAt = 0;
+function setStatus(msg, kind) {
+status.textContent = msg || '';
+status.className = 'cf-status' + (kind ? ' ' + kind : '');
+}
+function sleep(ms) { return new Promise(function (r) { setTimeout(r, ms); }); }
+function getToken() {
+return fetch(endpoint + '?token=1', { headers: { 'Accept': 'application/json' } })
+.then(function (r) { return r.json(); })
+.then(function (d) {
+if (!d || !d.ok) throw new Error('token');
+form.t.value = d.t;
+form.s.value = d.s;
+tokenAt = Date.now();
+});
+}
+var ready = getToken();
+form.addEventListener('submit', function (e) {
+e.preventDefault();
+if (form.website.value !== '') return;
+submit.disabled = true;
+setStatus('Sending…');
+var wait = Math.max(0, TOKEN_MIN_MS - (Date.now() - tokenAt));
+ready.catch(getToken)
+.then(function () { return sleep(wait); })
+.then(function () {
+var data = {
+name: form.name.value,
+email: form.email.value,
+subject: form.subject.value,
+message: form.message.value,
+website: form.website.value,
+t: form.t.value,
+s: form.s.value
+};
+return fetch(endpoint, {
+method: 'POST',
+headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+body: JSON.stringify(data)
+});
+})
+.then(function (r) { return r.json().then(function (d) { return { ok: r.ok, d: d }; }); })
+.then(function (res) {
+if (res.ok &amp;&amp; res.d.ok) {
+form.reset();
+setStatus(okMsg, 'ok');
+ready = getToken();
+} else if (res.d &amp;&amp; res.d.error === 'invalid') {
+setStatus('Please check the highlighted fields.', 'err');
+(res.d.fields || []).forEach(function (f) {
+var el = form.querySelector('[name="' + f + '"]');
+if (el) el.classList.add('cf-invalid');
+});
+} else if (res.d &amp;&amp; res.d.error === 'bad_token') {
+setStatus('Session expired. Please press the button again.', 'err');
+ready = getToken();
+} else if (res.d &amp;&amp; res.d.error === 'rate_limited') {
+setStatus('Too many messages from this connection. Try again later.', 'err');
+} else {
+setStatus('Could not send the message. Please try again.', 'err');
+}
+})
+.catch(function () { setStatus('Network error. Please try again.', 'err'); })
+.finally(function () { submit.disabled = false; });
+});
+form.addEventListener('input', function (e) {
+if (e.target.classList) e.target.classList.remove('cf-invalid');
+});
+})();
+&lt;/script>
+&lt;/div>
+&lt;h3 id="direct-contact">Direct contact
+&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>Email:&lt;/strong> &lt;a class="link" href="mailto:ximenez.francisco@brisecom.org" >ximenez.francisco@brisecom.org&lt;/a>&lt;/li>
+&lt;li>&lt;strong>LinkedIn:&lt;/strong> &lt;a class="link" href="https://linkedin.com/in/ximenezfrancisco" target="_blank" rel="noopener"
+>linkedin.com/in/ximenezfrancisco&lt;/a>&lt;/li>
+&lt;li>&lt;strong>GitHub:&lt;/strong> &lt;a class="link" href="https://github.com/javi-jimenez" target="_blank" rel="noopener"
+>github.com/javi-jimenez&lt;/a>&lt;/li>
+&lt;li>&lt;strong>Company:&lt;/strong> &lt;a class="link" href="https://brisecom.org" target="_blank" rel="noopener"
+>brisecom.org&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Desktop Launcher Creator: giving a launcher to the apps that ship without one</title><link>https://jimenezgomez.org/posts/2026-10-12-desktop-launcher-creator/</link><pubDate>Mon, 12 Oct 2026 00:00:00 +0200</pubDate><guid>https://jimenezgomez.org/posts/2026-10-12-desktop-launcher-creator/</guid><description>&lt;img src="https://jimenezgomez.org/posts/2026-10-12-desktop-launcher-creator/og-image.svg" alt="Featured image of post Desktop Launcher Creator: giving a launcher to the apps that ship without one" />&lt;h1 id="desktop-launcher-creator">Desktop Launcher Creator
 &lt;/h1>&lt;p>Modern Linux desktops receive applications from at least three different worlds:
 &lt;strong>Debian packages&lt;/strong>, &lt;strong>Snap&lt;/strong> and &lt;strong>Flatpak&lt;/strong>. Each has its own idea of where the
 application lives and, sometimes, whether it deserves an entry in the applications
@@ -2997,7 +3195,7 @@ alt="Laia - Ethical AI Research"
 &lt;hr>
 &lt;p>&lt;em>&amp;ldquo;The true measure of artificial intelligence is not in what it can do, but in how it improves people&amp;rsquo;s lives while respecting their rights and dignity.&amp;rdquo;&lt;/em>&lt;/p></description></item><item><title>About</title><link>https://jimenezgomez.org/about/</link><pubDate>Wed, 17 Dec 2025 00:00:00 +0000</pubDate><guid>https://jimenezgomez.org/about/</guid><description>&lt;h1 id="francisco-javier-jiménez-gómez">Francisco Javier Jiménez Gómez
 &lt;/h1>&lt;p>&lt;strong>Security Architect &amp;amp; Senior Developer&lt;/strong>&lt;/p>
-&lt;p>Specialist in Static Application Security Testing (SAST), Security Audits, Secure Software Development Life Cycle (S-SDLC), and Ethical Artificial Intelligence. More than 15 years of experience leading complex technological projects.&lt;/p>
+&lt;p>Specialist in Static Application Security Testing (SAST), Security Audits, Secure Software Development Life Cycle (S-SDLC), and Ethical Artificial Intelligence. More than 30 years of experience leading complex technological projects.&lt;/p>
 &lt;p>📍 Spain&lt;/p>
 &lt;hr>
 &lt;h2 id="certifications">Certifications
