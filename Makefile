@@ -19,8 +19,12 @@ DRONE_IMAGE  ?= drone/cli:latest
 DEV_IMAGE    ?= jimenezgomez-dev
 
 # ---- Config de despliegue ----
-# Ruta remota en el servidor FTP (raíz del sitio, NO crear public/)
-FTP_REMOTE_PATH ?= /jimenezgomez.org/
+# Ruta remota en el servidor FTP (raíz del sitio, NO crear public/).
+# `override` es DELIBERADO: el destino es intrínseco a este repo. Sin él, una
+# variable FTP_REMOTE_PATH heredada del shell (p. ej. de otro proyecto) haría
+# que `make deploy` subiera el sitio al directorio EQUIVOCADO (pasó el
+# 2026-10-16: se subió este sitio encima de /laia.brisecom.org).
+override FTP_REMOTE_PATH := /jimenezgomez.org/
 
 # ---- Targets ----
 .PHONY: help dep build html deploy ftp-deploy dev-container create-dev-container \
@@ -80,25 +84,28 @@ deploy: build
 # Usa lftp si está en el entorno; si no, en contenedor Alpine.
 # ------------------------------------------------------------
 ftp-deploy:
-	@# Cargar .env solo si FTP_SERVER no viene ya del entorno
-	@# (así Drone/GitHub/export no se sobrescriben con un .env local).
-	@if [ -f "$(CURDIR)/.env" ] && [ -z "$$FTP_SERVER" ]; then set -a; . "$(CURDIR)/.env"; set +a; fi
-	@if [ -z "$$FTP_SERVER" ] || [ -z "$$FTP_USERNAME" ] || [ -z "$$FTP_PASSWORD" ]; then \
-		echo "ERROR: FTP_SERVER/FTP_USERNAME/FTP_PASSWORD not set (export them or fill .env)"; exit 1; \
-	fi
-	@echo "Uploading public/ -> $(FTP_REMOTE_PATH) on $$FTP_SERVER"
-	@if command -v lftp >/dev/null 2>&1; then \
-		lftp -u "$$FTP_USERNAME","$$FTP_PASSWORD" "$$FTP_SERVER" \
-			-e "set ssl:verify-certificate no; mirror -R public/. $(FTP_REMOTE_PATH) --delete --no-empty-dirs; bye"; \
-	else \
-		docker run --rm -v "$$PWD":/work -w /work \
-			-e FTP_USERNAME="$$FTP_USERNAME" -e FTP_PASSWORD="$$FTP_PASSWORD" \
-			-e FTP_SERVER="$$FTP_SERVER" -e FTP_REMOTE_PATH="$(FTP_REMOTE_PATH)" \
-			"$(ALPINE_IMAGE)" sh -c \
-			"apk add --no-cache lftp >/dev/null && \
-			 lftp -u \"$$FTP_USERNAME\",\"$$FTP_PASSWORD\" \"$$FTP_SERVER\" \
-			 -e 'set ssl:verify-certificate no; mirror -R public/. \"$$FTP_REMOTE_PATH\" --delete --no-empty-dirs; bye'"; \
-	fi
+	@# IMPORTANTE: todo va en UNA sola invocación de shell. Cada línea `@` de
+	@# un Makefile es un shell distinto, así que cargar el .env en una línea no
+	@# valía para las siguientes: el deploy solo funcionaba si FTP_* ya venían
+	@# exportadas en el entorno (y entonces un FTP_REMOTE_PATH heredado ganaba).
+	@set -e; \
+	 if [ -f "$(CURDIR)/.env" ] && [ -z "$${FTP_SERVER:-}" ]; then \
+	   set -a; . "$(CURDIR)/.env"; set +a; \
+	 fi; \
+	 if [ -z "$${FTP_SERVER:-}" ] || [ -z "$${FTP_USERNAME:-}" ] || [ -z "$${FTP_PASSWORD:-}" ]; then \
+	   echo "ERROR: FTP_SERVER/FTP_USERNAME/FTP_PASSWORD no definidos (expórtalos o rellena .env)"; exit 1; \
+	 fi; \
+	 echo "Uploading public/ -> $(FTP_REMOTE_PATH) on $$FTP_SERVER"; \
+	 if command -v lftp >/dev/null 2>&1; then \
+	   lftp -u "$$FTP_USERNAME","$$FTP_PASSWORD" "$$FTP_SERVER" \
+	     -e "set ssl:verify-certificate no; mirror -R public/. $(FTP_REMOTE_PATH) --delete --no-empty-dirs; bye"; \
+	 else \
+	   docker run --rm -v "$$PWD":/work -w /work \
+	     -e FTP_USERNAME -e FTP_PASSWORD -e FTP_SERVER \
+	     -e FTP_REMOTE_PATH="$(FTP_REMOTE_PATH)" \
+	     "$(ALPINE_IMAGE)" sh -c \
+	     'apk add --no-cache lftp >/dev/null && lftp -u "$$FTP_USERNAME","$$FTP_PASSWORD" "$$FTP_SERVER" -e "set ssl:verify-certificate no; mirror -R public/. $$FTP_REMOTE_PATH --delete --no-empty-dirs; bye"'; \
+	 fi
 
 # ------------------------------------------------------------
 # dev-container — contenedor de desarrollo portable
