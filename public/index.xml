@@ -189,7 +189,7 @@ if (e.target.classList) e.target.classList.remove('cf-invalid');
 &lt;/div>
 &lt;h3 id="direct-contact">Direct contact
 &lt;/h3>&lt;ul>
-&lt;li>&lt;strong>Email:&lt;/strong> &lt;a class="link" href="mailto:ximenez.francisco@brisecom.org" >ximenez.francisco@brisecom.org&lt;/a>&lt;/li>
+&lt;li>&lt;strong>Email:&lt;/strong> &lt;a class="link" href="mailto:info@brisecom.org" >info@brisecom.org&lt;/a>&lt;/li>
 &lt;li>&lt;strong>LinkedIn:&lt;/strong> &lt;a class="link" href="https://linkedin.com/in/ximenezfrancisco" target="_blank" rel="noopener"
 >linkedin.com/in/ximenezfrancisco&lt;/a>&lt;/li>
 &lt;li>&lt;strong>GitHub:&lt;/strong> &lt;a class="link" href="https://github.com/javi-jimenez" target="_blank" rel="noopener"

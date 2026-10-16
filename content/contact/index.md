@@ -18,7 +18,7 @@ using the form below. Messages are stored securely and read by a human.
 
 ### Direct contact
 
-- **Email:** [ximenez.francisco@brisecom.org](mailto:ximenez.francisco@brisecom.org)
+- **Email:** [info@brisecom.org](mailto:info@brisecom.org)
 - **LinkedIn:** [linkedin.com/in/ximenezfrancisco](https://linkedin.com/in/ximenezfrancisco)
 - **GitHub:** [github.com/javi-jimenez](https://github.com/javi-jimenez)
 - **Company:** [brisecom.org](https://brisecom.org)
