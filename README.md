@@ -1,6 +1,6 @@
 # jimenezgomez.org
 
-**Versión: 1.2.4** · [CHANGELOG](CHANGELOG.md)
+**Versión: 1.2.5** · [CHANGELOG](CHANGELOG.md)
 
 Sitio personal de Francisco Javier Jiménez Gómez: `index.html` en la raíz es la
 landing de portfolio (en español, independiente de Hugo) y el blog se genera con
@@ -10,7 +10,8 @@ landing de portfolio (en español, independiente de Hugo) y el blog se genera co
 
 | Ruta | Qué hay |
 |---|---|
-| `index.html` | Landing de portfolio. Fichero suelto, **no** lo genera Hugo |
+| `layouts/index.html` | Landing de portfolio (la portada real: la genera Hugo) |
+| `index.html` | Copia antigua de la landing. **No** se publica: vive fuera de `public/` |
 | `content/posts/YYYY-MM-DD-slug/index.md` | Artículos: cada uno en su carpeta con sus imágenes |
 | `layouts/`, `assets/` | Sobrescrituras del tema (`themes/stack` no se toca) |
 | `static/` | Ficheros servidos tal cual (`contact.php`, `img/`, `og/`) |

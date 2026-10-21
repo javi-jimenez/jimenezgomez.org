@@ -68,6 +68,35 @@
         }
         .project-link:hover { text-decoration: underline; }
         .community-section { background: #161b22; }
+        .contact-lead { text-align: center; max-width: 720px; margin: -1rem auto 2.5rem; color: var(--gray-600); font-size: 1.1rem; }
+        .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1.5rem; }
+        .contact-card {
+            display: block;
+            background: #161b22;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 2rem 1.5rem;
+            text-align: center;
+            text-decoration: none;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+        .contact-card:hover { transform: translateY(-4px); border-color: var(--primary); }
+        .contact-card .project-icon { font-size: 2.2rem; margin-bottom: 0.75rem; }
+        .contact-card h3 { color: var(--primary); font-size: 1.15rem; margin-bottom: 0.35rem; }
+        .contact-card p { color: var(--gray-600); font-size: 0.95rem; overflow-wrap: anywhere; }
+        .contact-cta { text-align: center; margin-top: 2.5rem; }
+        .contact-button {
+            display: inline-block;
+            background: rgba(88, 166, 255, 0.15);
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.9rem 1.8rem;
+            border-radius: var(--radius);
+            transition: background 0.3s;
+        }
+        .contact-button:hover { background: rgba(88, 166, 255, 0.3); }
         @media (max-width: 768px) {
             h1 { font-size: 2.5rem; }
             h2 { font-size: 2rem; }
@@ -146,6 +175,63 @@
                         <a href="https://confine-project.eu/" target="_blank" class="project-link">🌐 CONFINE</a>
                     </div>
                 </div>
+                <div class="project-card">
+                    <span class="project-icon">🩺</span>
+                    <h3>Home Telecare (2003-2005)</h3>
+                    <p>Main developer of the home telecare system deployed by the <strong>Generalitat Valenciana</strong>: a base unit plugged into the telephone line, a constant presence sensor and a central alarm, plus a pendant or pocket button that, when pressed, calls the emergency centre — the same kind of device that <strong>Cruz Roja</strong> and the regional government hand out to elderly people living alone. Everything ran on a Linux set-top box. Built at the TSB group of <strong>ITACA, Universitat Politècnica de València</strong>, within the EU <strong>CONFIDENT</strong> framework project.</p>
+                    <div class="tech-stack">
+                        <span class="badge">Java</span>
+                        <span class="badge">Linux</span>
+                        <span class="badge">Set-top-box</span>
+                        <span class="badge">X10</span>
+                        <span class="badge">Telemedicine</span>
+                        <span class="badge">EU Project</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://www.itaca.upv.es/" target="_blank" class="project-link">🏛️ ITACA · UPV</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="research">
+        <div class="portfolio-container">
+            <h2>Research &amp; Applied Projects</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <span class="project-icon">🔐</span>
+                    <h3>SonarQube Audit Toolkit (2020-2024)</h3>
+                    <p>Internal tooling for Static Application Security Testing at S2 Grupo: a Python client for the SonarQube API that collects, normalises and reports the findings of every source code audit. Built first with Flask and later with FastAPI, and used to review Java, Python, Go, Ruby on Rails, C# and .NET code.</p>
+                    <div class="tech-stack">
+                        <span class="badge">Python</span>
+                        <span class="badge">Flask</span>
+                        <span class="badge">FastAPI</span>
+                        <span class="badge">SonarQube</span>
+                        <span class="badge">SAST</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <span class="project-icon">💻</span>
+                    <h3>BET Telemedicine Portal (2002-2003)</h3>
+                    <p>Public website and private intranet for the BET group (Bioengineering, Electronics and Telemedicine) at ITACA, Universitat Politècnica de València: public pages, a user area behind a login and an administration interface. My first contact with the telemedicine field I would later work in.</p>
+                    <div class="tech-stack">
+                        <span class="badge">ASP</span>
+                        <span class="badge">C#</span>
+                        <span class="badge">Intranet</span>
+                        <span class="badge">Web</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <span class="project-icon">📈</span>
+                    <h3>Markov-Chain Web Analytics (2005-2006)</h3>
+                    <p>Statistical analysis of how visitors move through the website of the Official College of Economists of Valencia, modelling each user journey through the site as a Markov chain. Implemented in PHP.</p>
+                    <div class="tech-stack">
+                        <span class="badge">PHP</span>
+                        <span class="badge">Statistics</span>
+                        <span class="badge">Markov Chains</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -169,6 +255,43 @@
                     <h3>ARJBackup (1997)</h3>
                     <p>One of my first public programs, published in the PCActual magazine, "Tower of Babel" section. Backup program written in C++.</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="portfolio-container">
+            <h2>Get in Touch</h2>
+            <p class="contact-lead">Open to consulting, source code security audits, secure development, telemedicine and research collaborations. Messages are stored securely and read by a human.</p>
+            <div class="contact-grid">
+                <a class="contact-card" href="mailto:ximenez.francisco@gmail.com">
+                    <span class="project-icon">✉️</span>
+                    <h3>Email</h3>
+                    <p>ximenez.francisco@gmail.com</p>
+                </a>
+                <a class="contact-card" href="https://www.linkedin.com/in/ximenezfrancisco/" target="_blank" rel="noopener">
+                    <span class="project-icon">💼</span>
+                    <h3>LinkedIn</h3>
+                    <p>in/ximenezfrancisco</p>
+                </a>
+                <a class="contact-card" href="https://github.com/javi-jimenez" target="_blank" rel="noopener">
+                    <span class="project-icon">🐙</span>
+                    <h3>GitHub</h3>
+                    <p>@javi-jimenez</p>
+                </a>
+                <a class="contact-card" href="https://twitter.com/Lubok9" target="_blank" rel="noopener">
+                    <span class="project-icon">🐦</span>
+                    <h3>Twitter</h3>
+                    <p>@Lubok9</p>
+                </a>
+                <a class="contact-card" href="https://about.me/ximenezfrancisco" target="_blank" rel="noopener me">
+                    <span class="project-icon">🕸️</span>
+                    <h3>About.me</h3>
+                    <p>about.me/ximenezfrancisco</p>
+                </a>
+            </div>
+            <div class="contact-cta">
+                <a href="/contact/" class="contact-button">📬 Use the contact form</a>
             </div>
         </div>
     </section>

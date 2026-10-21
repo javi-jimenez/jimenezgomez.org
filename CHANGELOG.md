@@ -3,6 +3,77 @@
 Una entrada por tag. Cada entrada dice **qué** cambió y **por qué**; el porqué es
 lo primero que se pierde y lo más caro de reconstruir.
 
+## [1.2.5] — 2026-10-21
+
+### Añadido
+
+- **Proyecto de teleasistencia domiciliaria (2003-2005) en la portada.** Base
+  conectada a la línea telefónica, sensor de presencia permanente y alarma
+  central, más el colgante (o el pulsador de bolsillo) que al apretarlo llama al
+  centro de emergencias: el sistema de la **Generalitat Valenciana** que sigue
+  hoy en miles de hogares, desarrollado en el grupo TSB de **ITACA (UPV)**
+  dentro del proyecto europeo **CONFIDENT**. Tecnologías: Java, Linux,
+  set-top-box y X10.
+- **Sección «Research & Applied Projects»** con tres trabajos que solo estaban
+  en el CV: el cliente de la API de SonarQube para analizar resultados de SAST
+  (S2 Grupo, 2020-2024), el portal público + intranet del grupo BET
+  (ITACA-UPV, 2002-2003) y el análisis de navegación web con cadenas de Markov
+  del COEV (2005-2006).
+- Enlace **Research** en la navegación de la portada.
+- **Enlace a About.me** (`about.me/ximenezfrancisco`) en la sección Contact de la
+  portada, en el pie de todas las páginas y en la lista de contacto directo de
+  `/contact/`.
+- **Aviso por correo de los mensajes del formulario** (`static/contact.php`).
+  Envía un correo por SMTP autenticado (`smtp.mail.ovh.net:587`, STARTTLS) con
+  el asunto, el remitente y el cuerpo del mensaje; `Reply-To` apunta al
+  visitante. Se configura con `/msgs/.smtp.json` (fuera del docroot) y se prueba
+  sin tocar la web con `php contact.php --test-mail`. Documentado en
+  `docs/contact-smtp.md`.
+
+### Corregido
+
+- **«Contact» de la portada no llevaba a ninguna parte.** El enlace de la
+  navegación apunta a `/#contact`, pero en la página generada por Hugo ese ancla
+  **no existía**: el `index.html` suelto tenía `<footer id="contact">`, y al
+  pasar la portada a `layouts/index.html` el pie se movió a un partial sin el
+  `id`. Ahora hay una sección **Contact** de verdad: correo, LinkedIn, GitHub y
+  Twitter como tarjetas enlazadas, y un botón al formulario de `/contact/`.
+- **La URL de About.me de `/about/` estaba mal.** Apuntaba a
+  `about.me/franciscojavierjimenezgomez`, que no es la cuenta; la correcta es
+  `about.me/ximenezfrancisco` (la misma que el usuario de LinkedIn). Un enlace
+  externo roto es peor que no tenerlo, así que se corrige en la única página que
+  lo tenía.
+
+### Decidido
+
+- **La sección Contact enlaza, no incrusta el formulario.** El formulario es un
+  shortcode con su propio JS y token HMAC (`contact.php`); incrustarlo en el
+  layout obligaría a duplicar esa lógica fuera de los shortcodes. La portada
+  lleva al formulario, que ya vive en `/contact/` y es el único sitio donde hay
+  que mantenerlo.
+- **El correo de la portada es personal** (`ximenez.francisco@gmail.com`), no
+  el genérico de la empresa que publica `/contact/`. La portada es un
+  portfolio personal: mezclar los dos canales hacía que un mensaje de
+  colaboración acabara en el buzón comercial.
+- **La portada es `layouts/index.html`, no el `index.html` de la raíz.** El
+  `index.html` suelto no lo procesa Hugo: no acaba en `public/` y por tanto no
+  se publica. Se toca solo el layout y el fichero suelto se deja como estaba.
+- **Se ponen las fechas y el nombre del CV, no los de memoria.** La
+  teleasistencia se data en 2003-2005 y el proyecto europeo se llama
+  **CONFIDENT**; **CONFINE** es el proyecto de redes comunitarias de 2013-2014,
+  otro trabajo distinto que ya estaba en la portada.
+- **El correo es un aviso, no el canal principal.** El mensaje se guarda en
+  `/msgs/` y se responde al visitante **antes** de intentar enviarlo; el envío va
+  en `try/catch` y solo escribe en `.mail.log`. Así un bloqueo de OVH (panel
+  «Scripts de correo») deja el formulario operativo y no pierde nada. Se
+  descartó `mail()`: sale por la IP web, que el SPF no cubre.
+- **Las credenciales SMTP no viven en el PHP.** Van en `/msgs/.smtp.json`, fuera
+  del docroot (404 por URL) y fuera de la carpeta del sitio, igual que
+  `.secret.key`. Un secreto en el código acaba en el repositorio.
+- **Sin captcha.** Honeypot + token HMAC con caducidad + límite por IP + `Origin`
+  ya cubren el spam automatizado, sin meter un iframe de terceros ni una cuenta
+  de Google en un sitio que habla de privacidad.
+
 ## [1.2.4] — 2026-10-21
 
 ### Añadido

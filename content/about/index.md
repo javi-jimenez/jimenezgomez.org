@@ -97,4 +97,4 @@ Interested in collaborating on projects regarding security, secure development, 
 - 💼 LinkedIn: [ximenezfrancisco](https://www.linkedin.com/in/ximenezfrancisco/)
 - 🐙 GitHub: [javi-jimenez](https://github.com/javi-jimenez)
 - 🐦 Twitter: [@Lubok9](https://twitter.com/Lubok9)
-- 🕸️ About.me: [franciscojavierjimenezgomez](https://about.me/franciscojavierjimenezgomez)
+- 🕸️ About.me: [ximenezfrancisco](https://about.me/ximenezfrancisco)

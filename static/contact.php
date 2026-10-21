@@ -199,6 +199,248 @@ function origin_allowed(string $origin): bool {
 }
 
 // ---------------------------------------------------------------------------
+// AVISO POR CORREO (opcional) — el mensaje se guarda SIEMPRE en /msgs/
+//
+// El correo es solo un extra para enterarse antes. Si el SMTP falla, el
+// formulario sigue respondiendo "ok", el .md ya está escrito y el error queda
+// en /msgs/.mail.log. Nunca se pierde un mensaje porque el correo no salga.
+//
+// Configuración: /msgs/.smtp.json (FUERA del docroot → 404 por URL, y el
+// `mirror --delete` del deploy no lo toca). Ver docs/contact-smtp.md.
+// ---------------------------------------------------------------------------
+
+/** Lee la configuración SMTP; null si no está o está incompleta. */
+function smtp_config(string $dir): ?array {
+    $file = getenv('FORMS_SMTP_CONFIG');
+    if ($file === false || $file === '') {
+        $file = $dir . '/.smtp.json';
+    }
+    if (!is_file($file)) {
+        return null;
+    }
+    $c = json_decode((string) @file_get_contents($file), true);
+    if (!is_array($c)) {
+        return null;
+    }
+    foreach (['host', 'user', 'pass', 'from', 'to'] as $k) {
+        if (!isset($c[$k]) || !is_string($c[$k]) || $c[$k] === '') {
+            return null;
+        }
+    }
+    $c += [
+        'port'      => 587,
+        'secure'    => 'tls',    // tls (587 + STARTTLS) | ssl (465) | none (pruebas)
+        'from_name' => '',
+        'timeout'   => 10,
+    ];
+    return $c;
+}
+
+/** Colapsa espacios y saltos de línea (evita inyección de cabeceras). */
+function one_line(string $s): string {
+    return trim((string) preg_replace('/\s+/u', ' ', $s));
+}
+
+/** Cabeceras del aviso (RFC 5322, UTF-8 en base64). */
+function mail_headers(array $cfg, string $subject, string $replyTo, string $site): string {
+    $from = (string) $cfg['from'];
+    $name = one_line((string) ($cfg['from_name'] ?? ''));
+    $fromHdr = $name !== ''
+        ? '=?UTF-8?B?' . base64_encode($name) . '?= <' . $from . '>'
+        : '<' . $from . '>';
+
+    $at     = strrchr($from, '@');
+    $domain = $at !== false ? substr($at, 1) : 'localhost';
+
+    $headers = [
+        'Date: ' . date('r'),
+        'From: ' . $fromHdr,
+        'To: <' . $cfg['to'] . '>',
+        'Reply-To: <' . $replyTo . '>',
+        'Subject: =?UTF-8?B?' . base64_encode(one_line($subject)) . '?=',
+        'Message-ID: <' . bin2hex(random_bytes(8)) . '@' . $domain . '>',
+        'X-Mailer: contact.php (' . one_line($site) . ')',
+        'Auto-Submitted: auto-generated',
+        'MIME-Version: 1.0',
+        'Content-Type: text/plain; charset=UTF-8',
+        'Content-Transfer-Encoding: 8bit',
+    ];
+    return implode("\r\n", $headers);
+}
+
+/** Cuerpo legible del aviso. */
+function mail_body(array $m, string $file): string {
+    return "Nuevo mensaje desde el formulario web\n"
+        . str_repeat('=', 38) . "\n"
+        . "Sitio:     {$m['site']}\n"
+        . "Fecha:     {$m['at']->format('Y-m-d H:i:s')}\n"
+        . "Nombre:    {$m['name']}\n"
+        . "Email:     {$m['email']}\n"
+        . "Asunto:    {$m['subject']}\n"
+        . "Fichero:   {$file}\n"
+        . "IP hash:   {$m['ip_hash']}\n"
+        . "Navegador: {$m['ua']}\n"
+        . "Referer:   {$m['ref']}\n"
+        . str_repeat('-', 38) . "\n\n"
+        . $m['message'] . "\n";
+}
+
+/** Ejecuta un comando SMTP y devuelve [código, respuesta]. */
+function smtp_cmd($fp, string $line = ''): array {
+    if ($line !== '') {
+        fwrite($fp, $line . "\r\n");
+    }
+    $resp = '';
+    while (($l = fgets($fp, 1024)) !== false) {
+        $resp .= $l;
+        if (strlen($l) < 4 || $l[3] === ' ') {      // "250-" sigue, "250 " acaba
+            break;
+        }
+    }
+    if ($resp === '') {
+        throw new RuntimeException('sin respuesta del servidor');
+    }
+    return [(int) substr($resp, 0, 3), rtrim($resp)];
+}
+
+/** Igual que smtp_cmd pero exige uno de los códigos esperados. */
+function smtp_expect($fp, string $line, array $ok): string {
+    [$code, $resp] = smtp_cmd($fp, $line);
+    if (!in_array($code, $ok, true)) {
+        throw new RuntimeException('SMTP ' . $code . ': ' . substr($resp, 0, 200));
+    }
+    return $resp;
+}
+
+/** Envía un mensaje ya formado (cabeceras + cuerpo) por SMTP autenticado. */
+function smtp_send(array $cfg, string $message): void {
+    $host    = (string) $cfg['host'];
+    $port    = (int) $cfg['port'];
+    $secure  = strtolower((string) $cfg['secure']);
+    $timeout = max(3, (int) $cfg['timeout']);
+
+    $target = ($secure === 'ssl' ? 'ssl://' : '') . $host . ':' . $port;
+    $errno  = 0;
+    $errstr = '';
+    $fp = @stream_socket_client($target, $errno, $errstr, $timeout);
+    if (!$fp) {
+        throw new RuntimeException('conexión: ' . ($errstr !== '' ? $errstr : 'fallo'));
+    }
+    stream_set_timeout($fp, $timeout);
+
+    try {
+        smtp_expect($fp, '', [220]);
+
+        $ehlo = 'EHLO ' . (gethostname() ?: 'localhost');
+        smtp_expect($fp, $ehlo, [250]);
+
+        if ($secure === 'tls') {
+            smtp_expect($fp, 'STARTTLS', [220]);
+            if (@stream_socket_enable_crypto($fp, true, STREAM_CRYPTO_METHOD_TLS_CLIENT) !== true) {
+                throw new RuntimeException('STARTTLS rechazado');
+            }
+            smtp_expect($fp, $ehlo, [250]);          // capacidades tras el TLS
+        }
+
+        // Autenticación: PLAIN (una línea) y, si no lo acepta, LOGIN.
+        [$code] = smtp_cmd($fp, 'AUTH PLAIN ' . base64_encode(
+            "\0" . $cfg['user'] . "\0" . $cfg['pass']
+        ));
+        if ($code !== 235) {
+            if ($code !== 500 && $code !== 504) {
+                throw new RuntimeException('autenticación rechazada (SMTP ' . $code . ')');
+            }
+            smtp_expect($fp, 'AUTH LOGIN', [334]);
+            smtp_expect($fp, base64_encode((string) $cfg['user']), [334]);
+            smtp_expect($fp, base64_encode((string) $cfg['pass']), [235]);
+        }
+
+        smtp_expect($fp, 'MAIL FROM:<' . $cfg['from'] . '>', [250]);
+        smtp_expect($fp, 'RCPT TO:<' . $cfg['to'] . '>', [250, 251]);
+        smtp_expect($fp, 'DATA', [354]);
+
+        $data = str_replace(["\r\n", "\r"], "\n", $message);
+        $data = (string) preg_replace('/^\./m', '..', $data);     // dot-stuffing
+        fwrite($fp, str_replace("\n", "\r\n", $data) . "\r\n.\r\n");
+        smtp_expect($fp, '', [250]);
+
+        smtp_cmd($fp, 'QUIT');
+    } finally {
+        @fclose($fp);
+    }
+}
+
+/** Anota el resultado del aviso (sin datos sensibles). */
+function mail_log(string $dir, string $line): void {
+    $file = $dir . '/.mail.log';
+    @file_put_contents(
+        $file,
+        gmdate('c') . ' ' . $line . "\n",
+        FILE_APPEND | LOCK_EX
+    );
+    @chmod($file, 0600);
+}
+
+/** Aviso best-effort: nunca lanza ni cambia la respuesta al visitante. */
+function notify_by_mail(string $dir, array $m, string $file): void {
+    $cfg = smtp_config($dir);
+    if ($cfg === null) {
+        return;                                  // sin configurar: no se avisa
+    }
+    $subject = '[web:' . $m['site'] . '] ' . $m['subject'];
+    $message = mail_headers($cfg, $subject, $m['email'], $m['site'])
+        . "\r\n\r\n"
+        . mail_body($m, $file);
+    try {
+        smtp_send($cfg, $message);
+        mail_log($dir, 'ok    ' . $file . ' → ' . $cfg['to']);
+    } catch (Throwable $e) {
+        mail_log($dir, 'ERROR ' . $file . ' — ' . $e->getMessage());
+    }
+}
+
+/** Modo CLI: `php contact.php --test-mail` comprueba el SMTP sin tocar la web. */
+function cli_main(): void {
+    $dir = msgs_dir();
+    $cfg = smtp_config($dir);
+    if ($cfg === null) {
+        fwrite(STDERR, "No hay configuración SMTP.\n"
+            . "Crea " . $dir . "/.smtp.json (ver docs/contact-smtp.md).\n");
+        exit(2);
+    }
+    $fake = [
+        'site'    => 'cli-test',
+        'at'      => new DateTimeImmutable('now'),
+        'name'    => 'Prueba de aviso',
+        'email'   => $cfg['to'],
+        'subject' => 'Prueba del aviso del formulario',
+        'message' => "Mensaje de prueba generado con `php contact.php --test-mail`.\n",
+        'ip_hash' => 'cli',
+        'ua'      => 'cli',
+        'ref'     => 'cli',
+    ];
+    $subject = '[web:cli-test] ' . $fake['subject'];
+    $message = mail_headers($cfg, $subject, $fake['email'], 'cli-test')
+        . "\r\n\r\n"
+        . mail_body($fake, '(prueba)');
+    try {
+        smtp_send($cfg, $message);
+        fwrite(STDOUT, 'OK: aviso enviado a ' . $cfg['to']
+            . ' vía ' . $cfg['host'] . ':' . $cfg['port']
+            . ' (' . $cfg['secure'] . ")\n");
+        exit(0);
+    } catch (Throwable $e) {
+        fwrite(STDERR, 'ERROR: ' . $e->getMessage() . "\n");
+        exit(1);
+    }
+}
+
+// Modo CLI (solo desde la terminal: PHP_SAPI nunca es 'cli' por HTTP).
+if (PHP_SAPI === 'cli') {
+    cli_main();
+}
+
+// ---------------------------------------------------------------------------
 // CORS (por si un sitio publica el formulario desde otro dominio de la lista)
 // ---------------------------------------------------------------------------
 $origin = (string) ($_SERVER['HTTP_ORIGIN'] ?? '');
@@ -293,4 +535,19 @@ $entry = [
 
 $file = save_message($dir, $entry);
 
-out(200, ['ok' => true, 'id' => $file]);
+// Responder YA: el visitante no debe esperar a que salga el correo. Con PHP-FPM
+// `fastcgi_finish_request()` cierra la respuesta y el script sigue vivo para
+// mandar el aviso; sin FPM se vacía el buffer y se continúa igual.
+http_response_code(200);
+echo json_encode(['ok' => true, 'id' => $file], JSON_UNESCAPED_UNICODE);
+if (function_exists('fastcgi_finish_request')) {
+    fastcgi_finish_request();
+} else {
+    if (ob_get_level() > 0) {
+        @ob_end_flush();
+    }
+    @flush();
+}
+
+notify_by_mail($dir, $entry, $file);
+exit;
