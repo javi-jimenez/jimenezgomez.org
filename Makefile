@@ -18,6 +18,23 @@ ALPINE_IMAGE ?= alpine:3.18
 DRONE_IMAGE  ?= drone/cli:latest
 DEV_IMAGE    ?= jimenezgomez-dev
 
+# ---- Binario de Hugo ----
+# FIJADO A PROPÓSITO. Antes se usaba `hugo` del PATH, y aquí convivían dos
+# versiones (0.113 en /home/user/go/bin y 0.162 en ~/.local/bin). Cada
+# `make deploy` regeneraba el sitio con una u otra: cambiaban todos los hashes
+# de los assets y el sitio entraba y salía de dos renders distintos sin que
+# nadie tocara el contenido. Ahora manda una sola versión; si no está, se dice.
+#
+# Orden: $(HUGO_BIN) → hugo-extended → hugo-<versión> → hugo → Docker.
+HUGO_VERSION ?= 0.162.0
+HUGO_BIN     ?= hugo-extended
+
+HUGO_CMD := $(shell \
+	if command -v $(HUGO_BIN) >/dev/null 2>&1; then echo $(HUGO_BIN); \
+	elif command -v hugo-$(HUGO_VERSION) >/dev/null 2>&1; then echo hugo-$(HUGO_VERSION); \
+	elif command -v hugo >/dev/null 2>&1; then echo hugo; \
+	else echo ""; fi)
+
 # ---- Config de despliegue ----
 # Ruta remota en el servidor FTP (raíz del sitio, NO crear public/).
 # `override` es DELIBERADO: el destino es intrínseco a este repo. Sin él, una
@@ -106,14 +123,20 @@ dep:
 
 # ------------------------------------------------------------
 # build / html — genera public/ con Hugo
-# Usa hugo si está en el entorno; si no, lo lanza en Docker.
+#
+# `--cleanDestinationDir` es obligatorio: sin él, los assets con hash de la
+# versión anterior de Hugo se quedan en public/ y viajan al servidor en cada
+# deploy, engordando el sitio con ficheros que ya nadie referencia.
 # ------------------------------------------------------------
 build:
 	@echo "Building site with Hugo..."
-	@if command -v hugo >/dev/null 2>&1; then \
-		hugo --minify; \
+	@if [ -n "$(HUGO_CMD)" ]; then \
+		printf '  hugo: %s (%s)\n' "$$($(HUGO_CMD) version | head -1)" "$(HUGO_CMD)"; \
+		$(HUGO_CMD) --minify --cleanDestinationDir; \
 	else \
-		docker run --rm -v "$$PWD":/src -w /src "$(HUGO_IMAGE)" --minify; \
+		printf '  hugo: %s (docker)\n' "$(HUGO_IMAGE)"; \
+		docker run --rm -v "$$PWD":/src -w /src "$(HUGO_IMAGE)" \
+			--minify --cleanDestinationDir; \
 	fi
 
 html: build
@@ -204,8 +227,8 @@ drone-exec: drone-run
 # serve — preview local de Hugo
 # ------------------------------------------------------------
 serve:
-	@if command -v hugo >/dev/null 2>&1; then \
-		hugo server -D; \
+	@if [ -n "$(HUGO_CMD)" ]; then \
+		$(HUGO_CMD) server -D; \
 	else \
 		docker run --rm -it -p 1313:1313 -v "$$PWD":/src -w /src "$(HUGO_IMAGE)" server -D; \
 	fi

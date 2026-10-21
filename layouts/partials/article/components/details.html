@@ -24,10 +24,19 @@
     </div>
 
     {{ $showReadingTime := .Params.readingTime | default (.Site.Params.article.readingTime) }}
-    {{/* Show date only if frontmatter explicitly sets showDate: true */}}
-    {{ $showDate := false }}
-    {{ with .Params.showDate }}
-      {{ if eq . true }}{{ $showDate = true }}{{ end }}
+    {{/*
+      La fecha se muestra siempre que el artículo tenga una.
+      Aquí hubo una sobrescritura que la ocultaba salvo que el post declarara
+      `showDate: true` en el frontmatter; como ningún artículo lo declaraba, la
+      fecha no aparecía en ningún sitio. Se restaura el comportamiento del tema
+      (`not .Date.IsZero`) y, si alguna vez hace falta esconderla en un post
+      concreto, basta con `showDate: false` en su frontmatter.
+    */}}
+    {{ $showDate := true }}
+    {{ if isset .Params "showdate" }}
+      {{ if eq .Params.showDate false }}{{ $showDate = false }}{{ end }}
+    {{ else }}
+      {{ $showDate = not .Date.IsZero }}
     {{ end }}
 
     {{ $showFooter := or $showDate $showReadingTime }}

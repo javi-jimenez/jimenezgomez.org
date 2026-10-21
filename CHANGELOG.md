@@ -3,6 +3,40 @@
 Una entrada por tag. Cada entrada dice **qué** cambió y **por qué**; el porqué es
 lo primero que se pierde y lo más caro de reconstruir.
 
+## [1.2.4] — 2026-10-21
+
+### Añadido
+
+- **La fecha de publicación se ve en el cuerpo de todos los artículos.** Aparece
+  en la cabecera, bajo el título, junto al tiempo de lectura.
+
+### Corregido
+
+- **La fecha llevaba tiempo oculta.** El `details.html` local tenía
+  `{{ $showDate := false }}` con la condición de que el post declarara
+  `showDate: true`; ningún artículo lo declaraba, así que no se mostraba en
+  ninguno. Se restaura el criterio del tema (`not .Date.IsZero`) y se invierte el
+  override: ahora se oculta solo con `showDate: false` explícito.
+- **Dos versiones de Hugo generaban el mismo sitio.** `make build` usaba `hugo`
+  del PATH (0.113) mientras los builds manuales usaban 0.162: cada deploy
+  reescribía todos los hashes de assets y el sitio alternaba entre dos renders
+  sin que nadie tocara el contenido. Ahora el Makefile fija `HUGO_VERSION` y
+  resuelve el binario en orden (`hugo-extended` → `hugo-<versión>` → `hugo` →
+  Docker), y **dice qué versión usa** en cada build.
+- **`build` limpia el destino** (`--cleanDestinationDir`). Sin eso, los assets
+  con hash de la versión anterior se acumulaban en `public/` y viajaban al
+  servidor en cada deploy.
+
+### Decidido
+
+- **Fijar la versión de Hugo, no confiar en el PATH.** El orden de resolución
+  prefiere `hugo-extended` porque el tema Stack requiere la versión *extended*
+  (SCSS); caer en un `hugo` normal rompe el CSS.
+- **La fecha es información del artículo, no un extra opcional.** Un artículo sin
+  fecha obliga al lector a deducir la antigüedad por el contexto; si alguna vez
+  hay que ocultarla, se hace explícitamente con `showDate: false` y queda
+  registrado en el frontmatter.
+
 ## [1.2.3] — 2026-10-21
 
 ### Corregido
