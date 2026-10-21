@@ -3,6 +3,37 @@
 Una entrada por tag. Cada entrada dice **qué** cambió y **por qué**; el porqué es
 lo primero que se pierde y lo más caro de reconstruir.
 
+## [1.2.1] — 2026-10-21
+
+### Añadido
+
+- **`GIT_SLOW_REMOTES`**: los remotos cuyo almacén no soporta packs grandes
+  empujan con `-c pack.threads=1 --no-thin` automáticamente. Se acabó el
+  workaround manual en cada push a Gitea.
+- **Token de API de Gitea** guardado en un almacén dedicado
+  (`~/.config/gitea/credentials`, 0600) en sustitución de la contraseña de la
+  cuenta que había en el llavero. Revocable sin tocar la contraseña.
+
+### Corregido
+
+- **`make push-all` fallaba en Gitea**: `-c` es una opción global de git y
+  `--no-thin` es una opción de push, así que no pueden ir en la misma variable
+  (`git push -c ...` imprime la ayuda). Ahora se pasan como dos grupos y se
+  expanden sin comillas para que se dividan en palabras.
+
+### Decidido
+
+- **Almacén de credenciales propio para Gitea, no GCM.** GCM puede *leer* del
+  llavero en esta máquina pero no *escribir* (`Failed to open secret service
+  session`), así que el token no se podía guardar ahí. Un `store --file`
+  dedicado, precedido de un `helper =` vacío para anular los heredados, es
+  explícito, aislado por host y verificable.
+- **Token en lugar de contraseña.** Un token se revoca sin cambiar la clave de
+  la cuenta y sin afectar a otros servicios del mismo usuario.
+- **El matcher compara nombre y URL del remoto.** Así `GIT_SLOW_REMOTES=gitea`
+  vale tanto si el remoto se llama `gitea` como si apunta a
+  `gitea.dominio.tld`, que es como se configuran los espejos en la práctica.
+
 ## [1.2.0] — 2026-10-21
 
 ### Añadido
