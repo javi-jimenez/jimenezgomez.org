@@ -3,6 +3,32 @@
 Una entrada por tag. Cada entrada dice **qué** cambió y **por qué**; el porqué es
 lo primero que se pierde y lo más caro de reconstruir.
 
+## [1.2.3] — 2026-10-21
+
+### Corregido
+
+- **`/posts/2024-03-31-vbd/` daba 404.** La carpeta existe en `content/posts/`,
+  pero es una **plantilla vacía** (frontmatter y nada más) marcada `draft: true`,
+  así que Hugo no la genera. Como la URL es antigua y puede estar enlazada desde
+  fuera, ahora el artículo publicado equivalente declara
+  `aliases: ["/posts/2024-03-31-vbd/"]` y esa dirección responde con una
+  redirección a *VBD, Fractal Architecture*.
+- **Limpieza de 126 artefactos obsoletos en `public/`**: variantes de imagen con
+  hash antiguo (portadas azules anteriores y redimensionados de versiones viejas
+  de Hugo). Se comprobó que **ninguna página las referencia** antes de borrarlas.
+
+### Decidido
+
+- **El draft se queda como draft.** No tiene contenido: es una plantilla. Lo que
+  se arregla es la *URL*, no el artículo. Publicarlo habría creado una página
+  vacía e indexable, que es peor que un 404.
+- **Redirección y no página vacía.** Un alias es honesto (dice a dónde va) y
+  conserva el valor de cualquier enlace entrante.
+- **`--cleanDestinationDir` en los builds manuales.** `make build` no limpia, así
+  que los artefactos con hash viejo se acumulaban en `public/` y viajaban al
+  servidor en cada deploy. Limpiar en cada build evita que el repositorio crezca
+  con ficheros que ya nadie sirve.
+
 ## [1.2.2] — 2026-10-21
 
 ### Cambiado

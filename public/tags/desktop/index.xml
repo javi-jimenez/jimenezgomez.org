@@ -1,53 +1,53 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>desktop on Francisco Javier Jiménez Gómez</title><link>https://jimenezgomez.org/tags/desktop/</link><description>Recent content in desktop on Francisco Javier Jiménez Gómez</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>Francisco Javier Jiménez Gómez</copyright><lastBuildDate>Mon, 12 Oct 2026 00:00:00 +0200</lastBuildDate><atom:link href="https://jimenezgomez.org/tags/desktop/index.xml" rel="self" type="application/rss+xml"/><item><title>Desktop Launcher Creator: giving a launcher to the apps that ship without one</title><link>https://jimenezgomez.org/posts/2026-10-12-desktop-launcher-creator/</link><pubDate>Mon, 12 Oct 2026 00:00:00 +0200</pubDate><guid>https://jimenezgomez.org/posts/2026-10-12-desktop-launcher-creator/</guid><description>&lt;img src="https://jimenezgomez.org/posts/2026-10-12-desktop-launcher-creator/og-image-1200x630.png" alt="Featured image of post Desktop Launcher Creator: giving a launcher to the apps that ship without one" />&lt;h1 id="desktop-launcher-creator">Desktop Launcher Creator
-&lt;/h1>&lt;p>Modern Linux desktops receive applications from at least three different worlds:
-&lt;strong>Debian packages&lt;/strong>, &lt;strong>Snap&lt;/strong> and &lt;strong>Flatpak&lt;/strong>. Each has its own idea of where the
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Desktop on Francisco Javier Jiménez Gómez</title><link>https://jimenezgomez.org/tags/desktop/</link><description>Recent content in Desktop on Francisco Javier Jiménez Gómez</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>Francisco Javier Jiménez Gómez</copyright><lastBuildDate>Mon, 12 Oct 2026 00:00:00 +0200</lastBuildDate><atom:link href="https://jimenezgomez.org/tags/desktop/index.xml" rel="self" type="application/rss+xml"/><item><title>Desktop Launcher Creator: giving a launcher to the apps that ship without one</title><link>https://jimenezgomez.org/posts/2026-10-12-desktop-launcher-creator/</link><pubDate>Mon, 12 Oct 2026 00:00:00 +0200</pubDate><guid>https://jimenezgomez.org/posts/2026-10-12-desktop-launcher-creator/</guid><description>&lt;img src="https://jimenezgomez.org/posts/2026-10-12-desktop-launcher-creator/og-image-1200x630.png" alt="Featured image of post Desktop Launcher Creator: giving a launcher to the apps that ship without one" /&gt;&lt;h1 id="desktop-launcher-creator"&gt;Desktop Launcher Creator
+&lt;/h1&gt;&lt;p&gt;Modern Linux desktops receive applications from at least three different worlds:
+&lt;strong&gt;Debian packages&lt;/strong&gt;, &lt;strong&gt;Snap&lt;/strong&gt; and &lt;strong&gt;Flatpak&lt;/strong&gt;. Each has its own idea of where the
 application lives and, sometimes, whether it deserves an entry in the applications
 menu. The result is a familiar annoyance: a program you have installed is there,
-but you cannot find it — and there is no obvious way to create a launcher for it.&lt;/p>
-&lt;p>&lt;strong>Desktop Launcher Creator&lt;/strong> is a small GTK application that fixes exactly that.
+but you cannot find it — and there is no obvious way to create a launcher for it.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Desktop Launcher Creator&lt;/strong&gt; is a small GTK application that fixes exactly that.
 It scans the applications installed through Debian, Snap and Flatpak, shows them
-in a simple list, and creates a &lt;code>.desktop&lt;/code> launcher for whatever you select.&lt;/p>
-&lt;p>&lt;img src="https://jimenezgomez.org/posts/2026-10-12-desktop-launcher-creator/screenshot.png"
+in a simple list, and creates a &lt;code&gt;.desktop&lt;/code&gt; launcher for whatever you select.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://jimenezgomez.org/posts/2026-10-12-desktop-launcher-creator/screenshot.png"
 width="616"
 height="666"
-srcset="https://jimenezgomez.org/posts/2026-10-12-desktop-launcher-creator/screenshot_hu918fdd2cc0ff13044cfd5c3d88827e29_62216_480x0_resize_box_3.png 480w, https://jimenezgomez.org/posts/2026-10-12-desktop-launcher-creator/screenshot_hu918fdd2cc0ff13044cfd5c3d88827e29_62216_1024x0_resize_box_3.png 1024w"
+srcset="https://jimenezgomez.org/posts/2026-10-12-desktop-launcher-creator/screenshot_hu_927b29f6ab836a90.png 480w, https://jimenezgomez.org/posts/2026-10-12-desktop-launcher-creator/screenshot_hu_98442e2d9478453a.png 1024w"
 loading="lazy"
 alt="Desktop Launcher Creator"
 class="gallery-image"
 data-flex-grow="92"
 data-flex-basis="221px"
->&lt;/p>
-&lt;h2 id="what-it-does">What it does
-&lt;/h2>&lt;ul>
-&lt;li>&lt;strong>Reads installed applications&lt;/strong> from the Debian, Snap and Flatpak sources.&lt;/li>
-&lt;li>&lt;strong>Shows them in a single list&lt;/strong>, so you can see what is actually installed.&lt;/li>
-&lt;li>&lt;strong>Creates a &lt;code>.desktop&lt;/code> launcher&lt;/strong> for the one you pick, ready to appear in your
-applications menu.&lt;/li>
-&lt;/ul>
-&lt;p>The interface is intentionally minimal: a source selector (&lt;code>Debian | Snap | Flatpak&lt;/code>), the list of applications, a destination and a single action button.
-No configuration files to hand-edit, no guessing at &lt;code>Exec=&lt;/code> lines.&lt;/p>
-&lt;h2 id="how-it-is-built">How it is built
-&lt;/h2>&lt;p>The application is written in &lt;strong>Python 3.12&lt;/strong> with &lt;strong>GTK 3&lt;/strong> (PyGObject and
+&gt;&lt;/p&gt;
+&lt;h2 id="what-it-does"&gt;What it does
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Reads installed applications&lt;/strong&gt; from the Debian, Snap and Flatpak sources.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Shows them in a single list&lt;/strong&gt;, so you can see what is actually installed.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Creates a &lt;code&gt;.desktop&lt;/code&gt; launcher&lt;/strong&gt; for the one you pick, ready to appear in your
+applications menu.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The interface is intentionally minimal: a source selector (&lt;code&gt;Debian | Snap | Flatpak&lt;/code&gt;), the list of applications, a destination and a single action button.
+No configuration files to hand-edit, no guessing at &lt;code&gt;Exec=&lt;/code&gt; lines.&lt;/p&gt;
+&lt;h2 id="how-it-is-built"&gt;How it is built
+&lt;/h2&gt;&lt;p&gt;The application is written in &lt;strong&gt;Python 3.12&lt;/strong&gt; with &lt;strong&gt;GTK 3&lt;/strong&gt; (PyGObject and
 pycairo). It follows the same philosophy I keep coming back to: keep the core
 logic independent from the interface, and let the interface be an adapter. In
-this case the &lt;em>core&lt;/em> is &amp;ldquo;enumerate installed applications and produce a launcher
-file&amp;rdquo;; the GTK window is just one way to drive it.&lt;/p>
-&lt;p>It is licensed under the &lt;strong>GPL-3.0-or-later&lt;/strong>.&lt;/p>
-&lt;h2 id="getting-it">Getting it
-&lt;/h2>&lt;p>Pre-built packages are attached to every release:&lt;/p>
-&lt;ul>
-&lt;li>&lt;strong>Debian/Ubuntu&lt;/strong>: &lt;code>.deb&lt;/code>&lt;/li>
-&lt;li>&lt;strong>Flatpak&lt;/strong>: &lt;code>.flatpak&lt;/code> bundle&lt;/li>
-&lt;li>&lt;strong>Snap&lt;/strong>: &lt;code>.snap&lt;/code>&lt;/li>
-&lt;li>&lt;strong>AppImage&lt;/strong>: portable &lt;code>.AppImage&lt;/code>&lt;/li>
-&lt;li>&lt;strong>Python&lt;/strong>: wheel and source distribution (&lt;code>.whl&lt;/code>, &lt;code>.tar.gz&lt;/code>)&lt;/li>
-&lt;/ul>
-&lt;p>You can find them under the &lt;em>Releases&lt;/em> section of the project:&lt;/p>
-&lt;ul>
-&lt;li>GitHub: &lt;a class="link" href="https://github.com/javi-jimenez/desktop-launcher-creator/releases" target="_blank" rel="noopener"
->https://github.com/javi-jimenez/desktop-launcher-creator/releases&lt;/a>&lt;/li>
-&lt;li>Gitea (self-hosted): &lt;a class="link" href="https://gitea.app.brisecom.net/gitea/desktop-launcher-creator/releases" target="_blank" rel="noopener"
->https://gitea.app.brisecom.net/gitea/desktop-launcher-creator/releases&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;p>Every release is built automatically from a tagged commit, so the artifacts and
-the source always match.&lt;/p></description></item></channel></rss>
+this case the &lt;em&gt;core&lt;/em&gt; is &amp;ldquo;enumerate installed applications and produce a launcher
+file&amp;rdquo;; the GTK window is just one way to drive it.&lt;/p&gt;
+&lt;p&gt;It is licensed under the &lt;strong&gt;GPL-3.0-or-later&lt;/strong&gt;.&lt;/p&gt;
+&lt;h2 id="getting-it"&gt;Getting it
+&lt;/h2&gt;&lt;p&gt;Pre-built packages are attached to every release:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Debian/Ubuntu&lt;/strong&gt;: &lt;code&gt;.deb&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Flatpak&lt;/strong&gt;: &lt;code&gt;.flatpak&lt;/code&gt; bundle&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Snap&lt;/strong&gt;: &lt;code&gt;.snap&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;AppImage&lt;/strong&gt;: portable &lt;code&gt;.AppImage&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Python&lt;/strong&gt;: wheel and source distribution (&lt;code&gt;.whl&lt;/code&gt;, &lt;code&gt;.tar.gz&lt;/code&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You can find them under the &lt;em&gt;Releases&lt;/em&gt; section of the project:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;GitHub: &lt;a class="link" href="https://github.com/javi-jimenez/desktop-launcher-creator/releases" target="_blank" rel="noopener"
+&gt;https://github.com/javi-jimenez/desktop-launcher-creator/releases&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Gitea (self-hosted): &lt;a class="link" href="https://gitea.app.brisecom.net/gitea/desktop-launcher-creator/releases" target="_blank" rel="noopener"
+&gt;https://gitea.app.brisecom.net/gitea/desktop-launcher-creator/releases&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Every release is built automatically from a tagged commit, so the artifacts and
+the source always match.&lt;/p&gt;</description></item></channel></rss>

@@ -5,6 +5,10 @@ tags:
 title: "VBD, Fractal Architecture: View, Business and Data. Input and Output."
 date: 2024-03-31 20:44:00 +02:00
 draft: false
+# `/posts/2024-03-31-vbd/` es una entrada vacía marcada como draft (era una
+# plantilla). Hugo no genera los drafts, así que esa URL daba 404. El alias
+# crea una redirección a este artículo, que es el contenido real de VBD.
+aliases: ["/posts/2024-03-31-vbd/"]
 categories:
   - writing
   - software

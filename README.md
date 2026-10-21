@@ -1,6 +1,6 @@
 # jimenezgomez.org
 
-**Versión: 1.2.2** · [CHANGELOG](CHANGELOG.md)
+**Versión: 1.2.3** · [CHANGELOG](CHANGELOG.md)
 
 Sitio personal de Francisco Javier Jiménez Gómez: `index.html` en la raíz es la
 landing de portfolio (en español, independiente de Hugo) y el blog se genera con
