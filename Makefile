@@ -26,9 +26,17 @@ DEV_IMAGE    ?= jimenezgomez-dev
 # 2026-10-16: se subió este sitio encima de /laia.brisecom.org).
 override FTP_REMOTE_PATH := /jimenezgomez.org/
 
+# ---- Réplica de remotos ----
+# El repo vive en dos forjas: GitHub (origin) y Gitea (gitea).
+# `make push-all` / `make release` empujan a las dos.
+GIT_REMOTES ?= origin gitea
+GIT_BRANCH  ?= main
+
 # ---- Targets ----
 .PHONY: help dep build html deploy ftp-deploy dev-container create-dev-container \
-	drone-run drone-exec serve gen-og gen-og-png install-hooks
+	drone-run drone-exec serve gen-og gen-og-png install-hooks \
+	version version-bump changelog-new readme-check \
+	git-status git-commit push push-all pull tag push-tags release
 
 help:
 	@echo "Available targets:"
@@ -42,6 +50,19 @@ help:
 	@echo "  drone-exec      alias de drone-run"
 	@echo "  serve           preview local de Hugo"
 	@echo "  gen-og / gen-og-png   genera imágenes OG y miniaturas"
+	@echo
+	@echo "Versionado y git (lógica de makeit):"
+	@echo "  version         muestra la versión; con VERSION=x.y.z la establece"
+	@echo "  version-bump    sube la versión (BUMP=major|minor|patch)"
+	@echo "  changelog-new   prepara la entrada de la versión en CHANGELOG.md"
+	@echo "  readme-check    comprueba que README y CHANGELOG citan la versión"
+	@echo "  git-status      estado de git"
+	@echo "  git-commit      commit de todo (COMMIT_MSG=\"...\")"
+	@echo "  push            commit + push a $(GIT_BRANCH) en origin"
+	@echo "  push-all        commit + push a TODOS los remotos ($(GIT_REMOTES))"
+	@echo "  tag             crea el tag <versión>-<timestamp>"
+	@echo "  push-tags       sube los tags a todos los remotos"
+	@echo "  release         tag + push-tags (etiquetar y publicar)"
 	@echo
 	@echo "Uso del contenedor dev:"
 	@echo "  make dev-container                    # shell interactivo"
@@ -177,4 +198,164 @@ gen-og-png:
 # ------------------------------------------------------------
 install-hooks:
 	@./tools/install-git-hooks.sh
+
+# ============================================================
+# Versionado, etiquetado y publicación
+# ------------------------------------------------------------
+# Esta sección es la de **makeit** (el framework de Makefiles de
+# ~/data/repo/makeit) y se mantiene sincronizada con él: allí es la
+# referencia, aquí la copia autocontenida.
+#
+# Por qué copiada y no `include`: este Makefile tiene que funcionar
+# igual en local, en Drone y en GitHub Actions, donde
+# ~/data/repo/makeit no existe. Un `include` de una ruta del HOME
+# haría que `make build` / `make deploy` (la ruta de producción)
+# dependiera de un directorio que solo está en esta máquina.
+# Sincronizado con: makeit 0.3.0 (version, version-bump, changelog-new,
+# readme-check, tag, push-tags, release, push-all, install-hooks).
+#
+# Política de versión visible: un tag es invisible desde dentro del
+# proyecto, así que la versión vive en VERSION, en README.md (arriba)
+# y en CHANGELOG.md (una entrada por tag, diciendo el porqué).
+# ============================================================
+
+VERSION_FILE    ?= VERSION
+PROJECT_VERSION := $(shell cat $(VERSION_FILE) 2>/dev/null || echo 0.0.0)
+README_FILE     ?= README.md
+CHANGELOG_FILE  ?= CHANGELOG.md
+CHANGELOG_AUTO  ?= 1
+
+# ---- versión ----
+version:
+	@if [ -n "$(VERSION)" ]; then \
+		printf "%s\n" "$(VERSION)" > $(VERSION_FILE); \
+		echo "Version del proyecto: $(VERSION)"; \
+	else \
+		echo "jimenezgomez.org: $(PROJECT_VERSION)"; \
+	fi
+
+version-bump:
+	@cur="$(PROJECT_VERSION)"; \
+	major=$$(echo $$cur | cut -d. -f1); minor=$$(echo $$cur | cut -d. -f2); patch=$$(echo $$cur | cut -d. -f3); \
+	case "$(BUMP)" in \
+		major) major=$$((major+1)); minor=0; patch=0 ;; \
+		minor) minor=$$((minor+1)); patch=0 ;; \
+		patch|"") patch=$$((patch+1)) ;; \
+		*) echo "BUMP debe ser major, minor o patch."; exit 1 ;; \
+	esac; \
+	new="$$major.$$minor.$$patch"; \
+	printf "%s\n" "$$new" > $(VERSION_FILE); \
+	echo "Version: $$cur -> $$new"
+
+# ---- CHANGELOG ----
+changelog-new:
+	@ver="$$(cat $(VERSION_FILE) 2>/dev/null || echo 0.0.0)"; \
+	if [ "$$ver" = "0.0.0" ]; then \
+		echo "No hay version. Ejecuta 'make version VERSION=x.y.z'."; exit 1; \
+	fi; \
+	if [ ! -f "$(CHANGELOG_FILE)" ]; then \
+		printf "# Changelog\n\n## [%s] — %s\n\n### Añadido\n\n### Cambiado\n\n### Corregido\n\n### Decidido\n" \
+			"$$ver" "$$(date +%Y-%m-%d)" > "$(CHANGELOG_FILE)"; \
+	else \
+		tmp="$$(mktemp)"; \
+		printf "# Changelog\n\n## [%s] — %s\n\n### Añadido\n\n### Cambiado\n\n### Corregido\n\n### Decidido\n\n" \
+			"$$ver" "$$(date +%Y-%m-%d)" > "$$tmp"; \
+		if head -1 "$(CHANGELOG_FILE)" | grep -q '^# Changelog'; then \
+			tail -n +2 "$(CHANGELOG_FILE)" >> "$$tmp"; \
+		else \
+			cat "$(CHANGELOG_FILE)" >> "$$tmp"; \
+		fi; \
+		mv "$$tmp" "$(CHANGELOG_FILE)"; \
+	fi; \
+	echo "Entrada $$ver preparada en $(CHANGELOG_FILE)"
+
+readme-check:
+	@fail=0; \
+	for f in $(README_FILE) $(CHANGELOG_FILE); do \
+		if [ ! -f "$$f" ]; then echo "Falta $$f"; fail=1; fi; \
+	done; \
+	ver="$$(cat $(VERSION_FILE) 2>/dev/null || echo 0.0.0)"; \
+	if [ "$$ver" != "0.0.0" ]; then \
+		if [ -f "$(README_FILE)" ] && ! grep -qF "$$ver" "$(README_FILE)"; then \
+			echo "$(README_FILE) no menciona la version $$ver"; fail=1; fi; \
+		if [ -f "$(CHANGELOG_FILE)" ] && ! grep -qF "$$ver" "$(CHANGELOG_FILE)"; then \
+			echo "$(CHANGELOG_FILE) no tiene entrada para $$ver"; fail=1; fi; \
+	fi; \
+	if [ "$$fail" -eq 0 ]; then echo "OK: version $$ver visible en README y CHANGELOG"; \
+	else exit 1; fi
+
+# ---- git ----
+git-status:
+	@git status --short --branch
+
+git-commit:
+	@git add -A; \
+	if git diff --cached --quiet; then \
+		echo "Sin cambios que commitear."; \
+	else \
+		git commit -m "$(if $(COMMIT_MSG),$(COMMIT_MSG),chore: sincronizar)"; \
+		echo "Commit creado."; \
+	fi
+
+push:
+	@$(MAKE) --no-print-directory git-commit
+	@git push origin $(GIT_BRANCH)
+	@echo "Subido a origin/$(GIT_BRANCH)."
+
+pull:
+	@git pull origin $(GIT_BRANCH)
+
+# Réplica: un commit y un push por remoto. El fallo de uno NO aborta los
+# demás (puede estar caído) pero sí afecta al código de salida, para no
+# dar por buena una subida a medias.
+push-all:
+	@$(MAKE) --no-print-directory git-commit
+	@remotes="$(GIT_REMOTES)"; fail=0; \
+	for r in $$remotes; do \
+		printf "  %-10s -> " "$$r"; \
+		out=$$(git push "$$r" "$(GIT_BRANCH)" 2>&1); rc=$$?; \
+		if [ $$rc -eq 0 ]; then echo "ok"; \
+		else echo "ERROR"; printf "%s\n" "$$out" | sed 's/^/    /'; fail=1; fi; \
+	done; \
+	if [ $$fail -eq 0 ]; then echo "Subido a todos los remotos."; \
+	else echo "Algun remoto fallo (ver arriba)."; exit 1; fi
+
+# Etiqueta con timestamp: <version>-YYYYMMDDHHMM (convención de makeit).
+# Antes de etiquetar, garantiza la entrada del CHANGELOG y **la commitea**:
+# sin ese commit la entrada quedaría fuera del tag.
+tag:
+	@stamp=$$(date +%Y%m%d%H%M); \
+	ver="$(PROJECT_VERSION)"; \
+	if [ -n "$$ver" ] && [ "$$ver" != "0.0.0" ]; then tag="$$ver-$$stamp"; else tag="$$stamp"; fi; \
+	if git rev-parse "$$tag" >/dev/null 2>&1; then \
+		echo "El tag $$tag ya existe."; \
+	else \
+		if [ "$(CHANGELOG_AUTO)" != "0" ] && [ -n "$$ver" ] && [ "$$ver" != "0.0.0" ]; then \
+			if ! grep -qF "## [$$ver]" "$(CHANGELOG_FILE)" 2>/dev/null; then \
+				$(MAKE) --no-print-directory changelog-new >/dev/null 2>&1 || true; \
+			fi; \
+			if [ -n "$$(git status --porcelain -- "$(CHANGELOG_FILE)" 2>/dev/null)" ]; then \
+				git add "$(CHANGELOG_FILE)"; \
+				git commit -q -m "changelog: entrada $$ver (antes del tag)" -- "$(CHANGELOG_FILE)"; \
+				echo "Entrada $$ver commiteada en $(CHANGELOG_FILE) — rellénala."; \
+			fi; \
+		fi; \
+		git tag -a "$$tag" -m "Release $$tag"; \
+		echo "Tag $$tag creado."; \
+	fi
+
+push-tags:
+	@remotes="$(GIT_REMOTES)"; fail=0; \
+	for r in $$remotes; do \
+		printf "  %-10s -> " "$$r"; \
+		out=$$(git push "$$r" --tags 2>&1); rc=$$?; \
+		if [ $$rc -eq 0 ]; then echo "ok"; \
+		else echo "ERROR"; printf "%s\n" "$$out" | sed 's/^/    /'; fail=1; fi; \
+	done; \
+	[ $$fail -eq 0 ] || { echo "Algun remoto rechazo los tags."; exit 1; }
+
+# Etiquetar y publicar en un paso.
+release:
+	@$(MAKE) --no-print-directory tag
+	@$(MAKE) --no-print-directory push-tags
 
