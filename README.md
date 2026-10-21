@@ -1,6 +1,6 @@
 # jimenezgomez.org
 
-**Versión: 1.2.1** · [CHANGELOG](CHANGELOG.md)
+**Versión: 1.2.2** · [CHANGELOG](CHANGELOG.md)
 
 Sitio personal de Francisco Javier Jiménez Gómez: `index.html` en la raíz es la
 landing de portfolio (en español, independiente de Hugo) y el blog se genera con
@@ -61,28 +61,34 @@ make push-tags    # sube los tags a ambos
 
 ### Credenciales
 
-`origin` (GitHub) va por **SSH**: la clave `~/.ssh/id_rsa-github` está cargada en
-el agente de la sesión, así que no pide passphrase. Si algún día la pide en
-consola, es que falta `SSH_AUTH_SOCK` en el shell (ver el bloque de
-`~/.bashrc`) o que hay que añadir la clave con `ssh-add`.
+Los dos remotos van por **SSH**, con la clave cargada en el agente de la sesión:
+no hay contraseñas ni tokens en juego al empujar, y no se pide nada.
 
-`gitea` va por **HTTPS con token**, en un almacén dedicado y separado del
-llavero de GCM (GCM puede leerlo pero no escribirlo en esta máquina):
+| Remoto | Transporte | Clave |
+|---|---|---|
+| `origin` | SSH (`git@github.com:…`) | `~/.ssh/id_rsa-github` |
+| `gitea` | SSH (`git@gitea.app.brisecom.net:…`) | `~/.ssh/id_ed25519_gitea` (`hek-push` en Gitea) |
 
-| Elemento | Ruta |
-|---|---|
-| Token de API | `~/.config/gitea/token` (0600) |
-| Almacén de git | `~/.config/gitea/credentials` (0600) |
-| Config | `[credential "https://gitea.app.brisecom.net"]` en `~/.gitconfig` |
+Si alguna vez pide passphrase en consola, es que falta `SSH_AUTH_SOCK` en el
+shell (ver el bloque de `~/.bashrc`) o que hay que añadir la clave con
+`ssh-add`. Comprobación rápida, sin efectos:
 
 ```bash
-git config --global --get-regexp '^credential\.https://gitea'
+ssh -o BatchMode=yes -T git@gitea.app.brisecom.net   # "Hi there, gitea!"
+ssh -o BatchMode=yes -T git@github.com               # "successfully authenticated"
 ```
 
-El bloque vacío `helper =` es deliberado: borra los helpers heredados
-(llavero/GCM) para ese host y deja solo el fichero. Sin él, GCM devolvería
-primero la credencial antigua. Para revocar el acceso: borrar el token en
-Gitea → *Settings → Applications* y regenerar.
+En Gitea, el **SSH entra por el puerto 22 a través del router TCP de Traefik**
+(hacia el OpenSSH del host, que delega en Gitea), así que no hace falta puerto
+raro ni `:~2222` en la URL. La URL canónica es la que publica la API:
+
+```
+git@gitea.app.brisecom.net:gitea/jimenezgomez.org.git
+```
+
+Hay además un **token de API** en `~/.config/gitea/token` (0600), que se usa
+solo para la API REST (crear repos, consultar metadatos). No interviene en
+`git push`. Se revoca en Gitea → *Settings → Applications*.
 
 ### Remotos lentos
 

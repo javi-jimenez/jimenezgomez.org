@@ -3,6 +3,32 @@
 Una entrada por tag. Cada entrada dice **qué** cambió y **por qué**; el porqué es
 lo primero que se pierde y lo más caro de reconstruir.
 
+## [1.2.2] — 2026-10-21
+
+### Cambiado
+
+- **Gitea pasa a SSH** (antes HTTPS con token). El SSH del servidor entra por el
+  **puerto 22 a través del router TCP de Traefik**, que reenvía al OpenSSH del
+  host; ese OpenSSH delega en Gitea. Resultado: `git push` no pide nada, porque
+  la clave `hek-push` ya está registrada y el agente la tiene cargada.
+- **URL canónica del remoto**, la que publica la API de Gitea:
+  `git@gitea.app.brisecom.net:gitea/jimenezgomez.org.git` (sin `:22`).
+
+### Corregido
+
+- **Documentación de credenciales desfasada**: el README describía un almacén de
+  credenciales HTTP que ya no se usa.
+
+### Decidido
+
+- **Un secreto menos en disco.** Se elimina `~/.config/gitea/credentials` y el
+  `helper` de git para ese host. El token de API se queda en
+  `~/.config/gitea/token` porque sigue haciendo falta para la API REST (crear
+  repos, consultar metadatos), pero ya no es una credencial de git.
+- **El workaround de packs se mantiene** (`GIT_SLOW_REMOTES = gitea`): el
+  problema es el almacén en s3fs, no el transporte. Cambiar HTTPS por SSH no lo
+  arregla.
+
 ## [1.2.1] — 2026-10-21
 
 ### Añadido
