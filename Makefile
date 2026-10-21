@@ -326,7 +326,7 @@ git-commit:
 push:
 	@$(MAKE) --no-print-directory git-commit
 	@f=$$($(call remote_push_flags,origin)); \
-	git "$${f%%|*}" push "$${f#*|}" origin $(GIT_BRANCH)
+	git $${f%%|*} push $${f#*|} origin $(GIT_BRANCH)
 	@echo "Subido a origin/$(GIT_BRANCH)."
 
 pull:
@@ -341,7 +341,7 @@ push-all:
 	for r in $$remotes; do \
 		printf "  %-10s -> " "$$r"; \
 		f=$$($(call remote_push_flags,$$r)); \
-		out=$$(git "$${f%%|*}" push "$${f#*|}" "$$r" "$(GIT_BRANCH)" 2>&1); rc=$$?; \
+		out=$$(git $${f%%|*} push $${f#*|} "$$r" "$(GIT_BRANCH)" 2>&1); rc=$$?; \
 		if [ $$rc -eq 0 ]; then echo "ok"; \
 		else echo "ERROR"; printf "%s\n" "$$out" | sed 's/^/    /'; fail=1; fi; \
 	done; \
@@ -377,7 +377,7 @@ push-tags:
 	for r in $$remotes; do \
 		printf "  %-10s -> " "$$r"; \
 		f=$$($(call remote_push_flags,$$r)); \
-		out=$$(git "$${f%%|*}" push "$${f#*|}" "$$r" --tags 2>&1); rc=$$?; \
+		out=$$(git $${f%%|*} push $${f#*|} "$$r" --tags 2>&1); rc=$$?; \
 		if [ $$rc -eq 0 ]; then echo "ok"; \
 		else echo "ERROR"; printf "%s\n" "$$out" | sed 's/^/    /'; fail=1; fi; \
 	done; \
