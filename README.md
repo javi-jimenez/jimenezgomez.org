@@ -1,6 +1,6 @@
 # jimenezgomez.org
 
-**Versión: 1.2.0** · [CHANGELOG](CHANGELOG.md)
+**Versión: 1.2.1** · [CHANGELOG](CHANGELOG.md)
 
 Sitio personal de Francisco Javier Jiménez Gómez: `index.html` en la raíz es la
 landing de portfolio (en español, independiente de Hugo) y el blog se genera con
@@ -58,6 +58,44 @@ El repo se replica en dos forjas:
 make push-all     # commit + push a ambos, informando de cuál falla
 make push-tags    # sube los tags a ambos
 ```
+
+### Credenciales
+
+`origin` (GitHub) va por **SSH**: la clave `~/.ssh/id_rsa-github` está cargada en
+el agente de la sesión, así que no pide passphrase. Si algún día la pide en
+consola, es que falta `SSH_AUTH_SOCK` en el shell (ver el bloque de
+`~/.bashrc`) o que hay que añadir la clave con `ssh-add`.
+
+`gitea` va por **HTTPS con token**, en un almacén dedicado y separado del
+llavero de GCM (GCM puede leerlo pero no escribirlo en esta máquina):
+
+| Elemento | Ruta |
+|---|---|
+| Token de API | `~/.config/gitea/token` (0600) |
+| Almacén de git | `~/.config/gitea/credentials` (0600) |
+| Config | `[credential "https://gitea.app.brisecom.net"]` en `~/.gitconfig` |
+
+```bash
+git config --global --get-regexp '^credential\.https://gitea'
+```
+
+El bloque vacío `helper =` es deliberado: borra los helpers heredados
+(llavero/GCM) para ese host y deja solo el fichero. Sin él, GCM devolvería
+primero la credencial antigua. Para revocar el acceso: borrar el token en
+Gitea → *Settings → Applications* y regenerar.
+
+### Remotos lentos
+
+El repositorio de Gitea vive en un sistema de ficheros sin locking (s3fs), y un
+`push` normal falla al descomprimir el pack:
+
+```
+remote unpack failed: index-pack abnormal exit
+```
+
+Por eso `GIT_SLOW_REMOTES = gitea` hace que `push`, `push-all`, `push-tags` y
+`release` empujen a ese remoto con `-c pack.threads=1 --no-thin` **solo a él**.
+GitHub sigue con `push` normal. Ya no hay que recordar el workaround a mano.
 
 ## Convenciones de contenido
 
