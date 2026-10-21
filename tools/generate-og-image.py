@@ -1,124 +1,86 @@
 #!/usr/bin/env python3
-"""
-Generate a simple OG SVG for a Hugo post.
-Usage:
-  ./generate-og-image.py /path/to/post
-Options:
-  --set-frontmatter  : update `image: "og-image.svg"` in the post frontmatter
-  --title "Text"     : override title to render
+"""Portada de un artículo.
 
-The script writes `og-image.svg` into the post folder.
+Punto de entrada estable (lo invoca el hook `pre-commit`), pero el dibujo lo
+hace `tools/coverart`. Si el artículo no tiene entrada en `coverart/specs.py`
+se usa una plantilla sobria y se avisa, para que el hueco se note.
+
+Uso:
+  ./tools/generate-og-image.py content/posts/2026-01-01-slug --set-frontmatter
+  ./tools/generate-og-image.py --all
 """
+import argparse
+import subprocess
 import sys
-import re
 from pathlib import Path
 
-TEMPLATE = '''<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+TOOLS = Path(__file__).resolve().parent
+sys.path.insert(0, str(TOOLS))
+
+from coverart.compose import title_of, year_of  # noqa: E402
+from coverart.specs import SPECS               # noqa: E402
+
+FALLBACK = '''<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
   <defs>
     <linearGradient id="g" x1="0" x2="1">
-      <stop offset="0" stop-color="#0f172a"/>
-      <stop offset="1" stop-color="#0b6f84"/>
+      <stop offset="0" stop-color="#0d1017"/>
+      <stop offset="1" stop-color="#1b2432"/>
     </linearGradient>
   </defs>
-  <rect width="100%" height="100%" fill="url(#g)" />
-  <g transform="translate(80,80)">
-    <rect x="0" y="0" width="1040" height="470" rx="18" fill-opacity="0.06" fill="#ffffff"/>
-    <text x="40" y="120" font-family="Inter, Arial, Helvetica, sans-serif" font-size="52" fill="#ffffff" font-weight="700">{title}</text>
-    <text x="40" y="190" font-family="Inter, Arial, Helvetica, sans-serif" font-size="28" fill="#e6f7fb">{subtitle}</text>
-    <text x="40" y="360" font-family="Inter, Arial, Helvetica, sans-serif" font-size="18" fill="#bdeef7">Documento — jimenezgomez.org — {year}</text>
+  <rect width="100%" height="100%" fill="url(#g)"/>
+  <g transform="translate(76,86)">
+    <rect x="0" y="0" width="56" height="3" rx="1.5" fill="#e2b552"/>
+    <text x="0" y="96" font-family="Inter Display, Inter, DejaVu Sans, sans-serif"
+          font-size="50" font-weight="900" fill="#f6f3ec">{title}</text>
+    <text x="0" y="470" font-family="IBM Plex Mono, monospace" font-size="14"
+          letter-spacing="1.8" fill="#8496ab">JIMENEZGOMEZ.ORG · {year}</text>
   </g>
-</svg>'''
+</svg>
+'''
 
 
-def read_title_from_index(post_dir: Path):
-    idx = post_dir / 'index.md'
-    if not idx.exists():
-        return post_dir.name.replace('-', ' ').title()
-    text = idx.read_text(encoding='utf-8')
-    # try YAML frontmatter between --- and ---
-    m = re.search(r"^---\n(.*?)\n---\n", text, re.S | re.M)
-    if not m:
-        # try toml +++
-        m = re.search(r"^\+\+\+\n(.*?)\n\+\+\+\n", text, re.S | re.M)
-    if m:
-        fm = m.group(1)
-        # look for title: "..."
-        tm = re.search(r"^title\s*:\s*\"?(.*?)\"?$", fm, re.M)
-        if tm:
-            return tm.group(1).strip()
-        # toml: title = '...'
-        tm = re.search(r"^title\s*=\s*\"?(.*?)\"?\s*$", fm, re.M)
-        if tm:
-            return tm.group(1).strip()
-    # fallback: first H1
-    h1 = re.search(r"^#\s+(.*)$", text, re.M)
-    if h1:
-        return h1.group(1).strip()
-    return post_dir.name.replace('-', ' ').title()
+def main(argv=None):
+    ap = argparse.ArgumentParser()
+    ap.add_argument("post", nargs="?", help="carpeta del artículo")
+    ap.add_argument("--all", action="store_true", help="todos los de specs.py")
+    ap.add_argument("--set-frontmatter", action="store_true")
+    ap.add_argument("--title", help="sobrescribe el título")
+    args = ap.parse_args(argv)
 
+    if args.all:
+        return subprocess.call([sys.executable, "-m", "coverart", "--all"],
+                               cwd=TOOLS)
 
-def set_frontmatter_image(post_dir: Path, image_name='og-image.svg'):
-    idx = post_dir / 'index.md'
-    if not idx.exists():
-        return False
-    s = idx.read_text(encoding='utf-8')
-    if s.startswith('---'):
-        # YAML frontmatter
-        parts = s.split('---')
-        # parts[1] is fm
-        fm = parts[1]
-        if re.search(r"^image\s*:\s*", fm, re.M):
-            # replace existing
-            fm = re.sub(r"^image\s*:\s*.*$", f'image: "{image_name}"', fm, flags=re.M)
-        else:
-            fm = fm.strip() + '\nimage: "' + image_name + '"\n'
-        parts[1] = fm
-        new = '---'.join(parts)
-        idx.write_text(new, encoding='utf-8')
-        return True
-    if s.startswith('+++'):
-        # TOML frontmatter
-        parts = s.split('+++')
-        fm = parts[1]
-        if re.search(r"^image\s*=", fm, re.M):
-            fm = re.sub(r"^image\s*=\s*.*$", f'image = "{image_name}"', fm, flags=re.M)
-        else:
-            fm = fm.strip() + '\nimage = "' + image_name + '"\n'
-        parts[1] = fm
-        new = '+++'.join(parts)
-        idx.write_text(new, encoding='utf-8')
-        return True
-    return False
+    if not args.post:
+        ap.error("indica la carpeta del artículo o usa --all")
 
-
-def main(argv):
-    import argparse
-    parser = argparse.ArgumentParser()
-    parser.add_argument('post', help='Path to post folder (e.g. content/posts/2026-01-03-slug)')
-    parser.add_argument('--set-frontmatter', action='store_true', help='Update frontmatter to reference generated og-image.svg')
-    parser.add_argument('--title', help='Override title text')
-    args = parser.parse_args(argv)
-    post = Path(args.post)
-    if not post.exists() or not post.is_dir():
-        print('Post folder not found:', post)
+    post = Path(args.post).resolve()
+    if not post.is_dir():
+        print("No existe la carpeta:", post)
         return 2
-    title = args.title or read_title_from_index(post)
-    subtitle = ''
-    year = '2026'
-    try:
-        year = read_title_from_index(post)
-    except Exception:
-        pass
-    # craft svg
-    svg = TEMPLATE.format(title=title.replace('"',''), subtitle=subtitle, year='2026')
-    out = post / 'og-image.svg'
-    out.write_text(svg, encoding='utf-8')
-    print('Wrote', out)
+    slug = post.name
+
+    if slug in SPECS:
+        cmd = [sys.executable, "-m", "coverart", slug]
+        if not args.set_frontmatter:
+            cmd.append("--no-frontmatter")
+        return subprocess.call(cmd, cwd=TOOLS)
+
+    print(f"  ! {slug}: sin portada propia en coverart/specs.py "
+          f"(se usa la plantilla sobria)")
+    (post / "og-image.svg").write_text(
+        FALLBACK.format(title=(args.title or title_of(post)).replace('"', ""),
+                        year=year_of(post)), encoding="utf-8")
+    for w, h in ((1200, 630), (600, 315)):
+        subprocess.run(["rsvg-convert", "-w", str(w), "-h", str(h),
+                        "-o", str(post / f"og-image-{w}x{h}.png"),
+                        str(post / "og-image.svg")], check=False)
     if args.set_frontmatter:
-        ok = set_frontmatter_image(post)
-        print('Frontmatter updated' if ok else 'Frontmatter not updated (no frontmatter found)')
+        from coverart.__main__ import set_frontmatter_image
+        set_frontmatter_image(post, "og-image-1200x630.png")
+        print("Frontmatter updated")
     return 0
 
 
-if __name__ == '__main__':
-    raise SystemExit(main(sys.argv[1:]))
+if __name__ == "__main__":
+    sys.exit(main())

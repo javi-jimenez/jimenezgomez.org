@@ -1,15 +1,32 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
-  <defs>
-    <linearGradient id="g" x1="0" x2="1">
-      <stop offset="0" stop-color="#0f172a"/>
-      <stop offset="1" stop-color="#0b6f84"/>
-    </linearGradient>
-  </defs>
-  <rect width="100%" height="100%" fill="url(#g)" />
-  <g transform="translate(80,80)">
-    <rect x="0" y="0" width="1040" height="470" rx="18" fill-opacity="0.06" fill="#ffffff"/>
-    <text x="40" y="120" font-family="Inter, Arial, Helvetica, sans-serif" font-size="52" fill="#ffffff" font-weight="700">Laia Visual Identity: Designing the Image of Ethical AI</text>
-    <text x="40" y="190" font-family="Inter, Arial, Helvetica, sans-serif" font-size="28" fill="#e6f7fb"></text>
-    <text x="40" y="360" font-family="Inter, Arial, Helvetica, sans-serif" font-size="18" fill="#bdeef7">Documento — jimenezgomez.org — 2026</text>
-  </g>
+<defs >
+  <linearGradient id="bg" x1="0" y1="0" x2="-0.77" y2="0.64">
+    <stop offset="0%" stop-color="#0b1016"/>
+    <stop offset="100%" stop-color="#1b2432"/>
+  </linearGradient>
+  <radialGradient id="vig" cx="50%" cy="45%" r="78%">
+    <stop offset="58%" stop-color="#000000" stop-opacity="0"/>
+    <stop offset="100%" stop-color="#000000" stop-opacity="0.26"/>
+  </radialGradient>
+  <filter id="grain" x="0" y="0" width="100%" height="100%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="3" seed="37" result="n"/>
+    <feColorMatrix in="n" type="saturate" values="0"/>
+    <feComponentTransfer ><feFuncA type="linear" slope="0.5"/></feComponentTransfer>
+  </filter>
+  <linearGradient id="scrim" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#0b1016" stop-opacity="0.97"/>
+    <stop offset="40%" stop-color="#0b1016" stop-opacity="0.90"/>
+    <stop offset="55%" stop-color="#0b1016" stop-opacity="0.55"/>
+    <stop offset="66%" stop-color="#0b1016" stop-opacity="0"/>
+  </linearGradient>
+</defs>
+<rect width="1200" height="630" fill="url(#bg)"/>
+<rect width="1200" height="630" fill="url(#vig)"/>
+<g opacity="0.045" stroke="#f6f3ec" stroke-width="1">
+  <line x1="0" y1="0" x2="1200" y2="0"/><line x1="0" y1="90" x2="1200" y2="90"/><line x1="0" y1="180" x2="1200" y2="180"/><line x1="0" y1="270" x2="1200" y2="270"/><line x1="0" y1="360" x2="1200" y2="360"/><line x1="0" y1="450" x2="1200" y2="450"/><line x1="0" y1="540" x2="1200" y2="540"/>
+</g>
+<rect width="1200" height="630" filter="url(#grain)" opacity="0.028"/>
+<g opacity="1"><polygon points="830.0,125.0 858.3,246.6 964.4,180.6 898.4,286.7 1020.0,315.0 898.4,343.3 964.4,449.4 858.3,383.4 830.0,505.0 801.7,383.4 695.6,449.4 761.6,343.3 640.0,315.0 761.6,286.7 695.6,180.6 801.7,246.6" fill="#e2b552" fill-opacity="0.1" stroke="#e2b552" stroke-width="2" stroke-opacity="0.95" stroke-linecap="round" stroke-linejoin="round"/><polygon points="902.7,139.5 882.3,262.7 1005.5,242.3 904.0,315.0 1005.5,387.7 882.3,367.3 902.7,490.5 830.0,389.0 757.3,490.5 777.7,367.3 654.5,387.7 756.0,315.0 654.5,242.3 777.7,262.7 757.3,139.5 830.0,241.0" fill="#e2b552" fill-opacity="0.0" stroke="#e2b552" stroke-width="1.1" stroke-opacity="0.4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="830" cy="315" r="16" fill="#e2b552"/><circle cx="830" cy="315" r="224" fill="none" stroke="#8496ab" stroke-width="1" stroke-opacity="0.35" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4 8"/></g>
+<rect width="1200" height="630" fill="url(#scrim)"/>
+<text x="72" y="96" font-family="IBM Plex Mono, DejaVu Sans Mono, monospace" font-size="15" letter-spacing="3.4" fill="#e2b552" font-weight="500">LAIA · IDENTITY</text><rect x="72" y="114" width="56" height="3" rx="1.5" fill="#e2b552" fill-opacity="0.9"/><text x="72" y="190.0" font-family="Inter Display, Inter, DejaVu Sans, sans-serif" font-size="50" font-weight="900" letter-spacing="-0.5" fill="#f6f3ec">Laia Visual Identity:</text><text x="72" y="244.0" font-family="Inter Display, Inter, DejaVu Sans, sans-serif" font-size="50" font-weight="900" letter-spacing="-0.5" fill="#f6f3ec">Designing the Image</text><text x="72" y="298.0" font-family="Inter Display, Inter, DejaVu Sans, sans-serif" font-size="50" font-weight="900" letter-spacing="-0.5" fill="#f6f3ec">of Ethical AI</text><line x1="72" y1="368.0" x2="136" y2="368.0" stroke="#f3e0b6" stroke-width="1.6" stroke-opacity="0.8"/><text x="72" y="402.0" font-family="EB Garamond, DejaVu Serif, serif" font-size="19" font-style="italic" fill="#f3e0b6" fill-opacity="0.85">The image of an idea that refuses decoration.</text><line x1="72" y1="558" x2="112" y2="558" stroke="#8496ab" stroke-width="1" stroke-opacity="0.7"/><text x="72" y="584" font-family="IBM Plex Mono, DejaVu Sans Mono, monospace" font-size="14" letter-spacing="1.8" fill="#8496ab" fill-opacity="0.95">JIMENEZGOMEZ.ORG · 2025</text>
 </svg>

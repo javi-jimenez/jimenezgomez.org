@@ -3,11 +3,10 @@ title: "Faith"
 date: 2026-01-28T12:00:00+01:00
 draft: false
 layout: post
-tags:
-image: "og-image.svg"
+tags: []
+image: "og-image-1200x630.png"
+og_image: "og-image-1200x630.png"
 ---
-image: "og-image.svg"
-og_image: "og-image.svg"---
 Talking about "The Faith" implies addressing several dimensions: the religious, the intimate and the practical. Below are key ideas to understand what it means to act based on Faith and how to do it in a solid way.
 
 ## Traditional definition

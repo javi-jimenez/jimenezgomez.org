@@ -9,3 +9,7 @@ thumbs.db
 # Hugo build cache / lockfile (se regeneran en cada build)
 /resources/_gen/
 .hugo_build.lock
+
+# Python bytecode (generadores de herramientas)
+__pycache__/
+*.pyc

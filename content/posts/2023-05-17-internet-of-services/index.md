@@ -2,7 +2,7 @@
 title: "Internet of Services"
 date: 2023-05-17T21:56:26+02:00
 layout: post
-image: "og-image.svg"
+image: "og-image-1200x630.png"
 og_image: "og-image-1200x630.png"
 tags: []
 ---

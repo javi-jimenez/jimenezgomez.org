@@ -3,8 +3,9 @@ title: "📄 Article: The Universal Container: Why SQL + JSON is the Most Practi
 date: 2026-08-20T08:27:00+01:00
 draft: false
 layout: post
-image: "og-image.svg"
+image: "og-image-1200x630.png"
 tags: []
+og_image: "og-image-1200x630.png"
 ---
 
 ![universal data container](universal-data-container.svg)

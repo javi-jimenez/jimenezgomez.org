@@ -3,6 +3,51 @@
 Una entrada por tag. Cada entrada dice **qué** cambió y **por qué**; el porqué es
 lo primero que se pierde y lo más caro de reconstruir.
 
+## [1.2.0] — 2026-10-21
+
+### Añadido
+
+- **Portadas propias para los 39 artículos** (`tools/coverart/`). Antes todos
+  compartían la misma plantilla: degradado azul y el título encima. Ahora cada
+  uno tiene un **motivo** dibujado para su tema —redes, capas, fractales,
+  órbitas, sellos, estratos, muros, fichas, símbolos formales— y una **paleta**
+  distinta, incluidas portadas claras de aire editorial.
+- `python3 -m coverart --all|<slug>` y `--list` para generar y auditar el reparto.
+- Motivo `plinth` para el artículo de ética: placa decorativa que flota frente a
+  cimiento que sostiene. Es la tesis del texto, dibujada.
+
+### Cambiado
+
+- **`og:image` y `twitter:image` apuntan al PNG**, no al SVG. Las redes sociales
+  no renderizan SVG: hasta ahora cada enlace compartido salía sin imagen. El
+  frontmatter de los 39 artículos se ha actualizado.
+- **El hook `pre-commit` sólo regenera la portada de los artículos del commit.**
+  Antes rehacía las 39 en cada commit (lento) y, al usar la plantilla genérica,
+  **sobrescribía cualquier portada hecha a mano** — le pasó la primera vez a la
+  del artículo de ética.
+- `tools/generate-og-image.py` pasa a delegar en `coverart`; se mantiene como
+  punto de entrada porque lo llama el hook, y avisa cuando un artículo no tiene
+  portada propia.
+
+### Corregido
+
+- **Frontmatter corrupto en `2026-01-28-la-fe`**: los delimitadores `---` estaban
+  duplicados y las claves `image`/`og_image` quedaban parte dentro y parte fuera
+  del bloque, como texto del cuerpo. Venía de una inserción anterior.
+
+### Decidido
+
+- **Ninguna pareja (motivo, paleta) se repite.** Con 39 artículos y una librería
+  de motivos menor que ese número, la variedad se consigue combinando: quien
+  comparte tema comparte dibujo y cambia de color y de parámetros. Así se
+  reconoce la familia sin confundir las piezas.
+- **Los PNG se cuantizan a 256 colores.** El grano de la portada es ruido, y el
+  ruido no comprime: 300 KB por portada. Con `PNG8` baja a ~120 KB y no se nota,
+  porque el propio grano hace de tramado. El repositorio pesa 6,5 MB menos.
+- **El color se decide por artículo, no por plantilla.** Una lista de 39
+  portadas idénticas no distingue nada; en cuanto cambia el color, se reconoce
+  cuál es cuál antes de leer el título.
+
 ## [1.1.0] — 2026-10-21
 
 Primera versión con versionado explícito desde `v1.0.0` (2026-09-07). Recoge los

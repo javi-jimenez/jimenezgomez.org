@@ -3,10 +3,10 @@ title: "Laia: Ethical Artificial Intelligence - A Research Project"
 date: "2025-12-18T08:00:00+02:00"
 draft: false
 layout: post
-image: "og-image.svg"
+image: "og-image-1200x630.png"
 categories:
 tags:
-og_image: laia-ai.jpg
+og_image: "og-image-1200x630.png"
 ---
 ![Laia - Ethical AI Research](laia-header.svg)
 

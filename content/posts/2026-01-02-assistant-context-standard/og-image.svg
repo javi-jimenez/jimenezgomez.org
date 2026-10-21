@@ -1,15 +1,32 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
-  <defs>
-    <linearGradient id="g" x1="0" x2="1">
-      <stop offset="0" stop-color="#0f172a"/>
-      <stop offset="1" stop-color="#0b6f84"/>
-    </linearGradient>
-  </defs>
-  <rect width="100%" height="100%" fill="url(#g)" />
-  <g transform="translate(80,80)">
-    <rect x="0" y="0" width="1040" height="470" rx="18" fill-opacity="0.06" fill="#ffffff"/>
-    <text x="40" y="120" font-family="Inter, Arial, Helvetica, sans-serif" font-size="52" fill="#ffffff" font-weight="700">Unified Context Protocol for Assistants (UCPA / ACS)</text>
-    <text x="40" y="190" font-family="Inter, Arial, Helvetica, sans-serif" font-size="28" fill="#e6f7fb"></text>
-    <text x="40" y="360" font-family="Inter, Arial, Helvetica, sans-serif" font-size="18" fill="#bdeef7">Documento — jimenezgomez.org — 2026</text>
-  </g>
+<defs >
+  <linearGradient id="bg" x1="0" y1="0" x2="0.94" y2="0.34">
+    <stop offset="0%" stop-color="#0b1008"/>
+    <stop offset="100%" stop-color="#1e2b12"/>
+  </linearGradient>
+  <radialGradient id="vig" cx="50%" cy="45%" r="78%">
+    <stop offset="58%" stop-color="#000000" stop-opacity="0"/>
+    <stop offset="100%" stop-color="#000000" stop-opacity="0.26"/>
+  </radialGradient>
+  <filter id="grain" x="0" y="0" width="100%" height="100%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="3" seed="69" result="n"/>
+    <feColorMatrix in="n" type="saturate" values="0"/>
+    <feComponentTransfer ><feFuncA type="linear" slope="0.5"/></feComponentTransfer>
+  </filter>
+  <linearGradient id="scrim" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#0b1008" stop-opacity="0.97"/>
+    <stop offset="40%" stop-color="#0b1008" stop-opacity="0.90"/>
+    <stop offset="55%" stop-color="#0b1008" stop-opacity="0.55"/>
+    <stop offset="66%" stop-color="#0b1008" stop-opacity="0"/>
+  </linearGradient>
+</defs>
+<rect width="1200" height="630" fill="url(#bg)"/>
+<rect width="1200" height="630" fill="url(#vig)"/>
+<g opacity="0.045" stroke="#f1f7e4" stroke-width="1">
+  <line x1="0" y1="0" x2="1200" y2="0"/><line x1="0" y1="90" x2="1200" y2="90"/><line x1="0" y1="180" x2="1200" y2="180"/><line x1="0" y1="270" x2="1200" y2="270"/><line x1="0" y1="360" x2="1200" y2="360"/><line x1="0" y1="450" x2="1200" y2="450"/><line x1="0" y1="540" x2="1200" y2="540"/>
+</g>
+<rect width="1200" height="630" filter="url(#grain)" opacity="0.028"/>
+<g opacity="1"><path d="M 600 175 C 780 175, 860 315, 1000 315" stroke="#849463" stroke-width="1.3" stroke-opacity="0.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="600" cy="175" r="5" fill="#e6f4c4" fill-opacity="0.55"/><path d="M 600 240 C 780 240, 860 315, 1000 315" stroke="#849463" stroke-width="1.3" stroke-opacity="0.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="600" cy="240" r="5" fill="#e6f4c4" fill-opacity="0.55"/><path d="M 600 315 C 780 315, 860 315, 1000 315" stroke="#849463" stroke-width="1.3" stroke-opacity="0.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="600" cy="315" r="5" fill="#e6f4c4" fill-opacity="0.55"/><path d="M 600 390 C 780 390, 860 315, 1000 315" stroke="#849463" stroke-width="1.3" stroke-opacity="0.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="600" cy="390" r="5" fill="#e6f4c4" fill-opacity="0.55"/><path d="M 600 455 C 780 455, 860 315, 1000 315" stroke="#849463" stroke-width="1.3" stroke-opacity="0.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="600" cy="455" r="5" fill="#e6f4c4" fill-opacity="0.55"/><path d="M 1000 315 L 1130 315" fill="none" stroke="#b5d96b" stroke-width="2.6" stroke-opacity="0.95" stroke-linecap="round" stroke-linejoin="round"/><polygon points="1150.0,315.0 1120.0,302.0 1120.0,328.0" fill="#b5d96b"/><circle cx="1000" cy="315" r="26" fill="#b5d96b" fill-opacity="0.14" stroke="#b5d96b" stroke-width="1.6" stroke-opacity="0.9" stroke-linecap="round" stroke-linejoin="round"/></g>
+<rect width="1200" height="630" fill="url(#scrim)"/>
+<text x="72" y="96" font-family="IBM Plex Mono, DejaVu Sans Mono, monospace" font-size="15" letter-spacing="3.4" fill="#b5d96b" font-weight="500">STANDARD</text><rect x="72" y="114" width="56" height="3" rx="1.5" fill="#b5d96b" fill-opacity="0.9"/><text x="72" y="190.0" font-family="Inter Display, Inter, DejaVu Sans, sans-serif" font-size="46" font-weight="900" letter-spacing="-0.5" fill="#f1f7e4">Unified Context</text><text x="72" y="239.7" font-family="Inter Display, Inter, DejaVu Sans, sans-serif" font-size="46" font-weight="900" letter-spacing="-0.5" fill="#f1f7e4">Protocol for Assistants</text><text x="72" y="289.4" font-family="Inter Display, Inter, DejaVu Sans, sans-serif" font-size="46" font-weight="900" letter-spacing="-0.5" fill="#f1f7e4">(UCPA / ACS)</text><line x1="72" y1="355.0" x2="136" y2="355.0" stroke="#e6f4c4" stroke-width="1.6" stroke-opacity="0.8"/><text x="72" y="389.0" font-family="EB Garamond, DejaVu Serif, serif" font-size="19" font-style="italic" fill="#e6f4c4" fill-opacity="0.85">One protocol, many assistants.</text><line x1="72" y1="558" x2="112" y2="558" stroke="#849463" stroke-width="1" stroke-opacity="0.7"/><text x="72" y="584" font-family="IBM Plex Mono, DejaVu Sans Mono, monospace" font-size="14" letter-spacing="1.8" fill="#849463" fill-opacity="0.95">JIMENEZGOMEZ.ORG · 2026</text>
 </svg>

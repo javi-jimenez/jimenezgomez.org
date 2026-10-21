@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="600" viewBox="0 0 900 600">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#071023" />
+      <stop offset="100%" stop-color="#0b2540" />
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#e2b552" />
+      <stop offset="100%" stop-color="#54d7ea" />
+    </linearGradient>
+  </defs>
+
+  <rect width="900" height="600" fill="url(#bg)" />
+
+  <!-- faint cartesian grid -->
+  <g stroke="#ffffff" stroke-opacity="0.04" stroke-width="1">
+    <line x1="0" y1="100" x2="900" y2="100" />
+    <line x1="0" y1="200" x2="900" y2="200" />
+    <line x1="0" y1="300" x2="900" y2="300" />
+    <line x1="0" y1="400" x2="900" y2="400" />
+    <line x1="0" y1="500" x2="900" y2="500" />
+    <line x1="150" y1="0" x2="150" y2="600" />
+    <line x1="300" y1="0" x2="300" y2="600" />
+    <line x1="450" y1="0" x2="450" y2="600" />
+    <line x1="600" y1="0" x2="600" y2="600" />
+    <line x1="750" y1="0" x2="750" y2="600" />
+  </g>
+
+  <!-- header -->
+  <text x="40" y="36" font-family="Inter, DejaVu Sans, sans-serif" font-size="11"
+        letter-spacing="2.4" fill="#54d7ea" font-weight="600">WORKING AS EQUALS &#183; JIMENEZGOMEZ.ORG</text>
+  <text x="40" y="70" font-family="Inter, DejaVu Sans, sans-serif" font-size="24"
+        fill="#ffffff" font-weight="700">Ethics as infrastructure, not decoration</text>
+
+  <line x1="450" y1="106" x2="450" y2="540" stroke="#ffffff" stroke-opacity="0.10" stroke-width="1" />
+
+  <!-- ================= LEFT: DECORATION ================= -->
+  <text x="40" y="124" font-family="Inter, DejaVu Sans, sans-serif" font-size="12"
+        letter-spacing="2.2" fill="#8b93a7" font-weight="700">DECORATION</text>
+  <text x="40" y="146" font-family="Inter, DejaVu Sans, sans-serif" font-size="13"
+        fill="#6b7488" font-style="italic">Ethics applied at the end of the process</text>
+
+  <!-- plaque -->
+  <rect x="64" y="160" width="360" height="44" rx="7" fill="#ffffff" fill-opacity="0.03"
+        stroke="#64748b" stroke-opacity="0.75" stroke-width="1.4" stroke-dasharray="6 5" />
+  <text x="80" y="181" font-family="Inter, DejaVu Sans, sans-serif" font-size="14"
+        fill="#94a3b8" font-weight="600">ETHICS&#8482;</text>
+  <text x="80" y="197" font-family="Inter, DejaVu Sans, sans-serif" font-size="11.5"
+        fill="#6b7488">policy &#183; committee &#183; press release</text>
+
+  <!-- stack -->
+  <rect x="64" y="216" width="360" height="48" rx="6" fill="#ffffff" fill-opacity="0.05"
+        stroke="#ffffff" stroke-opacity="0.12" />
+  <text x="84" y="245" font-family="Inter, DejaVu Sans, sans-serif" font-size="16" fill="#94a3b8">Product &#183; deployment</text>
+
+  <rect x="64" y="276" width="360" height="48" rx="6" fill="#ffffff" fill-opacity="0.05"
+        stroke="#ffffff" stroke-opacity="0.12" />
+  <text x="84" y="305" font-family="Inter, DejaVu Sans, sans-serif" font-size="16" fill="#94a3b8">Model &#183; evaluation</text>
+
+  <rect x="64" y="336" width="360" height="48" rx="6" fill="#ffffff" fill-opacity="0.05"
+        stroke="#ffffff" stroke-opacity="0.12" />
+  <text x="84" y="365" font-family="Inter, DejaVu Sans, sans-serif" font-size="16" fill="#94a3b8">Data &#183; annotation</text>
+
+  <rect x="64" y="396" width="360" height="48" rx="6" fill="#ffffff" fill-opacity="0.05"
+        stroke="#ffffff" stroke-opacity="0.12" />
+  <text x="84" y="425" font-family="Inter, DejaVu Sans, sans-serif" font-size="16" fill="#94a3b8">Team (a &#8220;resource&#8221;)</text>
+
+  <!-- one-way authority arrow -->
+  <line x1="44" y1="212" x2="44" y2="440" stroke="#6b7488" stroke-width="1.6" />
+  <polygon points="44,452 38,438 50,438" fill="#6b7488" />
+  <text x="64" y="466" font-family="Inter, DejaVu Sans, sans-serif" font-size="10.5"
+        letter-spacing="1.4" fill="#5d6678">AUTHORITY FLOWS ONE WAY</text>
+
+  <text x="64" y="552" font-family="Inter, DejaVu Sans, sans-serif" font-size="13.5"
+        fill="#6b7488" font-style="italic">Can be removed without consequence.</text>
+  <text x="64" y="572" font-family="Inter, DejaVu Sans, sans-serif" font-size="13.5"
+        fill="#6b7488" font-style="italic">That is how you recognise it.</text>
+
+  <!-- ================= RIGHT: INFRASTRUCTURE ================= -->
+  <text x="480" y="124" font-family="Inter, DejaVu Sans, sans-serif" font-size="12"
+        letter-spacing="2.2" fill="#e2b552" font-weight="700">INFRASTRUCTURE</text>
+  <text x="480" y="146" font-family="Inter, DejaVu Sans, sans-serif" font-size="13"
+        fill="#7f8aa3" font-style="italic">Ethics as the substrate everything rests on</text>
+
+  <rect x="496" y="160" width="348" height="44" rx="7" fill="#e2b552" fill-opacity="0.06"
+        stroke="#e2b552" stroke-opacity="0.35" stroke-width="1.2" stroke-dasharray="6 5" />
+  <text x="512" y="181" font-family="Inter, DejaVu Sans, sans-serif" font-size="13"
+        fill="#c9a24a" font-weight="600">Built before the first commit</text>
+  <text x="512" y="197" font-family="Inter, DejaVu Sans, sans-serif" font-size="11.5"
+        fill="#8b93a7">design-time &#183; not sign-off time</text>
+
+  <rect x="496" y="216" width="348" height="48" rx="6" fill="#54d7ea" fill-opacity="0.07"
+        stroke="#54d7ea" stroke-opacity="0.35" />
+  <text x="516" y="245" font-family="Inter, DejaVu Sans, sans-serif" font-size="16" fill="#d8f6fb">Product &#183; deployment</text>
+
+  <rect x="496" y="276" width="348" height="48" rx="6" fill="#54d7ea" fill-opacity="0.07"
+        stroke="#54d7ea" stroke-opacity="0.35" />
+  <text x="516" y="305" font-family="Inter, DejaVu Sans, sans-serif" font-size="16" fill="#d8f6fb">Model &#183; evaluation</text>
+
+  <rect x="496" y="336" width="348" height="48" rx="6" fill="#54d7ea" fill-opacity="0.07"
+        stroke="#54d7ea" stroke-opacity="0.35" />
+  <text x="516" y="365" font-family="Inter, DejaVu Sans, sans-serif" font-size="16" fill="#d8f6fb">Data &#183; annotation</text>
+
+  <!-- peers row -->
+  <rect x="496" y="396" width="106" height="48" rx="6" fill="#54d7ea" fill-opacity="0.10"
+        stroke="#54d7ea" stroke-opacity="0.55" />
+  <text x="514" y="425" font-family="Inter, DejaVu Sans, sans-serif" font-size="14" fill="#d8f6fb">Partner</text>
+
+  <rect x="617" y="396" width="106" height="48" rx="6" fill="#54d7ea" fill-opacity="0.10"
+        stroke="#54d7ea" stroke-opacity="0.55" />
+  <text x="635" y="425" font-family="Inter, DejaVu Sans, sans-serif" font-size="14" fill="#d8f6fb">Partner</text>
+
+  <rect x="738" y="396" width="106" height="48" rx="6" fill="#54d7ea" fill-opacity="0.10"
+        stroke="#54d7ea" stroke-opacity="0.55" />
+  <text x="756" y="425" font-family="Inter, DejaVu Sans, sans-serif" font-size="14" fill="#d8f6fb">Partner</text>
+
+  <g stroke="#54d7ea" stroke-opacity="0.85" stroke-width="1.8">
+    <line x1="602" y1="420" x2="615" y2="420" />
+    <line x1="723" y1="420" x2="736" y2="420" />
+  </g>
+
+  <!-- foundation -->
+  <rect x="480" y="458" width="380" height="70" rx="9" fill="url(#gold)" fill-opacity="0.16"
+        stroke="#e2b552" stroke-opacity="0.85" stroke-width="2" />
+  <text x="498" y="482" font-family="Inter, DejaVu Sans, sans-serif" font-size="13.5"
+        fill="#f5e2b6" font-weight="700" letter-spacing="1.1">ETHICS AS INFRASTRUCTURE</text>
+  <text x="498" y="500" font-family="Inter, DejaVu Sans, sans-serif" font-size="11.5"
+        fill="#d9c79a">voice &#183; conditions &#183; transparency</text>
+  <text x="498" y="516" font-family="Inter, DejaVu Sans, sans-serif" font-size="11.5"
+        fill="#d9c79a">shared benefit &#183; accountability</text>
+
+  <g stroke="#e2b552" stroke-opacity="0.65" stroke-width="1.5">
+    <line x1="549" y1="448" x2="549" y2="456" />
+    <line x1="791" y1="448" x2="791" y2="456" />
+  </g>
+
+  <text x="480" y="552" font-family="Inter, DejaVu Sans, sans-serif" font-size="13.5"
+        fill="#7f8aa3" font-style="italic">Remove it and everything above collapses.</text>
+  <text x="480" y="572" font-family="Inter, DejaVu Sans, sans-serif" font-size="13.5"
+        fill="#7f8aa3" font-style="italic">That is how you recognise it too.</text>
+</svg>

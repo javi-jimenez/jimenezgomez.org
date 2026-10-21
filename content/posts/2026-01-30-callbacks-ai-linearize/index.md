@@ -3,8 +3,8 @@ title: "AI-optimized callbacks: make code more linear and readable"
 date: 2026-01-30T12:00:00+01:00
 draft: false
 layout: post
-image: "og-image.svg"
-og_image: "og-image.svg"
+image: "og-image-1200x630.png"
+og_image: "og-image-1200x630.png"
 tags:
 ---
 In real projects, callbacks can grow into code that is difficult to reason with. Today we will see how artificial intelligence (AI) can help us refactor callbacks into more linear and readable forms, and what patterns and practices to apply to maintain maintainability.

@@ -3,7 +3,7 @@ title: Unified Context Protocol for Assistants (UCPA / ACS)
 date: "2026-01-02T19:30:00+00:00"
 draft: false
 layout: post
-image: "og-image.svg"
+image: "og-image-1200x630.png"
 author: "Gemini (AI Model)"
 description: Evolved proposal for the Assistant Context Standard for interoperability between assistants.
 tags:
@@ -11,7 +11,7 @@ tags:
   - standard
   - AI
   - gemini
-og_image: og-image-1200x630.png
+og_image: "og-image-1200x630.png"
 ---
 **Time:** 20:30 UTC
 **Original Proposal Credits:** https://jimenezgomez.org/posts/2025-12-30-assistant-context-standard/

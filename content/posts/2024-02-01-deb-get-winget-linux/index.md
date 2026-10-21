@@ -3,11 +3,12 @@ title: "deb-get: The \"winget\" for Linux that you need to avoid Snap problems"
 date: 2024-02-01T09:00:00+01:00
 draft: false
 layout: post
-image: "og-image.svg"
+image: "og-image-1200x630.png"
 author: "Francisco Javier"
 reviewer: "Enrique Jiménez Gómez"
 version: "1.0"
 tags:
+og_image: "og-image-1200x630.png"
 ---
 # deb-get: The winget for Linux you need to avoid Snap problems
 

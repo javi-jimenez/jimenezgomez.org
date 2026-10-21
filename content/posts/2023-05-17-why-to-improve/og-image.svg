@@ -1,15 +1,32 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
-  <defs>
-    <linearGradient id="g" x1="0" x2="1">
-      <stop offset="0" stop-color="#0f172a"/>
-      <stop offset="1" stop-color="#0b6f84"/>
-    </linearGradient>
-  </defs>
-  <rect width="100%" height="100%" fill="url(#g)" />
-  <g transform="translate(80,80)">
-    <rect x="0" y="0" width="1040" height="470" rx="18" fill-opacity="0.06" fill="#ffffff"/>
-    <text x="40" y="120" font-family="Inter, Arial, Helvetica, sans-serif" font-size="52" fill="#ffffff" font-weight="700">Why to improve?</text>
-    <text x="40" y="190" font-family="Inter, Arial, Helvetica, sans-serif" font-size="28" fill="#e6f7fb"></text>
-    <text x="40" y="360" font-family="Inter, Arial, Helvetica, sans-serif" font-size="18" fill="#bdeef7">Documento — jimenezgomez.org — 2026</text>
-  </g>
+<defs >
+  <linearGradient id="bg" x1="0" y1="0" x2="0.94" y2="0.34">
+    <stop offset="0%" stop-color="#130f09"/>
+    <stop offset="100%" stop-color="#2f2414"/>
+  </linearGradient>
+  <radialGradient id="vig" cx="50%" cy="45%" r="78%">
+    <stop offset="58%" stop-color="#000000" stop-opacity="0"/>
+    <stop offset="100%" stop-color="#000000" stop-opacity="0.26"/>
+  </radialGradient>
+  <filter id="grain" x="0" y="0" width="100%" height="100%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="3" seed="32" result="n"/>
+    <feColorMatrix in="n" type="saturate" values="0"/>
+    <feComponentTransfer ><feFuncA type="linear" slope="0.5"/></feComponentTransfer>
+  </filter>
+  <linearGradient id="scrim" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#130f09" stop-opacity="0.97"/>
+    <stop offset="40%" stop-color="#130f09" stop-opacity="0.90"/>
+    <stop offset="55%" stop-color="#130f09" stop-opacity="0.55"/>
+    <stop offset="66%" stop-color="#130f09" stop-opacity="0"/>
+  </linearGradient>
+</defs>
+<rect width="1200" height="630" fill="url(#bg)"/>
+<rect width="1200" height="630" fill="url(#vig)"/>
+<g opacity="0.045" stroke="#fdf4dd" stroke-width="1">
+  <line x1="0" y1="0" x2="1200" y2="0"/><line x1="0" y1="90" x2="1200" y2="90"/><line x1="0" y1="180" x2="1200" y2="180"/><line x1="0" y1="270" x2="1200" y2="270"/><line x1="0" y1="360" x2="1200" y2="360"/><line x1="0" y1="450" x2="1200" y2="450"/><line x1="0" y1="540" x2="1200" y2="540"/>
+</g>
+<rect width="1200" height="630" filter="url(#grain)" opacity="0.028"/>
+<g opacity="1"><rect x="600" y="468" width="88" height="52" rx="6" fill="#a08a62" fill-opacity="0.05"/><rect x="600" y="468" width="88" height="52" rx="6" stroke="#a08a62" stroke-width="1.5" stroke-opacity="0.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect x="700" y="416" width="88" height="104" rx="6" fill="#a08a62" fill-opacity="0.05"/><rect x="700" y="416" width="88" height="104" rx="6" stroke="#a08a62" stroke-width="1.5" stroke-opacity="0.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect x="800" y="364" width="88" height="156" rx="6" fill="#a08a62" fill-opacity="0.05"/><rect x="800" y="364" width="88" height="156" rx="6" stroke="#a08a62" stroke-width="1.5" stroke-opacity="0.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect x="900" y="312" width="88" height="208" rx="6" fill="#a08a62" fill-opacity="0.05"/><rect x="900" y="312" width="88" height="208" rx="6" stroke="#a08a62" stroke-width="1.5" stroke-opacity="0.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect x="1000" y="260" width="88" height="260" rx="6" fill="#ffb703" fill-opacity="0.16"/><rect x="1000" y="260" width="88" height="260" rx="6" stroke="#ffb703" stroke-width="1.5" stroke-opacity="0.9" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M 590 500 C 760 480, 960 420, 1105 190" stroke="#ffe4a3" stroke-width="2" stroke-opacity="0.85" fill="none" stroke-linecap="round" stroke-linejoin="round"/><polygon points="1105.0,190.0 1078.0,205.0 1092.0,228.0" fill="#ffe4a3" fill-opacity="0.9"/></g>
+<rect width="1200" height="630" fill="url(#scrim)"/>
+<text x="72" y="96" font-family="IBM Plex Mono, DejaVu Sans Mono, monospace" font-size="15" letter-spacing="3.4" fill="#ffb703" font-weight="500">CRAFT</text><rect x="72" y="114" width="56" height="3" rx="1.5" fill="#ffb703" fill-opacity="0.9"/><text x="72" y="190.0" font-family="Inter Display, Inter, DejaVu Sans, sans-serif" font-size="62" font-weight="900" letter-spacing="-0.5" fill="#fdf4dd">Why to improve?</text><line x1="72" y1="273.0" x2="136" y2="273.0" stroke="#ffe4a3" stroke-width="1.6" stroke-opacity="0.8"/><text x="72" y="307.0" font-family="EB Garamond, DejaVu Serif, serif" font-size="19" font-style="italic" fill="#ffe4a3" fill-opacity="0.85">Improvement is a direction, not a destination.</text><line x1="72" y1="558" x2="112" y2="558" stroke="#a08a62" stroke-width="1" stroke-opacity="0.7"/><text x="72" y="584" font-family="IBM Plex Mono, DejaVu Sans Mono, monospace" font-size="14" letter-spacing="1.8" fill="#a08a62" fill-opacity="0.95">JIMENEZGOMEZ.ORG · 2023</text>
 </svg>

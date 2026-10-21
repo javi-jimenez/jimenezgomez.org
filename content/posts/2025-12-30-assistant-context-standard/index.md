@@ -1,6 +1,6 @@
 ---
-og_image: og-image-1200x630.png
-image: "og-image.svg"
+og_image: "og-image-1200x630.png"
+image: "og-image-1200x630.png"
 tags:
 title: "Proposal: ASSISTANT_CONTEXT standard for continuity between sessions"
 date: 2025-12-30T12:30:00+01:00

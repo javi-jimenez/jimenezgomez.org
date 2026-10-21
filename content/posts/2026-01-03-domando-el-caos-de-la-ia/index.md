@@ -3,14 +3,14 @@ title: "Taming the Chaos of AI"
 date: "2026-01-03T07:30:00+01:00"
 draft: false
 layout: post
-image: "og-image.svg"
+image: "og-image-1200x630.png"
 description: "ACS (Assistant Context Standard) framework: separating axioms from inferences for traceable memory in AI."
 tags:
   - disclosure
   - ACS
   - AI
   - framework
-og_image: "illustrative-image-technical-document-acs-blog-jimenezgomez.org.jpg"
+og_image: "og-image-1200x630.png"
 ---
 📝 Dissemination Article: "Taming the Chaos of AI"
 

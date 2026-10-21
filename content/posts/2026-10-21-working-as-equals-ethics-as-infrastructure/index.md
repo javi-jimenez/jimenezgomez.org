@@ -4,7 +4,7 @@ date: 2026-10-21T09:00:00+02:00
 draft: false
 layout: post
 description: "An ethical AI system cannot be built unethically. On hierarchy, technical judgement and the layer of AI ethics that the EU AI Act does not regulate: who builds the system, and under what conditions."
-image: "og-image.svg"
+image: "og-image-1200x630.png"
 og_image: "og-image-1200x630.png"
 tags: ["AI ethics", "EU AI Act", "ethical economy", "human-centred AI", "labour rights", "AI governance", "software architecture"]
 ---

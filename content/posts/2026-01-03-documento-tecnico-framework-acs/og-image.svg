@@ -1,15 +1,32 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
-  <defs>
-    <linearGradient id="g" x1="0" x2="1">
-      <stop offset="0" stop-color="#0f172a"/>
-      <stop offset="1" stop-color="#0b6f84"/>
-    </linearGradient>
-  </defs>
-  <rect width="100%" height="100%" fill="url(#g)" />
-  <g transform="translate(80,80)">
-    <rect x="0" y="0" width="1040" height="470" rx="18" fill-opacity="0.06" fill="#ffffff"/>
-    <text x="40" y="120" font-family="Inter, Arial, Helvetica, sans-serif" font-size="52" fill="#ffffff" font-weight="700">ACS Framework (Assistant Context Standard)</text>
-    <text x="40" y="190" font-family="Inter, Arial, Helvetica, sans-serif" font-size="28" fill="#e6f7fb"></text>
-    <text x="40" y="360" font-family="Inter, Arial, Helvetica, sans-serif" font-size="18" fill="#bdeef7">Documento — jimenezgomez.org — 2026</text>
-  </g>
+<defs >
+  <linearGradient id="bg" x1="0" y1="0" x2="-0.34" y2="0.94">
+    <stop offset="0%" stop-color="#040b18"/>
+    <stop offset="100%" stop-color="#0f2c53"/>
+  </linearGradient>
+  <radialGradient id="vig" cx="50%" cy="45%" r="78%">
+    <stop offset="58%" stop-color="#000000" stop-opacity="0"/>
+    <stop offset="100%" stop-color="#000000" stop-opacity="0.26"/>
+  </radialGradient>
+  <filter id="grain" x="0" y="0" width="100%" height="100%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="3" seed="65" result="n"/>
+    <feColorMatrix in="n" type="saturate" values="0"/>
+    <feComponentTransfer ><feFuncA type="linear" slope="0.5"/></feComponentTransfer>
+  </filter>
+  <linearGradient id="scrim" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#040b18" stop-opacity="0.97"/>
+    <stop offset="40%" stop-color="#040b18" stop-opacity="0.90"/>
+    <stop offset="55%" stop-color="#040b18" stop-opacity="0.55"/>
+    <stop offset="66%" stop-color="#040b18" stop-opacity="0"/>
+  </linearGradient>
+</defs>
+<rect width="1200" height="630" fill="url(#bg)"/>
+<rect width="1200" height="630" fill="url(#vig)"/>
+<g opacity="0.045" stroke="#eaf5ff" stroke-width="1">
+  <line x1="0" y1="0" x2="1200" y2="0"/><line x1="0" y1="90" x2="1200" y2="90"/><line x1="0" y1="180" x2="1200" y2="180"/><line x1="0" y1="270" x2="1200" y2="270"/><line x1="0" y1="360" x2="1200" y2="360"/><line x1="0" y1="450" x2="1200" y2="450"/><line x1="0" y1="540" x2="1200" y2="540"/>
+</g>
+<rect width="1200" height="630" filter="url(#grain)" opacity="0.028"/>
+<g opacity="1"><line x1="560" y1="315" x2="1180" y2="315" stroke="#6d90b3" stroke-width="1" stroke-opacity="0.3" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="2 6"/><line x1="830" y1="80" x2="830" y2="550" stroke="#6d90b3" stroke-width="1" stroke-opacity="0.3" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="2 6"/><circle cx="830" cy="315" r="140" fill="none" stroke="#c2ecff" stroke-width="1.2" stroke-opacity="0.45" stroke-linecap="round" stroke-linejoin="round"/><circle cx="830" cy="315" r="92" fill="#38bdf8" fill-opacity="0.08" stroke="#38bdf8" stroke-width="1.8" stroke-opacity="0.9" stroke-linecap="round" stroke-linejoin="round"/><line x1="970.0" y1="315.0" x2="986.0" y2="315.0" stroke="#c2ecff" stroke-width="1.1" stroke-opacity="0.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="965.2" y1="351.2" x2="973.0" y2="353.3" stroke="#c2ecff" stroke-width="1.1" stroke-opacity="0.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="951.2" y1="385.0" x2="958.2" y2="389.0" stroke="#c2ecff" stroke-width="1.1" stroke-opacity="0.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="929.0" y1="414.0" x2="940.3" y2="425.3" stroke="#c2ecff" stroke-width="1.1" stroke-opacity="0.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="900.0" y1="436.2" x2="904.0" y2="443.2" stroke="#c2ecff" stroke-width="1.1" stroke-opacity="0.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="866.2" y1="450.2" x2="868.3" y2="458.0" stroke="#c2ecff" stroke-width="1.1" stroke-opacity="0.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="830.0" y1="455.0" x2="830.0" y2="471.0" stroke="#c2ecff" stroke-width="1.1" stroke-opacity="0.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="793.8" y1="450.2" x2="791.7" y2="458.0" stroke="#c2ecff" stroke-width="1.1" stroke-opacity="0.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="760.0" y1="436.2" x2="756.0" y2="443.2" stroke="#c2ecff" stroke-width="1.1" stroke-opacity="0.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="731.0" y1="414.0" x2="719.7" y2="425.3" stroke="#c2ecff" stroke-width="1.1" stroke-opacity="0.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="708.8" y1="385.0" x2="701.8" y2="389.0" stroke="#c2ecff" stroke-width="1.1" stroke-opacity="0.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="694.8" y1="351.2" x2="687.0" y2="353.3" stroke="#c2ecff" stroke-width="1.1" stroke-opacity="0.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="690.0" y1="315.0" x2="674.0" y2="315.0" stroke="#c2ecff" stroke-width="1.1" stroke-opacity="0.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="694.8" y1="278.8" x2="687.0" y2="276.7" stroke="#c2ecff" stroke-width="1.1" stroke-opacity="0.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="708.8" y1="245.0" x2="701.8" y2="241.0" stroke="#c2ecff" stroke-width="1.1" stroke-opacity="0.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="731.0" y1="216.0" x2="719.7" y2="204.7" stroke="#c2ecff" stroke-width="1.1" stroke-opacity="0.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="760.0" y1="193.8" x2="756.0" y2="186.8" stroke="#c2ecff" stroke-width="1.1" stroke-opacity="0.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="793.8" y1="179.8" x2="791.7" y2="172.0" stroke="#c2ecff" stroke-width="1.1" stroke-opacity="0.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="830.0" y1="175.0" x2="830.0" y2="159.0" stroke="#c2ecff" stroke-width="1.1" stroke-opacity="0.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="866.2" y1="179.8" x2="868.3" y2="172.0" stroke="#c2ecff" stroke-width="1.1" stroke-opacity="0.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="900.0" y1="193.8" x2="904.0" y2="186.8" stroke="#c2ecff" stroke-width="1.1" stroke-opacity="0.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="929.0" y1="216.0" x2="940.3" y2="204.7" stroke="#c2ecff" stroke-width="1.1" stroke-opacity="0.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="951.2" y1="245.0" x2="958.2" y2="241.0" stroke="#c2ecff" stroke-width="1.1" stroke-opacity="0.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="965.2" y1="278.8" x2="973.0" y2="276.7" stroke="#c2ecff" stroke-width="1.1" stroke-opacity="0.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="690" y1="485" x2="690" y2="525" stroke="#6d90b3" stroke-width="1" stroke-opacity="0.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="970" y1="485" x2="970" y2="525" stroke="#6d90b3" stroke-width="1" stroke-opacity="0.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="690" y1="511" x2="970" y2="511" stroke="#38bdf8" stroke-width="1.2" stroke-opacity="0.7" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g>
+<rect width="1200" height="630" fill="url(#scrim)"/>
+<text x="72" y="96" font-family="IBM Plex Mono, DejaVu Sans Mono, monospace" font-size="15" letter-spacing="3.4" fill="#38bdf8" font-weight="500">ACS · TECHNICAL</text><rect x="72" y="114" width="56" height="3" rx="1.5" fill="#38bdf8" fill-opacity="0.9"/><text x="72" y="190.0" font-family="Inter Display, Inter, DejaVu Sans, sans-serif" font-size="56" font-weight="900" letter-spacing="-0.5" fill="#eaf5ff">ACS Framework</text><text x="72" y="250.5" font-family="Inter Display, Inter, DejaVu Sans, sans-serif" font-size="56" font-weight="900" letter-spacing="-0.5" fill="#eaf5ff">(Assistant Context</text><text x="72" y="311.0" font-family="Inter Display, Inter, DejaVu Sans, sans-serif" font-size="56" font-weight="900" letter-spacing="-0.5" fill="#eaf5ff">Standard)</text><line x1="72" y1="387.4" x2="136" y2="387.4" stroke="#c2ecff" stroke-width="1.6" stroke-opacity="0.8"/><text x="72" y="421.4" font-family="EB Garamond, DejaVu Serif, serif" font-size="19" font-style="italic" fill="#c2ecff" fill-opacity="0.85">The framework, dimensioned.</text><line x1="72" y1="558" x2="112" y2="558" stroke="#6d90b3" stroke-width="1" stroke-opacity="0.7"/><text x="72" y="584" font-family="IBM Plex Mono, DejaVu Sans Mono, monospace" font-size="14" letter-spacing="1.8" fill="#6d90b3" fill-opacity="0.95">JIMENEZGOMEZ.ORG · 2026</text>
 </svg>

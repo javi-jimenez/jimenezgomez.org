@@ -3,7 +3,7 @@ title: "Universal DNS: From the Planetary to the Galactic"
 date: "2025-12-22T14:30:00+02:00"
 draft: false
 layout: post
-image: "og-image.svg"
+image: "og-image-1200x630.png"
 categories:
    - architecture
    - technology
@@ -14,7 +14,7 @@ tags:
    - web3
    - space
    - research
-og_image: dns-universe-architecture.png
+og_image: "og-image-1200x630.png"
 ---
 ## Introduction: The Universal Addressing Problem
 

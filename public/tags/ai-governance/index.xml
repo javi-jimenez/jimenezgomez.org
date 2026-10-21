@@ -1,101 +1,287 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AI Governance on Francisco Javier Jiménez Gómez</title><link>https://jimenezgomez.org/tags/ai-governance/</link><description>Recent content in AI Governance on Francisco Javier Jiménez Gómez</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>Francisco Javier Jiménez Gómez</copyright><lastBuildDate>Fri, 16 Oct 2026 17:30:00 +0200</lastBuildDate><atom:link href="https://jimenezgomez.org/tags/ai-governance/index.xml" rel="self" type="application/rss+xml"/><item><title>The Neptuno Network: A Collaborative Operational Framework for Human-AI Teams</title><link>https://jimenezgomez.org/posts/2026-10-16-neptuno-network-collaborative-framework/</link><pubDate>Fri, 16 Oct 2026 17:30:00 +0200</pubDate><guid>https://jimenezgomez.org/posts/2026-10-16-neptuno-network-collaborative-framework/</guid><description>&lt;img src="https://jimenezgomez.org/posts/2026-10-16-neptuno-network-collaborative-framework/og-image.svg" alt="Featured image of post The Neptuno Network: A Collaborative Operational Framework for Human-AI Teams" />&lt;p>Most conversations about artificial intelligence in the workplace still begin with the wrong question. They ask &lt;em>what can the model do?&lt;/em> — and then discover, months later, that the harder question was never answered: &lt;em>who is accountable when it does it?&lt;/em>&lt;/p>
-&lt;p>After thirty years building systems, I have learned that tools do not change organisations. &lt;strong>Operating models&lt;/strong> change organisations. This article describes the operating model we have built and are now publishing as a whitepaper: the Neptuno Network.&lt;/p>
-&lt;h2 id="the-problem-with-loose-collaboration">The problem with loose collaboration
-&lt;/h2>&lt;p>Adopting AI as a tool attached to a process works for isolated tasks. It breaks down as soon as the AI participates in &lt;em>ongoing&lt;/em> work — the same project, over weeks, across several people, on infrastructure the organisation does not fully control. Three failures appear, reliably:&lt;/p>
-&lt;ol>
-&lt;li>&lt;strong>Context loss.&lt;/strong> The system forgets the project between sessions, so every conversation restarts from zero.&lt;/li>
-&lt;li>&lt;strong>Responsibility diffusion.&lt;/strong> When an automated action causes harm, nobody can name who authorised it.&lt;/li>
-&lt;li>&lt;strong>Governance theatre.&lt;/strong> Ethics and compliance exist as policy documents, not as enforced technical constraints.&lt;/li>
-&lt;/ol>
-&lt;p>The Neptuno Network addresses those failures structurally rather than procedurally. It starts from a design principle that sounds almost administrative but is in fact technical: &lt;strong>separation of liability&lt;/strong>.&lt;/p>
-&lt;h2 id="three-entities-deliberately-separated">Three entities, deliberately separated
-&lt;/h2>&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
-&lt;/span>&lt;span class="lnt"> 2
-&lt;/span>&lt;span class="lnt"> 3
-&lt;/span>&lt;span class="lnt"> 4
-&lt;/span>&lt;span class="lnt"> 5
-&lt;/span>&lt;span class="lnt"> 6
-&lt;/span>&lt;span class="lnt"> 7
-&lt;/span>&lt;span class="lnt"> 8
-&lt;/span>&lt;span class="lnt"> 9
-&lt;/span>&lt;span class="lnt">10
-&lt;/span>&lt;span class="lnt">11
-&lt;/span>&lt;span class="lnt">12
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl"> +-------------------------------------------------------+
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> | BRISECOM SL |
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> | (Commercial Umbrella, Governance &amp;amp; Operations) |
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> +-------------------------------------------------------+
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> |
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> +------------------------------+------------------------------+
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> v v v
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> +--------------------+ +--------------------+ +--------------------+
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> | HUMAN WORKERS | | NEPTUNO NETWORK | | FRAMEWORK LAIA |
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> | (Engineers, Staff, |&amp;lt;------&amp;gt;| (Distributed P2P / |&amp;lt;------&amp;gt;| (Logic Engine &amp;amp; |
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> | Collaborators) | | Encrypted Fabric) | | Context Agents) |
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> +--------------------+ +--------------------+ +--------------------+
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>&lt;strong>BRISECOM SL&lt;/strong> is the commercial umbrella: the legal, administrative and billing gateway, and the network authority that issues cryptographic credentials to both human workers and machine nodes.&lt;/p>
-&lt;p>&lt;strong>The Neptuno Network&lt;/strong> is the collaborative fabric: an encrypted mesh of workstations, local racks and edge devices, governed by strict role-based access control. Zero trust is not a slogan here — a node reaches exactly the resources relevant to its active projects, and nothing else.&lt;/p>
-&lt;p>&lt;strong>Framework LAIA&lt;/strong> is the agentic partner. Not a chatbot, but an active worker node: it maintains persistent project memory through the Assistant Context Standard, executes background tasks, audits code, and prepares administrative documentation.&lt;/p>
-&lt;p>The point of drawing these three apart is that each one can fail, be replaced, or be audited &lt;strong>independently&lt;/strong> without colliding with the others. The network transports. The agent reasons. The umbrella answers institutionally.&lt;/p>
-&lt;h2 id="human-in-the-loop-by-construction">Human in the loop, by construction
-&lt;/h2>&lt;p>Collaboration follows a structured, human-in-the-loop paradigm:&lt;/p>
-&lt;ol>
-&lt;li>&lt;strong>Task initialisation.&lt;/strong> A researcher or engineer defines the objective inside a P.A.R.A. structure on their own workstation.&lt;/li>
-&lt;li>&lt;strong>Context ingestion.&lt;/strong> LAIA ingests the documentation, snippets and project history it needs.&lt;/li>
-&lt;li>&lt;strong>Execution.&lt;/strong> LAIA performs non-critical work: generating interfaces, packaging build recipes, analysing data sets.&lt;/li>
-&lt;li>&lt;strong>Human review.&lt;/strong> LAIA submits proposals, pull requests and execution logs for final sign-off.&lt;/li>
-&lt;/ol>
-&lt;p>The critical constraint is at step four. &lt;strong>The agent&amp;rsquo;s output is a proposal, never a production action.&lt;/strong> Automation is limited to work whose failure is recoverable; irreversible operations require an explicit human signature. That single rule eliminates most of the scenarios that make agentic systems frightening to a risk committee.&lt;/p>
-&lt;h2 id="three-layers-of-protection">Three layers of protection
-&lt;/h2>&lt;p>Protecting core technology while allowing open collaboration is usually presented as a trade-off. It is not, if you separate the layers:&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;span class="lnt">2
-&lt;/span>&lt;span class="lnt">3
-&lt;/span>&lt;span class="lnt">4
-&lt;/span>&lt;span class="lnt">5
-&lt;/span>&lt;span class="lnt">6
-&lt;/span>&lt;span class="lnt">7
-&lt;/span>&lt;span class="lnt">8
-&lt;/span>&lt;span class="lnt">9
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl"> +--------------------------------------+
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> | THREE-LAYER PROTECTION SYSTEM |
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> +--------------------------------------+
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> |
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> +----------------------------------+----------------------------------+
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> v v v
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">[ LAYER 1: TRADEMARKS ] [ LAYER 2: COPYRIGHT ] [ LAYER 3: TRADE SECRET ]
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">OEPM / EUIPO Registration Cryptographic Code Signatures Duo-Layer NDAs &amp;amp; Strict
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">of LAIA, NEPTUNO, BRISECOM &amp;amp; Header Licensing Standards Network Isolation Protocol
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>Registration establishes public ownership. Cryptographic signing establishes provenance. Trade-secret discipline protects what is deliberately left unpublished. All underlying intellectual property — the LAIA logic, the Neptuno architecture, the ACS protocols — remains owned by me as an individual and is licensed exclusively to BRISECOM SL. Collaborators sign duo-layer nondisclosure and IP assignment agreements before receiving a single access key.&lt;/p>
-&lt;h2 id="compliance-as-an-architectural-property">Compliance as an architectural property
-&lt;/h2>&lt;p>One sentence in the whitepaper matters more than the rest for European clients: our AI Act and GDPR compliance are &lt;strong>enforced properties of the architecture&lt;/strong>, not commitments to be verified after the fact.&lt;/p>
-&lt;ul>
-&lt;li>&lt;strong>Human oversight (Article 14):&lt;/strong> an agent that cannot obtain a human signature cannot deploy.&lt;/li>
-&lt;li>&lt;strong>Traceability:&lt;/strong> every agentic action and contextual change is logged immutably.&lt;/li>
-&lt;li>&lt;strong>Data sovereignty:&lt;/strong> enterprise data stays on private, sovereign infrastructure, never leaking to public third-party model providers.&lt;/li>
-&lt;/ul>
-&lt;p>A system that logs immutably cannot be made to forget. That is a stronger guarantee than any policy.&lt;/p>
-&lt;h2 id="a-finite-audit-surface">A finite audit surface
-&lt;/h2>&lt;p>Finally, the stack is standardised across every node: Ubuntu/Xubuntu 24.04 LTS, &lt;code>uv&lt;/code> over &lt;code>pyproject.toml&lt;/code>, Python 3 with PyGObject (GTK3), and a CI/CD matrix targeting &lt;code>.whl&lt;/code>, &lt;code>.deb&lt;/code>, AppImage, Snap and Flatpak.&lt;/p>
-&lt;p>Standardisation is itself a governance measure. When every node runs the same toolchain and the same resolver, the audit surface is finite — a reviewer does not have to reason about an unknown environment.&lt;/p>
-&lt;h2 id="honest-limitations">Honest limitations
-&lt;/h2>&lt;p>Two constraints are stated plainly in the paper. First, the model assumes a &lt;strong>trusted root&lt;/strong>: the identity provider and the IP holder are single points by design — a deliberate trade of decentralisation for accountability. Second, the value of agentic collaboration depends on the quality of the context supplied; a poorly maintained knowledge vault degrades the agent regardless of the logic engine underneath. Both are accepted as the price of an auditable system.&lt;/p>
-&lt;h2 id="the-whitepaper">The whitepaper
-&lt;/h2>&lt;p>The full framework — architectural entities, collaboration workflows, the three-layer protection model, the technical stack and the complete references — is published today as &lt;strong>Whitepaper #12&lt;/strong> of the LAIA project:&lt;/p>
-&lt;p>&lt;strong>→ &lt;a class="link" href="https://github.com/javi-jimenez/laia/blob/main/whitepapers/collaborative-operational-framework-neptuno-network.md" target="_blank" rel="noopener"
->Collaborative Operational Framework: Human-AI Synergy Across the Neptuno Network&lt;/a>&lt;/strong> &lt;em>(CC BY-NC-SA 4.0)&lt;/em>&lt;/p>
-&lt;p>The contribution of that paper is not a new algorithm. It is a &lt;strong>reproducible operational model&lt;/strong>: three entities, three protection layers, and a standardised stack, arranged so that responsibility never diffuses — even when part of the team is not human.&lt;/p>
-&lt;hr>
-&lt;p>&lt;em>Francisco Javier Jiménez Gómez — Valencia, October 2026&lt;/em>&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AI Governance on Francisco Javier Jiménez Gómez</title><link>https://jimenezgomez.org/tags/ai-governance/</link><description>Recent content in AI Governance on Francisco Javier Jiménez Gómez</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>Francisco Javier Jiménez Gómez</copyright><lastBuildDate>Wed, 21 Oct 2026 09:00:00 +0200</lastBuildDate><atom:link href="https://jimenezgomez.org/tags/ai-governance/index.xml" rel="self" type="application/rss+xml"/><item><title>Working as Equals: Ethics as Infrastructure, Not Decoration</title><link>https://jimenezgomez.org/posts/2026-10-21-working-as-equals-ethics-as-infrastructure/</link><pubDate>Wed, 21 Oct 2026 09:00:00 +0200</pubDate><guid>https://jimenezgomez.org/posts/2026-10-21-working-as-equals-ethics-as-infrastructure/</guid><description>&lt;img src="https://jimenezgomez.org/posts/2026-10-21-working-as-equals-ethics-as-infrastructure/og-image-1200x630.png" alt="Featured image of post Working as Equals: Ethics as Infrastructure, Not Decoration" /&gt;&lt;p&gt;&lt;em&gt;This is not a service brochure. It is a reflection written from inside the work — from someone who builds AI systems and would like to build them from different values. The argument is deliberately structural rather than moralistic: it asks what kind of organisation produces what kind of system, and what European law already says about it.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;When we talk about &amp;ldquo;ethical AI&amp;rdquo;, the debate usually stops one layer too early.&lt;/p&gt;
+&lt;p&gt;It talks about algorithmic bias, about data privacy, about hallucination rates, about copyright and training data. All of these matter. But there is a prior layer that is almost never questioned: &lt;strong&gt;who builds the AI, and under what conditions?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Most artificial intelligence systems in production today are born inside hierarchical structures in which the technical expert has been converted into a &amp;ldquo;resource&amp;rdquo; that executes what others decide. The result is a technology that reproduces the same logic as always: concentration of power, opacity, and value extraction.&lt;/p&gt;
+&lt;p&gt;Ethics cannot be a patch applied at the end of the process. It has to be &lt;strong&gt;the infrastructure on which the process is built&lt;/strong&gt;.&lt;/p&gt;
+&lt;h2 id="i-the-problem-is-not-the-technology-it-is-the-model"&gt;I. The problem is not the technology. It is the model.
+&lt;/h2&gt;&lt;p&gt;A useful test, before any ethics committee meets: look at the last three decisions that shaped your system&amp;rsquo;s architecture and ask who made them, who was consulted, and who was informed afterwards.&lt;/p&gt;
+&lt;p&gt;If the answer to the first question is always the same person, and the answer to the last two is &amp;ldquo;the people who will have to implement them&amp;rdquo;, you do not have a governance problem. You have a &lt;strong&gt;design&lt;/strong&gt; problem — and it will surface in the product, usually late and usually in production.&lt;/p&gt;
+&lt;p&gt;This is why the ethics conversation feels so often like theatre. It is being held at the wrong altitude. Discussing the fairness of a model whose requirements were dictated, unilaterally, by someone who will never see the consequences, is like discussing the diet of a person who has already been sentenced.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://jimenezgomez.org/posts/2026-10-21-working-as-equals-ethics-as-infrastructure/figure-ethics-as-infrastructure.png"
+width="900"
+height="600"
+srcset="https://jimenezgomez.org/posts/2026-10-21-working-as-equals-ethics-as-infrastructure/figure-ethics-as-infrastructure_hu_e398b54a2d80b6e9.png 480w, https://jimenezgomez.org/posts/2026-10-21-working-as-equals-ethics-as-infrastructure/figure-ethics-as-infrastructure_hu_b50b8e1015cb6d7e.png 1024w"
+loading="lazy"
+alt="Two ways of placing ethics in an organisation: as a plaque applied on top, or as the foundation the whole stack rests on"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+&gt;&lt;/p&gt;
+&lt;h2 id="ii-working-as-equals-neither-boss-nor-client-nor-resource"&gt;II. Working as equals: neither boss, nor client, nor resource.
+&lt;/h2&gt;&lt;p&gt;I have worked on projects where the &amp;ldquo;expert&amp;rdquo; was the last person to find out about the decisions. I have watched technical judgement being overruled because it did not fit the hierarchy. And I have confirmed that, when that happens, the resulting technology is more fragile, less secure and — over time — more expensive. Not metaphorically: the defects appear later, in the form of incidents and rework that nobody budgeted for.&lt;/p&gt;
+&lt;p&gt;The alternative is &lt;strong&gt;working as equals&lt;/strong&gt;. This is not about abolishing coordination, and it is not about pretending that everyone in a project has the same role. It is about abolishing &lt;strong&gt;unnecessary subordination&lt;/strong&gt;. The computer expert is not an executor. They are a &lt;strong&gt;technical partner&lt;/strong&gt; who participates in defining the problem, proposes solutions, and assumes responsibility for what is built.&lt;/p&gt;
+&lt;p&gt;Note the two halves of that sentence, because they are inseparable. &lt;em&gt;Participating in defining the problem&lt;/em&gt; is authority. &lt;em&gt;Assuming responsibility&lt;/em&gt; is accountability. You cannot have the second without the first. An organisation that distributes accountability while withholding authority is not delegating responsibility — it is manufacturing scapegoats.&lt;/p&gt;
+&lt;p&gt;This is ethical economy applied to technology: &lt;strong&gt;horizontal relationships, transparency about the conditions of the work, and respect for professional judgement.&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id="iii-ethical-ai-is-not-a-product-it-is-a-way-of-working"&gt;III. Ethical AI is not a product. It is a way of working.
+&lt;/h2&gt;&lt;p&gt;An AI system is ethical not only because its code is auditable or its data is protected. It is ethical because &lt;strong&gt;the people who built it were treated ethically&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;If the team that trains the model works under precarious conditions, if the expert has no voice in the key decisions, if knowledge is extracted without recognition — the result may be technically correct, but it is &lt;strong&gt;ethically hollow&lt;/strong&gt;. And the hollowness is not invisible. It shows up in the quality of the documentation, in the honesty of the evaluation, and in whether anyone dares to say out loud that the system is not ready.&lt;/p&gt;
+&lt;p&gt;This is where I depart from the compliance-only reading of AI ethics. A conformity checklist asks &lt;em&gt;what does the system do?&lt;/em&gt; The question this article insists on is &lt;em&gt;what did building it do to the people who built it?&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;The second question has no audit trail by default. You have to design one.&lt;/p&gt;
+&lt;p&gt;In this context, ethics is not a declaration of intent. It is a &lt;strong&gt;daily practice&lt;/strong&gt;: how deadlines are negotiated, how benefits are shared, how invisible work is recognised, how disagreements are handled, and — crucially — what happens to the person who raises a problem.&lt;/p&gt;
+&lt;p&gt;That is &amp;ldquo;infrastructure&amp;rdquo; in the literal engineering sense. It is the substrate everything else rests on, and it stays invisible precisely until it fails.&lt;/p&gt;
+&lt;h2 id="iv-why-this-matters-for-the-ethical-economy"&gt;IV. Why this matters for the ethical economy.
+&lt;/h2&gt;&lt;p&gt;The ethical economy is not only a set of principles about the distribution of wealth. It is also &lt;strong&gt;a way of organising production&lt;/strong&gt;. And the production of software and AI is today one of the sectors where power is most concentrated and where the judgement of the people who actually know is least respected.&lt;/p&gt;
+&lt;p&gt;A model of working as equals in the AI field can be a &lt;strong&gt;test laboratory&lt;/strong&gt; for that ethical economy:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;It demonstrates that you can innovate without rigid hierarchies.&lt;/li&gt;
+&lt;li&gt;It demonstrates that the expert can be a partner and not a resource.&lt;/li&gt;
+&lt;li&gt;It demonstrates that transparency does not slow innovation down — it makes it more solid.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The third point is the one most quickly dismissed, and the one I would defend hardest. Transparency is not a brake; it is a load-bearing wall. Every system I have seen fail badly failed first at the level of information: someone knew, and had no channel — or no reason — to say it.&lt;/p&gt;
+&lt;h2 id="v-what-european-law-already-says-and-what-it-does-not"&gt;V. What European law already says, and what it does not.
+&lt;/h2&gt;&lt;p&gt;If all of the above sounds like a personal preference, it is worth checking how much of it European legislators have already turned into obligations. The &lt;strong&gt;EU Artificial Intelligence Act&lt;/strong&gt; — Regulation (EU) 2024/1689 — is usually summarised as a risk-tiering regime for products. That summary is incomplete. Read at article level, several of its provisions are about &lt;em&gt;how AI work is organised&lt;/em&gt;.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;What this article argues&lt;/th&gt;
+&lt;th&gt;Where the AI Act says it&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Ethics is a process, not a document&lt;/td&gt;
+&lt;td&gt;Art. 9(2)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Staff must understand the system&lt;/td&gt;
+&lt;td&gt;Art. 4&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Affected workers must be informed&lt;/td&gt;
+&lt;td&gt;Art. 26(7)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Oversight requires real authority&lt;/td&gt;
+&lt;td&gt;Art. 14&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Documentation and traceability&lt;/td&gt;
+&lt;td&gt;Arts. 11–12&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Data work has governance duties&lt;/td&gt;
+&lt;td&gt;Art. 10&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Rights impacts must be assessed&lt;/td&gt;
+&lt;td&gt;Art. 27&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Voluntary codes outside high-risk&lt;/td&gt;
+&lt;td&gt;Art. 95&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;What happens if you ignore it&lt;/td&gt;
+&lt;td&gt;Art. 99&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Four things follow from that table.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;First, ethics is defined as a process, not a document.&lt;/strong&gt; Article 9 requires risk management to be a continuous, iterative process with regular systematic review and updating. You cannot satisfy it with a PDF that nobody reads after it has been signed. This is the legal form of the argument in section I: ethics as infrastructure, not decoration.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Second, the Act requires the human overseer to have authority.&lt;/strong&gt; Article 14 does not merely say that a human must be present. It says the persons assigned to oversight must have the necessary competence, training and authority, as well as the necessary support, and must be able to decide not to use the system, or to disregard, override or reverse its output. An organisation that appoints an overseer who is not allowed to stop the process has not implemented human oversight. It has implemented a signature. Anyone who has been the &amp;ldquo;expert who finds out last&amp;rdquo; will recognise the difference immediately.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Third, the Act gives affected people a voice — but a modest one.&lt;/strong&gt; Article 26(7) requires employers deploying high-risk AI at the workplace to inform workers&amp;rsquo; representatives and the affected workers before putting the system into service. This is not a minor detail: employment-related AI — recruitment, task allocation, monitoring, promotion, termination — is classified as high-risk under Annex III, point 4. But note what the obligation actually is: &lt;em&gt;information&lt;/em&gt;. Not negotiation, not co-determination, not a veto. European labour law has a much stronger vocabulary for that — works councils, information and consultation procedures — and the AI Act deliberately does not use it.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Fourth, and most importantly for this article: the Act regulates systems, not working relations.&lt;/strong&gt; The Regulation imposes duties on &lt;em&gt;providers&lt;/em&gt; and &lt;em&gt;deployers&lt;/em&gt; — legal entities. It says nothing about whether the annotation team was paid a living wage, whether the engineer had a say in the architecture, whether the schedule was feasible, or whether the person who flagged the risk kept their job. Article 4 touches on staff, but as a matter of competence, not of dignity.&lt;/p&gt;
+&lt;p&gt;Part of that gap is filled by adjacent instruments: the &lt;strong&gt;Directive (EU) 2024/2831 on platform work&lt;/strong&gt; (algorithmic management, human oversight of automated decisions, information and consultation of workers&amp;rsquo; representatives), &lt;strong&gt;Article 22 GDPR&lt;/strong&gt; (the right not to be subject to a solely automated decision producing legal or similarly significant effects), and the &lt;strong&gt;European Pillar of Social Rights&lt;/strong&gt;. Part of it is filled by the &lt;strong&gt;Council of Europe Framework Convention on AI&lt;/strong&gt;, the first binding international treaty in this field, and by the &lt;strong&gt;ILO Declaration on Fundamental Principles and Rights at Work&lt;/strong&gt;, which since 2022 counts a safe and healthy working environment among those fundamental principles.&lt;/p&gt;
+&lt;p&gt;But no instrument yet says what this article says: that &lt;strong&gt;an AI system cannot be considered ethical if the conditions under which it was built were not&lt;/strong&gt;. That is not a gap that a better-drafted article could close. It is a question about who gets to design the organisation that designs the system. Law can make the question visible. It cannot answer it for us.&lt;/p&gt;
+&lt;p&gt;A note on timing for readers who need to act: the Regulation entered into force on 1 August 2024; the prohibitions have applied since 2 February 2025; obligations for general-purpose AI models since 2 August 2025; and high-risk obligations for Annex III systems since 2 August 2026 — with Annex I systems following on 2 August 2027 (Article 113). The Commission proposed in late 2025 to defer parts of the high-risk timetable, so anyone building a compliance plan should verify the current state of that file before relying on the dates above.&lt;/p&gt;
+&lt;h3 id="the-full-argument-as-a-whitepaper"&gt;The full argument, as a whitepaper
+&lt;/h3&gt;&lt;p&gt;The article-level reading above, the five structural conditions and a proposed disclosure instrument are developed formally in a whitepaper published in the LAIA series:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;→ &lt;a class="link" href="https://github.com/javi-jimenez/laia/blob/main/whitepapers/ethics-as-infrastructure-build-conditions.md" target="_blank" rel="noopener"
+&gt;Ethics as Infrastructure: Build Conditions and the Layer the EU AI Act Does Not Regulate&lt;/a&gt;&lt;/strong&gt; — LAIA Whitepaper #13, October 2026 &lt;em&gt;(CC BY-NC-SA 4.0)&lt;/em&gt; · &lt;a class="link" href="https://github.com/javi-jimenez/laia/releases/latest/download/ethics-as-infrastructure-build-conditions.pdf" target="_blank" rel="noopener"
+&gt;PDF&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;It adds three things this post does not attempt: a condition-by-condition legal coverage table, a specification of the &lt;strong&gt;Build-Conditions Disclosure&lt;/strong&gt; (eight auditable items with evidence requirements and three integration paths into Articles 27, 95 and ISO/IEC 42001), and an explicit account of how such an instrument fails — self-reporting bias, gaming by aggregation, and weaponisation against individuals.&lt;/p&gt;
+&lt;h2 id="vi-conclusion"&gt;VI. Conclusion.
+&lt;/h2&gt;&lt;p&gt;I do not know whether ethical AI will save the world. But I do know that &lt;strong&gt;the way we build it matters as much as what we build&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;And I know something else: ethics that exists only in a document, a committee or a press release is not ethics. It is decoration. Decoration can be removed without consequence — which is precisely how you recognise it.&lt;/p&gt;
+&lt;p&gt;Working as equals, with transparency and respect for technical judgement, is not a utopia. It is a decision. And that decision, applied to technology, is also a way of doing the ethical economy — the only kind that survives contact with a deadline.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="bibliography"&gt;Bibliography
+&lt;/h2&gt;&lt;p&gt;What follows is not a list of authorities invoked to close the argument. Each entry carries a note on what it actually contributes to the text above — and, where relevant, where I think it falls short of it.&lt;/p&gt;
+&lt;h3 id="primary-reference"&gt;Primary reference
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Jiménez Gómez, F. J. (2026). &amp;ldquo;Ethics as Infrastructure: Build Conditions and the Layer the EU AI Act Does Not Regulate.&amp;rdquo;&lt;/strong&gt; LAIA Whitepaper #13, Brisecom / LAIA Project. &lt;a class="link" href="https://github.com/javi-jimenez/laia/blob/main/whitepapers/ethics-as-infrastructure-build-conditions.md" target="_blank" rel="noopener"
+&gt;https://github.com/javi-jimenez/laia/blob/main/whitepapers/ethics-as-infrastructure-build-conditions.md&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Contribution:&lt;/em&gt; the formal version of this article&amp;rsquo;s argument, and the source of the five conditions, the coverage table and the Build-Conditions Disclosure. Cited first because it is the citable reference: the blog post is the readable entry point, the whitepaper is the version meant to be quoted, reviewed and improved.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id="hard-law"&gt;Hard law
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Regulation (EU) 2024/1689 of the European Parliament and of the Council laying down harmonised rules on artificial intelligence (Artificial Intelligence Act)&lt;/strong&gt;, OJ L, 12 July 2024. &lt;a class="link" href="https://eur-lex.europa.eu/eli/reg/2024/1689/oj" target="_blank" rel="noopener"
+&gt;https://eur-lex.europa.eu/eli/reg/2024/1689/oj&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Contribution:&lt;/em&gt; the legal spine of section V. Articles 4, 9, 10, 14, 26(7), 27 and 99 are the closest thing existing law offers to the article&amp;rsquo;s thesis — ethics as a continuous process, oversight with real authority, and information rights for affected workers. &lt;em&gt;Its limit, argued in section V:&lt;/em&gt; it regulates providers and deployers as legal entities, never the internal working relations of the organisations that build systems.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Directive (EU) 2024/2831 on improving working conditions in platform work&lt;/strong&gt;, OJ L, 2024/2831, 23 October 2024. &lt;a class="link" href="https://eur-lex.europa.eu/eli/dir/2024/2831/oj" target="_blank" rel="noopener"
+&gt;https://eur-lex.europa.eu/eli/dir/2024/2831/oj&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Contribution:&lt;/em&gt; the one EU instrument that regulates &lt;em&gt;algorithmic management&lt;/em&gt; as a labour question rather than a product-safety question — transparency of automated systems, human oversight of automated decisions, and information and consultation of workers&amp;rsquo; representatives. It shows that the &amp;ldquo;working as equals&amp;rdquo; argument is not merely aspirational; it has begun to be legislated, just not yet inside AI-producing organisations.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Regulation (EU) 2016/679 (General Data Protection Regulation)&lt;/strong&gt;, OJ L 119, 4 May 2016, in particular Article 22 and Recitals 60 and 71. &lt;a class="link" href="https://eur-lex.europa.eu/eli/reg/2016/679/oj" target="_blank" rel="noopener"
+&gt;https://eur-lex.europa.eu/eli/reg/2016/679/oj&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Contribution:&lt;/em&gt; supplies the individual right that the AI Act does not grant — not to be subject to a decision based solely on automated processing that produces legal or similarly significant effects. Useful as a boundary marker: European law protects the &lt;em&gt;data subject&lt;/em&gt; before the algorithm, but has no equivalent provision protecting the &lt;em&gt;person who built&lt;/em&gt; the algorithm.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Council of Europe Framework Convention on Artificial Intelligence and Human Rights, Democracy and the Rule of Law&lt;/strong&gt;, CETS No. 225, opened for signature 5 September 2024. &lt;a class="link" href="https://www.coe.int/en/web/artificial-intelligence/the-framework-convention-on-artificial-intelligence" target="_blank" rel="noopener"
+&gt;https://www.coe.int/en/web/artificial-intelligence/the-framework-convention-on-artificial-intelligence&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Contribution:&lt;/em&gt; the first binding international treaty on AI, and the reason the article can speak of obligations rather than recommendations. It frames the problem in terms of human rights, democracy and the rule of law — a vocabulary in which &amp;ldquo;the expert had no voice&amp;rdquo; is not a management preference but a governance failure.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;International Labour Organization, Declaration on Fundamental Principles and Rights at Work&lt;/strong&gt;, 1998, as amended in 2022. &lt;a class="link" href="https://www.ilo.org/declaration" target="_blank" rel="noopener"
+&gt;https://www.ilo.org/declaration&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Contribution:&lt;/em&gt; grounds the &amp;ldquo;conditions under which AI is built&amp;rdquo; argument in obligations that predate AI by decades. The 2022 amendment added a safe and healthy working environment as a fifth fundamental principle — a useful reminder that the newest technology does not suspend the oldest commitments.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;European Pillar of Social Rights&lt;/strong&gt;, proclaimed by the European Parliament, the Council and the Commission, OJ C 428, 13 December 2017.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Contribution:&lt;/em&gt; provides the &amp;ldquo;ethical economy&amp;rdquo; frame invoked in section IV — fair working conditions, information and consultation, fair wages — as declared EU policy rather than personal opinion. Its weakness is the one this article attacks: the Pillar is largely programmatic, and its principles have no direct effect in most national systems.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id="principles-and-soft-law"&gt;Principles and soft law
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;OECD, Recommendation of the Council on Artificial Intelligence&lt;/strong&gt;, OECD/LEGAL/0449, 2019, amended 2024. &lt;a class="link" href="https://legalinstruments.oecd.org/en/instruments/OECD-LEGAL-0449" target="_blank" rel="noopener"
+&gt;https://legalinstruments.oecd.org/en/instruments/OECD-LEGAL-0449&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Contribution:&lt;/em&gt; the accountability principle — AI actors should be accountable for the proper functioning of AI systems &amp;ldquo;based on their roles, the context, and consistent with the state of the art&amp;rdquo;. That formulation is the hinge of section II: accountability is role-relative, which is exactly why authority and responsibility cannot be separated.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;UNESCO, Recommendation on the Ethics of Artificial Intelligence&lt;/strong&gt;, adopted 23 November 2021. &lt;a class="link" href="https://unesdoc.unesco.org/ark:/48223/pf0000381137" target="_blank" rel="noopener"
+&gt;https://unesdoc.unesco.org/ark:/48223/pf0000381137&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Contribution:&lt;/em&gt; the strongest intergovernmental statement that AI ethics includes &lt;em&gt;labour&lt;/em&gt; — its policy area on economy and labour calls for decent work, fair transition and protection of workers&amp;rsquo; rights. Cited here because it is the document that most clearly refuses to treat ethics as a matter of model behaviour alone.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;National Institute of Standards and Technology, Artificial Intelligence Risk Management Framework (AI RMF 1.0)&lt;/strong&gt;, NIST AI 100-1, January 2023. &lt;a class="link" href="https://doi.org/10.6028/NIST.AI.100-1" target="_blank" rel="noopener"
+&gt;https://doi.org/10.6028/NIST.AI.100-1&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Contribution:&lt;/em&gt; supplies the operational vocabulary — a GOVERN function that sits above mapping, measuring and managing risk — that makes &amp;ldquo;ethics as infrastructure&amp;rdquo; auditable rather than rhetorical. It is voluntary and deliberately process-oriented, which is both its strength and the reason it cannot substitute for binding duties.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id="critique-and-design-theory"&gt;Critique and design theory
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Wagner, B. (2018). &amp;ldquo;Ethics as an Escape from Regulation: From &amp;lsquo;Ethics-Washing&amp;rsquo; to Ethics-Shopping?&amp;rdquo;&lt;/strong&gt;, in &lt;em&gt;Being Profiled: Cogitas Ergo Sum&lt;/em&gt;, edited by E. Bayamlıoğlu et al., Amsterdam University Press.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Contribution:&lt;/em&gt; names the phenomenon this article calls decoration, and gives the argument its title. Wagner&amp;rsquo;s point is sharper than mine: voluntary ethics discourse can function as a &lt;em&gt;substitute&lt;/em&gt; for regulation, not a complement to it. Every claim in section III that ethics is a daily practice should be read against his warning.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Friedman, B. &amp;amp; Hendry, D. G. (2019). &lt;em&gt;Value Sensitive Design: Shaping Technology with Moral Imagination&lt;/em&gt;.&lt;/strong&gt; MIT Press. &lt;a class="link" href="https://mitpress.mit.edu/9780262039536/" target="_blank" rel="noopener"
+&gt;https://mitpress.mit.edu/9780262039536/&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Contribution:&lt;/em&gt; the methodological answer to &amp;ldquo;ethics cannot be a patch&amp;rdquo;. Value Sensitive Design argues that values must be enrolled at design time and traced through the whole process, because by the time a system exists its moral shape is largely fixed. This is where &amp;ldquo;infrastructure&amp;rdquo; stops being a metaphor and becomes a design method.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Shneiderman, B. (2022). &lt;em&gt;Human-Centered AI&lt;/em&gt;.&lt;/strong&gt; Oxford University Press.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Contribution:&lt;/em&gt; provides the conceptual pairing — high automation &lt;em&gt;and&lt;/em&gt; high human control — that section V finds reflected in Article 14. Shneiderman&amp;rsquo;s &amp;ldquo;two-dimensional&amp;rdquo; model is useful precisely because it refuses the false choice between automation and oversight, and insists that human control must be designed as a capability, not an approval step.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Crawford, K. (2021). &lt;em&gt;Atlas of AI: Power, Politics, and the Planetary Costs of Artificial Intelligence&lt;/em&gt;.&lt;/strong&gt; Yale University Press.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Contribution:&lt;/em&gt; the empirical basis for the opening claim of section I — that the technology reproduces old logics of concentration and extraction. Crawford&amp;rsquo;s account of AI as an extractive industry (of minerals, data and labour) is the clearest available demonstration that &amp;ldquo;the model&amp;rdquo; is an organisational and political artefact, not a neutral one.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Roberts, S. T. (2019). &lt;em&gt;Behind the Screen: Content Moderation in the Shadows of Digital Labour&lt;/em&gt;.&lt;/strong&gt; Yale University Press.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Contribution:&lt;/em&gt; documents the invisible workforce without which most commercial AI is impossible, and does so with enough ethnographic detail to make section III concrete rather than abstract. When I write that the hollowness of an unethical process shows up in the product, this is the book I am thinking of.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Gray, M. L. &amp;amp; Suri, S. (2019). &lt;em&gt;Ghost Work: How to Stop Silicon Valley from Building a New Global Underclass&lt;/em&gt;.&lt;/strong&gt; Houghton Mifflin Harcourt.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Contribution:&lt;/em&gt; explains why the working conditions behind AI are structurally invisible — the labour is deliberately designed to be unassignable to a named person. Read together with Roberts, it turns &amp;ldquo;if the team works under precarious conditions&amp;rdquo; from a hypothetical into a description.&lt;/p&gt;
+&lt;/blockquote&gt;</description></item><item><title>The Neptuno Network: A Collaborative Operational Framework for Human-AI Teams</title><link>https://jimenezgomez.org/posts/2026-10-16-neptuno-network-collaborative-framework/</link><pubDate>Fri, 16 Oct 2026 17:30:00 +0200</pubDate><guid>https://jimenezgomez.org/posts/2026-10-16-neptuno-network-collaborative-framework/</guid><description>&lt;img src="https://jimenezgomez.org/posts/2026-10-16-neptuno-network-collaborative-framework/og-image-1200x630.png" alt="Featured image of post The Neptuno Network: A Collaborative Operational Framework for Human-AI Teams" /&gt;&lt;p&gt;Most conversations about artificial intelligence in the workplace still begin with the wrong question. They ask &lt;em&gt;what can the model do?&lt;/em&gt; — and then discover, months later, that the harder question was never answered: &lt;em&gt;who is accountable when it does it?&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;After thirty years building systems, I have learned that tools do not change organisations. &lt;strong&gt;Operating models&lt;/strong&gt; change organisations. This article describes the operating model we have built and are now publishing as a whitepaper: the Neptuno Network.&lt;/p&gt;
+&lt;h2 id="the-problem-with-loose-collaboration"&gt;The problem with loose collaboration
+&lt;/h2&gt;&lt;p&gt;Adopting AI as a tool attached to a process works for isolated tasks. It breaks down as soon as the AI participates in &lt;em&gt;ongoing&lt;/em&gt; work — the same project, over weeks, across several people, on infrastructure the organisation does not fully control. Three failures appear, reliably:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Context loss.&lt;/strong&gt; The system forgets the project between sessions, so every conversation restarts from zero.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Responsibility diffusion.&lt;/strong&gt; When an automated action causes harm, nobody can name who authorised it.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Governance theatre.&lt;/strong&gt; Ethics and compliance exist as policy documents, not as enforced technical constraints.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The Neptuno Network addresses those failures structurally rather than procedurally. It starts from a design principle that sounds almost administrative but is in fact technical: &lt;strong&gt;separation of liability&lt;/strong&gt;.&lt;/p&gt;
+&lt;h2 id="three-entities-deliberately-separated"&gt;Three entities, deliberately separated
+&lt;/h2&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;span class="lnt"&gt;11
+&lt;/span&gt;&lt;span class="lnt"&gt;12
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; +-------------------------------------------------------+
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; | BRISECOM SL |
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; | (Commercial Umbrella, Governance &amp;amp; Operations) |
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; +-------------------------------------------------------+
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; |
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; +------------------------------+------------------------------+
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; v v v
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; +--------------------+ +--------------------+ +--------------------+
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; | HUMAN WORKERS | | NEPTUNO NETWORK | | FRAMEWORK LAIA |
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; | (Engineers, Staff, |&amp;lt;------&amp;gt;| (Distributed P2P / |&amp;lt;------&amp;gt;| (Logic Engine &amp;amp; |
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; | Collaborators) | | Encrypted Fabric) | | Context Agents) |
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; +--------------------+ +--------------------+ +--------------------+
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;strong&gt;BRISECOM SL&lt;/strong&gt; is the commercial umbrella: the legal, administrative and billing gateway, and the network authority that issues cryptographic credentials to both human workers and machine nodes.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;The Neptuno Network&lt;/strong&gt; is the collaborative fabric: an encrypted mesh of workstations, local racks and edge devices, governed by strict role-based access control. Zero trust is not a slogan here — a node reaches exactly the resources relevant to its active projects, and nothing else.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Framework LAIA&lt;/strong&gt; is the agentic partner. Not a chatbot, but an active worker node: it maintains persistent project memory through the Assistant Context Standard, executes background tasks, audits code, and prepares administrative documentation.&lt;/p&gt;
+&lt;p&gt;The point of drawing these three apart is that each one can fail, be replaced, or be audited &lt;strong&gt;independently&lt;/strong&gt; without colliding with the others. The network transports. The agent reasons. The umbrella answers institutionally.&lt;/p&gt;
+&lt;h2 id="human-in-the-loop-by-construction"&gt;Human in the loop, by construction
+&lt;/h2&gt;&lt;p&gt;Collaboration follows a structured, human-in-the-loop paradigm:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Task initialisation.&lt;/strong&gt; A researcher or engineer defines the objective inside a P.A.R.A. structure on their own workstation.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Context ingestion.&lt;/strong&gt; LAIA ingests the documentation, snippets and project history it needs.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Execution.&lt;/strong&gt; LAIA performs non-critical work: generating interfaces, packaging build recipes, analysing data sets.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Human review.&lt;/strong&gt; LAIA submits proposals, pull requests and execution logs for final sign-off.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The critical constraint is at step four. &lt;strong&gt;The agent&amp;rsquo;s output is a proposal, never a production action.&lt;/strong&gt; Automation is limited to work whose failure is recoverable; irreversible operations require an explicit human signature. That single rule eliminates most of the scenarios that make agentic systems frightening to a risk committee.&lt;/p&gt;
+&lt;h2 id="three-layers-of-protection"&gt;Three layers of protection
+&lt;/h2&gt;&lt;p&gt;Protecting core technology while allowing open collaboration is usually presented as a trade-off. It is not, if you separate the layers:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;span class="lnt"&gt;6
+&lt;/span&gt;&lt;span class="lnt"&gt;7
+&lt;/span&gt;&lt;span class="lnt"&gt;8
+&lt;/span&gt;&lt;span class="lnt"&gt;9
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; +--------------------------------------+
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; | THREE-LAYER PROTECTION SYSTEM |
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; +--------------------------------------+
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; |
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; +----------------------------------+----------------------------------+
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; v v v
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;[ LAYER 1: TRADEMARKS ] [ LAYER 2: COPYRIGHT ] [ LAYER 3: TRADE SECRET ]
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;OEPM / EUIPO Registration Cryptographic Code Signatures Duo-Layer NDAs &amp;amp; Strict
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;of LAIA, NEPTUNO, BRISECOM &amp;amp; Header Licensing Standards Network Isolation Protocol
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Registration establishes public ownership. Cryptographic signing establishes provenance. Trade-secret discipline protects what is deliberately left unpublished. All underlying intellectual property — the LAIA logic, the Neptuno architecture, the ACS protocols — remains owned by me as an individual and is licensed exclusively to BRISECOM SL. Collaborators sign duo-layer nondisclosure and IP assignment agreements before receiving a single access key.&lt;/p&gt;
+&lt;h2 id="compliance-as-an-architectural-property"&gt;Compliance as an architectural property
+&lt;/h2&gt;&lt;p&gt;One sentence in the whitepaper matters more than the rest for European clients: our AI Act and GDPR compliance are &lt;strong&gt;enforced properties of the architecture&lt;/strong&gt;, not commitments to be verified after the fact.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Human oversight (Article 14):&lt;/strong&gt; an agent that cannot obtain a human signature cannot deploy.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Traceability:&lt;/strong&gt; every agentic action and contextual change is logged immutably.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Data sovereignty:&lt;/strong&gt; enterprise data stays on private, sovereign infrastructure, never leaking to public third-party model providers.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;A system that logs immutably cannot be made to forget. That is a stronger guarantee than any policy.&lt;/p&gt;
+&lt;h2 id="a-finite-audit-surface"&gt;A finite audit surface
+&lt;/h2&gt;&lt;p&gt;Finally, the stack is standardised across every node: Ubuntu/Xubuntu 24.04 LTS, &lt;code&gt;uv&lt;/code&gt; over &lt;code&gt;pyproject.toml&lt;/code&gt;, Python 3 with PyGObject (GTK3), and a CI/CD matrix targeting &lt;code&gt;.whl&lt;/code&gt;, &lt;code&gt;.deb&lt;/code&gt;, AppImage, Snap and Flatpak.&lt;/p&gt;
+&lt;p&gt;Standardisation is itself a governance measure. When every node runs the same toolchain and the same resolver, the audit surface is finite — a reviewer does not have to reason about an unknown environment.&lt;/p&gt;
+&lt;h2 id="honest-limitations"&gt;Honest limitations
+&lt;/h2&gt;&lt;p&gt;Two constraints are stated plainly in the paper. First, the model assumes a &lt;strong&gt;trusted root&lt;/strong&gt;: the identity provider and the IP holder are single points by design — a deliberate trade of decentralisation for accountability. Second, the value of agentic collaboration depends on the quality of the context supplied; a poorly maintained knowledge vault degrades the agent regardless of the logic engine underneath. Both are accepted as the price of an auditable system.&lt;/p&gt;
+&lt;h2 id="the-whitepaper"&gt;The whitepaper
+&lt;/h2&gt;&lt;p&gt;The full framework — architectural entities, collaboration workflows, the three-layer protection model, the technical stack and the complete references — is published today as &lt;strong&gt;Whitepaper #12&lt;/strong&gt; of the LAIA project:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;→ &lt;a class="link" href="https://github.com/javi-jimenez/laia/blob/main/whitepapers/collaborative-operational-framework-neptuno-network.md" target="_blank" rel="noopener"
+&gt;Collaborative Operational Framework: Human-AI Synergy Across the Neptuno Network&lt;/a&gt;&lt;/strong&gt; &lt;em&gt;(CC BY-NC-SA 4.0)&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;The contribution of that paper is not a new algorithm. It is a &lt;strong&gt;reproducible operational model&lt;/strong&gt;: three entities, three protection layers, and a standardised stack, arranged so that responsibility never diffuses — even when part of the team is not human.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;em&gt;Francisco Javier Jiménez Gómez — Valencia, October 2026&lt;/em&gt;&lt;/p&gt;</description></item></channel></rss>

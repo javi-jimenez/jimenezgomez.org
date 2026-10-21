@@ -1,6 +1,6 @@
 # jimenezgomez.org
 
-**Versión: 1.1.0** · [CHANGELOG](CHANGELOG.md)
+**Versión: 1.2.0** · [CHANGELOG](CHANGELOG.md)
 
 Sitio personal de Francisco Javier Jiménez Gómez: `index.html` en la raíz es la
 landing de portfolio (en español, independiente de Hugo) y el blog se genera con
@@ -65,3 +65,35 @@ make push-tags    # sube los tags a ambos
 - Imágenes **co-locadas** con el artículo, nunca en `/static`.
 - `hugo.toml`: `mainSections = ['posts']`, `unsafe = true` en goldmark (permite
   HTML en markdown).
+
+## Portadas
+
+Cada artículo tiene su propia portada: un **motivo** (dibujo geométrico) y una
+**paleta** elegidos por tema, no una plantilla con el título encima. El generador
+está en `tools/coverart/`:
+
+| Fichero | Qué define |
+|---|---|
+| `specs.py` | El reparto: qué motivo y qué paleta lleva cada artículo |
+| `motifs.py` | Los motivos (redes, capas, fractales, sellos, órbitas…) |
+| `palettes.py` | Las paletas (oscuras y claras) |
+| `compose.py` | Composición: fondo, grano, velo, tipografía |
+
+```bash
+cd tools
+python3 -m coverart --list          # ver el reparto motivo/paleta
+python3 -m coverart --all           # generar todas
+python3 -m coverart <slug>          # generar una
+```
+
+Escribe `og-image.svg` y lo rasteriza a `og-image-1200x630.png` (y 600×315). El
+frontmatter apunta al **PNG**: las redes sociales no renderizan SVG en
+`og:image`.
+
+**Regla**: ninguna pareja (motivo, paleta) se repite. Si dos artículos comparten
+tema, comparten motivo y cambian de paleta y de parámetros, de modo que se
+reconocen como familia sin confundirse. Un artículo sin entrada en `specs.py`
+recibe una plantilla sobria y un aviso.
+
+El hook `pre-commit` regenera la portada **sólo de los artículos que entran en el
+commit**, así que no hay que acordarse de nada.

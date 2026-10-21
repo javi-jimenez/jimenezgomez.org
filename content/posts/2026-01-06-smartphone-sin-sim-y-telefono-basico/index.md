@@ -3,8 +3,8 @@ title: "Resilience in connectivity - The perfect combination: SIM-free smartphon
 date: "2026-01-06T12:35:00+01:00"
 draft: false
 layout: post
-image: "og-image.svg"
-og_image: og-image-1200x630.png
+image: "og-image-1200x630.png"
+og_image: "og-image-1200x630.png"
 description: "Dual strategy: a SIM-free smartphone on Wi-Fi and a basic phone for urgent calls to regain attention and battery life."
 # Tags
 tags:

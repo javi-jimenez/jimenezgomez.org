@@ -3,8 +3,9 @@ title: "The Undercover (202601312313)"
 date: 2026-01-31T23:13:00+01:00
 draft: false
 layout: post
-image: "og-image.svg"
+image: "og-image-1200x630.png"
 tags: []
+og_image: "og-image-1200x630.png"
 ---
 Text inspired by Valencian traditions, psychographics and esoteric symbols. Part of the text was prepared with the help of models (e.g. Google Gemini) and historical contrast.
 

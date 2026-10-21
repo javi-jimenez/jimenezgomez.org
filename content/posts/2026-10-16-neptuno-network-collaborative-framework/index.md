@@ -3,7 +3,7 @@ title: "The Neptuno Network: A Collaborative Operational Framework for Human-AI 
 date: 2026-10-16T17:30:00+02:00
 draft: false
 layout: post
-image: "og-image.svg"
+image: "og-image-1200x630.png"
 og_image: "og-image-1200x630.png"
 tags: ["Neptuno Network", "Human-AI Collaboration", "Agentic AI", "Zero Trust", "AI Governance", "LAIA", "Intellectual Property"]
 ---

@@ -3,8 +3,8 @@ title: "From Unix Commands to APIs: Designing Software Around Contracts, Not Int
 date: 2026-09-07
 draft: false
 layout: post
-image: "og-image.svg"
-og_image: og-image.svg
+image: "og-image-1200x630.png"
+og_image: "og-image-1200x630.png"
 tags:
   - software architecture
   - unix

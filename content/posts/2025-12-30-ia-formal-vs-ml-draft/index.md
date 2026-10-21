@@ -1,6 +1,6 @@
 ---
-og_image: og-image-1200x630.png
-image: "og-image.svg"
+og_image: "og-image-1200x630.png"
+image: "og-image-1200x630.png"
 tags:
 title: "Computational cost and truth affinity: formal languages ​​vs ML (Draft)"
 date: 2025-12-30T10:00:00+01:00

@@ -3,7 +3,8 @@ title: "The Mirage of Open Source: Freedom or Programmed Dispossession?"
 date: 2026-02-26T11:09:00+01:00
 draft: false
 layout: post
-image: "og-image.svg"
+image: "og-image-1200x630.png"
+og_image: "og-image-1200x630.png"
 ---
 
 In contemporary technical narrative, Open Source is presented as the pinnacle of the democratization of knowledge. However, behind the veil of disinterested collaboration lies an incentive structure that often operates as a mechanism of expropriation for the independent author.

@@ -16,8 +16,19 @@ git checkout -b feat/my-change
 - Para cambios de contenido usa `hugo` para generar `public/`:
 
 ```bash
-hugo
+make build        # equivale a hugo, pero también funciona en CI
+make serve        # preview en http://localhost:1313
 ```
+
+3b) Portadas de los artículos
+- Cada artículo lleva su propia portada, generada desde `tools/coverart/`. Añade
+  su entrada en `tools/coverart/specs.py` (motivo + paleta) y ejecuta:
+
+```bash
+cd tools && python3 -m coverart <slug-del-articulo>
+```
+- El hook `pre-commit` la regenera al commitear. No edites `og-image.svg` a mano:
+  se sobrescribe en el siguiente commit.
 
 4) Crear Issues y PRs
 - Para proponer cambios en el RFC o abrir discusión, usa `tools/rfcs/open_rfc_issue.sh` o abre una issue manualmente.

@@ -1,6 +1,6 @@
 ---
-og_image: og-image-1200x630.png
-image: "og-image.svg"
+og_image: "og-image-1200x630.png"
+image: "og-image-1200x630.png"
 tags:
 title: "Three layers abstraction"
 date: 2024-03-31 20:52:00 +02:00
