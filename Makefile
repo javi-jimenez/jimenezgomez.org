@@ -32,6 +32,28 @@ override FTP_REMOTE_PATH := /jimenezgomez.org/
 GIT_REMOTES ?= origin gitea
 GIT_BRANCH  ?= main
 
+# Remotos "lentos": su almacén no soporta packs grandes (Gitea sobre s3fs
+# escribe el tmp-pack en un FS sin locking y el push falla con
+# "remote unpack failed: index-pack abnormal exit").
+# `pack.threads=1 --no-thin` hace que el unpack funcione. Antes había que
+# recordarlo en cada push; ahora se aplica solo cuando el remoto empata por
+# nombre o por URL.
+GIT_SLOW_REMOTES ?= gitea
+GIT_SLOW_FLAGS   ?= -c pack.threads=1 --no-thin
+
+# Flags extra de push para el remoto $1 (vacío si es normal).
+# OJO: sin `case ... )`, porque un paréntesis de cierre dentro de `$(call ...)`
+# cerraría la función de make y rompería la expansión.
+define remote_push_flags
+$(if $(strip $(GIT_SLOW_REMOTES)), \
+	__u=$$(git remote get-url "$(1)" 2>/dev/null); \
+	__f=""; \
+	for __s in $(GIT_SLOW_REMOTES); do \
+		printf '%s %s' "$(1)" "$$__u" | grep -q -- "$$__s" && { __f="$(GIT_SLOW_FLAGS)"; break; }; \
+	done; \
+	echo "$$__f",)
+endef
+
 # ---- Targets ----
 .PHONY: help dep build html deploy ftp-deploy dev-container create-dev-container \
 	drone-run drone-exec serve gen-og gen-og-png install-hooks \
@@ -299,7 +321,8 @@ git-commit:
 
 push:
 	@$(MAKE) --no-print-directory git-commit
-	@git push origin $(GIT_BRANCH)
+	@flags=$$($(call remote_push_flags,origin)); \
+	git push $$flags origin $(GIT_BRANCH)
 	@echo "Subido a origin/$(GIT_BRANCH)."
 
 pull:
@@ -313,7 +336,8 @@ push-all:
 	@remotes="$(GIT_REMOTES)"; fail=0; \
 	for r in $$remotes; do \
 		printf "  %-10s -> " "$$r"; \
-		out=$$(git push "$$r" "$(GIT_BRANCH)" 2>&1); rc=$$?; \
+		flags=$$($(call remote_push_flags,$$r)); \
+		out=$$(git push $$flags "$$r" "$(GIT_BRANCH)" 2>&1); rc=$$?; \
 		if [ $$rc -eq 0 ]; then echo "ok"; \
 		else echo "ERROR"; printf "%s\n" "$$out" | sed 's/^/    /'; fail=1; fi; \
 	done; \
@@ -348,7 +372,8 @@ push-tags:
 	@remotes="$(GIT_REMOTES)"; fail=0; \
 	for r in $$remotes; do \
 		printf "  %-10s -> " "$$r"; \
-		out=$$(git push "$$r" --tags 2>&1); rc=$$?; \
+		flags=$$($(call remote_push_flags,$$r)); \
+		out=$$(git push $$flags "$$r" --tags 2>&1); rc=$$?; \
 		if [ $$rc -eq 0 ]; then echo "ok"; \
 		else echo "ERROR"; printf "%s\n" "$$out" | sed 's/^/    /'; fail=1; fi; \
 	done; \

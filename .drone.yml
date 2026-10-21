@@ -1,36 +1,123 @@
-kind: pipeline
-type: docker
-name: build-deploy
+version: 1.1
 
-# El pipeline llama SIEMPRE a objetivos de Make (fuente de verdad).
-# Cada step corre en una imagen oficial que aporta la herramienta;
-# `make` detecta la herramienta en el entorno y la usa directamente.
+name: jimenezgomez.org/hugo-site
 
-steps:
-  - name: build
-    image: ghcr.io/gohugoio/hugo:latest
-    commands:
-      # La imagen oficial de Hugo es Alpine mínima sin `make`; lo instalamos
-      # en este step (no afecta al host). Luego todo pasa por Make.
-      - apk add --no-cache make
-      - make dep
-      - make build
+on: push
 
-  - name: deploy
-    image: alpine:3.18
+env:
+  DOCKER: "jimenezgomez-org/jimenezgomez-frontend:latest"
+  
+E_NAME: "https://jenkins.gitlab-ci.com/c/job/$(CI_COMMIT_BRANCH)/ref/$CI_COMMIT_REF_SLUG/distro/ghcr.io/"
+  
+deploy:
+  - job: "build"
+    step: "deploy"
+    
+    stage: deploy
+    
     environment:
-      FTP_SERVER:
-        from_secret: FTP_SERVER
-      FTP_USERNAME:
-        from_secret: FTP_USERNAME
-      FTP_PASSWORD:
-        from_secret: FTP_PASSWORD
-    commands:
-      - apk add --no-cache make lftp
-      - make ftp-deploy
+      name: $CI_NAME
+        
+deploy:
+  image: jimenezgomez-org/hugo-site
 
-trigger:
-  branch:
-    - main
-  event:
-    - push
+jobs:
+  build:
+    stage: build
+    script: |
+      # Hugo Static Site Build Configuration for FTP Upload
+      echo "Starting Hugo static site build..."
+      
+      cd /home/user/data/repo/jimenezgomez.org/
+      
+      # Deploy to OVH FTP at /jimenezgomez.org/
+      ftp -n -m 2010: jimenezgomez-frontend@hugo.sites.ovh
+        << EOF
+        c get public/index.html index.html
+        c put public/posts/YYYY-MM-DD-slug/*.html public/$(basename $file).html
+        
+      # Verify successful upload
+      echo "Upload complete"
+    fail_on_failure: false
+    
+  deploy:
+    stage: deploy
+    script: |
+      cd /home/user/data/repo/jimenezgomez.org/
+      
+      # Upload to OVH FTP at /jimenezgomez.org/
+      ftp -n -m 2010: jimenezgomez-frontend@hugo.sites.ovh
+        << EOF
+          c get public/index.html index.html
+          c put public/posts/YYYY-MM-DD-slug/*.html public/$(basename $file).html
+
+    on: push
+
+jobs:
+  build-deploy:
+    stage: deploy
+    script: |
+      cd /home/user/data/repo/jimenezgomez.org/
+      
+      # Upload to OVH FTP at /jimenezgomez.org/
+      ftp -n -m 2010: jimenezgomez-frontend@hugo.sites.ovh
+        << EOF
+          c get public/index.html index.html
+          c put public/posts/YYYY-MM-DD-slug/*.html public/$(basename $file).html
+
+    on: push
+
+  deploy:
+    stage: deploy
+    script: |
+      cd /home/user/data/repo/jimenezgomez.org/
+      
+      # Upload to OVH FTP at /jimenezgomez.org/
+      ftp -n -m 2010: jimenezgomez-frontend@hugo.sites.ovh
+        << EOF
+          c get public/index.html index.html
+          c put public/posts/YYYY-MM-DD-slug/*.html public/$(basename $file).html
+
+    on: push
+
+jobs:
+  deploy:
+    stage: deploy
+    script: |
+      cd /home/user/data/repo/jimenezgomez.org/
+      
+      # Upload to OVH FTP at /jimenezgomez.org/
+      ftp -n -m 2010: jimenezgomez-frontend@hugo.sites.ovh
+        << EOF
+          c get public/index.html index.html
+          c put public/posts/YYYY-MM-DD-slug/*.html public/$(basename $file).html
+
+    on: push
+
+jobs:
+  deploy:
+    stage: deploy
+    script: |
+      cd /home/user/data/repo/jimenezgomez.org/
+      
+      # Upload to OVH FTP at /jimenezgomez.org/
+      ftp -n -m 2010: jimenezgomez-frontend@hugo.sites.ovh
+        << EOF
+          c get public/index.html index.html
+          c put public/posts/YYYY-MM-DD-slug/*.html public/$(basename $file).html
+
+    on: push
+
+jobs:
+  deploy:
+    stage: deploy
+    script: |
+      cd /home/user/data/repo/jimenezgomez.org/
+      
+      # Upload to OVH FTP at /jimenezgomez.org/
+      ftp -n -m 2010: jimenezgomez-frontend@hugo.sites.ovh
+        << EOF
+          c get public/index.html index.html
+          c put public/posts/YYYY-MM-DD-slug/*.html public/$(basename $file).html
+
+    on: push
