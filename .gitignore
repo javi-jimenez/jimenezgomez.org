@@ -13,3 +13,12 @@ thumbs.db
 # Python bytecode (generadores de herramientas)
 __pycache__/
 *.pyc
+
+# Vídeo servido por video.php (4,8 MB).
+# NO se versiona: un MP4 en git se queda en el historial para siempre y engorda
+# cada clon, para un fichero que solo tiene que estar en el servidor. El deploy
+# sube `public/` desde el árbol de trabajo, así que el vídeo llega igual.
+# ⚠️ Si un clon nuevo no tiene static/video/*.mp4, el build deja public/video/
+# vacío y el deploy con --delete BORRA el vídeo del servidor.
+static/video/*.mp4
+public/video/*.mp4

@@ -1,0 +1,102 @@
+{{/*
+    Player del vídeo explicativo de "Meteoectasis" con contador de
+    reproducciones (mismo mecanismo que el del aniversario).
+
+    Uso en Markdown: {{< video-meteoectasis >}}
+
+    Cómo cuenta: el vídeo NO tiene fuente hasta que alguien le da al play. En
+    ese momento el JS pide un token a /video.php?a=token y asigna la fuente
+    /video.php?f=meteoectasis&play=1&t=<token>. Pedir el MP4 a pelo no cuenta,
+    las peticiones Range del seek no cuentan, y la cookie de 30 min evita que
+    recargar infle el número.
+
+    El número NO se muestra en la página. Se consulta en /video.php?a=total o
+    por FTP, en stats/plays.log.
+*/}}
+{{ $dir := "/blog/2026-10-30-meteoectasis-impact-assimilation" }}
+{{ $poster := printf "%s/meteoectasis-thumb.png" $dir }}
+<div class="video-wrap" data-video="meteoectasis">
+  <video
+    class="video-player"
+    controls
+    playsinline
+    preload="none"
+    poster="{{ $poster }}"
+    data-src="/video.php?f=meteoectasis"
+    aria-label="Meteoectasis — how a planetary impact dissolves a body without destroying anything, with subtitles in English and Spanish">
+    <track kind="subtitles" src="{{ $dir }}/meteoectasis.en.vtt"
+           srclang="en" label="English" default>
+    <track kind="subtitles" src="{{ $dir }}/meteoectasis.es.vtt"
+           srclang="es" label="Español">
+    <p>Your browser cannot play this video.
+       <a href="/video.php?f=meteoectasis">Download it instead (MP4).</a></p>
+  </video>
+  <noscript>
+    <p class="video-fallback">
+      <a href="/video.php?f=meteoectasis">Watch the video (MP4)</a>
+    </p>
+  </noscript>
+</div>
+
+<style>
+  .video-wrap {
+    margin: 2rem 0;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #d9e6ef;
+    background: #060a13;
+    line-height: 0;
+  }
+  .video-player {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    background: #060a13;
+  }
+  .video-fallback {
+    margin: 0;
+    padding: 1rem;
+    line-height: 1.6;
+    background: #fff;
+  }
+</style>
+
+<script>
+(function () {
+  var wrap = document.querySelector('.video-wrap[data-video="meteoectasis"]');
+  if (!wrap) return;
+  var video = wrap.querySelector('video');
+  if (!video) return;
+
+  var started = false;
+
+  function start() {
+    if (started) return;
+    started = true;
+
+    fetch('/video.php?a=token', { credentials: 'same-origin' })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (data) {
+        var base = video.getAttribute('data-src');
+        video.src = data && data.token
+          ? base + '&play=1&t=' + encodeURIComponent(data.token)
+          : base;
+        video.load();
+        video.play().catch(function () { /* el usuario decide */ });
+      })
+      .catch(function () {
+        // Si el token falla, el vídeo se sirve igual: mejor perder una cuenta
+        // que perder la reproducción.
+        video.src = video.getAttribute('data-src');
+        video.load();
+        video.play().catch(function () {});
+      });
+  }
+
+  video.addEventListener('play', start);
+  video.addEventListener('click', function () {
+    if (!video.src) start();
+  });
+})();
+</script>
