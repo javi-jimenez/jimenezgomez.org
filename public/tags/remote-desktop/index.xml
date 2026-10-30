@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Remote Desktop on Francisco Javier Jiménez Gómez</title><link>https://jimenezgomez.org/tags/remote-desktop/</link><description>Recent content in Remote Desktop on Francisco Javier Jiménez Gómez</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>Francisco Javier Jiménez Gómez</copyright><lastBuildDate>Fri, 23 Oct 2026 21:00:00 +0200</lastBuildDate><atom:link href="https://jimenezgomez.org/tags/remote-desktop/index.xml" rel="self" type="application/rss+xml"/><item><title>Sound over VNC: bringing the remote desktop's audio home</title><link>https://jimenezgomez.org/blog/2026-10-23-sound-over-vnc-ssh-tunnel/</link><pubDate>Fri, 23 Oct 2026 21:00:00 +0200</pubDate><guid>https://jimenezgomez.org/blog/2026-10-23-sound-over-vnc-ssh-tunnel/</guid><description>&lt;img src="https://jimenezgomez.org/blog/2026-10-23-sound-over-vnc-ssh-tunnel/og-image-1200x630.png" alt="Featured image of post Sound over VNC: bringing the remote desktop's audio home" /&gt;&lt;p&gt;VNC has no sound. This is not a bug, a missing plugin, or a configuration you have
+failed to find: &lt;strong&gt;the RFB protocol has no audio channel at all&lt;/strong&gt;. It carries a
+rectangle of pixels in one direction and keyboard and mouse events in the other,
+and that is the whole contract. Anything that sounds like &amp;ldquo;enable audio in VNC&amp;rdquo;
+is either a different protocol wearing the same name, or a second connection
+doing the work quietly.&lt;/p&gt;
+&lt;p&gt;Once you accept that, the problem becomes much easier — and much smaller. You do
+not need to replace VNC with RDP or SPICE, and you do not need a proprietary
+remote-desktop stack. You need to add &lt;strong&gt;one extra channel&lt;/strong&gt; to the transport you
+are already using: the SSH connection that is forwarding your VNC port.&lt;/p&gt;
+&lt;p&gt;This article is that channel, in a single script, with the reasoning behind each
+line — including the five things that were wrong with the version I started
+from.&lt;/p&gt;
+&lt;h2 id="the-shape-of-the-problem"&gt;The shape of the problem
+&lt;/h2&gt;&lt;p&gt;A VNC session between two Linux machines usually looks like this:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;the remote host runs &lt;code&gt;x11vnc&lt;/code&gt; (or &lt;code&gt;tigervnc&lt;/code&gt;, or &lt;code&gt;x0vncserver&lt;/code&gt;) against an X
+display, listening on port &lt;code&gt;5900&lt;/code&gt;;&lt;/li&gt;
+&lt;li&gt;you open an SSH connection that forwards &lt;code&gt;5900&lt;/code&gt; to your machine;&lt;/li&gt;
+&lt;li&gt;a viewer connects to &lt;code&gt;localhost:5900&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The audio, meanwhile, lives somewhere else entirely. On the remote host there is
+a PulseAudio server (or a PipeWire server speaking the PulseAudio protocol) with
+one or more sinks. When the machine even has a sound card, the audio goes there
+— to speakers nobody is sitting in front of. When it does not (a headless box, a
+container, a VM), the sink is a dummy and the sound goes nowhere.&lt;/p&gt;
+&lt;p&gt;PulseAudio, however, has a feature that solves this exactly: &lt;strong&gt;network sinks&lt;/strong&gt;.
+You can create, on the remote machine, a sink that looks and behaves like a
+local output device but actually ships its samples to another PulseAudio server
+over TCP. That is &lt;code&gt;module-tunnel-sink&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;So the plan is:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;On &lt;strong&gt;your&lt;/strong&gt; machine, open a PulseAudio TCP port — bound to loopback only.&lt;/li&gt;
+&lt;li&gt;On the &lt;strong&gt;remote&lt;/strong&gt; machine, create a tunnel sink pointing at that port.
+Because &amp;ldquo;that port&amp;rdquo; is on your machine, the remote needs a &lt;strong&gt;reverse&lt;/strong&gt; path to
+it: &lt;code&gt;ssh -R&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Make that tunnel sink the default sink on the remote, so applications actually
+use it.&lt;/li&gt;
+&lt;li&gt;Start &lt;code&gt;x11vnc&lt;/code&gt; as usual.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;One SSH connection, two forwarded ports: &lt;code&gt;-L&lt;/code&gt; for the screen, &lt;code&gt;-R&lt;/code&gt; for the sound.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://jimenezgomez.org/blog/2026-10-23-sound-over-vnc-ssh-tunnel/figure-vnc-audio-tunnels.png"
+width="1200"
+height="740"
+srcset="https://jimenezgomez.org/blog/2026-10-23-sound-over-vnc-ssh-tunnel/figure-vnc-audio-tunnels_hu_ad30e4d38424f194.png 480w, https://jimenezgomez.org/blog/2026-10-23-sound-over-vnc-ssh-tunnel/figure-vnc-audio-tunnels_hu_5237093b0d17b3d9.png 1024w"
+loading="lazy"
+alt="Two channels inside one SSH connection: VNC forwarded with -L, PulseAudio forwarded back with -R"
+class="gallery-image"
+data-flex-grow="162"
+data-flex-basis="389px"
+&gt;&lt;/p&gt;
+&lt;h2 id="requirements"&gt;Requirements
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Local machine&lt;/strong&gt;: PulseAudio or PipeWire with &lt;code&gt;pipewire-pulse&lt;/code&gt; (so &lt;code&gt;pactl&lt;/code&gt;
+works), plus &lt;code&gt;ssh&lt;/code&gt;. Any distribution.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Remote machine&lt;/strong&gt;: an &lt;strong&gt;X11&lt;/strong&gt; session (not Wayland — &lt;code&gt;x11vnc&lt;/code&gt; mirrors an X
+display), &lt;code&gt;x11vnc&lt;/code&gt;, and &lt;code&gt;pactl&lt;/code&gt; working &lt;em&gt;for the same user&lt;/em&gt; that owns the
+session.&lt;/li&gt;
+&lt;li&gt;On the remote side, &lt;code&gt;pactl&lt;/code&gt; over SSH sometimes needs the runtime directory
+explicitly. If &lt;code&gt;pactl info&lt;/code&gt; fails there, try
+&lt;code&gt;XDG_RUNTIME_DIR=/run/user/$(id -u) pactl info&lt;/code&gt;; if it works, export it in the
+script&amp;rsquo;s remote section.&lt;/li&gt;
+&lt;li&gt;No audio server needs to be listening on the remote&amp;rsquo;s network, and no VNC
+password is needed if — as below — &lt;code&gt;x11vnc&lt;/code&gt; binds to loopback only.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="the-script"&gt;The script
+&lt;/h2&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;span class="lnt"&gt;11
+&lt;/span&gt;&lt;span class="lnt"&gt;12
+&lt;/span&gt;&lt;span class="lnt"&gt;13
+&lt;/span&gt;&lt;span class="lnt"&gt;14
+&lt;/span&gt;&lt;span class="lnt"&gt;15
+&lt;/span&gt;&lt;span class="lnt"&gt;16
+&lt;/span&gt;&lt;span class="lnt"&gt;17
+&lt;/span&gt;&lt;span class="lnt"&gt;18
+&lt;/span&gt;&lt;span class="lnt"&gt;19
+&lt;/span&gt;&lt;span class="lnt"&gt;20
+&lt;/span&gt;&lt;span class="lnt"&gt;21
+&lt;/span&gt;&lt;span class="lnt"&gt;22
+&lt;/span&gt;&lt;span class="lnt"&gt;23
+&lt;/span&gt;&lt;span class="lnt"&gt;24
+&lt;/span&gt;&lt;span class="lnt"&gt;25
+&lt;/span&gt;&lt;span class="lnt"&gt;26
+&lt;/span&gt;&lt;span class="lnt"&gt;27
+&lt;/span&gt;&lt;span class="lnt"&gt;28
+&lt;/span&gt;&lt;span class="lnt"&gt;29
+&lt;/span&gt;&lt;span class="lnt"&gt;30
+&lt;/span&gt;&lt;span class="lnt"&gt;31
+&lt;/span&gt;&lt;span class="lnt"&gt;32
+&lt;/span&gt;&lt;span class="lnt"&gt;33
+&lt;/span&gt;&lt;span class="lnt"&gt;34
+&lt;/span&gt;&lt;span class="lnt"&gt;35
+&lt;/span&gt;&lt;span class="lnt"&gt;36
+&lt;/span&gt;&lt;span class="lnt"&gt;37
+&lt;/span&gt;&lt;span class="lnt"&gt;38
+&lt;/span&gt;&lt;span class="lnt"&gt;39
+&lt;/span&gt;&lt;span class="lnt"&gt;40
+&lt;/span&gt;&lt;span class="lnt"&gt;41
+&lt;/span&gt;&lt;span class="lnt"&gt;42
+&lt;/span&gt;&lt;span class="lnt"&gt;43
+&lt;/span&gt;&lt;span class="lnt"&gt;44
+&lt;/span&gt;&lt;span class="lnt"&gt;45
+&lt;/span&gt;&lt;span class="lnt"&gt;46
+&lt;/span&gt;&lt;span class="lnt"&gt;47
+&lt;/span&gt;&lt;span class="lnt"&gt;48
+&lt;/span&gt;&lt;span class="lnt"&gt;49
+&lt;/span&gt;&lt;span class="lnt"&gt;50
+&lt;/span&gt;&lt;span class="lnt"&gt;51
+&lt;/span&gt;&lt;span class="lnt"&gt;52
+&lt;/span&gt;&lt;span class="lnt"&gt;53
+&lt;/span&gt;&lt;span class="lnt"&gt;54
+&lt;/span&gt;&lt;span class="lnt"&gt;55
+&lt;/span&gt;&lt;span class="lnt"&gt;56
+&lt;/span&gt;&lt;span class="lnt"&gt;57
+&lt;/span&gt;&lt;span class="lnt"&gt;58
+&lt;/span&gt;&lt;span class="lnt"&gt;59
+&lt;/span&gt;&lt;span class="lnt"&gt;60
+&lt;/span&gt;&lt;span class="lnt"&gt;61
+&lt;/span&gt;&lt;span class="lnt"&gt;62
+&lt;/span&gt;&lt;span class="lnt"&gt;63
+&lt;/span&gt;&lt;span class="lnt"&gt;64
+&lt;/span&gt;&lt;span class="lnt"&gt;65
+&lt;/span&gt;&lt;span class="lnt"&gt;66
+&lt;/span&gt;&lt;span class="lnt"&gt;67
+&lt;/span&gt;&lt;span class="lnt"&gt;68
+&lt;/span&gt;&lt;span class="lnt"&gt;69
+&lt;/span&gt;&lt;span class="lnt"&gt;70
+&lt;/span&gt;&lt;span class="lnt"&gt;71
+&lt;/span&gt;&lt;span class="lnt"&gt;72
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cp"&gt;#!/usr/bin/env bash
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# vnc-sound-host.sh — run a VNC server on a remote X display&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# and bring its audio back to this machine.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;#&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# Usage: vnc-sound-host.sh [user@]REMOTE_HOST&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;set&lt;/span&gt; -euo pipefail
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nv"&gt;REMOTE_HOST&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;1&lt;/span&gt;&lt;span class="p"&gt;:?usage: &lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;basename &lt;span class="s2"&gt;&amp;#34;&lt;/span&gt;&lt;span class="nv"&gt;$0&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;&lt;span class="p"&gt; [user@]REMOTE_HOST&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nv"&gt;VNC_PORT&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;VNC_PORT&lt;/span&gt;&lt;span class="k"&gt;:-&lt;/span&gt;&lt;span class="nv"&gt;5900&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;&lt;/span&gt; &lt;span class="c1"&gt;# local port for the VNC viewer&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nv"&gt;PULSE_PORT&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;PULSE_PORT&lt;/span&gt;&lt;span class="k"&gt;:-&lt;/span&gt;&lt;span class="nv"&gt;4713&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;&lt;/span&gt; &lt;span class="c1"&gt;# TCP port used on both ends for audio&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nv"&gt;SINK_NAME&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;SINK_NAME&lt;/span&gt;&lt;span class="k"&gt;:-&lt;/span&gt;&lt;span class="nv"&gt;remote_audio&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nv"&gt;SINK_DESC&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;SINK_DESC&lt;/span&gt;&lt;span class="k"&gt;:-&lt;/span&gt;&lt;span class="nv"&gt;Remote&lt;/span&gt;&lt;span class="p"&gt; desktop audio&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;log&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt; &lt;span class="nb"&gt;printf&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39; -&amp;gt; %s\n&amp;#39;&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;&lt;/span&gt;&lt;span class="nv"&gt;$*&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# --- remote side: remove tunnel sinks left over from previous runs ----------&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;remote_unload&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; ssh &lt;span class="s2"&gt;&amp;#34;&lt;/span&gt;&lt;span class="nv"&gt;$REMOTE_HOST&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;&lt;/span&gt; bash -s -- &lt;span class="s2"&gt;&amp;#34;&lt;/span&gt;&lt;span class="nv"&gt;$SINK_NAME&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;&lt;/span&gt; &lt;span class="s"&gt;&amp;lt;&amp;lt;&amp;#39;REMOTE&amp;#39; || true
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s"&gt;set -u
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s"&gt;sink=$1
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s"&gt;for m in $(pactl list short modules |
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s"&gt; awk -v s=&amp;#34;sink_name=$sink&amp;#34; &amp;#39;$2 == &amp;#34;module-tunnel-sink&amp;#34; &amp;amp;&amp;amp; index($0, s) { print $1 }&amp;#39;); do
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s"&gt; pactl unload-module &amp;#34;$m&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s"&gt;done
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s"&gt;REMOTE&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# --- local side: close the audio port again, whatever happens ---------------&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;cleanup&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; pactl unload-module module-native-protocol-tcp 2&amp;gt;/dev/null &lt;span class="o"&gt;||&lt;/span&gt; &lt;span class="nb"&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; remote_unload
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;trap&lt;/span&gt; cleanup EXIT
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 1. Local PulseAudio: accept native-protocol clients, loopback only,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# anonymous (the SSH tunnel is the authentication).&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;pactl unload-module module-native-protocol-tcp 2&amp;gt;/dev/null &lt;span class="o"&gt;||&lt;/span&gt; &lt;span class="nb"&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;pactl load-module module-native-protocol-tcp &lt;span class="se"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nv"&gt;listen&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;127.0.0.1 &lt;span class="nv"&gt;port&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;&lt;/span&gt;&lt;span class="nv"&gt;$PULSE_PORT&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;&lt;/span&gt; auth-anonymous&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt; &amp;gt;/dev/null
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;log &lt;span class="s2"&gt;&amp;#34;local PulseAudio listening on 127.0.0.1:&lt;/span&gt;&lt;span class="nv"&gt;$PULSE_PORT&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 2. Do not stack sinks if the script was interrupted last time.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;remote_unload
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 3. One SSH session: -L for the screen, -R for the sound.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# ssh joins its arguments with spaces before the remote shell sees them, so&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# values that may contain spaces have to be quoted: %q does exactly that.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nv"&gt;remote_cmd&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;&lt;span class="nb"&gt;printf&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;bash -s -- %q %q %q&amp;#39;&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;&lt;/span&gt;&lt;span class="nv"&gt;$PULSE_PORT&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;&lt;/span&gt;&lt;span class="nv"&gt;$SINK_NAME&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;&lt;/span&gt;&lt;span class="nv"&gt;$SINK_DESC&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;ssh &lt;span class="s2"&gt;&amp;#34;&lt;/span&gt;&lt;span class="nv"&gt;$REMOTE_HOST&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;&lt;/span&gt; &lt;span class="se"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; -o &lt;span class="nv"&gt;ExitOnForwardFailure&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;yes &lt;span class="se"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; -L &lt;span class="s2"&gt;&amp;#34;&lt;/span&gt;&lt;span class="nv"&gt;$VNC_PORT&lt;/span&gt;&lt;span class="s2"&gt;:localhost:5900&amp;#34;&lt;/span&gt; &lt;span class="se"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; -R &lt;span class="s2"&gt;&amp;#34;127.0.0.1:&lt;/span&gt;&lt;span class="nv"&gt;$PULSE_PORT&lt;/span&gt;&lt;span class="s2"&gt;:127.0.0.1:&lt;/span&gt;&lt;span class="nv"&gt;$PULSE_PORT&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;&lt;/span&gt; &lt;span class="se"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="s2"&gt;&amp;#34;&lt;/span&gt;&lt;span class="nv"&gt;$remote_cmd&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;&lt;/span&gt; &lt;span class="s"&gt;&amp;lt;&amp;lt;&amp;#39;REMOTE&amp;#39;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s"&gt;set -euo pipefail
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s"&gt;pulse_port=$1 sink_name=$2 sink_desc=$3
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s"&gt;# A sink that behaves like a sound card but ships to our machine.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s"&gt;pactl load-module module-tunnel-sink \
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s"&gt; server=&amp;#34;tcp:127.0.0.1:$pulse_port&amp;#34; \
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s"&gt; sink_name=&amp;#34;$sink_name&amp;#34; \
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s"&gt; format=s16le rate=48000 channels=2 \
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s"&gt; sink_properties=&amp;#34;device.description=$sink_desc&amp;#34; &amp;gt;/dev/null
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s"&gt;# A sink nobody uses is a sink that produces no sound.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s"&gt;pactl set-default-sink &amp;#34;$sink_name&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s"&gt;# Restart the server cleanly; -localhost keeps it off the remote network.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s"&gt;pkill -x x11vnc 2&amp;gt;/dev/null || true
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s"&gt;exec x11vnc -display &amp;#34;${DISPLAY:-:0}&amp;#34; -localhost -forever -shared -noxdamage
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s"&gt;REMOTE&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;That is the whole thing. Two details are easy to miss on a first reading.
+&lt;code&gt;-o ExitOnForwardFailure=yes&lt;/code&gt; turns &amp;ldquo;the port was already taken, I will carry on
+anyway&amp;rdquo; into a clean failure instead of a session that connects and then behaves
+mysteriously. And the remote command is built with &lt;code&gt;printf '%q'&lt;/code&gt; because &lt;strong&gt;ssh
+joins its arguments with single spaces&lt;/strong&gt; before handing them to the remote shell:
+a description like &lt;code&gt;Remote desktop audio&lt;/code&gt; would arrive as three separate words.
+Everything else in this article is about why each line is there.&lt;/p&gt;
+&lt;h2 id="what-was-wrong-with-the-first-version"&gt;What was wrong with the first version
+&lt;/h2&gt;&lt;p&gt;The script I started from looked like this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;span class="lnt"&gt;6
+&lt;/span&gt;&lt;span class="lnt"&gt;7
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="o"&gt;[[&lt;/span&gt; &lt;span class="nv"&gt;$#&lt;/span&gt; -lt &lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="o"&gt;]]&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;Usage: &lt;/span&gt;&lt;span class="nv"&gt;$0&lt;/span&gt;&lt;span class="s2"&gt; REMOTE_HOST&amp;#34;&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;exit&lt;/span&gt; -1
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;pactl unload-module module-native-protocol-tcp &lt;span class="p"&gt;;&lt;/span&gt; pactl load-module module-native-protocol-tcp
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nv"&gt;REMOTE_HOST&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;ssh &lt;span class="nv"&gt;$REMOTE_HOST&lt;/span&gt; -L 5900:localhost:5900 &lt;span class="s2"&gt;&amp;#34;pactl load-module module-tunnel-sink server=tcp:&lt;/span&gt;&lt;span class="nv"&gt;$REMOTE_HOST&lt;/span&gt;&lt;span class="s2"&gt; sink_name=remote_&lt;/span&gt;&lt;span class="nv"&gt;$REMOTE_HOSt&lt;/span&gt;&lt;span class="s2"&gt; sink_properties=device.description=&amp;#39;SndOutput→&lt;/span&gt;&lt;span class="nv"&gt;$REMOTE_HOST&lt;/span&gt;&lt;span class="s2"&gt;&amp;#39; ; killall x11vnc ; x11vnc&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;It is close, and it shows the right instinct — but it cannot work. Five reasons:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;1. The tunnel sink points at the wrong machine.&lt;/strong&gt; &lt;code&gt;server=tcp:$REMOTE_HOST&lt;/code&gt;
+makes the &lt;em&gt;remote&lt;/em&gt; PulseAudio connect to &lt;em&gt;itself&lt;/em&gt; on port &lt;code&gt;4713&lt;/code&gt;. But the port
+was opened on the local machine, and nothing forwards &lt;code&gt;4713&lt;/code&gt; from the remote back
+to us. The connection is refused (or, worse, lands on something else). The sink
+has to be &lt;code&gt;server=tcp:127.0.0.1:4713&lt;/code&gt; reached through a &lt;strong&gt;reverse&lt;/strong&gt; forward:
+&lt;code&gt;-R 4713:localhost:4713&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2. &lt;code&gt;auth-anonymous=1&lt;/code&gt; and &lt;code&gt;listen=127.0.0.1&lt;/code&gt; are both missing.&lt;/strong&gt; With the
+defaults, &lt;code&gt;module-native-protocol-tcp&lt;/code&gt; listens on every interface and expects
+the cookie in &lt;code&gt;~/.config/pulse/cookie&lt;/code&gt;. The remote machine does not have &lt;em&gt;your&lt;/em&gt;
+cookie, so authentication fails; and while it fails, you have a PulseAudio port
+open to the whole local network. Loopback plus anonymous &lt;em&gt;inside an SSH tunnel&lt;/em&gt;
+is the right combination: no password to share, nothing exposed.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;3. Nothing becomes the default sink.&lt;/strong&gt; &lt;code&gt;module-tunnel-sink&lt;/code&gt; creates a sink; it
+does not select it. Applications keep playing into the old default and the
+tunnel stays silent. &lt;code&gt;pactl set-default-sink&lt;/code&gt; is not optional.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;4. &lt;code&gt;sink_name=remote_$REMOTE_HOSt&lt;/code&gt; — a typo with consequences.&lt;/strong&gt; Shell
+variables are case-sensitive, so that expands to &lt;code&gt;remote_&lt;/code&gt;. Combined with the
+absence of any cleanup, every run of the script adds another almost identically
+named sink, and you end up choosing the right one by hand in &lt;code&gt;pavucontrol&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;5. &lt;code&gt;exit -1&lt;/code&gt;, &lt;code&gt;killall&lt;/code&gt;, and no cleanup.&lt;/strong&gt; &lt;code&gt;exit -1&lt;/code&gt; is not a valid status
+(you get 255, which looks like an SSH failure). &lt;code&gt;killall&lt;/code&gt; is not installed
+everywhere and fails the whole remote command line when it errors. And nothing
+closes the PulseAudio port afterwards, so the audio hole stays open after the
+session ends. The rewritten version uses &lt;code&gt;pkill -x ... || true&lt;/code&gt;, a &lt;code&gt;trap&lt;/code&gt; that
+closes the local port on any exit, and unloads the remote sink on the way out.&lt;/p&gt;
+&lt;p&gt;There is a sixth, subtler one: &lt;code&gt;ssh $REMOTE_HOST&lt;/code&gt; unquoted. It breaks on hostnames
+with spaces (rare) and, more importantly, teaches the wrong habit in a script that
+also builds remote command lines.&lt;/p&gt;
+&lt;h2 id="verifying-it"&gt;Verifying it
+&lt;/h2&gt;&lt;p&gt;Open two terminals on the local machine while the script is running.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Check that audio is reaching you:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;pactl list sinks short &lt;span class="c1"&gt;# the remote_audio sink appears here&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Note that this is a local sink created by PulseAudio when the tunnel connects —
+its presence is already a good sign. Then, on the &lt;strong&gt;remote&lt;/strong&gt; machine:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;pactl info &lt;span class="p"&gt;|&lt;/span&gt; grep &lt;span class="s1"&gt;&amp;#39;Default Sink&amp;#39;&lt;/span&gt; &lt;span class="c1"&gt;# -&amp;gt; remote_audio&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;paplay /usr/share/sounds/freedesktop/stereo/complete.oga
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;If you hear it, the channel works. A test tone is also useful for measuring the
+latency you will have to live with (see below):&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;speaker-test -c &lt;span class="m"&gt;2&lt;/span&gt; -t sine -l &lt;span class="m"&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;strong&gt;Check the two forwards:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;ss -ltn &lt;span class="p"&gt;|&lt;/span&gt; grep -E &lt;span class="s1"&gt;&amp;#39;5900|4713&amp;#39;&lt;/span&gt; &lt;span class="c1"&gt;# local: 5900 (vnc) and 4713 (pulse) listening&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id="what-still-goes-wrong"&gt;What still goes wrong
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;pactl: command not found&lt;/code&gt; or &amp;ldquo;connection refused&amp;rdquo; on the remote.&lt;/strong&gt; The
+remote user has no PulseAudio server in its session, or &lt;code&gt;XDG_RUNTIME_DIR&lt;/code&gt; is
+not set for non-interactive SSH. Try &lt;code&gt;XDG_RUNTIME_DIR=/run/user/$(id -u) pactl info&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Silence, but everything looks right.&lt;/strong&gt; Almost always the default sink: some
+applications (browsers, in particular) honour their own per-application sink
+selection. In &lt;code&gt;pavucontrol&lt;/code&gt; → &lt;em&gt;Playback&lt;/em&gt;, move the stream to &lt;code&gt;Remote desktop audio&lt;/code&gt; once; it is remembered.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Audio stutters.&lt;/strong&gt; The tunnel sends raw samples over TCP: 48 kHz stereo &lt;code&gt;s16&lt;/code&gt;
+is roughly 1.5 Mbit/s, on top of the VNC stream. Over a slow link, lower
+&lt;code&gt;rate&lt;/code&gt;/&lt;code&gt;channels&lt;/code&gt; in &lt;code&gt;module-tunnel-sink&lt;/code&gt; (&lt;code&gt;rate=44100 channels=1&lt;/code&gt;) before
+blaming the network.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;High latency.&lt;/strong&gt; Everything is buffered twice (remote server, tunnel, local
+server). It is fine for a video, a notification or a voice recording, and it is
+&lt;em&gt;not&lt;/em&gt; fine for anything interactive that needs to stay in sync with what you
+see. No amount of tuning makes a VNC-plus-tunnel session feel like local audio.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Wayland.&lt;/strong&gt; &lt;code&gt;x11vnc&lt;/code&gt; mirrors an X display; on a Wayland session it will show
+an empty root window or fail. Use &lt;code&gt;wayvnc&lt;/code&gt; (no X) — but then the audio part of
+this article still applies unchanged, because it never depended on VNC.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Port already in use.&lt;/strong&gt; Another VNC viewer is open, or a previous run left
+&lt;code&gt;4713&lt;/code&gt; bound. &lt;code&gt;VNC_PORT=5901 ./vnc-sound-host.sh host&lt;/code&gt; handles the first;
+the &lt;code&gt;trap&lt;/code&gt; handles the second.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;You already had a PulseAudio TCP module for something else.&lt;/strong&gt; The script
+unloads &lt;code&gt;module-native-protocol-tcp&lt;/code&gt; before loading its own copy, precisely so
+the port is not claimed twice — which means a module you had configured on
+purpose is gone when the session ends. Reload it, or keep the two on different
+&lt;code&gt;PULSE_PORT&lt;/code&gt; values.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="two-closed-doors-not-one"&gt;Two closed doors, not one
+&lt;/h2&gt;&lt;p&gt;The interesting part of this exercise is not the sound. It is that the two
+channels end up being secured by exactly the same mechanism, and that the
+mechanism is the one you already trusted with the screen.&lt;/p&gt;
+&lt;p&gt;Both listeners are bound to loopback: &lt;code&gt;pactl&lt;/code&gt; on &lt;code&gt;127.0.0.1&lt;/code&gt; locally, &lt;code&gt;x11vnc&lt;/code&gt;
+with &lt;code&gt;-localhost&lt;/code&gt; remotely, and the reverse forward bound to &lt;code&gt;127.0.0.1&lt;/code&gt; on the
+remote side too. Nothing new is reachable from either network. The only way in is
+the SSH connection, with its keys, its host verification and its cipher — the
+same connection that was already carrying the pixels. There is no VNC password to
+invent, no audio port to firewall, no extra daemon to keep updated.&lt;/p&gt;
+&lt;p&gt;And when the session ends, the port closes. That last detail is the difference
+between a trick and a tool: a remote-desktop script that leaves an anonymously
+authenticated PulseAudio socket listening on all interfaces after it exits is not
+a convenience, it is an incident waiting for a maintainer.&lt;/p&gt;
+&lt;p&gt;The lesson generalises past VNC. Most &amp;ldquo;VNC has no X&amp;rdquo; problems are not protocol
+problems: they are a missing channel that the transport you already have can
+carry. Before adopting a heavier stack, it is worth asking whether the gap can be
+closed with one forward and ten lines of shell.&lt;/p&gt;</description></item></channel></rss>

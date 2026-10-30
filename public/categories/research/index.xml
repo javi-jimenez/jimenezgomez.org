@@ -1,4 +1,233 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Research on Francisco Javier Jiménez Gómez</title><link>https://jimenezgomez.org/categories/research/</link><description>Recent content in Research on Francisco Javier Jiménez Gómez</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>Francisco Javier Jiménez Gómez</copyright><lastBuildDate>Mon, 22 Dec 2025 14:30:00 +0200</lastBuildDate><atom:link href="https://jimenezgomez.org/categories/research/index.xml" rel="self" type="application/rss+xml"/><item><title>Universal DNS: From the Planetary to the Galactic</title><link>https://jimenezgomez.org/posts/2025-12-22-dns-universal-ddnsc/</link><pubDate>Mon, 22 Dec 2025 14:30:00 +0200</pubDate><guid>https://jimenezgomez.org/posts/2025-12-22-dns-universal-ddnsc/</guid><description>&lt;img src="https://jimenezgomez.org/posts/2025-12-22-dns-universal-ddnsc/og-image-1200x630.png" alt="Featured image of post Universal DNS: From the Planetary to the Galactic" /&gt;&lt;h2 id="introduction-the-universal-addressing-problem"&gt;Introduction: The Universal Addressing Problem
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Research on Francisco Javier Jiménez Gómez</title><link>https://jimenezgomez.org/categories/research/</link><description>Recent content in Research on Francisco Javier Jiménez Gómez</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>Francisco Javier Jiménez Gómez</copyright><lastBuildDate>Fri, 30 Oct 2026 06:30:00 +0100</lastBuildDate><atom:link href="https://jimenezgomez.org/categories/research/index.xml" rel="self" type="application/rss+xml"/><item><title>Meteoectasis: A Word for the Impact That Leaves No Trace of the Impact</title><link>https://jimenezgomez.org/blog/2026-10-30-meteoectasis-impact-assimilation/</link><pubDate>Fri, 30 Oct 2026 06:30:00 +0100</pubDate><guid>https://jimenezgomez.org/blog/2026-10-30-meteoectasis-impact-assimilation/</guid><description>&lt;img src="https://jimenezgomez.org/blog/2026-10-30-meteoectasis-impact-assimilation/meteoectasis-impact.png" alt="Featured image of post Meteoectasis: A Word for the Impact That Leaves No Trace of the Impact" /&gt;&lt;br /&gt;
+&lt;p&gt;&lt;strong&gt;Author &amp; Lead Researcher:&lt;/strong&gt;&lt;br&gt;
+Francisco Javier Jiménez Gómez&lt;br&gt;
+&lt;em&gt;Independent Intellectual Property Owner&lt;/em&gt;&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;strong&gt;Presented under the institutional umbrella of:&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;BRISECOM S.L.&lt;/strong&gt;&lt;br&gt;
+&lt;em&gt;A specialized research and thinking laboratory dedicated to algorithmic ethics, AI governance, and human-centric technology intelligence.&lt;/em&gt;&lt;/p&gt;
+&lt;br&gt;
+&lt;p style="font-size: 0.8em; color: #2d3748;"&gt;
+30 October 2026
+&lt;/p&gt;
+&lt;br /&gt;
+&lt;div class="video-wrap" data-video="meteoectasis"&gt;
+&lt;video
+class="video-player"
+controls
+playsinline
+preload="none"
+poster="/blog/2026-10-30-meteoectasis-impact-assimilation/meteoectasis-thumb.png"
+data-src="https://jimenezgomez.org/video.php?f=meteoectasis"
+aria-label="Meteoectasis — how a planetary impact dissolves a body without destroying anything, with subtitles in English and Spanish"&gt;
+&lt;track kind="subtitles" src="https://jimenezgomez.org/blog/2026-10-30-meteoectasis-impact-assimilation/meteoectasis.en.vtt"
+srclang="en" label="English" default&gt;
+&lt;track kind="subtitles" src="https://jimenezgomez.org/blog/2026-10-30-meteoectasis-impact-assimilation/meteoectasis.es.vtt"
+srclang="es" label="Español"&gt;
+&lt;p&gt;Your browser cannot play this video.
+&lt;a href="https://jimenezgomez.org/video.php?f=meteoectasis"&gt;Download it instead (MP4).&lt;/a&gt;&lt;/p&gt;
+&lt;/video&gt;
+&lt;noscript&gt;
+&lt;p class="video-fallback"&gt;
+&lt;a href="https://jimenezgomez.org/video.php?f=meteoectasis"&gt;Watch the video (MP4)&lt;/a&gt;
+&lt;/p&gt;
+&lt;/noscript&gt;
+&lt;/div&gt;
+&lt;style&gt;
+.video-wrap {
+margin: 2rem 0;
+border-radius: 10px;
+overflow: hidden;
+border: 1px solid #d9e6ef;
+background: #060a13;
+line-height: 0;
+}
+.video-player {
+display: block;
+width: 100%;
+height: auto;
+aspect-ratio: 16 / 9;
+background: #060a13;
+}
+.video-fallback {
+margin: 0;
+padding: 1rem;
+line-height: 1.6;
+background: #fff;
+}
+&lt;/style&gt;
+&lt;script&gt;
+(function () {
+var wrap = document.querySelector('.video-wrap[data-video="meteoectasis"]');
+if (!wrap) return;
+var video = wrap.querySelector('video');
+if (!video) return;
+var started = false;
+function start() {
+if (started) return;
+started = true;
+fetch('/video.php?a=token', { credentials: 'same-origin' })
+.then(function (r) { return r.ok ? r.json() : null; })
+.then(function (data) {
+var base = video.getAttribute('data-src');
+video.src = data &amp;&amp; data.token
+? base + '&amp;play=1&amp;t=' + encodeURIComponent(data.token)
+: base;
+video.load();
+video.play().catch(function () { });
+})
+.catch(function () {
+video.src = video.getAttribute('data-src');
+video.load();
+video.play().catch(function () {});
+});
+}
+video.addEventListener('play', start);
+video.addEventListener('click', function () {
+if (!video.src) start();
+});
+})();
+&lt;/script&gt;
+&lt;br /&gt;
+&lt;p&gt;The word I am proposing in this article is &lt;strong&gt;meteoectasis&lt;/strong&gt;, and I want to be
+clear from the first line about what it is and what it is not.&lt;/p&gt;
+&lt;p&gt;It is &lt;strong&gt;not&lt;/strong&gt; a new physical mechanism. The physics it describes is in the
+literature, simulated in hydrocodes, and measured in isotopic ratios. It is a
+&lt;strong&gt;name for a state&lt;/strong&gt; — the state a body reaches when it has been hit so hard that
+it stops being itself, and simultaneously not hard enough for anything to be
+destroyed. The full paper is in the
+&lt;a class="link" href="https://github.com/javi-jimenez/laia/blob/main/whitepapers/meteoectasis-impact-induced-assimilation.md" target="_blank" rel="noopener"
+&gt;LAIA repository&lt;/a&gt;
+and on &lt;a class="link" href="https://laia.brisecom.org/#whitepapers" target="_blank" rel="noopener"
+&gt;laia.brisecom.org&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Why bother naming something that already has a description? Because the
+description is a periphrasis, and a periphrasis is where modelling errors hide.&lt;/p&gt;
+&lt;h2 id="the-gap-between-two-words"&gt;The gap between two words
+&lt;/h2&gt;&lt;p&gt;Planetary science has good words for the extremes.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Hit-and-run&lt;/strong&gt; is precise: the impactor hits, survives, and leaves. The target
+takes a glancing blow and the projectile is still a projectile afterwards. &lt;strong&gt;Catastrophic
+disruption&lt;/strong&gt; is equally precise: the target is torn apart and what remains is a
+family of fragments.&lt;/p&gt;
+&lt;p&gt;In between, everything is &lt;em&gt;accretion&lt;/em&gt;. And accretion is a &lt;strong&gt;quantity&lt;/strong&gt; word. It
+says that mass moved from one body to another. It says nothing whatsoever about
+the &lt;strong&gt;state&lt;/strong&gt; of the material afterwards.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://jimenezgomez.org/blog/2026-10-30-meteoectasis-impact-assimilation/meteoectasis-incoming.png"
+width="1600"
+height="1000"
+srcset="https://jimenezgomez.org/blog/2026-10-30-meteoectasis-impact-assimilation/meteoectasis-incoming_hu_39af320aaacf744e.png 480w, https://jimenezgomez.org/blog/2026-10-30-meteoectasis-impact-assimilation/meteoectasis-incoming_hu_b8ae3e07595edac0.png 1024w"
+loading="lazy"
+alt="The impactor arrives: a smaller body on a collision course with a larger one."
+class="gallery-image"
+data-flex-grow="160"
+data-flex-basis="384px"
+&gt;&lt;/p&gt;
+&lt;p&gt;Consider two events that both count as accretion:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A planetesimal hits a protoplanet, sticks, and remains a chemically distinct
+body embedded in the target&amp;rsquo;s mantle.&lt;/li&gt;
+&lt;li&gt;A planetesimal hits a protoplanet, is &lt;strong&gt;entirely melted&lt;/strong&gt;, expands thermally,
+and flows into the target&amp;rsquo;s magma ocean until nothing distinguishes its atoms
+from the target&amp;rsquo;s.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In the first case the target&amp;rsquo;s composition is a &lt;strong&gt;sum of inherited parts&lt;/strong&gt;. In the
+second it is a &lt;strong&gt;mixture&lt;/strong&gt;. Both are called &amp;ldquo;accreted&amp;rdquo;. For a modeller, the
+difference is enormous: the first produces a body with isotopic anomalies, the
+second does not.&lt;/p&gt;
+&lt;h2 id="what-the-word-means"&gt;What the word means
+&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Meteoectasis&lt;/strong&gt; — from Greek &lt;em&gt;metéōron&lt;/em&gt;, &amp;ldquo;celestial body&amp;rdquo;, and &lt;em&gt;éktasis&lt;/em&gt;,
+&amp;ldquo;expansion, dilatation&amp;rdquo; — is the process in which an impactor is integrated into a
+larger target at &lt;strong&gt;intermediate energy&lt;/strong&gt;, with three conditions all met:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;The impactor is completely melted.&lt;/strong&gt; The energy is above its latent heat of
+fusion, not merely enough to crater the surface.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;The molten material expands.&lt;/strong&gt; This is the &lt;em&gt;éktasis&lt;/em&gt;: the material loses its
+mechanical integrity and becomes part of a fluid, which is what allows it to mix
+rather than sit as an inclusion.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;The target survives.&lt;/strong&gt; Not a disruption. The event &lt;em&gt;increases&lt;/em&gt; the target&amp;rsquo;s
+mass and &lt;em&gt;changes&lt;/em&gt; its composition.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Written as an energy window, with $Q_s$ the specific impact energy, $L_f$ the
+latent heat of fusion of the impactor and $Q_D^{*}$ the disruption threshold of
+the target:&lt;/p&gt;
+&lt;p&gt;$$
+L_f ;\ll; Q_s ;\lesssim; Q_D^{*}
+$$&lt;/p&gt;
+&lt;p&gt;The lower bound is what separates meteoectasis from simple accretion. The upper
+bound is what separates it from fragmentation. In between is the regime where a
+collision &lt;strong&gt;homogenises&lt;/strong&gt; two bodies.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://jimenezgomez.org/blog/2026-10-30-meteoectasis-impact-assimilation/meteoectasis-impact.png"
+width="1600"
+height="1000"
+srcset="https://jimenezgomez.org/blog/2026-10-30-meteoectasis-impact-assimilation/meteoectasis-impact_hu_a433715c2d2ee902.png 480w, https://jimenezgomez.org/blog/2026-10-30-meteoectasis-impact-assimilation/meteoectasis-impact_hu_c5cd8d84295f9a33.png 1024w"
+loading="lazy"
+alt="The impactor is melted above its latent heat of fusion and below the target’s disruption threshold."
+class="gallery-image"
+data-flex-grow="160"
+data-flex-basis="384px"
+&gt;&lt;/p&gt;
+&lt;h2 id="why-the-distinction-earns-its-keep"&gt;Why the distinction earns its keep
+&lt;/h2&gt;&lt;p&gt;Here is the case that motivates it. The Moon is widely believed to have formed from
+the debris of a giant impact with a Mars-sized body, conventionally called Theia.
+Under the standard model, a large part of the Moon derives from the &lt;strong&gt;impactor&lt;/strong&gt;,
+and the impactor&amp;rsquo;s mass is diluted into the &lt;strong&gt;proto-Earth&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;The problem is isotopic. Oxygen, titanium, tungsten and silicon isotope ratios in
+lunar and terrestrial samples are &lt;strong&gt;nearly identical&lt;/strong&gt;. Two bodies that formed
+independently at different heliocentric distances should not be
+indistinguishable — different distances mean different proportions of the
+condensates available when each body accreted.&lt;/p&gt;
+&lt;p&gt;There is no shortage of proposed mechanisms: Theia formed at a similar distance;
+the system re-equilibrated through a vapour-rich disc; both bodies mixed in a
+common silicate reservoir; tidal processes finished the job. The mechanisms
+disagree with each other.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;What they all have in common is that every one of them requires the impactor&amp;rsquo;s
+material to have been in a state where homogenisation is physically possible.&lt;/strong&gt;
+Every one of them is a meteoectasis argument — they differ only on &lt;em&gt;how&lt;/em&gt; the
+homogenisation took place, not on whether the event was capable of producing it.&lt;/p&gt;
+&lt;p&gt;That is what a name buys you. Without it, the debate reads as a debate about
+mechanism. With it, the shared premise becomes visible and the argument can be had
+where it actually is.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://jimenezgomez.org/blog/2026-10-30-meteoectasis-impact-assimilation/meteoectasis-dilution.png"
+width="1600"
+height="1000"
+srcset="https://jimenezgomez.org/blog/2026-10-30-meteoectasis-impact-assimilation/meteoectasis-dilution_hu_e57b4a6cdd255ca2.png 480w, https://jimenezgomez.org/blog/2026-10-30-meteoectasis-impact-assimilation/meteoectasis-dilution_hu_7756b3d149dff456.png 1024w"
+loading="lazy"
+alt="One reservoir: no isotopic signature of the impactor remains."
+class="gallery-image"
+data-flex-grow="160"
+data-flex-basis="384px"
+&gt;&lt;/p&gt;
+&lt;h2 id="the-defeat-condition"&gt;The defeat condition
+&lt;/h2&gt;&lt;p&gt;A terminology proposal that cannot be abandoned is not a proposal, it is a
+preference. So the paper states the three ways this one dies:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;The window is empty.&lt;/strong&gt; If every impact energetic enough to melt the impactor
+also fragments the target, then meteoectasis never happens and the word names
+nothing. This is an empirical question about mass ratios and energy scaling, and
+it is answerable.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;The word already exists.&lt;/strong&gt; If the community already uses &lt;em&gt;accretionary impact&lt;/em&gt;
+or &lt;em&gt;perfect merger&lt;/em&gt; with exactly this meaning, a new term fragments the
+vocabulary instead of clarifying it, and the right move is to adopt the existing
+usage.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;The distinction predicts nothing.&lt;/strong&gt; If treating the impactor as a constituent
+and treating it as an inclusion give identical observable predictions for every
+quantity of interest, then the distinction is decoration. The paper claims they
+differ in isotopic budgets and in compositional stratification, and that claim
+can be checked.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;None of these is a rhetorical hedge. They are the conditions under which I would
+withdraw the term, and I would rather write them down now than be asked for them
+later.&lt;/p&gt;
+&lt;h2 id="what-this-has-to-do-with-brisecom"&gt;What this has to do with Brisecom
+&lt;/h2&gt;&lt;p&gt;This is a planetary-science paper and Brisecom is not a planetary-science
+institute. The reason it exists here is the same reason the other twenty papers
+exist here: &lt;strong&gt;the failure mode being addressed is naming, not physics&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;A field that describes two different physical states with one word will, sooner or
+later, model one as the other. I have watched this happen in software
+architectures, in AI governance, in cost accounting and in defence economics —
+always the same way: two distinct things get one name, and the difference
+disappears from the model before anyone notices it was load-bearing.&lt;/p&gt;
+&lt;p&gt;The paper&amp;rsquo;s contribution is a distinction, a window and a defeat condition. The
+physics was already there. What was missing was a word for the state.&lt;/p&gt;</description></item><item><title>Universal DNS: From the Planetary to the Galactic</title><link>https://jimenezgomez.org/blog/2025-12-22-dns-universal-ddnsc/</link><pubDate>Mon, 22 Dec 2025 14:30:00 +0200</pubDate><guid>https://jimenezgomez.org/blog/2025-12-22-dns-universal-ddnsc/</guid><description>&lt;img src="https://jimenezgomez.org/blog/2025-12-22-dns-universal-ddnsc/og-image-1200x630.png" alt="Featured image of post Universal DNS: From the Planetary to the Galactic" /&gt;&lt;h2 id="introduction-the-universal-addressing-problem"&gt;Introduction: The Universal Addressing Problem
 &lt;/h2&gt;&lt;p&gt;The current &lt;strong&gt;Domain Name System (DNS)&lt;/strong&gt; operates under terrestrial assumptions: latencies measured in milliseconds, concentrated physical infrastructure, and a central authority (ICANN). But what happens when we need to direct services in a Martian colony, in orbital stations, or even between star systems?&lt;/p&gt;
 &lt;p&gt;The &lt;a class="link" href="https://github.com/javi-jimenez/ddnsc" target="_blank" rel="noopener"
 &gt;DDNSC (Distributed DNS Cache)&lt;/a&gt; project provides the technical foundation to solve this problem by &lt;strong&gt;decentralized service publishing&lt;/strong&gt; using standard protocols (RFC 2136, Avahi/Zeroconf). This article proposes a conceptual extension towards planetary, galactic and universal scales, integrating Web 3.0 technologies and emerging protocols.&lt;/p&gt;
@@ -29,7 +258,7 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;h3 id="current-limitation-scale-1000-nodes"&gt;Current Limitation: Scale ~1000 Nodes
 &lt;/h3&gt;&lt;p&gt;The project itself acknowledges that scalability is limited to ~1000 nodes in its current form. We need true distributed architecture for larger scales.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://jimenezgomez.org/posts/2025-12-22-dns-universal-ddnsc/dns-universe-architecture.svg"
+&lt;p&gt;&lt;img src="https://jimenezgomez.org/blog/2025-12-22-dns-universal-ddnsc/dns-universe-architecture.svg"
 loading="lazy"
 alt="Universal DNS Architecture"
 &gt;&lt;/p&gt;
@@ -164,7 +393,7 @@ alt="Universal DNS Architecture"
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;- mining.ceres.asteroid.sol
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src="https://jimenezgomez.org/posts/2025-12-22-dns-universal-ddnsc/dns-scales.svg"
+&lt;/div&gt;&lt;p&gt;&lt;img src="https://jimenezgomez.org/blog/2025-12-22-dns-universal-ddnsc/dns-scales.svg"
 loading="lazy"
 alt="DNS Distribution Scales"
 &gt;&lt;/p&gt;
@@ -441,7 +670,7 @@ alt="DNS Distribution Scales"
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h3 id="integration-architecture"&gt;Integration Architecture
-&lt;/h3&gt;&lt;p&gt;&lt;img src="https://jimenezgomez.org/posts/2025-12-22-dns-universal-ddnsc/dns-web3-org.svg"
+&lt;/h3&gt;&lt;p&gt;&lt;img src="https://jimenezgomez.org/blog/2025-12-22-dns-universal-ddnsc/dns-web3-org.svg"
 loading="lazy"
 alt="Decentralized organization"
 &gt;&lt;/p&gt;

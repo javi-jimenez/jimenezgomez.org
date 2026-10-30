@@ -1,0 +1,314 @@
+<!doctype html><html lang=en dir=ltr><head><meta charset=utf-8><meta name=viewport content='width=device-width,initial-scale=1'><meta name=description content="VNC does not carry audio, and it never will: RFB is a protocol for pixels and input events. Instead of changing protocols, add the missing channel over the SSH connection you already have — one script, two tunnels, no new software."><title>Sound over VNC: bringing the remote desktop's audio home</title><link rel=canonical href=https://jimenezgomez.org/blog/2026-10-23-sound-over-vnc-ssh-tunnel/><link rel=stylesheet href=/scss/style.min.8ba123b7622970e7280359b9110560bdfac0bf97f7e4e31613ec4d545343412e.css><meta property='og:title' content="Sound over VNC: bringing the remote desktop's audio home"><meta property='og:description' content="VNC does not carry audio, and it never will: RFB is a protocol for pixels and input events. Instead of changing protocols, add the missing channel over the SSH connection you already have — one script, two tunnels, no new software."><meta property='og:url' content='https://jimenezgomez.org/blog/2026-10-23-sound-over-vnc-ssh-tunnel/'><meta property='og:site_name' content='Francisco Javier Jiménez Gómez'><meta property='og:type' content='article'><meta property='article:section' content='Blog'><meta property='article:tag' content='linux'><meta property='article:tag' content='vnc'><meta property='article:tag' content='pulseaudio'><meta property='article:tag' content='ssh'><meta property='article:tag' content='remote desktop'><meta property='article:tag' content='tooling'><meta property='article:published_time' content='2026-10-23T21:00:00+02:00'><meta property='article:modified_time' content='2026-10-23T21:00:00+02:00'><meta property='og:image' content='https://jimenezgomez.org/blog/2026-10-23-sound-over-vnc-ssh-tunnel/og-image-1200x630.png'><meta name=twitter:title content="Sound over VNC: bringing the remote desktop's audio home"><meta name=twitter:description content="VNC does not carry audio, and it never will: RFB is a protocol for pixels and input events. Instead of changing protocols, add the missing channel over the SSH connection you already have — one script, two tunnels, no new software."><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content='https://jimenezgomez.org/blog/2026-10-23-sound-over-vnc-ssh-tunnel/og-image-1200x630.png'><link rel="shortcut icon" href=/img/favicon.ico><script>(function(){try{window._ga_measurement_id="G-STC35RLKFB",window.loadGoogleAnalytics=function(){var e,t=window._ga_measurement_id;if(!t)return;if(t.indexOf("G-")===0){if(document.querySelector("script[data-ga-loaded]"))return;e=document.createElement("script"),e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id="+t,e.setAttribute("data-ga-loaded","1"),document.head.appendChild(e),window.dataLayer=window.dataLayer||[];function n(){dataLayer.push(arguments)}window.gtag=n,n("js",new Date),n("config",t,{anonymize_ip:!0})}else{if(window.ga)return;e=document.createElement("script"),e.async=!0,e.src="https://www.google-analytics.com/analytics.js",document.head.appendChild(e),window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,window.ga("create",t,"auto"),window.ga("set","anonymizeIp",!0),window.ga("send","pageview")}};try{localStorage&&localStorage.getItem("cookie_consent")==="granted"&&window.loadGoogleAnalytics()}catch{}}catch{}})()</script></head><body class=article-page><script>(function(){const e="StackColorScheme";localStorage.getItem(e)||localStorage.setItem(e,"auto")})()</script><script>(function(){const t="StackColorScheme",e=localStorage.getItem(t),n=window.matchMedia("(prefers-color-scheme: dark)").matches===!0;e=="dark"||e==="auto"&&n?document.documentElement.dataset.scheme="dark":document.documentElement.dataset.scheme="light"})()</script><header class="site-header portfolio-header"><nav class=portfolio-nav><div class=portfolio-container><a href=/ class=portfolio-logo>jimenez<span>gomez</span>.org</a><ul class=portfolio-nav-links><li><a href=/#projects>Projects</a></li><li><a href=/#research>Research</a></li><li><a href=/#community>Community</a></li><li><a href=/#contact>Contact</a></li><li><a href=/blog class=portfolio-blog-link>📝 Blog</a></li></ul></div></nav></header><style>.portfolio-header{border-bottom:1px solid var(--border,#30363d);padding:2rem 0;background-color:rgba(13,17,23,.9);position:sticky;top:0;z-index:1000}.portfolio-nav .portfolio-container{display:flex;justify-content:space-between;align-items:center;max-width:1200px;margin:0 auto;padding:0 24px}.portfolio-logo{font-family:jetbrains mono,monospace;font-size:1.8rem;font-weight:700;color:#f0f6fc;text-decoration:none}.portfolio-logo span{color:#58a6ff}.portfolio-nav-links{display:flex;list-style:none;gap:2.5rem}.portfolio-nav-links a{color:#c9d1d9;text-decoration:none;font-weight:500;transition:color .3s}.portfolio-nav-links a:hover{color:#58a6ff}.portfolio-blog-link{background:rgba(88,166,255,.1);border:1px solid #58a6ff;padding:.5rem 1rem;border-radius:6px;color:#58a6ff;font-weight:600;transition:all .3s}.portfolio-blog-link:hover{background:rgba(88,166,255,.2)}@media(max-width:768px){.portfolio-nav-links{flex-direction:column;display:none;position:absolute;top:100%;left:0;width:100%;background:#0d1117;padding:1.5rem;gap:1rem}.portfolio-nav-links.active{display:flex}}</style><div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky"><button class="hamburger hamburger--spin" type=button id=toggle-menu aria-label="Toggle Menu">
+<span class=hamburger-box><span class=hamburger-inner></span></span></button><header><figure class=site-avatar><a href=/><img src=/img/blog-logo.jpg width=300 height=300 class=site-logo loading=lazy alt=Avatar>
+</a><span class=emoji>💻</span></figure><div class=site-meta><h1 class=site-name><a href=/>Francisco Javier Jiménez Gómez</a></h1><h2 class=site-description>Software Architecture & Open Source</h2></div></header><ol class=menu-social><li><a href=https://github.com/javi-jimenez target=_blank title=GitHub rel=me><svg class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6.0 00-1.3-3.2 4.2 4.2.0 00-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3.0 00-6.2.0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2.0 00-.1 3.2A4.6 4.6.0 004 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg></a></li><li><a href=https://linkedin.com/in/ximenezfrancisco target=_blank title=LinkedIn rel=me><svg class="icon icon-tabler icon-tabler-brand-linkedin" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><rect x="4" y="4" width="16" height="16" rx="2"/><line x1="8" y1="11" x2="8" y2="16"/><line x1="8" y1="8" x2="8" y2="8.01"/><line x1="12" y1="16" x2="12" y2="11"/><path d="M16 16v-3a2 2 0 00-4 0"/></svg></a></li><li><a href=https://twitter.com/Lubok9 target=_blank title=Twitter rel=me><svg class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M22 4.01c-1 .49-1.98.689-3 .99-1.121-1.265-2.783-1.335-4.38-.737S11.977 6.323 12 8v1c-3.245.083-6.135-1.395-8-4 0 0-4.182 7.433 4 11-1.872 1.247-3.739 2.088-6 2 3.308 1.803 6.913 2.423 10.034 1.517 3.58-1.04 6.522-3.723 7.651-7.742a13.84 13.84.0 00.497-3.753C20.18 7.773 21.692 5.25 22 4.009z"/></svg></a></li></ol><ol class=menu id=main-menu><li><a href=/><svg class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><polyline points="5 12 3 12 12 3 21 12 19 12"/><path d="M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/><path d="M9 21v-6a2 2 0 012-2h2a2 2 0 012 2v6"/></svg>
+<span>Home</span></a></li><li><a href=/><span>Home</span></a></li><li><a href=/about/><svg class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="7" r="4"/><path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg>
+<span>About</span></a></li><li><a href=/archives/><svg class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><rect x="3" y="4" width="18" height="4" rx="2"/><path d="M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8"/><line x1="10" y1="12" x2="14" y2="12"/></svg>
+<span>Archives</span></a></li><li class=current><a href=/blog/><svg class="icon icon-tabler icon-tabler-rss" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="5" cy="19" r="1"/><path d="M4 4a16 16 0 0116 16"/><path d="M4 11a9 9 0 019 9"/></svg>
+<span>Blog</span></a></li><li><a href=/search/><svg class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="10" cy="10" r="7"/><line x1="21" y1="21" x2="15" y2="15"/></svg>
+<span>Search</span></a></li><li><a href=/contact/><svg class="icon icon-tabler icon-tabler-mail" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 7a2 2 0 012-2h14a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V7z"/><path d="M3 7l9 6 9-6"/></svg>
+<span>Contact</span></a></li><li class=menu-bottom-section><ol class=menu><li id=dark-mode-toggle><svg class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="8" cy="12" r="2"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg>
+<svg class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="16" cy="12" r="2"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg>
+<span>Dark Mode</span></li></ol></li></ol></aside><aside class="sidebar right-sidebar sticky"><section class="widget archives"><div class=widget-icon><svg class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><line x1="5" y1="9" x2="19" y2="9"/><line x1="5" y1="15" x2="19" y2="15"/><line x1="11" y1="4" x2="7" y2="20"/><line x1="17" y1="4" x2="13" y2="20"/></svg></div><h2 class="widget-title section-title">Table of contents</h2><div class=widget--toc><nav id=TableOfContents><ol><li><a href=#the-shape-of-the-problem>The shape of the problem</a></li><li><a href=#requirements>Requirements</a></li><li><a href=#the-script>The script</a></li><li><a href=#what-was-wrong-with-the-first-version>What was wrong with the first version</a></li><li><a href=#verifying-it>Verifying it</a></li><li><a href=#what-still-goes-wrong>What still goes wrong</a></li><li><a href=#two-closed-doors-not-one>Two closed doors, not one</a></li></ol></nav></div></section><section class="widget archives"><div class=widget-icon><svg class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M10 14a3.5 3.5.0 005 0l4-4a3.5 3.5.0 00-5-5l-.5.5"/><path d="M14 10a3.5 3.5.0 00-5 0l-4 4a3.5 3.5.0 005 5l.5-.5"/></svg></div><h2 class="widget-title section-title">Share</h2><div class=widget--share><div class=share-buttons><a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fjimenezgomez.org%2fblog%2f2026-10-23-sound-over-vnc-ssh-tunnel%2f&text=Sound%20over%20VNC%3a%20bringing%20the%20remote%20desktop%27s%20audio%20home" target=_blank rel="noopener noreferrer" class="share-button share-twitter" title="Share on Twitter"><svg class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M22 4.01c-1 .49-1.98.689-3 .99-1.121-1.265-2.783-1.335-4.38-.737S11.977 6.323 12 8v1c-3.245.083-6.135-1.395-8-4 0 0-4.182 7.433 4 11-1.872 1.247-3.739 2.088-6 2 3.308 1.803 6.913 2.423 10.034 1.517 3.58-1.04 6.522-3.723 7.651-7.742a13.84 13.84.0 00.497-3.753C20.18 7.773 21.692 5.25 22 4.009z"/></svg>
+<span>Twitter</span>
+</a><a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3a%2f%2fjimenezgomez.org%2fblog%2f2026-10-23-sound-over-vnc-ssh-tunnel%2f" target=_blank rel="noopener noreferrer" class="share-button share-linkedin" title="Share on LinkedIn"><svg class="icon icon-tabler icon-tabler-brand-linkedin" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><rect x="4" y="4" width="16" height="16" rx="2"/><line x1="8" y1="11" x2="8" y2="16"/><line x1="8" y1="8" x2="8" y2="8.01"/><line x1="12" y1="16" x2="12" y2="11"/><path d="M16 16v-3a2 2 0 00-4 0"/></svg>
+<span>LinkedIn</span>
+</a><a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fjimenezgomez.org%2fblog%2f2026-10-23-sound-over-vnc-ssh-tunnel%2f" target=_blank rel="noopener noreferrer" class="share-button share-facebook" title="Share on Facebook"><svg class="icon icon-tabler icon-tabler-brand-facebook" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 10v4h3v7h4v-7h3l1-4h-4V8a1 1 0 011-1h3V3h-3a5 5 0 00-5 5v2H7"/></svg>
+<span>Facebook</span>
+</a><a href="mailto:?subject=Sound%20over%20VNC%3a%20bringing%20the%20remote%20desktop%27s%20audio%20home&body=VNC%20does%20not%20carry%20audio%2c%20and%20it%20never%20will%3a%20RFB%20is%20a%20protocol%20for%20pixels%20and%20input%20events.%20Instead%20of%20changing%20protocols%2c%20add%20the%20missing%20channel%20over%20the%20SSH%20connection%20you%20already%20have%20%e2%80%94%20one%20script%2c%20two%20tunnels%2c%20no%20new%20software.%0A%0Ahttps%3a%2f%2fjimenezgomez.org%2fblog%2f2026-10-23-sound-over-vnc-ssh-tunnel%2f" class="share-button share-email" title="Share by Email"><svg class="icon icon-tabler icon-tabler-mail" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 7a2 2 0 012-2h14a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V7z"/><path d="M3 7l9 6 9-6"/></svg>
+<span>Email</span>
+</a><button class="share-button share-native" title=Share onclick='navigator.share?navigator.share({title:"Sound over VNC: bringing the remote desktop&#39;s audio home",text:`Sound over VNC: bringing the remote desktop&#39;s audio home
+`,url:"https://jimenezgomez.org/blog/2026-10-23-sound-over-vnc-ssh-tunnel/".replace("#","?")}).catch(function(e){console.log("Share failed:",e)}):alert("Your browser does not support this function, use the Copy button")'>
+<svg class="icon icon-tabler icon-tabler-share" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 9H7a2 2 0 00-2 2v8a2 2 0 002 2h10a2 2 0 002-2v-8a2 2 0 00-2-2h-1"/><path d="M12 14V3"/><path d="M9 6l3-3 3 3"/></svg>
+<span>Share</span>
+</button><button class="share-button share-copy" data-url=https://jimenezgomez.org/blog/2026-10-23-sound-over-vnc-ssh-tunnel/ title="Copy Link">
+<svg class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M10 14a3.5 3.5.0 005 0l4-4a3.5 3.5.0 00-5-5l-.5.5"/><path d="M14 10a3.5 3.5.0 00-5 0l-4 4a3.5 3.5.0 005 5l.5-.5"/></svg>
+<span>Copy</span>
+</button><button class="share-button share-print" onclick=window.print() title="Print article">
+<svg class="icon icon-tabler icon-tabler-printer" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2"/><path d="M17 9V5a2 2 0 00-2-2H9A2 2 0 007 5v4"/><path d="M7 13m0 2a2 2 0 012-2h6a2 2 0 012 2v4a2 2 0 01-2 2H9a2 2 0 01-2-2z"/></svg>
+<span>Print</span></button></div></div></section><script>document.addEventListener("DOMContentLoaded",function(){const e=document.querySelector(".share-copy");e&&e.addEventListener("click",function(){const t=this.getAttribute("data-url");if(navigator.clipboard)navigator.clipboard.writeText(t).then(function(){const t=e.querySelector("span").textContent;e.querySelector("span").textContent="Copied!",setTimeout(function(){e.querySelector("span").textContent=t},2e3)}).catch(function(e){console.error("Copy failed: ",e)});else{const n=document.createElement("textarea");n.value=t,document.body.appendChild(n),n.select();try{document.execCommand("copy");const t=e.querySelector("span").textContent;e.querySelector("span").textContent="Copied!",setTimeout(function(){e.querySelector("span").textContent=t},2e3)}catch(e){console.error("Copy failed: ",e)}document.body.removeChild(n)}})})</script></aside><main class="main full-width"><article class="has-image main-article"><header class=article-header><div class=article-image><a href=/blog/2026-10-23-sound-over-vnc-ssh-tunnel/><img src=/blog/2026-10-23-sound-over-vnc-ssh-tunnel/og-image-1200x630_hu_a149b421d0a724e2.png srcset="/blog/2026-10-23-sound-over-vnc-ssh-tunnel/og-image-1200x630_hu_a149b421d0a724e2.png 800w, /blog/2026-10-23-sound-over-vnc-ssh-tunnel/og-image-1200x630_hu_f09ba01cef79ad65.png 1600w" width=800 height=420 loading=lazy alt="Featured image of post Sound over VNC: bringing the remote desktop's audio home"></a></div><div class=article-details><div class=article-title-wrapper><h2 class=article-title><a href=/blog/2026-10-23-sound-over-vnc-ssh-tunnel/>Sound over VNC: bringing the remote desktop's audio home</a></h2><h3 class=article-subtitle>VNC does not carry audio, and it never will: RFB is a protocol for pixels and input events. Instead of changing protocols, add the missing channel over the SSH connection you already have — one script, two tunnels, no new software.</h3></div><footer class=article-time><div><svg class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M11.795 21H5a2 2 0 01-2-2V7a2 2 0 012-2h12a2 2 0 012 2v4"/><circle cx="18" cy="18" r="4"/><path d="M15 3v4"/><path d="M7 3v4"/><path d="M3 11h16"/><path d="M18 16.496V18l1 1"/></svg>
+<time class=article-time--published datetime=2026-10-23T21:00:00+02:00>Oct 23, 2026</time></div><div><svg class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
+<time class=article-time--reading>10 minute read</time></div></footer></div></header><section class=article-content><p>VNC has no sound. This is not a bug, a missing plugin, or a configuration you have
+failed to find: <strong>the RFB protocol has no audio channel at all</strong>. It carries a
+rectangle of pixels in one direction and keyboard and mouse events in the other,
+and that is the whole contract. Anything that sounds like &ldquo;enable audio in VNC&rdquo;
+is either a different protocol wearing the same name, or a second connection
+doing the work quietly.</p><p>Once you accept that, the problem becomes much easier — and much smaller. You do
+not need to replace VNC with RDP or SPICE, and you do not need a proprietary
+remote-desktop stack. You need to add <strong>one extra channel</strong> to the transport you
+are already using: the SSH connection that is forwarding your VNC port.</p><p>This article is that channel, in a single script, with the reasoning behind each
+line — including the five things that were wrong with the version I started
+from.</p><h2 id=the-shape-of-the-problem>The shape of the problem</h2><p>A VNC session between two Linux machines usually looks like this:</p><ul><li>the remote host runs <code>x11vnc</code> (or <code>tigervnc</code>, or <code>x0vncserver</code>) against an X
+display, listening on port <code>5900</code>;</li><li>you open an SSH connection that forwards <code>5900</code> to your machine;</li><li>a viewer connects to <code>localhost:5900</code>.</li></ul><p>The audio, meanwhile, lives somewhere else entirely. On the remote host there is
+a PulseAudio server (or a PipeWire server speaking the PulseAudio protocol) with
+one or more sinks. When the machine even has a sound card, the audio goes there
+— to speakers nobody is sitting in front of. When it does not (a headless box, a
+container, a VM), the sink is a dummy and the sound goes nowhere.</p><p>PulseAudio, however, has a feature that solves this exactly: <strong>network sinks</strong>.
+You can create, on the remote machine, a sink that looks and behaves like a
+local output device but actually ships its samples to another PulseAudio server
+over TCP. That is <code>module-tunnel-sink</code>.</p><p>So the plan is:</p><ol><li>On <strong>your</strong> machine, open a PulseAudio TCP port — bound to loopback only.</li><li>On the <strong>remote</strong> machine, create a tunnel sink pointing at that port.
+Because &ldquo;that port&rdquo; is on your machine, the remote needs a <strong>reverse</strong> path to
+it: <code>ssh -R</code>.</li><li>Make that tunnel sink the default sink on the remote, so applications actually
+use it.</li><li>Start <code>x11vnc</code> as usual.</li></ol><p>One SSH connection, two forwarded ports: <code>-L</code> for the screen, <code>-R</code> for the sound.</p><p><img src=/blog/2026-10-23-sound-over-vnc-ssh-tunnel/figure-vnc-audio-tunnels.png width=1200 height=740 srcset="/blog/2026-10-23-sound-over-vnc-ssh-tunnel/figure-vnc-audio-tunnels_hu_ad30e4d38424f194.png 480w, /blog/2026-10-23-sound-over-vnc-ssh-tunnel/figure-vnc-audio-tunnels_hu_5237093b0d17b3d9.png 1024w" loading=lazy alt="Two channels inside one SSH connection: VNC forwarded with -L, PulseAudio forwarded back with -R" class=gallery-image data-flex-grow=162 data-flex-basis=389px></p><h2 id=requirements>Requirements</h2><ul><li><strong>Local machine</strong>: PulseAudio or PipeWire with <code>pipewire-pulse</code> (so <code>pactl</code>
+works), plus <code>ssh</code>. Any distribution.</li><li><strong>Remote machine</strong>: an <strong>X11</strong> session (not Wayland — <code>x11vnc</code> mirrors an X
+display), <code>x11vnc</code>, and <code>pactl</code> working <em>for the same user</em> that owns the
+session.</li><li>On the remote side, <code>pactl</code> over SSH sometimes needs the runtime directory
+explicitly. If <code>pactl info</code> fails there, try
+<code>XDG_RUNTIME_DIR=/run/user/$(id -u) pactl info</code>; if it works, export it in the
+script&rsquo;s remote section.</li><li>No audio server needs to be listening on the remote&rsquo;s network, and no VNC
+password is needed if — as below — <code>x11vnc</code> binds to loopback only.</li></ul><h2 id=the-script>The script</h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span><span class=lnt>45
+</span><span class=lnt>46
+</span><span class=lnt>47
+</span><span class=lnt>48
+</span><span class=lnt>49
+</span><span class=lnt>50
+</span><span class=lnt>51
+</span><span class=lnt>52
+</span><span class=lnt>53
+</span><span class=lnt>54
+</span><span class=lnt>55
+</span><span class=lnt>56
+</span><span class=lnt>57
+</span><span class=lnt>58
+</span><span class=lnt>59
+</span><span class=lnt>60
+</span><span class=lnt>61
+</span><span class=lnt>62
+</span><span class=lnt>63
+</span><span class=lnt>64
+</span><span class=lnt>65
+</span><span class=lnt>66
+</span><span class=lnt>67
+</span><span class=lnt>68
+</span><span class=lnt>69
+</span><span class=lnt>70
+</span><span class=lnt>71
+</span><span class=lnt>72
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=cp>#!/usr/bin/env bash
+</span></span></span><span class=line><span class=cl><span class=c1># vnc-sound-host.sh — run a VNC server on a remote X display</span>
+</span></span><span class=line><span class=cl><span class=c1>#                    and bring its audio back to this machine.</span>
+</span></span><span class=line><span class=cl><span class=c1>#</span>
+</span></span><span class=line><span class=cl><span class=c1># Usage: vnc-sound-host.sh [user@]REMOTE_HOST</span>
+</span></span><span class=line><span class=cl><span class=nb>set</span> -euo pipefail
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nv>REMOTE_HOST</span><span class=o>=</span><span class=s2>&#34;</span><span class=si>${</span><span class=nv>1</span><span class=p>:?usage: </span><span class=k>$(</span>basename <span class=s2>&#34;</span><span class=nv>$0</span><span class=s2>&#34;</span><span class=k>)</span><span class=p> [user@]REMOTE_HOST</span><span class=si>}</span><span class=s2>&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nv>VNC_PORT</span><span class=o>=</span><span class=s2>&#34;</span><span class=si>${</span><span class=nv>VNC_PORT</span><span class=k>:-</span><span class=nv>5900</span><span class=si>}</span><span class=s2>&#34;</span>     <span class=c1># local port for the VNC viewer</span>
+</span></span><span class=line><span class=cl><span class=nv>PULSE_PORT</span><span class=o>=</span><span class=s2>&#34;</span><span class=si>${</span><span class=nv>PULSE_PORT</span><span class=k>:-</span><span class=nv>4713</span><span class=si>}</span><span class=s2>&#34;</span> <span class=c1># TCP port used on both ends for audio</span>
+</span></span><span class=line><span class=cl><span class=nv>SINK_NAME</span><span class=o>=</span><span class=s2>&#34;</span><span class=si>${</span><span class=nv>SINK_NAME</span><span class=k>:-</span><span class=nv>remote_audio</span><span class=si>}</span><span class=s2>&#34;</span>
+</span></span><span class=line><span class=cl><span class=nv>SINK_DESC</span><span class=o>=</span><span class=s2>&#34;</span><span class=si>${</span><span class=nv>SINK_DESC</span><span class=k>:-</span><span class=nv>Remote</span><span class=p> desktop audio</span><span class=si>}</span><span class=s2>&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>log<span class=o>()</span> <span class=o>{</span> <span class=nb>printf</span> <span class=s1>&#39;  -&gt; %s\n&#39;</span> <span class=s2>&#34;</span><span class=nv>$*</span><span class=s2>&#34;</span><span class=p>;</span> <span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># --- remote side: remove tunnel sinks left over from previous runs ----------</span>
+</span></span><span class=line><span class=cl>remote_unload<span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>  ssh <span class=s2>&#34;</span><span class=nv>$REMOTE_HOST</span><span class=s2>&#34;</span> bash -s -- <span class=s2>&#34;</span><span class=nv>$SINK_NAME</span><span class=s2>&#34;</span> <span class=s>&lt;&lt;&#39;REMOTE&#39; || true
+</span></span></span><span class=line><span class=cl><span class=s>set -u
+</span></span></span><span class=line><span class=cl><span class=s>sink=$1
+</span></span></span><span class=line><span class=cl><span class=s>for m in $(pactl list short modules |
+</span></span></span><span class=line><span class=cl><span class=s>           awk -v s=&#34;sink_name=$sink&#34; &#39;$2 == &#34;module-tunnel-sink&#34; &amp;&amp; index($0, s) { print $1 }&#39;); do
+</span></span></span><span class=line><span class=cl><span class=s>  pactl unload-module &#34;$m&#34;
+</span></span></span><span class=line><span class=cl><span class=s>done
+</span></span></span><span class=line><span class=cl><span class=s>REMOTE</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># --- local side: close the audio port again, whatever happens ---------------</span>
+</span></span><span class=line><span class=cl>cleanup<span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>  pactl unload-module module-native-protocol-tcp 2&gt;/dev/null <span class=o>||</span> <span class=nb>true</span>
+</span></span><span class=line><span class=cl>  remote_unload
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=nb>trap</span> cleanup EXIT
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 1. Local PulseAudio: accept native-protocol clients, loopback only,</span>
+</span></span><span class=line><span class=cl><span class=c1>#    anonymous (the SSH tunnel is the authentication).</span>
+</span></span><span class=line><span class=cl>pactl unload-module module-native-protocol-tcp 2&gt;/dev/null <span class=o>||</span> <span class=nb>true</span>
+</span></span><span class=line><span class=cl>pactl load-module module-native-protocol-tcp <span class=se>\
+</span></span></span><span class=line><span class=cl>      <span class=nv>listen</span><span class=o>=</span>127.0.0.1 <span class=nv>port</span><span class=o>=</span><span class=s2>&#34;</span><span class=nv>$PULSE_PORT</span><span class=s2>&#34;</span> auth-anonymous<span class=o>=</span><span class=m>1</span> &gt;/dev/null
+</span></span><span class=line><span class=cl>log <span class=s2>&#34;local PulseAudio listening on 127.0.0.1:</span><span class=nv>$PULSE_PORT</span><span class=s2>&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 2. Do not stack sinks if the script was interrupted last time.</span>
+</span></span><span class=line><span class=cl>remote_unload
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 3. One SSH session: -L for the screen, -R for the sound.</span>
+</span></span><span class=line><span class=cl><span class=c1>#    ssh joins its arguments with spaces before the remote shell sees them, so</span>
+</span></span><span class=line><span class=cl><span class=c1>#    values that may contain spaces have to be quoted: %q does exactly that.</span>
+</span></span><span class=line><span class=cl><span class=nv>remote_cmd</span><span class=o>=</span><span class=k>$(</span><span class=nb>printf</span> <span class=s1>&#39;bash -s -- %q %q %q&#39;</span> <span class=s2>&#34;</span><span class=nv>$PULSE_PORT</span><span class=s2>&#34;</span> <span class=s2>&#34;</span><span class=nv>$SINK_NAME</span><span class=s2>&#34;</span> <span class=s2>&#34;</span><span class=nv>$SINK_DESC</span><span class=s2>&#34;</span><span class=k>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>ssh <span class=s2>&#34;</span><span class=nv>$REMOTE_HOST</span><span class=s2>&#34;</span> <span class=se>\
+</span></span></span><span class=line><span class=cl>    -o <span class=nv>ExitOnForwardFailure</span><span class=o>=</span>yes <span class=se>\
+</span></span></span><span class=line><span class=cl>    -L <span class=s2>&#34;</span><span class=nv>$VNC_PORT</span><span class=s2>:localhost:5900&#34;</span> <span class=se>\
+</span></span></span><span class=line><span class=cl>    -R <span class=s2>&#34;127.0.0.1:</span><span class=nv>$PULSE_PORT</span><span class=s2>:127.0.0.1:</span><span class=nv>$PULSE_PORT</span><span class=s2>&#34;</span> <span class=se>\
+</span></span></span><span class=line><span class=cl>    <span class=s2>&#34;</span><span class=nv>$remote_cmd</span><span class=s2>&#34;</span> <span class=s>&lt;&lt;&#39;REMOTE&#39;
+</span></span></span><span class=line><span class=cl><span class=s>set -euo pipefail
+</span></span></span><span class=line><span class=cl><span class=s>pulse_port=$1 sink_name=$2 sink_desc=$3
+</span></span></span><span class=line><span class=cl><span class=s>
+</span></span></span><span class=line><span class=cl><span class=s># A sink that behaves like a sound card but ships to our machine.
+</span></span></span><span class=line><span class=cl><span class=s>pactl load-module module-tunnel-sink \
+</span></span></span><span class=line><span class=cl><span class=s>      server=&#34;tcp:127.0.0.1:$pulse_port&#34; \
+</span></span></span><span class=line><span class=cl><span class=s>      sink_name=&#34;$sink_name&#34; \
+</span></span></span><span class=line><span class=cl><span class=s>      format=s16le rate=48000 channels=2 \
+</span></span></span><span class=line><span class=cl><span class=s>      sink_properties=&#34;device.description=$sink_desc&#34; &gt;/dev/null
+</span></span></span><span class=line><span class=cl><span class=s>
+</span></span></span><span class=line><span class=cl><span class=s># A sink nobody uses is a sink that produces no sound.
+</span></span></span><span class=line><span class=cl><span class=s>pactl set-default-sink &#34;$sink_name&#34;
+</span></span></span><span class=line><span class=cl><span class=s>
+</span></span></span><span class=line><span class=cl><span class=s># Restart the server cleanly; -localhost keeps it off the remote network.
+</span></span></span><span class=line><span class=cl><span class=s>pkill -x x11vnc 2&gt;/dev/null || true
+</span></span></span><span class=line><span class=cl><span class=s>exec x11vnc -display &#34;${DISPLAY:-:0}&#34; -localhost -forever -shared -noxdamage
+</span></span></span><span class=line><span class=cl><span class=s>REMOTE</span>
+</span></span></code></pre></td></tr></table></div></div><p>That is the whole thing. Two details are easy to miss on a first reading.
+<code>-o ExitOnForwardFailure=yes</code> turns &ldquo;the port was already taken, I will carry on
+anyway&rdquo; into a clean failure instead of a session that connects and then behaves
+mysteriously. And the remote command is built with <code>printf '%q'</code> because <strong>ssh
+joins its arguments with single spaces</strong> before handing them to the remote shell:
+a description like <code>Remote desktop audio</code> would arrive as three separate words.
+Everything else in this article is about why each line is there.</p><h2 id=what-was-wrong-with-the-first-version>What was wrong with the first version</h2><p>The script I started from looked like this:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=o>[[</span> <span class=nv>$#</span> -lt <span class=m>1</span> <span class=o>]]</span> <span class=o>&amp;&amp;</span> <span class=nb>echo</span> <span class=s2>&#34;Usage: </span><span class=nv>$0</span><span class=s2> REMOTE_HOST&#34;</span> <span class=o>&amp;&amp;</span> <span class=nb>exit</span> -1
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>pactl unload-module module-native-protocol-tcp <span class=p>;</span> pactl load-module module-native-protocol-tcp
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nv>REMOTE_HOST</span><span class=o>=</span><span class=nv>$1</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>ssh <span class=nv>$REMOTE_HOST</span> -L 5900:localhost:5900 <span class=s2>&#34;pactl load-module module-tunnel-sink   server=tcp:</span><span class=nv>$REMOTE_HOST</span><span class=s2> sink_name=remote_</span><span class=nv>$REMOTE_HOSt</span><span class=s2> sink_properties=device.description=&#39;SndOutput→</span><span class=nv>$REMOTE_HOST</span><span class=s2>&#39; ; killall x11vnc ; x11vnc&#34;</span>
+</span></span></code></pre></td></tr></table></div></div><p>It is close, and it shows the right instinct — but it cannot work. Five reasons:</p><p><strong>1. The tunnel sink points at the wrong machine.</strong> <code>server=tcp:$REMOTE_HOST</code>
+makes the <em>remote</em> PulseAudio connect to <em>itself</em> on port <code>4713</code>. But the port
+was opened on the local machine, and nothing forwards <code>4713</code> from the remote back
+to us. The connection is refused (or, worse, lands on something else). The sink
+has to be <code>server=tcp:127.0.0.1:4713</code> reached through a <strong>reverse</strong> forward:
+<code>-R 4713:localhost:4713</code>.</p><p><strong>2. <code>auth-anonymous=1</code> and <code>listen=127.0.0.1</code> are both missing.</strong> With the
+defaults, <code>module-native-protocol-tcp</code> listens on every interface and expects
+the cookie in <code>~/.config/pulse/cookie</code>. The remote machine does not have <em>your</em>
+cookie, so authentication fails; and while it fails, you have a PulseAudio port
+open to the whole local network. Loopback plus anonymous <em>inside an SSH tunnel</em>
+is the right combination: no password to share, nothing exposed.</p><p><strong>3. Nothing becomes the default sink.</strong> <code>module-tunnel-sink</code> creates a sink; it
+does not select it. Applications keep playing into the old default and the
+tunnel stays silent. <code>pactl set-default-sink</code> is not optional.</p><p><strong>4. <code>sink_name=remote_$REMOTE_HOSt</code> — a typo with consequences.</strong> Shell
+variables are case-sensitive, so that expands to <code>remote_</code>. Combined with the
+absence of any cleanup, every run of the script adds another almost identically
+named sink, and you end up choosing the right one by hand in <code>pavucontrol</code>.</p><p><strong>5. <code>exit -1</code>, <code>killall</code>, and no cleanup.</strong> <code>exit -1</code> is not a valid status
+(you get 255, which looks like an SSH failure). <code>killall</code> is not installed
+everywhere and fails the whole remote command line when it errors. And nothing
+closes the PulseAudio port afterwards, so the audio hole stays open after the
+session ends. The rewritten version uses <code>pkill -x ... || true</code>, a <code>trap</code> that
+closes the local port on any exit, and unloads the remote sink on the way out.</p><p>There is a sixth, subtler one: <code>ssh $REMOTE_HOST</code> unquoted. It breaks on hostnames
+with spaces (rare) and, more importantly, teaches the wrong habit in a script that
+also builds remote command lines.</p><h2 id=verifying-it>Verifying it</h2><p>Open two terminals on the local machine while the script is running.</p><p><strong>Check that audio is reaching you:</strong></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>pactl list sinks short        <span class=c1># the remote_audio sink appears here</span>
+</span></span></code></pre></td></tr></table></div></div><p>Note that this is a local sink created by PulseAudio when the tunnel connects —
+its presence is already a good sign. Then, on the <strong>remote</strong> machine:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>pactl info <span class=p>|</span> grep <span class=s1>&#39;Default Sink&#39;</span>      <span class=c1># -&gt; remote_audio</span>
+</span></span><span class=line><span class=cl>paplay /usr/share/sounds/freedesktop/stereo/complete.oga
+</span></span></code></pre></td></tr></table></div></div><p>If you hear it, the channel works. A test tone is also useful for measuring the
+latency you will have to live with (see below):</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>speaker-test -c <span class=m>2</span> -t sine -l <span class=m>1</span>
+</span></span></code></pre></td></tr></table></div></div><p><strong>Check the two forwards:</strong></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>ss -ltn <span class=p>|</span> grep -E <span class=s1>&#39;5900|4713&#39;</span>   <span class=c1># local: 5900 (vnc) and 4713 (pulse) listening</span>
+</span></span></code></pre></td></tr></table></div></div><h2 id=what-still-goes-wrong>What still goes wrong</h2><ul><li><strong><code>pactl: command not found</code> or &ldquo;connection refused&rdquo; on the remote.</strong> The
+remote user has no PulseAudio server in its session, or <code>XDG_RUNTIME_DIR</code> is
+not set for non-interactive SSH. Try <code>XDG_RUNTIME_DIR=/run/user/$(id -u) pactl info</code>.</li><li><strong>Silence, but everything looks right.</strong> Almost always the default sink: some
+applications (browsers, in particular) honour their own per-application sink
+selection. In <code>pavucontrol</code> → <em>Playback</em>, move the stream to <code>Remote desktop audio</code> once; it is remembered.</li><li><strong>Audio stutters.</strong> The tunnel sends raw samples over TCP: 48 kHz stereo <code>s16</code>
+is roughly 1.5 Mbit/s, on top of the VNC stream. Over a slow link, lower
+<code>rate</code>/<code>channels</code> in <code>module-tunnel-sink</code> (<code>rate=44100 channels=1</code>) before
+blaming the network.</li><li><strong>High latency.</strong> Everything is buffered twice (remote server, tunnel, local
+server). It is fine for a video, a notification or a voice recording, and it is
+<em>not</em> fine for anything interactive that needs to stay in sync with what you
+see. No amount of tuning makes a VNC-plus-tunnel session feel like local audio.</li><li><strong>Wayland.</strong> <code>x11vnc</code> mirrors an X display; on a Wayland session it will show
+an empty root window or fail. Use <code>wayvnc</code> (no X) — but then the audio part of
+this article still applies unchanged, because it never depended on VNC.</li><li><strong>Port already in use.</strong> Another VNC viewer is open, or a previous run left
+<code>4713</code> bound. <code>VNC_PORT=5901 ./vnc-sound-host.sh host</code> handles the first;
+the <code>trap</code> handles the second.</li><li><strong>You already had a PulseAudio TCP module for something else.</strong> The script
+unloads <code>module-native-protocol-tcp</code> before loading its own copy, precisely so
+the port is not claimed twice — which means a module you had configured on
+purpose is gone when the session ends. Reload it, or keep the two on different
+<code>PULSE_PORT</code> values.</li></ul><h2 id=two-closed-doors-not-one>Two closed doors, not one</h2><p>The interesting part of this exercise is not the sound. It is that the two
+channels end up being secured by exactly the same mechanism, and that the
+mechanism is the one you already trusted with the screen.</p><p>Both listeners are bound to loopback: <code>pactl</code> on <code>127.0.0.1</code> locally, <code>x11vnc</code>
+with <code>-localhost</code> remotely, and the reverse forward bound to <code>127.0.0.1</code> on the
+remote side too. Nothing new is reachable from either network. The only way in is
+the SSH connection, with its keys, its host verification and its cipher — the
+same connection that was already carrying the pixels. There is no VNC password to
+invent, no audio port to firewall, no extra daemon to keep updated.</p><p>And when the session ends, the port closes. That last detail is the difference
+between a trick and a tool: a remote-desktop script that leaves an anonymously
+authenticated PulseAudio socket listening on all interfaces after it exits is not
+a convenience, it is an incident waiting for a maintainer.</p><p>The lesson generalises past VNC. Most &ldquo;VNC has no X&rdquo; problems are not protocol
+problems: they are a missing channel that the transport you already have can
+carry. Before adopting a heavier stack, it is worth asking whether the gap can be
+closed with one forward and ten lines of shell.</p></section><footer class=article-footer><section class=article-tags><a href=/tags/linux/>Linux</a>
+<a href=/tags/vnc/>Vnc</a>
+<a href=/tags/pulseaudio/>Pulseaudio</a>
+<a href=/tags/ssh/>Ssh</a>
+<a href=/tags/remote-desktop/>Remote Desktop</a>
+<a href=/tags/tooling/>Tooling</a></section><section class=article-actions style=display:flex;gap:15px;margin-top:20px;margin-bottom:20px;align-items:center;justify-content:flex-end><button type=button class="share-button share-print" onclick=window.print() title="Print article">
+<svg class="icon icon-tabler icon-tabler-printer" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2"/><path d="M17 9V5a2 2 0 00-2-2H9A2 2 0 007 5v4"/><path d="M7 13m0 2a2 2 0 012-2h6a2 2 0 012 2v4a2 2 0 01-2 2H9a2 2 0 01-2-2z"/></svg>
+<span>Print</span>
+</button>
+<button type=button class="share-button share-copy" onclick='event.preventDefault();const shareUrl=window.location.href.replace("#","?");navigator.share?navigator.share({title:document.title,text:document.title+`
+`,url:shareUrl}).catch(function(e){console.log("Share failed:",e)}):(navigator.clipboard.writeText(shareUrl),alert("Link copied to clipboard"))' title="Share article">
+<svg class="icon icon-tabler icon-tabler-share" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 9H7a2 2 0 00-2 2v8a2 2 0 002 2h10a2 2 0 002-2v-8a2 2 0 00-2-2h-1"/><path d="M12 14V3"/><path d="M9 6l3-3 3 3"/></svg>
+<span>Share</span></button></section><section class=article-copyright><svg class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><path d="M14.5 9a3.5 4 0 100 6"/></svg>
+<span>Licensed under CC BY-NC-SA 4.0</span></section></footer></article><aside class=related-content--wrapper><h2 class=section-title>Related content</h2><div class=related-content><div class="flex article-list--tile"><article class=has-image><a href=/blog/2026-10-12-desktop-launcher-creator/><div class=article-image><img src=/blog/2026-10-12-desktop-launcher-creator/og-image-1200x630.4d6e36afae3845c8c9fd9c9fae5b9346_hu_361676134479e06f.png width=250 height=150 loading=lazy alt="Featured image of post Desktop Launcher Creator: giving a launcher to the apps that ship without one" data-hash="md5-TW42r644RcjJ/ZyfrluTRg=="></div><div class=article-details><h2 class=article-title>Desktop Launcher Creator: giving a launcher to the apps that ship without one</h2></div></a></article></div></div></aside><footer class=site-footer><section class=copyright>&copy;
+2020 -
+2026 Francisco Javier Jiménez Gómez</section><section class=powerby>Built with <a href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a><br>Theme <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=noopener data-version=3.32.0>Stack</a></b> designed by <a href=https://jimmycai.com target=_blank rel=noopener>Jimmy</a></section></footer><div class=pswp tabindex=-1 role=dialog aria-hidden=true><div class=pswp__bg></div><div class=pswp__scroll-wrap><div class=pswp__container><div class=pswp__item></div><div class=pswp__item></div><div class=pswp__item></div></div><div class="pswp__ui pswp__ui--hidden"><div class=pswp__top-bar><div class=pswp__counter></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title=Share></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button><div class=pswp__preloader><div class=pswp__preloader__icn><div class=pswp__preloader__cut><div class=pswp__preloader__donut></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class=pswp__share-tooltip></div></div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+</button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button><div class=pswp__caption><div class=pswp__caption__center></div></div></div></div></div><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo=" crossorigin=anonymous defer></script><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU=" crossorigin=anonymous defer></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css crossorigin=anonymous><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css crossorigin=anonymous></main></div><footer class=portfolio-footer><div class=portfolio-container><p>This space is dedicated to sharing knowledge and tools under open source principles.</p><p><a href=https://www.linkedin.com/in/ximenezfrancisco/>LinkedIn</a> |
+🐙 <a href=https://github.com/javi-jimenez>GitHub</a> |
+🐦 <a href=https://twitter.com/Lubok9>Twitter</a> |
+🕸️ <a href=https://about.me/ximenezfrancisco>About.me</a></p><p style=margin-top:2rem>© <span id=portfolioYear></span> Francisco Javier Jiménez Gómez. Content under open source licenses.</p><p style=margin-top:.5rem;font-size:.85rem;color:#9aa4ad>Some content has been generated or assisted by artificial intelligence tools.</p></div></footer><style>.portfolio-footer{text-align:center;padding:3rem 0;border-top:1px solid var(--border,#30363d);color:#8b949e;font-size:.9rem;background-color:rgba(13,17,23,.95);margin-top:5rem}.portfolio-footer .portfolio-container{max-width:1200px;margin:0 auto;padding:0 24px}.portfolio-footer a{color:#58a6ff;text-decoration:none;transition:color .3s}.portfolio-footer a:hover{color:#79c0ff;text-decoration:underline}@media(max-width:768px){.portfolio-footer{padding:2rem 0}.portfolio-footer p{font-size:.85rem}}</style><script>document.getElementById("portfolioYear")&&(document.getElementById("portfolioYear").textContent=(new Date).getFullYear())</script><div id=cookie-consent style=position:fixed;left:1rem;right:1rem;bottom:1rem;z-index:9999;display:none;font-family:Inter,Arial,Helvetica,sans-serif><div style="max-width:980px;margin:0 auto;background:rgba(13,17,23,.95);color:#e6edf3;border:1px solid rgba(255,255,255,4%);padding:16px;border-radius:8px;box-shadow:0 6px 24px rgba(2,6,23,.6);display:flex;gap:12px;align-items:center"><div style=flex:1;font-size:14px;line-height:1.4>This site uses cookies to measure traffic and improve experience. You can accept all, reject, or configure your preferences. More information in the <a href=/privacy/ style=color:#58a6ff;text-decoration:underline>privacy policy</a>.</div><div style=display:flex;gap:8px><button id=cookie-configure style="background:0 0;color:#c9d1d9;border:1px solid rgba(255,255,255,6%);padding:8px 12px;border-radius:6px;cursor:pointer">Configure</button>
+<button id=cookie-decline style="background:0 0;color:#c9d1d9;border:1px solid rgba(255,255,255,6%);padding:8px 12px;border-radius:6px;cursor:pointer">Decline</button>
+<button id=cookie-accept style="background:#58a6ff;color:#06202a;border:none;padding:8px 12px;border-radius:6px;cursor:pointer">Accept</button></div></div></div><div id=cookie-modal aria-hidden=true style=display:none;position:fixed;inset:0;z-index:10000;align-items:center;justify-content:center><div style=position:absolute;inset:0;background:rgba(0,0,0,.6)></div><div role=dialog aria-modal=true style="position:relative;max-width:720px;margin:0 auto;background:#0d1117;color:#e6edf3;padding:20px;border-radius:8px;z-index:10001"><h3 style="margin:0 0 12px;font-size:18px">Cookie Preferences</h3><p style="margin:0 0 12px;font-size:14px">Select which types of cookies you authorize.</p><label style=display:flex;align-items:center;gap:10px;margin-bottom:12px;font-size:14px><input type=checkbox id=opt-analytics> <strong>Analytics</strong> — Google Analytics (collects anonymous usage data).</label><div style=display:flex;gap:8px;justify-content:flex-end><button id=cookie-modal-cancel style="background:0 0;color:#c9d1d9;border:1px solid rgba(255,255,255,6%);padding:8px 12px;border-radius:6px;cursor:pointer">Cancel</button>
+<button id=cookie-modal-save style="background:#58a6ff;color:#06202a;border:none;padding:8px 12px;border-radius:6px;cursor:pointer">Save Preferences</button></div></div></div><button id=cookie-settings-btn title="Cookie Preferences" style="position:fixed;left:1rem;bottom:1rem;z-index:9998;background:#15181b;color:#c9d1d9;border:1px solid rgba(255,255,255,4%);padding:8px;border-radius:999px;display:none">Cookies</button>
+<script>(function(){try{var h,i=document.getElementById("cookie-consent"),t=document.getElementById("cookie-modal"),o=document.getElementById("cookie-settings-btn"),c=function(){i&&(i.style.display="block")},e=function(){i&&(i.style.display="none")},d=function(){t&&(t.style.display="flex",t.setAttribute("aria-hidden","false"))},a=function(){t&&(t.style.display="none",t.setAttribute("aria-hidden","true"))},r=function(e){try{localStorage.setItem("cookie_consent",e.status),localStorage.setItem("cookie_consent_details",JSON.stringify(e))}catch{}},m=function(){try{return localStorage.getItem("cookie_consent")}catch{return null}},l=function(){try{return JSON.parse(localStorage.getItem("cookie_consent_details")||"null")}catch{return null}},s=function(){var t,e=l();e&&typeof e.analytics!="undefined"&&(t=document.getElementById("opt-analytics"),t&&(t.checked=!!e.analytics))},n=function(){o&&(o.style.display="block")},u=m();if(u==="granted"){e(),s(),n(),window.loadGoogleAnalytics&&(h=l(),h&&h.analytics&&window.loadGoogleAnalytics());return}if(u==="denied"){e(),s(),n();return}c(),n(),document.getElementById("cookie-accept").addEventListener("click",function(){var s=!0;r({status:"granted",analytics:s,ts:(new Date).toISOString()}),e(),n(),s&&window.loadGoogleAnalytics&&window.loadGoogleAnalytics()}),document.getElementById("cookie-decline").addEventListener("click",function(){r({status:"denied",analytics:!1,ts:(new Date).toISOString()}),e(),n()}),document.getElementById("cookie-configure").addEventListener("click",function(){e(),d(),s()}),o&&o.addEventListener("click",function(){d(),s()}),document.getElementById("cookie-modal-cancel").addEventListener("click",function(){a()}),document.getElementById("cookie-modal-save").addEventListener("click",function(){var t=!!document.getElementById("opt-analytics").checked,s=t?"granted":"denied";r({status:s,analytics:t,ts:(new Date).toISOString()}),a(),e(),n(),t&&window.loadGoogleAnalytics&&window.loadGoogleAnalytics()}),window.__clearCookieConsent=function(){try{localStorage.removeItem("cookie_consent"),localStorage.removeItem("cookie_consent_details"),a(),e(),c()}catch{}}}catch{}})()</script><script src=https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z+KMkF24hUW8WePSA9HM=" crossorigin=anonymous></script><script type=text/javascript src=/ts/main.c922af694cc257bf1ecc41c0dd7b0430f9114ec280ccf67cd2c6ad55f5316c4e.js defer></script><script>(function(){const e=document.createElement("link");e.href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap",e.type="text/css",e.rel="stylesheet",document.head.appendChild(e)})()</script></body></html>

@@ -1,0 +1,41 @@
+# =============================================================================
+# jimenezgomez.org — redirecciones
+# =============================================================================
+# Este fichero vive en `static/.htaccess` y Hugo lo copia a `public/.htaccess`,
+# así que SOBREVIVE a `make deploy` (que borra en el servidor lo que no esté en
+# `public/`). Subirlo a mano por FTP lo haría desaparecer en el siguiente deploy.
+#
+# Servidor: Apache de OVH. `RewriteEngine` verificado (301 real, no maqueta).
+# =============================================================================
+
+Options -Indexes
+DirectoryIndex index.html
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # --- 1 · El blog vive en /blog/ -------------------------------------------
+  # Los 40 posts antiguos estaban en /posts/. Se mueven a /blog/ y aquí se
+  # redirigen uno a uno (comodín), para no dejar ni un enlace roto ni un 404
+  # en buscadores.
+  RewriteRule ^posts/?$           /blog/ [R=301,L]
+  RewriteRule ^posts/(.+)$        /blog/$1 [R=301,L]
+
+  # --- 2 · blog.jimenezgomez.org → /blog/ -----------------------------------
+  # El subdominio es solo una puerta de entrada al blog; no sirve un sitio
+  # propio. Se mantiene la ruta pedida, para que un enlace profundo
+  # (blog.jimenezgomez.org/blog/x/) no acabe en la portada.
+  RewriteCond %{HTTP_HOST} ^blog\.jimenezgomez\.org$ [NC]
+  RewriteRule ^/(.*)$ https://jimenezgomez.org/blog/$1 [R=301,L]
+
+  # --- 3 · Un post "inventado" no da 404 ------------------------------------
+  # Si alguien escribe una URL de post que no existe (a mano, o desde un
+  # enlace viejo con otro slug), que aterrice en el índice del blog en lugar
+  # de en un 404. Solo aplica a rutas de un nivel bajo /blog/.
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^blog/[^/]+/?$ /blog/ [R=302,L]
+
+</IfModule>
+
+# --- Fin ---------------------------------------------------------------------
