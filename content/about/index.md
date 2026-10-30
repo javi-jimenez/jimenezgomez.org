@@ -25,6 +25,7 @@ Specialist in Static Application Security Testing (SAST), Security Audits, Secur
 - **AWS Solutions Architect**
 - **Scrum Manager**
 - **OWASP Top 10 Trainer**
+- **The Linux Foundation** - Individual Supporter since 2023 (alias **fjavier** on linux.com)
 
 ---
 
@@ -94,7 +95,8 @@ Complete demo online store application developed in Java with JSF and Hibernate.
 
 Interested in collaborating on projects regarding security, secure development, or AI ethics? Don't hesitate to contact me.
 
-- 💼 LinkedIn: [ximenezfrancisco](https://www.linkedin.com/in/ximenezfrancisco/)
+- � WhatsApp: [@franciscojavierjimenezgomez](https://wa.me/franciscojavierjimenezgomez)
+- �💼 LinkedIn: [ximenezfrancisco](https://www.linkedin.com/in/ximenezfrancisco/)
 - 🐙 GitHub: [javi-jimenez](https://github.com/javi-jimenez)
 - 🐦 Twitter: [@Lubok9](https://twitter.com/Lubok9)
 - 🕸️ About.me: [ximenezfrancisco](https://about.me/ximenezfrancisco)

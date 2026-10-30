@@ -19,6 +19,7 @@ using the form below. Messages are stored securely and read by a human.
 ### Direct contact
 
 - **Email:** [info@brisecom.org](mailto:info@brisecom.org)
+- **WhatsApp:** [@franciscojavierjimenezgomez](https://wa.me/franciscojavierjimenezgomez) (username, no phone number needed)
 - **LinkedIn:** [linkedin.com/in/ximenezfrancisco](https://linkedin.com/in/ximenezfrancisco)
 - **GitHub:** [github.com/javi-jimenez](https://github.com/javi-jimenez)
 - **About.me:** [about.me/ximenezfrancisco](https://about.me/ximenezfrancisco)
