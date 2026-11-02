@@ -130,40 +130,40 @@
       <rect x="692" y="148" width="16" height="7" rx="2" fill="#e8eef7" stroke="#8fa8c4" stroke-width="1.4"/>
     </g>
 
-    <!-- El hueco: la casilla que el caminante dejó vacía -->
-    <polygon points="236,203 353,176 470,202 353,230" fill="#000000" fill-opacity="0.55"/>
-    <polygon points="236,203 353,176 470,202 353,230" fill="none" stroke="#54d7ea" stroke-width="2" stroke-opacity="0.55" stroke-dasharray="7 6"/>
-    <text x="352" y="212" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" fill="#54d7ea" fill-opacity="0.85" letter-spacing="2">VACÍO</text>
+    <!-- El hueco: la casilla que el caminante dejó vacía (borde derecho = salida) -->
+    <polygon points="706,152 824,178 900,190 824,180" fill="#000000" fill-opacity="0.62"/>
+    <polygon points="706,152 824,178 900,190 824,180" fill="none" stroke="#54d7ea" stroke-width="2" stroke-opacity="0.75" stroke-dasharray="7 6"/>
+    <text x="806" y="180" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" fill="#54d7ea" letter-spacing="1.5">VACÍO</text>
 
     <!-- Etiqueta del tablero -->
-    <text x="450" y="300" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" fill="#7c93b0" letter-spacing="3">EL JUEGO · SUMA CERO</text>
+    <text x="450" y="272" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" fill="#6f88a6" letter-spacing="3">EL JUEGO · SUMA CERO</text>
   </g>
 
   <!-- ══════════════ EL CAMINO (la parte intangible: la fe) ══════════════ -->
-  <!-- Sale del hueco vacío hacia la luz -->
+  <!-- Sale del hueco vacío (borde derecho del tablero) hacia la luz -->
   <g filter="url(#soft2)" opacity="0.55">
-    <path d="M 473 672 L 1360 292" stroke="#54d7ea" stroke-width="9" stroke-linecap="round"/>
+    <path d="M 1000 652 L 1360 292" stroke="#54d7ea" stroke-width="9" stroke-linecap="round"/>
   </g>
-  <path d="M 473 672 L 1360 292" stroke="url(#pathGlow)" stroke-width="3.4" stroke-linecap="round"/>
+  <path d="M 1000 652 L 1360 292" stroke="url(#pathGlow)" stroke-width="3.4" stroke-linecap="round"/>
 
   <!-- Puntos de luz sobre el camino: los pasos / las acciones tangibles -->
   <g fill="#dff0ff">
-    <circle cx="560" cy="637" r="3.4" opacity="0.55"/>
-    <circle cx="660" cy="596" r="3.8" opacity="0.65"/>
-    <circle cx="765" cy="553" r="4.2" opacity="0.75"/>
-    <circle cx="875" cy="508" r="4.6" opacity="0.85"/>
-    <circle cx="990" cy="461" r="5.0" opacity="0.92"/>
-    <circle cx="1110" cy="412" r="5.4" opacity="0.97"/>
-    <circle cx="1235" cy="360" r="5.8" opacity="1"/>
+    <circle cx="1050" cy="605" r="3.4" opacity="0.55"/>
+    <circle cx="1100" cy="555" r="3.8" opacity="0.65"/>
+    <circle cx="1150" cy="505" r="4.2" opacity="0.75"/>
+    <circle cx="1200" cy="455" r="4.6" opacity="0.85"/>
+    <circle cx="1250" cy="405" r="5.0" opacity="0.92"/>
+    <circle cx="1300" cy="355" r="5.4" opacity="0.97"/>
+    <circle cx="1345" cy="308" r="5.8" opacity="1"/>
   </g>
 
   <!-- Etiqueta del camino -->
-  <text x="700" y="470" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" fill="#9fe8f4" letter-spacing="3" opacity="0.9">EL CAMINO · LA FE</text>
-  <text x="700" y="496" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" fill="#7c93b0" letter-spacing="2" opacity="0.8">intangible · invariante en la partida</text>
+  <text x="880" y="392" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16" fill="#9fe8f4" letter-spacing="3">EL CAMINO · LA FE</text>
+  <text x="880" y="416" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12.5" fill="#6f88a6" letter-spacing="1.5">intangible · invariante en la partida</text>
 
   <!-- ══════════════ EL CAMINANTE ══════════════ -->
   <!-- De espaldas, avanzando hacia la luz. Sin armadura, sin piezas. -->
-  <g transform="translate(795,545)">
+  <g transform="translate(1150,520)">
     <circle cx="0" cy="0" r="120" fill="url(#aura)" filter="url(#soft)"/>
 
     <!-- cuerpo -->
@@ -193,11 +193,12 @@
       <circle cx="-152" cy="-12" r="3"/>
       <circle cx="-118" cy="-88" r="3"/>
     </g>
+
   </g>
 
   <!-- ══════════════ EL VERBO HECHO ACCIÓN (parte tangible) ══════════════ -->
   <!-- Diagrama de Argand: parte real = acción, parte imaginaria = fe -->
-  <g transform="translate(200,830)">
+  <g transform="translate(140,830)">
     <!-- ejes -->
     <line x1="0" y1="0" x2="230" y2="0" stroke="#3d5470" stroke-width="1.5"/>
     <line x1="0" y1="0" x2="0" y2="-140" stroke="#3d5470" stroke-width="1.5"/>
@@ -216,10 +217,10 @@
     <text x="158" y="-98" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" fill="#fff6d8">z</text>
   </g>
 
-  <text x="200" y="980" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14" fill="#e2b552" letter-spacing="2" opacity="0.9">EL VERBO HECHO ACCIÓN</text>
-  <text x="200" y="1000" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11.5" fill="#7c93b0" letter-spacing="1.5" opacity="0.75">lo tangible es lo que se puede medir · lo demás también cuenta</text>
+  <text x="140" y="972" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" fill="#e2b552" letter-spacing="2">EL VERBO HECHO ACCIÓN</text>
+  <text x="140" y="990" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10.5" fill="#6f88a6" letter-spacing="1">lo tangible se mide · lo demás también cuenta</text>
 
   <!-- Contador del juego: los demás siguen jugando -->
-  <text x="1240" y="880" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" fill="#7c93b0" letter-spacing="2" opacity="0.75">ELLOS SIGUEN JUGANDO</text>
-  <text x="1240" y="908" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11.5" fill="#546b88" letter-spacing="1.5" opacity="0.7">suma cero · nadie gana · nadie sale</text>
+  <text x="1240" y="940" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" fill="#6f88a6" letter-spacing="2">ELLOS SIGUEN JUGANDO</text>
+  <text x="1240" y="962" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11" fill="#4a6076" letter-spacing="1.5">suma cero · nadie gana · nadie sale</text>
 </svg>
