@@ -42,7 +42,7 @@ use it.&lt;/li&gt;
 &lt;p&gt;&lt;img src="https://jimenezgomez.org/blog/2026-10-23-sound-over-vnc-ssh-tunnel/figure-vnc-audio-tunnels.png"
 width="1200"
 height="740"
-srcset="https://jimenezgomez.org/blog/2026-10-23-sound-over-vnc-ssh-tunnel/figure-vnc-audio-tunnels_hu_ad30e4d38424f194.png 480w, https://jimenezgomez.org/blog/2026-10-23-sound-over-vnc-ssh-tunnel/figure-vnc-audio-tunnels_hu_5237093b0d17b3d9.png 1024w"
+srcset="https://jimenezgomez.org/blog/2026-10-23-sound-over-vnc-ssh-tunnel/figure-vnc-audio-tunnels_hu_5d97f251967de3cc.png 480w, https://jimenezgomez.org/blog/2026-10-23-sound-over-vnc-ssh-tunnel/figure-vnc-audio-tunnels_hu_de1d890e2f7b548e.png 1024w"
 loading="lazy"
 alt="Two channels inside one SSH connection: VNC forwarded with -L, PulseAudio forwarded back with -R"
 class="gallery-image"
@@ -141,7 +141,7 @@ password is needed if — as below — &lt;code&gt;x11vnc&lt;/code&gt; binds to 
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class="lntd"&gt;
 &lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cp"&gt;#!/usr/bin/env bash
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# vnc-sound-host.sh — run a VNC server on a remote X display&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cp"&gt;&lt;/span&gt;&lt;span class="c1"&gt;# vnc-sound-host.sh — run a VNC server on a remote X display&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# and bring its audio back to this machine.&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;#&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# Usage: vnc-sound-host.sh [user@]REMOTE_HOST&lt;/span&gt;
@@ -179,7 +179,7 @@ password is needed if — as below — &lt;code&gt;x11vnc&lt;/code&gt; binds to 
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# anonymous (the SSH tunnel is the authentication).&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;pactl unload-module module-native-protocol-tcp 2&amp;gt;/dev/null &lt;span class="o"&gt;||&lt;/span&gt; &lt;span class="nb"&gt;true&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;pactl load-module module-native-protocol-tcp &lt;span class="se"&gt;\
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nv"&gt;listen&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;127.0.0.1 &lt;span class="nv"&gt;port&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;&lt;/span&gt;&lt;span class="nv"&gt;$PULSE_PORT&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;&lt;/span&gt; auth-anonymous&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt; &amp;gt;/dev/null
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="se"&gt;&lt;/span&gt; &lt;span class="nv"&gt;listen&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;127.0.0.1 &lt;span class="nv"&gt;port&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;&lt;/span&gt;&lt;span class="nv"&gt;$PULSE_PORT&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;&lt;/span&gt; auth-anonymous&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt; &amp;gt;/dev/null
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;log &lt;span class="s2"&gt;&amp;#34;local PulseAudio listening on 127.0.0.1:&lt;/span&gt;&lt;span class="nv"&gt;$PULSE_PORT&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 2. Do not stack sinks if the script was interrupted last time.&lt;/span&gt;
@@ -191,10 +191,10 @@ password is needed if — as below — &lt;code&gt;x11vnc&lt;/code&gt; binds to 
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nv"&gt;remote_cmd&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;&lt;span class="nb"&gt;printf&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;bash -s -- %q %q %q&amp;#39;&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;&lt;/span&gt;&lt;span class="nv"&gt;$PULSE_PORT&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;&lt;/span&gt;&lt;span class="nv"&gt;$SINK_NAME&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;&lt;/span&gt;&lt;span class="nv"&gt;$SINK_DESC&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;ssh &lt;span class="s2"&gt;&amp;#34;&lt;/span&gt;&lt;span class="nv"&gt;$REMOTE_HOST&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;&lt;/span&gt; &lt;span class="se"&gt;\
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; -o &lt;span class="nv"&gt;ExitOnForwardFailure&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;yes &lt;span class="se"&gt;\
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; -L &lt;span class="s2"&gt;&amp;#34;&lt;/span&gt;&lt;span class="nv"&gt;$VNC_PORT&lt;/span&gt;&lt;span class="s2"&gt;:localhost:5900&amp;#34;&lt;/span&gt; &lt;span class="se"&gt;\
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; -R &lt;span class="s2"&gt;&amp;#34;127.0.0.1:&lt;/span&gt;&lt;span class="nv"&gt;$PULSE_PORT&lt;/span&gt;&lt;span class="s2"&gt;:127.0.0.1:&lt;/span&gt;&lt;span class="nv"&gt;$PULSE_PORT&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;&lt;/span&gt; &lt;span class="se"&gt;\
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="s2"&gt;&amp;#34;&lt;/span&gt;&lt;span class="nv"&gt;$remote_cmd&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;&lt;/span&gt; &lt;span class="s"&gt;&amp;lt;&amp;lt;&amp;#39;REMOTE&amp;#39;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="se"&gt;&lt;/span&gt; -o &lt;span class="nv"&gt;ExitOnForwardFailure&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;yes &lt;span class="se"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="se"&gt;&lt;/span&gt; -L &lt;span class="s2"&gt;&amp;#34;&lt;/span&gt;&lt;span class="nv"&gt;$VNC_PORT&lt;/span&gt;&lt;span class="s2"&gt;:localhost:5900&amp;#34;&lt;/span&gt; &lt;span class="se"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="se"&gt;&lt;/span&gt; -R &lt;span class="s2"&gt;&amp;#34;127.0.0.1:&lt;/span&gt;&lt;span class="nv"&gt;$PULSE_PORT&lt;/span&gt;&lt;span class="s2"&gt;:127.0.0.1:&lt;/span&gt;&lt;span class="nv"&gt;$PULSE_PORT&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;&lt;/span&gt; &lt;span class="se"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="se"&gt;&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;&lt;/span&gt;&lt;span class="nv"&gt;$remote_cmd&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;&lt;/span&gt; &lt;span class="s"&gt;&amp;lt;&amp;lt;&amp;#39;REMOTE&amp;#39;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s"&gt;set -euo pipefail
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s"&gt;pulse_port=$1 sink_name=$2 sink_desc=$3
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s"&gt;
@@ -371,7 +371,7 @@ in a simple list, and creates a &lt;code&gt;.desktop&lt;/code&gt; launcher for w
 &lt;p&gt;&lt;img src="https://jimenezgomez.org/blog/2026-10-12-desktop-launcher-creator/screenshot.png"
 width="616"
 height="666"
-srcset="https://jimenezgomez.org/blog/2026-10-12-desktop-launcher-creator/screenshot_hu_927b29f6ab836a90.png 480w, https://jimenezgomez.org/blog/2026-10-12-desktop-launcher-creator/screenshot_hu_98442e2d9478453a.png 1024w"
+srcset="https://jimenezgomez.org/blog/2026-10-12-desktop-launcher-creator/screenshot_hu_620ca9944548826.png 480w, https://jimenezgomez.org/blog/2026-10-12-desktop-launcher-creator/screenshot_hu_e15fbced61744ac4.png 1024w"
 loading="lazy"
 alt="Desktop Launcher Creator"
 class="gallery-image"

@@ -13,6 +13,8 @@ tags: ["game theory", "freedom", "faith", "exit", "systems thinking", "ethics", 
 
 *This is not a strategy for winning. It is a reflection on what changes when you stop asking where you sit and start asking whether a state is reachable and holdable. The full paper is in the [LAIA repository](https://github.com/javi-jimenez/laia/blob/main/whitepapers/freedom-as-absorbing-state-game-theory-of-faith.md) and on [laia.brisecom.org](https://laia.brisecom.org/#whitepapers).*
 
+![Everyone keeps playing on the board; one walks out of it toward the light. The path is intangible — faith — and the steps along it are the tangible part: the Word made Action.](figura-el-caminante.svg)
+
 For a long time I thought my life was a game in which I had to move pieces. I thought the objective was to win — to block the other, to retain the money, to dodge the pressure — and that I was one more player in a system of forces pushing me from one side to the other.
 
 I have stopped moving pieces. Not because I am afraid of the pieces, but because I understood something the board cannot represent: **whoever designs the board does not need to play on it.**

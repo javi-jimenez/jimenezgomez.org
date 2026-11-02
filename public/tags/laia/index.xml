@@ -1,4 +1,63 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Laia on Francisco Javier Jiménez Gómez</title><link>https://jimenezgomez.org/tags/laia/</link><description>Recent content in Laia on Francisco Javier Jiménez Gómez</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>Francisco Javier Jiménez Gómez</copyright><lastBuildDate>Fri, 30 Oct 2026 06:30:00 +0100</lastBuildDate><atom:link href="https://jimenezgomez.org/tags/laia/index.xml" rel="self" type="application/rss+xml"/><item><title>Meteoectasis: A Word for the Impact That Leaves No Trace of the Impact</title><link>https://jimenezgomez.org/blog/2026-10-30-meteoectasis-impact-assimilation/</link><pubDate>Fri, 30 Oct 2026 06:30:00 +0100</pubDate><guid>https://jimenezgomez.org/blog/2026-10-30-meteoectasis-impact-assimilation/</guid><description>&lt;img src="https://jimenezgomez.org/blog/2026-10-30-meteoectasis-impact-assimilation/meteoectasis-impact.png" alt="Featured image of post Meteoectasis: A Word for the Impact That Leaves No Trace of the Impact" /&gt;&lt;br /&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Laia on Francisco Javier Jiménez Gómez</title><link>https://jimenezgomez.org/tags/laia/</link><description>Recent content in Laia on Francisco Javier Jiménez Gómez</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>Francisco Javier Jiménez Gómez</copyright><lastBuildDate>Mon, 02 Nov 2026 10:00:00 +0100</lastBuildDate><atom:link href="https://jimenezgomez.org/tags/laia/index.xml" rel="self" type="application/rss+xml"/><item><title>Freedom as an Absorbing State: The Observer Who Stopped Playing</title><link>https://jimenezgomez.org/blog/2026-11-02-freedom-as-absorbing-state/</link><pubDate>Mon, 02 Nov 2026 10:00:00 +0100</pubDate><guid>https://jimenezgomez.org/blog/2026-11-02-freedom-as-absorbing-state/</guid><description>&lt;img src="https://jimenezgomez.org/og-image-1200x630.png" alt="Featured image of post Freedom as an Absorbing State: The Observer Who Stopped Playing" /&gt;&lt;p&gt;&lt;em&gt;This is not a strategy for winning. It is a reflection on what changes when you stop asking where you sit and start asking whether a state is reachable and holdable. The full paper is in the &lt;a class="link" href="https://github.com/javi-jimenez/laia/blob/main/whitepapers/freedom-as-absorbing-state-game-theory-of-faith.md" target="_blank" rel="noopener"
+&gt;LAIA repository&lt;/a&gt; and on &lt;a class="link" href="https://laia.brisecom.org/#whitepapers" target="_blank" rel="noopener"
+&gt;laia.brisecom.org&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://jimenezgomez.org/blog/2026-11-02-freedom-as-absorbing-state/figura-el-caminante.svg"
+loading="lazy"
+alt="Everyone keeps playing on the board; one walks out of it toward the light. The path is intangible — faith — and the steps along it are the tangible part: the Word made Action."
+&gt;&lt;/p&gt;
+&lt;p&gt;For a long time I thought my life was a game in which I had to move pieces. I thought the objective was to win — to block the other, to retain the money, to dodge the pressure — and that I was one more player in a system of forces pushing me from one side to the other.&lt;/p&gt;
+&lt;p&gt;I have stopped moving pieces. Not because I am afraid of the pieces, but because I understood something the board cannot represent: &lt;strong&gt;whoever designs the board does not need to play on it.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;That is not a metaphor. It is a change in the variable being optimised.&lt;/p&gt;
+&lt;h2 id="the-false-choice-fight-or-surrender"&gt;The false choice: fight or surrender
+&lt;/h2&gt;&lt;p&gt;Public life offers two options, and both are positions on the same board.&lt;/p&gt;
+&lt;p&gt;On one side, &lt;strong&gt;contest&lt;/strong&gt;: assemble a majority, block the other side, hold the line, win the vote. On the other, &lt;strong&gt;surrender&lt;/strong&gt;: withdraw, go quiet, accept the outcome. Both are moves. Both are priced. Both depend entirely on what the other players do next.&lt;/p&gt;
+&lt;p&gt;There is a third option, and positional analysis cannot see it precisely because it is not a position.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Change what the board can reach.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Not the board itself, and not the actors on it. The &lt;em&gt;edges&lt;/em&gt; — the connections through which the outside world can still arrive at you. Freedom, on this reading, is an operation on edges, not on nodes.&lt;/p&gt;
+&lt;h2 id="freedom-is-a-state-not-a-feeling"&gt;Freedom is a state, not a feeling
+&lt;/h2&gt;&lt;p&gt;Formally, this is an &lt;strong&gt;absorbing state&lt;/strong&gt;: a subset of the state space that, once entered, no strategy of the remaining players can move you out of. In a repeated game the precise notion is a closed set. The other players keep playing. Their strategies are unchanged. They simply cannot reach you.&lt;/p&gt;
+&lt;p&gt;That definition carries four conditions, and each one fails in a specific way:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Reachability.&lt;/strong&gt; There must be a sequence of actions available to you alone that gets you into the state. If reaching freedom requires someone else to permit it, it is a grant, not a state.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Closure.&lt;/strong&gt; Once inside, nobody outside can pull you out without your consent. This is the whole point. A set the others can still drag you out of is not freedom; it is resting.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Non-invasiveness.&lt;/strong&gt; You change the edges, not the nodes. Nobody has to be destroyed, punished or subordinated for you to enter.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Sustainability.&lt;/strong&gt; The state can be held at an ongoing cost you can bear, indefinitely.&lt;/p&gt;
+&lt;p&gt;Look at the third condition carefully, because it is where the ethics stop being decorative and become load-bearing.&lt;/p&gt;
+&lt;h2 id="why-honourable-means-are-structural-not-ornamental"&gt;Why honourable means are structural, not ornamental
+&lt;/h2&gt;&lt;p&gt;The premise I refuse to negotiate is this: &lt;strong&gt;an honourable objective is reached by honourable means.&lt;/strong&gt; Not because it is high-minded — although it is — but because of how closure works.&lt;/p&gt;
+&lt;p&gt;Destroy the one who blocks you and you have not closed a set. You have opened several. The destroyed party&amp;rsquo;s allies, the destroyed party&amp;rsquo;s memory, the destroyed party&amp;rsquo;s claims: each of these is a new edge into your state that did not exist before. A freedom built on destruction is closed against the actors who exist today and wide open to the ones the destruction created.&lt;/p&gt;
+&lt;p&gt;This is why revenge is not just ugly. It is a &lt;strong&gt;technical error&lt;/strong&gt;. The cost of holding the state grows without bound, the sustainability condition fails, and the state collapses back into the game you were trying to leave — with you now occupying the exact role you set out to escape.&lt;/p&gt;
+&lt;p&gt;The test is one question: &lt;strong&gt;does what I am doing create new obligations, or does it remove edges?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;If it creates obligations, the entry has failed even when it looks successful from the outside.&lt;/p&gt;
+&lt;h2 id="exclusion-is-not-punishment-and-the-difference-is-testable"&gt;Exclusion is not punishment, and the difference is testable
+&lt;/h2&gt;&lt;p&gt;Closure is directional, and it has a consequence that reads as cruel until you see the arithmetic: &lt;strong&gt;an actor who does not enable the state is, by definition, outside it.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;This is not a sentence passed on anyone. A set that any actor can enter is not closed; a set that only admits those who enable it is closed by construction. Nobody is &amp;ldquo;removed&amp;rdquo;. The actors outside simply remain in their own game, with their own payoffs, on their own board — unreachable through edges that no longer exist. They are not judged. They are disconnected.&lt;/p&gt;
+&lt;p&gt;And the distinction is not rhetorical, it is checkable. Punishment exists to &lt;strong&gt;change the other player&amp;rsquo;s payoff&lt;/strong&gt;, which makes it an intervention. Closing a set exists to &lt;strong&gt;remove the edge&lt;/strong&gt;, which makes it indifferent to whether the other player&amp;rsquo;s payoff changes.&lt;/p&gt;
+&lt;p&gt;Ask yourself: &lt;em&gt;would I be satisfied if the other player never changed?&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;If yes, you have closed a set. If no, you have built a punishment and you are still playing.&lt;/p&gt;
+&lt;h2 id="the-failure-game-theory-cannot-fix"&gt;The failure game theory cannot fix
+&lt;/h2&gt;&lt;p&gt;Three things go wrong, and the first two are design problems.&lt;/p&gt;
+&lt;p&gt;The &lt;strong&gt;open edge&lt;/strong&gt;: you announce the exit but keep every channel that can carry the undesired state in. You have described a set, not entered one. The measure is brutal and simple — perturb the outside actor and watch whether your state changes.&lt;/p&gt;
+&lt;p&gt;The &lt;strong&gt;destructive entry&lt;/strong&gt;: you reach the state by the means of the un-free, which creates the edges that later reopen it.&lt;/p&gt;
+&lt;p&gt;The third is different. The &lt;strong&gt;unheld state&lt;/strong&gt;: you reach it, you hold it for a while, and then you drift out — not because anyone pulled you, but because the &lt;em&gt;reason to stay expired&lt;/em&gt;. The motivation that drove the exit was reactive: a conflict, an injury, a campaign. When the conflict ends, the reason ends, and the state is quietly released.&lt;/p&gt;
+&lt;p&gt;Game theory is silent here, and it has to be. Absorbing is a property of the set under &lt;em&gt;external&lt;/em&gt; play. It says nothing about whether &lt;em&gt;you&lt;/em&gt; stay in. No formalism can, because the last open edge runs through your own willingness:&lt;/p&gt;
+&lt;p&gt;$$\text{stay}_t = f(\text{outside}_t) ;\Longrightarrow; \text{the outside still sets the price of your freedom}$$&lt;/p&gt;
+&lt;p&gt;This is where the argument needs a second half, and it is the half that makes the whole thing work.&lt;/p&gt;
+&lt;h2 id="the-path-of-faith-as-the-stability-argument"&gt;The path of faith as the stability argument
+&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Faith, in this model, is a source of purpose that does not depend on the payoffs of the game being left.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;That is its entire technical role, and stating it that way is not a reduction. It is the precise operation: it replaces an external dependency with an invariant one.&lt;/p&gt;
+&lt;p&gt;$$\text{stay}_t = f(\text{purpose}), \quad \text{where purpose is invariant in outside}_t$$&lt;/p&gt;
+&lt;p&gt;The path matters for the same reason. A path is not a point. Nothing in the model rewards arriving; everything in it rewards not leaving. And an ongoing cost can only be paid by a disposition that does not need a reason each morning.&lt;/p&gt;
+&lt;p&gt;The three verbs are the maintenance operation the model needs, and they are not decorative: &lt;strong&gt;continue, advance, go on.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;One honesty, because it would be dishonest to hide it in the formalism: &lt;strong&gt;the model requires a commitment the model cannot justify.&lt;/strong&gt; Game theory can show that closure needs an invariant reason to stay. It cannot supply one, and any attempt to supply it from inside the game just returns a payoff and reopens the edge. That the reason be &lt;em&gt;received&lt;/em&gt; rather than &lt;em&gt;constructed&lt;/em&gt; — which is exactly the difference between the word &lt;em&gt;faith&lt;/em&gt; and the word &lt;em&gt;commitment&lt;/em&gt; — is a claim of a different order. I make it explicitly, and I do not smuggle it in as a theorem.&lt;/p&gt;
+&lt;h2 id="what-the-model-refuses-to-say"&gt;What the model refuses to say
+&lt;/h2&gt;&lt;p&gt;I will not claim this is a way to win, because winning is a position and this is about states. The honest statement is narrower:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Leaving is possible. This is what it costs. These are the leaves that are fake.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Whether leaving is wise is a judgement that belongs outside the formalism, and I do not pretend to make it here.&lt;/p&gt;
+&lt;p&gt;What I will say is that the indifference is real. Once inside, it stops mattering who governs, whether a coalition forms, whether consensus is reached or blocked, whether the left or the right prevails — because none of it can reach you. That indifference will look like arrogance or betrayal to the people still on the board. The model offers no defence against that reading and does not need one: the reading is a payoff of a game you have left.&lt;/p&gt;
+&lt;h2 id="the-premise-restated"&gt;The premise, restated
+&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;An honourable objective, pursued with honourable means.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Not because the means are praiseworthy — although they are — but because the object of the exercise is a state that the means of the un-free cannot reach.&lt;/p&gt;
+&lt;p&gt;A game that requires your participation is not a game you can win by playing well. It is a game you can win by leaving.&lt;/p&gt;</description></item><item><title>Meteoectasis: A Word for the Impact That Leaves No Trace of the Impact</title><link>https://jimenezgomez.org/blog/2026-10-30-meteoectasis-impact-assimilation/</link><pubDate>Fri, 30 Oct 2026 06:30:00 +0100</pubDate><guid>https://jimenezgomez.org/blog/2026-10-30-meteoectasis-impact-assimilation/</guid><description>&lt;img src="https://jimenezgomez.org/blog/2026-10-30-meteoectasis-impact-assimilation/meteoectasis-impact.png" alt="Featured image of post Meteoectasis: A Word for the Impact That Leaves No Trace of the Impact" /&gt;&lt;br /&gt;
 &lt;p&gt;&lt;strong&gt;Author &amp; Lead Researcher:&lt;/strong&gt;&lt;br&gt;
 Francisco Javier Jiménez Gómez&lt;br&gt;
 &lt;em&gt;Independent Intellectual Property Owner&lt;/em&gt;&lt;/p&gt;
@@ -114,7 +173,7 @@ the &lt;strong&gt;state&lt;/strong&gt; of the material afterwards.&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://jimenezgomez.org/blog/2026-10-30-meteoectasis-impact-assimilation/meteoectasis-incoming.png"
 width="1600"
 height="1000"
-srcset="https://jimenezgomez.org/blog/2026-10-30-meteoectasis-impact-assimilation/meteoectasis-incoming_hu_39af320aaacf744e.png 480w, https://jimenezgomez.org/blog/2026-10-30-meteoectasis-impact-assimilation/meteoectasis-incoming_hu_b8ae3e07595edac0.png 1024w"
+srcset="https://jimenezgomez.org/blog/2026-10-30-meteoectasis-impact-assimilation/meteoectasis-incoming_hu_38e4ac7466a282cc.png 480w, https://jimenezgomez.org/blog/2026-10-30-meteoectasis-impact-assimilation/meteoectasis-incoming_hu_4cc70a39f60eefd.png 1024w"
 loading="lazy"
 alt="The impactor arrives: a smaller body on a collision course with a larger one."
 class="gallery-image"
@@ -158,7 +217,7 @@ collision &lt;strong&gt;homogenises&lt;/strong&gt; two bodies.&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://jimenezgomez.org/blog/2026-10-30-meteoectasis-impact-assimilation/meteoectasis-impact.png"
 width="1600"
 height="1000"
-srcset="https://jimenezgomez.org/blog/2026-10-30-meteoectasis-impact-assimilation/meteoectasis-impact_hu_a433715c2d2ee902.png 480w, https://jimenezgomez.org/blog/2026-10-30-meteoectasis-impact-assimilation/meteoectasis-impact_hu_c5cd8d84295f9a33.png 1024w"
+srcset="https://jimenezgomez.org/blog/2026-10-30-meteoectasis-impact-assimilation/meteoectasis-impact_hu_796d8813c31ef67c.png 480w, https://jimenezgomez.org/blog/2026-10-30-meteoectasis-impact-assimilation/meteoectasis-impact_hu_e1e54efc163938db.png 1024w"
 loading="lazy"
 alt="The impactor is melted above its latent heat of fusion and below the target’s disruption threshold."
 class="gallery-image"
@@ -189,7 +248,7 @@ where it actually is.&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://jimenezgomez.org/blog/2026-10-30-meteoectasis-impact-assimilation/meteoectasis-dilution.png"
 width="1600"
 height="1000"
-srcset="https://jimenezgomez.org/blog/2026-10-30-meteoectasis-impact-assimilation/meteoectasis-dilution_hu_e57b4a6cdd255ca2.png 480w, https://jimenezgomez.org/blog/2026-10-30-meteoectasis-impact-assimilation/meteoectasis-dilution_hu_7756b3d149dff456.png 1024w"
+srcset="https://jimenezgomez.org/blog/2026-10-30-meteoectasis-impact-assimilation/meteoectasis-dilution_hu_77cbe373d08d588c.png 480w, https://jimenezgomez.org/blog/2026-10-30-meteoectasis-impact-assimilation/meteoectasis-dilution_hu_fbfbc2e2824b659c.png 1024w"
 loading="lazy"
 alt="One reservoir: no isotopic signature of the impactor remains."
 class="gallery-image"
