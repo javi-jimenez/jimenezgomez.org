@@ -183,4 +183,8 @@ SPECS = {
         motif="plinth", palette="midnight", eyebrow="AI ethics · EU AI Act",
         sub="Built before the first commit, not signed after the last audit.",
     ),
+    "2026-10-23-sound-over-vnc-ssh-tunnel": dict(
+        motif="waves", palette="ocean", eyebrow="Linux · Remote desktop",
+        sub="VNC carries no audio: two channels, one SSH connection.",
+    ),
 }

@@ -1,4 +1,288 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Home on Francisco Javier Jiménez Gómez</title><link>https://jimenezgomez.org/</link><description>Recent content in Home on Francisco Javier Jiménez Gómez</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>Francisco Javier Jiménez Gómez</copyright><lastBuildDate>Mon, 02 Nov 2026 10:00:00 +0100</lastBuildDate><atom:link href="https://jimenezgomez.org/index.xml" rel="self" type="application/rss+xml"/><item><title>Freedom as an Absorbing State: The Observer Who Stopped Playing</title><link>https://jimenezgomez.org/blog/2026-11-02-freedom-as-absorbing-state/</link><pubDate>Mon, 02 Nov 2026 10:00:00 +0100</pubDate><guid>https://jimenezgomez.org/blog/2026-11-02-freedom-as-absorbing-state/</guid><description>&lt;img src="https://jimenezgomez.org/og-image-1200x630.png" alt="Featured image of post Freedom as an Absorbing State: The Observer Who Stopped Playing" /&gt;&lt;p&gt;&lt;em&gt;This is not a strategy for winning. It is a reflection on what changes when you stop asking where you sit and start asking whether a state is reachable and holdable. The full paper is in the &lt;a class="link" href="https://github.com/javi-jimenez/laia/blob/main/whitepapers/freedom-as-absorbing-state-game-theory-of-faith.md" target="_blank" rel="noopener"
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Home on Francisco Javier Jiménez Gómez</title><link>https://jimenezgomez.org/</link><description>Recent content in Home on Francisco Javier Jiménez Gómez</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>Francisco Javier Jiménez Gómez</copyright><lastBuildDate>Thu, 05 Nov 2026 18:00:00 +0100</lastBuildDate><atom:link href="https://jimenezgomez.org/index.xml" rel="self" type="application/rss+xml"/><item><title>Un disco, tres meses: snapshots de coste cero con hardlinks</title><link>https://jimenezgomez.org/blog/2026-11-05-hardlink-snapshots-backup/</link><pubDate>Thu, 05 Nov 2026 18:00:00 +0100</pubDate><guid>https://jimenezgomez.org/blog/2026-11-05-hardlink-snapshots-backup/</guid><description>&lt;img src="https://jimenezgomez.org/blog/2026-11-05-hardlink-snapshots-backup/figura-hardlinks.svg" alt="Featured image of post Un disco, tres meses: snapshots de coste cero con hardlinks" /&gt;&lt;p&gt;&lt;em&gt;Esto es una nota de trabajo, no un artículo. Nació intentando resolver un
+problema concreto: un backup de un terabyte que quería histórico mensual y no
+podía permitirse duplicarlo. El código está en
+&lt;a class="link" href="https://github.com/javi-jimenez/backup-remoto-snapshot" target="_blank" rel="noopener"
+&gt;backup-remoto-snapshot&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://jimenezgomez.org/blog/2026-11-05-hardlink-snapshots-backup/figura-hardlinks.svg"
+loading="lazy"
+alt="Un único inodo en el centro, con dos nombres apuntando a él: el fichero vivo y el snapshot congelado. La escritura atómica por rename lo deja intacto; la escritura en sitio lo destruye todo."
+&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="el-problema"&gt;El problema
+&lt;/h2&gt;&lt;p&gt;Tengo un terabyte que copiar. Quiero saber cómo estaba hace tres meses. Y no
+quiero tres terabytes.&lt;/p&gt;
+&lt;p&gt;La respuesta obvia — «haz una copia al mes» — no funciona a esa escala. Tres
+copias de un terabyte son tres discos, y el tercer mes ya no sabes qué está
+donde.&lt;/p&gt;
+&lt;p&gt;La respuesta de moda — «usa btrfs o ZFS» — funciona, pero cambia el sistema de
+ficheros entero, y en una máquina que ya funciona eso es un riesgo que no
+siempre puedes permitirte.&lt;/p&gt;
+&lt;p&gt;Hay una tercera respuesta, más vieja, que casi nadie usa porque tiene mala fama
+de frágil:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;cp -al
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Nueve caracteres. Copia un directorio &lt;strong&gt;sin copiar los datos&lt;/strong&gt;.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="qué-es-realmente-un-hardlink"&gt;Qué es realmente un hardlink
+&lt;/h2&gt;&lt;p&gt;Un fichero en un sistema Unix no es un nombre. Es un &lt;strong&gt;inodo&lt;/strong&gt;: un bloque de
+metadatos que contiene el dueño, los permisos, el tamaño, las fechas y — lo
+importante — &lt;strong&gt;la lista de bloques de disco donde vive el contenido&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Lo que llamamos «nombre de fichero» es solo una entrada en un directorio que
+apunta a un inodo. Y &lt;strong&gt;un inodo puede tener varios nombres&lt;/strong&gt;. Todos igual de
+reales. Ninguno es «el original».&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;inodo 24598
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;├── /srv/backup/current/f.txt ← nombre 1
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;└── /srv/backup/202601/f.txt ← nombre 2
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Los dos ocupan lo mismo porque &lt;strong&gt;son lo mismo&lt;/strong&gt;. No hay original y copia: hay dos
+puertas a la misma habitación.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;cp -al&lt;/code&gt; crea ese segundo nombre. Recorre el árbol, y por cada fichero en lugar
+de copiar bytes llama a &lt;code&gt;link()&lt;/code&gt;. Con un terabyte de datos, tarda segundos y
+consume &lt;strong&gt;cero bytes&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;El número que lo confirma:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;$ stat -c &lt;span class="s1"&gt;&amp;#39;%i %h %n&amp;#39;&lt;/span&gt; current/f.txt 202601/f.txt
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="m"&gt;24598&lt;/span&gt; &lt;span class="m"&gt;2&lt;/span&gt; current/f.txt
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="m"&gt;24598&lt;/span&gt; &lt;span class="m"&gt;2&lt;/span&gt; 202601/f.txt
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Mismo inodo (&lt;code&gt;24598&lt;/code&gt;), link count &lt;code&gt;2&lt;/code&gt;. Dos nombres, un contenido.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="la-condición-que-lo-rompe-todo"&gt;La condición que lo rompe todo
+&lt;/h2&gt;&lt;p&gt;Aquí está la parte que casi nadie explica, y la razón por la que los snapshots
+por hardlink tienen mala fama.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Cualquier escritura en sitio sobre un fichero cambia todos sus nombres.&lt;/strong&gt; No
+los nombres anteriores: &lt;em&gt;todos&lt;/em&gt;, porque el contenido es único.&lt;/p&gt;
+&lt;p&gt;Si mañana el backup abre &lt;code&gt;current/f.txt&lt;/code&gt; y escribe encima, &lt;code&gt;202601/f.txt&lt;/code&gt; cambia
+también. El snapshot deja de ser un histórico y pasa a ser un alias del presente.&lt;/p&gt;
+&lt;h3 id="la-diferencia-que-lo-salva-rename"&gt;La diferencia que lo salva: &lt;code&gt;rename()&lt;/code&gt;
+&lt;/h3&gt;&lt;p&gt;&lt;code&gt;rsync -a&lt;/code&gt; cuando detecta que un fichero cambió no lo abre para escribir. Hace
+esto:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Copia el contenido nuevo a &lt;code&gt;f.txt.a1B2c3&lt;/code&gt; (un fichero temporal).&lt;/li&gt;
+&lt;li&gt;Llama a &lt;code&gt;rename(&amp;quot;f.txt.a1B2c3&amp;quot;, &amp;quot;f.txt&amp;quot;)&lt;/code&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;code&gt;rename()&lt;/code&gt; es una operación &lt;strong&gt;atómica&lt;/strong&gt; del sistema de ficheros: o se hace entera
+o no se hace. Y cuando se hace, &lt;strong&gt;lo que sustituye es el nombre, no el inodo&lt;/strong&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;ANTES: current/f.txt ──→ inodo 24598 ←── 202601/f.txt
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;DESPUÉS: current/f.txt ──→ inodo 24604
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; 202601/f.txt ──→ inodo 24598 ← intacto
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;El inodo viejo pierde un nombre (&lt;code&gt;link count&lt;/code&gt; baja de 2 a 1), pero &lt;strong&gt;nadie lo ha
+tocado&lt;/strong&gt;. El snapshot conserva exactamente lo que decía.&lt;/p&gt;
+&lt;p&gt;Verificado:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;$ cat current/f.txt → V2-CAMBIADO
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;$ cat 202601/f.txt → V1 ← el histórico funciona
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;$ stat -c &lt;span class="s1"&gt;&amp;#39;%i %h %n&amp;#39;&lt;/span&gt; current/f.txt 202601/f.txt
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="m"&gt;24604&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt; current/f.txt ← inodo nuevo
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="m"&gt;24598&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt; 202601/f.txt ← inodo viejo, intacto
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Por eso &lt;code&gt;cp -al&lt;/code&gt; no es frágil. &lt;strong&gt;Es frágil si el cliente escribe mal.&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="lo-que-corrompe-y-lo-que-no"&gt;Lo que corrompe, y lo que no
+&lt;/h2&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style="text-align: left"&gt;Escritura&lt;/th&gt;
+&lt;th style="text-align: left"&gt;Qué hace&lt;/th&gt;
+&lt;th style="text-align: left"&gt;Snapshots&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left"&gt;&lt;code&gt;rsync -a&lt;/code&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;&lt;code&gt;.tmp&lt;/code&gt; + &lt;code&gt;rename()&lt;/code&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;✅ intactos&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left"&gt;&lt;code&gt;rsync --inplace&lt;/code&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;escribe sobre el inodo&lt;/td&gt;
+&lt;td style="text-align: left"&gt;❌ &lt;strong&gt;rompe todos&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left"&gt;&lt;code&gt;rclone --inplace&lt;/code&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;escribe sobre el inodo&lt;/td&gt;
+&lt;td style="text-align: left"&gt;❌ &lt;strong&gt;rompe todos&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left"&gt;&lt;code&gt;rclone sync&lt;/code&gt; (mismo tamaño)&lt;/td&gt;
+&lt;td style="text-align: left"&gt;reescribe en sitio&lt;/td&gt;
+&lt;td style="text-align: left"&gt;❌ &lt;strong&gt;rompe todos&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left"&gt;&lt;code&gt;cp&lt;/code&gt; sin &lt;code&gt;-a&lt;/code&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;trunca y escribe&lt;/td&gt;
+&lt;td style="text-align: left"&gt;❌ &lt;strong&gt;rompe todos&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left"&gt;&lt;code&gt;-L&lt;/code&gt; / &lt;code&gt;--copy-links&lt;/code&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;convierte enlace en copia&lt;/td&gt;
+&lt;td style="text-align: left"&gt;⚠️ rompe la deduplicación&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;La última fila de &lt;code&gt;rclone&lt;/code&gt; es la que me costó un rato entender. &lt;code&gt;rclone sync&lt;/code&gt;
+normalmente crea un objeto nuevo y lo renombra, así que en teoría es seguro.
+Pero &lt;strong&gt;cuando el tamaño del fichero coincide, reescribe en sitio&lt;/strong&gt; aunque no
+pases &lt;code&gt;--inplace&lt;/code&gt;. Y eso basta para llevarse el histórico.&lt;/p&gt;
+&lt;p&gt;Conclusión práctica: &lt;strong&gt;rclone no sirve para este esquema.&lt;/strong&gt; Hay que usar &lt;code&gt;rsync&lt;/code&gt;.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="un-intento-fallido-que-enseñó-algo"&gt;Un intento fallido que enseñó algo
+&lt;/h2&gt;&lt;p&gt;Al principio puse el script del servidor a hacer &lt;code&gt;chown -R root&lt;/code&gt; y
+&lt;code&gt;chmod -R a-w&lt;/code&gt; sobre el snapshot recién creado. El razonamiento parecía sensato:
+«si es de root y no tiene escritura, un &lt;code&gt;--inplace&lt;/code&gt; falla en vez de corromper».&lt;/p&gt;
+&lt;p&gt;No funciona. Y el motivo es el mismo de todo el artículo: &lt;strong&gt;el inodo es
+compartido&lt;/strong&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;chown root 202601/f.txt → cambia el dueño del inodo
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; → y current/f.txt es el mismo inodo
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; → ahora el cliente no puede escribir en su propio destino
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Se rompe el destino para «proteger» la copia. Un inodo no puede ser de root en
+el snapshot y de otro usuario en &lt;code&gt;current/&lt;/code&gt;: es el mismo objeto.&lt;/p&gt;
+&lt;p&gt;La lección: &lt;strong&gt;en un esquema de hardlinks no puedes tener permisos distintos para
+la copia y el original&lt;/strong&gt;, porque no son dos cosas. La protección tiene que venir
+de la forma de escribir, no de los permisos.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="el-sistema-completo"&gt;El sistema completo
+&lt;/h2&gt;&lt;p&gt;Dos scripts y dos líneas de cron.&lt;/p&gt;
+&lt;h3 id="servidor"&gt;Servidor
+&lt;/h3&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;span class="lnt"&gt;11
+&lt;/span&gt;&lt;span class="lnt"&gt;12
+&lt;/span&gt;&lt;span class="lnt"&gt;13
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cp"&gt;#!/usr/bin/env bash
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cp"&gt;&lt;/span&gt;&lt;span class="nb"&gt;set&lt;/span&gt; -euo pipefail
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nv"&gt;BASE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;BACKUP_BASE&lt;/span&gt;&lt;span class="k"&gt;:-&lt;/span&gt;&lt;span class="p"&gt;/srv/backup&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nv"&gt;MES&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;date +%Y%m&lt;span class="k"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="o"&gt;[[&lt;/span&gt; -e &lt;span class="s2"&gt;&amp;#34;&lt;/span&gt;&lt;span class="nv"&gt;$BASE&lt;/span&gt;&lt;span class="s2"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;$MES&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;&lt;/span&gt; &lt;span class="o"&gt;]]&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;&lt;/span&gt;&lt;span class="nv"&gt;$BASE&lt;/span&gt;&lt;span class="s2"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;$MES&lt;/span&gt;&lt;span class="s2"&gt; ya existe.&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="nb"&gt;exit&lt;/span&gt; 0&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="o"&gt;[[&lt;/span&gt; -d &lt;span class="s2"&gt;&amp;#34;&lt;/span&gt;&lt;span class="nv"&gt;$BASE&lt;/span&gt;&lt;span class="s2"&gt;/current&amp;#34;&lt;/span&gt; &lt;span class="o"&gt;]]&lt;/span&gt; &lt;span class="o"&gt;||&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;No existe current/.&amp;#34;&lt;/span&gt; &amp;gt;&lt;span class="p"&gt;&amp;amp;&lt;/span&gt;2&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="nb"&gt;exit&lt;/span&gt; 1&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="o"&gt;[[&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;stat -c %d &lt;span class="s2"&gt;&amp;#34;&lt;/span&gt;&lt;span class="nv"&gt;$BASE&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;stat -c %d &lt;span class="s2"&gt;&amp;#34;&lt;/span&gt;&lt;span class="nv"&gt;$BASE&lt;/span&gt;&lt;span class="s2"&gt;/current&amp;#34;&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;&lt;/span&gt; &lt;span class="o"&gt;]]&lt;/span&gt; &lt;span class="se"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="se"&gt;&lt;/span&gt; &lt;span class="o"&gt;||&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;Filesystems distintos.&amp;#34;&lt;/span&gt; &amp;gt;&lt;span class="p"&gt;&amp;amp;&lt;/span&gt;2&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="nb"&gt;exit&lt;/span&gt; 1&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;cp -al &lt;span class="s2"&gt;&amp;#34;&lt;/span&gt;&lt;span class="nv"&gt;$BASE&lt;/span&gt;&lt;span class="s2"&gt;/current&amp;#34;&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;&lt;/span&gt;&lt;span class="nv"&gt;$BASE&lt;/span&gt;&lt;span class="s2"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;$MES&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;Creado &lt;/span&gt;&lt;span class="nv"&gt;$BASE&lt;/span&gt;&lt;span class="s2"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;$MES&lt;/span&gt;&lt;span class="s2"&gt; (&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;find &lt;span class="s2"&gt;&amp;#34;&lt;/span&gt;&lt;span class="nv"&gt;$BASE&lt;/span&gt;&lt;span class="s2"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;$MES&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;&lt;/span&gt; -type f &lt;span class="p"&gt;|&lt;/span&gt; wc -l&lt;span class="k"&gt;)&lt;/span&gt;&lt;span class="s2"&gt; ficheros, 0 bytes)&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Nada más. Ni &lt;code&gt;chown&lt;/code&gt;, ni &lt;code&gt;chmod&lt;/code&gt;, ni borrado de snapshots viejos.&lt;/p&gt;
+&lt;h3 id="cliente"&gt;Cliente
+&lt;/h3&gt;&lt;p&gt;&lt;code&gt;rsync -a --delete&lt;/code&gt; con exclusiones, cerrojo con &lt;code&gt;flock&lt;/code&gt; y log. Sin
+&lt;code&gt;--inplace&lt;/code&gt;, sin &lt;code&gt;-L&lt;/code&gt;.&lt;/p&gt;
+&lt;h3 id="cron"&gt;Cron
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Servidor:&lt;/strong&gt; diario, no el día 1.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-gdscript3" data-lang="gdscript3"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="mi"&gt;30&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;usr&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;local&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;bin&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;snapshot&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;mensual&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sh&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="k"&gt;var&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nb"&gt;log&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;snapshot&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;mensual&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;log&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;amp;&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;El script sale en cuanto ve que el snapshot del mes ya existe, así que solo
+trabaja una vez al mes. Si el servidor estaba apagado el día 1, se crea el primer
+día que arranque.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Cliente:&lt;/strong&gt; &lt;code&gt;anacron&lt;/code&gt;, no &lt;code&gt;cron&lt;/code&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;1 10 backup-cliente /home/usuario/.local/bin/backup-cliente.sh
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Un &lt;code&gt;cron&lt;/code&gt; normal solo dispara si el aparato está encendido a esa hora. En un
+portátil, el backup de las 02:00 &lt;strong&gt;nunca&lt;/strong&gt; se hace: a las 02:00 el portátil está
+cerrado. &lt;code&gt;anacron&lt;/code&gt; anota cuándo tocaba y lo ejecuta al arrancar si se pasó la
+hora.&lt;/p&gt;
+&lt;p&gt;Enciendes el ordenador por la mañana y el backup que no se hizo anoche se hace
+solo mientras te preparas el café.&lt;/p&gt;
+&lt;p&gt;Comprobado: el segundo mes cuesta &lt;strong&gt;0 bytes&lt;/strong&gt;.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="lo-que-esto-no-hace"&gt;Lo que esto no hace
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;No rellena meses perdidos.&lt;/strong&gt; Si estuvo apagado de enero a abril, en abril se
+crea solo &lt;code&gt;202604&lt;/code&gt;. El nombre de un snapshot es la fecha en que se tomó, no la
+fecha que debería haber tenido. Un snapshot que falta dice algo; uno falso, no.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;No borra snapshots viejos.&lt;/strong&gt; Eso lo decides tú, no un script con &lt;code&gt;find -mtime&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;No cifra.&lt;/strong&gt; Eso es del transporte (SSH) o del volumen.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;No sustituye un 3-2-1.&lt;/strong&gt; Esto es &lt;em&gt;una&lt;/em&gt; copia. Un backup en el mismo edificio
+no es un backup.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;No funciona en QNAP, FAT/exFAT ni montajes de red&lt;/strong&gt; sin soporte de hardlinks.
+&lt;code&gt;cp -al&lt;/code&gt; falla y el script sale con error, que es lo correcto.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="por-qué-esto-sigue-importando"&gt;Por qué esto sigue importando
+&lt;/h2&gt;&lt;p&gt;Vivimos en una época donde la respuesta a todo es «usa ZFS» o «usa btrfs». Y no
+están mal: son mejores. Tienen snapshots nativos, checksums, send/receive
+incremental y no dependen de que el cliente se porte bien.&lt;/p&gt;
+&lt;p&gt;Pero exigen cambiar el sistema de ficheros de una máquina que funciona. Y en un
+servidor modesto, en un disco externo, o en una máquina que no puedes reinstalar,
+eso a veces no es una opción.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;cp -al&lt;/code&gt; no necesita nada. Funciona en ext4, que es lo que tiene todo el mundo.
+Ocupa cero bytes. Y si respetas una sola regla — &lt;strong&gt;nunca escribir en sitio&lt;/strong&gt; —
+conserva el histórico exactamente igual que ZFS.&lt;/p&gt;
+&lt;p&gt;La regla no es un detalle: es todo el sistema. Un backup que escribe en sitio no
+es un backup incremental, es una copia que se cree a sí misma.&lt;/p&gt;</description></item><item><title>Freedom as an Absorbing State: The Observer Who Stopped Playing</title><link>https://jimenezgomez.org/blog/2026-11-02-freedom-as-absorbing-state/</link><pubDate>Mon, 02 Nov 2026 10:00:00 +0100</pubDate><guid>https://jimenezgomez.org/blog/2026-11-02-freedom-as-absorbing-state/</guid><description>&lt;img src="https://jimenezgomez.org/blog/2026-11-02-freedom-as-absorbing-state/figura-el-caminante.png" alt="Featured image of post Freedom as an Absorbing State: The Observer Who Stopped Playing" /&gt;&lt;p&gt;&lt;em&gt;This is not a strategy for winning. It is a reflection on what changes when you stop asking where you sit and start asking whether a state is reachable and holdable. The full paper is in the &lt;a class="link" href="https://github.com/javi-jimenez/laia/blob/main/whitepapers/freedom-as-absorbing-state-game-theory-of-faith.md" target="_blank" rel="noopener"
 &gt;LAIA repository&lt;/a&gt; and on &lt;a class="link" href="https://laia.brisecom.org/#whitepapers" target="_blank" rel="noopener"
 &gt;laia.brisecom.org&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://jimenezgomez.org/blog/2026-11-02-freedom-as-absorbing-state/figura-el-caminante.svg"

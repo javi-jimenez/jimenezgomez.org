@@ -3,8 +3,8 @@ title: "Freedom as an Absorbing State: The Observer Who Stopped Playing"
 date: 2026-11-02T10:00:00+01:00
 draft: false
 description: "Freedom is not a position on the board and it is not a victory. It is a state: a closed set that the strategies of the other players can no longer reach. A game-theoretic reading of exit, honourable means, and the path of faith as the reason to stay in the state once the cause has expired."
-image: "og-image-1200x630.png"
-og_image: "og-image-1200x630.png"
+image: "figura-el-caminante.png"
+og_image: "figura-el-caminante.png"
 math: true
 categories:
   - "Reflection"

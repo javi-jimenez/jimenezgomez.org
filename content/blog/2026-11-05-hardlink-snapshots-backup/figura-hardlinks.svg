@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0b1620"/>
+      <stop offset="100%" stop-color="#101d2b"/>
+    </linearGradient>
+    <linearGradient id="disk" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1e3a5f"/>
+      <stop offset="100%" stop-color="#0d9488"/>
+    </linearGradient>
+    <linearGradient id="live" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#22d3ee"/>
+    </linearGradient>
+    <linearGradient id="snap" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#d97706"/>
+      <stop offset="100%" stop-color="#fbbf24"/>
+    </linearGradient>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="12" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#bg)"/>
+
+  <!-- Rejilla tenue -->
+  <g stroke="#1e3a5f" stroke-width="0.5" opacity="0.35">
+    <path d="M0 135h1200M0 270h1200M0 405h1200M0 540h1200"/>
+    <path d="M150 0v675M300 0v675M450 0v675M600 0v675M750 0v675M900 0v675M1050 0v675"/>
+  </g>
+
+  <!-- Título -->
+  <text x="600" y="60" text-anchor="middle" fill="#e2e8f0"
+        font-family="Georgia, 'DejaVu Serif', serif" font-size="42" font-weight="bold"
+        letter-spacing="1">Un disco, tres meses</text>
+  <text x="600" y="96" text-anchor="middle" fill="#0d9488"
+        font-family="'DejaVu Sans', Arial, sans-serif" font-size="16" letter-spacing="3">HARDLINKS · SNAPSHOTS DE COSTE CERO</text>
+
+  <!-- Disco grande -->
+  <ellipse cx="600" cy="420" rx="300" ry="82" fill="url(#disk)" opacity="0.10"/>
+  <ellipse cx="600" cy="420" rx="300" ry="82" fill="none" stroke="#0d9488" stroke-width="1.5" opacity="0.55"/>
+  <text x="600" y="530" text-anchor="middle" fill="#64748b"
+        font-family="'DejaVu Sans', Arial, sans-serif" font-size="13" letter-spacing="2">EL FICHERO VIVE UNA SOLA VEZ EN EL DISCO</text>
+
+  <!-- Círculo del inodo (centro) -->
+  <circle cx="600" cy="330" r="46" fill="url(#disk)" filter="url(#glow)" opacity="0.95"/>
+  <text x="600" y="326" text-anchor="middle" fill="#fff" font-family="'DejaVu Sans', Arial, sans-serif" font-size="13" font-weight="bold">INODO</text>
+  <text x="600" y="346" text-anchor="middle" fill="#a8e1f8" font-family="'DejaVu Sans', Arial, sans-serif" font-size="14" font-weight="bold">24598</text>
+
+  <!-- current/ a la izquierda -->
+  <g>
+    <line x1="600" y1="330" x2="300" y2="205" stroke="url(#live)" stroke-width="3" opacity="0.9"/>
+    <circle cx="300" cy="205" r="9" fill="#22d3ee" filter="url(#glow)"/>
+    <rect x="130" y="150" width="190" height="54" rx="8" fill="url(#live)" opacity="0.16" stroke="#0284c7" stroke-width="1.5"/>
+    <text x="225" y="174" text-anchor="middle" fill="#a8e1f8" font-family="'DejaVu Sans Mono', monospace" font-size="15" font-weight="bold">current/f.txt</text>
+    <text x="225" y="193" text-anchor="middle" fill="#64748b" font-family="'DejaVu Sans', Arial, sans-serif" font-size="11">el fichero vivo · se puede escribir</text>
+  </g>
+
+  <!-- 202611 a la derecha -->
+  <g>
+    <line x1="600" y1="330" x2="900" y2="205" stroke="url(#snap)" stroke-width="3" opacity="0.9"/>
+    <circle cx="900" cy="205" r="9" fill="#fbbf24" filter="url(#glow)"/>
+    <rect x="795" y="150" width="190" height="54" rx="8" fill="url(#snap)" opacity="0.16" stroke="#d97706" stroke-width="1.5"/>
+    <text x="890" y="174" text-anchor="middle" fill="#fbbf24" font-family="'DejaVu Sans Mono', monospace" font-size="15" font-weight="bold">202611/f.txt</text>
+    <text x="890" y="193" text-anchor="middle" fill="#64748b" font-family="'DejaVu Sans', Arial, sans-serif" font-size="11">el mismo fichero · congelado</text>
+  </g>
+
+  <!-- Etiqueta del enlace -->
+  <g>
+    <rect x="380" y="264" width="92" height="22" rx="11" fill="#0b1620" stroke="#0d9488" stroke-width="1" opacity="0.9"/>
+    <text x="426" y="279" text-anchor="middle" fill="#0d9488" font-family="'DejaVu Sans Mono', monospace" font-size="11">hardlink</text>
+  </g>
+  <g>
+    <rect x="728" y="264" width="92" height="22" rx="11" fill="#0b1620" stroke="#0d9488" stroke-width="1" opacity="0.9"/>
+    <text x="774" y="279" text-anchor="middle" fill="#0d9488" font-family="'DejaVu Sans Mono', monospace" font-size="11">hardlink</text>
+  </g>
+
+  <!-- Escritura atomica con rename -->
+  <g>
+    <path d="M300 560 L360 500" stroke="#22d3ee" stroke-width="2" stroke-dasharray="6 4" opacity="0.85"/>
+    <polygon points="360,500 348,500 354,511" fill="#22d3ee" opacity="0.85"/>
+    <text x="120" y="596" fill="#22d3ee" font-family="'DejaVu Sans Mono', monospace" font-size="13">rsync -a → .tmp + rename()</text>
+    <text x="120" y="616" fill="#475569" font-family="'DejaVu Sans', Arial, sans-serif" font-size="11">el inodo viejo NO se toca</text>
+  </g>
+
+  <!-- Rotura: inplace -->
+  <g>
+    <path d="M900 560 L840 500" stroke="#dc2626" stroke-width="2" stroke-dasharray="6 4" opacity="0.8"/>
+    <polygon points="840,500 852,500 846,511" fill="#dc2626" opacity="0.8"/>
+    <text x="1080" y="596" text-anchor="end" fill="#dc2626" font-family="'DejaVu Sans Mono', monospace" font-size="13">--inplace</text>
+    <text x="1080" y="616" text-anchor="end" fill="#7f1d1d" font-family="'DejaVu Sans', Arial, sans-serif" font-size="11">escribe en el inodo → rompe TODO</text>
+  </g>
+
+  <!-- Coste -->
+  <g>
+    <rect x="470" y="618" width="260" height="46" rx="10" fill="#0d9488" opacity="0.12" stroke="#0d9488" stroke-width="1"/>
+    <text x="600" y="639" text-anchor="middle" fill="#0d9488" font-family="'DejaVu Sans', Arial, sans-serif" font-size="12" letter-spacing="1">COSTE DEL SEGUNDO MES</text>
+    <text x="600" y="658" text-anchor="middle" fill="#e2e8f0" font-family="'DejaVu Sans', Arial, sans-serif" font-size="16" font-weight="bold">0 bytes</text>
+  </g>
+</svg>
