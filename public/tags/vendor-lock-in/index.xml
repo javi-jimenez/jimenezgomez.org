@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Vendor Lock-In on Francisco Javier Jiménez Gómez</title><link>https://jimenezgomez.org/tags/vendor-lock-in/</link><description>Recent content in Vendor Lock-In on Francisco Javier Jiménez Gómez</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>Francisco Javier Jiménez Gómez</copyright><lastBuildDate>Thu, 19 Nov 2026 00:30:00 +0100</lastBuildDate><atom:link href="https://jimenezgomez.org/tags/vendor-lock-in/index.xml" rel="self" type="application/rss+xml"/><item><title>Sovereign Code-First Infrastructure: Decoupling Business Logic from Persistent Plumbing</title><link>https://jimenezgomez.org/blog/2026-11-19-sovereign-code-first-infrastructure/</link><pubDate>Thu, 19 Nov 2026 00:30:00 +0100</pubDate><guid>https://jimenezgomez.org/blog/2026-11-19-sovereign-code-first-infrastructure/</guid><description>&lt;img src="https://jimenezgomez.org/blog/2026-11-19-sovereign-code-first-infrastructure/og-image-1200x630.png" alt="Featured image of post Sovereign Code-First Infrastructure: Decoupling Business Logic from Persistent Plumbing" /&gt;&lt;p&gt;Modern software engineering has fallen into a trap of excessive operational friction. Developers spend more time orchestrating Docker networks, configuring connection strings, managing YAML manifests, and tying application code to vendor-specific SDKs than building actual business logic.&lt;/p&gt;
+&lt;p&gt;This article sets out a sober, architecture-first model in which infrastructure is treated not as a separate deployment artifact, but as an explicit, declarative intent embedded directly within the code. By establishing a universal abstraction layer and ephemeral runtime plumbing, we eliminate vendor lock-in, guarantee local-to-production parity, and restore absolute sovereignty to the engineering lifecycle.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This piece is adapted from the whitepaper &lt;em&gt;Sovereign Code-First Infrastructure: Decoupling Business Logic from Persistent Plumbing&lt;/em&gt;, by &lt;strong&gt;Francisco Javier Jiménez Gómez&lt;/strong&gt; (BRISECOM SL), written as an architectural position paper for sovereign, vendor-agnostic systems.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="the-problem-the-accidental-complexity-of-modern-stacks"&gt;The problem: the accidental complexity of modern stacks
+&lt;/h2&gt;&lt;p&gt;For years, the industry standard for building distributed systems has involved a fractured workflow:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Provision infrastructure manually using Infrastructure as Code (IaC) tools such as Terraform.&lt;/li&gt;
+&lt;li&gt;Hardcode environment variables, ports, and proprietary SDK drivers (&lt;code&gt;pg&lt;/code&gt;, &lt;code&gt;amqplib&lt;/code&gt;, &lt;code&gt;@aws-sdk/client-s3&lt;/code&gt;) directly into the application layer.&lt;/li&gt;
+&lt;li&gt;Waste hours debugging local development environments where containers fail to mirror production setups.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;This creates tight coupling. If an organisation decides to switch from PostgreSQL to a different storage engine, or from RabbitMQ to NATS, or migrates from local MinIO storage to a sovereign S3-compatible cloud, the codebase suffers a cascade of invasive refactoring. The business logic becomes polluted by infrastructure concerns.&lt;/p&gt;
+&lt;p&gt;The cost is not only technical. Every hour spent reconstructing a broken local stack is an hour not spent on the problem the software exists to solve. And every proprietary driver embedded in a domain module is a contractual clause written into the architecture on behalf of a vendor.&lt;/p&gt;
+&lt;h2 id="the-solution-code-first-abstraction-and-ephemeral-runtime"&gt;The solution: code-first abstraction and ephemeral runtime
+&lt;/h2&gt;&lt;p&gt;To achieve true technical sovereignty, we invert the paradigm. The application should never know &lt;em&gt;how&lt;/em&gt; a database runs, &lt;em&gt;where&lt;/em&gt; a queue is hosted, or &lt;em&gt;what&lt;/em&gt; protocol delivers a file; it should only declare &lt;em&gt;what&lt;/em&gt; capability it requires.&lt;/p&gt;
+&lt;p&gt;The architecture rests on three foundational pillars.&lt;/p&gt;
+&lt;h3 id="1-declarative-intent-in-code"&gt;1. Declarative intent in code
+&lt;/h3&gt;&lt;p&gt;Instead of configuring external files or binding to proprietary drivers, the developer expresses capability directly through clean, typed primitives within the business logic:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;&amp;ldquo;This module requires a relational data store, an asynchronous message queue, and an object storage bucket.&amp;rdquo;&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The application code remains entirely pure — defining abstract ports rather than concrete technological dependencies.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-text" data-lang="text"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;module Orders
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;requires:
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; relational store as orders_db
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; asynchronous queue as events
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; object storage as invoices
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;operations:
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; place_order(cart) -&amp;gt; Order
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; settle(order) -&amp;gt; Receipt
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Nothing in that declaration names PostgreSQL, RabbitMQ, or S3. Those are decisions, and decisions belong to the environment — not to the domain model. This is, in essence, the same discipline as hexagonal architecture (ports and adapters): the port describes a capability, the adapter supplies a technology. What changes here is that the port is also the &lt;em&gt;provisioning contract&lt;/em&gt;.&lt;/p&gt;
+&lt;h3 id="2-transparent-ephemeral-plumbing-and-engine-provisioning"&gt;2. Transparent ephemeral plumbing and engine provisioning
+&lt;/h3&gt;&lt;p&gt;The developer should never have to manually spin up containers, write complex &lt;code&gt;docker-compose&lt;/code&gt; networks from scratch, or seed migration scripts by hand.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Upon initialising the development workspace, an intelligent local engine inspects the application&amp;rsquo;s declared intents.&lt;/li&gt;
+&lt;li&gt;It automatically provisions lightweight, ephemeral local containers behind the scenes — for example an isolated PostgreSQL instance, a Redis or NATS broker, and a MinIO object store.&lt;/li&gt;
+&lt;li&gt;It injects the initial creation scripts and database migrations transparently, establishing all virtual networking cables without manual intervention.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The key word is &lt;em&gt;ephemeral&lt;/em&gt;. The local stack is derived, disposable, and reproducible: it exists because the code says it is needed, and it disappears when it is no longer. There is no hand-crafted &lt;code&gt;docker-compose.yml&lt;/code&gt; to drift, no undocumented port mapping, no &amp;ldquo;remember to run the seed script&amp;rdquo; in a wiki page nobody reads.&lt;/p&gt;
+&lt;h3 id="3-pure-business-logic-isolation"&gt;3. Pure business logic isolation
+&lt;/h3&gt;&lt;p&gt;With the plumbing handled entirely by the runtime engine, the program focuses exclusively on execution. The code simply invokes universal verbs:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-text" data-lang="text"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;database.save(order)
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;queue.push(OrderPlaced, payload)
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;storage.store(invoice_pdf)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;The underlying engine maps these calls dynamically to the correct physical driver. In local development they hit ephemeral containers; in production they map to hardened cluster nodes — all &lt;strong&gt;without changing a single line of business logic or binding to a vendor-locked SDK&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;This is the point where the abstraction earns its keep. An abstraction that only hides a single implementation is indirection. An abstraction that can be re-pointed at a different implementation — local, on-premise, or sovereign cloud — without touching the domain is a boundary.&lt;/p&gt;
+&lt;h2 id="architectural-implications-for-sovereign-systems"&gt;Architectural implications for sovereign systems
+&lt;/h2&gt;&lt;p&gt;Adopting this code-first, decoupled model yields profound operational advantages, particularly for high-assurance environments requiring rigorous compliance (such as ENS, ISO/IEC 27001, and the EU AI Act):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Zero vendor lock-in.&lt;/strong&gt; Because the application speaks a universal domain language rather than proprietary cloud APIs, infrastructure can be swapped, migrated, or repatriated to on-premise sovereign hardware instantly.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Absolute reproducibility.&lt;/strong&gt; Every developer on the team runs the exact same self-provisioned stack derived purely from the application&amp;rsquo;s intent, eliminating the classic &lt;em&gt;&amp;ldquo;it works on my machine&amp;rdquo;&lt;/em&gt; failure mode.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Auditable architecture.&lt;/strong&gt; System boundaries remain crystal clear. Security audits can verify data flows and storage boundaries at the code level without wading through a maze of scattered configuration files.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;There is a fourth consequence worth naming, because it is usually discovered too late: &lt;strong&gt;portability becomes a property of the codebase rather than a negotiation with a provider&lt;/strong&gt;. Repatriation stops being a migration project and becomes a configuration change. For a public administration or a regulated SME, that is not an optimisation — it is the difference between owning a system and renting one.&lt;/p&gt;
+&lt;h2 id="what-this-model-does-not-claim"&gt;What this model does not claim
+&lt;/h2&gt;&lt;p&gt;Intellectual honesty requires limits, and an architectural position paper that promises everything is worth nothing.&lt;/p&gt;
+&lt;p&gt;This model does not eliminate the need to understand storage engines, message brokers, or object stores. It does not make distributed transactions trivial, and it does not remove the obligation to design schemas, delivery guarantees, or retention policies. What it removes is the &lt;em&gt;coupling&lt;/em&gt; between those decisions and the business logic — and, with it, the accidental complexity that accumulates every time the two are confused.&lt;/p&gt;
+&lt;p&gt;Nor is it a licence to abstract everything. Only genuine capabilities deserve a port. A port created for a technology that will never change is just a layer of indirection with a maintenance bill attached.&lt;/p&gt;
+&lt;h2 id="conclusion"&gt;Conclusion
+&lt;/h2&gt;&lt;p&gt;True software sovereignty begins by stripping away accidental complexity. By treating infrastructure as a runtime abstraction derived directly from application intent — backed by automated, transparent local provisioning — we empower engineering teams to build resilient, portable, and maintainable systems that outlive any single cloud provider or technology stack.&lt;/p&gt;
+&lt;p&gt;The business logic should describe the business. Everything else is plumbing, and plumbing should be provisioned, not hand-soldered into the walls.&lt;/p&gt;</description></item></channel></rss>

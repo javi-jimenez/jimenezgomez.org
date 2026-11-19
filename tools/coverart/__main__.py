@@ -20,7 +20,7 @@ from .palettes import PALETTES
 from .specs import SPECS
 
 ROOT = Path(__file__).resolve().parents[2]
-POSTS = ROOT / "content" / "posts"
+POSTS_DIRS = [ROOT / "content" / "blog", ROOT / "content" / "posts"]
 
 SIZES = [(1200, 630), (600, 315)]
 
@@ -79,7 +79,8 @@ def build_one(slug, make_png=True, set_fm=True):
     if not spec:
         print(f"  · {slug}: sin spec, se deja como está")
         return False
-    post_dir = POSTS / slug
+    post_dir = next((d / slug for d in POSTS_DIRS if (d / slug).is_dir()),
+                    POSTS_DIRS[0] / slug)
     if not post_dir.is_dir():
         print(f"  ✗ {slug}: no existe la carpeta")
         return False

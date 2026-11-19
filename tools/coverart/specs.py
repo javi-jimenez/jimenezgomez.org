@@ -187,4 +187,9 @@ SPECS = {
         motif="waves", palette="ocean", eyebrow="Linux · Remote desktop",
         sub="VNC carries no audio: two channels, one SSH connection.",
     ),
+    "2026-11-19-sovereign-code-first-infrastructure": dict(
+        motif="layers", palette="indigo", eyebrow="Architecture · Sovereignty",
+        sub="The domain declares intent; the runtime supplies the plumbing.",
+        opts={"n": 4, "hi": 1},
+    ),
 }
