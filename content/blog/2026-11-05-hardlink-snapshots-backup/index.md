@@ -3,8 +3,8 @@ title: "One disk, three months: zero-cost snapshots with hardlinks"
 date: 2026-11-05T18:00:00+01:00
 draft: false
 description: "How to keep a monthly history of a one-terabyte backup without duplicating a single byte. A hardlink is not a copy: it is another name for the same file. The only condition is never to write in place — and almost every backup does it wrong."
-image: "og-image-1200x630.png"
-og_image: "og-image-1200x630.png"
+image: "figura-hardlinks.svg"
+og_image: "figura-hardlinks.svg"
 categories:
   - "Technical notes"
 tags: ["backup", "hardlinks", "rsync", "ext4", "snapshots", "linux", "systems"]

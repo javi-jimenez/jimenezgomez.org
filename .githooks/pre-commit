@@ -7,6 +7,9 @@ set -euo pipefail
 # El dibujo lo hace tools/coverart a través de tools/generate-og-image.py; si el
 # artículo no tiene entrada en coverart/specs.py, se avisa y se usa la
 # plantilla sobria.
+#
+# Si el artículo ya declara una `image:` que existe (por ejemplo una figura
+# dibujada a mano para ese texto), no se toca: la portada propia manda.
 
 cd "$(git rev-parse --show-toplevel)"
 
@@ -17,9 +20,23 @@ if [ -z "$STAGED_INDEXS" ]; then
   exit 0
 fi
 
+has_own_cover() {
+  local md="$1" dir="$2" img
+  img=$(sed -n 's/^image:[[:space:]]*"\{0,1\}\([^"]*\)"\{0,1\}[[:space:]]*$/\1/p' "$md" | head -1)
+  [ -z "$img" ] && return 1
+  case "$img" in
+    http://*|https://*) return 0 ;;
+  esac
+  [ -f "$dir/$img" ]
+}
+
 echo "pre-commit: generando portadas de los artículos en el commit..."
 for md in $STAGED_INDEXS; do
   dir=$(dirname "$md")
+  if has_own_cover "$md" "$dir"; then
+    echo " - $dir (portada propia, se respeta)"
+    continue
+  fi
   echo " - $dir"
   python3 tools/generate-og-image.py "$dir" --set-frontmatter || true
   for f in og-image.svg og-image-1200x630.png og-image-600x315.png; do
