@@ -21,12 +21,14 @@ DirectoryIndex index.html
   RewriteRule ^posts/?$           /blog/ [R=301,L]
   RewriteRule ^posts/(.+)$        /blog/$1 [R=301,L]
 
-  # --- 2 · blog.jimenezgomez.org → /blog/ -----------------------------------
-  # El subdominio es solo una puerta de entrada al blog; no sirve un sitio
-  # propio. Se mantiene la ruta pedida, para que un enlace profundo
-  # (blog.jimenezgomez.org/blog/x/) no acabe en la portada.
+  # --- 2 · blog.jimenezgomez.org → jimenezgomez.org -------------------------
+  # El subdominio es una puerta antigua: no sirve un sitio propio. Redirige a
+  # la raíz SIN anteponer /blog, para que el destino se pueda cambiar en el
+  # futuro sin tocar esta regla, y para que el enlace viejo quede archivado
+  # como redirección permanente.
+  # Se conserva la ruta pedida: blog.jimenezgomez.org/x → jimenezgomez.org/x.
   RewriteCond %{HTTP_HOST} ^blog\.jimenezgomez\.org$ [NC]
-  RewriteRule ^/(.*)$ https://jimenezgomez.org/blog/$1 [R=301,L]
+  RewriteRule ^/(.*)$ https://jimenezgomez.org/$1 [R=301,L]
 
   # --- 3 · Un post "inventado" no da 404 ------------------------------------
   # Si alguien escribe una URL de post que no existe (a mano, o desde un
