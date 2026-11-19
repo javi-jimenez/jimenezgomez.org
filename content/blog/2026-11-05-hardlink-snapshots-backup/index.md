@@ -1,72 +1,72 @@
 ---
-title: "Un disco, tres meses: snapshots de coste cero con hardlinks"
+title: "One disk, three months: zero-cost snapshots with hardlinks"
 date: 2026-11-05T18:00:00+01:00
 draft: false
-description: "Cómo tener un histórico mensual de un backup de un terabyte sin duplicar un solo byte. Un hardlink no es una copia: es otro nombre para el mismo fichero. La única condición es no escribir nunca en sitio, y casi todos los backups lo hacen mal."
-image: "figura-hardlinks.svg"
-og_image: "figura-hardlinks.svg"
+description: "How to keep a monthly history of a one-terabyte backup without duplicating a single byte. A hardlink is not a copy: it is another name for the same file. The only condition is never to write in place — and almost every backup does it wrong."
+image: "og-image-1200x630.png"
+og_image: "og-image-1200x630.png"
 categories:
-  - "Notas técnicas"
-tags: ["backup", "hardlinks", "rsync", "ext4", "snapshots", "linux", "sistemas"]
+  - "Technical notes"
+tags: ["backup", "hardlinks", "rsync", "ext4", "snapshots", "linux", "systems"]
 ---
 
-*Esto es una nota de trabajo, no un artículo. Nació intentando resolver un
-problema concreto: un backup de un terabyte que quería histórico mensual y no
-podía permitirse duplicarlo. El código está en
+*This is a working note, not an article. It was born while trying to solve a
+concrete problem: a one-terabyte backup that needed a monthly history and could
+not afford to duplicate it. The code lives in
 [backup-remoto-snapshot](https://github.com/javi-jimenez/backup-remoto-snapshot).*
 
-![Un único inodo en el centro, con dos nombres apuntando a él: el fichero vivo y el snapshot congelado. La escritura atómica por rename lo deja intacto; la escritura en sitio lo destruye todo.](figura-hardlinks.svg)
+![A single inode at the centre, with two names pointing at it: the live file and the frozen snapshot. Atomic write by rename leaves it untouched; writing in place destroys everything.](figura-hardlinks.svg)
 
 ---
 
-## El problema
+## The problem
 
-Tengo un terabyte que copiar. Quiero saber cómo estaba hace tres meses. Y no
-quiero tres terabytes.
+I have a terabyte to back up. I want to know how it looked three months ago. And
+I do not want three terabytes.
 
-La respuesta obvia — «haz una copia al mes» — no funciona a esa escala. Tres
-copias de un terabyte son tres discos, y el tercer mes ya no sabes qué está
-donde.
+The obvious answer — *"make one copy per month"* — does not work at that scale.
+Three copies of a terabyte are three disks, and by the third month you no longer
+know what is where.
 
-La respuesta de moda — «usa btrfs o ZFS» — funciona, pero cambia el sistema de
-ficheros entero, y en una máquina que ya funciona eso es un riesgo que no
-siempre puedes permitirte.
+The fashionable answer — *"use btrfs or ZFS"* — works, but it changes the whole
+filesystem, and on a machine that is already running that is a risk you cannot
+always afford.
 
-Hay una tercera respuesta, más vieja, que casi nadie usa porque tiene mala fama
-de frágil:
+There is a third answer, an older one, that almost nobody uses because it has a
+reputation for being fragile:
 
 ```
 cp -al
 ```
 
-Nueve caracteres. Copia un directorio **sin copiar los datos**.
+Nine characters. It copies a directory **without copying the data**.
 
 ---
 
-## Qué es realmente un hardlink
+## What a hardlink really is
 
-Un fichero en un sistema Unix no es un nombre. Es un **inodo**: un bloque de
-metadatos que contiene el dueño, los permisos, el tamaño, las fechas y — lo
-importante — **la lista de bloques de disco donde vive el contenido**.
+A file on a Unix system is not a name. It is an **inode**: a block of metadata
+holding the owner, the permissions, the size, the dates and — the important
+part — **the list of disk blocks where the content lives**.
 
-Lo que llamamos «nombre de fichero» es solo una entrada en un directorio que
-apunta a un inodo. Y **un inodo puede tener varios nombres**. Todos igual de
-reales. Ninguno es «el original».
+What we call a "file name" is just an entry in a directory that points to an
+inode. And **an inode can have several names**. All of them equally real. None of
+them is "the original".
 
 ```
-inodo 24598
-├── /srv/backup/current/f.txt      ← nombre 1
-└── /srv/backup/202601/f.txt       ← nombre 2
+inode 24598
+├── /srv/backup/current/f.txt      ← name 1
+└── /srv/backup/202601/f.txt       ← name 2
 ```
 
-Los dos ocupan lo mismo porque **son lo mismo**. No hay original y copia: hay dos
-puertas a la misma habitación.
+Both take up the same space because **they are the same thing**. There is no
+original and copy: there are two doors into the same room.
 
-`cp -al` crea ese segundo nombre. Recorre el árbol, y por cada fichero en lugar
-de copiar bytes llama a `link()`. Con un terabyte de datos, tarda segundos y
-consume **cero bytes**.
+`cp -al` creates that second name. It walks the tree and, for each file, instead
+of copying bytes it calls `link()`. With a terabyte of data it takes seconds and
+consumes **zero bytes**.
 
-El número que lo confirma:
+The number that confirms it:
 
 ```bash
 $ stat -c '%i %h %n' current/f.txt 202601/f.txt
@@ -74,185 +74,190 @@ $ stat -c '%i %h %n' current/f.txt 202601/f.txt
 24598 2 202601/f.txt
 ```
 
-Mismo inodo (`24598`), link count `2`. Dos nombres, un contenido.
+Same inode (`24598`), link count `2`. Two names, one content.
 
 ---
 
-## La condición que lo rompe todo
+## The condition that breaks everything
 
-Aquí está la parte que casi nadie explica, y la razón por la que los snapshots
-por hardlink tienen mala fama.
+Here is the part almost nobody explains, and the reason hardlink snapshots have
+a bad reputation.
 
-**Cualquier escritura en sitio sobre un fichero cambia todos sus nombres.** No
-los nombres anteriores: *todos*, porque el contenido es único.
+**Any in-place write to a file changes all of its names.** Not the previous
+names: *all* of them, because the content is unique.
 
-Si mañana el backup abre `current/f.txt` y escribe encima, `202601/f.txt` cambia
-también. El snapshot deja de ser un histórico y pasa a ser un alias del presente.
+If tomorrow the backup opens `current/f.txt` and writes over it, `202601/f.txt`
+changes too. The snapshot stops being a history and becomes an alias of the
+present.
 
-### La diferencia que lo salva: `rename()`
+### The difference that saves it: `rename()`
 
-`rsync -a` cuando detecta que un fichero cambió no lo abre para escribir. Hace
-esto:
+When `rsync -a` detects that a file changed, it does not open it for writing. It
+does this:
 
-1. Copia el contenido nuevo a `f.txt.a1B2c3` (un fichero temporal).
-2. Llama a `rename("f.txt.a1B2c3", "f.txt")`.
+1. Copies the new content to `f.txt.a1B2c3` (a temporary file).
+2. Calls `rename("f.txt.a1B2c3", "f.txt")`.
 
-`rename()` es una operación **atómica** del sistema de ficheros: o se hace entera
-o no se hace. Y cuando se hace, **lo que sustituye es el nombre, no el inodo**.
+`rename()` is an **atomic** filesystem operation: either it happens entirely or
+it does not happen. And when it happens, **what it replaces is the name, not the
+inode**.
 
 ```
-ANTES:   current/f.txt ──→ inodo 24598 ←── 202601/f.txt
-DESPUÉS: current/f.txt ──→ inodo 24604
-         202601/f.txt  ──→ inodo 24598   ← intacto
+BEFORE:  current/f.txt ──→ inode 24598 ←── 202601/f.txt
+AFTER:   current/f.txt ──→ inode 24604
+         202601/f.txt  ──→ inode 24598   ← untouched
 ```
 
-El inodo viejo pierde un nombre (`link count` baja de 2 a 1), pero **nadie lo ha
-tocado**. El snapshot conserva exactamente lo que decía.
+The old inode loses one name (`link count` drops from 2 to 1), but **nobody has
+touched it**. The snapshot keeps exactly what it said.
 
-Verificado:
+Verified:
 
 ```bash
-$ cat current/f.txt   →  V2-CAMBIADO
-$ cat 202601/f.txt    →  V1            ← el histórico funciona
+$ cat current/f.txt   →  V2-CHANGED
+$ cat 202601/f.txt    →  V1            ← the history works
 $ stat -c '%i %h %n' current/f.txt 202601/f.txt
-24604 1 current/f.txt      ← inodo nuevo
-24598 1 202601/f.txt       ← inodo viejo, intacto
+24604 1 current/f.txt      ← new inode
+24598 1 202601/f.txt       ← old inode, untouched
 ```
 
-Por eso `cp -al` no es frágil. **Es frágil si el cliente escribe mal.**
+That is why `cp -al` is not fragile. **It is fragile if the client writes badly.**
 
 ---
 
-## Lo que corrompe, y lo que no
+## What corrupts, and what does not
 
-| Escritura | Qué hace | Snapshots |
+| Write | What it does | Snapshots |
 |:---|:---|:---|
-| `rsync -a` | `.tmp` + `rename()` | ✅ intactos |
-| `rsync --inplace` | escribe sobre el inodo | ❌ **rompe todos** |
-| `rclone --inplace` | escribe sobre el inodo | ❌ **rompe todos** |
-| `rclone sync` (mismo tamaño) | reescribe en sitio | ❌ **rompe todos** |
-| `cp` sin `-a` | trunca y escribe | ❌ **rompe todos** |
-| `-L` / `--copy-links` | convierte enlace en copia | ⚠️ rompe la deduplicación |
+| `rsync -a` | `.tmp` + `rename()` | ✅ untouched |
+| `rsync --inplace` | writes onto the inode | ❌ **breaks all of them** |
+| `rclone --inplace` | writes onto the inode | ❌ **breaks all of them** |
+| `rclone sync` (same size) | rewrites in place | ❌ **breaks all of them** |
+| `cp` without `-a` | truncates and writes | ❌ **breaks all of them** |
+| `-L` / `--copy-links` | turns a link into a copy | ⚠️ breaks deduplication |
 
-La última fila de `rclone` es la que me costó un rato entender. `rclone sync`
-normalmente crea un objeto nuevo y lo renombra, así que en teoría es seguro.
-Pero **cuando el tamaño del fichero coincide, reescribe en sitio** aunque no
-pases `--inplace`. Y eso basta para llevarse el histórico.
+The last `rclone` row is the one that took me a while to understand. `rclone
+sync` normally creates a new object and renames it, so in theory it is safe. But
+**when the file size matches, it rewrites in place** even if you do not pass
+`--inplace`. And that is enough to take the history with it.
 
-Conclusión práctica: **rclone no sirve para este esquema.** Hay que usar `rsync`.
-
----
-
-## Un intento fallido que enseñó algo
-
-Al principio puse el script del servidor a hacer `chown -R root` y
-`chmod -R a-w` sobre el snapshot recién creado. El razonamiento parecía sensato:
-«si es de root y no tiene escritura, un `--inplace` falla en vez de corromper».
-
-No funciona. Y el motivo es el mismo de todo el artículo: **el inodo es
-compartido**.
-
-```
-chown root 202601/f.txt   →  cambia el dueño del inodo
-                          →  y current/f.txt es el mismo inodo
-                          →  ahora el cliente no puede escribir en su propio destino
-```
-
-Se rompe el destino para «proteger» la copia. Un inodo no puede ser de root en
-el snapshot y de otro usuario en `current/`: es el mismo objeto.
-
-La lección: **en un esquema de hardlinks no puedes tener permisos distintos para
-la copia y el original**, porque no son dos cosas. La protección tiene que venir
-de la forma de escribir, no de los permisos.
+Practical conclusion: **rclone is not suitable for this scheme.** You have to
+use `rsync`.
 
 ---
 
-## El sistema completo
+## A failed attempt that taught something
 
-Dos scripts y dos líneas de cron.
+At first I had the server script run `chown -R root` and `chmod -R a-w` on the
+freshly created snapshot. The reasoning seemed sound: *"if it belongs to root and
+has no write permission, an `--inplace` fails instead of corrupting"*.
 
-### Servidor
+It does not work. And the reason is the same one running through the whole
+article: **the inode is shared**.
+
+```
+chown root 202601/f.txt   →  changes the owner of the inode
+                          →  and current/f.txt is the same inode
+                          →  now the client cannot write to its own destination
+```
+
+You break the destination in order to "protect" the copy. An inode cannot belong
+to root in the snapshot and to another user in `current/`: it is the same object.
+
+The lesson: **in a hardlink scheme you cannot have different permissions for the
+copy and the original**, because they are not two things. The protection has to
+come from the way you write, not from permissions.
+
+---
+
+## The complete system
+
+Two scripts and two cron lines.
+
+### Server
 
 ```bash
 #!/usr/bin/env bash
 set -euo pipefail
 
 BASE="${BACKUP_BASE:-/srv/backup}"
-MES="$(date +%Y%m)"
+MONTH="$(date +%Y%m)"
 
-[[ -e "$BASE/$MES" ]] && { echo "$BASE/$MES ya existe."; exit 0; }
-[[ -d "$BASE/current" ]] || { echo "No existe current/." >&2; exit 1; }
+[[ -e "$BASE/$MONTH" ]] && { echo "$BASE/$MONTH already exists."; exit 0; }
+[[ -d "$BASE/current" ]] || { echo "current/ does not exist." >&2; exit 1; }
 [[ "$(stat -c %d "$BASE")" == "$(stat -c %d "$BASE/current")" ]] \
-  || { echo "Filesystems distintos." >&2; exit 1; }
+  || { echo "Different filesystems." >&2; exit 1; }
 
-cp -al "$BASE/current" "$BASE/$MES"
-echo "Creado $BASE/$MES ($(find "$BASE/$MES" -type f | wc -l) ficheros, 0 bytes)"
+cp -al "$BASE/current" "$BASE/$MONTH"
+echo "Created $BASE/$MONTH ($(find "$BASE/$MONTH" -type f | wc -l) files, 0 bytes)"
 ```
 
-Nada más. Ni `chown`, ni `chmod`, ni borrado de snapshots viejos.
+Nothing else. No `chown`, no `chmod`, no deleting old snapshots.
 
-### Cliente
+### Client
 
-`rsync -a --delete` con exclusiones, cerrojo con `flock` y log. Sin
-`--inplace`, sin `-L`.
+`rsync -a --delete` with exclusions, a `flock` lock and a log. No `--inplace`, no
+`-L`.
 
 ### Cron
 
-**Servidor:** diario, no el día 1.
+**Server:** daily, not on the 1st.
 
 ```cron
-30 3 * * * /usr/local/bin/snapshot-mensual.sh >> /var/log/snapshot-mensual.log 2>&1
+30 3 * * * /usr/local/bin/snapshot-monthly.sh >> /var/log/snapshot-monthly.log 2>&1
 ```
 
-El script sale en cuanto ve que el snapshot del mes ya existe, así que solo
-trabaja una vez al mes. Si el servidor estaba apagado el día 1, se crea el primer
-día que arranque.
+The script exits as soon as it sees that the month's snapshot already exists, so
+it only does work once a month. If the server was off on the 1st, the snapshot is
+created on the first day it boots.
 
-**Cliente:** `anacron`, no `cron`.
+**Client:** `anacron`, not `cron`.
 
 ```
-1  10  backup-cliente  /home/usuario/.local/bin/backup-cliente.sh
+1  10  backup-client  /home/user/.local/bin/backup-client.sh
 ```
 
-Un `cron` normal solo dispara si el aparato está encendido a esa hora. En un
-portátil, el backup de las 02:00 **nunca** se hace: a las 02:00 el portátil está
-cerrado. `anacron` anota cuándo tocaba y lo ejecuta al arrancar si se pasó la
-hora.
+A normal `cron` only fires if the machine is on at that time. On a laptop, the
+02:00 backup **never** happens: at 02:00 the laptop is closed. `anacron` records
+when it was due and runs it at boot if the time has passed.
 
-Enciendes el ordenador por la mañana y el backup que no se hizo anoche se hace
-solo mientras te preparas el café.
+You switch the computer on in the morning and the backup that did not happen last
+night runs on its own while you make your coffee.
 
-Comprobado: el segundo mes cuesta **0 bytes**.
+Verified: the second month costs **0 bytes**.
 
 ---
 
-## Lo que esto no hace
+## What this does not do
 
-- **No rellena meses perdidos.** Si estuvo apagado de enero a abril, en abril se
-  crea solo `202604`. El nombre de un snapshot es la fecha en que se tomó, no la
-  fecha que debería haber tenido. Un snapshot que falta dice algo; uno falso, no.
-- **No borra snapshots viejos.** Eso lo decides tú, no un script con `find -mtime`.
-- **No cifra.** Eso es del transporte (SSH) o del volumen.
-- **No sustituye un 3-2-1.** Esto es *una* copia. Un backup en el mismo edificio
-  no es un backup.
-- **No funciona en QNAP, FAT/exFAT ni montajes de red** sin soporte de hardlinks.
-  `cp -al` falla y el script sale con error, que es lo correcto.
+- **It does not backfill missed months.** If the machine was off from January to
+  April, in April only `202604` is created. A snapshot's name is the date it was
+  taken, not the date it should have had. A missing snapshot says something; a
+  fake one does not.
+- **It does not delete old snapshots.** That is your decision, not a script's
+  `find -mtime`.
+- **It does not encrypt.** That belongs to the transport (SSH) or to the volume.
+- **It does not replace a 3-2-1 strategy.** This is *one* copy. A backup in the
+  same building is not a backup.
+- **It does not work on QNAP, FAT/exFAT or network mounts** without hardlink
+  support. `cp -al` fails and the script exits with an error, which is the
+  correct behaviour.
 
 ---
 
-## Por qué esto sigue importando
+## Why this still matters
 
-Vivimos en una época donde la respuesta a todo es «usa ZFS» o «usa btrfs». Y no
-están mal: son mejores. Tienen snapshots nativos, checksums, send/receive
-incremental y no dependen de que el cliente se porte bien.
+We live in a time when the answer to everything is "use ZFS" or "use btrfs". And
+they are not wrong: they are better. They have native snapshots, checksums,
+incremental send/receive and they do not depend on the client behaving well.
 
-Pero exigen cambiar el sistema de ficheros de una máquina que funciona. Y en un
-servidor modesto, en un disco externo, o en una máquina que no puedes reinstalar,
-eso a veces no es una opción.
+But they require changing the filesystem of a machine that works. And on a modest
+server, on an external disk, or on a machine you cannot reinstall, that is
+sometimes not an option.
 
-`cp -al` no necesita nada. Funciona en ext4, que es lo que tiene todo el mundo.
-Ocupa cero bytes. Y si respetas una sola regla — **nunca escribir en sitio** —
-conserva el histórico exactamente igual que ZFS.
+`cp -al` needs nothing. It works on ext4, which is what everyone has. It takes
+zero bytes. And if you respect a single rule — **never write in place** — it
+preserves the history exactly like ZFS does.
 
-La regla no es un detalle: es todo el sistema. Un backup que escribe en sitio no
-es un backup incremental, es una copia que se cree a sí misma.
+The rule is not a detail: it is the whole system. A backup that writes in place
+is not an incremental backup, it is a copy that believes itself.
